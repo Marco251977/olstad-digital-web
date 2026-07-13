@@ -1,0 +1,24 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ovsAccent" x1="62" y1="62" x2="138" y2="138" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+    <radialGradient id="ovsGlow" cx="50%" cy="42%" r="60%">
+      <stop offset="0%" stop-color="#6366F1" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#6366F1" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Outer ring: the stylised "O" -->
+  <circle cx="100" cy="100" r="85" stroke="#1F2937" stroke-width="22" fill="none"/>
+
+  <!-- Soft glow behind the inner lens -->
+  <circle cx="100" cy="100" r="58" fill="url(#ovsGlow)"/>
+
+  <!-- Inner circle: the "lens / pupil" -->
+  <circle cx="100" cy="100" r="40" fill="url(#ovsAccent)"/>
+
+  <!-- Subtle highlight for depth -->
+  <circle cx="88" cy="88" r="11" fill="#FFFFFF" opacity="0.25"/>
+</svg>
