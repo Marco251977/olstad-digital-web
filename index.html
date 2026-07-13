@@ -55,7 +55,7 @@
     .logo { display: flex; align-items: center; }
     .logo img { height: 36px; }
 
-    nav { display: flex; gap: 2rem; }
+    nav { display: flex; align-items: center; gap: 2rem; }
     nav a {
       font-size: 0.9rem;
       font-weight: 500;
@@ -74,6 +74,34 @@
       transition: background 0.2s !important;
     }
     .nav-contact:hover { background: var(--brand-dark) !important; color: #fff !important; }
+
+    /* ── LANGUAGE TOGGLE ── */
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.2rem 0.3rem;
+    }
+
+    .lang-btn {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: none;
+      border: none;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .lang-btn.active {
+      background: var(--brand);
+      color: #fff;
+    }
 
     /* ── HERO ── */
     .hero {
@@ -198,7 +226,6 @@
       margin-bottom: 3rem;
     }
 
-    /* App card */
     .apps-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -382,7 +409,8 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
-      nav { display: none; }
+      nav { gap: 1rem; }
+      nav a:not(.nav-contact):not(.lang-toggle-wrap) { display: none; }
 
       .about-grid {
         grid-template-columns: 1fr;
@@ -403,50 +431,54 @@
         <img src="logo-horizontal.svg" alt="Olstad Digital" />
       </div>
       <nav>
-        <a href="#apps">Apper</a>
-        <a href="#om">Om oss</a>
-        <a href="#kontakt" class="nav-contact">Kontakt</a>
+        <a href="#apps" data-no="Apper" data-en="Apps">Apper</a>
+        <a href="#om" data-no="Om oss" data-en="About">Om oss</a>
+        <a href="#kontakt" class="nav-contact" data-no="Kontakt" data-en="Contact">Kontakt</a>
+        <div class="lang-toggle">
+          <button class="lang-btn active" onclick="setLang('no')">NO</button>
+          <button class="lang-btn" onclick="setLang('en')">EN</button>
+        </div>
       </nav>
     </div>
   </header>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-badge">Norsk apputvikling</div>
-    <h1>Vi lager apper<br>folk <span>faktisk bruker</span></h1>
-    <p>Olstad Digital designer og utvikler mobilapper og digitale løsninger — enkle, elegante og bygget for å vare.</p>
+    <div class="hero-badge" data-no="Norsk apputvikling" data-en="Norwegian app development">Norsk apputvikling</div>
+    <h1 data-no="Vi lager apper<br>folk <span>faktisk bruker</span>" data-en="We build apps<br>people <span>actually use</span>">Vi lager apper<br>folk <span>faktisk bruker</span></h1>
+    <p data-no="Olstad Digital designer og utvikler mobilapper og digitale løsninger — enkle, elegante og bygget for å vare." data-en="Olstad Digital designs and develops mobile apps and digital solutions — simple, elegant, and built to last.">Olstad Digital designer og utvikler mobilapper og digitale løsninger — enkle, elegante og bygget for å vare.</p>
     <div class="hero-actions">
-      <a href="#apps" class="btn-primary">Se våre apper</a>
-      <a href="#kontakt" class="btn-secondary">Ta kontakt</a>
+      <a href="#apps" class="btn-primary" data-no="Se våre apper" data-en="See our apps">Se våre apper</a>
+      <a href="#kontakt" class="btn-secondary" data-no="Ta kontakt" data-en="Get in touch">Ta kontakt</a>
     </div>
   </section>
 
   <!-- APPS -->
   <section id="apps">
     <div class="section-inner">
-      <p class="section-label">Produkter</p>
-      <h2 class="section-title">Våre apper</h2>
-      <p class="section-subtitle">Vi bygger produkter fra idé til lansering — med fokus på brukeropplevelse og kvalitet.</p>
+      <p class="section-label" data-no="Produkter" data-en="Products">Produkter</p>
+      <h2 class="section-title" data-no="Våre apper" data-en="Our apps">Våre apper</h2>
+      <p class="section-subtitle" data-no="Vi bygger produkter fra idé til lansering — med fokus på brukeropplevelse og kvalitet." data-en="We build products from idea to launch — focused on user experience and quality.">Vi bygger produkter fra idé til lansering — med fokus på brukeropplevelse og kvalitet.</p>
 
       <div class="apps-grid">
         <a href="https://plantravelapp.no" target="_blank" rel="noopener" class="app-card">
           <div class="app-icon">✈️</div>
           <h3>TravelPlanner</h3>
-          <p>Din smarte reiseassistent. Søk fly, hotell og leiebil, planlegg reiseruter og få inspirasjon til neste reise med hjelp av AI.</p>
+          <p data-no="Din smarte reiseassistent. Søk fly, hotell og leiebil, planlegg reiseruter og få inspirasjon til neste reise med hjelp av AI." data-en="Your smart travel assistant. Search flights, hotels and car rentals, plan routes and get inspiration for your next trip with AI.">Din smarte reiseassistent. Søk fly, hotell og leiebil, planlegg reiseruter og få inspirasjon til neste reise med hjelp av AI.</p>
           <div>
             <span class="app-tag">iOS</span>
             <span class="app-tag">Android</span>
             <span class="app-tag">Web</span>
           </div>
-          <span class="app-link">Besøk plantravelapp.no →</span>
+          <span class="app-link">Visit plantravelapp.no →</span>
         </a>
 
         <div class="app-card" style="opacity: 0.6; cursor: default;">
           <div class="app-icon">🚀</div>
-          <h3>Neste prosjekt</h3>
-          <p>Vi jobber alltid med nye ideer. Følg med — det kommer mer fra Olstad Digital.</p>
+          <h3 data-no="Neste prosjekt" data-en="Next project">Neste prosjekt</h3>
+          <p data-no="Vi jobber alltid med nye ideer. Følg med — det kommer mer fra Olstad Digital." data-en="We're always working on new ideas. Stay tuned — more is coming from Olstad Digital.">Vi jobber alltid med nye ideer. Følg med — det kommer mer fra Olstad Digital.</p>
           <div>
-            <span class="app-tag">Kommer snart</span>
+            <span class="app-tag" data-no="Kommer snart" data-en="Coming soon">Kommer snart</span>
           </div>
         </div>
       </div>
@@ -458,15 +490,15 @@
     <div class="section-inner">
       <div class="about-grid">
         <div class="about-text">
-          <p class="section-label">Om oss</p>
-          <h2>Enkel teknologi.<br>Stor opplevelse.</h2>
-          <p>Olstad Digital er et norsk selskap som utvikler mobilapper og digitale løsninger. Vi tror på at god teknologi skal føles enkel å bruke — uansett hvem du er.</p>
-          <p>Vi tar ideene fra konsept til ferdige produkter i App Store og Google Play, med fokus på design, ytelse og langsiktig kvalitet.</p>
+          <p class="section-label" data-no="Om oss" data-en="About us">Om oss</p>
+          <h2 data-no="Enkel teknologi.<br>Stor opplevelse." data-en="Simple technology.<br>Great experience.">Enkel teknologi.<br>Stor opplevelse.</h2>
+          <p data-no="Olstad Digital er et norsk selskap som utvikler mobilapper og digitale løsninger. Vi tror på at god teknologi skal føles enkel å bruke — uansett hvem du er." data-en="Olstad Digital is a Norwegian company developing mobile apps and digital solutions. We believe great technology should feel simple to use — for everyone.">Olstad Digital er et norsk selskap som utvikler mobilapper og digitale løsninger. Vi tror på at god teknologi skal føles enkel å bruke — uansett hvem du er.</p>
+          <p data-no="Vi tar ideene fra konsept til ferdige produkter i App Store og Google Play, med fokus på design, ytelse og langsiktig kvalitet." data-en="We take ideas from concept to finished products in the App Store and Google Play, with a focus on design, performance and long-term quality.">Vi tar ideene fra konsept til ferdige produkter i App Store og Google Play, med fokus på design, ytelse og langsiktig kvalitet.</p>
           <ul class="values-list">
-            <li>Brukervennlig design i sentrum</li>
-            <li>Moderne teknologi — React Native, Next.js, AI</li>
-            <li>Fra idé til lansering under ett tak</li>
-            <li>Norskutviklet, globalt tilgjengelig</li>
+            <li data-no="Brukervennlig design i sentrum" data-en="User-friendly design at the core">Brukervennlig design i sentrum</li>
+            <li data-no="Moderne teknologi — React Native, Next.js, AI" data-en="Modern technology — React Native, Next.js, AI">Moderne teknologi — React Native, Next.js, AI</li>
+            <li data-no="Fra idé til lansering under ett tak" data-en="From idea to launch under one roof">Fra idé til lansering under ett tak</li>
+            <li data-no="Norskutviklet, globalt tilgjengelig" data-en="Norwegian-built, globally available">Norskutviklet, globalt tilgjengelig</li>
           </ul>
         </div>
         <div class="about-visual">
@@ -480,8 +512,8 @@
   <section id="kontakt" class="contact">
     <div class="section-inner">
       <div class="contact-card">
-        <h2>Ta kontakt</h2>
-        <p>Har du en idé til en app, eller ønsker du å samarbeide? Send oss en e-post — vi svarer raskt.</p>
+        <h2 data-no="Ta kontakt" data-en="Get in touch">Ta kontakt</h2>
+        <p data-no="Har du en idé til en app, eller ønsker du å samarbeide? Send oss en e-post — vi svarer raskt." data-en="Have an app idea or want to collaborate? Send us an email — we reply quickly.">Har du en idé til en app, eller ønsker du å samarbeide? Send oss en e-post — vi svarer raskt.</p>
         <a href="mailto:kontakt@nordicdigitalapp.no" class="contact-email">
           <span>✉️</span>
           kontakt@nordicdigitalapp.no
@@ -492,12 +524,30 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2026 Olstad Digital. Alle rettigheter forbeholdt.</p>
+    <p>© 2026 Olstad Digital. <span data-no="Alle rettigheter forbeholdt." data-en="All rights reserved.">Alle rettigheter forbeholdt.</span></p>
     <p style="margin-top: 0.5rem;">Org.nr. 938 090 432</p>
     <p style="margin-top: 0.5rem;">
       <a href="mailto:kontakt@nordicdigitalapp.no">kontakt@nordicdigitalapp.no</a>
     </p>
   </footer>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+
+      document.querySelectorAll('[data-no]').forEach(el => {
+        const text = el.getAttribute('data-' + lang);
+        if (text) el.innerHTML = text;
+      });
+
+      document.documentElement.lang = lang;
+      localStorage.setItem('lang', lang);
+    }
+
+    const saved = localStorage.getItem('lang');
+    if (saved && saved !== 'no') setLang(saved);
+  </script>
 
 </body>
 </html>
