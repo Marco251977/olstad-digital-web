@@ -1,0 +1,28 @@
+<svg width="640" height="200" viewBox="0 0 640 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ovsAccentH" x1="62" y1="62" x2="138" y2="138" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+    <radialGradient id="ovsGlowH" cx="50%" cy="42%" r="60%">
+      <stop offset="0%" stop-color="#6366F1" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#6366F1" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Icon -->
+  <g>
+    <circle cx="100" cy="100" r="85" stroke="#1F2937" stroke-width="22" fill="none"/>
+    <circle cx="100" cy="100" r="58" fill="url(#ovsGlowH)"/>
+    <circle cx="100" cy="100" r="40" fill="url(#ovsAccentH)"/>
+    <circle cx="88" cy="88" r="11" fill="#FFFFFF" opacity="0.25"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="226" y="92" font-family="Montserrat, Inter, 'SF Pro Display', Arial, sans-serif" font-size="42" font-weight="600" letter-spacing="1.5" fill="#1F2937">
+    OLSTAD
+  </text>
+  <text x="226" y="138" font-family="Montserrat, Inter, 'SF Pro Display', Arial, sans-serif" font-size="42" font-weight="600" letter-spacing="1.5" fill="#1F2937">
+    DIGITAL
+  </text>
+</svg>
