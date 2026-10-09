@@ -242,7 +242,7 @@ import { CORE_LANGUAGES, resolveLanguage } from 'app-core';
 
 const LANGUAGES = CORE_LANGUAGES.map((l) => l.code);
 
-export const config = { matcher: ${JSON.stringify(paths)} };
+export const config = { runtime: 'nodejs', matcher: ${JSON.stringify(paths)} };
 
 /** «nb-NO,nb;q=0.9,en;q=0.8» → the browser's languages, most wanted first. */
 export function browserLocales(header) {
