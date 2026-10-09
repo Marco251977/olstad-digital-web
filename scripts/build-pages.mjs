@@ -170,6 +170,59 @@ function appPage(app, page, lang) {
   });
 }
 
+// --- sign-in links (Universal Links / App Links) ---
+
+/**
+ * /<lang>/<app>/auth/callback: where the sign-in link in the e-mail lands. With the app installed the
+ * phone opens the app straight away (Universal Link / App Link). Otherwise this page offers a button that
+ * opens the app with the same parameters (the tokens are in the «#» part, which never reaches the
+ * server), or says to enter the code from the e-mail in the app. No tracking, nothing stored.
+ */
+function authCallbackPage(app, lang) {
+  const a = appTexts[app.slug][lang].authCallback;
+  const scheme = `${app.links.scheme}://auth/callback`;
+  const body = [
+    `<p class="app-name">${esc(app.name)}</p>`,
+    `<h1>${fill(a.title)}</h1>`,
+    `<p class="lede" id="status">${fill(a.body)}</p>`,
+    `<p><a class="button" id="open" href="${esc(scheme)}">${fill(a.open)}</a></p>`,
+    `<p class="updated">${fill(a.codeHint)}</p>`,
+    `<script>
+(function () {
+  var params = location.search.slice(1) + '&' + location.hash.slice(1);
+  document.getElementById('open').href = ${JSON.stringify(scheme)} + (location.hash || location.search || '');
+  if (/(^|&)error(_code)?=/.test(params)) document.getElementById('status').textContent = ${JSON.stringify(a.expired)};
+})();
+</script>`,
+  ];
+  return layout({
+    lang,
+    title: `${esc(app.name)} – ${fill(a.title)}`,
+    description: fill(a.body),
+    pagePath: `/${app.slug}/auth/callback`,
+    body: body.map((l) => `    ${l}`).join('\n'),
+  });
+}
+
+/** apple-app-site-association: which paths open which iOS app (one entry per app with links). */
+function appleAppSiteAssociation() {
+  const details = apps
+    .filter((a) => a.links)
+    .map((a) => ({ appIDs: [a.links.appleAppId], components: [{ '/': `/*/${a.slug}/auth/callback*`, comment: `${a.name}: sign-in links` }] }));
+  return JSON.stringify({ applinks: { details } }, null, 2) + '\n';
+}
+
+/** assetlinks.json: which Android apps (package + signing keys: EAS now, Play App Signing at launch) may open links here. */
+function assetLinks() {
+  const entries = apps
+    .filter((a) => a.links)
+    .map((a) => ({
+      relation: ['delegate_permission/common.handle_all_urls'],
+      target: { namespace: 'android_app', package_name: a.links.androidPackage, sha256_cert_fingerprints: [...a.links.androidSha256, ...a.links.androidSha256PlayAppSigning] },
+    }));
+  return JSON.stringify(entries, null, 2) + '\n';
+}
+
 function overviewPage(lang) {
   const c = common[lang];
   const o = c.overview;
@@ -284,7 +337,10 @@ const files = new Map();
 for (const lang of LANGS) {
   files.set(`${lang}/privacy.html`, overviewPage(lang));
   for (const app of apps.filter((a) => a.slug)) for (const page of app.pages) files.set(`${lang}/${app.slug}/${page}.html`, appPage(app, page, lang));
+  for (const app of apps.filter((a) => a.links)) files.set(`${lang}/${app.slug}/auth/callback.html`, authCallbackPage(app, lang));
 }
+files.set('.well-known/apple-app-site-association', appleAppSiteAssociation());
+files.set('.well-known/assetlinks.json', assetLinks());
 const unprefixed = ['/privacy', ...apps.filter((a) => a.slug).flatMap((a) => a.pages.map((p) => `/${a.slug}/${p}`))];
 for (const p of unprefixed) files.set(`${p.slice(1)}.html`, fallbackPage(p));
 files.set('index.html', homePage());

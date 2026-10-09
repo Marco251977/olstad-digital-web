@@ -170,5 +170,12 @@
         "a": "Vá para Eu → Apagar todos os dados. Tudo no celular é apagado. Saiba mais na página sobre como excluir seus dados."
       }
     ]
+  },
+  "authCallback": {
+    "title": "Abrindo o Saldo Pocket",
+    "body": "O Saldo Pocket não abriu sozinho? Toque no botão.",
+    "open": "Abrir o Saldo Pocket",
+    "codeHint": "Não está no celular com o app? Abra o Saldo Pocket nele e digite o código do e-mail.",
+    "expired": "O link expirou ou já foi usado. Peça um novo código no Saldo Pocket."
   }
 }

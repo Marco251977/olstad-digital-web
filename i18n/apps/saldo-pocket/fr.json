@@ -170,5 +170,12 @@
         "a": "Allez dans Moi → Supprimer toutes les données. Tout ce qui est sur le téléphone est supprimé. Pour en savoir plus, consultez la page sur la suppression de vos données."
       }
     ]
+  },
+  "authCallback": {
+    "title": "Ouverture de Saldo Pocket",
+    "body": "Saldo Pocket ne s’est pas ouvert tout seul ? Touchez le bouton.",
+    "open": "Ouvrir Saldo Pocket",
+    "codeHint": "Vous n’êtes pas sur le téléphone avec l’app ? Ouvrez Saldo Pocket dessus et saisissez plutôt le code de l’e-mail.",
+    "expired": "Le lien a expiré ou a déjà été utilisé. Demandez un nouveau code dans Saldo Pocket."
   }
 }

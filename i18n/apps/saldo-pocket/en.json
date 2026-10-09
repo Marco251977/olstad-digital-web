@@ -170,5 +170,12 @@
         "a": "Go to Me → Delete all data. Everything on the phone is deleted. Read more on the page about deleting your data."
       }
     ]
+  },
+  "authCallback": {
+    "title": "Opening Saldo Pocket",
+    "body": "If Saldo Pocket did not open by itself, tap the button.",
+    "open": "Open Saldo Pocket",
+    "codeHint": "Not on the phone with the app? Open Saldo Pocket there and enter the code from the e-mail instead.",
+    "expired": "The link has expired or has already been used. Ask for a new code in Saldo Pocket."
   }
 }

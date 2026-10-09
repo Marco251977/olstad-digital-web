@@ -170,5 +170,12 @@
         "a": "Vai su Io → Elimina tutti i dati. Tutto ciò che è sul telefono viene eliminato. Maggiori dettagli nella pagina sull’eliminazione dei dati."
       }
     ]
+  },
+  "authCallback": {
+    "title": "Apertura di Saldo Pocket",
+    "body": "Saldo Pocket non si è aperto da solo? Tocca il pulsante.",
+    "open": "Apri Saldo Pocket",
+    "codeHint": "Non sei sul telefono con l’app? Apri Saldo Pocket lì e inserisci invece il codice dell’email.",
+    "expired": "Il link è scaduto o è già stato usato. Richiedi un nuovo codice in Saldo Pocket."
   }
 }
