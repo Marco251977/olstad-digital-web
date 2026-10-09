@@ -170,5 +170,12 @@
         "a": "Siirry kohtaan Minä → Poista kaikki tiedot. Kaikki puhelimessa oleva poistetaan. Lue lisää tietojen poistamista käsittelevältä sivulta."
       }
     ]
+  },
+  "authCallback": {
+    "title": "Avataan Saldo Pocket",
+    "body": "Eikö Saldo Pocket avautunut itsestään? Napauta painiketta.",
+    "open": "Avaa Saldo Pocket",
+    "codeHint": "Etkö ole puhelimella, jossa sovellus on? Avaa Saldo Pocket siellä ja syötä sen sijaan sähköpostin koodi.",
+    "expired": "Linkki on vanhentunut tai jo käytetty. Pyydä uusi koodi Saldo Pocketissa."
   }
 }

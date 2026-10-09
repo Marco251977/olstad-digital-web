@@ -170,5 +170,12 @@
         "a": "Ve a Yo → Borrar todos los datos. Se borra todo lo que hay en el teléfono. Más información en la página sobre cómo eliminar tus datos."
       }
     ]
+  },
+  "authCallback": {
+    "title": "Abriendo Saldo Pocket",
+    "body": "¿Saldo Pocket no se ha abierto solo? Toca el botón.",
+    "open": "Abrir Saldo Pocket",
+    "codeHint": "¿No estás en el teléfono con la app? Abre Saldo Pocket allí e introduce el código del correo.",
+    "expired": "El enlace ha caducado o ya se ha usado. Pide un código nuevo en Saldo Pocket."
   }
 }

@@ -170,5 +170,12 @@
         "a": "Przejdź do Ja → Usuń wszystkie dane. Wszystko na telefonie zostanie usunięte. Więcej przeczytasz na stronie o usuwaniu danych."
       }
     ]
+  },
+  "authCallback": {
+    "title": "Otwieranie Saldo Pocket",
+    "body": "Saldo Pocket nie otworzyło się samo? Dotknij przycisku.",
+    "open": "Otwórz Saldo Pocket",
+    "codeHint": "Nie jesteś na telefonie z aplikacją? Otwórz tam Saldo Pocket i wpisz kod z wiadomości.",
+    "expired": "Link wygasł lub został już użyty. Poproś o nowy kod w Saldo Pocket."
   }
 }

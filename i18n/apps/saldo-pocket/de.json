@@ -170,5 +170,12 @@
         "a": "Geh zu Ich → Alle Daten löschen. Alles auf dem Telefon wird gelöscht. Mehr dazu auf der Seite über das Löschen deiner Daten."
       }
     ]
+  },
+  "authCallback": {
+    "title": "Saldo Pocket wird geöffnet",
+    "body": "Hat sich Saldo Pocket nicht von selbst geöffnet? Tippe auf den Button.",
+    "open": "Saldo Pocket öffnen",
+    "codeHint": "Nicht auf dem Handy mit der App? Öffne Saldo Pocket dort und gib stattdessen den Code aus der E-Mail ein.",
+    "expired": "Der Link ist abgelaufen oder wurde schon verwendet. Fordere in Saldo Pocket einen neuen Code an."
   }
 }

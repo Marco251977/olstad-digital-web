@@ -170,5 +170,12 @@
         "a": "进入“我 → 删除所有数据”。手机上的一切都会被删除。详情请见删除数据的页面。"
       }
     ]
+  },
+  "authCallback": {
+    "title": "正在打开 Saldo Pocket",
+    "body": "Saldo Pocket 没有自动打开？请点按按钮。",
+    "open": "打开 Saldo Pocket",
+    "codeHint": "不在装有应用的手机上？请在那部手机上打开 Saldo Pocket，并输入邮件中的验证码。",
+    "expired": "链接已过期或已被使用。请在 Saldo Pocket 中获取新的验证码。"
   }
 }

@@ -207,3 +207,16 @@ footer.site nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; }
 footer.site nav a { display: inline-flex; align-items: center; min-height: 44px; }
 
 [dir='rtl'] .ltr { direction: ltr; unicode-bidi: isolate; }
+
+/* A link that looks like a button (e.g. «Open Saldo Pocket» on the sign-in callback page). */
+.button {
+  display: inline-block;
+  min-height: 44px;
+  padding: 12px 22px;
+  border-radius: 12px;
+  background: var(--brand);
+  color: var(--bg);
+  font-weight: 600;
+  text-decoration: none;
+}
+.button:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }

@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "HQ89Y7VND4.com.saldopocket.app"
+        ],
+        "components": [
+          {
+            "/": "/*/saldo-pocket/auth/callback*",
+            "comment": "Saldo Pocket: sign-in links"
+          }
+        ]
+      }
+    ]
+  }
+}

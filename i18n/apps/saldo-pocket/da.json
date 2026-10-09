@@ -170,5 +170,12 @@
         "a": "Gå til Mig → Slet alle data. Alt på telefonen slettes. Læs mere på siden om sletning af dine data."
       }
     ]
+  },
+  "authCallback": {
+    "title": "Åbner Saldo Pocket",
+    "body": "Åbnede Saldo Pocket ikke af sig selv? Tryk på knappen.",
+    "open": "Åbn Saldo Pocket",
+    "codeHint": "Er du ikke på telefonen med appen? Åbn Saldo Pocket der, og indtast koden fra e-mailen i stedet.",
+    "expired": "Linket er udløbet eller allerede brugt. Bed om en ny kode i Saldo Pocket."
   }
 }
