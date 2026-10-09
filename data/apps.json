@@ -3,9 +3,16 @@
     {
       "slug": "saldo-pocket",
       "name": "Saldo Pocket",
-      "pages": ["privacy", "delete-account", "support"],
+      "pages": [
+        "privacy",
+        "delete-account",
+        "support"
+      ],
       "lastUpdated": "2026-10-09",
-      "supabaseRegion": null
+      "supabase": {
+        "country": "IE",
+        "region": "eu-west-1"
+      }
     },
     {
       "name": "PlanTravel",

@@ -125,7 +125,8 @@ function sectionHtml(s, lang, vars) {
 function appPage(app, page, lang) {
   const c = common[lang];
   const a = appTexts[app.slug][lang];
-  const region = app.supabaseRegion;
+  // Supabase's data centre: the country's name in the page's language (data/apps.json: supabase.country, e.g. IE).
+  const region = app.supabase?.country ? (new Intl.DisplayNames([lang], { type: 'region' }).of(app.supabase.country) ?? app.supabase.country) : null;
   const vars = {
     ...companyVars(lang),
     server: region ? fill(a.serverRegion, { region: esc(region) }) : fill(a.server),
