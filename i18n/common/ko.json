@@ -1,0 +1,30 @@
+{
+  "skipToContent": "본문으로 이동",
+  "home": "홈",
+  "language": "언어",
+  "lastUpdated": "최종 수정일: {{date}}",
+  "planned": "예정",
+  "plannedNote": "아직 앱에 없습니다. 제공되기 전에 어떻게 작동할지 알 수 있도록 여기에 설명합니다.",
+  "pages": {
+    "privacy": "개인정보 처리방침",
+    "delete-account": "계정 및 데이터 삭제",
+    "support": "지원"
+  },
+  "appPage": "{{app}} – {{page}}",
+  "overview": {
+    "title": "개인정보 보호 – 우리 앱",
+    "intro": "{{company}}는 휴대전화용 앱을 만듭니다. 앱마다 별도의 개인정보 처리방침과 데이터 삭제 안내 페이지가 있습니다. 아래에서 앱을 선택하세요.",
+    "app": "앱",
+    "privacy": "개인정보 처리방침",
+    "deleteAccount": "데이터 삭제",
+    "support": "지원",
+    "external": "앱의 자체 웹사이트가 열립니다"
+  },
+  "footer": {
+    "privacy": "개인정보 보호",
+    "orgNumber": "등록번호 {{value}}",
+    "rights": "모든 권리 보유.",
+    "contact": "문의"
+  },
+  "redirect": "언어 선택"
+}

@@ -1,0 +1,174 @@
+{
+  "description": "Saldo Pocket on budjettisovellus iOS:lle ja Androidille. Budjettisi on puhelimessasi: pankkiyhteyttä ei ole, eikä meillä ole kopiota tiedoistasi.",
+  "server": "Supabasessa olevan palvelimemme",
+  "serverRegion": "Supabasessa ({{region}}) olevan palvelimemme",
+  "privacy": {
+    "intro": "Tämä seloste kertoo, mitä Saldo Pocket tallentaa, mitä se lähettää ja kenelle, ja mitä voit asialle tehdä. Lyhyesti: budjettisi pysyy puhelimessasi.",
+    "sections": [
+      {
+        "heading": "Kuka vastaa",
+        "body": ["{{company}} (Y-tunnus {{orgNumber}}, {{country}}) on tässä kuvatun käsittelyn rekisterinpitäjä. Ota yhteyttä: {{email}}."]
+      },
+      {
+        "heading": "Lyhyesti",
+        "list": [
+          "Budjettisi tallennetaan vain puhelimeesi. Me emme näe sitä.",
+          "Pankkiyhteyttä tai käyttäjätiliä ei ole.",
+          "Mikään budjetistasi ei lähde puhelimesta, ellet valitse tiliotteen, kuitin tai laskun lukemista tekoälyllä.",
+          "Kaatumisraportit eivät sisällä henkilötietoja.",
+          "Voit viedä kaiken ja poistaa kaiken sovelluksessa maksutta."
+        ]
+      },
+      {
+        "heading": "Tallennettu puhelimeesi",
+        "body": ["Sovellus tallentaa nämä omaan tallennustilaansa puhelimessa. Niitä ei lähetetä meille, ja ne poistetaan, kun poistat kaikki tiedot sovelluksessa tai poistat sovelluksen:"],
+        "list": [
+          "Luomasi tilit (valitsemasi nimet, saldo ja valuutta; eivät pankkitilejä).",
+          "Tapahtumasi: päivä, summa, valuutta, luokka, myyjä ja vapaaehtoinen muistiinpano.",
+          "Toistuvat erät, säästötavoitteet, omat luokat ja kullekin myyjälle muistettu luokka.",
+          "Asetukset: palkkapäivä, kuukausibudjetti, kieli ja valuutta sekä se, sallitko tekoälylukemisen.",
+          "Satunnainen laitetunnus, jota käytetään vain tekoälylukemisten laskemiseen (ks. alla).",
+          "Kuvat, jotka päätät säilyttää tuonnin jälkeen."
+        ],
+        "after": ["Viitenumeroita ja tilinumeroita tiliotteista ja laskuista ei koskaan tallenneta."]
+      },
+      {
+        "heading": "Tiliotteiden, kuittien ja laskujen lukeminen tekoälyllä (valinnainen)",
+        "body": [
+          "Kun tuot kuvakaappauksen tai valokuvan tiliotteesta tai skannaat kuitin tai laskun, voit antaa tekoälyn lukea sen. Sovellus kysyy ensin lupaa, ja voit poistaa sen käytöstä milloin tahansa tuontinäkymässä. Ilman lupaa kaikki luetaan puhelimessa, eikä mitään lähetetä.",
+          "Luvalla kuva (tai siitä luettu teksti), valuutta, maasi, päivämäärä, sovelluksen luokkaluettelo ja laitetunnus lähetetään {{server}} kautta Anthropicille, joka lukee rivit tekoälymallillaan (Claude) ja lähettää ne takaisin. Emme me eikä Supabase tallenna kuvaa, tekstiä tai rivejä. Anthropic ei käytä API:nsa kautta lähetettyjä tietoja mallien kouluttamiseen ja poistaa ne rajatun ajan jälkeen omien ehtojensa mukaisesti.",
+          "Jotta palvelu pysyy rajoissaan (20 lukemista laitetta kohden päivässä), palvelimemme tallentaa laitetunnuksen, päivämäärän ja lukemisten määrän, eikä mitään muuta. Nämä laskurit poistetaan automaattisesti 30 päivän kuluttua."
+        ]
+      },
+      {
+        "heading": "Kaatumisraportit",
+        "body": ["Kun sovellus kaatuu tai tapahtuu virhe, raportti lähetetään Sentrylle (EU:ssa): mikä meni vikaan ja missä sovelluksessa, sovelluksen versio sekä puhelimen malli ja järjestelmäversio. Henkilötietojen, kuten IP-osoitteen tai käyttäjän tunnisteen, keruu on poistettu käytöstä. Raportteja säilytetään enintään 90 päivää, ja niitä käytetään vain virheiden korjaamiseen."]
+      },
+      {
+        "heading": "Sovelluksen päivitykset",
+        "body": ["Sovellus tarkistaa päivitykset Expolta, joka toimittaa ne. Kuten aina internetiä käytettäessä, Expo näkee puhelimen IP-osoitteen. Muita tietoja ei lähetetä."]
+      },
+      {
+        "heading": "Pro-ostokset",
+        "planned": true,
+        "body": ["Pro ostetaan App Storesta tai Google Playsta. Apple tai Google käsittelee maksun omien tietosuojakäytäntöjensä mukaisesti; me emme koskaan näe korttitietojasi. RevenueCat pitää kirjaa siitä, onko sinulla Pro, sovelluksen luoman nimettömän tunnuksen avulla."]
+      },
+      {
+        "heading": "Vapaaehtoinen kirjautuminen, varmuuskopio ja synkronointi",
+        "planned": true,
+        "body": [
+          "Voit kirjautua Applella, Googlella, Facebookilla (Meta) tai sähköpostilla varmuuskopioidaksesi budjetin ja käyttääksesi sitä useammalla laitteella. Kirjautumisen hoitaa Supabase. Tallennamme silloin sähköpostiosoitteesi, tilitunnuksen ja synkronoimasi budjettitiedot. Jos kirjaudut Applella, Googlella tai Facebookilla, ne jakavat nimesi ja sähköpostiosoitteesi kanssamme hyväksymäsi mukaisesti.",
+          "Ilman kirjautumista kaikki on kuten yllä on kuvattu. Voit poistaa tilisi ja kaiken sen mukana tallennetun sovelluksessa."
+        ]
+      },
+      {
+        "heading": "Widget ja muistutukset",
+        "planned": true,
+        "body": ["Widget näyttää lukuja puhelimessa olevista tiedoista, ja toistuvien erien muistutukset ajastetaan puhelimessa. Kummastakaan ei lähetetä mitään."]
+      },
+      {
+        "heading": "Kenelle jaamme tietoja",
+        "list": [
+          "Anthropic (USA): tekoälylukeminen, vain luvallasi.",
+          "Supabase{{supabaseRegion}}: palvelimemme tekoälylukemiselle ja lukemisten laskemiselle; myöhemmin kirjautuminen, varmuuskopio ja synkronointi.",
+          "Sentry (EU): kaatumisraportit ilman henkilötietoja.",
+          "Expo (USA): sovelluksen päivitykset.",
+          "RevenueCat (USA): Pro-ostokset (suunnitteilla).",
+          "Apple ja Google: App Store, Google Play ja kirjautuminen (suunnitteilla).",
+          "Meta: kirjautuminen Facebookilla (suunnitteilla)."
+        ],
+        "after": ["Kun tietoja siirretään Yhdysvaltoihin, palveluntarjoajat käyttävät EU:n vakiosopimuslausekkeita tai EU–US Data Privacy Frameworkia. Emme koskaan myy tietoja, eikä sovelluksessa ole mainoksia tai seurantaa."]
+      },
+      {
+        "heading": "Oikeusperuste",
+        "list": [
+          "Käyttämäsi sovelluksen tarjoaminen (tietosuoja-asetuksen 6 artiklan 1 kohdan b alakohta).",
+          "Suostumuksesi tekoälylukemiseen (6 artiklan 1 kohdan a alakohta). Voit perua sen milloin tahansa.",
+          "Oikeutettu etumme korjata virheet ja pitää palvelu rajoissaan (6 artiklan 1 kohdan f alakohta)."
+        ]
+      },
+      {
+        "heading": "Kuinka kauan tietoja säilytetään",
+        "list": [
+          "Puhelimessa: kunnes poistat ne sovelluksessa tai poistat sovelluksen.",
+          "Kuvat ja teksti tekoälylukemista varten: emme tallenna niitä.",
+          "Tekoälylukemisten laskurit: 30 päivää.",
+          "Kaatumisraportit: enintään 90 päivää."
+        ]
+      },
+      {
+        "heading": "Oikeutesi",
+        "body": [
+          "Voit nähdä, korjata ja viedä kaikki tietosi sovelluksessa (Minä → Vie tiedot, maksuton kaikille) ja poistaa ne (Minä → Poista kaikki tiedot). Voit vastustaa käsittelyä ja perua suostumuksesi tekoälylukemiseen milloin tahansa.",
+          "Jos sinulla on kysyttävää, kirjoita osoitteeseen {{email}}. Voit myös tehdä valituksen Norjan tietosuojaviranomaiselle (Datatilsynet) tai asuinmaasi valvontaviranomaiselle (Suomessa tietosuojavaltuutettu)."
+        ]
+      },
+      {
+        "heading": "Lapset",
+        "body": ["Saldo Pocketia ei ole tehty alle 13-vuotiaille lapsille, emmekä tietoisesti käsittele heidän tietojaan."]
+      },
+      {
+        "heading": "Muutokset",
+        "body": ["Jos muutamme selostetta, päivitämme tämän sivun ja yläreunan päivämäärän. Jos muutos vaikuttaa siihen, miten tietojasi käytetään, kerromme siitä sovelluksessa."]
+      }
+    ]
+  },
+  "deleteAccount": {
+    "intro": "Saldo Pocketin tiedot ovat puhelimessasi, joten poistat ne itse sovelluksessa. Sinun ei tarvitse pyytää sitä meiltä.",
+    "sections": [
+      {
+        "heading": "Poista kaikki sovelluksessa",
+        "steps": ["Avaa Saldo Pocket.", "Siirry kohtaan Minä.", "Napauta Poista kaikki tiedot.", "Napauta Poista kaikki."],
+        "body": [
+          "Tämä poistaa kaiken, mitä sovellus säilyttää puhelimessasi: tilit, tapahtumat, toistuvat erät, tavoitteet, luokat, myyjät, asetukset, tallennetut kuvat ja tiedostot, laitetunnuksen sekä kieli- ja valuuttavalinnat. Sovellus käynnistyy sitten alusta kuin uusi.",
+          "Tätä ei voi perua. Jos haluat kopion, vie tietosi ensin kohdassa Minä → Vie tiedot. Se on maksutonta."
+        ]
+      },
+      {
+        "heading": "Sovelluksen poistaminen",
+        "body": ["Kun poistat Saldo Pocketin, myös kaikki sen tiedot poistetaan puhelimesta."]
+      },
+      {
+        "heading": "Mitä palvelimellemme jää",
+        "body": ["Jos olet käyttänyt tekoälylukemista, palvelimellamme on laskuri lukemisista laitetunnusta ja päivää kohden, ilman mitään sisältöä. Se poistetaan automaattisesti 30 päivän kuluttua. Laitetunnus on satunnainen ja poistetaan puhelimesta kaiken muun mukana, joten laskuria ei voi yhdistää sinuun."]
+      },
+      {
+        "heading": "Tilin poistaminen",
+        "planned": true,
+        "body": ["Kun vapaaehtoinen kirjautuminen tulee, poistat tilin sovelluksessa kohdassa Minä → Tili → Poista tili. Tili ja kaikki sen mukana varmuuskopioitu poistetaan palvelimiltamme 30 päivän kuluessa. Jos kirjauduit Facebookilla, myös Facebookilta saamamme tiedot poistetaan; voit myös poistaa Saldo Pocketin Facebookissa kohdassa Asetukset → Sovellukset ja verkkosivustot."]
+      },
+      {
+        "heading": "Jos sinulla ei enää ole sovellusta",
+        "body": ["Kirjoita osoitteeseen {{email}} aiheella ”Poista Saldo Pocket -tiedot”. Vastaamme 30 päivän kuluessa. Koska käyttäjätiliä ei ole, meillä ei yleensä ole sinusta tallennettuna mitään, ja vahvistamme sen."]
+      }
+    ]
+  },
+  "support": {
+    "intro": "Kysymyksiä, ongelmia tai ideoita? Kirjoita meille, niin vastaamme niin pian kuin voimme.",
+    "contactHeading": "Yhteystiedot",
+    "contactBody": "Sähköposti {{email}}. Kerro mielellään puhelimesi malli ja sovelluksen versio (Minä-näkymän alareunassa).",
+    "faqHeading": "Usein kysyttyä",
+    "faq": [
+      {
+        "q": "Mikä ero on Ilmaisella ja Prolla?",
+        "a": "Ilmaisessa on budjetti, ”Voit käyttää tänään”, 2 tiliä, 1 budjetti, 1 säästötavoite, 5 omaa luokkaa, 3 skannausta kuukaudessa ja kaikkien tietojen vienti. Pro antaa enintään 10 tiliä, rajattomasti skannauksia, tavoitteita ja luokkia, automaattisesti kirjattavat toistuvat erät, historian ja tilastot ajan mittaan sekä raportit Exceliin ja CSV-muotoon. Hinnat näkyvät App Storessa ja Google Playssa omassa valuutassasi."
+      },
+      {
+        "q": "Miten palautan ostoksen uuteen puhelimeen?",
+        "a": "Pro on sidottu Apple ID:hesi tai Google-tiliisi. Kirjaudu samalla tilillä uuteen puhelimeen, avaa Saldo Pocket ja napauta Palauta ostokset. Pro-ostokset eivät ole vielä auki; näin se tulee toimimaan."
+      },
+      {
+        "q": "Miten vien tietoni?",
+        "a": "Siirry kohtaan Minä → Vie tiedot. Vie kaikki tietoni (JSON tai CSV) on maksuton kaikille. Prolla voit myös viedä raportteja jaksolta ja tililtä Exceliin tai CSV-muotoon."
+      },
+      {
+        "q": "Miten tuon tiedot verkkopankista?",
+        "a": "Napauta + ja Tuo verkkopankista. Käytä kuvakaappauksia tai valokuvia listasta tai pankista viemääsi PDF-, CSV- tai Excel-tiedostoa. Käyt jokaisen rivin läpi ennen kuin mitään tallennetaan, ja jo olemassa olevat rivit on merkitty. Saldo Pocket ei koskaan muodosta yhteyttä pankkiisi."
+      },
+      {
+        "q": "Miten poistan tietoni?",
+        "a": "Siirry kohtaan Minä → Poista kaikki tiedot. Kaikki puhelimessa oleva poistetaan. Lue lisää tietojen poistamista käsittelevältä sivulta."
+      }
+    ]
+  }
+}

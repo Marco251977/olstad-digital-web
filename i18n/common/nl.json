@@ -1,0 +1,30 @@
+{
+  "skipToContent": "Naar de inhoud",
+  "home": "Startpagina",
+  "language": "Taal",
+  "lastUpdated": "Laatst gewijzigd: {{date}}",
+  "planned": "Gepland",
+  "plannedNote": "Nog niet in de app. Het staat hier zodat je al weet hoe het gaat werken voordat het er is.",
+  "pages": {
+    "privacy": "Privacybeleid",
+    "delete-account": "Account en gegevens verwijderen",
+    "support": "Ondersteuning"
+  },
+  "appPage": "{{app}} – {{page}}",
+  "overview": {
+    "title": "Privacy – onze apps",
+    "intro": "{{company}} maakt apps voor de telefoon. Elke app heeft een eigen privacybeleid en een pagina over het verwijderen van je gegevens. Kies hieronder de app.",
+    "app": "App",
+    "privacy": "Privacybeleid",
+    "deleteAccount": "Gegevens verwijderen",
+    "support": "Ondersteuning",
+    "external": "Opent de eigen website van de app"
+  },
+  "footer": {
+    "privacy": "Privacy",
+    "orgNumber": "Org.nr. {{value}}",
+    "rights": "Alle rechten voorbehouden.",
+    "contact": "Contact"
+  },
+  "redirect": "Kies je taal"
+}

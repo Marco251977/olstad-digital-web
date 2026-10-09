@@ -1,0 +1,30 @@
+{
+  "skipToContent": "Skip to content",
+  "home": "Home",
+  "language": "Language",
+  "lastUpdated": "Last updated: {{date}}",
+  "planned": "Planned",
+  "plannedNote": "Not in the app yet. It is described here so you know how it will work before it arrives.",
+  "pages": {
+    "privacy": "Privacy policy",
+    "delete-account": "Delete account and data",
+    "support": "Support"
+  },
+  "appPage": "{{app}} – {{page}}",
+  "overview": {
+    "title": "Privacy – our apps",
+    "intro": "{{company}} makes apps for phones. Each app has its own privacy policy and a page about deleting your data. Choose the app below.",
+    "app": "App",
+    "privacy": "Privacy policy",
+    "deleteAccount": "Delete data",
+    "support": "Support",
+    "external": "Opens the app’s own website"
+  },
+  "footer": {
+    "privacy": "Privacy",
+    "orgNumber": "Org. no. {{value}}",
+    "rights": "All rights reserved.",
+    "contact": "Contact"
+  },
+  "redirect": "Choose your language"
+}

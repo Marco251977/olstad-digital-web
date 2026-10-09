@@ -1,0 +1,174 @@
+{
+  "description": "Saldo Pocket is a budget app for iOS and Android. Your budget is stored on your phone: there is no bank connection, and we do not have a copy of your data.",
+  "server": "our server at Supabase",
+  "serverRegion": "our server at Supabase ({{region}})",
+  "privacy": {
+    "intro": "This policy explains what Saldo Pocket stores, what it sends and to whom, and what you can do about it. The short version: your budget stays on your phone.",
+    "sections": [
+      {
+        "heading": "Who is responsible",
+        "body": ["{{company}} (org. no. {{orgNumber}}, {{country}}) is responsible for the processing described here. Contact us at {{email}}."]
+      },
+      {
+        "heading": "In short",
+        "list": [
+          "Your budget is stored only on your phone. We cannot see it.",
+          "There is no bank connection and no account.",
+          "Nothing about your budget leaves the phone unless you choose AI reading of a bank list, receipt or bill.",
+          "Crash reports contain no personal information.",
+          "You can export everything and delete everything in the app, for free."
+        ]
+      },
+      {
+        "heading": "Stored on your phone",
+        "body": ["The app stores this in its own storage on your phone. It is not sent to us, and it is deleted when you delete all data in the app or uninstall it:"],
+        "list": [
+          "The accounts you create (names you choose, balance and currency; not bank accounts).",
+          "Your entries: date, amount, currency, category, vendor and an optional note.",
+          "Recurring items, savings goals, your own categories, and the category remembered for each vendor.",
+          "Settings: payday, monthly budget, your language and currency, and whether you allow AI reading.",
+          "A random device ID, used only to count AI readings (see below).",
+          "Pictures you choose to keep after an import."
+        ],
+        "after": ["KID numbers and account numbers on bank lists and bills are never stored."]
+      },
+      {
+        "heading": "AI reading of bank lists, receipts and bills (optional)",
+        "body": [
+          "When you import a screenshot or photo of a bank list, or scan a receipt or bill, you can let AI read it. The app asks for your permission first, and you can turn it off at any time on the import screen. Without permission, everything is read on the phone and nothing is sent.",
+          "With permission, the picture (or the text read from it), the currency, your country, today’s date, the app’s list of categories and the device ID are sent through {{server}} to Anthropic, which reads the rows with its AI model (Claude) and sends them back. Neither we nor Supabase store the picture, the text or the rows. Anthropic does not use data sent through its API to train its models, and deletes it after a limited time under its own terms.",
+          "To keep the service within its limits (20 readings per device per day), our server stores the device ID, the date and the number of readings, and nothing else. These counts are deleted automatically after 30 days."
+        ]
+      },
+      {
+        "heading": "Crash reports",
+        "body": ["When the app crashes or an error occurs, a report is sent to Sentry (in the EU): what went wrong and where in the app, the app version, and the phone model and system version. Collection of personal data, such as IP address or user identity, is turned off. Reports are kept for at most 90 days and are used only to fix errors."]
+      },
+      {
+        "heading": "App updates",
+        "body": ["The app checks for updates from Expo, the service that delivers them. As with any connection to the internet, Expo sees the phone’s IP address. No other data is sent."]
+      },
+      {
+        "heading": "Purchases of Pro",
+        "planned": true,
+        "body": ["Pro is bought in the App Store or Google Play. Apple or Google handle the payment under their own privacy policies; we never see your card details. RevenueCat keeps track of whether you have Pro, using an anonymous ID created by the app."]
+      },
+      {
+        "heading": "Optional sign-in, backup and sync",
+        "planned": true,
+        "body": [
+          "You will be able to sign in with Apple, Google, Facebook (Meta) or e-mail to back up your budget and use it on more than one device. Sign-in is handled by Supabase. We then store your e-mail address, an account ID and the budget data you sync. If you sign in with Apple, Google or Facebook, they share your name and e-mail address with us according to what you approve.",
+          "Without sign-in, everything stays as described above. You can delete your account and everything stored with it in the app."
+        ]
+      },
+      {
+        "heading": "Widget and reminders",
+        "planned": true,
+        "body": ["The widget shows numbers from the data on your phone, and reminders for recurring items are set up on your phone. Nothing is sent for either."]
+      },
+      {
+        "heading": "Who we share data with",
+        "list": [
+          "Anthropic (USA): AI reading, only with your permission.",
+          "Supabase{{supabaseRegion}}: our server for AI reading and the counts of readings; later sign-in, backup and sync.",
+          "Sentry (EU): crash reports without personal data.",
+          "Expo (USA): app updates.",
+          "RevenueCat (USA): Pro purchases (planned).",
+          "Apple and Google: the App Store, Google Play and sign-in (planned).",
+          "Meta: sign-in with Facebook (planned)."
+        ],
+        "after": ["Where data goes to the USA, the providers use the EU’s standard contractual clauses or the EU–US Data Privacy Framework. We never sell data, and the app has no ads and no tracking."]
+      },
+      {
+        "heading": "Legal basis",
+        "list": [
+          "To provide the app you use (GDPR article 6(1)(b)).",
+          "Your consent for AI reading (article 6(1)(a)). You can withdraw it at any time.",
+          "Our legitimate interest in fixing errors and keeping the service within its limits (article 6(1)(f))."
+        ]
+      },
+      {
+        "heading": "How long data is kept",
+        "list": [
+          "On your phone: until you delete it in the app or uninstall the app.",
+          "Pictures and text for AI reading: not stored by us.",
+          "Counts of AI readings: 30 days.",
+          "Crash reports: at most 90 days."
+        ]
+      },
+      {
+        "heading": "Your rights",
+        "body": [
+          "You can see, correct and export all your data in the app (Me → Export data, free for everyone), and delete it (Me → Delete all data). You can object to processing and withdraw your consent for AI reading at any time.",
+          "If you have questions, write to {{email}}. You can also complain to the Norwegian Data Protection Authority (Datatilsynet) or the data protection authority where you live."
+        ]
+      },
+      {
+        "heading": "Children",
+        "body": ["Saldo Pocket is not made for children under 13, and we do not knowingly process their data."]
+      },
+      {
+        "heading": "Changes",
+        "body": ["If we change this policy, we update this page and the date at the top. If the change matters for how your data is used, we tell you in the app."]
+      }
+    ]
+  },
+  "deleteAccount": {
+    "intro": "Your Saldo Pocket data is stored on your phone, so you delete it yourself in the app. No request is needed.",
+    "sections": [
+      {
+        "heading": "Delete everything in the app",
+        "steps": ["Open Saldo Pocket.", "Go to Me.", "Tap Delete all data.", "Tap Delete everything."],
+        "body": [
+          "This deletes everything the app keeps on your phone: accounts, entries, recurring items, goals, categories, vendors, settings, saved pictures and files, the device ID, and your language and currency choices. The app then starts again as new.",
+          "It cannot be undone. If you want a copy, export your data first under Me → Export data. It is free."
+        ]
+      },
+      {
+        "heading": "Uninstalling the app",
+        "body": ["Uninstalling Saldo Pocket also deletes all its data from your phone."]
+      },
+      {
+        "heading": "What is left on our server",
+        "body": ["If you have used AI reading, our server keeps a count of readings per device ID and day, without any content. It is deleted automatically after 30 days. The device ID is random and is deleted from your phone with everything else, so the count cannot be linked to you."]
+      },
+      {
+        "heading": "Deleting your account",
+        "planned": true,
+        "body": ["When optional sign-in arrives, you delete your account in the app under Me → Account → Delete account. The account and everything backed up with it is deleted from our servers within 30 days. If you signed in with Facebook, this also deletes the data we received from Facebook; you can also remove Saldo Pocket in Facebook under Settings → Apps and websites."]
+      },
+      {
+        "heading": "If you no longer have the app",
+        "body": ["Write to {{email}} with the subject “Delete Saldo Pocket data”. We answer within 30 days. Because there is no account, we usually have nothing stored about you, and we will confirm that."]
+      }
+    ]
+  },
+  "support": {
+    "intro": "Questions, problems or ideas? Write to us and we will answer as soon as we can.",
+    "contactHeading": "Contact",
+    "contactBody": "E-mail {{email}}. Please tell us your phone model and the app version (at the bottom of Me).",
+    "faqHeading": "Frequently asked questions",
+    "faq": [
+      {
+        "q": "What is the difference between Free and Pro?",
+        "a": "Free has the budget, “You can spend today”, 2 accounts, 1 budget, 1 savings goal, 5 categories of your own, 3 scans a month and export of all your data. Pro gives up to 10 accounts, unlimited scans, goals and categories, recurring items that are posted automatically, history and statistics over time, and reports to Excel and CSV. Prices are shown in the App Store and Google Play, in your currency."
+      },
+      {
+        "q": "How do I restore my purchase on a new phone?",
+        "a": "Pro is tied to your Apple ID or Google account. Sign in with the same account on the new phone, open Saldo Pocket and tap Restore purchases. Pro purchases are not open yet; this is how it will work."
+      },
+      {
+        "q": "How do I export my data?",
+        "a": "Go to Me → Export data. Export all my data (JSON or CSV) is free for everyone. With Pro you can also export reports for a period and an account to Excel or CSV."
+      },
+      {
+        "q": "How do I import from my online bank?",
+        "a": "Tap + and Import from online bank. Use screenshots or photos of the list, or a PDF, CSV or Excel file you have exported from your bank. You review every row before anything is saved, and rows you already have are marked. Saldo Pocket never connects to your bank."
+      },
+      {
+        "q": "How do I delete my data?",
+        "a": "Go to Me → Delete all data. Everything on the phone is deleted. Read more on the page about deleting your data."
+      }
+    ]
+  }
+}

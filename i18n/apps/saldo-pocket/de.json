@@ -1,0 +1,174 @@
+{
+  "description": "Saldo Pocket ist eine Budget-App für iOS und Android. Dein Budget liegt auf deinem Telefon: Es gibt keine Bankverbindung, und wir haben keine Kopie deiner Daten.",
+  "server": "unseren Server bei Supabase",
+  "serverRegion": "unseren Server bei Supabase ({{region}})",
+  "privacy": {
+    "intro": "Diese Erklärung beschreibt, was Saldo Pocket speichert, was die App sendet und an wen, und was du dagegen tun kannst. Kurz gesagt: Dein Budget bleibt auf deinem Telefon.",
+    "sections": [
+      {
+        "heading": "Wer verantwortlich ist",
+        "body": ["{{company}} (Org.-Nr. {{orgNumber}}, {{country}}) ist Verantwortlicher für die hier beschriebene Verarbeitung. Kontakt: {{email}}."]
+      },
+      {
+        "heading": "Kurz gesagt",
+        "list": [
+          "Dein Budget wird nur auf deinem Telefon gespeichert. Wir können es nicht sehen.",
+          "Es gibt keine Bankverbindung und kein Konto.",
+          "Nichts aus deinem Budget verlässt das Telefon, es sei denn, du wählst das Lesen eines Kontoauszugs, eines Belegs oder einer Rechnung mit KI.",
+          "Absturzberichte enthalten keine personenbezogenen Daten.",
+          "Du kannst in der App alles exportieren und alles löschen, kostenlos."
+        ]
+      },
+      {
+        "heading": "Auf deinem Telefon gespeichert",
+        "body": ["Die App speichert Folgendes in ihrem eigenen Speicher auf dem Telefon. Es wird nicht an uns gesendet und wird gelöscht, wenn du in der App alle Daten löschst oder sie deinstallierst:"],
+        "list": [
+          "Die Konten, die du anlegst (selbst gewählte Namen, Saldo und Währung; keine Bankkonten).",
+          "Deine Buchungen: Datum, Betrag, Währung, Kategorie, Händler und eine optionale Notiz.",
+          "Daueraufträge, Sparziele, eigene Kategorien und die Kategorie, die sich die App für jeden Händler merkt.",
+          "Einstellungen: Zahltag, Monatsbudget, Sprache und Währung sowie ob du das Lesen mit KI erlaubst.",
+          "Eine zufällige Geräte-ID, die nur zum Zählen der KI-Lesevorgänge dient (siehe unten).",
+          "Bilder, die du nach einem Import behalten möchtest."
+        ],
+        "after": ["Zahlungsreferenzen und Kontonummern auf Kontoauszügen und Rechnungen werden nie gespeichert."]
+      },
+      {
+        "heading": "Lesen von Kontoauszügen, Belegen und Rechnungen mit KI (optional)",
+        "body": [
+          "Wenn du einen Screenshot oder ein Foto eines Kontoauszugs importierst oder einen Beleg oder eine Rechnung scannst, kannst du ihn von KI lesen lassen. Die App fragt zuerst um Erlaubnis, und du kannst es auf dem Importbildschirm jederzeit ausschalten. Ohne Erlaubnis wird alles auf dem Telefon gelesen, und nichts wird gesendet.",
+          "Mit Erlaubnis werden das Bild (oder der daraus gelesene Text), die Währung, dein Land, das heutige Datum, die Kategorieliste der App und die Geräte-ID über {{server}} an Anthropic gesendet. Anthropic liest die Zeilen mit seinem KI-Modell (Claude) und sendet sie zurück. Weder wir noch Supabase speichern das Bild, den Text oder die Zeilen. Anthropic nutzt über seine API gesendete Daten nicht zum Training seiner Modelle und löscht sie nach begrenzter Zeit gemäß den eigenen Bedingungen.",
+          "Damit der Dienst in seinen Grenzen bleibt (20 Lesevorgänge pro Gerät und Tag), speichert unser Server die Geräte-ID, das Datum und die Anzahl der Lesevorgänge, sonst nichts. Diese Zählungen werden nach 30 Tagen automatisch gelöscht."
+        ]
+      },
+      {
+        "heading": "Absturzberichte",
+        "body": ["Wenn die App abstürzt oder ein Fehler auftritt, wird ein Bericht an Sentry (in der EU) gesendet: was schiefgelaufen ist und wo in der App, die App-Version sowie Telefonmodell und Systemversion. Die Erfassung personenbezogener Daten wie IP-Adresse oder Nutzeridentität ist ausgeschaltet. Berichte werden höchstens 90 Tage aufbewahrt und nur zur Fehlerbehebung genutzt."]
+      },
+      {
+        "heading": "App-Updates",
+        "body": ["Die App sucht bei Expo, dem Dienst, der sie ausliefert, nach Updates. Wie bei jeder Verbindung ins Internet sieht Expo die IP-Adresse des Telefons. Andere Daten werden nicht gesendet."]
+      },
+      {
+        "heading": "Kauf von Pro",
+        "planned": true,
+        "body": ["Pro wird im App Store oder bei Google Play gekauft. Apple oder Google wickeln die Zahlung nach ihren eigenen Datenschutzerklärungen ab; wir sehen deine Kartendaten nie. RevenueCat verwaltet, ob du Pro hast, mit einer anonymen ID, die die App erstellt."]
+      },
+      {
+        "heading": "Optionale Anmeldung, Sicherung und Synchronisierung",
+        "planned": true,
+        "body": [
+          "Du wirst dich mit Apple, Google, Facebook (Meta) oder E-Mail anmelden können, um dein Budget zu sichern und auf mehreren Geräten zu nutzen. Die Anmeldung läuft über Supabase. Wir speichern dann deine E-Mail-Adresse, eine Konto-ID und die Budgetdaten, die du synchronisierst. Wenn du dich mit Apple, Google oder Facebook anmeldest, teilen diese deinen Namen und deine E-Mail-Adresse mit uns, so wie du es erlaubst.",
+          "Ohne Anmeldung bleibt alles wie oben beschrieben. Du kannst dein Konto und alles, was damit gespeichert ist, in der App löschen."
+        ]
+      },
+      {
+        "heading": "Widget und Erinnerungen",
+        "planned": true,
+        "body": ["Das Widget zeigt Zahlen aus den Daten auf deinem Telefon, und Erinnerungen an Daueraufträge werden auf dem Telefon eingerichtet. Für beides wird nichts gesendet."]
+      },
+      {
+        "heading": "An wen wir Daten weitergeben",
+        "list": [
+          "Anthropic (USA): Lesen mit KI, nur mit deiner Erlaubnis.",
+          "Supabase{{supabaseRegion}}: unser Server für das Lesen mit KI und das Zählen der Lesevorgänge; später Anmeldung, Sicherung und Synchronisierung.",
+          "Sentry (EU): Absturzberichte ohne personenbezogene Daten.",
+          "Expo (USA): App-Updates.",
+          "RevenueCat (USA): Kauf von Pro (geplant).",
+          "Apple und Google: App Store, Google Play und Anmeldung (geplant).",
+          "Meta: Anmeldung mit Facebook (geplant)."
+        ],
+        "after": ["Wenn Daten in die USA gehen, nutzen die Anbieter die Standardvertragsklauseln der EU oder das EU-US Data Privacy Framework. Wir verkaufen niemals Daten, und die App hat keine Werbung und kein Tracking."]
+      },
+      {
+        "heading": "Rechtsgrundlage",
+        "list": [
+          "Bereitstellung der App, die du nutzt (Art. 6 Abs. 1 lit. b DSGVO).",
+          "Deine Einwilligung zum Lesen mit KI (Art. 6 Abs. 1 lit. a DSGVO). Du kannst sie jederzeit widerrufen.",
+          "Unser berechtigtes Interesse, Fehler zu beheben und den Dienst in seinen Grenzen zu halten (Art. 6 Abs. 1 lit. f DSGVO)."
+        ]
+      },
+      {
+        "heading": "Wie lange Daten gespeichert werden",
+        "list": [
+          "Auf dem Telefon: bis du sie in der App löschst oder die App deinstallierst.",
+          "Bilder und Text für das Lesen mit KI: werden bei uns nicht gespeichert.",
+          "Zählungen der KI-Lesevorgänge: 30 Tage.",
+          "Absturzberichte: höchstens 90 Tage."
+        ]
+      },
+      {
+        "heading": "Deine Rechte",
+        "body": [
+          "Du kannst alle deine Daten in der App einsehen, berichtigen und exportieren (Ich → Daten exportieren, kostenlos für alle) und löschen (Ich → Alle Daten löschen). Du kannst der Verarbeitung widersprechen und deine Einwilligung zum Lesen mit KI jederzeit widerrufen.",
+          "Bei Fragen schreib an {{email}}. Du kannst dich auch bei der norwegischen Datenschutzbehörde (Datatilsynet) oder der Aufsichtsbehörde an deinem Wohnort beschweren."
+        ]
+      },
+      {
+        "heading": "Kinder",
+        "body": ["Saldo Pocket ist nicht für Kinder unter 13 Jahren gedacht, und wir verarbeiten wissentlich keine Daten von ihnen."]
+      },
+      {
+        "heading": "Änderungen",
+        "body": ["Wenn wir diese Erklärung ändern, aktualisieren wir diese Seite und das Datum oben. Ist die Änderung für die Nutzung deiner Daten wichtig, sagen wir es dir in der App."]
+      }
+    ]
+  },
+  "deleteAccount": {
+    "intro": "Deine Daten in Saldo Pocket liegen auf deinem Telefon, also löschst du sie selbst in der App. Eine Anfrage ist nicht nötig.",
+    "sections": [
+      {
+        "heading": "Alles in der App löschen",
+        "steps": ["Öffne Saldo Pocket.", "Geh zu Ich.", "Tippe auf Alle Daten löschen.", "Tippe auf Alles löschen."],
+        "body": [
+          "Damit wird alles gelöscht, was die App auf deinem Telefon speichert: Konten, Buchungen, Daueraufträge, Ziele, Kategorien, Händler, Einstellungen, gespeicherte Bilder und Dateien, die Geräte-ID sowie deine Sprach- und Währungswahl. Die App startet danach wie neu.",
+          "Das kann nicht rückgängig gemacht werden. Wenn du eine Kopie möchtest, exportiere deine Daten vorher unter Ich → Daten exportieren. Das ist kostenlos."
+        ]
+      },
+      {
+        "heading": "App deinstallieren",
+        "body": ["Wenn du Saldo Pocket deinstallierst, werden auch alle ihre Daten vom Telefon gelöscht."]
+      },
+      {
+        "heading": "Was auf unserem Server bleibt",
+        "body": ["Wenn du das Lesen mit KI genutzt hast, hat unser Server eine Zählung der Lesevorgänge pro Geräte-ID und Tag, ohne jeden Inhalt. Sie wird nach 30 Tagen automatisch gelöscht. Die Geräte-ID ist zufällig und wird zusammen mit allem anderen vom Telefon gelöscht, sodass die Zählung nicht mit dir verbunden werden kann."]
+      },
+      {
+        "heading": "Dein Konto löschen",
+        "planned": true,
+        "body": ["Wenn die optionale Anmeldung kommt, löschst du dein Konto in der App unter Ich → Konto → Konto löschen. Das Konto und alles, was damit gesichert wurde, wird innerhalb von 30 Tagen von unseren Servern gelöscht. Wenn du dich mit Facebook angemeldet hast, werden auch die Daten gelöscht, die wir von Facebook erhalten haben; du kannst Saldo Pocket auch in Facebook unter Einstellungen → Apps und Websites entfernen."]
+      },
+      {
+        "heading": "Wenn du die App nicht mehr hast",
+        "body": ["Schreib an {{email}} mit dem Betreff „Saldo-Pocket-Daten löschen“. Wir antworten innerhalb von 30 Tagen. Da es kein Konto gibt, haben wir in der Regel nichts über dich gespeichert, und das bestätigen wir dir."]
+      }
+    ]
+  },
+  "support": {
+    "intro": "Fragen, Probleme oder Ideen? Schreib uns, wir antworten so schnell wie möglich.",
+    "contactHeading": "Kontakt",
+    "contactBody": "E-Mail {{email}}. Nenn uns bitte dein Telefonmodell und die App-Version (unten unter Ich).",
+    "faqHeading": "Häufige Fragen",
+    "faq": [
+      {
+        "q": "Was ist der Unterschied zwischen Kostenlos und Pro?",
+        "a": "Kostenlos bietet das Budget, „Heute kannst du ausgeben“, 2 Konten, 1 Budget, 1 Sparziel, 5 eigene Kategorien, 3 Scans im Monat und den Export all deiner Daten. Pro bietet bis zu 10 Konten, unbegrenzt Scans, Ziele und Kategorien, Daueraufträge, die automatisch gebucht werden, Verlauf und Statistiken über die Zeit sowie Berichte nach Excel und CSV. Die Preise werden im App Store und bei Google Play in deiner Währung angezeigt."
+      },
+      {
+        "q": "Wie stelle ich meinen Kauf auf einem neuen Telefon wieder her?",
+        "a": "Pro ist an deine Apple-ID oder dein Google-Konto gebunden. Melde dich auf dem neuen Telefon mit demselben Konto an, öffne Saldo Pocket und tippe auf Käufe wiederherstellen. Der Kauf von Pro ist noch nicht geöffnet; so wird es funktionieren."
+      },
+      {
+        "q": "Wie exportiere ich meine Daten?",
+        "a": "Geh zu Ich → Daten exportieren. Alle meine Daten exportieren (JSON oder CSV) ist für alle kostenlos. Mit Pro kannst du außerdem Berichte für einen Zeitraum und ein Konto nach Excel oder CSV exportieren."
+      },
+      {
+        "q": "Wie importiere ich aus dem Onlinebanking?",
+        "a": "Tippe auf + und Aus dem Onlinebanking importieren. Nutze Screenshots oder Fotos der Liste oder eine PDF-, CSV- oder Excel-Datei, die du aus deiner Bank exportiert hast. Du prüfst jede Zeile, bevor etwas gespeichert wird, und Zeilen, die du schon hast, sind markiert. Saldo Pocket verbindet sich nie mit deiner Bank."
+      },
+      {
+        "q": "Wie lösche ich meine Daten?",
+        "a": "Geh zu Ich → Alle Daten löschen. Alles auf dem Telefon wird gelöscht. Mehr dazu auf der Seite über das Löschen deiner Daten."
+      }
+    ]
+  }
+}

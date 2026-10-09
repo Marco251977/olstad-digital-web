@@ -1,0 +1,30 @@
+{
+  "skipToContent": "Gå til innholdet",
+  "home": "Forsiden",
+  "language": "Språk",
+  "lastUpdated": "Sist endret: {{date}}",
+  "planned": "Planlagt",
+  "plannedNote": "Ikke i appen ennå. Det står her så du vet hvordan det blir før det kommer.",
+  "pages": {
+    "privacy": "Personvernerklæring",
+    "delete-account": "Slett konto og data",
+    "support": "Brukerstøtte"
+  },
+  "appPage": "{{app}} – {{page}}",
+  "overview": {
+    "title": "Personvern – våre apper",
+    "intro": "{{company}} lager apper for mobilen. Hver app har sin egen personvernerklæring og en side om sletting av dataene dine. Velg appen nedenfor.",
+    "app": "App",
+    "privacy": "Personvernerklæring",
+    "deleteAccount": "Slett data",
+    "support": "Brukerstøtte",
+    "external": "Åpner appens egen nettside"
+  },
+  "footer": {
+    "privacy": "Personvern",
+    "orgNumber": "Org.nr. {{value}}",
+    "rights": "Alle rettigheter forbeholdt.",
+    "contact": "Kontakt"
+  },
+  "redirect": "Velg språk"
+}

@@ -1,0 +1,19 @@
+{
+  "apps": [
+    {
+      "slug": "saldo-pocket",
+      "name": "Saldo Pocket",
+      "pages": ["privacy", "delete-account", "support"],
+      "lastUpdated": "2026-10-09",
+      "supabaseRegion": null
+    },
+    {
+      "name": "PlanTravel",
+      "external": {
+        "privacy": "https://plantravelapp.com/{lang}/privacy",
+        "delete-account": "https://plantravelapp.com/{lang}/delete-account",
+        "support": null
+      }
+    }
+  ]
+}

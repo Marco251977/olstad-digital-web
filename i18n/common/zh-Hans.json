@@ -1,0 +1,30 @@
+{
+  "skipToContent": "跳到正文",
+  "home": "首页",
+  "language": "语言",
+  "lastUpdated": "最后更新：{{date}}",
+  "planned": "计划中",
+  "plannedNote": "应用中尚未提供。在此说明，是为了让你在推出前就知道它将如何运作。",
+  "pages": {
+    "privacy": "隐私政策",
+    "delete-account": "删除账户和数据",
+    "support": "支持"
+  },
+  "appPage": "{{app}} – {{page}}",
+  "overview": {
+    "title": "隐私 – 我们的应用",
+    "intro": "{{company}} 开发手机应用。每个应用都有自己的隐私政策和关于删除数据的页面。请在下方选择应用。",
+    "app": "应用",
+    "privacy": "隐私政策",
+    "deleteAccount": "删除数据",
+    "support": "支持",
+    "external": "打开该应用自己的网站"
+  },
+  "footer": {
+    "privacy": "隐私",
+    "orgNumber": "注册号 {{value}}",
+    "rights": "保留所有权利。",
+    "contact": "联系我们"
+  },
+  "redirect": "选择语言"
+}

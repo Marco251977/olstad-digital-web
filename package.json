@@ -1,0 +1,14 @@
+{
+  "name": "olstad-digital-web",
+  "private": true,
+  "type": "module",
+  "description": "Olstad Digital: the front page and the apps' public pages (privacy, deletion, support). Static files; the pages are generated from data/ and i18n/ by scripts/build-pages.mjs and committed.",
+  "scripts": {
+    "build:pages": "node scripts/build-pages.mjs",
+    "check:i18n": "node scripts/check-i18n.mjs",
+    "check": "npm run check:i18n && node scripts/build-pages.mjs --check"
+  },
+  "devDependencies": {
+    "app-core": "file:vendor/app-core-0.8.0.tgz"
+  }
+}

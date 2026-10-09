@@ -1,0 +1,30 @@
+{
+  "skipToContent": "İçeriğe geç",
+  "home": "Ana sayfa",
+  "language": "Dil",
+  "lastUpdated": "Son güncelleme: {{date}}",
+  "planned": "Planlanan",
+  "plannedNote": "Henüz uygulamada yok. Gelmeden önce nasıl çalışacağını bilmen için burada anlatılıyor.",
+  "pages": {
+    "privacy": "Gizlilik politikası",
+    "delete-account": "Hesabı ve verileri sil",
+    "support": "Destek"
+  },
+  "appPage": "{{app}} – {{page}}",
+  "overview": {
+    "title": "Gizlilik – uygulamalarımız",
+    "intro": "{{company}} telefon için uygulamalar geliştirir. Her uygulamanın kendi gizlilik politikası ve verilerini silme hakkında bir sayfası vardır. Aşağıdan uygulamayı seç.",
+    "app": "Uygulama",
+    "privacy": "Gizlilik politikası",
+    "deleteAccount": "Verileri sil",
+    "support": "Destek",
+    "external": "Uygulamanın kendi web sitesini açar"
+  },
+  "footer": {
+    "privacy": "Gizlilik",
+    "orgNumber": "Sicil no. {{value}}",
+    "rights": "Tüm hakları saklıdır.",
+    "contact": "İletişim"
+  },
+  "redirect": "Dilini seç"
+}

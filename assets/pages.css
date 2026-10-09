@@ -1,0 +1,209 @@
+/* The apps' public pages (privacy, deletion, support, overview). Colors only as tokens with a light
+   and a dark value; layout only with logical properties (start/end), so Arabic reads right to left. */
+
+:root {
+  color-scheme: light;
+  --brand: #2563EB;
+  --brand-soft: #EFF6FF;
+  --text: #1F2937;
+  --text-secondary: #4B5563;
+  --bg: #F9FAFB;
+  --surface: #FFFFFF;
+  --border: #E5E7EB;
+  --planned: #92400E;
+  --planned-soft: #FEF3C7;
+  --focus: #1D4ED8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --brand: #93C5FD;
+    --brand-soft: #172554;
+    --text: #F1F5F9;
+    --text-secondary: #CBD5E1;
+    --bg: #0F172A;
+    --surface: #1E293B;
+    --border: #334155;
+    --planned: #FCD34D;
+    --planned-soft: #422006;
+    --focus: #BFDBFE;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', 'Noto Sans', 'Noto Sans Arabic', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans SC', 'Noto Sans Devanagari', sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+}
+
+a { color: var(--brand); text-underline-offset: 0.15em; }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+
+.skip {
+  position: absolute;
+  inset-inline-start: 1rem;
+  inset-block-start: -3rem;
+  padding: 0.5rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  z-index: 10;
+}
+.skip:focus { inset-block-start: 1rem; }
+
+.wrap { max-width: 46rem; margin-inline: auto; padding-inline: 1rem; }
+
+header.site {
+  background: var(--surface);
+  border-block-end: 1px solid var(--border);
+}
+header.site .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-block: 0.75rem;
+}
+.logo { display: inline-flex; align-items: center; min-height: 44px; }
+.logo img { height: 2.25rem; width: auto; display: block; }
+
+details.languages { position: relative; }
+details.languages summary {
+  list-style: none;
+  cursor: pointer;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding-inline: 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+details.languages summary::-webkit-details-marker { display: none; }
+details.languages ul {
+  position: absolute;
+  inset-inline-end: 0;
+  margin: 0.4rem 0 0;
+  padding: 0.4rem;
+  list-style: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 0.15);
+  z-index: 5;
+  columns: 2;
+  column-gap: 0.25rem;
+  min-inline-size: 18rem;
+}
+details.languages li a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: 0.75rem;
+  border-radius: 0.5rem;
+  color: var(--text);
+  text-decoration: none;
+}
+details.languages li a[aria-current='true'] { background: var(--brand-soft); font-weight: 700; }
+
+main { padding-block: 2rem 3rem; }
+
+.app-name {
+  margin: 0;
+  color: var(--brand);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+h1 { font-size: clamp(1.75rem, 5vw, 2.4rem); line-height: 1.2; margin: 0.25rem 0 0.75rem; text-wrap: balance; }
+h2 { font-size: 1.3rem; line-height: 1.3; margin: 2.25rem 0 0.6rem; text-wrap: balance; }
+h3 { font-size: 1.1rem; margin: 1.5rem 0 0.4rem; }
+p, li { max-width: 68ch; }
+p { margin: 0 0 0.9rem; }
+ul, ol { margin: 0 0 1rem; padding-inline-start: 1.4rem; }
+li { margin-block-end: 0.35rem; }
+
+.lede { font-size: 1.15rem; color: var(--text-secondary); }
+.updated { color: var(--text-secondary); font-size: 0.95rem; }
+
+.page-nav { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-block: 1.25rem 0; padding: 0; list-style: none; }
+.page-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.page-nav a[aria-current='page'] { background: var(--brand-soft); border-color: var(--brand); }
+
+.planned-badge {
+  display: inline-block;
+  margin-inline-start: 0.5rem;
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  background: var(--planned-soft);
+  color: var(--planned);
+  font-size: 0.8rem;
+  font-weight: 700;
+  vertical-align: middle;
+}
+section.planned { border-inline-start: 4px solid var(--planned-soft); padding-inline-start: 1rem; }
+.planned-note { color: var(--text-secondary); font-style: italic; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+  margin-block-end: 1rem;
+}
+
+.faq details { border-block-end: 1px solid var(--border); }
+.faq summary { cursor: pointer; min-height: 44px; padding-block: 0.75rem; font-weight: 600; }
+.faq details p { margin-block-start: 0; }
+
+.apps { list-style: none; padding: 0; display: grid; gap: 1rem; }
+.apps li { max-width: none; }
+.apps h2 { margin-block-start: 0; }
+.apps .links { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.apps .links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer.site {
+  border-block-start: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+footer.site .wrap { padding-block: 1.5rem; display: grid; gap: 0.35rem; }
+footer.site p { margin: 0; }
+footer.site nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; }
+footer.site nav a { display: inline-flex; align-items: center; min-height: 44px; }
+
+[dir='rtl'] .ltr { direction: ltr; unicode-bidi: isolate; }
