@@ -1,0 +1,174 @@
+{
+  "description": "Saldo Pocket, iOS ve Android için bir bütçe uygulamasıdır. Bütçen telefonunda durur: banka bağlantısı yoktur ve verilerinin bir kopyası bizde bulunmaz.",
+  "server": "Supabase’deki sunucumuz",
+  "serverRegion": "Supabase’deki ({{region}}) sunucumuz",
+  "privacy": {
+    "intro": "Bu politika, Saldo Pocket’ın neyi kaydettiğini, neyi kime gönderdiğini ve bu konuda neler yapabileceğini açıklar. Kısacası: bütçen telefonunda kalır.",
+    "sections": [
+      {
+        "heading": "Sorumlu kim",
+        "body": ["Burada anlatılan işlemenin veri sorumlusu {{company}}’dir (sicil no. {{orgNumber}}, {{country}}). Bize {{email}} adresinden ulaşabilirsin."]
+      },
+      {
+        "heading": "Kısacası",
+        "list": [
+          "Bütçen yalnızca telefonunda saklanır. Biz onu göremeyiz.",
+          "Banka bağlantısı ve kullanıcı hesabı yoktur.",
+          "Bir hesap dökümünü, fişi veya faturayı yapay zekâyla okutmayı seçmediğin sürece bütçenden hiçbir şey telefondan çıkmaz.",
+          "Çökme raporları kişisel veri içermez.",
+          "Uygulamada her şeyi ücretsiz olarak dışa aktarabilir ve silebilirsin."
+        ]
+      },
+      {
+        "heading": "Telefonunda saklananlar",
+        "body": ["Uygulama bunları telefondaki kendi depolama alanında saklar. Bize gönderilmez; uygulamada tüm verileri sildiğinde veya uygulamayı kaldırdığında silinir:"],
+        "list": [
+          "Oluşturduğun hesaplar (seçtiğin adlar, bakiye ve para birimi; banka hesabı değildir).",
+          "Kayıtların: tarih, tutar, para birimi, kategori, satıcı ve isteğe bağlı bir not.",
+          "Düzenli kalemler, birikim hedefleri, kendi kategorilerin ve her satıcı için hatırlanan kategori.",
+          "Ayarlar: maaş günü, aylık bütçe, dil ve para birimi ile yapay zekâyla okumaya izin verip vermediğin.",
+          "Yalnızca yapay zekâ okumalarını saymak için kullanılan rastgele bir cihaz kimliği (aşağıya bak).",
+          "İçe aktarmadan sonra saklamayı seçtiğin resimler."
+        ],
+        "after": ["Hesap dökümlerindeki ve faturalardaki ödeme referansları ve hesap numaraları asla saklanmaz."]
+      },
+      {
+        "heading": "Hesap dökümlerinin, fişlerin ve faturaların yapay zekâyla okunması (isteğe bağlı)",
+        "body": [
+          "Bir hesap dökümünün ekran görüntüsünü veya fotoğrafını içe aktardığında ya da bir fiş veya fatura taradığında, yapay zekânın okumasına izin verebilirsin. Uygulama önce izin ister ve içe aktarma ekranında bunu istediğin zaman kapatabilirsin. İzin olmadan her şey telefonda okunur ve hiçbir şey gönderilmez.",
+          "İzinle resim (veya ondan okunan metin), para birimi, ülken, bugünün tarihi, uygulamanın kategori listesi ve cihaz kimliği {{server}} üzerinden Anthropic’e gönderilir; Anthropic satırları kendi yapay zekâ modeliyle (Claude) okuyup geri gönderir. Ne biz ne de Supabase resmi, metni veya satırları saklar. Anthropic, API’si üzerinden gönderilen verileri modellerini eğitmek için kullanmaz ve kendi koşullarına göre sınırlı bir süre sonra siler.",
+          "Hizmeti sınırları içinde tutmak için (cihaz başına günde 20 okuma) sunucumuz cihaz kimliğini, tarihi ve okuma sayısını saklar, başka hiçbir şeyi saklamaz. Bu sayımlar 30 gün sonra otomatik olarak silinir."
+        ]
+      },
+      {
+        "heading": "Çökme raporları",
+        "body": ["Uygulama çöktüğünde veya bir hata oluştuğunda Sentry’ye (AB’de) bir rapor gönderilir: neyin, uygulamanın neresinde ters gittiği, uygulama sürümü, telefon modeli ve sistem sürümü. IP adresi veya kullanıcı kimliği gibi kişisel verilerin toplanması kapalıdır. Raporlar en fazla 90 gün saklanır ve yalnızca hataları düzeltmek için kullanılır."]
+      },
+      {
+        "heading": "Uygulama güncellemeleri",
+        "body": ["Uygulama, güncellemeleri sağlayan hizmet olan Expo’dan güncelleme olup olmadığını kontrol eder. İnternete yapılan her bağlantıda olduğu gibi Expo telefonun IP adresini görür. Başka veri gönderilmez."]
+      },
+      {
+        "heading": "Pro satın alımları",
+        "planned": true,
+        "body": ["Pro, App Store veya Google Play’den satın alınır. Ödemeyi Apple veya Google kendi gizlilik politikalarına göre işler; kart bilgilerini asla görmeyiz. RevenueCat, uygulamanın oluşturduğu anonim bir kimlikle Pro’ya sahip olup olmadığını takip eder."]
+      },
+      {
+        "heading": "İsteğe bağlı oturum açma, yedekleme ve eşitleme",
+        "planned": true,
+        "body": [
+          "Bütçeni yedeklemek ve birden fazla cihazda kullanmak için Apple, Google, Facebook (Meta) veya e-posta ile oturum açabileceksin. Oturum açmayı Supabase yönetir. Bu durumda e-posta adresini, bir hesap kimliğini ve eşitlediğin bütçe verilerini saklarız. Apple, Google veya Facebook ile oturum açarsan, onayladığın ölçüde adını ve e-posta adresini bizimle paylaşırlar.",
+          "Oturum açmazsan her şey yukarıda anlatıldığı gibi kalır. Hesabını ve onunla saklanan her şeyi uygulamadan silebilirsin."
+        ]
+      },
+      {
+        "heading": "Widget ve hatırlatıcılar",
+        "planned": true,
+        "body": ["Widget telefondaki verilerden rakamlar gösterir ve düzenli kalem hatırlatıcıları telefonda kurulur. İkisi için de hiçbir şey gönderilmez."]
+      },
+      {
+        "heading": "Verileri kimlerle paylaşıyoruz",
+        "list": [
+          "Anthropic (ABD): yapay zekâyla okuma, yalnızca iznin varsa.",
+          "Supabase{{supabaseRegion}}: yapay zekâyla okuma ve okuma sayımı için sunucumuz; ileride oturum açma, yedekleme ve eşitleme.",
+          "Sentry (AB): kişisel veri içermeyen çökme raporları.",
+          "Expo (ABD): uygulama güncellemeleri.",
+          "RevenueCat (ABD): Pro satın alımları (planlanan).",
+          "Apple ve Google: App Store, Google Play ve oturum açma (planlanan).",
+          "Meta: Facebook ile oturum açma (planlanan)."
+        ],
+        "after": ["Veriler ABD’ye gittiğinde sağlayıcılar AB standart sözleşme maddelerini veya AB–ABD Veri Gizliliği Çerçevesi’ni kullanır. Verileri asla satmayız; uygulamada reklam ve izleme yoktur."]
+      },
+      {
+        "heading": "Hukuki dayanak",
+        "list": [
+          "Kullandığın uygulamayı sunmak (GDPR madde 6(1)(b)).",
+          "Yapay zekâyla okuma için rızan (madde 6(1)(a)). Rızanı istediğin zaman geri çekebilirsin.",
+          "Hataları düzeltme ve hizmeti sınırları içinde tutma konusundaki meşru menfaatimiz (madde 6(1)(f))."
+        ]
+      },
+      {
+        "heading": "Veriler ne kadar süre saklanır",
+        "list": [
+          "Telefonunda: uygulamada silene veya uygulamayı kaldırana kadar.",
+          "Yapay zekâyla okuma için resimler ve metin: bizde saklanmaz.",
+          "Yapay zekâ okuma sayımları: 30 gün.",
+          "Çökme raporları: en fazla 90 gün."
+        ]
+      },
+      {
+        "heading": "Hakların",
+        "body": [
+          "Tüm verilerini uygulamada görebilir, düzeltebilir ve dışa aktarabilir (Ben → Verileri dışa aktar, herkes için ücretsiz) ve silebilirsin (Ben → Tüm verileri sil). İşlemeye itiraz edebilir ve yapay zekâyla okuma için verdiğin rızayı istediğin zaman geri çekebilirsin.",
+          "Soruların varsa {{email}} adresine yaz. Ayrıca Norveç veri koruma kurumuna (Datatilsynet) veya yaşadığın yerdeki denetim makamına (Türkiye’de KVKK) şikâyette bulunabilirsin."
+        ]
+      },
+      {
+        "heading": "Çocuklar",
+        "body": ["Saldo Pocket 13 yaşından küçük çocuklar için yapılmamıştır ve onların verilerini bilerek işlemeyiz."]
+      },
+      {
+        "heading": "Değişiklikler",
+        "body": ["Bu politikayı değiştirirsek bu sayfayı ve en üstteki tarihi güncelleriz. Değişiklik verilerinin kullanımı açısından önemliyse bunu uygulamada bildiririz."]
+      }
+    ]
+  },
+  "deleteAccount": {
+    "intro": "Saldo Pocket verilerin telefonunda durur, bu yüzden onları uygulamada kendin silersin. Bizden talep etmen gerekmez.",
+    "sections": [
+      {
+        "heading": "Uygulamada her şeyi sil",
+        "steps": ["Saldo Pocket’ı aç.", "Ben’e git.", "Tüm verileri sil’e dokun.", "Hepsini sil’e dokun."],
+        "body": [
+          "Bu, uygulamanın telefonunda tuttuğu her şeyi siler: hesaplar, kayıtlar, düzenli kalemler, hedefler, kategoriler, satıcılar, ayarlar, kaydedilen resimler ve dosyalar, cihaz kimliği ile dil ve para birimi seçimlerin. Ardından uygulama yeni gibi baştan başlar.",
+          "Bu işlem geri alınamaz. Bir kopya istiyorsan önce verilerini Ben → Verileri dışa aktar bölümünden dışa aktar. Ücretsizdir."
+        ]
+      },
+      {
+        "heading": "Uygulamayı kaldırma",
+        "body": ["Saldo Pocket’ı kaldırdığında tüm verileri de telefondan silinir."]
+      },
+      {
+        "heading": "Sunucumuzda kalanlar",
+        "body": ["Yapay zekâyla okumayı kullandıysan sunucumuzda cihaz kimliği ve gün başına, hiçbir içerik barındırmayan bir okuma sayımı bulunur. Bu sayım 30 gün sonra otomatik olarak silinir. Cihaz kimliği rastgeledir ve diğer her şeyle birlikte telefondan silinir; bu nedenle sayım seninle ilişkilendirilemez."]
+      },
+      {
+        "heading": "Hesabını silme",
+        "planned": true,
+        "body": ["İsteğe bağlı oturum açma geldiğinde hesabını uygulamada Ben → Hesap → Hesabı sil bölümünden silersin. Hesap ve onunla yedeklenen her şey 30 gün içinde sunucularımızdan silinir. Facebook ile oturum açtıysan Facebook’tan aldığımız veriler de silinir; Saldo Pocket’ı Facebook’ta Ayarlar → Uygulamalar ve web siteleri bölümünden de kaldırabilirsin."]
+      },
+      {
+        "heading": "Uygulama artık sende değilse",
+        "body": ["{{email}} adresine “Saldo Pocket verilerini sil” konulu bir e-posta yaz. 30 gün içinde yanıt veririz. Hesap olmadığı için genellikle hakkında kayıtlı hiçbir şey yoktur; bunu sana teyit ederiz."]
+      }
+    ]
+  },
+  "support": {
+    "intro": "Soruların, sorunların veya fikirlerin mi var? Bize yaz, en kısa sürede yanıt verelim.",
+    "contactHeading": "İletişim",
+    "contactBody": "E-posta {{email}}. Lütfen telefon modelini ve uygulama sürümünü (Ben ekranının en altında) belirt.",
+    "faqHeading": "Sık sorulan sorular",
+    "faq": [
+      {
+        "q": "Ücretsiz ile Pro arasındaki fark nedir?",
+        "a": "Ücretsiz sürümde bütçe, “Bugün harcayabileceğin”, 2 hesap, 1 bütçe, 1 birikim hedefi, 5 kendi kategorin, ayda 3 tarama ve tüm verilerinin dışa aktarımı vardır. Pro; 10 hesaba kadar, sınırsız tarama, hedef ve kategori, otomatik kaydedilen düzenli kalemler, zaman içinde geçmiş ve istatistikler ile Excel ve CSV raporları sunar. Fiyatlar App Store ve Google Play’de kendi para biriminde gösterilir."
+      },
+      {
+        "q": "Satın alımımı yeni bir telefonda nasıl geri yüklerim?",
+        "a": "Pro, Apple Kimliğine veya Google hesabına bağlıdır. Yeni telefonda aynı hesapla oturum aç, Saldo Pocket’ı aç ve Satın alımları geri yükle’ye dokun. Pro satın alımları henüz açık değil; bu şekilde çalışacak."
+      },
+      {
+        "q": "Verilerimi nasıl dışa aktarırım?",
+        "a": "Ben → Verileri dışa aktar bölümüne git. Tüm verilerimi dışa aktar (JSON veya CSV) herkes için ücretsizdir. Pro ile bir dönem ve bir hesap için raporları Excel veya CSV olarak da dışa aktarabilirsin."
+      },
+      {
+        "q": "İnternet bankacılığından nasıl içe aktarırım?",
+        "a": "+ ve İnternet bankacılığından içe aktar’a dokun. Listenin ekran görüntülerini veya fotoğraflarını ya da bankandan dışa aktardığın bir PDF, CSV veya Excel dosyasını kullan. Hiçbir şey kaydedilmeden önce her satırı gözden geçirirsin; zaten sahip olduğun satırlar işaretlenir. Saldo Pocket bankana asla bağlanmaz."
+      },
+      {
+        "q": "Verilerimi nasıl silerim?",
+        "a": "Ben → Tüm verileri sil bölümüne git. Telefondaki her şey silinir. Daha fazlası için verilerini silme sayfasına bak."
+      }
+    ]
+  }
+}

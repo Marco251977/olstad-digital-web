@@ -1,0 +1,30 @@
+{
+  "skipToContent": "本文へ移動",
+  "home": "ホーム",
+  "language": "言語",
+  "lastUpdated": "最終更新日：{{date}}",
+  "planned": "予定",
+  "plannedNote": "まだアプリにはありません。提供前にどのように動作するかがわかるよう、ここで説明しています。",
+  "pages": {
+    "privacy": "プライバシーポリシー",
+    "delete-account": "アカウントとデータの削除",
+    "support": "サポート"
+  },
+  "appPage": "{{app}} – {{page}}",
+  "overview": {
+    "title": "プライバシー – 当社のアプリ",
+    "intro": "{{company}} はスマートフォン向けのアプリを作っています。アプリごとにプライバシーポリシーとデータ削除についてのページがあります。下からアプリを選んでください。",
+    "app": "アプリ",
+    "privacy": "プライバシーポリシー",
+    "deleteAccount": "データを削除",
+    "support": "サポート",
+    "external": "アプリ独自のウェブサイトが開きます"
+  },
+  "footer": {
+    "privacy": "プライバシー",
+    "orgNumber": "登録番号 {{value}}",
+    "rights": "無断複製・転載を禁じます。",
+    "contact": "お問い合わせ"
+  },
+  "redirect": "言語を選択"
+}

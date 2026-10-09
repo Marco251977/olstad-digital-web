@@ -1,0 +1,174 @@
+{
+  "description": "Saldo Pocket er en budsjettapp for iOS og Android. Budsjettet ditt ligger på telefonen: det finnes ingen bankkobling, og vi har ingen kopi av dataene dine.",
+  "server": "vår server hos Supabase",
+  "serverRegion": "vår server hos Supabase ({{region}})",
+  "privacy": {
+    "intro": "Denne erklæringen forklarer hva Saldo Pocket lagrer, hva den sender og til hvem, og hva du kan gjøre med det. Kortversjonen: budsjettet ditt blir på telefonen.",
+    "sections": [
+      {
+        "heading": "Hvem som er ansvarlig",
+        "body": ["{{company}} (org.nr. {{orgNumber}}, {{country}}) er behandlingsansvarlig for behandlingen som beskrives her. Kontakt oss på {{email}}."]
+      },
+      {
+        "heading": "Kort fortalt",
+        "list": [
+          "Budsjettet ditt lagres bare på telefonen din. Vi kan ikke se det.",
+          "Det finnes ingen bankkobling og ingen konto.",
+          "Ingenting fra budsjettet ditt forlater telefonen med mindre du velger AI-lesing av en kontoliste, kvittering eller faktura.",
+          "Krasjrapporter inneholder ingen personopplysninger.",
+          "Du kan eksportere alt og slette alt i appen, gratis."
+        ]
+      },
+      {
+        "heading": "Lagret på telefonen din",
+        "body": ["Appen lagrer dette i sin egen lagring på telefonen. Det sendes ikke til oss, og det slettes når du sletter alle data i appen eller avinstallerer den:"],
+        "list": [
+          "Kontoene du lager (navn du velger, saldo og valuta; ikke bankkontoer).",
+          "Postene dine: dato, beløp, valuta, kategori, leverandør og et valgfritt notat.",
+          "Faste poster, sparemål, egne kategorier og kategorien appen husker for hver leverandør.",
+          "Innstillinger: lønningsdag, månedsbudsjett, språk og valuta, og om du tillater AI-lesing.",
+          "En tilfeldig enhets-ID, som bare brukes til å telle AI-lesinger (se nedenfor).",
+          "Bilder du velger å beholde etter en import."
+        ],
+        "after": ["KID-nummer og kontonummer på kontolister og fakturaer lagres aldri."]
+      },
+      {
+        "heading": "AI-lesing av kontolister, kvitteringer og fakturaer (valgfritt)",
+        "body": [
+          "Når du importerer et skjermbilde eller foto av en kontoliste, eller skanner en kvittering eller faktura, kan du la AI lese den. Appen spør om lov først, og du kan slå det av når som helst på importskjermen. Uten lov leses alt på telefonen, og ingenting sendes.",
+          "Med lov sendes bildet (eller teksten som er lest fra det), valutaen, landet ditt, dagens dato, appens kategoriliste og enhets-ID-en gjennom {{server}} til Anthropic, som leser radene med sin AI-modell (Claude) og sender dem tilbake. Verken vi eller Supabase lagrer bildet, teksten eller radene. Anthropic bruker ikke data som sendes gjennom API-et sitt til å trene modellene sine, og sletter dem etter en begrenset tid etter sine egne vilkår.",
+          "For å holde tjenesten innenfor grensene (20 lesinger per enhet per dag) lagrer serveren vår enhets-ID-en, datoen og antall lesinger, og ingenting annet. Disse tellingene slettes automatisk etter 30 dager."
+        ]
+      },
+      {
+        "heading": "Krasjrapporter",
+        "body": ["Når appen krasjer eller det oppstår en feil, sendes en rapport til Sentry (i EU): hva som gikk galt og hvor i appen, appversjonen, og telefonmodell og systemversjon. Innsamling av personopplysninger, som IP-adresse eller brukeridentitet, er slått av. Rapportene lagres i høyst 90 dager og brukes bare til å rette feil."]
+      },
+      {
+        "heading": "Oppdateringer av appen",
+        "body": ["Appen ser etter oppdateringer hos Expo, tjenesten som leverer dem. Som ved all kontakt med internett ser Expo telefonens IP-adresse. Ingen andre data sendes."]
+      },
+      {
+        "heading": "Kjøp av Pro",
+        "planned": true,
+        "body": ["Pro kjøpes i App Store eller Google Play. Apple eller Google håndterer betalingen etter sine egne personvernerklæringer; vi ser aldri kortopplysningene dine. RevenueCat holder styr på om du har Pro, med en anonym ID som appen lager."]
+      },
+      {
+        "heading": "Valgfri innlogging, sikkerhetskopi og synk",
+        "planned": true,
+        "body": [
+          "Du skal kunne logge inn med Apple, Google, Facebook (Meta) eller e-post for å ta sikkerhetskopi av budsjettet og bruke det på flere enheter. Innloggingen håndteres av Supabase. Vi lagrer da e-postadressen din, en konto-ID og budsjettdataene du synker. Logger du inn med Apple, Google eller Facebook, deler de navnet og e-postadressen din med oss etter det du godkjenner.",
+          "Uten innlogging er alt som beskrevet over. Du kan slette kontoen din og alt som er lagret med den i appen."
+        ]
+      },
+      {
+        "heading": "Widget og påminnelser",
+        "planned": true,
+        "body": ["Widgeten viser tall fra dataene på telefonen, og påminnelser om faste poster settes opp på telefonen. Ingenting sendes for noen av dem."]
+      },
+      {
+        "heading": "Hvem vi deler data med",
+        "list": [
+          "Anthropic (USA): AI-lesing, bare med din tillatelse.",
+          "Supabase{{supabaseRegion}}: serveren vår for AI-lesing og tellingen av lesinger; senere innlogging, sikkerhetskopi og synk.",
+          "Sentry (EU): krasjrapporter uten personopplysninger.",
+          "Expo (USA): oppdateringer av appen.",
+          "RevenueCat (USA): kjøp av Pro (planlagt).",
+          "Apple og Google: App Store, Google Play og innlogging (planlagt).",
+          "Meta: innlogging med Facebook (planlagt)."
+        ],
+        "after": ["Der data går til USA, bruker leverandørene EUs standardavtaler eller EU–US Data Privacy Framework. Vi selger aldri data, og appen har ingen reklame og ingen sporing."]
+      },
+      {
+        "heading": "Rettslig grunnlag",
+        "list": [
+          "For å levere appen du bruker (personvernforordningen artikkel 6 nr. 1 bokstav b).",
+          "Ditt samtykke til AI-lesing (artikkel 6 nr. 1 bokstav a). Du kan trekke det tilbake når som helst.",
+          "Vår berettigede interesse i å rette feil og holde tjenesten innenfor grensene (artikkel 6 nr. 1 bokstav f)."
+        ]
+      },
+      {
+        "heading": "Hvor lenge data lagres",
+        "list": [
+          "På telefonen: til du sletter dem i appen eller avinstallerer appen.",
+          "Bilder og tekst for AI-lesing: lagres ikke hos oss.",
+          "Telling av AI-lesinger: 30 dager.",
+          "Krasjrapporter: høyst 90 dager."
+        ]
+      },
+      {
+        "heading": "Dine rettigheter",
+        "body": [
+          "Du kan se, rette og eksportere alle dataene dine i appen (Meg → Eksporter data, gratis for alle), og slette dem (Meg → Slett alle data). Du kan protestere mot behandlingen og trekke tilbake samtykket til AI-lesing når som helst.",
+          "Har du spørsmål, skriv til {{email}}. Du kan også klage til Datatilsynet eller tilsynsmyndigheten der du bor."
+        ]
+      },
+      {
+        "heading": "Barn",
+        "body": ["Saldo Pocket er ikke laget for barn under 13 år, og vi behandler ikke bevisst opplysninger om dem."]
+      },
+      {
+        "heading": "Endringer",
+        "body": ["Hvis vi endrer erklæringen, oppdaterer vi denne siden og datoen øverst. Betyr endringen noe for hvordan dataene dine brukes, sier vi fra i appen."]
+      }
+    ]
+  },
+  "deleteAccount": {
+    "intro": "Dataene i Saldo Pocket ligger på telefonen din, så du sletter dem selv i appen. Du trenger ikke be om det.",
+    "sections": [
+      {
+        "heading": "Slett alt i appen",
+        "steps": ["Åpne Saldo Pocket.", "Gå til Meg.", "Trykk Slett alle data.", "Trykk Slett alt."],
+        "body": [
+          "Dette sletter alt appen har på telefonen din: kontoer, poster, faste poster, mål, kategorier, leverandører, innstillinger, lagrede bilder og filer, enhets-ID-en og valg av språk og valuta. Appen starter så på nytt som ny.",
+          "Det kan ikke angres. Vil du ha en kopi, eksporter dataene først under Meg → Eksporter data. Det er gratis."
+        ]
+      },
+      {
+        "heading": "Avinstallere appen",
+        "body": ["Når du avinstallerer Saldo Pocket, slettes også alle dataene fra telefonen."]
+      },
+      {
+        "heading": "Det som ligger igjen på serveren vår",
+        "body": ["Har du brukt AI-lesing, har serveren vår en telling av lesinger per enhets-ID og dag, uten noe innhold. Den slettes automatisk etter 30 dager. Enhets-ID-en er tilfeldig og slettes fra telefonen sammen med alt annet, så tellingen kan ikke knyttes til deg."]
+      },
+      {
+        "heading": "Slette kontoen",
+        "planned": true,
+        "body": ["Når valgfri innlogging kommer, sletter du kontoen i appen under Meg → Konto → Slett konto. Kontoen og alt som er sikkerhetskopiert med den, slettes fra serverne våre innen 30 dager. Logget du inn med Facebook, slettes også dataene vi fikk fra Facebook; du kan også fjerne Saldo Pocket i Facebook under Innstillinger → Apper og nettsteder."]
+      },
+      {
+        "heading": "Hvis du ikke har appen lenger",
+        "body": ["Skriv til {{email}} med emnet «Slett Saldo Pocket-data». Vi svarer innen 30 dager. Siden det ikke finnes noen konto, har vi som regel ingenting lagret om deg, og det bekrefter vi."]
+      }
+    ]
+  },
+  "support": {
+    "intro": "Spørsmål, problemer eller ideer? Skriv til oss, så svarer vi så snart vi kan.",
+    "contactHeading": "Kontakt",
+    "contactBody": "E-post {{email}}. Fortell gjerne hvilken telefonmodell du har og hvilken versjon av appen (nederst under Meg).",
+    "faqHeading": "Vanlige spørsmål",
+    "faq": [
+      {
+        "q": "Hva er forskjellen på Gratis og Pro?",
+        "a": "Gratis har budsjettet, «Du kan bruke i dag», 2 kontoer, 1 budsjett, 1 sparemål, 5 egne kategorier, 3 skanninger i måneden og eksport av alle dataene dine. Pro gir opptil 10 kontoer, ubegrenset med skanninger, mål og kategorier, faste poster som bokføres automatisk, historikk og statistikk over tid, og rapporter til Excel og CSV. Prisene vises i App Store og Google Play, i din valuta."
+      },
+      {
+        "q": "Hvordan gjenoppretter jeg kjøpet på en ny telefon?",
+        "a": "Pro er knyttet til Apple-ID-en eller Google-kontoen din. Logg inn med samme konto på den nye telefonen, åpne Saldo Pocket og trykk Gjenopprett kjøp. Kjøp av Pro er ikke åpnet ennå; slik kommer det til å virke."
+      },
+      {
+        "q": "Hvordan eksporterer jeg dataene mine?",
+        "a": "Gå til Meg → Eksporter data. Eksporter alle mine data (JSON eller CSV) er gratis for alle. Med Pro kan du også eksportere rapporter for en periode og en konto til Excel eller CSV."
+      },
+      {
+        "q": "Hvordan importerer jeg fra nettbanken?",
+        "a": "Trykk + og Importer fra nettbank. Bruk skjermbilder eller foto av listen, eller en PDF-, CSV- eller Excel-fil du har eksportert fra banken. Du går gjennom hver rad før noe lagres, og rader du har fra før, er merket. Saldo Pocket kobler seg aldri til banken din."
+      },
+      {
+        "q": "Hvordan sletter jeg dataene mine?",
+        "a": "Gå til Meg → Slett alle data. Alt på telefonen slettes. Les mer på siden om sletting av dataene dine."
+      }
+    ]
+  }
+}

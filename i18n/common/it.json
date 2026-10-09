@@ -1,0 +1,30 @@
+{
+  "skipToContent": "Vai al contenuto",
+  "home": "Home",
+  "language": "Lingua",
+  "lastUpdated": "Ultimo aggiornamento: {{date}}",
+  "planned": "In arrivo",
+  "plannedNote": "Non è ancora nell’app. È descritto qui perché tu sappia come funzionerà prima che arrivi.",
+  "pages": {
+    "privacy": "Informativa sulla privacy",
+    "delete-account": "Elimina account e dati",
+    "support": "Assistenza"
+  },
+  "appPage": "{{app}} – {{page}}",
+  "overview": {
+    "title": "Privacy – le nostre app",
+    "intro": "{{company}} crea app per smartphone. Ogni app ha la propria informativa sulla privacy e una pagina sull’eliminazione dei tuoi dati. Scegli l’app qui sotto.",
+    "app": "App",
+    "privacy": "Informativa sulla privacy",
+    "deleteAccount": "Elimina dati",
+    "support": "Assistenza",
+    "external": "Apre il sito dell’app"
+  },
+  "footer": {
+    "privacy": "Privacy",
+    "orgNumber": "N. registro {{value}}",
+    "rights": "Tutti i diritti riservati.",
+    "contact": "Contatti"
+  },
+  "redirect": "Scegli la lingua"
+}

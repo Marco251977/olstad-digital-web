@@ -1,0 +1,174 @@
+{
+  "description": "Saldo Pocket to aplikacja budżetowa na iOS i Androida. Twój budżet jest przechowywany na telefonie: nie ma połączenia z bankiem, a my nie mamy kopii Twoich danych.",
+  "server": "nasz serwer w Supabase",
+  "serverRegion": "nasz serwer w Supabase ({{region}})",
+  "privacy": {
+    "intro": "Ta polityka wyjaśnia, co Saldo Pocket przechowuje, co wysyła i komu oraz co możesz z tym zrobić. W skrócie: Twój budżet zostaje na telefonie.",
+    "sections": [
+      {
+        "heading": "Kto jest odpowiedzialny",
+        "body": ["{{company}} (nr rej. {{orgNumber}}, {{country}}) jest administratorem danych w zakresie opisanego tu przetwarzania. Kontakt: {{email}}."]
+      },
+      {
+        "heading": "W skrócie",
+        "list": [
+          "Twój budżet jest przechowywany tylko na Twoim telefonie. Nie mamy do niego wglądu.",
+          "Nie ma połączenia z bankiem ani konta użytkownika.",
+          "Nic z Twojego budżetu nie opuszcza telefonu, chyba że wybierzesz odczyt wyciągu, paragonu lub faktury przez AI.",
+          "Raporty o awariach nie zawierają danych osobowych.",
+          "W aplikacji możesz bezpłatnie wyeksportować i usunąć wszystko."
+        ]
+      },
+      {
+        "heading": "Przechowywane na Twoim telefonie",
+        "body": ["Aplikacja przechowuje to we własnej pamięci na telefonie. Nie jest to wysyłane do nas i zostaje usunięte, gdy usuniesz wszystkie dane w aplikacji lub ją odinstalujesz:"],
+        "list": [
+          "Konta, które tworzysz (wybrane przez Ciebie nazwy, saldo i waluta; nie są to konta bankowe).",
+          "Twoje operacje: data, kwota, waluta, kategoria, odbiorca i opcjonalna notatka.",
+          "Stałe pozycje, cele oszczędnościowe, własne kategorie i kategoria zapamiętana dla każdego odbiorcy.",
+          "Ustawienia: dzień wypłaty, budżet miesięczny, język i waluta oraz to, czy zezwalasz na odczyt przez AI.",
+          "Losowy identyfikator urządzenia, używany tylko do liczenia odczytów przez AI (zob. niżej).",
+          "Obrazy, które zdecydujesz się zachować po imporcie."
+        ],
+        "after": ["Numery referencyjne płatności i numery kont z wyciągów i faktur nigdy nie są zapisywane."]
+      },
+      {
+        "heading": "Odczyt wyciągów, paragonów i faktur przez AI (opcjonalnie)",
+        "body": [
+          "Gdy importujesz zrzut ekranu lub zdjęcie wyciągu albo skanujesz paragon lub fakturę, możesz pozwolić, aby AI je odczytała. Aplikacja najpierw prosi o zgodę, a na ekranie importu możesz to w każdej chwili wyłączyć. Bez zgody wszystko jest odczytywane na telefonie i nic nie jest wysyłane.",
+          "Za zgodą obraz (lub odczytany z niego tekst), waluta, Twój kraj, dzisiejsza data, lista kategorii aplikacji i identyfikator urządzenia są wysyłane przez {{server}} do Anthropic, który odczytuje wiersze za pomocą swojego modelu AI (Claude) i odsyła je z powrotem. Ani my, ani Supabase nie przechowujemy obrazu, tekstu ani wierszy. Anthropic nie używa danych przesyłanych przez swoje API do trenowania modeli i usuwa je po ograniczonym czasie zgodnie z własnymi warunkami.",
+          "Aby usługa mieściła się w limitach (20 odczytów na urządzenie dziennie), nasz serwer przechowuje identyfikator urządzenia, datę i liczbę odczytów — nic więcej. Te liczniki są automatycznie usuwane po 30 dniach."
+        ]
+      },
+      {
+        "heading": "Raporty o awariach",
+        "body": ["Gdy aplikacja ulegnie awarii lub wystąpi błąd, raport jest wysyłany do Sentry (w UE): co poszło nie tak i gdzie w aplikacji, wersja aplikacji oraz model telefonu i wersja systemu. Zbieranie danych osobowych, takich jak adres IP czy tożsamość użytkownika, jest wyłączone. Raporty są przechowywane najwyżej 90 dni i służą wyłącznie do naprawiania błędów."]
+      },
+      {
+        "heading": "Aktualizacje aplikacji",
+        "body": ["Aplikacja sprawdza aktualizacje w Expo, usłudze, która je dostarcza. Jak przy każdym połączeniu z internetem, Expo widzi adres IP telefonu. Żadne inne dane nie są wysyłane."]
+      },
+      {
+        "heading": "Zakup Pro",
+        "planned": true,
+        "body": ["Pro kupuje się w App Store lub Google Play. Apple lub Google obsługują płatność zgodnie z własnymi politykami prywatności; nigdy nie widzimy danych Twojej karty. RevenueCat sprawdza, czy masz Pro, za pomocą anonimowego identyfikatora tworzonego przez aplikację."]
+      },
+      {
+        "heading": "Opcjonalne logowanie, kopia zapasowa i synchronizacja",
+        "planned": true,
+        "body": [
+          "Będzie można zalogować się przez Apple, Google, Facebook (Meta) lub e-mail, aby zrobić kopię zapasową budżetu i używać go na kilku urządzeniach. Logowanie obsługuje Supabase. Przechowujemy wtedy Twój adres e-mail, identyfikator konta i synchronizowane dane budżetu. Jeśli logujesz się przez Apple, Google lub Facebook, udostępniają nam one Twoje imię i adres e-mail w zakresie, na który się zgodzisz.",
+          "Bez logowania wszystko pozostaje tak, jak opisano wyżej. Konto i wszystko, co jest z nim zapisane, możesz usunąć w aplikacji."
+        ]
+      },
+      {
+        "heading": "Widżet i przypomnienia",
+        "planned": true,
+        "body": ["Widżet pokazuje liczby z danych na telefonie, a przypomnienia o stałych pozycjach są ustawiane na telefonie. W żadnym z tych przypadków nic nie jest wysyłane."]
+      },
+      {
+        "heading": "Komu udostępniamy dane",
+        "list": [
+          "Anthropic (USA): odczyt przez AI, tylko za Twoją zgodą.",
+          "Supabase{{supabaseRegion}}: nasz serwer do odczytu przez AI i liczenia odczytów; później logowanie, kopia zapasowa i synchronizacja.",
+          "Sentry (UE): raporty o awariach bez danych osobowych.",
+          "Expo (USA): aktualizacje aplikacji.",
+          "RevenueCat (USA): zakup Pro (planowane).",
+          "Apple i Google: App Store, Google Play i logowanie (planowane).",
+          "Meta: logowanie przez Facebook (planowane)."
+        ],
+        "after": ["Gdy dane trafiają do USA, dostawcy stosują standardowe klauzule umowne UE lub EU–US Data Privacy Framework. Nigdy nie sprzedajemy danych, a aplikacja nie ma reklam ani śledzenia."]
+      },
+      {
+        "heading": "Podstawa prawna",
+        "list": [
+          "Świadczenie usługi aplikacji, z której korzystasz (art. 6 ust. 1 lit. b RODO).",
+          "Twoja zgoda na odczyt przez AI (art. 6 ust. 1 lit. a RODO). Możesz ją w każdej chwili wycofać.",
+          "Nasz prawnie uzasadniony interes w naprawianiu błędów i utrzymaniu usługi w limitach (art. 6 ust. 1 lit. f RODO)."
+        ]
+      },
+      {
+        "heading": "Jak długo przechowujemy dane",
+        "list": [
+          "Na telefonie: do czasu usunięcia ich w aplikacji lub odinstalowania aplikacji.",
+          "Obrazy i tekst do odczytu przez AI: nie są u nas przechowywane.",
+          "Liczniki odczytów przez AI: 30 dni.",
+          "Raporty o awariach: najwyżej 90 dni."
+        ]
+      },
+      {
+        "heading": "Twoje prawa",
+        "body": [
+          "Wszystkie swoje dane możesz przeglądać, poprawiać i eksportować w aplikacji (Ja → Eksport danych, bezpłatnie dla wszystkich) oraz usuwać (Ja → Usuń wszystkie dane). Możesz w każdej chwili sprzeciwić się przetwarzaniu i wycofać zgodę na odczyt przez AI.",
+          "Jeśli masz pytania, napisz na {{email}}. Możesz też złożyć skargę do norweskiego organu ochrony danych (Datatilsynet) lub organu nadzorczego w miejscu zamieszkania (w Polsce do Prezesa UODO)."
+        ]
+      },
+      {
+        "heading": "Dzieci",
+        "body": ["Saldo Pocket nie jest przeznaczone dla dzieci poniżej 13 lat i świadomie nie przetwarzamy ich danych."]
+      },
+      {
+        "heading": "Zmiany",
+        "body": ["Jeśli zmienimy tę politykę, zaktualizujemy tę stronę i datę na górze. Jeśli zmiana ma znaczenie dla sposobu wykorzystania Twoich danych, poinformujemy o tym w aplikacji."]
+      }
+    ]
+  },
+  "deleteAccount": {
+    "intro": "Twoje dane w Saldo Pocket są przechowywane na telefonie, więc usuwasz je sam(a) w aplikacji. Nie musisz o to prosić.",
+    "sections": [
+      {
+        "heading": "Usuń wszystko w aplikacji",
+        "steps": ["Otwórz Saldo Pocket.", "Przejdź do Ja.", "Dotknij Usuń wszystkie dane.", "Dotknij Usuń wszystko."],
+        "body": [
+          "Usuwa to wszystko, co aplikacja przechowuje na Twoim telefonie: konta, operacje, stałe pozycje, cele, kategorie, odbiorców, ustawienia, zapisane obrazy i pliki, identyfikator urządzenia oraz wybór języka i waluty. Aplikacja uruchomi się potem od nowa.",
+          "Tego nie można cofnąć. Jeśli chcesz mieć kopię, najpierw wyeksportuj dane w Ja → Eksport danych. To bezpłatne."
+        ]
+      },
+      {
+        "heading": "Odinstalowanie aplikacji",
+        "body": ["Odinstalowanie Saldo Pocket usuwa również wszystkie jej dane z telefonu."]
+      },
+      {
+        "heading": "Co zostaje na naszym serwerze",
+        "body": ["Jeśli korzystałeś(-aś) z odczytu przez AI, nasz serwer ma licznik odczytów dla identyfikatora urządzenia i dnia, bez żadnej treści. Jest on automatycznie usuwany po 30 dniach. Identyfikator urządzenia jest losowy i usuwany z telefonu razem z całą resztą, więc licznika nie da się powiązać z Tobą."]
+      },
+      {
+        "heading": "Usunięcie konta",
+        "planned": true,
+        "body": ["Gdy pojawi się opcjonalne logowanie, konto usuniesz w aplikacji w Ja → Konto → Usuń konto. Konto i wszystko, co z nim zarchiwizowano, zostanie usunięte z naszych serwerów w ciągu 30 dni. Jeśli logowałeś(-aś) się przez Facebook, usunięte zostaną też dane otrzymane z Facebooka; Saldo Pocket możesz także usunąć w Facebooku w Ustawienia → Aplikacje i witryny."]
+      },
+      {
+        "heading": "Jeśli nie masz już aplikacji",
+        "body": ["Napisz na {{email}} z tematem „Usuń dane Saldo Pocket”. Odpowiemy w ciągu 30 dni. Ponieważ nie ma konta, zwykle nie mamy o Tobie żadnych zapisanych danych i to potwierdzimy."]
+      }
+    ]
+  },
+  "support": {
+    "intro": "Pytania, problemy lub pomysły? Napisz do nas, a odpowiemy tak szybko, jak to możliwe.",
+    "contactHeading": "Kontakt",
+    "contactBody": "E-mail {{email}}. Podaj, proszę, model telefonu i wersję aplikacji (na dole ekranu Ja).",
+    "faqHeading": "Najczęstsze pytania",
+    "faq": [
+      {
+        "q": "Czym różni się wersja Darmowa od Pro?",
+        "a": "Wersja Darmowa ma budżet, „Dziś możesz wydać”, 2 konta, 1 budżet, 1 cel oszczędnościowy, 5 własnych kategorii, 3 skanowania miesięcznie i eksport wszystkich danych. Pro daje do 10 kont, nieograniczone skanowania, cele i kategorie, stałe pozycje księgowane automatycznie, historię i statystyki w czasie oraz raporty do Excela i CSV. Ceny są widoczne w App Store i Google Play w Twojej walucie."
+      },
+      {
+        "q": "Jak przywrócić zakup na nowym telefonie?",
+        "a": "Pro jest powiązane z Twoim Apple ID lub kontem Google. Zaloguj się na nowym telefonie tym samym kontem, otwórz Saldo Pocket i dotknij Przywróć zakupy. Zakup Pro nie jest jeszcze dostępny; tak to będzie działać."
+      },
+      {
+        "q": "Jak wyeksportować dane?",
+        "a": "Przejdź do Ja → Eksport danych. Eksportuj wszystkie moje dane (JSON lub CSV) jest bezpłatne dla wszystkich. Z Pro możesz też eksportować raporty za okres i dla konta do Excela lub CSV."
+      },
+      {
+        "q": "Jak zaimportować dane z bankowości internetowej?",
+        "a": "Dotknij + i Import z bankowości internetowej. Użyj zrzutów ekranu lub zdjęć listy albo pliku PDF, CSV lub Excel wyeksportowanego z banku. Przeglądasz każdy wiersz, zanim cokolwiek zostanie zapisane, a wiersze, które już masz, są oznaczone. Saldo Pocket nigdy nie łączy się z Twoim bankiem."
+      },
+      {
+        "q": "Jak usunąć dane?",
+        "a": "Przejdź do Ja → Usuń wszystkie dane. Wszystko na telefonie zostanie usunięte. Więcej przeczytasz na stronie o usuwaniu danych."
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "skipToContent": "Aller au contenu",
+  "home": "Accueil",
+  "language": "Langue",
+  "lastUpdated": "Dernière mise à jour : {{date}}",
+  "planned": "Prévu",
+  "plannedNote": "Pas encore dans l’app. C’est décrit ici pour que vous sachiez comment cela fonctionnera avant son arrivée.",
+  "pages": {
+    "privacy": "Politique de confidentialité",
+    "delete-account": "Supprimer le compte et les données",
+    "support": "Assistance"
+  },
+  "appPage": "{{app}} – {{page}}",
+  "overview": {
+    "title": "Confidentialité – nos apps",
+    "intro": "{{company}} crée des apps pour téléphone. Chaque app a sa propre politique de confidentialité et une page sur la suppression de vos données. Choisissez l’app ci-dessous.",
+    "app": "App",
+    "privacy": "Politique de confidentialité",
+    "deleteAccount": "Supprimer les données",
+    "support": "Assistance",
+    "external": "Ouvre le site propre de l’app"
+  },
+  "footer": {
+    "privacy": "Confidentialité",
+    "orgNumber": "N° d’immatriculation {{value}}",
+    "rights": "Tous droits réservés.",
+    "contact": "Contact"
+  },
+  "redirect": "Choisissez votre langue"
+}

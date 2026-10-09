@@ -1,0 +1,30 @@
+{
+  "skipToContent": "Przejdź do treści",
+  "home": "Strona główna",
+  "language": "Język",
+  "lastUpdated": "Ostatnia zmiana: {{date}}",
+  "planned": "Planowane",
+  "plannedNote": "Jeszcze nie ma tego w aplikacji. Opisujemy to tutaj, żebyś wiedział(a), jak będzie działać, zanim się pojawi.",
+  "pages": {
+    "privacy": "Polityka prywatności",
+    "delete-account": "Usuwanie konta i danych",
+    "support": "Pomoc"
+  },
+  "appPage": "{{app}} – {{page}}",
+  "overview": {
+    "title": "Prywatność – nasze aplikacje",
+    "intro": "{{company}} tworzy aplikacje na telefon. Każda aplikacja ma własną politykę prywatności i stronę o usuwaniu danych. Wybierz aplikację poniżej.",
+    "app": "Aplikacja",
+    "privacy": "Polityka prywatności",
+    "deleteAccount": "Usuń dane",
+    "support": "Pomoc",
+    "external": "Otwiera własną stronę aplikacji"
+  },
+  "footer": {
+    "privacy": "Prywatność",
+    "orgNumber": "Nr rej. {{value}}",
+    "rights": "Wszelkie prawa zastrzeżone.",
+    "contact": "Kontakt"
+  },
+  "redirect": "Wybierz język"
+}

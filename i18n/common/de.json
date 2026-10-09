@@ -1,0 +1,30 @@
+{
+  "skipToContent": "Zum Inhalt springen",
+  "home": "Startseite",
+  "language": "Sprache",
+  "lastUpdated": "Zuletzt geändert: {{date}}",
+  "planned": "Geplant",
+  "plannedNote": "Noch nicht in der App. Es steht hier, damit du schon vorher weißt, wie es funktionieren wird.",
+  "pages": {
+    "privacy": "Datenschutzerklärung",
+    "delete-account": "Konto und Daten löschen",
+    "support": "Support"
+  },
+  "appPage": "{{app}} – {{page}}",
+  "overview": {
+    "title": "Datenschutz – unsere Apps",
+    "intro": "{{company}} entwickelt Apps für das Smartphone. Jede App hat ihre eigene Datenschutzerklärung und eine Seite zum Löschen deiner Daten. Wähle unten die App.",
+    "app": "App",
+    "privacy": "Datenschutzerklärung",
+    "deleteAccount": "Daten löschen",
+    "support": "Support",
+    "external": "Öffnet die eigene Website der App"
+  },
+  "footer": {
+    "privacy": "Datenschutz",
+    "orgNumber": "Org.-Nr. {{value}}",
+    "rights": "Alle Rechte vorbehalten.",
+    "contact": "Kontakt"
+  },
+  "redirect": "Sprache wählen"
+}

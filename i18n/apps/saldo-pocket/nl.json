@@ -1,0 +1,174 @@
+{
+  "description": "Saldo Pocket is een budgetapp voor iOS en Android. Je budget staat op je telefoon: er is geen bankkoppeling en wij hebben geen kopie van je gegevens.",
+  "server": "onze server bij Supabase",
+  "serverRegion": "onze server bij Supabase ({{region}})",
+  "privacy": {
+    "intro": "Dit beleid legt uit wat Saldo Pocket opslaat, wat de app verstuurt en naar wie, en wat je eraan kunt doen. Kort gezegd: je budget blijft op je telefoon.",
+    "sections": [
+      {
+        "heading": "Wie verantwoordelijk is",
+        "body": ["{{company}} (org.nr. {{orgNumber}}, {{country}}) is verwerkingsverantwoordelijke voor de verwerking die hier wordt beschreven. Neem contact op via {{email}}."]
+      },
+      {
+        "heading": "Kort gezegd",
+        "list": [
+          "Je budget wordt alleen op je telefoon opgeslagen. Wij kunnen het niet zien.",
+          "Er is geen bankkoppeling en geen account.",
+          "Niets van je budget verlaat de telefoon, tenzij je kiest voor het lezen van een rekeningoverzicht, bon of factuur met AI.",
+          "Crashrapporten bevatten geen persoonsgegevens.",
+          "Je kunt alles exporteren en alles wissen in de app, gratis."
+        ]
+      },
+      {
+        "heading": "Opgeslagen op je telefoon",
+        "body": ["De app slaat dit op in zijn eigen opslag op de telefoon. Het wordt niet naar ons gestuurd en wordt gewist als je alle gegevens in de app wist of de app verwijdert:"],
+        "list": [
+          "De rekeningen die je aanmaakt (namen die je kiest, saldo en valuta; geen bankrekeningen).",
+          "Je posten: datum, bedrag, valuta, categorie, leverancier en een optionele notitie.",
+          "Vaste posten, spaardoelen, eigen categorieën en de categorie die de app voor elke leverancier onthoudt.",
+          "Instellingen: betaaldag, maandbudget, taal en valuta, en of je lezen met AI toestaat.",
+          "Een willekeurige apparaat-ID, alleen gebruikt om het lezen met AI te tellen (zie hieronder).",
+          "Afbeeldingen die je na een import wilt bewaren."
+        ],
+        "after": ["Betalingskenmerken en rekeningnummers op overzichten en facturen worden nooit opgeslagen."]
+      },
+      {
+        "heading": "Rekeningoverzichten, bonnen en facturen lezen met AI (optioneel)",
+        "body": [
+          "Als je een screenshot of foto van een rekeningoverzicht importeert, of een bon of factuur scant, kun je die door AI laten lezen. De app vraagt eerst toestemming, en je kunt het op het importscherm altijd uitzetten. Zonder toestemming wordt alles op de telefoon gelezen en wordt er niets verstuurd.",
+          "Met toestemming worden de afbeelding (of de tekst die eruit is gelezen), de valuta, je land, de datum van vandaag, de categorielijst van de app en de apparaat-ID via {{server}} naar Anthropic gestuurd, dat de rijen leest met zijn AI-model (Claude) en ze terugstuurt. Noch wij noch Supabase slaan de afbeelding, de tekst of de rijen op. Anthropic gebruikt gegevens die via zijn API worden verstuurd niet om zijn modellen te trainen en verwijdert ze na beperkte tijd volgens zijn eigen voorwaarden.",
+          "Om de dienst binnen zijn grenzen te houden (20 keer lezen per apparaat per dag), slaat onze server de apparaat-ID, de datum en het aantal keren lezen op, en verder niets. Deze tellingen worden na 30 dagen automatisch verwijderd."
+        ]
+      },
+      {
+        "heading": "Crashrapporten",
+        "body": ["Als de app crasht of er een fout optreedt, wordt een rapport naar Sentry (in de EU) gestuurd: wat er misging en waar in de app, de appversie, en het telefoonmodel en de systeemversie. Het verzamelen van persoonsgegevens, zoals IP-adres of gebruikersidentiteit, staat uit. Rapporten worden maximaal 90 dagen bewaard en alleen gebruikt om fouten op te lossen."]
+      },
+      {
+        "heading": "Updates van de app",
+        "body": ["De app zoekt naar updates bij Expo, de dienst die ze levert. Zoals bij elke verbinding met internet ziet Expo het IP-adres van de telefoon. Er worden geen andere gegevens verstuurd."]
+      },
+      {
+        "heading": "Pro kopen",
+        "planned": true,
+        "body": ["Pro koop je in de App Store of Google Play. Apple of Google verwerken de betaling volgens hun eigen privacybeleid; wij zien je kaartgegevens nooit. RevenueCat houdt bij of je Pro hebt, met een anonieme ID die de app aanmaakt."]
+      },
+      {
+        "heading": "Optioneel inloggen, back-up en synchronisatie",
+        "planned": true,
+        "body": [
+          "Je kunt straks inloggen met Apple, Google, Facebook (Meta) of e-mail om een back-up van je budget te maken en het op meer apparaten te gebruiken. Inloggen loopt via Supabase. We slaan dan je e-mailadres, een account-ID en de budgetgegevens die je synchroniseert op. Log je in met Apple, Google of Facebook, dan delen zij je naam en e-mailadres met ons volgens wat je goedkeurt.",
+          "Zonder inloggen blijft alles zoals hierboven beschreven. Je kunt je account en alles wat ermee is opgeslagen in de app verwijderen."
+        ]
+      },
+      {
+        "heading": "Widget en herinneringen",
+        "planned": true,
+        "body": ["De widget toont cijfers uit de gegevens op je telefoon, en herinneringen voor vaste posten worden op je telefoon ingesteld. Voor geen van beide wordt iets verstuurd."]
+      },
+      {
+        "heading": "Met wie we gegevens delen",
+        "list": [
+          "Anthropic (VS): lezen met AI, alleen met je toestemming.",
+          "Supabase{{supabaseRegion}}: onze server voor lezen met AI en het tellen daarvan; later inloggen, back-up en synchronisatie.",
+          "Sentry (EU): crashrapporten zonder persoonsgegevens.",
+          "Expo (VS): updates van de app.",
+          "RevenueCat (VS): Pro kopen (gepland).",
+          "Apple en Google: App Store, Google Play en inloggen (gepland).",
+          "Meta: inloggen met Facebook (gepland)."
+        ],
+        "after": ["Als gegevens naar de VS gaan, gebruiken de leveranciers de standaardcontractbepalingen van de EU of het EU-US Data Privacy Framework. We verkopen nooit gegevens, en de app heeft geen advertenties en geen tracking."]
+      },
+      {
+        "heading": "Rechtsgrond",
+        "list": [
+          "Om de app te leveren die je gebruikt (AVG artikel 6, lid 1, onder b).",
+          "Je toestemming voor lezen met AI (artikel 6, lid 1, onder a). Je kunt die altijd intrekken.",
+          "Ons gerechtvaardigd belang om fouten op te lossen en de dienst binnen zijn grenzen te houden (artikel 6, lid 1, onder f)."
+        ]
+      },
+      {
+        "heading": "Hoe lang gegevens worden bewaard",
+        "list": [
+          "Op je telefoon: tot je ze in de app wist of de app verwijdert.",
+          "Afbeeldingen en tekst voor lezen met AI: worden bij ons niet opgeslagen.",
+          "Tellingen van lezen met AI: 30 dagen.",
+          "Crashrapporten: maximaal 90 dagen."
+        ]
+      },
+      {
+        "heading": "Je rechten",
+        "body": [
+          "Je kunt al je gegevens in de app bekijken, corrigeren en exporteren (Ik → Gegevens exporteren, gratis voor iedereen) en wissen (Ik → Alle gegevens wissen). Je kunt bezwaar maken tegen de verwerking en je toestemming voor lezen met AI altijd intrekken.",
+          "Heb je vragen, schrijf dan naar {{email}}. Je kunt ook een klacht indienen bij de Noorse toezichthouder (Datatilsynet) of bij de toezichthouder waar je woont (in Nederland de Autoriteit Persoonsgegevens)."
+        ]
+      },
+      {
+        "heading": "Kinderen",
+        "body": ["Saldo Pocket is niet gemaakt voor kinderen onder 13 jaar, en we verwerken niet bewust hun gegevens."]
+      },
+      {
+        "heading": "Wijzigingen",
+        "body": ["Als we dit beleid wijzigen, werken we deze pagina en de datum bovenaan bij. Is de wijziging van belang voor hoe je gegevens worden gebruikt, dan laten we het je in de app weten."]
+      }
+    ]
+  },
+  "deleteAccount": {
+    "intro": "Je gegevens in Saldo Pocket staan op je telefoon, dus je wist ze zelf in de app. Je hoeft er niet om te vragen.",
+    "sections": [
+      {
+        "heading": "Alles wissen in de app",
+        "steps": ["Open Saldo Pocket.", "Ga naar Ik.", "Tik op Alle gegevens wissen.", "Tik op Alles wissen."],
+        "body": [
+          "Dit wist alles wat de app op je telefoon bewaart: rekeningen, posten, vaste posten, doelen, categorieën, leveranciers, instellingen, bewaarde afbeeldingen en bestanden, de apparaat-ID en je keuze voor taal en valuta. De app begint daarna opnieuw als nieuw.",
+          "Dit kan niet ongedaan worden gemaakt. Wil je een kopie, exporteer je gegevens dan eerst via Ik → Gegevens exporteren. Dat is gratis."
+        ]
+      },
+      {
+        "heading": "De app verwijderen",
+        "body": ["Als je Saldo Pocket verwijdert, worden ook alle gegevens van de app van je telefoon gewist."]
+      },
+      {
+        "heading": "Wat er op onze server overblijft",
+        "body": ["Als je lezen met AI hebt gebruikt, heeft onze server een telling per apparaat-ID en dag, zonder inhoud. Die wordt na 30 dagen automatisch verwijderd. De apparaat-ID is willekeurig en wordt samen met al het andere van de telefoon gewist, dus de telling kan niet aan jou worden gekoppeld."]
+      },
+      {
+        "heading": "Je account verwijderen",
+        "planned": true,
+        "body": ["Als optioneel inloggen er is, verwijder je je account in de app via Ik → Account → Account verwijderen. Het account en alles wat ermee is geback-upt, wordt binnen 30 dagen van onze servers verwijderd. Heb je ingelogd met Facebook, dan worden ook de gegevens die we van Facebook kregen verwijderd; je kunt Saldo Pocket ook in Facebook verwijderen via Instellingen → Apps en websites."]
+      },
+      {
+        "heading": "Als je de app niet meer hebt",
+        "body": ["Schrijf naar {{email}} met als onderwerp ‘Saldo Pocket-gegevens verwijderen’. We antwoorden binnen 30 dagen. Omdat er geen account is, hebben we meestal niets over je opgeslagen, en dat bevestigen we."]
+      }
+    ]
+  },
+  "support": {
+    "intro": "Vragen, problemen of ideeën? Schrijf ons en we antwoorden zo snel mogelijk.",
+    "contactHeading": "Contact",
+    "contactBody": "E-mail {{email}}. Vermeld graag je telefoonmodel en de appversie (onderaan bij Ik).",
+    "faqHeading": "Veelgestelde vragen",
+    "faq": [
+      {
+        "q": "Wat is het verschil tussen Gratis en Pro?",
+        "a": "Gratis heeft het budget, ‘Vandaag kun je uitgeven’, 2 rekeningen, 1 budget, 1 spaardoel, 5 eigen categorieën, 3 scans per maand en export van al je gegevens. Pro geeft tot 10 rekeningen, onbeperkt scans, doelen en categorieën, vaste posten die automatisch worden geboekt, geschiedenis en statistieken door de tijd, en rapporten naar Excel en CSV. De prijzen staan in de App Store en Google Play, in je eigen valuta."
+      },
+      {
+        "q": "Hoe herstel ik mijn aankoop op een nieuwe telefoon?",
+        "a": "Pro is gekoppeld aan je Apple ID of Google-account. Log op de nieuwe telefoon in met hetzelfde account, open Saldo Pocket en tik op Aankopen herstellen. Pro kopen is nog niet mogelijk; zo gaat het werken."
+      },
+      {
+        "q": "Hoe exporteer ik mijn gegevens?",
+        "a": "Ga naar Ik → Gegevens exporteren. Al mijn gegevens exporteren (JSON of CSV) is gratis voor iedereen. Met Pro kun je ook rapporten voor een periode en een rekening exporteren naar Excel of CSV."
+      },
+      {
+        "q": "Hoe importeer ik uit internetbankieren?",
+        "a": "Tik op + en Importeren uit internetbankieren. Gebruik screenshots of foto’s van de lijst, of een pdf-, CSV- of Excel-bestand dat je uit je bank hebt geëxporteerd. Je bekijkt elke rij voordat er iets wordt opgeslagen, en rijen die je al hebt zijn gemarkeerd. Saldo Pocket maakt nooit verbinding met je bank."
+      },
+      {
+        "q": "Hoe wis ik mijn gegevens?",
+        "a": "Ga naar Ik → Alle gegevens wissen. Alles op de telefoon wordt gewist. Lees meer op de pagina over het verwijderen van je gegevens."
+      }
+    ]
+  }
+}

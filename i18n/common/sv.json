@@ -1,0 +1,30 @@
+{
+  "skipToContent": "Gå till innehållet",
+  "home": "Startsidan",
+  "language": "Språk",
+  "lastUpdated": "Senast ändrad: {{date}}",
+  "planned": "Planerat",
+  "plannedNote": "Inte i appen ännu. Det står här så att du vet hur det blir innan det kommer.",
+  "pages": {
+    "privacy": "Integritetspolicy",
+    "delete-account": "Radera konto och data",
+    "support": "Support"
+  },
+  "appPage": "{{app}} – {{page}}",
+  "overview": {
+    "title": "Integritet – våra appar",
+    "intro": "{{company}} gör appar för mobilen. Varje app har sin egen integritetspolicy och en sida om att radera dina data. Välj appen nedan.",
+    "app": "App",
+    "privacy": "Integritetspolicy",
+    "deleteAccount": "Radera data",
+    "support": "Support",
+    "external": "Öppnar appens egen webbplats"
+  },
+  "footer": {
+    "privacy": "Integritet",
+    "orgNumber": "Org.nr {{value}}",
+    "rights": "Alla rättigheter förbehållna.",
+    "contact": "Kontakt"
+  },
+  "redirect": "Välj språk"
+}
