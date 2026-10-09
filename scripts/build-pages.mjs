@@ -113,8 +113,9 @@ function sectionHtml(s, lang, vars) {
   const planned = s.planned ? `<span class="planned-badge">${fill(c.planned)}</span>` : '';
   const parts = [`<section${s.planned ? ' class="planned"' : ''}>`, `<h2>${fill(s.heading, vars)}${planned}</h2>`];
   if (s.planned) parts.push(`<p class="planned-note">${fill(c.plannedNote)}</p>`);
-  for (const p of s.body ?? []) parts.push(`<p>${fill(p, vars)}</p>`);
+  // Steps first (what to do), then the explanation.
   if (s.steps) parts.push(`<ol>${s.steps.map((x) => `<li>${fill(x, vars)}</li>`).join('')}</ol>`);
+  for (const p of s.body ?? []) parts.push(`<p>${fill(p, vars)}</p>`);
   if (s.list) parts.push(`<ul>${s.list.map((x) => `<li>${fill(x, vars)}</li>`).join('')}</ul>`);
   for (const p of s.after ?? []) parts.push(`<p>${fill(p, vars)}</p>`);
   parts.push('</section>');
@@ -294,7 +295,9 @@ for (const [file, content] of files) {
 }
 
 if (process.argv.includes('--check')) {
-  const stale = [...files].filter(([file, content]) => !fs.existsSync(path.join(root, file)) || fs.readFileSync(path.join(root, file), 'utf8') !== content).map(([f]) => f);
+  // Line ends do not count (git may check files out with CRLF on Windows).
+  const same = (file, content) => fs.readFileSync(path.join(root, file), 'utf8').replace(/\r\n/g, '\n') === content.replace(/\r\n/g, '\n');
+  const stale = [...files].filter(([file, content]) => !fs.existsSync(path.join(root, file)) || !same(file, content)).map(([f]) => f);
   if (stale.length) {
     console.error(`Pages not up to date (run npm run build:pages): ${stale.slice(0, 10).join(', ')}${stale.length > 10 ? ` and ${stale.length - 10} more` : ''}`);
     process.exit(1);
