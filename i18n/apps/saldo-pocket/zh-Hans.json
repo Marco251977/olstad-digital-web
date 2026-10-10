@@ -176,6 +176,8 @@
     "body": "Saldo Pocket 没有自动打开？请点按按钮。",
     "open": "打开 Saldo Pocket",
     "codeHint": "不在装有应用的手机上？请在那部手机上打开 Saldo Pocket，并输入邮件中的验证码。",
-    "expired": "链接已过期或已被使用。请在 Saldo Pocket 中获取新的验证码。"
+    "expired": "链接已过期或已被使用。请在 Saldo Pocket 中获取新的验证码。",
+    "desktopTitle": "请在手机上打开链接",
+    "desktopBody": "此链接无法在这里登录。请在安装了 Saldo Pocket 的手机上打开，或在应用中输入邮件里的验证码。"
   }
 }

@@ -173,25 +173,41 @@ function appPage(app, page, lang) {
 // --- sign-in links (Universal Links / App Links) ---
 
 /**
- * /<lang>/<app>/auth/callback: where the sign-in link in the e-mail lands. With the app installed the
- * phone opens the app straight away (Universal Link / App Link). Otherwise this page offers a button that
- * opens the app with the same parameters (the tokens are in the «#» part, which never reaches the
- * server), or says to enter the code from the e-mail in the app. No tracking, nothing stored.
+ * /<lang>/<app>/auth/callback: where the sign-in link in the e-mail lands. The e-mail links straight
+ * here with `?token_hash=…&type=…` (app-core directLink), so with the app installed the phone opens the
+ * app at the tap (Universal Link / App Link) and the app signs in. Otherwise (Gmail's browser, no app)
+ * this page offers a button that opens the app with the same parameters. On a computer it says the link
+ * cannot sign in here: open it on the phone with the app, or type the code from the e-mail in the app.
+ * The page never uses the token itself (a link scanner opening it does not use it up). No tracking,
+ * nothing stored. Without JavaScript the phone texts and the code hint are shown.
  */
 function authCallbackPage(app, lang) {
   const a = appTexts[app.slug][lang].authCallback;
   const scheme = `${app.links.scheme}://auth/callback`;
   const body = [
     `<p class="app-name">${esc(app.name)}</p>`,
-    `<h1>${fill(a.title)}</h1>`,
+    `<h1 id="title">${fill(a.title)}</h1>`,
     `<p class="lede" id="status">${fill(a.body)}</p>`,
-    `<p><a class="button" id="open" href="${esc(scheme)}">${fill(a.open)}</a></p>`,
-    `<p class="updated">${fill(a.codeHint)}</p>`,
+    `<p id="open-row"><a class="button" id="open" href="${esc(scheme)}">${fill(a.open)}</a></p>`,
+    `<p class="updated" id="hint">${fill(a.codeHint)}</p>`,
     `<script>
 (function () {
   var params = location.search.slice(1) + '&' + location.hash.slice(1);
-  document.getElementById('open').href = ${JSON.stringify(scheme)} + (location.hash || location.search || '');
-  if (/(^|&)error(_code)?=/.test(params)) document.getElementById('status').textContent = ${JSON.stringify(a.expired)};
+  // Everything the e-mail or Supabase put in the address goes to the app: token_hash/type in the query,
+  // or tokens in the «#» part (older links).
+  document.getElementById('open').href = ${JSON.stringify(scheme)} + location.search + location.hash;
+  if (/(^|&)error(_code)?=/.test(params)) {
+    document.getElementById('status').textContent = ${JSON.stringify(a.expired)};
+    return;
+  }
+  var phone = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (!phone) {
+    document.getElementById('title').textContent = ${JSON.stringify(a.desktopTitle)};
+    document.getElementById('status').textContent = ${JSON.stringify(a.desktopBody)};
+    document.getElementById('open-row').style.display = 'none';
+    document.getElementById('hint').style.display = 'none';
+    document.title = ${JSON.stringify(`${app.name} – ${a.desktopTitle}`)};
+  }
 })();
 </script>`,
   ];

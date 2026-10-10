@@ -176,6 +176,8 @@
     "body": "If Saldo Pocket did not open by itself, tap the button.",
     "open": "Open Saldo Pocket",
     "codeHint": "Not on the phone with the app? Open Saldo Pocket there and enter the code from the e-mail instead.",
-    "expired": "The link has expired or has already been used. Ask for a new code in Saldo Pocket."
+    "expired": "The link has expired or has already been used. Ask for a new code in Saldo Pocket.",
+    "desktopTitle": "Open the link on your phone",
+    "desktopBody": "This link can’t sign you in here. Open it on the phone where Saldo Pocket is installed, or enter the code from the e-mail in the app."
   }
 }

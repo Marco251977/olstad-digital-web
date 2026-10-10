@@ -49,15 +49,28 @@
   </header>
   <main id="content" class="wrap">
     <p class="app-name">Saldo Pocket</p>
-    <h1>Apertura di Saldo Pocket</h1>
+    <h1 id="title">Apertura di Saldo Pocket</h1>
     <p class="lede" id="status">Saldo Pocket non si è aperto da solo? Tocca il pulsante.</p>
-    <p><a class="button" id="open" href="saldopocket://auth/callback">Apri Saldo Pocket</a></p>
-    <p class="updated">Non sei sul telefono con l’app? Apri Saldo Pocket lì e inserisci invece il codice dell’email.</p>
+    <p id="open-row"><a class="button" id="open" href="saldopocket://auth/callback">Apri Saldo Pocket</a></p>
+    <p class="updated" id="hint">Non sei sul telefono con l’app? Apri Saldo Pocket lì e inserisci invece il codice dell’email.</p>
     <script>
 (function () {
   var params = location.search.slice(1) + '&' + location.hash.slice(1);
-  document.getElementById('open').href = "saldopocket://auth/callback" + (location.hash || location.search || '');
-  if (/(^|&)error(_code)?=/.test(params)) document.getElementById('status').textContent = "Il link è scaduto o è già stato usato. Richiedi un nuovo codice in Saldo Pocket.";
+  // Everything the e-mail or Supabase put in the address goes to the app: token_hash/type in the query,
+  // or tokens in the «#» part (older links).
+  document.getElementById('open').href = "saldopocket://auth/callback" + location.search + location.hash;
+  if (/(^|&)error(_code)?=/.test(params)) {
+    document.getElementById('status').textContent = "Il link è scaduto o è già stato usato. Richiedi un nuovo codice in Saldo Pocket.";
+    return;
+  }
+  var phone = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (!phone) {
+    document.getElementById('title').textContent = "Apri il link sul telefono";
+    document.getElementById('status').textContent = "Questo link non può farti accedere qui. Aprilo sul telefono in cui è installato Saldo Pocket oppure inserisci nell’app il codice ricevuto via e-mail.";
+    document.getElementById('open-row').style.display = 'none';
+    document.getElementById('hint').style.display = 'none';
+    document.title = "Saldo Pocket – Apri il link sul telefono";
+  }
 })();
 </script>
   </main>

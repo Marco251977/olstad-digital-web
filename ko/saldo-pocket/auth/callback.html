@@ -49,15 +49,28 @@
   </header>
   <main id="content" class="wrap">
     <p class="app-name">Saldo Pocket</p>
-    <h1>Saldo Pocket을 여는 중</h1>
+    <h1 id="title">Saldo Pocket을 여는 중</h1>
     <p class="lede" id="status">Saldo Pocket이 자동으로 열리지 않았다면 버튼을 누르세요.</p>
-    <p><a class="button" id="open" href="saldopocket://auth/callback">Saldo Pocket 열기</a></p>
-    <p class="updated">앱이 있는 휴대폰이 아닌가요? 그 휴대폰에서 Saldo Pocket을 열고 이메일의 코드를 입력하세요.</p>
+    <p id="open-row"><a class="button" id="open" href="saldopocket://auth/callback">Saldo Pocket 열기</a></p>
+    <p class="updated" id="hint">앱이 있는 휴대폰이 아닌가요? 그 휴대폰에서 Saldo Pocket을 열고 이메일의 코드를 입력하세요.</p>
     <script>
 (function () {
   var params = location.search.slice(1) + '&' + location.hash.slice(1);
-  document.getElementById('open').href = "saldopocket://auth/callback" + (location.hash || location.search || '');
-  if (/(^|&)error(_code)?=/.test(params)) document.getElementById('status').textContent = "링크가 만료되었거나 이미 사용되었습니다. Saldo Pocket에서 새 코드를 요청하세요.";
+  // Everything the e-mail or Supabase put in the address goes to the app: token_hash/type in the query,
+  // or tokens in the «#» part (older links).
+  document.getElementById('open').href = "saldopocket://auth/callback" + location.search + location.hash;
+  if (/(^|&)error(_code)?=/.test(params)) {
+    document.getElementById('status').textContent = "링크가 만료되었거나 이미 사용되었습니다. Saldo Pocket에서 새 코드를 요청하세요.";
+    return;
+  }
+  var phone = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (!phone) {
+    document.getElementById('title').textContent = "휴대폰에서 링크를 여세요";
+    document.getElementById('status').textContent = "이 링크로는 여기에서 로그인할 수 없습니다. Saldo Pocket이 설치된 휴대폰에서 열거나 이메일의 코드를 앱에 입력하세요.";
+    document.getElementById('open-row').style.display = 'none';
+    document.getElementById('hint').style.display = 'none';
+    document.title = "Saldo Pocket – 휴대폰에서 링크를 여세요";
+  }
 })();
 </script>
   </main>

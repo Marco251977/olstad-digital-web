@@ -49,15 +49,28 @@
   </header>
   <main id="content" class="wrap">
     <p class="app-name">Saldo Pocket</p>
-    <h1>Saldo Pocketを開いています</h1>
+    <h1 id="title">Saldo Pocketを開いています</h1>
     <p class="lede" id="status">Saldo Pocketが自動で開かない場合は、ボタンをタップしてください。</p>
-    <p><a class="button" id="open" href="saldopocket://auth/callback">Saldo Pocketを開く</a></p>
-    <p class="updated">アプリのあるスマートフォンではありませんか？そちらでSaldo Pocketを開き、メールのコードを入力してください。</p>
+    <p id="open-row"><a class="button" id="open" href="saldopocket://auth/callback">Saldo Pocketを開く</a></p>
+    <p class="updated" id="hint">アプリのあるスマートフォンではありませんか？そちらでSaldo Pocketを開き、メールのコードを入力してください。</p>
     <script>
 (function () {
   var params = location.search.slice(1) + '&' + location.hash.slice(1);
-  document.getElementById('open').href = "saldopocket://auth/callback" + (location.hash || location.search || '');
-  if (/(^|&)error(_code)?=/.test(params)) document.getElementById('status').textContent = "リンクの有効期限が切れたか、すでに使用されています。Saldo Pocketで新しいコードをリクエストしてください。";
+  // Everything the e-mail or Supabase put in the address goes to the app: token_hash/type in the query,
+  // or tokens in the «#» part (older links).
+  document.getElementById('open').href = "saldopocket://auth/callback" + location.search + location.hash;
+  if (/(^|&)error(_code)?=/.test(params)) {
+    document.getElementById('status').textContent = "リンクの有効期限が切れたか、すでに使用されています。Saldo Pocketで新しいコードをリクエストしてください。";
+    return;
+  }
+  var phone = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (!phone) {
+    document.getElementById('title').textContent = "スマートフォンでリンクを開いてください";
+    document.getElementById('status').textContent = "このリンクではここでログインできません。Saldo Pocket が入っているスマートフォンで開くか、メールに記載のコードをアプリに入力してください。";
+    document.getElementById('open-row').style.display = 'none';
+    document.getElementById('hint').style.display = 'none';
+    document.title = "Saldo Pocket – スマートフォンでリンクを開いてください";
+  }
 })();
 </script>
   </main>
