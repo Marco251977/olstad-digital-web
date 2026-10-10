@@ -130,6 +130,8 @@ function appPage(app, page, lang) {
   const vars = {
     ...companyVars(lang),
     server: region ? fill(a.serverRegion, { region: esc(region) }) : fill(a.server),
+    // The data centre's country alone (privacy: where sign-in and sync are stored).
+    region: region ? esc(region) : '',
     supabaseRegion: region ? ` (${esc(region)})` : '',
   };
   const pageTitle = fill(c.pages[page]);

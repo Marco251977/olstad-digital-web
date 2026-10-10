@@ -12,9 +12,10 @@
       {
         "heading": "Kort fortalt",
         "list": [
-          "Dit budget gemmes kun på din telefon. Vi kan ikke se det.",
-          "Der er ingen bankforbindelse og ingen konto.",
-          "Intet fra dit budget forlader telefonen, medmindre du vælger AI-læsning af en kontoudskrift, en kvittering eller en regning.",
+          "Dit budget gemmes på din telefon. Uden konto kan vi ikke se det.",
+          "En konto er valgfri (Apple, Google, Facebook eller e-mail). Med konto og Pro synkroniseres budgettet til vores server i EU, så du kan bruge det på flere enheder.",
+          "Der er ingen bankforbindelse.",
+          "Intet fra dit budget forlader telefonen, medmindre du synkroniserer med Pro eller vælger AI-læsning af en kontoudskrift, en kvittering eller en regning.",
           "Nedbrudsrapporter indeholder ingen personoplysninger.",
           "Du kan eksportere alt og slette alt i appen, gratis."
         ]
@@ -50,34 +51,33 @@
       },
       {
         "heading": "Køb af Pro",
-        "planned": true,
-        "body": ["Pro købes i App Store eller Google Play. Apple eller Google håndterer betalingen efter deres egne privatlivspolitikker; vi ser aldrig dine kortoplysninger. RevenueCat holder styr på, om du har Pro, med et anonymt id, som appen opretter."]
+        "body": ["Pro købes i App Store eller Google Play. Apple eller Google håndterer betalingen efter deres egne privatlivspolitikker; vi ser aldrig dine kortoplysninger. RevenueCat holder styr på, om du har Pro, med et anonymt ID, som appen laver, eller dit konto-ID, når du er logget ind, så Pro følger kontoen."]
       },
       {
-        "heading": "Valgfrit login, sikkerhedskopi og synkronisering",
-        "planned": true,
+        "heading": "Valgfri konto og synkronisering (Pro)",
         "body": [
-          "Du vil kunne logge ind med Apple, Google, Facebook (Meta) eller e-mail for at tage sikkerhedskopi af budgettet og bruge det på flere enheder. Login håndteres af Supabase. Vi gemmer så din e-mailadresse, et konto-id og de budgetdata, du synkroniserer. Logger du ind med Apple, Google eller Facebook, deler de dit navn og din e-mailadresse med os efter det, du godkender.",
-          "Uden login er alt som beskrevet ovenfor. Du kan slette din konto og alt, der er gemt med den, i appen."
+          "Du kan logge ind med Apple, Google, Facebook (Meta) eller e-mail. Login håndteres af Supabase på servere i {{region}}. Vi gemmer så din e-mailadresse, et konto-ID, dit navn, hvis udbyderen deler det, appens sprog og, i testversioner, et testflag. Med Apple kan du skjule din e-mailadresse; så ser vi kun Apples videresendelsesadresse.",
+          "Med Pro synkroniseres budgettet til din konto: konti, poster, faste poster, budget, sparemål, egne kategorier, leverandører appen husker, og de indstillinger, der følger dig (lønningsdag, løn, budget). Hver ændring gemmes med tidspunkt og enhed. Data er krypteret under overførsel og opbevaring, og kun din konto kan læse dem.",
+          "Koder og links til login sendes på e-mail via Resend med din adresse og dit sprog. For at sende hver e-mail én gang gemmer serveren kun besked-ID, type og status i 7 dage, aldrig adressen.",
+          "Du kan logge ud når som helst; data bliver på telefonen. «Slet konto» fjerner kontoen og alle data, der er gemt med den på serveren."
         ]
       },
       {
         "heading": "Widget og påmindelser",
-        "planned": true,
         "body": ["Widgetten viser tal fra dataene på telefonen, og påmindelser om faste posteringer sættes op på telefonen. Intet sendes for nogen af dem."]
       },
       {
         "heading": "Hvem vi deler data med",
         "list": [
+          "Supabase (Irland, EU): login, synkronisering for Pro og serveren til AI-læsning og optællingen af den.",
           "Anthropic (USA): AI-læsning, kun med din tilladelse.",
-          "Supabase{{supabaseRegion}}: vores server til AI-læsning og optællingen af læsninger; senere login, sikkerhedskopi og synkronisering.",
+          "Resend (USA): e-mails med loginkoder og -links.",
+          "RevenueCat (USA): køb af Pro.",
           "Sentry (EU): nedbrudsrapporter uden personoplysninger.",
           "Expo (USA): opdateringer af appen.",
-          "RevenueCat (USA): køb af Pro (planlagt).",
-          "Apple og Google: App Store, Google Play og login (planlagt).",
-          "Meta: login med Facebook (planlagt)."
+          "Apple, Google og Meta: App Store, Google Play og login med dem, når du vælger det."
         ],
-        "after": ["Når data sendes til USA, bruger leverandørerne EU's standardkontraktbestemmelser eller EU–US Data Privacy Framework. Vi sælger aldrig data, og appen har ingen reklamer og ingen sporing."]
+        "after": ["Hvor data går til USA, bruger udbyderne EU's standardkontraktbestemmelser eller EU–US Data Privacy Framework. Vi sælger aldrig data, og appen har ingen reklamer og ingen sporing."]
       },
       {
         "heading": "Retsgrundlag",
@@ -91,8 +91,10 @@
         "heading": "Hvor længe data gemmes",
         "list": [
           "På telefonen: indtil du sletter dem i appen eller afinstallerer appen.",
+          "Din konto og synkroniserede data: indtil du sletter kontoen i appen.",
           "Billeder og tekst til AI-læsning: gemmes ikke hos os.",
           "Optælling af AI-læsninger: 30 dage.",
+          "Log over login-e-mails (uden adresse): 7 dage.",
           "Nedbrudsrapporter: højst 90 dage."
         ]
       },
@@ -118,7 +120,12 @@
     "sections": [
       {
         "heading": "Slet alt i appen",
-        "steps": ["Åbn Saldo Pocket.", "Gå til Mig.", "Tryk på Slet alle data.", "Tryk på Slet alt."],
+        "steps": [
+          "Åbn Saldo Pocket.",
+          "Gå til Mig.",
+          "Tryk på Slet alle data.",
+          "Tryk på Slet alt."
+        ],
         "body": [
           "Det sletter alt, hvad appen har på din telefon: konti, posteringer, faste posteringer, mål, kategorier, leverandører, indstillinger, gemte billeder og filer, enheds-id'et samt valg af sprog og valuta. Appen starter derefter forfra som ny.",
           "Det kan ikke fortrydes. Vil du have en kopi, så eksportér dine data først under Mig → Eksportér data. Det er gratis."
@@ -176,27 +183,19 @@
     "sections": [
       {
         "heading": "Hvem vi er",
-        "body": [
-          "{{company}} (org.nr. {{orgNumber}}, {{country}}) laver og driver Saldo Pocket. Kontakt os på {{email}}."
-        ]
+        "body": ["{{company}} (org.nr. {{orgNumber}}, {{country}}) laver og driver Saldo Pocket. Kontakt os på {{email}}."]
       },
       {
         "heading": "Hvad appen er",
-        "body": [
-          "Saldo Pocket giver dig overblik over dine penge: konti, poster, budget og mål. Tallene bygger på det, du indtaster og importerer. De er et overblik, ikke økonomisk rådgivning, så tjek vigtige beslutninger med din bank."
-        ]
+        "body": ["Saldo Pocket giver dig overblik over dine penge: konti, poster, budget og mål. Tallene bygger på det, du indtaster og importerer. De er et overblik, ikke økonomisk rådgivning, så tjek vigtige beslutninger med din bank."]
       },
       {
         "heading": "Konto og synkronisering",
-        "body": [
-          "Du kan bruge appen uden konto. Logger du ind og har Pro, synkroniseres dine data til din konto, så du kan bruge dem på flere enheder. Pas på dit login; den, der kan logge ind på kontoen, kan se de synkroniserede data."
-        ]
+        "body": ["Du kan bruge appen uden konto. Logger du ind og har Pro, synkroniseres dine data til din konto, så du kan bruge dem på flere enheder. Pas på dit login; den, der kan logge ind på kontoen, kan se de synkroniserede data."]
       },
       {
         "heading": "Gratis og Pro",
-        "body": [
-          "Gratisversionen koster ingenting. Pro købes i App Store eller Google Play, som abonnement (månedligt eller årligt) eller som engangskøb. Prisen vises i butikken, før du køber."
-        ],
+        "body": ["Gratisversionen koster ingenting. Pro købes i App Store eller Google Play, som abonnement (månedligt eller årligt) eller som engangskøb. Prisen vises i butikken, før du køber."],
         "list": [
           "Et abonnement fornyes automatisk, indtil du opsiger det i butikken senest 24 timer før perioden slutter.",
           "Du administrerer og opsiger det i kontoindstillingerne i App Store eller Google Play.",
@@ -205,33 +204,23 @@
       },
       {
         "heading": "Butikkernes vilkår",
-        "body": [
-          "Køb på iPhone og iPad følger også Apples standardlicensaftale (EULA), og køb på Android følger Google Plays vilkår. Refusion håndteres af butikken, du købte i."
-        ]
+        "body": ["Køb på iPhone og iPad følger også Apples standardlicensaftale (EULA), og køb på Android følger Google Plays vilkår. Refusion håndteres af butikken, du købte i."]
       },
       {
         "heading": "Dine data",
-        "body": [
-          "Dine data er dine. Du kan eksportere og slette dem i appen når som helst, også i gratisversionen. Hvordan vi behandler personoplysninger, står i privatlivspolitikken."
-        ]
+        "body": ["Dine data er dine. Du kan eksportere og slette dem i appen når som helst, også i gratisversionen. Hvordan vi behandler personoplysninger, står i privatlivspolitikken."]
       },
       {
         "heading": "Ansvar",
-        "body": [
-          "Vi arbejder for, at appen er korrekt og tilgængelig, men den leveres, som den er. I det omfang loven tillader det, er vi ikke ansvarlige for indirekte tab. Dine rettigheder som forbruger begrænses ikke af vilkårene."
-        ]
+        "body": ["Vi arbejder for, at appen er korrekt og tilgængelig, men den leveres, som den er. I det omfang loven tillader det, er vi ikke ansvarlige for indirekte tab. Dine rettigheder som forbruger begrænses ikke af vilkårene."]
       },
       {
         "heading": "Ændringer",
-        "body": [
-          "Vi kan opdatere vilkårene. Vigtige ændringer vises i appen eller på denne side med dato øverst."
-        ]
+        "body": ["Vi kan opdatere vilkårene. Vigtige ændringer vises i appen eller på denne side med dato øverst."]
       },
       {
         "heading": "Lov",
-        "body": [
-          "Vilkårene følger norsk ret. Er du forbruger, beholder du også den beskyttelse, som loven i det land, du bor i, giver dig."
-        ]
+        "body": ["Vilkårene følger norsk ret. Er du forbruger, beholder du også den beskyttelse, som loven i det land, du bor i, giver dig."]
       }
     ]
   },

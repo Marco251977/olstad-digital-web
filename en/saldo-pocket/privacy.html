@@ -51,7 +51,7 @@
     <p class="app-name">Saldo Pocket</p>
     <h1>Privacy policy</h1>
     <p class="lede">This policy explains what Saldo Pocket stores, what it sends and to whom, and what you can do about it. The short version: your budget stays on your phone.</p>
-    <p class="updated">Last updated: October 9, 2026</p>
+    <p class="updated">Last updated: October 10, 2026</p>
     <ul class="page-nav"><li><a href="/en/saldo-pocket/privacy" aria-current="page">Privacy policy</a></li><li><a href="/en/saldo-pocket/terms">Terms of use</a></li><li><a href="/en/saldo-pocket/delete-account">Delete account and data</a></li><li><a href="/en/saldo-pocket/support">Support</a></li></ul>
     <section>
 <h2>Who is responsible</h2>
@@ -59,7 +59,7 @@
 </section>
     <section>
 <h2>In short</h2>
-<ul><li>Your budget is stored only on your phone. We cannot see it.</li><li>There is no bank connection and no account.</li><li>Nothing about your budget leaves the phone unless you choose AI reading of a bank list, receipt or bill.</li><li>Crash reports contain no personal information.</li><li>You can export everything and delete everything in the app, for free.</li></ul>
+<ul><li>Your budget is stored on your phone. Without an account, we cannot see it.</li><li>An account is optional (Apple, Google, Facebook or e-mail). With an account and Pro, your budget is synced to our server in the EU so you can use it on several devices.</li><li>There is no bank connection.</li><li>Nothing from your budget leaves the phone unless you sync with Pro or choose AI reading of a statement, receipt or bill.</li><li>Crash reports contain no personal data.</li><li>You can export everything and delete everything in the app, for free.</li></ul>
 </section>
     <section>
 <h2>Stored on your phone</h2>
@@ -81,26 +81,25 @@
 <h2>App updates</h2>
 <p>The app checks for updates from Expo, the service that delivers them. As with any connection to the internet, Expo sees the phone’s IP address. No other data is sent.</p>
 </section>
-    <section class="planned">
-<h2>Purchases of Pro<span class="planned-badge">Planned</span></h2>
-<p class="planned-note">Not in the app yet. It is described here so you know how it will work before it arrives.</p>
-<p>Pro is bought in the App Store or Google Play. Apple or Google handle the payment under their own privacy policies; we never see your card details. RevenueCat keeps track of whether you have Pro, using an anonymous ID created by the app.</p>
+    <section>
+<h2>Buying Pro</h2>
+<p>Pro is bought in the App Store or Google Play. Apple or Google handles the payment under their own privacy policies; we never see your card details. RevenueCat keeps track of whether you have Pro, with an anonymous ID the app makes, or your account ID when you are signed in, so Pro follows your account.</p>
 </section>
-    <section class="planned">
-<h2>Optional sign-in, backup and sync<span class="planned-badge">Planned</span></h2>
-<p class="planned-note">Not in the app yet. It is described here so you know how it will work before it arrives.</p>
-<p>You will be able to sign in with Apple, Google, Facebook (Meta) or e-mail to back up your budget and use it on more than one device. Sign-in is handled by Supabase. We then store your e-mail address, an account ID and the budget data you sync. If you sign in with Apple, Google or Facebook, they share your name and e-mail address with us according to what you approve.</p>
-<p>Without sign-in, everything stays as described above. You can delete your account and everything stored with it in the app.</p>
+    <section>
+<h2>Optional account and sync (Pro)</h2>
+<p>You can sign in with Apple, Google, Facebook (Meta) or e-mail. Sign-in is handled by Supabase on servers in Ireland. We then store your e-mail address, an account ID, your name if the provider shares it, your app language and, on test versions, a test flag. With Apple you can hide your e-mail address; we then only see Apple’s relay address.</p>
+<p>With Pro, your budget is synced to your account: accounts, entries, recurring items, budget, savings goals, your own categories, remembered vendors and the settings that follow you (payday, salary, budget). Each change is stored with when it was made and on which device. The data is encrypted in transit and at rest, and only your account can read it.</p>
+<p>Sign-in codes and links are sent by e-mail through Resend, with your address and language. To send each e-mail once, the server keeps only the message ID, type and status for 7 days, never the address.</p>
+<p>You can sign out at any time; the data stays on the phone. «Delete account» removes the account and all data stored with it on the server.</p>
 </section>
-    <section class="planned">
-<h2>Widget and reminders<span class="planned-badge">Planned</span></h2>
-<p class="planned-note">Not in the app yet. It is described here so you know how it will work before it arrives.</p>
+    <section>
+<h2>Widget and reminders</h2>
 <p>The widget shows numbers from the data on your phone, and reminders for recurring items are set up on your phone. Nothing is sent for either.</p>
 </section>
     <section>
 <h2>Who we share data with</h2>
-<ul><li>Anthropic (USA): AI reading, only with your permission.</li><li>Supabase (Ireland): our server for AI reading and the counts of readings; later sign-in, backup and sync.</li><li>Sentry (EU): crash reports without personal data.</li><li>Expo (USA): app updates.</li><li>RevenueCat (USA): Pro purchases (planned).</li><li>Apple and Google: the App Store, Google Play and sign-in (planned).</li><li>Meta: sign-in with Facebook (planned).</li></ul>
-<p>Where data goes to the USA, the providers use the EU’s standard contractual clauses or the EU–US Data Privacy Framework. We never sell data, and the app has no ads and no tracking.</p>
+<ul><li>Supabase (Ireland, EU): sign-in, sync for Pro, and the server for AI reading and its count.</li><li>Anthropic (USA): AI reading, only with your permission.</li><li>Resend (USA): e-mails with sign-in codes and links.</li><li>RevenueCat (USA): purchases of Pro.</li><li>Sentry (EU): crash reports without personal data.</li><li>Expo (USA): app updates.</li><li>Apple, Google and Meta: the App Store, Google Play and signing in with them, when you choose to.</li></ul>
+<p>Where data goes to the USA, the providers use the EU standard contractual clauses or the EU–US Data Privacy Framework. We never sell data, and the app has no ads and no tracking.</p>
 </section>
     <section>
 <h2>Legal basis</h2>
@@ -108,7 +107,7 @@
 </section>
     <section>
 <h2>How long data is kept</h2>
-<ul><li>On your phone: until you delete it in the app or uninstall the app.</li><li>Pictures and text for AI reading: not stored by us.</li><li>Counts of AI readings: 30 days.</li><li>Crash reports: at most 90 days.</li></ul>
+<ul><li>On the phone: until you delete it in the app or uninstall the app.</li><li>Your account and synced data: until you delete the account in the app.</li><li>Pictures and text for AI reading: not stored by us.</li><li>Count of AI readings: 30 days.</li><li>Log of sign-in e-mails (no address): 7 days.</li><li>Crash reports: at most 90 days.</li></ul>
 </section>
     <section>
 <h2>Your rights</h2>

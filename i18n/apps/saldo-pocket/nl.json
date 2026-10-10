@@ -10,13 +10,14 @@
         "body": ["{{company}} (org.nr. {{orgNumber}}, {{country}}) is verwerkingsverantwoordelijke voor de verwerking die hier wordt beschreven. Neem contact op via {{email}}."]
       },
       {
-        "heading": "Kort gezegd",
+        "heading": "In het kort",
         "list": [
-          "Je budget wordt alleen op je telefoon opgeslagen. Wij kunnen het niet zien.",
-          "Er is geen bankkoppeling en geen account.",
-          "Niets van je budget verlaat de telefoon, tenzij je kiest voor het lezen van een rekeningoverzicht, bon of factuur met AI.",
+          "Je budget wordt op je telefoon opgeslagen. Zonder account kunnen wij het niet zien.",
+          "Een account is optioneel (Apple, Google, Facebook of e-mail). Met een account en Pro wordt je budget met onze server in de EU gesynchroniseerd, zodat je het op meerdere apparaten kunt gebruiken.",
+          "Er is geen bankkoppeling.",
+          "Niets uit je budget verlaat de telefoon, tenzij je synchroniseert met Pro of kiest voor het lezen van een rekeningoverzicht, bon of factuur met AI.",
           "Crashrapporten bevatten geen persoonsgegevens.",
-          "Je kunt alles exporteren en alles wissen in de app, gratis."
+          "Je kunt alles in de app gratis exporteren en verwijderen."
         ]
       },
       {
@@ -50,34 +51,33 @@
       },
       {
         "heading": "Pro kopen",
-        "planned": true,
-        "body": ["Pro koop je in de App Store of Google Play. Apple of Google verwerken de betaling volgens hun eigen privacybeleid; wij zien je kaartgegevens nooit. RevenueCat houdt bij of je Pro hebt, met een anonieme ID die de app aanmaakt."]
+        "body": ["Pro koop je in de App Store of Google Play. Apple of Google regelt de betaling volgens hun eigen privacybeleid; wij zien je kaartgegevens nooit. RevenueCat houdt bij of je Pro hebt, met een anonieme ID die de app maakt, of je account-ID als je bent ingelogd, zodat Pro bij je account hoort."]
       },
       {
-        "heading": "Optioneel inloggen, back-up en synchronisatie",
-        "planned": true,
+        "heading": "Optioneel account en synchronisatie (Pro)",
         "body": [
-          "Je kunt straks inloggen met Apple, Google, Facebook (Meta) of e-mail om een back-up van je budget te maken en het op meer apparaten te gebruiken. Inloggen loopt via Supabase. We slaan dan je e-mailadres, een account-ID en de budgetgegevens die je synchroniseert op. Log je in met Apple, Google of Facebook, dan delen zij je naam en e-mailadres met ons volgens wat je goedkeurt.",
-          "Zonder inloggen blijft alles zoals hierboven beschreven. Je kunt je account en alles wat ermee is opgeslagen in de app verwijderen."
+          "Je kunt inloggen met Apple, Google, Facebook (Meta) of e-mail. Het inloggen verloopt via Supabase op servers in {{region}}. We bewaren dan je e-mailadres, een account-ID, je naam als de aanbieder die deelt, de taal van de app en, in testversies, een testmarkering. Met Apple kun je je e-mailadres verbergen; dan zien we alleen het doorstuuradres van Apple.",
+          "Met Pro wordt je budget met je account gesynchroniseerd: rekeningen, posten, vaste posten, budget, spaardoelen, eigen categorieën, onthouden leveranciers en de instellingen die met je meegaan (salarisdag, salaris, budget). Elke wijziging wordt opgeslagen met tijdstip en apparaat. De gegevens zijn versleuteld tijdens verzending en opslag, en alleen jouw account kan ze lezen.",
+          "Codes en links om in te loggen worden per e-mail verstuurd via Resend, met je adres en taal. Om elke e-mail één keer te versturen bewaart de server alleen bericht-ID, soort en status, 7 dagen lang, nooit het adres.",
+          "Je kunt altijd uitloggen; de gegevens blijven op de telefoon. «Account verwijderen» verwijdert het account en alle gegevens die ermee op de server staan."
         ]
       },
       {
         "heading": "Widget en herinneringen",
-        "planned": true,
         "body": ["De widget toont cijfers uit de gegevens op je telefoon, en herinneringen voor vaste posten worden op je telefoon ingesteld. Voor geen van beide wordt iets verstuurd."]
       },
       {
         "heading": "Met wie we gegevens delen",
         "list": [
+          "Supabase (Ierland, EU): inloggen, synchronisatie voor Pro, en de server voor lezen met AI en het tellen daarvan.",
           "Anthropic (VS): lezen met AI, alleen met je toestemming.",
-          "Supabase{{supabaseRegion}}: onze server voor lezen met AI en het tellen daarvan; later inloggen, back-up en synchronisatie.",
+          "Resend (VS): e-mails met inlogcodes en -links.",
+          "RevenueCat (VS): aankopen van Pro.",
           "Sentry (EU): crashrapporten zonder persoonsgegevens.",
-          "Expo (VS): updates van de app.",
-          "RevenueCat (VS): Pro kopen (gepland).",
-          "Apple en Google: App Store, Google Play en inloggen (gepland).",
-          "Meta: inloggen met Facebook (gepland)."
+          "Expo (VS): app-updates.",
+          "Apple, Google en Meta: de App Store, Google Play en inloggen met hen, als je daarvoor kiest."
         ],
-        "after": ["Als gegevens naar de VS gaan, gebruiken de leveranciers de standaardcontractbepalingen van de EU of het EU-US Data Privacy Framework. We verkopen nooit gegevens, en de app heeft geen advertenties en geen tracking."]
+        "after": ["Waar gegevens naar de VS gaan, gebruiken de aanbieders de standaardcontractbepalingen van de EU of het EU-US Data Privacy Framework. We verkopen nooit gegevens en de app heeft geen advertenties en geen tracking."]
       },
       {
         "heading": "Rechtsgrond",
@@ -90,10 +90,12 @@
       {
         "heading": "Hoe lang gegevens worden bewaard",
         "list": [
-          "Op je telefoon: tot je ze in de app wist of de app verwijdert.",
-          "Afbeeldingen en tekst voor lezen met AI: worden bij ons niet opgeslagen.",
-          "Tellingen van lezen met AI: 30 dagen.",
-          "Crashrapporten: maximaal 90 dagen."
+          "Op de telefoon: tot je ze in de app verwijdert of de app verwijdert.",
+          "Je account en gesynchroniseerde gegevens: tot je het account in de app verwijdert.",
+          "Foto’s en tekst voor lezen met AI: niet door ons bewaard.",
+          "Telling van AI-lezingen: 30 dagen.",
+          "Logboek van inlogmails (zonder adres): 7 dagen.",
+          "Crashrapporten: hooguit 90 dagen."
         ]
       },
       {
@@ -118,7 +120,12 @@
     "sections": [
       {
         "heading": "Alles wissen in de app",
-        "steps": ["Open Saldo Pocket.", "Ga naar Ik.", "Tik op Alle gegevens wissen.", "Tik op Alles wissen."],
+        "steps": [
+          "Open Saldo Pocket.",
+          "Ga naar Ik.",
+          "Tik op Alle gegevens wissen.",
+          "Tik op Alles wissen."
+        ],
         "body": [
           "Dit wist alles wat de app op je telefoon bewaart: rekeningen, posten, vaste posten, doelen, categorieën, leveranciers, instellingen, bewaarde afbeeldingen en bestanden, de apparaat-ID en je keuze voor taal en valuta. De app begint daarna opnieuw als nieuw.",
           "Dit kan niet ongedaan worden gemaakt. Wil je een kopie, exporteer je gegevens dan eerst via Ik → Gegevens exporteren. Dat is gratis."
@@ -176,27 +183,19 @@
     "sections": [
       {
         "heading": "Wie we zijn",
-        "body": [
-          "{{company}} (org.nr. {{orgNumber}}, {{country}}) maakt en beheert Saldo Pocket. Neem contact op via {{email}}."
-        ]
+        "body": ["{{company}} (org.nr. {{orgNumber}}, {{country}}) maakt en beheert Saldo Pocket. Neem contact op via {{email}}."]
       },
       {
         "heading": "Wat de app is",
-        "body": [
-          "Saldo Pocket geeft je overzicht over je geld: rekeningen, posten, budget en doelen. De cijfers zijn gebaseerd op wat je invoert en importeert. Ze zijn een overzicht, geen financieel advies; overleg belangrijke beslissingen met je bank."
-        ]
+        "body": ["Saldo Pocket geeft je overzicht over je geld: rekeningen, posten, budget en doelen. De cijfers zijn gebaseerd op wat je invoert en importeert. Ze zijn een overzicht, geen financieel advies; overleg belangrijke beslissingen met je bank."]
       },
       {
         "heading": "Account en synchronisatie",
-        "body": [
-          "Je kunt de app zonder account gebruiken. Als je inlogt en Pro hebt, worden je gegevens met je account gesynchroniseerd, zodat je ze op meerdere apparaten kunt gebruiken. Bescherm je inlog; wie op je account kan inloggen, ziet de gesynchroniseerde gegevens."
-        ]
+        "body": ["Je kunt de app zonder account gebruiken. Als je inlogt en Pro hebt, worden je gegevens met je account gesynchroniseerd, zodat je ze op meerdere apparaten kunt gebruiken. Bescherm je inlog; wie op je account kan inloggen, ziet de gesynchroniseerde gegevens."]
       },
       {
         "heading": "Gratis en Pro",
-        "body": [
-          "De gratis versie kost niets. Pro koop je in de App Store of Google Play, als abonnement (per maand of per jaar) of als eenmalige aankoop. De prijs staat in de store voordat je koopt."
-        ],
+        "body": ["De gratis versie kost niets. Pro koop je in de App Store of Google Play, als abonnement (per maand of per jaar) of als eenmalige aankoop. De prijs staat in de store voordat je koopt."],
         "list": [
           "Een abonnement wordt automatisch verlengd tot je het uiterlijk 24 uur voor het einde van de periode in de store opzegt.",
           "Je beheert en zegt op via de accountinstellingen van de App Store of Google Play.",
@@ -205,33 +204,23 @@
       },
       {
         "heading": "Voorwaarden van de stores",
-        "body": [
-          "Aankopen op iPhone en iPad volgen ook de standaardlicentieovereenkomst van Apple (EULA), aankopen op Android de voorwaarden van Google Play. Terugbetalingen regelt de store waar je kocht."
-        ]
+        "body": ["Aankopen op iPhone en iPad volgen ook de standaardlicentieovereenkomst van Apple (EULA), aankopen op Android de voorwaarden van Google Play. Terugbetalingen regelt de store waar je kocht."]
       },
       {
         "heading": "Jouw gegevens",
-        "body": [
-          "Je gegevens zijn van jou. Je kunt ze altijd in de app exporteren en verwijderen, ook in de gratis versie. Hoe we persoonsgegevens verwerken, staat in de privacyverklaring."
-        ]
+        "body": ["Je gegevens zijn van jou. Je kunt ze altijd in de app exporteren en verwijderen, ook in de gratis versie. Hoe we persoonsgegevens verwerken, staat in de privacyverklaring."]
       },
       {
         "heading": "Aansprakelijkheid",
-        "body": [
-          "We zetten ons in om de app juist en beschikbaar te houden, maar leveren hem zoals hij is. Voor zover de wet het toestaat, zijn we niet aansprakelijk voor indirecte schade. Je rechten als consument worden door deze voorwaarden niet beperkt."
-        ]
+        "body": ["We zetten ons in om de app juist en beschikbaar te houden, maar leveren hem zoals hij is. Voor zover de wet het toestaat, zijn we niet aansprakelijk voor indirecte schade. Je rechten als consument worden door deze voorwaarden niet beperkt."]
       },
       {
         "heading": "Wijzigingen",
-        "body": [
-          "We kunnen deze voorwaarden bijwerken. Belangrijke wijzigingen staan in de app of op deze pagina, met de datum bovenaan."
-        ]
+        "body": ["We kunnen deze voorwaarden bijwerken. Belangrijke wijzigingen staan in de app of op deze pagina, met de datum bovenaan."]
       },
       {
         "heading": "Recht",
-        "body": [
-          "Op deze voorwaarden is Noors recht van toepassing. Als consument behoud je ook de bescherming die het recht van je woonland je geeft."
-        ]
+        "body": ["Op deze voorwaarden is Noors recht van toepassing. Als consument behoud je ook de bescherming die het recht van je woonland je geeft."]
       }
     ]
   },

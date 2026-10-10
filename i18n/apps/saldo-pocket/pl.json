@@ -12,11 +12,12 @@
       {
         "heading": "W skrócie",
         "list": [
-          "Twój budżet jest przechowywany tylko na Twoim telefonie. Nie mamy do niego wglądu.",
-          "Nie ma połączenia z bankiem ani konta użytkownika.",
-          "Nic z Twojego budżetu nie opuszcza telefonu, chyba że wybierzesz odczyt wyciągu, paragonu lub faktury przez AI.",
+          "Twój budżet jest zapisany na telefonie. Bez konta nie możemy go zobaczyć.",
+          "Konto jest opcjonalne (Apple, Google, Facebook lub e-mail). Z kontem i Pro budżet jest synchronizowany z naszym serwerem w UE, aby korzystać z niego na kilku urządzeniach.",
+          "Nie ma połączenia z bankiem.",
+          "Nic z Twojego budżetu nie opuszcza telefonu, chyba że synchronizujesz z Pro albo wybierzesz odczyt wyciągu, paragonu lub faktury przez AI.",
           "Raporty o awariach nie zawierają danych osobowych.",
-          "W aplikacji możesz bezpłatnie wyeksportować i usunąć wszystko."
+          "Możesz bezpłatnie wyeksportować i usunąć wszystko w aplikacji."
         ]
       },
       {
@@ -50,32 +51,31 @@
       },
       {
         "heading": "Zakup Pro",
-        "planned": true,
-        "body": ["Pro kupuje się w App Store lub Google Play. Apple lub Google obsługują płatność zgodnie z własnymi politykami prywatności; nigdy nie widzimy danych Twojej karty. RevenueCat sprawdza, czy masz Pro, za pomocą anonimowego identyfikatora tworzonego przez aplikację."]
+        "body": ["Pro kupuje się w App Store lub Google Play. Płatność obsługuje Apple lub Google według własnych polityk prywatności; nigdy nie widzimy danych Twojej karty. RevenueCat śledzi, czy masz Pro, za pomocą anonimowego ID tworzonego przez aplikację lub ID Twojego konta, gdy jesteś zalogowany, aby Pro było przypisane do konta."]
       },
       {
-        "heading": "Opcjonalne logowanie, kopia zapasowa i synchronizacja",
-        "planned": true,
+        "heading": "Opcjonalne konto i synchronizacja (Pro)",
         "body": [
-          "Będzie można zalogować się przez Apple, Google, Facebook (Meta) lub e-mail, aby zrobić kopię zapasową budżetu i używać go na kilku urządzeniach. Logowanie obsługuje Supabase. Przechowujemy wtedy Twój adres e-mail, identyfikator konta i synchronizowane dane budżetu. Jeśli logujesz się przez Apple, Google lub Facebook, udostępniają nam one Twoje imię i adres e-mail w zakresie, na który się zgodzisz.",
-          "Bez logowania wszystko pozostaje tak, jak opisano wyżej. Konto i wszystko, co jest z nim zapisane, możesz usunąć w aplikacji."
+          "Możesz zalogować się przez Apple, Google, Facebook (Meta) lub e-mail. Logowaniem zajmuje się Supabase na serwerach w kraju: {{region}}. Zapisujemy wtedy Twój adres e-mail, ID konta, imię i nazwisko, jeśli dostawca je udostępnia, język aplikacji oraz w wersjach testowych znacznik testu. Z Apple możesz ukryć adres e-mail; widzimy wtedy tylko adres przekazujący Apple.",
+          "Z Pro budżet jest synchronizowany z Twoim kontem: konta, operacje, operacje stałe, budżet, cele oszczędnościowe, własne kategorie, zapamiętani odbiorcy i ustawienia, które Ci towarzyszą (dzień wypłaty, pensja, budżet). Każda zmiana jest zapisywana z czasem i urządzeniem. Dane są szyfrowane podczas przesyłania i przechowywania, a odczytać je może tylko Twoje konto.",
+          "Kody i linki do logowania są wysyłane e-mailem przez Resend, z Twoim adresem i językiem. Aby każdy e-mail został wysłany raz, serwer przechowuje tylko ID wiadomości, typ i status przez 7 dni, nigdy adres.",
+          "Możesz wylogować się w każdej chwili; dane zostają na telefonie. «Usuń konto» usuwa konto i wszystkie dane zapisane z nim na serwerze."
         ]
       },
       {
         "heading": "Widżet i przypomnienia",
-        "planned": true,
         "body": ["Widżet pokazuje liczby z danych na telefonie, a przypomnienia o stałych pozycjach są ustawiane na telefonie. W żadnym z tych przypadków nic nie jest wysyłane."]
       },
       {
         "heading": "Komu udostępniamy dane",
         "list": [
+          "Supabase (Irlandia, UE): logowanie, synchronizacja dla Pro oraz serwer odczytu przez AI i jego licznik.",
           "Anthropic (USA): odczyt przez AI, tylko za Twoją zgodą.",
-          "Supabase{{supabaseRegion}}: nasz serwer do odczytu przez AI i liczenia odczytów; później logowanie, kopia zapasowa i synchronizacja.",
+          "Resend (USA): e-maile z kodami i linkami do logowania.",
+          "RevenueCat (USA): zakupy Pro.",
           "Sentry (UE): raporty o awariach bez danych osobowych.",
           "Expo (USA): aktualizacje aplikacji.",
-          "RevenueCat (USA): zakup Pro (planowane).",
-          "Apple i Google: App Store, Google Play i logowanie (planowane).",
-          "Meta: logowanie przez Facebook (planowane)."
+          "Apple, Google i Meta: App Store, Google Play i logowanie przez nie, jeśli je wybierzesz."
         ],
         "after": ["Gdy dane trafiają do USA, dostawcy stosują standardowe klauzule umowne UE lub EU–US Data Privacy Framework. Nigdy nie sprzedajemy danych, a aplikacja nie ma reklam ani śledzenia."]
       },
@@ -90,9 +90,11 @@
       {
         "heading": "Jak długo przechowujemy dane",
         "list": [
-          "Na telefonie: do czasu usunięcia ich w aplikacji lub odinstalowania aplikacji.",
+          "Na telefonie: do czasu ich usunięcia w aplikacji lub odinstalowania aplikacji.",
+          "Twoje konto i zsynchronizowane dane: do czasu usunięcia konta w aplikacji.",
           "Obrazy i tekst do odczytu przez AI: nie są u nas przechowywane.",
-          "Liczniki odczytów przez AI: 30 dni.",
+          "Licznik odczytów przez AI: 30 dni.",
+          "Dziennik e-maili logowania (bez adresu): 7 dni.",
           "Raporty o awariach: najwyżej 90 dni."
         ]
       },
@@ -118,7 +120,12 @@
     "sections": [
       {
         "heading": "Usuń wszystko w aplikacji",
-        "steps": ["Otwórz Saldo Pocket.", "Przejdź do Ja.", "Dotknij Usuń wszystkie dane.", "Dotknij Usuń wszystko."],
+        "steps": [
+          "Otwórz Saldo Pocket.",
+          "Przejdź do Ja.",
+          "Dotknij Usuń wszystkie dane.",
+          "Dotknij Usuń wszystko."
+        ],
         "body": [
           "Usuwa to wszystko, co aplikacja przechowuje na Twoim telefonie: konta, operacje, stałe pozycje, cele, kategorie, odbiorców, ustawienia, zapisane obrazy i pliki, identyfikator urządzenia oraz wybór języka i waluty. Aplikacja uruchomi się potem od nowa.",
           "Tego nie można cofnąć. Jeśli chcesz mieć kopię, najpierw wyeksportuj dane w Ja → Eksport danych. To bezpłatne."
@@ -176,27 +183,19 @@
     "sections": [
       {
         "heading": "Kim jesteśmy",
-        "body": [
-          "{{company}} (nr org. {{orgNumber}}, {{country}}) tworzy i prowadzi Saldo Pocket. Kontakt: {{email}}."
-        ]
+        "body": ["{{company}} (nr org. {{orgNumber}}, {{country}}) tworzy i prowadzi Saldo Pocket. Kontakt: {{email}}."]
       },
       {
         "heading": "Czym jest aplikacja",
-        "body": [
-          "Saldo Pocket daje przegląd Twoich pieniędzy: kont, operacji, budżetu i celów. Liczby opierają się na tym, co wpisujesz i importujesz. To przegląd, a nie doradztwo finansowe; ważne decyzje sprawdzaj w swoim banku."
-        ]
+        "body": ["Saldo Pocket daje przegląd Twoich pieniędzy: kont, operacji, budżetu i celów. Liczby opierają się na tym, co wpisujesz i importujesz. To przegląd, a nie doradztwo finansowe; ważne decyzje sprawdzaj w swoim banku."]
       },
       {
         "heading": "Konto i synchronizacja",
-        "body": [
-          "Z aplikacji możesz korzystać bez konta. Jeśli się zalogujesz i masz Pro, dane są synchronizowane z Twoim kontem, aby korzystać z nich na kilku urządzeniach. Chroń swoje logowanie; kto zaloguje się na Twoje konto, zobaczy zsynchronizowane dane."
-        ]
+        "body": ["Z aplikacji możesz korzystać bez konta. Jeśli się zalogujesz i masz Pro, dane są synchronizowane z Twoim kontem, aby korzystać z nich na kilku urządzeniach. Chroń swoje logowanie; kto zaloguje się na Twoje konto, zobaczy zsynchronizowane dane."]
       },
       {
         "heading": "Bezpłatnie i Pro",
-        "body": [
-          "Wersja bezpłatna nic nie kosztuje. Pro kupuje się w App Store lub Google Play jako subskrypcję (miesięczną lub roczną) albo zakup jednorazowy. Cena jest widoczna w sklepie przed zakupem."
-        ],
+        "body": ["Wersja bezpłatna nic nie kosztuje. Pro kupuje się w App Store lub Google Play jako subskrypcję (miesięczną lub roczną) albo zakup jednorazowy. Cena jest widoczna w sklepie przed zakupem."],
         "list": [
           "Subskrypcja odnawia się automatycznie, dopóki nie anulujesz jej w sklepie najpóźniej 24 godziny przed końcem okresu.",
           "Zarządzasz nią i anulujesz ją w ustawieniach konta App Store lub Google Play.",
@@ -205,33 +204,23 @@
       },
       {
         "heading": "Warunki sklepów",
-        "body": [
-          "Zakupy na iPhonie i iPadzie podlegają także standardowej umowie licencyjnej Apple (EULA), a zakupy na Androidzie warunkom Google Play. Zwrotami zajmuje się sklep, w którym kupiono."
-        ]
+        "body": ["Zakupy na iPhonie i iPadzie podlegają także standardowej umowie licencyjnej Apple (EULA), a zakupy na Androidzie warunkom Google Play. Zwrotami zajmuje się sklep, w którym kupiono."]
       },
       {
         "heading": "Twoje dane",
-        "body": [
-          "Twoje dane należą do Ciebie. Możesz je w każdej chwili wyeksportować i usunąć w aplikacji, także w wersji bezpłatnej. Sposób przetwarzania danych osobowych opisuje polityka prywatności."
-        ]
+        "body": ["Twoje dane należą do Ciebie. Możesz je w każdej chwili wyeksportować i usunąć w aplikacji, także w wersji bezpłatnej. Sposób przetwarzania danych osobowych opisuje polityka prywatności."]
       },
       {
         "heading": "Odpowiedzialność",
-        "body": [
-          "Dbamy o to, by aplikacja była poprawna i dostępna, ale udostępniamy ją w obecnej postaci. W granicach prawa nie odpowiadamy za straty pośrednie. Te warunki nie ograniczają Twoich praw konsumenta."
-        ]
+        "body": ["Dbamy o to, by aplikacja była poprawna i dostępna, ale udostępniamy ją w obecnej postaci. W granicach prawa nie odpowiadamy za straty pośrednie. Te warunki nie ograniczają Twoich praw konsumenta."]
       },
       {
         "heading": "Zmiany",
-        "body": [
-          "Możemy aktualizować te warunki. Ważne zmiany pokazujemy w aplikacji lub na tej stronie, z datą na górze."
-        ]
+        "body": ["Możemy aktualizować te warunki. Ważne zmiany pokazujemy w aplikacji lub na tej stronie, z datą na górze."]
       },
       {
         "heading": "Prawo",
-        "body": [
-          "Warunki podlegają prawu norweskiemu. Jako konsument zachowujesz też ochronę, jaką daje Ci prawo kraju, w którym mieszkasz."
-        ]
+        "body": ["Warunki podlegają prawu norweskiemu. Jako konsument zachowujesz też ochronę, jaką daje Ci prawo kraju, w którym mieszkasz."]
       }
     ]
   },
