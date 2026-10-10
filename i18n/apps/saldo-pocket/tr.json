@@ -176,6 +176,8 @@
     "body": "Saldo Pocket kendiliğinden açılmadı mı? Düğmeye dokun.",
     "open": "Saldo Pocket’ı aç",
     "codeHint": "Uygulamanın olduğu telefonda değil misin? Saldo Pocket’ı orada aç ve bunun yerine e-postadaki kodu gir.",
-    "expired": "Bağlantının süresi doldu ya da zaten kullanıldı. Saldo Pocket’ta yeni bir kod iste."
+    "expired": "Bağlantının süresi doldu ya da zaten kullanıldı. Saldo Pocket’ta yeni bir kod iste.",
+    "desktopTitle": "Bağlantıyı telefonunda aç",
+    "desktopBody": "Bu bağlantı burada oturum açamaz. Saldo Pocket’ın yüklü olduğu telefonda aç veya e-postadaki kodu uygulamaya gir."
   }
 }

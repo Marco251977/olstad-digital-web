@@ -49,15 +49,28 @@
   </header>
   <main id="content" class="wrap">
     <p class="app-name">Saldo Pocket</p>
-    <h1>جارٍ فتح Saldo Pocket</h1>
+    <h1 id="title">جارٍ فتح Saldo Pocket</h1>
     <p class="lede" id="status">لم يُفتح Saldo Pocket تلقائيًا؟ اضغط على الزر.</p>
-    <p><a class="button" id="open" href="saldopocket://auth/callback">افتح Saldo Pocket</a></p>
-    <p class="updated">لست على الهاتف الذي عليه التطبيق؟ افتح Saldo Pocket هناك وأدخل الرمز الموجود في الرسالة بدلًا من ذلك.</p>
+    <p id="open-row"><a class="button" id="open" href="saldopocket://auth/callback">افتح Saldo Pocket</a></p>
+    <p class="updated" id="hint">لست على الهاتف الذي عليه التطبيق؟ افتح Saldo Pocket هناك وأدخل الرمز الموجود في الرسالة بدلًا من ذلك.</p>
     <script>
 (function () {
   var params = location.search.slice(1) + '&' + location.hash.slice(1);
-  document.getElementById('open').href = "saldopocket://auth/callback" + (location.hash || location.search || '');
-  if (/(^|&)error(_code)?=/.test(params)) document.getElementById('status').textContent = "انتهت صلاحية الرابط أو استُخدم من قبل. اطلب رمزًا جديدًا في Saldo Pocket.";
+  // Everything the e-mail or Supabase put in the address goes to the app: token_hash/type in the query,
+  // or tokens in the «#» part (older links).
+  document.getElementById('open').href = "saldopocket://auth/callback" + location.search + location.hash;
+  if (/(^|&)error(_code)?=/.test(params)) {
+    document.getElementById('status').textContent = "انتهت صلاحية الرابط أو استُخدم من قبل. اطلب رمزًا جديدًا في Saldo Pocket.";
+    return;
+  }
+  var phone = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (!phone) {
+    document.getElementById('title').textContent = "افتح الرابط على هاتفك";
+    document.getElementById('status').textContent = "لا يمكن لهذا الرابط تسجيل دخولك هنا. افتحه على الهاتف المثبّت عليه Saldo Pocket، أو أدخل الرمز من البريد الإلكتروني في التطبيق.";
+    document.getElementById('open-row').style.display = 'none';
+    document.getElementById('hint').style.display = 'none';
+    document.title = "Saldo Pocket – افتح الرابط على هاتفك";
+  }
 })();
 </script>
   </main>

@@ -49,15 +49,28 @@
   </header>
   <main id="content" class="wrap">
     <p class="app-name">Saldo Pocket</p>
-    <h1>Saldo Pocket खुल रहा है</h1>
+    <h1 id="title">Saldo Pocket खुल रहा है</h1>
     <p class="lede" id="status">Saldo Pocket अपने-आप नहीं खुला? बटन पर टैप करें।</p>
-    <p><a class="button" id="open" href="saldopocket://auth/callback">Saldo Pocket खोलें</a></p>
-    <p class="updated">ऐप वाले फ़ोन पर नहीं हैं? वहाँ Saldo Pocket खोलें और ईमेल का कोड डालें।</p>
+    <p id="open-row"><a class="button" id="open" href="saldopocket://auth/callback">Saldo Pocket खोलें</a></p>
+    <p class="updated" id="hint">ऐप वाले फ़ोन पर नहीं हैं? वहाँ Saldo Pocket खोलें और ईमेल का कोड डालें।</p>
     <script>
 (function () {
   var params = location.search.slice(1) + '&' + location.hash.slice(1);
-  document.getElementById('open').href = "saldopocket://auth/callback" + (location.hash || location.search || '');
-  if (/(^|&)error(_code)?=/.test(params)) document.getElementById('status').textContent = "लिंक की समय-सीमा खत्म हो गई है या वह पहले ही इस्तेमाल हो चुका है। Saldo Pocket में नया कोड मँगाएँ।";
+  // Everything the e-mail or Supabase put in the address goes to the app: token_hash/type in the query,
+  // or tokens in the «#» part (older links).
+  document.getElementById('open').href = "saldopocket://auth/callback" + location.search + location.hash;
+  if (/(^|&)error(_code)?=/.test(params)) {
+    document.getElementById('status').textContent = "लिंक की समय-सीमा खत्म हो गई है या वह पहले ही इस्तेमाल हो चुका है। Saldo Pocket में नया कोड मँगाएँ।";
+    return;
+  }
+  var phone = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (!phone) {
+    document.getElementById('title').textContent = "लिंक अपने फ़ोन पर खोलें";
+    document.getElementById('status').textContent = "यह लिंक आपको यहाँ साइन इन नहीं कर सकता। इसे उस फ़ोन पर खोलें जिसमें Saldo Pocket है, या ईमेल का कोड ऐप में डालें।";
+    document.getElementById('open-row').style.display = 'none';
+    document.getElementById('hint').style.display = 'none';
+    document.title = "Saldo Pocket – लिंक अपने फ़ोन पर खोलें";
+  }
 })();
 </script>
   </main>

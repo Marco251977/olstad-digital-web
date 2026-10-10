@@ -176,6 +176,8 @@
     "body": "Saldo Pocket이 자동으로 열리지 않았다면 버튼을 누르세요.",
     "open": "Saldo Pocket 열기",
     "codeHint": "앱이 있는 휴대폰이 아닌가요? 그 휴대폰에서 Saldo Pocket을 열고 이메일의 코드를 입력하세요.",
-    "expired": "링크가 만료되었거나 이미 사용되었습니다. Saldo Pocket에서 새 코드를 요청하세요."
+    "expired": "링크가 만료되었거나 이미 사용되었습니다. Saldo Pocket에서 새 코드를 요청하세요.",
+    "desktopTitle": "휴대폰에서 링크를 여세요",
+    "desktopBody": "이 링크로는 여기에서 로그인할 수 없습니다. Saldo Pocket이 설치된 휴대폰에서 열거나 이메일의 코드를 앱에 입력하세요."
   }
 }

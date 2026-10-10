@@ -176,6 +176,8 @@
     "body": "Eikö Saldo Pocket avautunut itsestään? Napauta painiketta.",
     "open": "Avaa Saldo Pocket",
     "codeHint": "Etkö ole puhelimella, jossa sovellus on? Avaa Saldo Pocket siellä ja syötä sen sijaan sähköpostin koodi.",
-    "expired": "Linkki on vanhentunut tai jo käytetty. Pyydä uusi koodi Saldo Pocketissa."
+    "expired": "Linkki on vanhentunut tai jo käytetty. Pyydä uusi koodi Saldo Pocketissa.",
+    "desktopTitle": "Avaa linkki puhelimella",
+    "desktopBody": "Tällä linkillä ei voi kirjautua tässä. Avaa se puhelimella, jossa Saldo Pocket on, tai syötä sähköpostin koodi sovellukseen."
   }
 }

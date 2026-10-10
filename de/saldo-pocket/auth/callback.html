@@ -49,15 +49,28 @@
   </header>
   <main id="content" class="wrap">
     <p class="app-name">Saldo Pocket</p>
-    <h1>Saldo Pocket wird geöffnet</h1>
+    <h1 id="title">Saldo Pocket wird geöffnet</h1>
     <p class="lede" id="status">Hat sich Saldo Pocket nicht von selbst geöffnet? Tippe auf den Button.</p>
-    <p><a class="button" id="open" href="saldopocket://auth/callback">Saldo Pocket öffnen</a></p>
-    <p class="updated">Nicht auf dem Handy mit der App? Öffne Saldo Pocket dort und gib stattdessen den Code aus der E-Mail ein.</p>
+    <p id="open-row"><a class="button" id="open" href="saldopocket://auth/callback">Saldo Pocket öffnen</a></p>
+    <p class="updated" id="hint">Nicht auf dem Handy mit der App? Öffne Saldo Pocket dort und gib stattdessen den Code aus der E-Mail ein.</p>
     <script>
 (function () {
   var params = location.search.slice(1) + '&' + location.hash.slice(1);
-  document.getElementById('open').href = "saldopocket://auth/callback" + (location.hash || location.search || '');
-  if (/(^|&)error(_code)?=/.test(params)) document.getElementById('status').textContent = "Der Link ist abgelaufen oder wurde schon verwendet. Fordere in Saldo Pocket einen neuen Code an.";
+  // Everything the e-mail or Supabase put in the address goes to the app: token_hash/type in the query,
+  // or tokens in the «#» part (older links).
+  document.getElementById('open').href = "saldopocket://auth/callback" + location.search + location.hash;
+  if (/(^|&)error(_code)?=/.test(params)) {
+    document.getElementById('status').textContent = "Der Link ist abgelaufen oder wurde schon verwendet. Fordere in Saldo Pocket einen neuen Code an.";
+    return;
+  }
+  var phone = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (!phone) {
+    document.getElementById('title').textContent = "Link auf dem Handy öffnen";
+    document.getElementById('status').textContent = "Mit diesem Link kannst du dich hier nicht anmelden. Öffne ihn auf dem Handy, auf dem Saldo Pocket installiert ist, oder gib den Code aus der E-Mail in der App ein.";
+    document.getElementById('open-row').style.display = 'none';
+    document.getElementById('hint').style.display = 'none';
+    document.title = "Saldo Pocket – Link auf dem Handy öffnen";
+  }
 })();
 </script>
   </main>

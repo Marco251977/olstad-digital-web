@@ -49,15 +49,28 @@
   </header>
   <main id="content" class="wrap">
     <p class="app-name">Saldo Pocket</p>
-    <h1>Ouverture de Saldo Pocket</h1>
+    <h1 id="title">Ouverture de Saldo Pocket</h1>
     <p class="lede" id="status">Saldo Pocket ne s’est pas ouvert tout seul ? Touchez le bouton.</p>
-    <p><a class="button" id="open" href="saldopocket://auth/callback">Ouvrir Saldo Pocket</a></p>
-    <p class="updated">Vous n’êtes pas sur le téléphone avec l’app ? Ouvrez Saldo Pocket dessus et saisissez plutôt le code de l’e-mail.</p>
+    <p id="open-row"><a class="button" id="open" href="saldopocket://auth/callback">Ouvrir Saldo Pocket</a></p>
+    <p class="updated" id="hint">Vous n’êtes pas sur le téléphone avec l’app ? Ouvrez Saldo Pocket dessus et saisissez plutôt le code de l’e-mail.</p>
     <script>
 (function () {
   var params = location.search.slice(1) + '&' + location.hash.slice(1);
-  document.getElementById('open').href = "saldopocket://auth/callback" + (location.hash || location.search || '');
-  if (/(^|&)error(_code)?=/.test(params)) document.getElementById('status').textContent = "Le lien a expiré ou a déjà été utilisé. Demandez un nouveau code dans Saldo Pocket.";
+  // Everything the e-mail or Supabase put in the address goes to the app: token_hash/type in the query,
+  // or tokens in the «#» part (older links).
+  document.getElementById('open').href = "saldopocket://auth/callback" + location.search + location.hash;
+  if (/(^|&)error(_code)?=/.test(params)) {
+    document.getElementById('status').textContent = "Le lien a expiré ou a déjà été utilisé. Demandez un nouveau code dans Saldo Pocket.";
+    return;
+  }
+  var phone = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (!phone) {
+    document.getElementById('title').textContent = "Ouvrez le lien sur votre téléphone";
+    document.getElementById('status').textContent = "Ce lien ne peut pas vous connecter ici. Ouvrez-le sur le téléphone où Saldo Pocket est installé, ou saisissez le code de l’e-mail dans l’app.";
+    document.getElementById('open-row').style.display = 'none';
+    document.getElementById('hint').style.display = 'none';
+    document.title = "Saldo Pocket – Ouvrez le lien sur votre téléphone";
+  }
 })();
 </script>
   </main>

@@ -49,15 +49,28 @@
   </header>
   <main id="content" class="wrap">
     <p class="app-name">Saldo Pocket</p>
-    <h1>正在打开 Saldo Pocket</h1>
+    <h1 id="title">正在打开 Saldo Pocket</h1>
     <p class="lede" id="status">Saldo Pocket 没有自动打开？请点按按钮。</p>
-    <p><a class="button" id="open" href="saldopocket://auth/callback">打开 Saldo Pocket</a></p>
-    <p class="updated">不在装有应用的手机上？请在那部手机上打开 Saldo Pocket，并输入邮件中的验证码。</p>
+    <p id="open-row"><a class="button" id="open" href="saldopocket://auth/callback">打开 Saldo Pocket</a></p>
+    <p class="updated" id="hint">不在装有应用的手机上？请在那部手机上打开 Saldo Pocket，并输入邮件中的验证码。</p>
     <script>
 (function () {
   var params = location.search.slice(1) + '&' + location.hash.slice(1);
-  document.getElementById('open').href = "saldopocket://auth/callback" + (location.hash || location.search || '');
-  if (/(^|&)error(_code)?=/.test(params)) document.getElementById('status').textContent = "链接已过期或已被使用。请在 Saldo Pocket 中获取新的验证码。";
+  // Everything the e-mail or Supabase put in the address goes to the app: token_hash/type in the query,
+  // or tokens in the «#» part (older links).
+  document.getElementById('open').href = "saldopocket://auth/callback" + location.search + location.hash;
+  if (/(^|&)error(_code)?=/.test(params)) {
+    document.getElementById('status').textContent = "链接已过期或已被使用。请在 Saldo Pocket 中获取新的验证码。";
+    return;
+  }
+  var phone = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (!phone) {
+    document.getElementById('title').textContent = "请在手机上打开链接";
+    document.getElementById('status').textContent = "此链接无法在这里登录。请在安装了 Saldo Pocket 的手机上打开，或在应用中输入邮件里的验证码。";
+    document.getElementById('open-row').style.display = 'none';
+    document.getElementById('hint').style.display = 'none';
+    document.title = "Saldo Pocket – 请在手机上打开链接";
+  }
 })();
 </script>
   </main>

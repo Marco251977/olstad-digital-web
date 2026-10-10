@@ -176,6 +176,8 @@
     "body": "Åpnet ikke Saldo Pocket seg av seg selv? Trykk på knappen.",
     "open": "Åpne Saldo Pocket",
     "codeHint": "Er du ikke på telefonen med appen? Åpne Saldo Pocket der og skriv inn koden fra e-posten i stedet.",
-    "expired": "Lenken er utløpt eller allerede brukt. Be om en ny kode i Saldo Pocket."
+    "expired": "Lenken er utløpt eller allerede brukt. Be om en ny kode i Saldo Pocket.",
+    "desktopTitle": "Åpne lenken på telefonen",
+    "desktopBody": "Denne lenken kan ikke logge deg inn her. Åpne den på telefonen der Saldo Pocket er, eller skriv inn koden fra e-posten i appen."
   }
 }
