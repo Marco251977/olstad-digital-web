@@ -12,11 +12,12 @@
       {
         "heading": "Lyhyesti",
         "list": [
-          "Budjettisi tallennetaan vain puhelimeesi. Me emme näe sitä.",
-          "Pankkiyhteyttä tai käyttäjätiliä ei ole.",
-          "Mikään budjetistasi ei lähde puhelimesta, ellet valitse tiliotteen, kuitin tai laskun lukemista tekoälyllä.",
+          "Budjettisi tallennetaan puhelimeesi. Ilman tiliä emme näe sitä.",
+          "Tili on vapaaehtoinen (Apple, Google, Facebook tai sähköposti). Tilin ja Pron kanssa budjettisi synkronoidaan palvelimellemme EU:ssa, jotta voit käyttää sitä usealla laitteella.",
+          "Pankkiyhteyttä ei ole.",
+          "Mikään budjetistasi ei lähde puhelimesta, ellet synkronoi Prolla tai valitse tiliotteen, kuitin tai laskun lukemista tekoälyllä.",
           "Kaatumisraportit eivät sisällä henkilötietoja.",
-          "Voit viedä kaiken ja poistaa kaiken sovelluksessa maksutta."
+          "Voit viedä ja poistaa kaiken sovelluksessa maksutta."
         ]
       },
       {
@@ -49,35 +50,34 @@
         "body": ["Sovellus tarkistaa päivitykset Expolta, joka toimittaa ne. Kuten aina internetiä käytettäessä, Expo näkee puhelimen IP-osoitteen. Muita tietoja ei lähetetä."]
       },
       {
-        "heading": "Pro-ostokset",
-        "planned": true,
-        "body": ["Pro ostetaan App Storesta tai Google Playsta. Apple tai Google käsittelee maksun omien tietosuojakäytäntöjensä mukaisesti; me emme koskaan näe korttitietojasi. RevenueCat pitää kirjaa siitä, onko sinulla Pro, sovelluksen luoman nimettömän tunnuksen avulla."]
+        "heading": "Pron ostaminen",
+        "body": ["Pro ostetaan App Storesta tai Google Playsta. Apple tai Google hoitaa maksun omien tietosuojakäytäntöjensä mukaan; emme koskaan näe korttitietojasi. RevenueCat pitää kirjaa siitä, onko sinulla Pro, sovelluksen luoman nimettömän tunnisteen tai kirjautuneena tilisi tunnisteen avulla, jotta Pro seuraa tiliäsi."]
       },
       {
-        "heading": "Vapaaehtoinen kirjautuminen, varmuuskopio ja synkronointi",
-        "planned": true,
+        "heading": "Vapaaehtoinen tili ja synkronointi (Pro)",
         "body": [
-          "Voit kirjautua Applella, Googlella, Facebookilla (Meta) tai sähköpostilla varmuuskopioidaksesi budjetin ja käyttääksesi sitä useammalla laitteella. Kirjautumisen hoitaa Supabase. Tallennamme silloin sähköpostiosoitteesi, tilitunnuksen ja synkronoimasi budjettitiedot. Jos kirjaudut Applella, Googlella tai Facebookilla, ne jakavat nimesi ja sähköpostiosoitteesi kanssamme hyväksymäsi mukaisesti.",
-          "Ilman kirjautumista kaikki on kuten yllä on kuvattu. Voit poistaa tilisi ja kaiken sen mukana tallennetun sovelluksessa."
+          "Voit kirjautua Applella, Googlella, Facebookilla (Meta) tai sähköpostilla. Kirjautumisen hoitaa Supabase palvelimilla, joiden sijaintimaa on {{region}}. Tallennamme silloin sähköpostiosoitteesi, tilitunnisteen, nimesi jos palvelu jakaa sen, sovelluksen kielen ja testiversioissa testimerkinnän. Applella voit piilottaa sähköpostiosoitteesi; näemme silloin vain Applen välitysosoitteen.",
+          "Prolla budjettisi synkronoidaan tilillesi: tilit, tapahtumat, toistuvat erät, budjetti, säästötavoitteet, omat luokat, muistetut maksunsaajat ja sinua seuraavat asetukset (palkkapäivä, palkka, budjetti). Jokainen muutos tallennetaan ajankohdan ja laitteen kanssa. Tiedot salataan siirrossa ja tallennuksessa, ja vain tilisi voi lukea ne.",
+          "Kirjautumiskoodit ja -linkit lähetetään sähköpostilla Resendin kautta osoitteesi ja kielesi kanssa. Jotta jokainen viesti lähtee kerran, palvelin säilyttää vain viestin tunnisteen, tyypin ja tilan 7 päivää, ei koskaan osoitetta.",
+          "Voit kirjautua ulos milloin tahansa; tiedot jäävät puhelimeen. «Poista tili» poistaa tilin ja kaikki sen mukana palvelimelle tallennetut tiedot."
         ]
       },
       {
         "heading": "Widget ja muistutukset",
-        "planned": true,
         "body": ["Widget näyttää lukuja puhelimessa olevista tiedoista, ja toistuvien erien muistutukset ajastetaan puhelimessa. Kummastakaan ei lähetetä mitään."]
       },
       {
-        "heading": "Kenelle jaamme tietoja",
+        "heading": "Kenen kanssa jaamme tietoja",
         "list": [
+          "Supabase (Irlanti, EU): kirjautuminen, Pron synkronointi sekä tekoälylukemisen palvelin ja sen laskenta.",
           "Anthropic (USA): tekoälylukeminen, vain luvallasi.",
-          "Supabase{{supabaseRegion}}: palvelimemme tekoälylukemiselle ja lukemisten laskemiselle; myöhemmin kirjautuminen, varmuuskopio ja synkronointi.",
+          "Resend (USA): sähköpostit, joissa on kirjautumiskoodeja ja -linkkejä.",
+          "RevenueCat (USA): Pron ostot.",
           "Sentry (EU): kaatumisraportit ilman henkilötietoja.",
-          "Expo (USA): sovelluksen päivitykset.",
-          "RevenueCat (USA): Pro-ostokset (suunnitteilla).",
-          "Apple ja Google: App Store, Google Play ja kirjautuminen (suunnitteilla).",
-          "Meta: kirjautuminen Facebookilla (suunnitteilla)."
+          "Expo (USA): sovelluspäivitykset.",
+          "Apple, Google ja Meta: App Store, Google Play ja kirjautuminen niillä, kun valitset sen."
         ],
-        "after": ["Kun tietoja siirretään Yhdysvaltoihin, palveluntarjoajat käyttävät EU:n vakiosopimuslausekkeita tai EU–US Data Privacy Frameworkia. Emme koskaan myy tietoja, eikä sovelluksessa ole mainoksia tai seurantaa."]
+        "after": ["Kun tietoja siirtyy Yhdysvaltoihin, palveluntarjoajat käyttävät EU:n vakiosopimuslausekkeita tai EU–US Data Privacy Frameworkia. Emme koskaan myy tietoja, eikä sovelluksessa ole mainoksia tai seurantaa."]
       },
       {
         "heading": "Oikeusperuste",
@@ -91,8 +91,10 @@
         "heading": "Kuinka kauan tietoja säilytetään",
         "list": [
           "Puhelimessa: kunnes poistat ne sovelluksessa tai poistat sovelluksen.",
-          "Kuvat ja teksti tekoälylukemista varten: emme tallenna niitä.",
-          "Tekoälylukemisten laskurit: 30 päivää.",
+          "Tilisi ja synkronoidut tiedot: kunnes poistat tilin sovelluksessa.",
+          "Tekoälylukemisen kuvat ja teksti: emme tallenna niitä.",
+          "Tekoälylukemisten laskenta: 30 päivää.",
+          "Kirjautumissähköpostien loki (ilman osoitetta): 7 päivää.",
           "Kaatumisraportit: enintään 90 päivää."
         ]
       },
@@ -118,7 +120,12 @@
     "sections": [
       {
         "heading": "Poista kaikki sovelluksessa",
-        "steps": ["Avaa Saldo Pocket.", "Siirry kohtaan Minä.", "Napauta Poista kaikki tiedot.", "Napauta Poista kaikki."],
+        "steps": [
+          "Avaa Saldo Pocket.",
+          "Siirry kohtaan Minä.",
+          "Napauta Poista kaikki tiedot.",
+          "Napauta Poista kaikki."
+        ],
         "body": [
           "Tämä poistaa kaiken, mitä sovellus säilyttää puhelimessasi: tilit, tapahtumat, toistuvat erät, tavoitteet, luokat, myyjät, asetukset, tallennetut kuvat ja tiedostot, laitetunnuksen sekä kieli- ja valuuttavalinnat. Sovellus käynnistyy sitten alusta kuin uusi.",
           "Tätä ei voi perua. Jos haluat kopion, vie tietosi ensin kohdassa Minä → Vie tiedot. Se on maksutonta."
@@ -176,27 +183,19 @@
     "sections": [
       {
         "heading": "Keitä olemme",
-        "body": [
-          "{{company}} (y-tunnus {{orgNumber}}, {{country}}) tekee ja ylläpitää Saldo Pocketia. Ota yhteyttä: {{email}}."
-        ]
+        "body": ["{{company}} (y-tunnus {{orgNumber}}, {{country}}) tekee ja ylläpitää Saldo Pocketia. Ota yhteyttä: {{email}}."]
       },
       {
         "heading": "Mikä sovellus on",
-        "body": [
-          "Saldo Pocket antaa yleiskuvan rahoistasi: tilit, tapahtumat, budjetti ja tavoitteet. Luvut perustuvat siihen, mitä syötät ja tuot. Ne ovat yleiskuva eivätkä talousneuvontaa, joten tarkista tärkeät päätökset pankkisi kanssa."
-        ]
+        "body": ["Saldo Pocket antaa yleiskuvan rahoistasi: tilit, tapahtumat, budjetti ja tavoitteet. Luvut perustuvat siihen, mitä syötät ja tuot. Ne ovat yleiskuva eivätkä talousneuvontaa, joten tarkista tärkeät päätökset pankkisi kanssa."]
       },
       {
         "heading": "Tili ja synkronointi",
-        "body": [
-          "Voit käyttää sovellusta ilman tiliä. Jos kirjaudut ja sinulla on Pro, tietosi synkronoidaan tilillesi, jotta voit käyttää niitä useilla laitteilla. Suojaa kirjautumisesi; jokainen, joka pääsee tilillesi, näkee synkronoidut tiedot."
-        ]
+        "body": ["Voit käyttää sovellusta ilman tiliä. Jos kirjaudut ja sinulla on Pro, tietosi synkronoidaan tilillesi, jotta voit käyttää niitä useilla laitteilla. Suojaa kirjautumisesi; jokainen, joka pääsee tilillesi, näkee synkronoidut tiedot."]
       },
       {
         "heading": "Ilmainen ja Pro",
-        "body": [
-          "Ilmaisversio on maksuton. Pro ostetaan App Storesta tai Google Playsta tilauksena (kuukausi tai vuosi) tai kertaostona. Hinta näkyy kaupassa ennen ostoa."
-        ],
+        "body": ["Ilmaisversio on maksuton. Pro ostetaan App Storesta tai Google Playsta tilauksena (kuukausi tai vuosi) tai kertaostona. Hinta näkyy kaupassa ennen ostoa."],
         "list": [
           "Tilaus uusiutuu automaattisesti, kunnes peruutat sen kaupassa viimeistään 24 tuntia ennen jakson päättymistä.",
           "Hallitset ja peruutat tilauksen App Storen tai Google Playn tiliasetuksissa.",
@@ -205,33 +204,23 @@
       },
       {
         "heading": "Kauppojen ehdot",
-        "body": [
-          "iPhonella ja iPadilla tehtyihin ostoihin sovelletaan myös Applen vakiokäyttöoikeussopimusta (EULA) ja Androidilla Google Playn ehtoja. Hyvitykset hoitaa kauppa, josta ostit."
-        ]
+        "body": ["iPhonella ja iPadilla tehtyihin ostoihin sovelletaan myös Applen vakiokäyttöoikeussopimusta (EULA) ja Androidilla Google Playn ehtoja. Hyvitykset hoitaa kauppa, josta ostit."]
       },
       {
         "heading": "Tietosi",
-        "body": [
-          "Tietosi ovat sinun. Voit viedä ja poistaa ne sovelluksessa milloin tahansa, myös ilmaisversiossa. Henkilötietojen käsittely on kuvattu tietosuojaselosteessa."
-        ]
+        "body": ["Tietosi ovat sinun. Voit viedä ja poistaa ne sovelluksessa milloin tahansa, myös ilmaisversiossa. Henkilötietojen käsittely on kuvattu tietosuojaselosteessa."]
       },
       {
         "heading": "Vastuu",
-        "body": [
-          "Pyrimme pitämään sovelluksen oikeana ja saatavilla, mutta se tarjotaan sellaisenaan. Lain sallimissa rajoissa emme vastaa välillisistä vahingoista. Nämä ehdot eivät rajoita kuluttajan oikeuksiasi."
-        ]
+        "body": ["Pyrimme pitämään sovelluksen oikeana ja saatavilla, mutta se tarjotaan sellaisenaan. Lain sallimissa rajoissa emme vastaa välillisistä vahingoista. Nämä ehdot eivät rajoita kuluttajan oikeuksiasi."]
       },
       {
         "heading": "Muutokset",
-        "body": [
-          "Voimme päivittää ehtoja. Tärkeät muutokset näytetään sovelluksessa tai tällä sivulla, päivämäärä ylhäällä."
-        ]
+        "body": ["Voimme päivittää ehtoja. Tärkeät muutokset näytetään sovelluksessa tai tällä sivulla, päivämäärä ylhäällä."]
       },
       {
         "heading": "Sovellettava laki",
-        "body": [
-          "Ehtoihin sovelletaan Norjan lakia. Kuluttajana säilytät myös asuinmaasi lain antaman suojan."
-        ]
+        "body": ["Ehtoihin sovelletaan Norjan lakia. Kuluttajana säilytät myös asuinmaasi lain antaman suojan."]
       }
     ]
   },

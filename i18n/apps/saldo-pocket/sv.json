@@ -10,11 +10,12 @@
         "body": ["{{company}} (org.nr {{orgNumber}}, {{country}}) är personuppgiftsansvarig för behandlingen som beskrivs här. Kontakta oss på {{email}}."]
       },
       {
-        "heading": "Kort sagt",
+        "heading": "I korthet",
         "list": [
-          "Din budget sparas bara på din telefon. Vi kan inte se den.",
-          "Det finns ingen bankkoppling och inget konto.",
-          "Ingenting från din budget lämnar telefonen om du inte väljer AI-läsning av en kontolista, ett kvitto eller en faktura.",
+          "Din budget sparas på din telefon. Utan konto kan vi inte se den.",
+          "Ett konto är valfritt (Apple, Google, Facebook eller e-post). Med konto och Pro synkas budgeten till vår server i EU så att du kan använda den på flera enheter.",
+          "Det finns ingen bankkoppling.",
+          "Inget från din budget lämnar telefonen om du inte synkar med Pro eller väljer AI-läsning av en kontolista, ett kvitto eller en faktura.",
           "Kraschrapporter innehåller inga personuppgifter.",
           "Du kan exportera allt och radera allt i appen, gratis."
         ]
@@ -50,34 +51,33 @@
       },
       {
         "heading": "Köp av Pro",
-        "planned": true,
-        "body": ["Pro köps i App Store eller Google Play. Apple eller Google hanterar betalningen enligt sina egna integritetspolicyer; vi ser aldrig dina kortuppgifter. RevenueCat håller reda på om du har Pro, med ett anonymt ID som appen skapar."]
+        "body": ["Pro köps i App Store eller Google Play. Apple eller Google hanterar betalningen enligt sina egna integritetspolicyer; vi ser aldrig dina kortuppgifter. RevenueCat håller reda på om du har Pro, med ett anonymt ID som appen skapar, eller ditt konto-ID när du är inloggad, så att Pro följer kontot."]
       },
       {
-        "heading": "Valfri inloggning, säkerhetskopia och synk",
-        "planned": true,
+        "heading": "Valfritt konto och synk (Pro)",
         "body": [
-          "Du ska kunna logga in med Apple, Google, Facebook (Meta) eller e-post för att säkerhetskopiera budgeten och använda den på flera enheter. Inloggningen hanteras av Supabase. Vi sparar då din e-postadress, ett konto-ID och de budgetdata du synkar. Loggar du in med Apple, Google eller Facebook delar de ditt namn och din e-postadress med oss enligt det du godkänner.",
-          "Utan inloggning är allt som beskrivs ovan. Du kan radera ditt konto och allt som sparats med det i appen."
+          "Du kan logga in med Apple, Google, Facebook (Meta) eller e-post. Inloggningen hanteras av Supabase på servrar i {{region}}. Vi sparar då din e-postadress, ett konto-ID, ditt namn om leverantören delar det, appens språk och, i testversioner, en testflagga. Med Apple kan du dölja din e-postadress; då ser vi bara Apples vidarebefordringsadress.",
+          "Med Pro synkas budgeten till ditt konto: konton, poster, återkommande poster, budget, sparmål, egna kategorier, leverantörer appen minns och inställningarna som följer dig (lönedag, lön, budget). Varje ändring sparas med när den gjordes och på vilken enhet. Data krypteras vid överföring och lagring, och bara ditt konto kan läsa dem.",
+          "Koder och länkar för inloggning skickas med e-post via Resend, med din adress och ditt språk. För att varje e-post ska skickas en gång sparar servern bara meddelande-ID, typ och status i 7 dagar, aldrig adressen.",
+          "Du kan logga ut när som helst; data stannar på telefonen. «Radera konto» tar bort kontot och all data som sparats med det på servern."
         ]
       },
       {
         "heading": "Widget och påminnelser",
-        "planned": true,
         "body": ["Widgeten visar siffror från data på telefonen, och påminnelser om fasta poster ställs in på telefonen. Ingenting skickas för någon av dem."]
       },
       {
-        "heading": "Vem vi delar data med",
+        "heading": "Vilka vi delar data med",
         "list": [
+          "Supabase (Irland, EU): inloggning, synk för Pro och servern för AI-läsning och räkningen av den.",
           "Anthropic (USA): AI-läsning, bara med ditt tillstånd.",
-          "Supabase{{supabaseRegion}}: vår server för AI-läsning och räkningen av läsningar; senare inloggning, säkerhetskopia och synk.",
+          "Resend (USA): e-post med inloggningskoder och -länkar.",
+          "RevenueCat (USA): köp av Pro.",
           "Sentry (EU): kraschrapporter utan personuppgifter.",
-          "Expo (USA): uppdateringar av appen.",
-          "RevenueCat (USA): köp av Pro (planerat).",
-          "Apple och Google: App Store, Google Play och inloggning (planerat).",
-          "Meta: inloggning med Facebook (planerat)."
+          "Expo (USA): appuppdateringar.",
+          "Apple, Google och Meta: App Store, Google Play och inloggning med dem, när du väljer det."
         ],
-        "after": ["När data går till USA använder leverantörerna EU:s standardavtalsklausuler eller EU–US Data Privacy Framework. Vi säljer aldrig data, och appen har ingen reklam och ingen spårning."]
+        "after": ["Där data går till USA använder leverantörerna EU:s standardavtalsklausuler eller EU–US Data Privacy Framework. Vi säljer aldrig data, och appen har ingen reklam och ingen spårning."]
       },
       {
         "heading": "Rättslig grund",
@@ -91,8 +91,10 @@
         "heading": "Hur länge data sparas",
         "list": [
           "På telefonen: tills du raderar dem i appen eller avinstallerar appen.",
+          "Ditt konto och synkad data: tills du raderar kontot i appen.",
           "Bilder och text för AI-läsning: sparas inte hos oss.",
           "Räkning av AI-läsningar: 30 dagar.",
+          "Logg över inloggningsmejl (utan adress): 7 dagar.",
           "Kraschrapporter: högst 90 dagar."
         ]
       },
@@ -118,7 +120,12 @@
     "sections": [
       {
         "heading": "Radera allt i appen",
-        "steps": ["Öppna Saldo Pocket.", "Gå till Jag.", "Tryck på Radera alla data.", "Tryck på Radera allt."],
+        "steps": [
+          "Öppna Saldo Pocket.",
+          "Gå till Jag.",
+          "Tryck på Radera alla data.",
+          "Tryck på Radera allt."
+        ],
         "body": [
           "Det raderar allt appen har på din telefon: konton, poster, fasta poster, mål, kategorier, leverantörer, inställningar, sparade bilder och filer, enhets-ID:t samt val av språk och valuta. Appen startar sedan om som ny.",
           "Det går inte att ångra. Vill du ha en kopia, exportera dina data först under Jag → Exportera data. Det är gratis."
@@ -176,27 +183,19 @@
     "sections": [
       {
         "heading": "Vilka vi är",
-        "body": [
-          "{{company}} (org.nr {{orgNumber}}, {{country}}) gör och driver Saldo Pocket. Kontakta oss på {{email}}."
-        ]
+        "body": ["{{company}} (org.nr {{orgNumber}}, {{country}}) gör och driver Saldo Pocket. Kontakta oss på {{email}}."]
       },
       {
         "heading": "Vad appen är",
-        "body": [
-          "Saldo Pocket ger dig överblick över dina pengar: konton, poster, budget och mål. Siffrorna bygger på det du lägger in och importerar. De är en överblick, inte ekonomisk rådgivning, så stäm av viktiga beslut med din bank."
-        ]
+        "body": ["Saldo Pocket ger dig överblick över dina pengar: konton, poster, budget och mål. Siffrorna bygger på det du lägger in och importerar. De är en överblick, inte ekonomisk rådgivning, så stäm av viktiga beslut med din bank."]
       },
       {
         "heading": "Konto och synk",
-        "body": [
-          "Du kan använda appen utan konto. Om du loggar in och har Pro synkas dina data till ditt konto så att du kan använda dem på flera enheter. Skydda din inloggning; den som kan logga in på kontot kan se de synkade data."
-        ]
+        "body": ["Du kan använda appen utan konto. Om du loggar in och har Pro synkas dina data till ditt konto så att du kan använda dem på flera enheter. Skydda din inloggning; den som kan logga in på kontot kan se de synkade data."]
       },
       {
         "heading": "Gratis och Pro",
-        "body": [
-          "Gratisversionen kostar ingenting. Pro köps i App Store eller Google Play, som prenumeration (månad eller år) eller som engångsköp. Priset visas i butiken innan du köper."
-        ],
+        "body": ["Gratisversionen kostar ingenting. Pro köps i App Store eller Google Play, som prenumeration (månad eller år) eller som engångsköp. Priset visas i butiken innan du köper."],
         "list": [
           "En prenumeration förnyas automatiskt tills du säger upp den i butiken senast 24 timmar innan perioden tar slut.",
           "Du hanterar och säger upp den i kontoinställningarna i App Store eller Google Play.",
@@ -205,33 +204,23 @@
       },
       {
         "heading": "Butikernas villkor",
-        "body": [
-          "Köp på iPhone och iPad följer också Apples standardlicensavtal (EULA), och köp på Android följer Google Plays villkor. Återbetalning hanteras av butiken där du köpte."
-        ]
+        "body": ["Köp på iPhone och iPad följer också Apples standardlicensavtal (EULA), och köp på Android följer Google Plays villkor. Återbetalning hanteras av butiken där du köpte."]
       },
       {
         "heading": "Dina data",
-        "body": [
-          "Dina data är dina. Du kan exportera och radera dem i appen när som helst, även i gratisversionen. Hur vi hanterar personuppgifter står i integritetspolicyn."
-        ]
+        "body": ["Dina data är dina. Du kan exportera och radera dem i appen när som helst, även i gratisversionen. Hur vi hanterar personuppgifter står i integritetspolicyn."]
       },
       {
         "heading": "Ansvar",
-        "body": [
-          "Vi arbetar för att appen ska vara korrekt och tillgänglig, men den tillhandahålls i befintligt skick. I den mån lagen tillåter ansvarar vi inte för indirekta förluster. Dina rättigheter som konsument begränsas inte av villkoren."
-        ]
+        "body": ["Vi arbetar för att appen ska vara korrekt och tillgänglig, men den tillhandahålls i befintligt skick. I den mån lagen tillåter ansvarar vi inte för indirekta förluster. Dina rättigheter som konsument begränsas inte av villkoren."]
       },
       {
         "heading": "Ändringar",
-        "body": [
-          "Vi kan uppdatera villkoren. Viktiga ändringar visas i appen eller på den här sidan, med datum överst."
-        ]
+        "body": ["Vi kan uppdatera villkoren. Viktiga ändringar visas i appen eller på den här sidan, med datum överst."]
       },
       {
         "heading": "Lag",
-        "body": [
-          "Villkoren följer norsk lag. Är du konsument behåller du också det skydd som lagen i landet där du bor ger dig."
-        ]
+        "body": ["Villkoren följer norsk lag. Är du konsument behåller du också det skydd som lagen i landet där du bor ger dig."]
       }
     ]
   },

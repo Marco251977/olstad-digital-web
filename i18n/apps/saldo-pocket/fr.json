@@ -12,11 +12,12 @@
       {
         "heading": "En bref",
         "list": [
-          "Votre budget est enregistré uniquement sur votre téléphone. Nous ne pouvons pas le voir.",
-          "Il n’y a ni connexion à la banque ni compte utilisateur.",
-          "Rien de votre budget ne quitte le téléphone, sauf si vous choisissez la lecture par IA d’un relevé, d’un reçu ou d’une facture.",
+          "Votre budget est enregistré sur votre téléphone. Sans compte, nous ne pouvons pas le voir.",
+          "Un compte est facultatif (Apple, Google, Facebook ou e-mail). Avec un compte et Pro, votre budget est synchronisé avec notre serveur dans l’UE pour l’utiliser sur plusieurs appareils.",
+          "Il n’y a aucune connexion bancaire.",
+          "Rien de votre budget ne quitte le téléphone, sauf si vous synchronisez avec Pro ou choisissez la lecture par IA d’un relevé, d’un reçu ou d’une facture.",
           "Les rapports de plantage ne contiennent aucune donnée personnelle.",
-          "Vous pouvez tout exporter et tout supprimer dans l’app, gratuitement."
+          "Vous pouvez tout exporter et tout supprimer dans l’application, gratuitement."
         ]
       },
       {
@@ -49,35 +50,34 @@
         "body": ["L’app vérifie les mises à jour auprès d’Expo, le service qui les fournit. Comme pour toute connexion à internet, Expo voit l’adresse IP du téléphone. Aucune autre donnée n’est envoyée."]
       },
       {
-        "heading": "Achats de Pro",
-        "planned": true,
-        "body": ["Pro s’achète dans l’App Store ou sur Google Play. Apple ou Google traitent le paiement selon leurs propres politiques de confidentialité ; nous ne voyons jamais les données de votre carte. RevenueCat sait si vous avez Pro grâce à un identifiant anonyme créé par l’app."]
+        "heading": "Achat de Pro",
+        "body": ["Pro s’achète sur l’App Store ou Google Play. Apple ou Google gère le paiement selon sa propre politique de confidentialité ; nous ne voyons jamais vos données de carte. RevenueCat suit si vous avez Pro, avec un identifiant anonyme créé par l’application, ou l’identifiant de votre compte quand vous êtes connecté, afin que Pro suive votre compte."]
       },
       {
-        "heading": "Connexion, sauvegarde et synchronisation facultatives",
-        "planned": true,
+        "heading": "Compte facultatif et synchronisation (Pro)",
         "body": [
-          "Vous pourrez vous connecter avec Apple, Google, Facebook (Meta) ou une adresse e-mail pour sauvegarder votre budget et l’utiliser sur plusieurs appareils. La connexion est gérée par Supabase. Nous enregistrons alors votre adresse e-mail, un identifiant de compte et les données de budget que vous synchronisez. Si vous vous connectez avec Apple, Google ou Facebook, ceux-ci partagent votre nom et votre adresse e-mail avec nous selon ce que vous autorisez.",
-          "Sans connexion, tout reste comme décrit ci-dessus. Vous pouvez supprimer votre compte et tout ce qui y est enregistré dans l’app."
+          "Vous pouvez vous connecter avec Apple, Google, Facebook (Meta) ou un e-mail. La connexion est gérée par Supabase sur des serveurs en {{region}}. Nous enregistrons alors votre adresse e-mail, un identifiant de compte, votre nom si le fournisseur le partage, la langue de l’application et, dans les versions de test, un indicateur de test. Avec Apple, vous pouvez masquer votre adresse e-mail ; nous ne voyons alors que l’adresse de relais d’Apple.",
+          "Avec Pro, votre budget est synchronisé avec votre compte : comptes, opérations, opérations récurrentes, budget, objectifs d’épargne, catégories personnelles, fournisseurs mémorisés et les réglages qui vous suivent (jour de paie, salaire, budget). Chaque modification est enregistrée avec sa date et l’appareil. Les données sont chiffrées pendant le transfert et au repos, et seul votre compte peut les lire.",
+          "Les codes et liens de connexion sont envoyés par e-mail via Resend, avec votre adresse et votre langue. Pour envoyer chaque e-mail une seule fois, le serveur ne garde que l’identifiant du message, son type et son statut pendant 7 jours, jamais l’adresse.",
+          "Vous pouvez vous déconnecter à tout moment ; les données restent sur le téléphone. « Supprimer le compte » supprime le compte et toutes les données enregistrées avec lui sur le serveur."
         ]
       },
       {
         "heading": "Widget et rappels",
-        "planned": true,
         "body": ["Le widget affiche des chiffres issus des données de votre téléphone, et les rappels des récurrents sont programmés sur le téléphone. Rien n’est envoyé dans les deux cas."]
       },
       {
         "heading": "Avec qui nous partageons des données",
         "list": [
+          "Supabase (Irlande, UE) : connexion, synchronisation pour Pro et serveur pour la lecture par IA et son décompte.",
           "Anthropic (États-Unis) : lecture par IA, uniquement avec votre autorisation.",
-          "Supabase{{supabaseRegion}} : notre serveur pour la lecture par IA et le comptage des lectures ; plus tard, connexion, sauvegarde et synchronisation.",
+          "Resend (États-Unis) : e-mails avec codes et liens de connexion.",
+          "RevenueCat (États-Unis) : achats de Pro.",
           "Sentry (UE) : rapports de plantage sans données personnelles.",
-          "Expo (États-Unis) : mises à jour de l’app.",
-          "RevenueCat (États-Unis) : achats de Pro (prévu).",
-          "Apple et Google : App Store, Google Play et connexion (prévu).",
-          "Meta : connexion avec Facebook (prévu)."
+          "Expo (États-Unis) : mises à jour de l’application.",
+          "Apple, Google et Meta : l’App Store, Google Play et la connexion avec eux, si vous la choisissez."
         ],
-        "after": ["Lorsque des données sont transférées aux États-Unis, les prestataires utilisent les clauses contractuelles types de l’UE ou le cadre de protection des données UE–États-Unis. Nous ne vendons jamais de données, et l’app n’a ni publicité ni suivi."]
+        "after": ["Lorsque des données vont aux États-Unis, les fournisseurs utilisent les clauses contractuelles types de l’UE ou le EU–US Data Privacy Framework. Nous ne vendons jamais de données, et l’application n’a ni publicité ni suivi."]
       },
       {
         "heading": "Base juridique",
@@ -90,10 +90,12 @@
       {
         "heading": "Durée de conservation",
         "list": [
-          "Sur votre téléphone : jusqu’à ce que vous les supprimiez dans l’app ou désinstalliez l’app.",
-          "Images et texte pour la lecture par IA : nous ne les enregistrons pas.",
-          "Compteurs de lectures par IA : 30 jours.",
-          "Rapports de plantage : au plus 90 jours."
+          "Sur le téléphone : jusqu’à ce que vous les supprimiez dans l’application ou désinstalliez l’application.",
+          "Votre compte et les données synchronisées : jusqu’à ce que vous supprimiez le compte dans l’application.",
+          "Images et texte pour la lecture par IA : non conservés chez nous.",
+          "Décompte des lectures par IA : 30 jours.",
+          "Journal des e-mails de connexion (sans adresse) : 7 jours.",
+          "Rapports de plantage : 90 jours au plus."
         ]
       },
       {
@@ -118,7 +120,12 @@
     "sections": [
       {
         "heading": "Tout supprimer dans l’app",
-        "steps": ["Ouvrez Saldo Pocket.", "Allez dans Moi.", "Touchez Supprimer toutes les données.", "Touchez Tout supprimer."],
+        "steps": [
+          "Ouvrez Saldo Pocket.",
+          "Allez dans Moi.",
+          "Touchez Supprimer toutes les données.",
+          "Touchez Tout supprimer."
+        ],
         "body": [
           "Cela supprime tout ce que l’app conserve sur votre téléphone : comptes, opérations, récurrents, objectifs, catégories, commerçants, réglages, images et fichiers enregistrés, l’identifiant de l’appareil ainsi que vos choix de langue et de devise. L’app redémarre ensuite comme neuve.",
           "C’est irréversible. Si vous voulez une copie, exportez d’abord vos données dans Moi → Exporter les données. C’est gratuit."
@@ -176,27 +183,19 @@
     "sections": [
       {
         "heading": "Qui nous sommes",
-        "body": [
-          "{{company}} (n° d’org. {{orgNumber}}, {{country}}) conçoit et exploite Saldo Pocket. Contact : {{email}}."
-        ]
+        "body": ["{{company}} (n° d’org. {{orgNumber}}, {{country}}) conçoit et exploite Saldo Pocket. Contact : {{email}}."]
       },
       {
         "heading": "Ce qu’est l’application",
-        "body": [
-          "Saldo Pocket vous donne une vue d’ensemble de votre argent : comptes, opérations, budget et objectifs. Les chiffres reposent sur ce que vous saisissez et importez. Ils constituent une vue d’ensemble, pas un conseil financier ; vérifiez les décisions importantes avec votre banque."
-        ]
+        "body": ["Saldo Pocket vous donne une vue d’ensemble de votre argent : comptes, opérations, budget et objectifs. Les chiffres reposent sur ce que vous saisissez et importez. Ils constituent une vue d’ensemble, pas un conseil financier ; vérifiez les décisions importantes avec votre banque."]
       },
       {
         "heading": "Compte et synchronisation",
-        "body": [
-          "Vous pouvez utiliser l’application sans compte. Si vous vous connectez et avez Pro, vos données sont synchronisées avec votre compte pour les utiliser sur plusieurs appareils. Protégez votre connexion : toute personne qui peut se connecter à votre compte voit les données synchronisées."
-        ]
+        "body": ["Vous pouvez utiliser l’application sans compte. Si vous vous connectez et avez Pro, vos données sont synchronisées avec votre compte pour les utiliser sur plusieurs appareils. Protégez votre connexion : toute personne qui peut se connecter à votre compte voit les données synchronisées."]
       },
       {
         "heading": "Gratuit et Pro",
-        "body": [
-          "La version gratuite ne coûte rien. Pro s’achète sur l’App Store ou Google Play, en abonnement (mensuel ou annuel) ou en achat unique. Le prix est affiché dans la boutique avant l’achat."
-        ],
+        "body": ["La version gratuite ne coûte rien. Pro s’achète sur l’App Store ou Google Play, en abonnement (mensuel ou annuel) ou en achat unique. Le prix est affiché dans la boutique avant l’achat."],
         "list": [
           "Un abonnement se renouvelle automatiquement jusqu’à ce que vous le résiliiez dans la boutique au moins 24 heures avant la fin de la période.",
           "Vous le gérez et le résiliez dans les réglages de votre compte App Store ou Google Play.",
@@ -205,33 +204,23 @@
       },
       {
         "heading": "Conditions des boutiques",
-        "body": [
-          "Les achats sur iPhone et iPad suivent aussi le contrat de licence standard d’Apple (EULA), et les achats sur Android les conditions de Google Play. Les remboursements sont gérés par la boutique où vous avez acheté."
-        ]
+        "body": ["Les achats sur iPhone et iPad suivent aussi le contrat de licence standard d’Apple (EULA), et les achats sur Android les conditions de Google Play. Les remboursements sont gérés par la boutique où vous avez acheté."]
       },
       {
         "heading": "Vos données",
-        "body": [
-          "Vos données vous appartiennent. Vous pouvez les exporter et les supprimer à tout moment dans l’application, y compris dans la version gratuite. Le traitement des données personnelles est décrit dans la politique de confidentialité."
-        ]
+        "body": ["Vos données vous appartiennent. Vous pouvez les exporter et les supprimer à tout moment dans l’application, y compris dans la version gratuite. Le traitement des données personnelles est décrit dans la politique de confidentialité."]
       },
       {
         "heading": "Responsabilité",
-        "body": [
-          "Nous veillons à ce que l’application soit exacte et disponible, mais elle est fournie en l’état. Dans la mesure permise par la loi, nous ne sommes pas responsables des pertes indirectes. Vos droits de consommateur ne sont pas limités par ces conditions."
-        ]
+        "body": ["Nous veillons à ce que l’application soit exacte et disponible, mais elle est fournie en l’état. Dans la mesure permise par la loi, nous ne sommes pas responsables des pertes indirectes. Vos droits de consommateur ne sont pas limités par ces conditions."]
       },
       {
         "heading": "Modifications",
-        "body": [
-          "Nous pouvons mettre à jour ces conditions. Les changements importants sont indiqués dans l’application ou sur cette page, avec la date en haut."
-        ]
+        "body": ["Nous pouvons mettre à jour ces conditions. Les changements importants sont indiqués dans l’application ou sur cette page, avec la date en haut."]
       },
       {
         "heading": "Droit applicable",
-        "body": [
-          "Ces conditions sont régies par le droit norvégien. Si vous êtes consommateur, vous conservez aussi la protection que vous accorde le droit de votre pays de résidence."
-        ]
+        "body": ["Ces conditions sont régies par le droit norvégien. Si vous êtes consommateur, vous conservez aussi la protection que vous accorde le droit de votre pays de résidence."]
       }
     ]
   },

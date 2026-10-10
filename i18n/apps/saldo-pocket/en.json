@@ -12,10 +12,11 @@
       {
         "heading": "In short",
         "list": [
-          "Your budget is stored only on your phone. We cannot see it.",
-          "There is no bank connection and no account.",
-          "Nothing about your budget leaves the phone unless you choose AI reading of a bank list, receipt or bill.",
-          "Crash reports contain no personal information.",
+          "Your budget is stored on your phone. Without an account, we cannot see it.",
+          "An account is optional (Apple, Google, Facebook or e-mail). With an account and Pro, your budget is synced to our server in the EU so you can use it on several devices.",
+          "There is no bank connection.",
+          "Nothing from your budget leaves the phone unless you sync with Pro or choose AI reading of a statement, receipt or bill.",
+          "Crash reports contain no personal data.",
           "You can export everything and delete everything in the app, for free."
         ]
       },
@@ -49,35 +50,34 @@
         "body": ["The app checks for updates from Expo, the service that delivers them. As with any connection to the internet, Expo sees the phone’s IP address. No other data is sent."]
       },
       {
-        "heading": "Purchases of Pro",
-        "planned": true,
-        "body": ["Pro is bought in the App Store or Google Play. Apple or Google handle the payment under their own privacy policies; we never see your card details. RevenueCat keeps track of whether you have Pro, using an anonymous ID created by the app."]
+        "heading": "Buying Pro",
+        "body": ["Pro is bought in the App Store or Google Play. Apple or Google handles the payment under their own privacy policies; we never see your card details. RevenueCat keeps track of whether you have Pro, with an anonymous ID the app makes, or your account ID when you are signed in, so Pro follows your account."]
       },
       {
-        "heading": "Optional sign-in, backup and sync",
-        "planned": true,
+        "heading": "Optional account and sync (Pro)",
         "body": [
-          "You will be able to sign in with Apple, Google, Facebook (Meta) or e-mail to back up your budget and use it on more than one device. Sign-in is handled by Supabase. We then store your e-mail address, an account ID and the budget data you sync. If you sign in with Apple, Google or Facebook, they share your name and e-mail address with us according to what you approve.",
-          "Without sign-in, everything stays as described above. You can delete your account and everything stored with it in the app."
+          "You can sign in with Apple, Google, Facebook (Meta) or e-mail. Sign-in is handled by Supabase on servers in {{region}}. We then store your e-mail address, an account ID, your name if the provider shares it, your app language and, on test versions, a test flag. With Apple you can hide your e-mail address; we then only see Apple’s relay address.",
+          "With Pro, your budget is synced to your account: accounts, entries, recurring items, budget, savings goals, your own categories, remembered vendors and the settings that follow you (payday, salary, budget). Each change is stored with when it was made and on which device. The data is encrypted in transit and at rest, and only your account can read it.",
+          "Sign-in codes and links are sent by e-mail through Resend, with your address and language. To send each e-mail once, the server keeps only the message ID, type and status for 7 days, never the address.",
+          "You can sign out at any time; the data stays on the phone. «Delete account» removes the account and all data stored with it on the server."
         ]
       },
       {
         "heading": "Widget and reminders",
-        "planned": true,
         "body": ["The widget shows numbers from the data on your phone, and reminders for recurring items are set up on your phone. Nothing is sent for either."]
       },
       {
         "heading": "Who we share data with",
         "list": [
+          "Supabase (Ireland, EU): sign-in, sync for Pro, and the server for AI reading and its count.",
           "Anthropic (USA): AI reading, only with your permission.",
-          "Supabase{{supabaseRegion}}: our server for AI reading and the counts of readings; later sign-in, backup and sync.",
+          "Resend (USA): e-mails with sign-in codes and links.",
+          "RevenueCat (USA): purchases of Pro.",
           "Sentry (EU): crash reports without personal data.",
           "Expo (USA): app updates.",
-          "RevenueCat (USA): Pro purchases (planned).",
-          "Apple and Google: the App Store, Google Play and sign-in (planned).",
-          "Meta: sign-in with Facebook (planned)."
+          "Apple, Google and Meta: the App Store, Google Play and signing in with them, when you choose to."
         ],
-        "after": ["Where data goes to the USA, the providers use the EU’s standard contractual clauses or the EU–US Data Privacy Framework. We never sell data, and the app has no ads and no tracking."]
+        "after": ["Where data goes to the USA, the providers use the EU standard contractual clauses or the EU–US Data Privacy Framework. We never sell data, and the app has no ads and no tracking."]
       },
       {
         "heading": "Legal basis",
@@ -90,9 +90,11 @@
       {
         "heading": "How long data is kept",
         "list": [
-          "On your phone: until you delete it in the app or uninstall the app.",
+          "On the phone: until you delete it in the app or uninstall the app.",
+          "Your account and synced data: until you delete the account in the app.",
           "Pictures and text for AI reading: not stored by us.",
-          "Counts of AI readings: 30 days.",
+          "Count of AI readings: 30 days.",
+          "Log of sign-in e-mails (no address): 7 days.",
           "Crash reports: at most 90 days."
         ]
       },
@@ -118,7 +120,12 @@
     "sections": [
       {
         "heading": "Delete everything in the app",
-        "steps": ["Open Saldo Pocket.", "Go to Me.", "Tap Delete all data.", "Tap Delete everything."],
+        "steps": [
+          "Open Saldo Pocket.",
+          "Go to Me.",
+          "Tap Delete all data.",
+          "Tap Delete everything."
+        ],
         "body": [
           "This deletes everything the app keeps on your phone: accounts, entries, recurring items, goals, categories, vendors, settings, saved pictures and files, the device ID, and your language and currency choices. The app then starts again as new.",
           "It cannot be undone. If you want a copy, export your data first under Me → Export data. It is free."
@@ -176,27 +183,19 @@
     "sections": [
       {
         "heading": "Who we are",
-        "body": [
-          "{{company}} (org. no. {{orgNumber}}, {{country}}) makes and runs Saldo Pocket. Contact us at {{email}}."
-        ]
+        "body": ["{{company}} (org. no. {{orgNumber}}, {{country}}) makes and runs Saldo Pocket. Contact us at {{email}}."]
       },
       {
         "heading": "What the app is",
-        "body": [
-          "Saldo Pocket gives you an overview of your money: accounts, entries, budget and goals. The figures are based on what you enter and import. They are an overview, not financial advice, so check important decisions with your bank."
-        ]
+        "body": ["Saldo Pocket gives you an overview of your money: accounts, entries, budget and goals. The figures are based on what you enter and import. They are an overview, not financial advice, so check important decisions with your bank."]
       },
       {
         "heading": "Account and sync",
-        "body": [
-          "You can use the app without an account. If you sign in and have Pro, your data is synced to your account so you can use it on several devices. Keep your sign-in safe; anyone who can sign in to your account can see the synced data."
-        ]
+        "body": ["You can use the app without an account. If you sign in and have Pro, your data is synced to your account so you can use it on several devices. Keep your sign-in safe; anyone who can sign in to your account can see the synced data."]
       },
       {
         "heading": "Free and Pro",
-        "body": [
-          "The free version costs nothing. Pro is bought in the App Store or Google Play, as a subscription (monthly or yearly) or as a one-time purchase. The price is shown in the store before you buy."
-        ],
+        "body": ["The free version costs nothing. Pro is bought in the App Store or Google Play, as a subscription (monthly or yearly) or as a one-time purchase. The price is shown in the store before you buy."],
         "list": [
           "A subscription renews automatically until you cancel it in the store at least 24 hours before the period ends.",
           "You manage and cancel it in your App Store or Google Play account settings.",
@@ -205,33 +204,23 @@
       },
       {
         "heading": "The stores’ terms",
-        "body": [
-          "Purchases on iPhone and iPad also follow Apple’s standard licence agreement (EULA), and purchases on Android follow Google Play’s terms. Refunds are handled by the store you bought from."
-        ]
+        "body": ["Purchases on iPhone and iPad also follow Apple’s standard licence agreement (EULA), and purchases on Android follow Google Play’s terms. Refunds are handled by the store you bought from."]
       },
       {
         "heading": "Your data",
-        "body": [
-          "Your data is yours. You can export it and delete it in the app at any time, also on the free version. How we handle personal data is described in the privacy policy."
-        ]
+        "body": ["Your data is yours. You can export it and delete it in the app at any time, also on the free version. How we handle personal data is described in the privacy policy."]
       },
       {
         "heading": "Responsibility",
-        "body": [
-          "We work to keep the app correct and available, but it is provided as it is. As far as the law allows, we are not responsible for indirect losses. Your rights as a consumer are not limited by these terms."
-        ]
+        "body": ["We work to keep the app correct and available, but it is provided as it is. As far as the law allows, we are not responsible for indirect losses. Your rights as a consumer are not limited by these terms."]
       },
       {
         "heading": "Changes",
-        "body": [
-          "We may update these terms. Important changes are shown in the app or on this page, with the date at the top."
-        ]
+        "body": ["We may update these terms. Important changes are shown in the app or on this page, with the date at the top."]
       },
       {
         "heading": "Law",
-        "body": [
-          "These terms follow Norwegian law. If you are a consumer, you also keep the protection the law of the country where you live gives you."
-        ]
+        "body": ["These terms follow Norwegian law. If you are a consumer, you also keep the protection the law of the country where you live gives you."]
       }
     ]
   },

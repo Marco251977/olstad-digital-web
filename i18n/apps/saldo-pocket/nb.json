@@ -12,9 +12,10 @@
       {
         "heading": "Kort fortalt",
         "list": [
-          "Budsjettet ditt lagres bare på telefonen din. Vi kan ikke se det.",
-          "Det finnes ingen bankkobling og ingen konto.",
-          "Ingenting fra budsjettet ditt forlater telefonen med mindre du velger AI-lesing av en kontoliste, kvittering eller faktura.",
+          "Budsjettet ditt lagres på telefonen din. Uten konto kan vi ikke se det.",
+          "Konto er valgfritt (Apple, Google, Facebook eller e-post). Med konto og Pro synkes budsjettet til serveren vår i EU, så du kan bruke det på flere enheter.",
+          "Det finnes ingen bankkobling.",
+          "Ingenting fra budsjettet ditt forlater telefonen med mindre du synker med Pro eller velger AI-lesing av en kontoliste, kvittering eller faktura.",
           "Krasjrapporter inneholder ingen personopplysninger.",
           "Du kan eksportere alt og slette alt i appen, gratis."
         ]
@@ -50,32 +51,31 @@
       },
       {
         "heading": "Kjøp av Pro",
-        "planned": true,
-        "body": ["Pro kjøpes i App Store eller Google Play. Apple eller Google håndterer betalingen etter sine egne personvernerklæringer; vi ser aldri kortopplysningene dine. RevenueCat holder styr på om du har Pro, med en anonym ID som appen lager."]
+        "body": ["Pro kjøpes i App Store eller Google Play. Apple eller Google håndterer betalingen etter sine egne personvernerklæringer; vi ser aldri kortopplysningene dine. RevenueCat holder styr på om du har Pro, med en anonym ID som appen lager, eller konto-ID-en din når du er logget inn, så Pro følger kontoen."]
       },
       {
-        "heading": "Valgfri innlogging, sikkerhetskopi og synk",
-        "planned": true,
+        "heading": "Valgfri konto og synk (Pro)",
         "body": [
-          "Du skal kunne logge inn med Apple, Google, Facebook (Meta) eller e-post for å ta sikkerhetskopi av budsjettet og bruke det på flere enheter. Innloggingen håndteres av Supabase. Vi lagrer da e-postadressen din, en konto-ID og budsjettdataene du synker. Logger du inn med Apple, Google eller Facebook, deler de navnet og e-postadressen din med oss etter det du godkjenner.",
-          "Uten innlogging er alt som beskrevet over. Du kan slette kontoen din og alt som er lagret med den i appen."
+          "Du kan logge inn med Apple, Google, Facebook (Meta) eller e-post. Innloggingen håndteres av Supabase på servere i {{region}}. Vi lagrer da e-postadressen din, en konto-ID, navnet ditt hvis leverandøren deler det, appspråket ditt og, i testversjoner, et testflagg. Med Apple kan du skjule e-postadressen; da ser vi bare Apples videresendingsadresse.",
+          "Med Pro synkes budsjettet til kontoen din: kontoer, poster, faste poster, budsjett, sparemål, egne kategorier, leverandører appen husker og innstillingene som følger deg (lønningsdag, lønn, budsjett). Hver endring lagres med når den ble gjort og på hvilken enhet. Dataene er kryptert under overføring og der de lagres, og bare kontoen din kan lese dem.",
+          "Koder og lenker for innlogging sendes på e-post gjennom Resend, med adressen og språket ditt. For å sende hver e-post én gang beholder serveren bare meldings-ID, type og status i 7 dager, aldri adressen.",
+          "Du kan logge ut når som helst; dataene blir på telefonen. «Slett konto» fjerner kontoen og alle data som er lagret med den på serveren."
         ]
       },
       {
         "heading": "Widget og påminnelser",
-        "planned": true,
         "body": ["Widgeten viser tall fra dataene på telefonen, og påminnelser om faste poster settes opp på telefonen. Ingenting sendes for noen av dem."]
       },
       {
         "heading": "Hvem vi deler data med",
         "list": [
+          "Supabase (Irland, EU): innlogging, synk for Pro, og serveren for AI-lesing og tellingen av den.",
           "Anthropic (USA): AI-lesing, bare med din tillatelse.",
-          "Supabase{{supabaseRegion}}: serveren vår for AI-lesing og tellingen av lesinger; senere innlogging, sikkerhetskopi og synk.",
+          "Resend (USA): e-post med innloggingskoder og -lenker.",
+          "RevenueCat (USA): kjøp av Pro.",
           "Sentry (EU): krasjrapporter uten personopplysninger.",
           "Expo (USA): oppdateringer av appen.",
-          "RevenueCat (USA): kjøp av Pro (planlagt).",
-          "Apple og Google: App Store, Google Play og innlogging (planlagt).",
-          "Meta: innlogging med Facebook (planlagt)."
+          "Apple, Google og Meta: App Store, Google Play og innlogging med dem, når du velger det."
         ],
         "after": ["Der data går til USA, bruker leverandørene EUs standardavtaler eller EU–US Data Privacy Framework. Vi selger aldri data, og appen har ingen reklame og ingen sporing."]
       },
@@ -91,8 +91,10 @@
         "heading": "Hvor lenge data lagres",
         "list": [
           "På telefonen: til du sletter dem i appen eller avinstallerer appen.",
+          "Kontoen din og synkede data: til du sletter kontoen i appen.",
           "Bilder og tekst for AI-lesing: lagres ikke hos oss.",
           "Telling av AI-lesinger: 30 dager.",
+          "Logg over innloggings-e-post (uten adresse): 7 dager.",
           "Krasjrapporter: høyst 90 dager."
         ]
       },
@@ -118,7 +120,12 @@
     "sections": [
       {
         "heading": "Slett alt i appen",
-        "steps": ["Åpne Saldo Pocket.", "Gå til Meg.", "Trykk Slett alle data.", "Trykk Slett alt."],
+        "steps": [
+          "Åpne Saldo Pocket.",
+          "Gå til Meg.",
+          "Trykk Slett alle data.",
+          "Trykk Slett alt."
+        ],
         "body": [
           "Dette sletter alt appen har på telefonen din: kontoer, poster, faste poster, mål, kategorier, leverandører, innstillinger, lagrede bilder og filer, enhets-ID-en og valg av språk og valuta. Appen starter så på nytt som ny.",
           "Det kan ikke angres. Vil du ha en kopi, eksporter dataene først under Meg → Eksporter data. Det er gratis."
@@ -176,27 +183,19 @@
     "sections": [
       {
         "heading": "Hvem vi er",
-        "body": [
-          "{{company}} (org.nr. {{orgNumber}}, {{country}}) lager og driver Saldo Pocket. Kontakt oss på {{email}}."
-        ]
+        "body": ["{{company}} (org.nr. {{orgNumber}}, {{country}}) lager og driver Saldo Pocket. Kontakt oss på {{email}}."]
       },
       {
         "heading": "Hva appen er",
-        "body": [
-          "Saldo Pocket gir deg oversikt over pengene dine: kontoer, poster, budsjett og mål. Tallene bygger på det du legger inn og importerer. De er en oversikt, ikke økonomisk rådgivning, så sjekk viktige avgjørelser med banken din."
-        ]
+        "body": ["Saldo Pocket gir deg oversikt over pengene dine: kontoer, poster, budsjett og mål. Tallene bygger på det du legger inn og importerer. De er en oversikt, ikke økonomisk rådgivning, så sjekk viktige avgjørelser med banken din."]
       },
       {
         "heading": "Konto og synk",
-        "body": [
-          "Du kan bruke appen uten konto. Logger du inn og har Pro, synkes dataene til kontoen din, så du kan bruke dem på flere enheter. Pass på innloggingen din; den som kan logge inn på kontoen, kan se de synkede dataene."
-        ]
+        "body": ["Du kan bruke appen uten konto. Logger du inn og har Pro, synkes dataene til kontoen din, så du kan bruke dem på flere enheter. Pass på innloggingen din; den som kan logge inn på kontoen, kan se de synkede dataene."]
       },
       {
         "heading": "Gratis og Pro",
-        "body": [
-          "Gratisversjonen koster ingenting. Pro kjøpes i App Store eller Google Play, som abonnement (månedlig eller årlig) eller som engangskjøp. Prisen vises i butikken før du kjøper."
-        ],
+        "body": ["Gratisversjonen koster ingenting. Pro kjøpes i App Store eller Google Play, som abonnement (månedlig eller årlig) eller som engangskjøp. Prisen vises i butikken før du kjøper."],
         "list": [
           "Et abonnement fornyes automatisk til du sier det opp i butikken senest 24 timer før perioden er over.",
           "Du administrerer og sier opp i kontoinnstillingene i App Store eller Google Play.",
@@ -205,33 +204,23 @@
       },
       {
         "heading": "Butikkenes vilkår",
-        "body": [
-          "Kjøp på iPhone og iPad følger også Apples standard lisensavtale (EULA), og kjøp på Android følger Google Plays vilkår. Refusjon håndteres av butikken du kjøpte i."
-        ]
+        "body": ["Kjøp på iPhone og iPad følger også Apples standard lisensavtale (EULA), og kjøp på Android følger Google Plays vilkår. Refusjon håndteres av butikken du kjøpte i."]
       },
       {
         "heading": "Dataene dine",
-        "body": [
-          "Dataene dine er dine. Du kan eksportere og slette dem i appen når som helst, også i gratisversjonen. Hvordan vi behandler personopplysninger, står i personvernerklæringen."
-        ]
+        "body": ["Dataene dine er dine. Du kan eksportere og slette dem i appen når som helst, også i gratisversjonen. Hvordan vi behandler personopplysninger, står i personvernerklæringen."]
       },
       {
         "heading": "Ansvar",
-        "body": [
-          "Vi jobber for at appen skal være riktig og tilgjengelig, men den leveres som den er. Så langt loven tillater, er vi ikke ansvarlige for indirekte tap. Rettighetene dine som forbruker begrenses ikke av disse vilkårene."
-        ]
+        "body": ["Vi jobber for at appen skal være riktig og tilgjengelig, men den leveres som den er. Så langt loven tillater, er vi ikke ansvarlige for indirekte tap. Rettighetene dine som forbruker begrenses ikke av disse vilkårene."]
       },
       {
         "heading": "Endringer",
-        "body": [
-          "Vi kan oppdatere vilkårene. Viktige endringer vises i appen eller på denne siden, med dato øverst."
-        ]
+        "body": ["Vi kan oppdatere vilkårene. Viktige endringer vises i appen eller på denne siden, med dato øverst."]
       },
       {
         "heading": "Lov",
-        "body": [
-          "Vilkårene følger norsk rett. Er du forbruker, beholder du også vernet loven i landet du bor i gir deg."
-        ]
+        "body": ["Vilkårene følger norsk rett. Er du forbruker, beholder du også vernet loven i landet du bor i gir deg."]
       }
     ]
   },

@@ -12,11 +12,12 @@
       {
         "heading": "Resumindo",
         "list": [
-          "Seu orçamento fica guardado apenas no seu celular. Nós não conseguimos vê-lo.",
-          "Não há conexão com o banco nem conta de usuário.",
-          "Nada do seu orçamento sai do celular, a menos que você escolha a leitura por IA de um extrato, recibo ou boleto.",
+          "Seu orçamento fica salvo no seu celular. Sem conta, não conseguimos vê-lo.",
+          "A conta é opcional (Apple, Google, Facebook ou e-mail). Com conta e Pro, seu orçamento é sincronizado com nosso servidor na UE para você usar em vários dispositivos.",
+          "Não há conexão bancária.",
+          "Nada do seu orçamento sai do celular, a menos que você sincronize com o Pro ou escolha a leitura por IA de um extrato, recibo ou fatura.",
           "Os relatórios de falhas não contêm dados pessoais.",
-          "Você pode exportar e apagar tudo no app, de graça."
+          "Você pode exportar e excluir tudo no app, de graça."
         ]
       },
       {
@@ -49,35 +50,34 @@
         "body": ["O app procura atualizações na Expo, o serviço que as entrega. Como em qualquer conexão com a internet, a Expo vê o endereço IP do celular. Nenhum outro dado é enviado."]
       },
       {
-        "heading": "Compras do Pro",
-        "planned": true,
-        "body": ["O Pro é comprado na App Store ou no Google Play. A Apple ou o Google processam o pagamento conforme suas próprias políticas de privacidade; nunca vemos os dados do seu cartão. A RevenueCat registra se você tem o Pro, usando um ID anônimo criado pelo app."]
+        "heading": "Compra do Pro",
+        "body": ["O Pro é comprado na App Store ou no Google Play. Apple ou Google cuidam do pagamento conforme suas próprias políticas de privacidade; nunca vemos os dados do seu cartão. O RevenueCat registra se você tem Pro, com um ID anônimo criado pelo app, ou o ID da sua conta quando você está conectado, para o Pro acompanhar sua conta."]
       },
       {
-        "heading": "Login, backup e sincronização opcionais",
-        "planned": true,
+        "heading": "Conta opcional e sincronização (Pro)",
         "body": [
-          "Você poderá entrar com Apple, Google, Facebook (Meta) ou e-mail para fazer backup do orçamento e usá-lo em mais de um aparelho. O login é feito pela Supabase. Nesse caso, guardamos seu e-mail, um ID de conta e os dados de orçamento que você sincronizar. Se você entrar com Apple, Google ou Facebook, eles compartilham seu nome e e-mail conosco conforme o que você autorizar.",
-          "Sem login, tudo continua como descrito acima. Você pode excluir sua conta e tudo o que estiver guardado com ela no app."
+          "Você pode entrar com Apple, Google, Facebook (Meta) ou e-mail. O login é feito pelo Supabase em servidores na {{region}}. Guardamos então seu e-mail, um ID de conta, seu nome se o provedor o compartilhar, o idioma do app e, em versões de teste, uma marca de teste. Com a Apple você pode ocultar seu e-mail; aí vemos só o endereço de encaminhamento da Apple.",
+          "Com o Pro, seu orçamento é sincronizado com sua conta: contas, lançamentos, lançamentos fixos, orçamento, metas de economia, categorias próprias, fornecedores lembrados e as configurações que acompanham você (dia do pagamento, salário, orçamento). Cada alteração é salva com quando e em qual dispositivo foi feita. Os dados são criptografados no envio e no armazenamento, e só sua conta pode lê-los.",
+          "Códigos e links de login são enviados por e-mail pelo Resend, com seu endereço e idioma. Para enviar cada e-mail uma única vez, o servidor guarda só o ID da mensagem, o tipo e o status por 7 dias, nunca o endereço.",
+          "Você pode sair quando quiser; os dados ficam no celular. «Excluir conta» remove a conta e todos os dados salvos com ela no servidor."
         ]
       },
       {
         "heading": "Widget e lembretes",
-        "planned": true,
         "body": ["O widget mostra números dos dados do seu celular, e os lembretes de fixos são agendados no celular. Nada é enviado em nenhum dos casos."]
       },
       {
         "heading": "Com quem compartilhamos dados",
         "list": [
+          "Supabase (Irlanda, UE): login, sincronização para o Pro e o servidor da leitura por IA e sua contagem.",
           "Anthropic (EUA): leitura por IA, só com sua permissão.",
-          "Supabase{{supabaseRegion}}: nosso servidor para leitura por IA e contagem de leituras; depois, login, backup e sincronização.",
+          "Resend (EUA): e-mails com códigos e links de login.",
+          "RevenueCat (EUA): compras do Pro.",
           "Sentry (UE): relatórios de falhas sem dados pessoais.",
           "Expo (EUA): atualizações do app.",
-          "RevenueCat (EUA): compras do Pro (planejado).",
-          "Apple e Google: App Store, Google Play e login (planejado).",
-          "Meta: login com Facebook (planejado)."
+          "Apple, Google e Meta: App Store, Google Play e login com eles, quando você escolhe."
         ],
-        "after": ["Quando os dados vão para os EUA, os fornecedores usam as cláusulas contratuais padrão da UE ou o EU–US Data Privacy Framework. Nunca vendemos dados, e o app não tem anúncios nem rastreamento."]
+        "after": ["Quando dados vão para os EUA, os provedores usam as cláusulas contratuais padrão da UE ou o EU–US Data Privacy Framework. Nunca vendemos dados, e o app não tem anúncios nem rastreamento."]
       },
       {
         "heading": "Base legal",
@@ -88,11 +88,13 @@
         ]
       },
       {
-        "heading": "Por quanto tempo os dados são guardados",
+        "heading": "Por quanto tempo os dados ficam guardados",
         "list": [
-          "No seu celular: até você apagá-los no app ou desinstalar o app.",
-          "Imagens e texto para a leitura por IA: não são guardados por nós.",
-          "Contagens de leituras por IA: 30 dias.",
+          "No celular: até você excluí-los no app ou desinstalar o app.",
+          "Sua conta e os dados sincronizados: até você excluir a conta no app.",
+          "Imagens e texto da leitura por IA: não ficam guardados conosco.",
+          "Contagem de leituras por IA: 30 dias.",
+          "Registro dos e-mails de login (sem endereço): 7 dias.",
           "Relatórios de falhas: no máximo 90 dias."
         ]
       },
@@ -118,7 +120,12 @@
     "sections": [
       {
         "heading": "Apagar tudo no app",
-        "steps": ["Abra o Saldo Pocket.", "Vá para Eu.", "Toque em Apagar todos os dados.", "Toque em Apagar tudo."],
+        "steps": [
+          "Abra o Saldo Pocket.",
+          "Vá para Eu.",
+          "Toque em Apagar todos os dados.",
+          "Toque em Apagar tudo."
+        ],
         "body": [
           "Isso apaga tudo o que o app guarda no seu celular: contas, lançamentos, fixos, metas, categorias, estabelecimentos, ajustes, imagens e arquivos salvos, o ID do aparelho e sua escolha de idioma e moeda. O app começa de novo como novo.",
           "Isso não pode ser desfeito. Se quiser uma cópia, exporte seus dados antes em Eu → Exportar dados. É grátis."
@@ -176,27 +183,19 @@
     "sections": [
       {
         "heading": "Quem somos",
-        "body": [
-          "A {{company}} (nº de org. {{orgNumber}}, {{country}}) cria e mantém o Saldo Pocket. Fale conosco em {{email}}."
-        ]
+        "body": ["A {{company}} (nº de org. {{orgNumber}}, {{country}}) cria e mantém o Saldo Pocket. Fale conosco em {{email}}."]
       },
       {
         "heading": "O que é o app",
-        "body": [
-          "O Saldo Pocket dá uma visão do seu dinheiro: contas, lançamentos, orçamento e metas. Os números se baseiam no que você registra e importa. São uma visão geral, não aconselhamento financeiro; confira decisões importantes com seu banco."
-        ]
+        "body": ["O Saldo Pocket dá uma visão do seu dinheiro: contas, lançamentos, orçamento e metas. Os números se baseiam no que você registra e importa. São uma visão geral, não aconselhamento financeiro; confira decisões importantes com seu banco."]
       },
       {
         "heading": "Conta e sincronização",
-        "body": [
-          "Você pode usar o app sem conta. Se entrar e tiver Pro, seus dados são sincronizados com sua conta para uso em vários dispositivos. Proteja seu login; quem conseguir entrar na sua conta verá os dados sincronizados."
-        ]
+        "body": ["Você pode usar o app sem conta. Se entrar e tiver Pro, seus dados são sincronizados com sua conta para uso em vários dispositivos. Proteja seu login; quem conseguir entrar na sua conta verá os dados sincronizados."]
       },
       {
         "heading": "Grátis e Pro",
-        "body": [
-          "A versão grátis não custa nada. O Pro é comprado na App Store ou no Google Play, como assinatura (mensal ou anual) ou compra única. O preço aparece na loja antes da compra."
-        ],
+        "body": ["A versão grátis não custa nada. O Pro é comprado na App Store ou no Google Play, como assinatura (mensal ou anual) ou compra única. O preço aparece na loja antes da compra."],
         "list": [
           "A assinatura é renovada automaticamente até você cancelá-la na loja pelo menos 24 horas antes do fim do período.",
           "Você gerencia e cancela nas configurações da sua conta da App Store ou do Google Play.",
@@ -205,33 +204,23 @@
       },
       {
         "heading": "Termos das lojas",
-        "body": [
-          "Compras no iPhone e iPad seguem também o contrato de licença padrão da Apple (EULA), e compras no Android seguem os termos do Google Play. Reembolsos são feitos pela loja onde você comprou."
-        ]
+        "body": ["Compras no iPhone e iPad seguem também o contrato de licença padrão da Apple (EULA), e compras no Android seguem os termos do Google Play. Reembolsos são feitos pela loja onde você comprou."]
       },
       {
         "heading": "Seus dados",
-        "body": [
-          "Seus dados são seus. Você pode exportá-los e excluí-los no app a qualquer momento, inclusive na versão grátis. Como tratamos dados pessoais está na política de privacidade."
-        ]
+        "body": ["Seus dados são seus. Você pode exportá-los e excluí-los no app a qualquer momento, inclusive na versão grátis. Como tratamos dados pessoais está na política de privacidade."]
       },
       {
         "heading": "Responsabilidade",
-        "body": [
-          "Trabalhamos para que o app seja correto e esteja disponível, mas ele é fornecido como está. Na medida permitida por lei, não respondemos por perdas indiretas. Seus direitos de consumidor não são limitados por estes termos."
-        ]
+        "body": ["Trabalhamos para que o app seja correto e esteja disponível, mas ele é fornecido como está. Na medida permitida por lei, não respondemos por perdas indiretas. Seus direitos de consumidor não são limitados por estes termos."]
       },
       {
         "heading": "Alterações",
-        "body": [
-          "Podemos atualizar estes termos. Mudanças importantes são mostradas no app ou nesta página, com a data no topo."
-        ]
+        "body": ["Podemos atualizar estes termos. Mudanças importantes são mostradas no app ou nesta página, com a data no topo."]
       },
       {
         "heading": "Lei aplicável",
-        "body": [
-          "Estes termos seguem a lei norueguesa. Se você é consumidor, mantém também a proteção dada pela lei do país onde mora."
-        ]
+        "body": ["Estes termos seguem a lei norueguesa. Se você é consumidor, mantém também a proteção dada pela lei do país onde mora."]
       }
     ]
   },
