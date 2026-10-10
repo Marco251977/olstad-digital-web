@@ -64,6 +64,12 @@
     return;
   }
   var phone = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  // On a phone with a sign-in in the link, open the app straight away (Gmail's own browser does not open
+  // Universal Links); the button stays for when the phone asks or blocks it. Only with JavaScript, so a link
+  // scanner never does it, and the page itself never uses the token.
+  if (phone && /(^|&)(token_hash|access_token|code)=/.test(params)) {
+    setTimeout(function () { location.href = document.getElementById('open').href; }, 300);
+  }
   if (!phone) {
     document.getElementById('title').textContent = "请在手机上打开链接";
     document.getElementById('status').textContent = "此链接无法在这里登录。请在安装了 Saldo Pocket 的手机上打开，或在应用中输入邮件里的验证码。";
