@@ -64,6 +64,12 @@
     return;
   }
   var phone = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  // On a phone with a sign-in in the link, open the app straight away (Gmail's own browser does not open
+  // Universal Links); the button stays for when the phone asks or blocks it. Only with JavaScript, so a link
+  // scanner never does it, and the page itself never uses the token.
+  if (phone && /(^|&)(token_hash|access_token|code)=/.test(params)) {
+    setTimeout(function () { location.href = document.getElementById('open').href; }, 300);
+  }
   if (!phone) {
     document.getElementById('title').textContent = "Åbn linket på telefonen";
     document.getElementById('status').textContent = "Dette link kan ikke logge dig ind her. Åbn det på telefonen, hvor Saldo Pocket er, eller indtast koden fra e-mailen i appen.";
