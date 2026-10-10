@@ -7,6 +7,7 @@
   "plannedNote": "Not in the app yet. It is described here so you know how it will work before it arrives.",
   "pages": {
     "privacy": "Privacy policy",
+    "terms": "Terms of use",
     "delete-account": "Delete account and data",
     "support": "Support"
   },
@@ -16,6 +17,7 @@
     "intro": "{{company}} makes apps for phones. Each app has its own privacy policy and a page about deleting your data. Choose the app below.",
     "app": "App",
     "privacy": "Privacy policy",
+    "terms": "Terms of use",
     "deleteAccount": "Delete data",
     "support": "Support",
     "external": "Opens the app’s own website"

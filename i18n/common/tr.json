@@ -7,6 +7,7 @@
   "plannedNote": "Henüz uygulamada yok. Gelmeden önce nasıl çalışacağını bilmen için burada anlatılıyor.",
   "pages": {
     "privacy": "Gizlilik politikası",
+    "terms": "Kullanım koşulları",
     "delete-account": "Hesabı ve verileri sil",
     "support": "Destek"
   },
@@ -16,6 +17,7 @@
     "intro": "{{company}} telefon için uygulamalar geliştirir. Her uygulamanın kendi gizlilik politikası ve verilerini silme hakkında bir sayfası vardır. Aşağıdan uygulamayı seç.",
     "app": "Uygulama",
     "privacy": "Gizlilik politikası",
+    "terms": "Kullanım koşulları",
     "deleteAccount": "Verileri sil",
     "support": "Destek",
     "external": "Uygulamanın kendi web sitesini açar"

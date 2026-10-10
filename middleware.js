@@ -6,7 +6,7 @@ import { CORE_LANGUAGES, resolveLanguage } from 'app-core';
 
 const LANGUAGES = CORE_LANGUAGES.map((l) => l.code);
 
-export const config = { runtime: 'nodejs', matcher: ["/privacy","/saldo-pocket/privacy","/saldo-pocket/delete-account","/saldo-pocket/support"] };
+export const config = { runtime: 'nodejs', matcher: ["/privacy","/saldo-pocket/privacy","/saldo-pocket/terms","/saldo-pocket/delete-account","/saldo-pocket/support"] };
 
 /** «nb-NO,nb;q=0.9,en;q=0.8» → the browser's languages, most wanted first. */
 export function browserLocales(header) {

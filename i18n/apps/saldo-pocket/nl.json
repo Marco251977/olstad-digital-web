@@ -171,6 +171,70 @@
       }
     ]
   },
+  "terms": {
+    "intro": "Deze voorwaarden gelden als je Saldo Pocket gebruikt, een budgetapp van {{company}}. Door de app te gebruiken, ga je ermee akkoord.",
+    "sections": [
+      {
+        "heading": "Wie we zijn",
+        "body": [
+          "{{company}} (org.nr. {{orgNumber}}, {{country}}) maakt en beheert Saldo Pocket. Neem contact op via {{email}}."
+        ]
+      },
+      {
+        "heading": "Wat de app is",
+        "body": [
+          "Saldo Pocket geeft je overzicht over je geld: rekeningen, posten, budget en doelen. De cijfers zijn gebaseerd op wat je invoert en importeert. Ze zijn een overzicht, geen financieel advies; overleg belangrijke beslissingen met je bank."
+        ]
+      },
+      {
+        "heading": "Account en synchronisatie",
+        "body": [
+          "Je kunt de app zonder account gebruiken. Als je inlogt en Pro hebt, worden je gegevens met je account gesynchroniseerd, zodat je ze op meerdere apparaten kunt gebruiken. Bescherm je inlog; wie op je account kan inloggen, ziet de gesynchroniseerde gegevens."
+        ]
+      },
+      {
+        "heading": "Gratis en Pro",
+        "body": [
+          "De gratis versie kost niets. Pro koop je in de App Store of Google Play, als abonnement (per maand of per jaar) of als eenmalige aankoop. De prijs staat in de store voordat je koopt."
+        ],
+        "list": [
+          "Een abonnement wordt automatisch verlengd tot je het uiterlijk 24 uur voor het einde van de periode in de store opzegt.",
+          "Je beheert en zegt op via de accountinstellingen van de App Store of Google Play.",
+          "Wordt een gratis proefperiode aangeboden, dan gaat die aan het einde over in een betaald abonnement, tenzij je eerder opzegt."
+        ]
+      },
+      {
+        "heading": "Voorwaarden van de stores",
+        "body": [
+          "Aankopen op iPhone en iPad volgen ook de standaardlicentieovereenkomst van Apple (EULA), aankopen op Android de voorwaarden van Google Play. Terugbetalingen regelt de store waar je kocht."
+        ]
+      },
+      {
+        "heading": "Jouw gegevens",
+        "body": [
+          "Je gegevens zijn van jou. Je kunt ze altijd in de app exporteren en verwijderen, ook in de gratis versie. Hoe we persoonsgegevens verwerken, staat in de privacyverklaring."
+        ]
+      },
+      {
+        "heading": "Aansprakelijkheid",
+        "body": [
+          "We zetten ons in om de app juist en beschikbaar te houden, maar leveren hem zoals hij is. Voor zover de wet het toestaat, zijn we niet aansprakelijk voor indirecte schade. Je rechten als consument worden door deze voorwaarden niet beperkt."
+        ]
+      },
+      {
+        "heading": "Wijzigingen",
+        "body": [
+          "We kunnen deze voorwaarden bijwerken. Belangrijke wijzigingen staan in de app of op deze pagina, met de datum bovenaan."
+        ]
+      },
+      {
+        "heading": "Recht",
+        "body": [
+          "Op deze voorwaarden is Noors recht van toepassing. Als consument behoud je ook de bescherming die het recht van je woonland je geeft."
+        ]
+      }
+    ]
+  },
   "authCallback": {
     "title": "Saldo Pocket wordt geopend",
     "body": "Ging Saldo Pocket niet vanzelf open? Tik op de knop.",

@@ -7,6 +7,7 @@
   "plannedNote": "Inte i appen ännu. Det står här så att du vet hur det blir innan det kommer.",
   "pages": {
     "privacy": "Integritetspolicy",
+    "terms": "Användarvillkor",
     "delete-account": "Radera konto och data",
     "support": "Support"
   },
@@ -16,6 +17,7 @@
     "intro": "{{company}} gör appar för mobilen. Varje app har sin egen integritetspolicy och en sida om att radera dina data. Välj appen nedan.",
     "app": "App",
     "privacy": "Integritetspolicy",
+    "terms": "Användarvillkor",
     "deleteAccount": "Radera data",
     "support": "Support",
     "external": "Öppnar appens egen webbplats"

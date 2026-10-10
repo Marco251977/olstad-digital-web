@@ -171,6 +171,70 @@
       }
     ]
   },
+  "terms": {
+    "intro": "Queste condizioni valgono quando usi Saldo Pocket, un’app per il budget di {{company}}. Usando l’app le accetti.",
+    "sections": [
+      {
+        "heading": "Chi siamo",
+        "body": [
+          "{{company}} (n. org. {{orgNumber}}, {{country}}) realizza e gestisce Saldo Pocket. Contattaci a {{email}}."
+        ]
+      },
+      {
+        "heading": "Cos’è l’app",
+        "body": [
+          "Saldo Pocket ti dà una panoramica dei tuoi soldi: conti, movimenti, budget e obiettivi. I numeri si basano su ciò che inserisci e importi. Sono una panoramica, non una consulenza finanziaria; verifica le decisioni importanti con la tua banca."
+        ]
+      },
+      {
+        "heading": "Account e sincronizzazione",
+        "body": [
+          "Puoi usare l’app senza account. Se accedi e hai Pro, i tuoi dati vengono sincronizzati con il tuo account per usarli su più dispositivi. Proteggi il tuo accesso; chi può entrare nel tuo account vede i dati sincronizzati."
+        ]
+      },
+      {
+        "heading": "Gratis e Pro",
+        "body": [
+          "La versione gratuita non costa nulla. Pro si acquista sull’App Store o su Google Play, in abbonamento (mensile o annuale) o con acquisto unico. Il prezzo è indicato nello store prima dell’acquisto."
+        ],
+        "list": [
+          "L’abbonamento si rinnova automaticamente finché non lo disdici nello store almeno 24 ore prima della fine del periodo.",
+          "Lo gestisci e lo disdici nelle impostazioni del tuo account App Store o Google Play.",
+          "Se è offerta una prova gratuita, alla fine diventa un abbonamento a pagamento, a meno che tu non disdica prima."
+        ]
+      },
+      {
+        "heading": "Condizioni degli store",
+        "body": [
+          "Gli acquisti su iPhone e iPad seguono anche il contratto di licenza standard di Apple (EULA), quelli su Android le condizioni di Google Play. I rimborsi sono gestiti dallo store in cui hai acquistato."
+        ]
+      },
+      {
+        "heading": "I tuoi dati",
+        "body": [
+          "I tuoi dati sono tuoi. Puoi esportarli ed eliminarli nell’app in qualsiasi momento, anche nella versione gratuita. Come trattiamo i dati personali è descritto nell’informativa sulla privacy."
+        ]
+      },
+      {
+        "heading": "Responsabilità",
+        "body": [
+          "Lavoriamo perché l’app sia corretta e disponibile, ma è fornita così com’è. Nei limiti di legge non rispondiamo di perdite indirette. I tuoi diritti di consumatore non sono limitati da queste condizioni."
+        ]
+      },
+      {
+        "heading": "Modifiche",
+        "body": [
+          "Possiamo aggiornare queste condizioni. Le modifiche importanti sono indicate nell’app o in questa pagina, con la data in alto."
+        ]
+      },
+      {
+        "heading": "Legge applicabile",
+        "body": [
+          "Queste condizioni sono regolate dalla legge norvegese. Come consumatore mantieni anche la tutela che ti dà la legge del paese in cui vivi."
+        ]
+      }
+    ]
+  },
   "authCallback": {
     "title": "Apertura di Saldo Pocket",
     "body": "Saldo Pocket non si è aperto da solo? Tocca il pulsante.",

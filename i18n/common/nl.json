@@ -7,6 +7,7 @@
   "plannedNote": "Nog niet in de app. Het staat hier zodat je al weet hoe het gaat werken voordat het er is.",
   "pages": {
     "privacy": "Privacybeleid",
+    "terms": "Gebruiksvoorwaarden",
     "delete-account": "Account en gegevens verwijderen",
     "support": "Ondersteuning"
   },
@@ -16,6 +17,7 @@
     "intro": "{{company}} maakt apps voor de telefoon. Elke app heeft een eigen privacybeleid en een pagina over het verwijderen van je gegevens. Kies hieronder de app.",
     "app": "App",
     "privacy": "Privacybeleid",
+    "terms": "Gebruiksvoorwaarden",
     "deleteAccount": "Gegevens verwijderen",
     "support": "Ondersteuning",
     "external": "Opent de eigen website van de app"

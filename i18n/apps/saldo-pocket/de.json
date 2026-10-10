@@ -171,6 +171,70 @@
       }
     ]
   },
+  "terms": {
+    "intro": "Diese Bedingungen gelten, wenn du Saldo Pocket nutzt, eine Budget-App von {{company}}. Mit der Nutzung der App akzeptierst du sie.",
+    "sections": [
+      {
+        "heading": "Wer wir sind",
+        "body": [
+          "{{company}} (Org.-Nr. {{orgNumber}}, {{country}}) entwickelt und betreibt Saldo Pocket. Kontakt: {{email}}."
+        ]
+      },
+      {
+        "heading": "Was die App ist",
+        "body": [
+          "Saldo Pocket gibt dir einen Überblick über dein Geld: Konten, Buchungen, Budget und Ziele. Die Zahlen beruhen auf dem, was du eingibst und importierst. Sie sind ein Überblick, keine Finanzberatung; prüfe wichtige Entscheidungen mit deiner Bank."
+        ]
+      },
+      {
+        "heading": "Konto und Synchronisierung",
+        "body": [
+          "Du kannst die App ohne Konto nutzen. Wenn du dich anmeldest und Pro hast, werden deine Daten mit deinem Konto synchronisiert, damit du sie auf mehreren Geräten nutzen kannst. Schütze deine Anmeldung; wer sich in dein Konto einloggen kann, sieht die synchronisierten Daten."
+        ]
+      },
+      {
+        "heading": "Kostenlos und Pro",
+        "body": [
+          "Die kostenlose Version kostet nichts. Pro wird im App Store oder bei Google Play gekauft, als Abo (monatlich oder jährlich) oder als Einmalkauf. Der Preis wird vor dem Kauf im Store angezeigt."
+        ],
+        "list": [
+          "Ein Abo verlängert sich automatisch, bis du es spätestens 24 Stunden vor Ablauf des Zeitraums im Store kündigst.",
+          "Du verwaltest und kündigst es in den Kontoeinstellungen des App Store oder von Google Play.",
+          "Wird ein kostenloser Testzeitraum angeboten, geht er an seinem Ende in ein bezahltes Abo über, wenn du nicht vorher kündigst."
+        ]
+      },
+      {
+        "heading": "Bedingungen der Stores",
+        "body": [
+          "Käufe auf iPhone und iPad unterliegen zusätzlich Apples Standard-Lizenzvertrag (EULA), Käufe auf Android den Bedingungen von Google Play. Erstattungen übernimmt der Store, in dem du gekauft hast."
+        ]
+      },
+      {
+        "heading": "Deine Daten",
+        "body": [
+          "Deine Daten gehören dir. Du kannst sie jederzeit in der App exportieren und löschen, auch in der kostenlosen Version. Wie wir personenbezogene Daten verarbeiten, steht in der Datenschutzerklärung."
+        ]
+      },
+      {
+        "heading": "Haftung",
+        "body": [
+          "Wir sorgen dafür, dass die App korrekt und verfügbar ist, stellen sie aber so bereit, wie sie ist. Soweit gesetzlich zulässig, haften wir nicht für indirekte Schäden. Deine Rechte als Verbraucher werden durch diese Bedingungen nicht eingeschränkt."
+        ]
+      },
+      {
+        "heading": "Änderungen",
+        "body": [
+          "Wir können diese Bedingungen aktualisieren. Wichtige Änderungen werden in der App oder auf dieser Seite angezeigt, mit Datum oben."
+        ]
+      },
+      {
+        "heading": "Recht",
+        "body": [
+          "Es gilt norwegisches Recht. Als Verbraucher behältst du zusätzlich den Schutz, den dir das Recht deines Wohnsitzlandes gibt."
+        ]
+      }
+    ]
+  },
   "authCallback": {
     "title": "Saldo Pocket wird geöffnet",
     "body": "Hat sich Saldo Pocket nicht von selbst geöffnet? Tippe auf den Button.",

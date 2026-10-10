@@ -171,6 +171,70 @@
       }
     ]
   },
+  "terms": {
+    "intro": "Nämä ehdot koskevat Saldo Pocketin käyttöä. Saldo Pocket on {{company}}:n budjettisovellus. Käyttämällä sovellusta hyväksyt ehdot.",
+    "sections": [
+      {
+        "heading": "Keitä olemme",
+        "body": [
+          "{{company}} (y-tunnus {{orgNumber}}, {{country}}) tekee ja ylläpitää Saldo Pocketia. Ota yhteyttä: {{email}}."
+        ]
+      },
+      {
+        "heading": "Mikä sovellus on",
+        "body": [
+          "Saldo Pocket antaa yleiskuvan rahoistasi: tilit, tapahtumat, budjetti ja tavoitteet. Luvut perustuvat siihen, mitä syötät ja tuot. Ne ovat yleiskuva eivätkä talousneuvontaa, joten tarkista tärkeät päätökset pankkisi kanssa."
+        ]
+      },
+      {
+        "heading": "Tili ja synkronointi",
+        "body": [
+          "Voit käyttää sovellusta ilman tiliä. Jos kirjaudut ja sinulla on Pro, tietosi synkronoidaan tilillesi, jotta voit käyttää niitä useilla laitteilla. Suojaa kirjautumisesi; jokainen, joka pääsee tilillesi, näkee synkronoidut tiedot."
+        ]
+      },
+      {
+        "heading": "Ilmainen ja Pro",
+        "body": [
+          "Ilmaisversio on maksuton. Pro ostetaan App Storesta tai Google Playsta tilauksena (kuukausi tai vuosi) tai kertaostona. Hinta näkyy kaupassa ennen ostoa."
+        ],
+        "list": [
+          "Tilaus uusiutuu automaattisesti, kunnes peruutat sen kaupassa viimeistään 24 tuntia ennen jakson päättymistä.",
+          "Hallitset ja peruutat tilauksen App Storen tai Google Playn tiliasetuksissa.",
+          "Jos tarjolla on ilmainen kokeilujakso, se muuttuu maksulliseksi tilaukseksi sen päättyessä, ellet peruuta ennen."
+        ]
+      },
+      {
+        "heading": "Kauppojen ehdot",
+        "body": [
+          "iPhonella ja iPadilla tehtyihin ostoihin sovelletaan myös Applen vakiokäyttöoikeussopimusta (EULA) ja Androidilla Google Playn ehtoja. Hyvitykset hoitaa kauppa, josta ostit."
+        ]
+      },
+      {
+        "heading": "Tietosi",
+        "body": [
+          "Tietosi ovat sinun. Voit viedä ja poistaa ne sovelluksessa milloin tahansa, myös ilmaisversiossa. Henkilötietojen käsittely on kuvattu tietosuojaselosteessa."
+        ]
+      },
+      {
+        "heading": "Vastuu",
+        "body": [
+          "Pyrimme pitämään sovelluksen oikeana ja saatavilla, mutta se tarjotaan sellaisenaan. Lain sallimissa rajoissa emme vastaa välillisistä vahingoista. Nämä ehdot eivät rajoita kuluttajan oikeuksiasi."
+        ]
+      },
+      {
+        "heading": "Muutokset",
+        "body": [
+          "Voimme päivittää ehtoja. Tärkeät muutokset näytetään sovelluksessa tai tällä sivulla, päivämäärä ylhäällä."
+        ]
+      },
+      {
+        "heading": "Sovellettava laki",
+        "body": [
+          "Ehtoihin sovelletaan Norjan lakia. Kuluttajana säilytät myös asuinmaasi lain antaman suojan."
+        ]
+      }
+    ]
+  },
   "authCallback": {
     "title": "Avataan Saldo Pocket",
     "body": "Eikö Saldo Pocket avautunut itsestään? Napauta painiketta.",

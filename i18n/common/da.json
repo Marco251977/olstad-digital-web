@@ -7,6 +7,7 @@
   "plannedNote": "Ikke i appen endnu. Det står her, så du ved, hvordan det bliver, før det kommer.",
   "pages": {
     "privacy": "Privatlivspolitik",
+    "terms": "Vilkår for brug",
     "delete-account": "Slet konto og data",
     "support": "Support"
   },
@@ -16,6 +17,7 @@
     "intro": "{{company}} laver apps til mobilen. Hver app har sin egen privatlivspolitik og en side om sletning af dine data. Vælg appen nedenfor.",
     "app": "App",
     "privacy": "Privatlivspolitik",
+    "terms": "Vilkår for brug",
     "deleteAccount": "Slet data",
     "support": "Support",
     "external": "Åbner appens egen hjemmeside"
