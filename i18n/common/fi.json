@@ -7,6 +7,7 @@
   "plannedNote": "Ei vielä sovelluksessa. Se on kuvattu tässä, jotta tiedät etukäteen, miten se toimii.",
   "pages": {
     "privacy": "Tietosuojaseloste",
+    "terms": "Käyttöehdot",
     "delete-account": "Poista tili ja tiedot",
     "support": "Tuki"
   },
@@ -16,6 +17,7 @@
     "intro": "{{company}} tekee sovelluksia puhelimeen. Jokaisella sovelluksella on oma tietosuojaselosteensa ja sivu tietojen poistamisesta. Valitse sovellus alta.",
     "app": "Sovellus",
     "privacy": "Tietosuojaseloste",
+    "terms": "Käyttöehdot",
     "deleteAccount": "Poista tiedot",
     "support": "Tuki",
     "external": "Avaa sovelluksen oman verkkosivuston"

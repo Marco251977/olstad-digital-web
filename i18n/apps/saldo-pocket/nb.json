@@ -171,6 +171,70 @@
       }
     ]
   },
+  "terms": {
+    "intro": "Disse vilkårene gjelder når du bruker Saldo Pocket, en budsjettapp fra {{company}}. Ved å bruke appen godtar du dem.",
+    "sections": [
+      {
+        "heading": "Hvem vi er",
+        "body": [
+          "{{company}} (org.nr. {{orgNumber}}, {{country}}) lager og driver Saldo Pocket. Kontakt oss på {{email}}."
+        ]
+      },
+      {
+        "heading": "Hva appen er",
+        "body": [
+          "Saldo Pocket gir deg oversikt over pengene dine: kontoer, poster, budsjett og mål. Tallene bygger på det du legger inn og importerer. De er en oversikt, ikke økonomisk rådgivning, så sjekk viktige avgjørelser med banken din."
+        ]
+      },
+      {
+        "heading": "Konto og synk",
+        "body": [
+          "Du kan bruke appen uten konto. Logger du inn og har Pro, synkes dataene til kontoen din, så du kan bruke dem på flere enheter. Pass på innloggingen din; den som kan logge inn på kontoen, kan se de synkede dataene."
+        ]
+      },
+      {
+        "heading": "Gratis og Pro",
+        "body": [
+          "Gratisversjonen koster ingenting. Pro kjøpes i App Store eller Google Play, som abonnement (månedlig eller årlig) eller som engangskjøp. Prisen vises i butikken før du kjøper."
+        ],
+        "list": [
+          "Et abonnement fornyes automatisk til du sier det opp i butikken senest 24 timer før perioden er over.",
+          "Du administrerer og sier opp i kontoinnstillingene i App Store eller Google Play.",
+          "Tilbys en gratis prøveperiode, går den over til betalt abonnement når den er over, med mindre du sier opp før."
+        ]
+      },
+      {
+        "heading": "Butikkenes vilkår",
+        "body": [
+          "Kjøp på iPhone og iPad følger også Apples standard lisensavtale (EULA), og kjøp på Android følger Google Plays vilkår. Refusjon håndteres av butikken du kjøpte i."
+        ]
+      },
+      {
+        "heading": "Dataene dine",
+        "body": [
+          "Dataene dine er dine. Du kan eksportere og slette dem i appen når som helst, også i gratisversjonen. Hvordan vi behandler personopplysninger, står i personvernerklæringen."
+        ]
+      },
+      {
+        "heading": "Ansvar",
+        "body": [
+          "Vi jobber for at appen skal være riktig og tilgjengelig, men den leveres som den er. Så langt loven tillater, er vi ikke ansvarlige for indirekte tap. Rettighetene dine som forbruker begrenses ikke av disse vilkårene."
+        ]
+      },
+      {
+        "heading": "Endringer",
+        "body": [
+          "Vi kan oppdatere vilkårene. Viktige endringer vises i appen eller på denne siden, med dato øverst."
+        ]
+      },
+      {
+        "heading": "Lov",
+        "body": [
+          "Vilkårene følger norsk rett. Er du forbruker, beholder du også vernet loven i landet du bor i gir deg."
+        ]
+      }
+    ]
+  },
   "authCallback": {
     "title": "Åpner Saldo Pocket",
     "body": "Åpnet ikke Saldo Pocket seg av seg selv? Trykk på knappen.",

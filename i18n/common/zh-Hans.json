@@ -7,6 +7,7 @@
   "plannedNote": "应用中尚未提供。在此说明，是为了让你在推出前就知道它将如何运作。",
   "pages": {
     "privacy": "隐私政策",
+    "terms": "使用条款",
     "delete-account": "删除账户和数据",
     "support": "支持"
   },
@@ -16,6 +17,7 @@
     "intro": "{{company}} 开发手机应用。每个应用都有自己的隐私政策和关于删除数据的页面。请在下方选择应用。",
     "app": "应用",
     "privacy": "隐私政策",
+    "terms": "使用条款",
     "deleteAccount": "删除数据",
     "support": "支持",
     "external": "打开该应用自己的网站"

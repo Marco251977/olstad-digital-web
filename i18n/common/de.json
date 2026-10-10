@@ -7,6 +7,7 @@
   "plannedNote": "Noch nicht in der App. Es steht hier, damit du schon vorher weißt, wie es funktionieren wird.",
   "pages": {
     "privacy": "Datenschutzerklärung",
+    "terms": "Nutzungsbedingungen",
     "delete-account": "Konto und Daten löschen",
     "support": "Support"
   },
@@ -16,6 +17,7 @@
     "intro": "{{company}} entwickelt Apps für das Smartphone. Jede App hat ihre eigene Datenschutzerklärung und eine Seite zum Löschen deiner Daten. Wähle unten die App.",
     "app": "App",
     "privacy": "Datenschutzerklärung",
+    "terms": "Nutzungsbedingungen",
     "deleteAccount": "Daten löschen",
     "support": "Support",
     "external": "Öffnet die eigene Website der App"

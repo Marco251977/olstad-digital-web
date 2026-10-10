@@ -141,8 +141,9 @@ function appPage(app, page, lang) {
     `<h1>${pageTitle}</h1>`,
   ];
   let body;
-  if (page === 'privacy' || page === 'delete-account') {
-    const content = page === 'privacy' ? a.privacy : a.deleteAccount;
+  if (page === 'privacy' || page === 'terms' || page === 'delete-account') {
+    // Terms of use: the same layout as the privacy policy (intro, last updated, sections).
+    const content = page === 'privacy' ? a.privacy : page === 'terms' ? a.terms : a.deleteAccount;
     body = [
       ...head,
       `<p class="lede">${fill(content.intro, vars)}</p>`,
@@ -254,6 +255,7 @@ function overviewPage(lang) {
     const external = !app.slug;
     const links = [
       ['privacy', o.privacy],
+      ['terms', o.terms],
       ['delete-account', o.deleteAccount],
       ['support', o.support],
     ]

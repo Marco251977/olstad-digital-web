@@ -171,6 +171,70 @@
       }
     ]
   },
+  "terms": {
+    "intro": "These terms apply when you use Saldo Pocket, a budgeting app from {{company}}. By using the app, you accept them.",
+    "sections": [
+      {
+        "heading": "Who we are",
+        "body": [
+          "{{company}} (org. no. {{orgNumber}}, {{country}}) makes and runs Saldo Pocket. Contact us at {{email}}."
+        ]
+      },
+      {
+        "heading": "What the app is",
+        "body": [
+          "Saldo Pocket gives you an overview of your money: accounts, entries, budget and goals. The figures are based on what you enter and import. They are an overview, not financial advice, so check important decisions with your bank."
+        ]
+      },
+      {
+        "heading": "Account and sync",
+        "body": [
+          "You can use the app without an account. If you sign in and have Pro, your data is synced to your account so you can use it on several devices. Keep your sign-in safe; anyone who can sign in to your account can see the synced data."
+        ]
+      },
+      {
+        "heading": "Free and Pro",
+        "body": [
+          "The free version costs nothing. Pro is bought in the App Store or Google Play, as a subscription (monthly or yearly) or as a one-time purchase. The price is shown in the store before you buy."
+        ],
+        "list": [
+          "A subscription renews automatically until you cancel it in the store at least 24 hours before the period ends.",
+          "You manage and cancel it in your App Store or Google Play account settings.",
+          "If a free trial is offered, it turns into a paid subscription when it ends unless you cancel before."
+        ]
+      },
+      {
+        "heading": "The stores’ terms",
+        "body": [
+          "Purchases on iPhone and iPad also follow Apple’s standard licence agreement (EULA), and purchases on Android follow Google Play’s terms. Refunds are handled by the store you bought from."
+        ]
+      },
+      {
+        "heading": "Your data",
+        "body": [
+          "Your data is yours. You can export it and delete it in the app at any time, also on the free version. How we handle personal data is described in the privacy policy."
+        ]
+      },
+      {
+        "heading": "Responsibility",
+        "body": [
+          "We work to keep the app correct and available, but it is provided as it is. As far as the law allows, we are not responsible for indirect losses. Your rights as a consumer are not limited by these terms."
+        ]
+      },
+      {
+        "heading": "Changes",
+        "body": [
+          "We may update these terms. Important changes are shown in the app or on this page, with the date at the top."
+        ]
+      },
+      {
+        "heading": "Law",
+        "body": [
+          "These terms follow Norwegian law. If you are a consumer, you also keep the protection the law of the country where you live gives you."
+        ]
+      }
+    ]
+  },
   "authCallback": {
     "title": "Opening Saldo Pocket",
     "body": "If Saldo Pocket did not open by itself, tap the button.",

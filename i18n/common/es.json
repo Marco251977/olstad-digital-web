@@ -7,6 +7,7 @@
   "plannedNote": "Aún no está en la app. Lo describimos aquí para que sepas cómo funcionará antes de que llegue.",
   "pages": {
     "privacy": "Política de privacidad",
+    "terms": "Condiciones de uso",
     "delete-account": "Eliminar cuenta y datos",
     "support": "Soporte"
   },
@@ -16,6 +17,7 @@
     "intro": "{{company}} crea apps para el móvil. Cada app tiene su propia política de privacidad y una página sobre cómo eliminar tus datos. Elige la app a continuación.",
     "app": "App",
     "privacy": "Política de privacidad",
+    "terms": "Condiciones de uso",
     "deleteAccount": "Eliminar datos",
     "support": "Soporte",
     "external": "Abre el sitio web propio de la app"

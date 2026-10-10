@@ -171,6 +171,70 @@
       }
     ]
   },
+  "terms": {
+    "intro": "Ces conditions s’appliquent lorsque vous utilisez Saldo Pocket, une application de budget de {{company}}. En utilisant l’application, vous les acceptez.",
+    "sections": [
+      {
+        "heading": "Qui nous sommes",
+        "body": [
+          "{{company}} (n° d’org. {{orgNumber}}, {{country}}) conçoit et exploite Saldo Pocket. Contact : {{email}}."
+        ]
+      },
+      {
+        "heading": "Ce qu’est l’application",
+        "body": [
+          "Saldo Pocket vous donne une vue d’ensemble de votre argent : comptes, opérations, budget et objectifs. Les chiffres reposent sur ce que vous saisissez et importez. Ils constituent une vue d’ensemble, pas un conseil financier ; vérifiez les décisions importantes avec votre banque."
+        ]
+      },
+      {
+        "heading": "Compte et synchronisation",
+        "body": [
+          "Vous pouvez utiliser l’application sans compte. Si vous vous connectez et avez Pro, vos données sont synchronisées avec votre compte pour les utiliser sur plusieurs appareils. Protégez votre connexion : toute personne qui peut se connecter à votre compte voit les données synchronisées."
+        ]
+      },
+      {
+        "heading": "Gratuit et Pro",
+        "body": [
+          "La version gratuite ne coûte rien. Pro s’achète sur l’App Store ou Google Play, en abonnement (mensuel ou annuel) ou en achat unique. Le prix est affiché dans la boutique avant l’achat."
+        ],
+        "list": [
+          "Un abonnement se renouvelle automatiquement jusqu’à ce que vous le résiliiez dans la boutique au moins 24 heures avant la fin de la période.",
+          "Vous le gérez et le résiliez dans les réglages de votre compte App Store ou Google Play.",
+          "Si un essai gratuit est proposé, il devient un abonnement payant à sa fin, sauf résiliation avant."
+        ]
+      },
+      {
+        "heading": "Conditions des boutiques",
+        "body": [
+          "Les achats sur iPhone et iPad suivent aussi le contrat de licence standard d’Apple (EULA), et les achats sur Android les conditions de Google Play. Les remboursements sont gérés par la boutique où vous avez acheté."
+        ]
+      },
+      {
+        "heading": "Vos données",
+        "body": [
+          "Vos données vous appartiennent. Vous pouvez les exporter et les supprimer à tout moment dans l’application, y compris dans la version gratuite. Le traitement des données personnelles est décrit dans la politique de confidentialité."
+        ]
+      },
+      {
+        "heading": "Responsabilité",
+        "body": [
+          "Nous veillons à ce que l’application soit exacte et disponible, mais elle est fournie en l’état. Dans la mesure permise par la loi, nous ne sommes pas responsables des pertes indirectes. Vos droits de consommateur ne sont pas limités par ces conditions."
+        ]
+      },
+      {
+        "heading": "Modifications",
+        "body": [
+          "Nous pouvons mettre à jour ces conditions. Les changements importants sont indiqués dans l’application ou sur cette page, avec la date en haut."
+        ]
+      },
+      {
+        "heading": "Droit applicable",
+        "body": [
+          "Ces conditions sont régies par le droit norvégien. Si vous êtes consommateur, vous conservez aussi la protection que vous accorde le droit de votre pays de résidence."
+        ]
+      }
+    ]
+  },
   "authCallback": {
     "title": "Ouverture de Saldo Pocket",
     "body": "Saldo Pocket ne s’est pas ouvert tout seul ? Touchez le bouton.",
