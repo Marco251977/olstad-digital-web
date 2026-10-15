@@ -171,8 +171,9 @@
         "limits": {
           "free": "मुफ़्त",
           "pro": "Pro",
-          "included": "शामिल",
           "perMonth": "{{value}} / माह",
+          "total_one": "कुल {{value}}",
+          "total_other": "कुल {{value}}",
           "rows": {
             "accounts": "खाते",
             "savingsGoals": "बचत लक्ष्य",

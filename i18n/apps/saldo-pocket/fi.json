@@ -171,8 +171,9 @@
         "limits": {
           "free": "Ilmainen",
           "pro": "Pro",
-          "included": "Sisältyy",
           "perMonth": "{{value}} / kk",
+          "total_one": "yhteensä {{value}}",
+          "total_other": "yhteensä {{value}}",
           "rows": {
             "accounts": "Tilit",
             "savingsGoals": "Säästötavoitteet",

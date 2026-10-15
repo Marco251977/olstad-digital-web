@@ -171,8 +171,10 @@
         "limits": {
           "free": "Gratuit",
           "pro": "Pro",
-          "included": "Inclus",
           "perMonth": "{{value}} / mois",
+          "total_one": "{{value}} au total",
+          "total_many": "{{value}} au total",
+          "total_other": "{{value}} au total",
           "rows": {
             "accounts": "Comptes",
             "savingsGoals": "Objectifs d’épargne",

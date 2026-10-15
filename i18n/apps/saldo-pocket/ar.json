@@ -171,8 +171,13 @@
         "limits": {
           "free": "مجاني",
           "pro": "Pro",
-          "included": "مُضمَّن",
           "perMonth": "{{value}} / شهر",
+          "total_zero": "{{value}} إجمالًا",
+          "total_one": "{{value}} إجمالًا",
+          "total_two": "{{value}} إجمالًا",
+          "total_few": "{{value}} إجمالًا",
+          "total_many": "{{value}} إجمالًا",
+          "total_other": "{{value}} إجمالًا",
           "rows": {
             "accounts": "الحسابات",
             "savingsGoals": "أهداف الادخار",

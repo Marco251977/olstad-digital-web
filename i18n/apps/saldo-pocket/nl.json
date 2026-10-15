@@ -171,8 +171,9 @@
         "limits": {
           "free": "Gratis",
           "pro": "Pro",
-          "included": "Inbegrepen",
           "perMonth": "{{value}} / mnd",
+          "total_one": "{{value}} in totaal",
+          "total_other": "{{value}} in totaal",
           "rows": {
             "accounts": "Rekeningen",
             "savingsGoals": "Spaardoelen",

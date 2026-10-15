@@ -171,8 +171,9 @@
         "limits": {
           "free": "Kostenlos",
           "pro": "Pro",
-          "included": "Inklusive",
           "perMonth": "{{value}} / Monat",
+          "total_one": "{{value}} insgesamt",
+          "total_other": "{{value}} insgesamt",
           "rows": {
             "accounts": "Konten",
             "savingsGoals": "Sparziele",

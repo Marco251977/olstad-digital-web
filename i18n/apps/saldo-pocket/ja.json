@@ -171,8 +171,8 @@
         "limits": {
           "free": "無料",
           "pro": "Pro",
-          "included": "利用可能",
           "perMonth": "月{{value}}",
+          "total_other": "累計{{value}}",
           "rows": {
             "accounts": "口座",
             "savingsGoals": "貯金目標",

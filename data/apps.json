@@ -24,10 +24,14 @@
         "androidSha256PlayAppSigning": []
       },
       "limits": {
-        "source": "Saldo Pocket src/shared/entitlements.ts (FREE_LIMITS, PRO_LIMITS). npm run check:limits compares, npm run sync:limits copies.",
-        "monthly": [
-          "scansPerMonth"
-        ],
+        "source": "Saldo Pocket src/shared/entitlements.ts (FREE_LIMITS, PRO_LIMITS, LIMIT_UNITS: kept | perMonth | total). npm run check:limits compares, npm run sync:limits copies.",
+        "units": {
+          "accounts": "kept",
+          "savingsGoals": "kept",
+          "customCategories": "kept",
+          "scansPerMonth": "perMonth",
+          "fileImports": "total"
+        },
         "free": {
           "accounts": 4,
           "savingsGoals": 1,
@@ -40,7 +44,7 @@
           "savingsGoals": 30,
           "customCategories": 100,
           "scansPerMonth": 300,
-          "fileImports": "included"
+          "fileImports": 1000
         }
       }
     },

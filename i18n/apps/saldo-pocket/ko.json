@@ -171,8 +171,8 @@
         "limits": {
           "free": "무료",
           "pro": "Pro",
-          "included": "포함",
           "perMonth": "월 {{value}}",
+          "total_other": "총 {{value}}",
           "rows": {
             "accounts": "계좌",
             "savingsGoals": "저축 목표",

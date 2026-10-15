@@ -171,8 +171,9 @@
         "limits": {
           "free": "Free",
           "pro": "Pro",
-          "included": "Included",
           "perMonth": "{{value}} / mo",
+          "total_one": "{{value}} in total",
+          "total_other": "{{value}} in total",
           "rows": {
             "accounts": "Accounts",
             "savingsGoals": "Savings goals",

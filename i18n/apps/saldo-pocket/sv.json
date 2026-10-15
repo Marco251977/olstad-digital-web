@@ -171,8 +171,9 @@
         "limits": {
           "free": "Gratis",
           "pro": "Pro",
-          "included": "Ingår",
           "perMonth": "{{value}} / mån",
+          "total_one": "{{value}} totalt",
+          "total_other": "{{value}} totalt",
           "rows": {
             "accounts": "Konton",
             "savingsGoals": "Sparmål",

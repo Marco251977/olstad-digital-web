@@ -171,8 +171,10 @@
         "limits": {
           "free": "Gratis",
           "pro": "Pro",
-          "included": "Incluso",
           "perMonth": "{{value}} / mese",
+          "total_one": "{{value}} in totale",
+          "total_many": "{{value}} in totale",
+          "total_other": "{{value}} in totale",
           "rows": {
             "accounts": "Conti",
             "savingsGoals": "Obiettivi di risparmio",

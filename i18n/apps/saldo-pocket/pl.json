@@ -171,8 +171,11 @@
         "limits": {
           "free": "Darmowa",
           "pro": "Pro",
-          "included": "W zestawie",
           "perMonth": "{{value}} / mies.",
+          "total_one": "{{value}} łącznie",
+          "total_few": "{{value}} łącznie",
+          "total_many": "{{value}} łącznie",
+          "total_other": "{{value}} łącznie",
           "rows": {
             "accounts": "Konta",
             "savingsGoals": "Cele oszczędnościowe",

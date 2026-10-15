@@ -171,8 +171,8 @@
         "limits": {
           "free": "免费版",
           "pro": "Pro",
-          "included": "包含",
           "perMonth": "每月 {{value}}",
+          "total_other": "累计 {{value}}",
           "rows": {
             "accounts": "账户",
             "savingsGoals": "储蓄目标",

@@ -171,8 +171,9 @@
         "limits": {
           "free": "Ücretsiz",
           "pro": "Pro",
-          "included": "Dahil",
           "perMonth": "{{value}} / ay",
+          "total_one": "toplam {{value}}",
+          "total_other": "toplam {{value}}",
           "rows": {
             "accounts": "Hesaplar",
             "savingsGoals": "Birikim hedefleri",

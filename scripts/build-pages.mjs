@@ -123,18 +123,29 @@ function sectionHtml(s, lang, vars) {
 }
 
 /**
- * Free and Pro as a table: the numbers from data/apps.json (`limits`, the same as the app's FREE_LIMITS / PRO_LIMITS,
- * checked by scripts/check-limits.mjs), the words from the language file (support.faq[].limits). A limit is a number
- * or "included"; nothing is ever «unlimited». Numbers in the page's language (Intl).
+ * Free and Pro as a table: the numbers and their units from data/apps.json (`limits`, the same as the app's FREE_LIMITS
+ * / PRO_LIMITS / LIMIT_UNITS, checked by scripts/check-limits.mjs), the words from the language file
+ * (support.faq[].limits). A limit is always a whole number – never «unlimited» or «included». Units: `perMonth` =
+ * «3 / mo», `total` = «1 in total» (plural via Intl.PluralRules: `total_one`, `total_other` …), `kept` = the number.
+ * Numbers in the page's language (Intl).
  */
 function limitsTable(app, t, lang) {
-  const { free, pro, monthly = [] } = app.limits ?? {};
+  const { free, pro, units = {} } = app.limits ?? {};
   if (!free || !pro) throw new Error(`${app.slug}: support has a limits table, data/apps.json has no limits`);
   const number = new Intl.NumberFormat(lang);
+  const plural = new Intl.PluralRules(lang);
   const cell = (key, value) => {
-    if (value === 'included') return fill(t.included);
-    if (!Number.isInteger(value) || value < 0) throw new Error(`${app.slug}: limit ${key} = ${value} (a whole number or "included")`);
-    return monthly.includes(key) ? fill(t.perMonth, { value: esc(number.format(value)) }) : esc(number.format(value));
+    if (!Number.isInteger(value) || value < 0) throw new Error(`${app.slug}: limit ${key} = ${JSON.stringify(value)} (a whole number)`);
+    const shown = esc(number.format(value));
+    const unit = units[key];
+    if (unit === 'perMonth') return fill(t.perMonth, { value: shown });
+    if (unit === 'total') {
+      const text = t[`total_${plural.select(value)}`] ?? t.total_other;
+      if (!text) throw new Error(`${app.slug} (${lang}): limits.total_${plural.select(value)} is missing`);
+      return fill(text, { value: shown });
+    }
+    if (unit !== 'kept') throw new Error(`${app.slug}: limit ${key} has no unit in data/apps.json (limits.units: kept, perMonth or total)`);
+    return shown;
   };
   const keys = Object.keys(free);
   const missing = [...keys, ...Object.keys(pro)].filter((k) => !(k in free) || !(k in pro) || !t.rows[k]);
