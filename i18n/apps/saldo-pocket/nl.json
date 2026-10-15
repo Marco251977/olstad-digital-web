@@ -164,33 +164,15 @@
     "contactHeading": "Contact",
     "contactBody": "E-mail {{email}}. Vermeld graag je telefoonmodel en de appversie (onderaan bij Ik).",
     "faqHeading": "Veelgestelde vragen",
+    "proNote": "Bekijk Pro in de app om te zien wat erbij zit.",
     "faq": [
       {
-        "q": "Wat is het verschil tussen Gratis en Pro?",
-        "a": "Beide hebben het budget, de prognose, importeren van je bank en export van al je gegevens. Pro heeft hogere limieten, de hele geschiedenis (Gratis toont de huidige en de vorige periode), rapporten in Excel, CSV en pdf, opgebouwde rente, de prognose aanpassen en synchronisatie tussen apparaten.",
-        "limits": {
-          "free": "Gratis",
-          "pro": "Pro",
-          "perMonth": "{{value}} / mnd",
-          "total_one": "{{value}} in totaal",
-          "total_other": "{{value}} in totaal",
-          "rows": {
-            "accounts": "Rekeningen",
-            "savingsGoals": "Spaardoelen",
-            "customCategories": "Eigen categorieën",
-            "scansPerMonth": "Scannen met AI",
-            "fileImports": "Importeren uit bestand (CSV, Excel)"
-          }
-        },
-        "after": "De prijzen staan in de App Store en Google Play, in je eigen valuta."
-      },
-      {
         "q": "Hoe herstel ik mijn aankoop op een nieuwe telefoon?",
-        "a": "Pro is gekoppeld aan je Apple ID of Google-account. Log op de nieuwe telefoon in met hetzelfde account, open Saldo Pocket en tik op Aankopen herstellen. Pro kopen is nog niet mogelijk; zo gaat het werken."
+        "a": "Pro is gekoppeld aan je Apple ID of Google-account. Log op de nieuwe telefoon in met hetzelfde account, open Saldo Pocket en tik op Aankopen herstellen."
       },
       {
         "q": "Hoe exporteer ik mijn gegevens?",
-        "a": "Ga naar Ik → Gegevens exporteren. Al mijn gegevens exporteren (JSON of CSV) is gratis voor iedereen. Met Pro kun je ook rapporten voor een periode en een rekening exporteren naar Excel of CSV."
+        "a": "Ga naar Ik → Gegevens exporteren. Al mijn gegevens exporteren (JSON of CSV) is gratis voor iedereen."
       },
       {
         "q": "Hoe importeer ik uit internetbankieren?",

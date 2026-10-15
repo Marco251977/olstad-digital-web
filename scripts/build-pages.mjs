@@ -122,38 +122,6 @@ function sectionHtml(s, lang, vars) {
   return parts.join('\n');
 }
 
-/**
- * Free and Pro as a table: the numbers and their units from data/apps.json (`limits`, the same as the app's FREE_LIMITS
- * / PRO_LIMITS / LIMIT_UNITS, checked by scripts/check-limits.mjs), the words from the language file
- * (support.faq[].limits). A limit is always a whole number – never «unlimited» or «included». Units: `perMonth` =
- * «3 / mo», `total` = «1 in total» (plural via Intl.PluralRules: `total_one`, `total_other` …), `kept` = the number.
- * Numbers in the page's language (Intl).
- */
-function limitsTable(app, t, lang) {
-  const { free, pro, units = {} } = app.limits ?? {};
-  if (!free || !pro) throw new Error(`${app.slug}: support has a limits table, data/apps.json has no limits`);
-  const number = new Intl.NumberFormat(lang);
-  const plural = new Intl.PluralRules(lang);
-  const cell = (key, value) => {
-    if (!Number.isInteger(value) || value < 0) throw new Error(`${app.slug}: limit ${key} = ${JSON.stringify(value)} (a whole number)`);
-    const shown = esc(number.format(value));
-    const unit = units[key];
-    if (unit === 'perMonth') return fill(t.perMonth, { value: shown });
-    if (unit === 'total') {
-      const text = t[`total_${plural.select(value)}`] ?? t.total_other;
-      if (!text) throw new Error(`${app.slug} (${lang}): limits.total_${plural.select(value)} is missing`);
-      return fill(text, { value: shown });
-    }
-    if (unit !== 'kept') throw new Error(`${app.slug}: limit ${key} has no unit in data/apps.json (limits.units: kept, perMonth or total)`);
-    return shown;
-  };
-  const keys = Object.keys(free);
-  const missing = [...keys, ...Object.keys(pro)].filter((k) => !(k in free) || !(k in pro) || !t.rows[k]);
-  if (missing.length) throw new Error(`${app.slug} (${lang}): limits ${[...new Set(missing)].join(', ')} lack a value or a name`);
-  const rows = keys.map((k) => `<tr><th scope="row">${fill(t.rows[k])}</th><td>${cell(k, free[k])}</td><td>${cell(k, pro[k])}</td></tr>`).join('');
-  return `<table class="limits"><thead><tr><td></td><th scope="col">${fill(t.free)}</th><th scope="col">${fill(t.pro)}</th></tr></thead><tbody>${rows}</tbody></table>`;
-}
-
 function appPage(app, page, lang) {
   const c = common[lang];
   const a = appTexts[app.slug][lang];
@@ -192,10 +160,10 @@ function appPage(app, page, lang) {
       nav,
       `<section class="card"><h2>${fill(a.support.contactHeading)}</h2><p>${fill(a.support.contactBody, vars)}</p></section>`,
       `<section class="faq"><h2>${fill(a.support.faqHeading)}</h2>`,
-      ...a.support.faq.map(
-        (f) =>
-          `<details><summary>${fill(f.q, vars)}</summary><p>${fill(f.a, vars)}</p>${f.limits ? limitsTable(app, f.limits, lang) : ''}${f.after ? `<p>${fill(f.after, vars)}</p>` : ''}</details>`,
-      ),
+      // Round 40c: no Free/Pro comparison on the site (limits, prices, trial and what Pro has live only in the app, so
+      // the pages never need updating when the app changes) – one line pointing to Pro in the app.
+      `<p>${fill(a.support.proNote, vars)}</p>`,
+      ...a.support.faq.map((f) => `<details><summary>${fill(f.q, vars)}</summary><p>${fill(f.a, vars)}</p></details>`),
       '</section>',
     ];
   }

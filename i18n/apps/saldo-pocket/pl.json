@@ -164,35 +164,15 @@
     "contactHeading": "Kontakt",
     "contactBody": "E-mail {{email}}. Podaj, proszę, model telefonu i wersję aplikacji (na dole ekranu Ja).",
     "faqHeading": "Najczęstsze pytania",
+    "proNote": "Sprawdź Pro w aplikacji, aby zobaczyć, co obejmuje.",
     "faq": [
       {
-        "q": "Czym różni się wersja Darmowa od Pro?",
-        "a": "Obie wersje mają budżet, prognozę, import z banku i eksport wszystkich danych. Pro ma wyższe limity, całą historię (wersja Darmowa pokazuje bieżący i poprzedni okres), raporty w Excelu, CSV i PDF, naliczone odsetki, dostosowanie prognozy i synchronizację między urządzeniami.",
-        "limits": {
-          "free": "Darmowa",
-          "pro": "Pro",
-          "perMonth": "{{value}} / mies.",
-          "total_one": "{{value}} łącznie",
-          "total_few": "{{value}} łącznie",
-          "total_many": "{{value}} łącznie",
-          "total_other": "{{value}} łącznie",
-          "rows": {
-            "accounts": "Konta",
-            "savingsGoals": "Cele oszczędnościowe",
-            "customCategories": "Własne kategorie",
-            "scansPerMonth": "Skanowanie z AI",
-            "fileImports": "Import z pliku (CSV, Excel)"
-          }
-        },
-        "after": "Ceny są widoczne w App Store i Google Play w Twojej walucie."
-      },
-      {
         "q": "Jak przywrócić zakup na nowym telefonie?",
-        "a": "Pro jest powiązane z Twoim Apple ID lub kontem Google. Zaloguj się na nowym telefonie tym samym kontem, otwórz Saldo Pocket i dotknij Przywróć zakupy. Zakup Pro nie jest jeszcze dostępny; tak to będzie działać."
+        "a": "Pro jest powiązane z Twoim Apple ID lub kontem Google. Zaloguj się na nowym telefonie tym samym kontem, otwórz Saldo Pocket i dotknij Przywróć zakupy."
       },
       {
         "q": "Jak wyeksportować dane?",
-        "a": "Przejdź do Ja → Eksport danych. Eksportuj wszystkie moje dane (JSON lub CSV) jest bezpłatne dla wszystkich. Z Pro możesz też eksportować raporty za okres i dla konta do Excela lub CSV."
+        "a": "Przejdź do Ja → Eksport danych. Eksportuj wszystkie moje dane (JSON lub CSV) jest bezpłatne dla wszystkich."
       },
       {
         "q": "Jak zaimportować dane z bankowości internetowej?",

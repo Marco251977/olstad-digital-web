@@ -164,34 +164,15 @@
     "contactHeading": "Contact",
     "contactBody": "E-mail {{email}}. Indiquez-nous votre modèle de téléphone et la version de l’app (en bas de Moi).",
     "faqHeading": "Questions fréquentes",
+    "proNote": "Consultez Pro dans l’app pour voir ce qui est inclus.",
     "faq": [
       {
-        "q": "Quelle est la différence entre Gratuit et Pro ?",
-        "a": "Les deux comprennent le budget, la prévision, l’import depuis votre banque et l’export de toutes vos données. Pro offre des limites plus élevées, tout l’historique (Gratuit affiche la période en cours et la précédente), des rapports Excel, CSV et PDF, les intérêts courus, l’ajustement de la prévision et la synchronisation entre appareils.",
-        "limits": {
-          "free": "Gratuit",
-          "pro": "Pro",
-          "perMonth": "{{value}} / mois",
-          "total_one": "{{value}} au total",
-          "total_many": "{{value}} au total",
-          "total_other": "{{value}} au total",
-          "rows": {
-            "accounts": "Comptes",
-            "savingsGoals": "Objectifs d’épargne",
-            "customCategories": "Catégories personnalisées",
-            "scansPerMonth": "Scan avec l’IA",
-            "fileImports": "Import de fichier (CSV, Excel)"
-          }
-        },
-        "after": "Les prix sont affichés dans l’App Store et Google Play, dans votre devise."
-      },
-      {
         "q": "Comment restaurer mon achat sur un nouveau téléphone ?",
-        "a": "Pro est lié à votre identifiant Apple ou à votre compte Google. Connectez-vous avec le même compte sur le nouveau téléphone, ouvrez Saldo Pocket et touchez Restaurer les achats. Les achats de Pro ne sont pas encore ouverts ; voici comment cela fonctionnera."
+        "a": "Pro est lié à votre identifiant Apple ou à votre compte Google. Connectez-vous avec le même compte sur le nouveau téléphone, ouvrez Saldo Pocket et touchez Restaurer les achats."
       },
       {
         "q": "Comment exporter mes données ?",
-        "a": "Allez dans Moi → Exporter les données. Exporter toutes mes données (JSON ou CSV) est gratuit pour tous. Avec Pro, vous pouvez aussi exporter des rapports pour une période et un compte vers Excel ou CSV."
+        "a": "Allez dans Moi → Exporter les données. Exporter toutes mes données (JSON ou CSV) est gratuit pour tous."
       },
       {
         "q": "Comment importer depuis ma banque en ligne ?",

@@ -164,33 +164,15 @@
     "contactHeading": "İletişim",
     "contactBody": "E-posta {{email}}. Lütfen telefon modelini ve uygulama sürümünü (Ben ekranının en altında) belirt.",
     "faqHeading": "Sık sorulan sorular",
+    "proNote": "Neler dahil olduğunu görmek için uygulamada Pro’ya bak.",
     "faq": [
       {
-        "q": "Ücretsiz ile Pro arasındaki fark nedir?",
-        "a": "İkisinde de bütçe, tahmin, bankadan içe aktarma ve tüm verilerinin dışa aktarımı vardır. Pro’da daha yüksek sınırlar, tüm geçmiş (Ücretsiz sürüm bu dönemi ve öncekini gösterir), Excel, CSV ve PDF raporları, işlemiş faiz, tahmini düzenleme ve cihazlar arası eşitleme vardır.",
-        "limits": {
-          "free": "Ücretsiz",
-          "pro": "Pro",
-          "perMonth": "{{value}} / ay",
-          "total_one": "toplam {{value}}",
-          "total_other": "toplam {{value}}",
-          "rows": {
-            "accounts": "Hesaplar",
-            "savingsGoals": "Birikim hedefleri",
-            "customCategories": "Özel kategoriler",
-            "scansPerMonth": "Yapay zekâ ile tarama",
-            "fileImports": "Dosyadan içe aktarma (CSV, Excel)"
-          }
-        },
-        "after": "Fiyatlar App Store ve Google Play’de kendi para biriminde gösterilir."
-      },
-      {
         "q": "Satın alımımı yeni bir telefonda nasıl geri yüklerim?",
-        "a": "Pro, Apple Kimliğine veya Google hesabına bağlıdır. Yeni telefonda aynı hesapla oturum aç, Saldo Pocket’ı aç ve Satın alımları geri yükle’ye dokun. Pro satın alımları henüz açık değil; bu şekilde çalışacak."
+        "a": "Pro, Apple Kimliğine veya Google hesabına bağlıdır. Yeni telefonda aynı hesapla oturum aç, Saldo Pocket’ı aç ve Satın alımları geri yükle’ye dokun."
       },
       {
         "q": "Verilerimi nasıl dışa aktarırım?",
-        "a": "Ben → Verileri dışa aktar bölümüne git. Tüm verilerimi dışa aktar (JSON veya CSV) herkes için ücretsizdir. Pro ile bir dönem ve bir hesap için raporları Excel veya CSV olarak da dışa aktarabilirsin."
+        "a": "Ben → Verileri dışa aktar bölümüne git. Tüm verilerimi dışa aktar (JSON veya CSV) herkes için ücretsizdir."
       },
       {
         "q": "İnternet bankacılığından nasıl içe aktarırım?",

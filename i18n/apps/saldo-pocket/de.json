@@ -164,33 +164,15 @@
     "contactHeading": "Kontakt",
     "contactBody": "E-Mail {{email}}. Nenn uns bitte dein Telefonmodell und die App-Version (unten unter Ich).",
     "faqHeading": "Häufige Fragen",
+    "proNote": "Was enthalten ist, siehst du in der App unter Pro.",
     "faq": [
       {
-        "q": "Was ist der Unterschied zwischen Kostenlos und Pro?",
-        "a": "Beide haben das Budget, die Prognose, den Import von deiner Bank und den Export all deiner Daten. Pro hat höhere Grenzen, den ganzen Verlauf (Kostenlos zeigt den aktuellen und den vorherigen Zeitraum), Berichte als Excel, CSV und PDF, aufgelaufene Zinsen, das Anpassen der Prognose und die Synchronisierung zwischen Geräten.",
-        "limits": {
-          "free": "Kostenlos",
-          "pro": "Pro",
-          "perMonth": "{{value}} / Monat",
-          "total_one": "{{value}} insgesamt",
-          "total_other": "{{value}} insgesamt",
-          "rows": {
-            "accounts": "Konten",
-            "savingsGoals": "Sparziele",
-            "customCategories": "Eigene Kategorien",
-            "scansPerMonth": "Mit KI scannen",
-            "fileImports": "Import aus Datei (CSV, Excel)"
-          }
-        },
-        "after": "Die Preise werden im App Store und bei Google Play in deiner Währung angezeigt."
-      },
-      {
         "q": "Wie stelle ich meinen Kauf auf einem neuen Telefon wieder her?",
-        "a": "Pro ist an deine Apple-ID oder dein Google-Konto gebunden. Melde dich auf dem neuen Telefon mit demselben Konto an, öffne Saldo Pocket und tippe auf Käufe wiederherstellen. Der Kauf von Pro ist noch nicht geöffnet; so wird es funktionieren."
+        "a": "Pro ist an deine Apple-ID oder dein Google-Konto gebunden. Melde dich auf dem neuen Telefon mit demselben Konto an, öffne Saldo Pocket und tippe auf Käufe wiederherstellen."
       },
       {
         "q": "Wie exportiere ich meine Daten?",
-        "a": "Geh zu Ich → Daten exportieren. Alle meine Daten exportieren (JSON oder CSV) ist für alle kostenlos. Mit Pro kannst du außerdem Berichte für einen Zeitraum und ein Konto nach Excel oder CSV exportieren."
+        "a": "Geh zu Ich → Daten exportieren. Alle meine Daten exportieren (JSON oder CSV) ist für alle kostenlos."
       },
       {
         "q": "Wie importiere ich aus dem Onlinebanking?",

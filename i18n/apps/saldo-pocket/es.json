@@ -164,34 +164,15 @@
     "contactHeading": "Contacto",
     "contactBody": "Correo {{email}}. Indícanos el modelo de tu teléfono y la versión de la app (al final de Yo).",
     "faqHeading": "Preguntas frecuentes",
+    "proNote": "Consulta Pro en la app para ver qué incluye.",
     "faq": [
       {
-        "q": "¿Qué diferencia hay entre Gratis y Pro?",
-        "a": "Los dos tienen el presupuesto, la previsión, la importación desde tu banco y la exportación de todos tus datos. Pro tiene límites más altos, todo el historial (Gratis muestra el periodo actual y el anterior), informes en Excel, CSV y PDF, intereses acumulados, ajustes de la previsión y sincronización entre dispositivos.",
-        "limits": {
-          "free": "Gratis",
-          "pro": "Pro",
-          "perMonth": "{{value}} / mes",
-          "total_one": "{{value}} en total",
-          "total_many": "{{value}} en total",
-          "total_other": "{{value}} en total",
-          "rows": {
-            "accounts": "Cuentas",
-            "savingsGoals": "Metas de ahorro",
-            "customCategories": "Categorías propias",
-            "scansPerMonth": "Escanear con IA",
-            "fileImports": "Importar archivo (CSV, Excel)"
-          }
-        },
-        "after": "Los precios se muestran en la App Store y en Google Play, en tu moneda."
-      },
-      {
         "q": "¿Cómo restauro mi compra en un teléfono nuevo?",
-        "a": "Pro está vinculado a tu ID de Apple o a tu cuenta de Google. Inicia sesión con la misma cuenta en el teléfono nuevo, abre Saldo Pocket y toca Restaurar compras. Las compras de Pro aún no están abiertas; así es como funcionará."
+        "a": "Pro está vinculado a tu ID de Apple o a tu cuenta de Google. Inicia sesión con la misma cuenta en el teléfono nuevo, abre Saldo Pocket y toca Restaurar compras."
       },
       {
         "q": "¿Cómo exporto mis datos?",
-        "a": "Ve a Yo → Exportar datos. Exportar todos mis datos (JSON o CSV) es gratis para todos. Con Pro también puedes exportar informes de un periodo y una cuenta a Excel o CSV."
+        "a": "Ve a Yo → Exportar datos. Exportar todos mis datos (JSON o CSV) es gratis para todos."
       },
       {
         "q": "¿Cómo importo desde la banca en línea?",

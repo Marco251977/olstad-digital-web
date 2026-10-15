@@ -22,30 +22,6 @@
           "33:62:21:0F:F1:E4:21:F6:B6:6B:E7:53:E7:8A:94:35:CA:1C:2B:85:E8:29:24:B5:C8:A8:6D:26:EB:48:98:AB"
         ],
         "androidSha256PlayAppSigning": []
-      },
-      "limits": {
-        "source": "Saldo Pocket src/shared/entitlements.ts (FREE_LIMITS, PRO_LIMITS, LIMIT_UNITS: kept | perMonth | total). npm run check:limits compares, npm run sync:limits copies.",
-        "units": {
-          "accounts": "kept",
-          "savingsGoals": "kept",
-          "customCategories": "kept",
-          "scansPerMonth": "perMonth",
-          "fileImports": "total"
-        },
-        "free": {
-          "accounts": 4,
-          "savingsGoals": 1,
-          "customCategories": 5,
-          "scansPerMonth": 3,
-          "fileImports": 1
-        },
-        "pro": {
-          "accounts": 30,
-          "savingsGoals": 30,
-          "customCategories": 100,
-          "scansPerMonth": 300,
-          "fileImports": 1000
-        }
       }
     },
     {

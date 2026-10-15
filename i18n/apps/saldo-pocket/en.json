@@ -164,33 +164,15 @@
     "contactHeading": "Contact",
     "contactBody": "E-mail {{email}}. Please tell us your phone model and the app version (at the bottom of Me).",
     "faqHeading": "Frequently asked questions",
+    "proNote": "See Pro in the app for what is included.",
     "faq": [
       {
-        "q": "What is the difference between Free and Pro?",
-        "a": "Both have the budget, the forecast, import from your bank and export of all your data. Pro has higher limits, all history (Free shows this period and the one before), reports to Excel, CSV and PDF, accrued interest, adjusting the forecast and sync between devices.",
-        "limits": {
-          "free": "Free",
-          "pro": "Pro",
-          "perMonth": "{{value}} / mo",
-          "total_one": "{{value}} in total",
-          "total_other": "{{value}} in total",
-          "rows": {
-            "accounts": "Accounts",
-            "savingsGoals": "Savings goals",
-            "customCategories": "Custom categories",
-            "scansPerMonth": "Scan with AI",
-            "fileImports": "File import (CSV, Excel)"
-          }
-        },
-        "after": "Prices are shown in the App Store and Google Play, in your currency."
-      },
-      {
         "q": "How do I restore my purchase on a new phone?",
-        "a": "Pro is tied to your Apple ID or Google account. Sign in with the same account on the new phone, open Saldo Pocket and tap Restore purchases. Pro purchases are not open yet; this is how it will work."
+        "a": "Pro is tied to your Apple ID or Google account. Sign in with the same account on the new phone, open Saldo Pocket and tap Restore purchases."
       },
       {
         "q": "How do I export my data?",
-        "a": "Go to Me → Export data. Export all my data (JSON or CSV) is free for everyone. With Pro you can also export reports for a period and an account to Excel or CSV."
+        "a": "Go to Me → Export data. Export all my data (JSON or CSV) is free for everyone."
       },
       {
         "q": "How do I import from my online bank?",

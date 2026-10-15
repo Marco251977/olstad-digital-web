@@ -164,34 +164,15 @@
     "contactHeading": "Contatti",
     "contactBody": "E-mail {{email}}. Indicaci il modello del telefono e la versione dell’app (in fondo a Io).",
     "faqHeading": "Domande frequenti",
+    "proNote": "Apri Pro nell’app per vedere cosa è incluso.",
     "faq": [
       {
-        "q": "Qual è la differenza tra Gratis e Pro?",
-        "a": "Entrambi hanno il budget, la previsione, l’importazione dalla banca e l’esportazione di tutti i tuoi dati. Pro ha limiti più alti, tutto lo storico (Gratis mostra il periodo attuale e quello precedente), report in Excel, CSV e PDF, interessi maturati, modifica della previsione e sincronizzazione tra dispositivi.",
-        "limits": {
-          "free": "Gratis",
-          "pro": "Pro",
-          "perMonth": "{{value}} / mese",
-          "total_one": "{{value}} in totale",
-          "total_many": "{{value}} in totale",
-          "total_other": "{{value}} in totale",
-          "rows": {
-            "accounts": "Conti",
-            "savingsGoals": "Obiettivi di risparmio",
-            "customCategories": "Categorie personalizzate",
-            "scansPerMonth": "Scansione con IA",
-            "fileImports": "Importazione da file (CSV, Excel)"
-          }
-        },
-        "after": "I prezzi sono indicati nell’App Store e su Google Play, nella tua valuta."
-      },
-      {
         "q": "Come ripristino l’acquisto su un nuovo telefono?",
-        "a": "Pro è legato al tuo ID Apple o al tuo account Google. Accedi con lo stesso account sul nuovo telefono, apri Saldo Pocket e tocca Ripristina acquisti. Gli acquisti di Pro non sono ancora aperti; ecco come funzionerà."
+        "a": "Pro è legato al tuo ID Apple o al tuo account Google. Accedi con lo stesso account sul nuovo telefono, apri Saldo Pocket e tocca Ripristina acquisti."
       },
       {
         "q": "Come esporto i miei dati?",
-        "a": "Vai su Io → Esporta dati. Esporta tutti i miei dati (JSON o CSV) è gratis per tutti. Con Pro puoi anche esportare report per un periodo e un conto in Excel o CSV."
+        "a": "Vai su Io → Esporta dati. Esporta tutti i miei dati (JSON o CSV) è gratis per tutti."
       },
       {
         "q": "Come importo dall’home banking?",

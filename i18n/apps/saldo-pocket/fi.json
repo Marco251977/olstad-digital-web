@@ -164,33 +164,15 @@
     "contactHeading": "Yhteystiedot",
     "contactBody": "Sähköposti {{email}}. Kerro mielellään puhelimesi malli ja sovelluksen versio (Minä-näkymän alareunassa).",
     "faqHeading": "Usein kysyttyä",
+    "proNote": "Katso sovelluksen Pro-näkymästä, mitä siihen sisältyy.",
     "faq": [
       {
-        "q": "Mikä ero on Ilmaisella ja Prolla?",
-        "a": "Molemmissa on budjetti, ennuste, tuonti pankista ja kaikkien tietojen vienti. Pro-versiossa on korkeammat rajat, koko historia (Ilmainen näyttää nykyisen ja edellisen jakson), raportit Exceliin, CSV- ja PDF-muotoon, kertyneet korot, ennusteen muokkaus ja synkronointi laitteiden välillä.",
-        "limits": {
-          "free": "Ilmainen",
-          "pro": "Pro",
-          "perMonth": "{{value}} / kk",
-          "total_one": "yhteensä {{value}}",
-          "total_other": "yhteensä {{value}}",
-          "rows": {
-            "accounts": "Tilit",
-            "savingsGoals": "Säästötavoitteet",
-            "customCategories": "Omat kategoriat",
-            "scansPerMonth": "Skannaus tekoälyllä",
-            "fileImports": "Tuonti tiedostosta (CSV, Excel)"
-          }
-        },
-        "after": "Hinnat näkyvät App Storessa ja Google Playssa omassa valuutassasi."
-      },
-      {
         "q": "Miten palautan ostoksen uuteen puhelimeen?",
-        "a": "Pro on sidottu Apple ID:hesi tai Google-tiliisi. Kirjaudu samalla tilillä uuteen puhelimeen, avaa Saldo Pocket ja napauta Palauta ostokset. Pro-ostokset eivät ole vielä auki; näin se tulee toimimaan."
+        "a": "Pro on sidottu Apple ID:hesi tai Google-tiliisi. Kirjaudu samalla tilillä uuteen puhelimeen, avaa Saldo Pocket ja napauta Palauta ostokset."
       },
       {
         "q": "Miten vien tietoni?",
-        "a": "Siirry kohtaan Minä → Vie tiedot. Vie kaikki tietoni (JSON tai CSV) on maksuton kaikille. Prolla voit myös viedä raportteja jaksolta ja tililtä Exceliin tai CSV-muotoon."
+        "a": "Siirry kohtaan Minä → Vie tiedot. Vie kaikki tietoni (JSON tai CSV) on maksuton kaikille."
       },
       {
         "q": "Miten tuon tiedot verkkopankista?",

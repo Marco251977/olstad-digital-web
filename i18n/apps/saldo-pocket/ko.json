@@ -164,32 +164,15 @@
     "contactHeading": "문의",
     "contactBody": "이메일 {{email}}. 휴대전화 모델과 앱 버전(내 정보 맨 아래)을 알려 주세요.",
     "faqHeading": "자주 묻는 질문",
+    "proNote": "포함된 내용은 앱의 Pro 화면에서 확인하세요.",
     "faq": [
       {
-        "q": "무료와 Pro의 차이는 무엇인가요?",
-        "a": "둘 다 예산, 예측, 은행에서 가져오기, 모든 데이터 내보내기를 제공합니다. Pro는 더 높은 한도, 전체 기록(무료는 이번 기간과 지난 기간), Excel·CSV·PDF 보고서, 발생 이자, 예측 조정, 기기 간 동기화를 제공합니다.",
-        "limits": {
-          "free": "무료",
-          "pro": "Pro",
-          "perMonth": "월 {{value}}",
-          "total_other": "총 {{value}}",
-          "rows": {
-            "accounts": "계좌",
-            "savingsGoals": "저축 목표",
-            "customCategories": "나만의 카테고리",
-            "scansPerMonth": "AI로 스캔",
-            "fileImports": "파일 가져오기(CSV, Excel)"
-          }
-        },
-        "after": "가격은 App Store와 Google Play에 회원님의 통화로 표시됩니다."
-      },
-      {
         "q": "새 휴대전화에서 구매를 복원하려면?",
-        "a": "Pro는 Apple ID 또는 Google 계정에 연결됩니다. 새 휴대전화에서 같은 계정으로 로그인하고 Saldo Pocket을 열어 구매 복원을 누르세요. Pro 구매는 아직 열리지 않았으며, 열리면 이렇게 작동합니다."
+        "a": "Pro는 Apple ID 또는 Google 계정에 연결됩니다. 새 휴대전화에서 같은 계정으로 로그인하고 Saldo Pocket을 열어 구매 복원을 누르세요."
       },
       {
         "q": "데이터를 내보내려면?",
-        "a": "내 정보 → 데이터 내보내기로 이동합니다. 내 모든 데이터 내보내기(JSON 또는 CSV)는 누구나 무료입니다. Pro에서는 기간과 계좌를 정해 보고서를 Excel 또는 CSV로 내보낼 수도 있습니다."
+        "a": "내 정보 → 데이터 내보내기로 이동합니다. 내 모든 데이터 내보내기(JSON 또는 CSV)는 누구나 무료입니다."
       },
       {
         "q": "인터넷 뱅킹에서 가져오려면?",

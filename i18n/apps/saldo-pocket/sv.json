@@ -164,33 +164,15 @@
     "contactHeading": "Kontakt",
     "contactBody": "E-post {{email}}. Berätta gärna vilken telefonmodell du har och vilken version av appen (längst ned under Jag).",
     "faqHeading": "Vanliga frågor",
+    "proNote": "Se Pro i appen för vad som ingår.",
     "faq": [
       {
-        "q": "Vad är skillnaden mellan Gratis och Pro?",
-        "a": "Båda har budgeten, prognosen, import från banken och export av alla dina data. Pro har högre gränser, all historik (Gratis visar den här och förra perioden), rapporter till Excel, CSV och PDF, upplupen ränta, justering av prognosen och synk mellan enheter.",
-        "limits": {
-          "free": "Gratis",
-          "pro": "Pro",
-          "perMonth": "{{value}} / mån",
-          "total_one": "{{value}} totalt",
-          "total_other": "{{value}} totalt",
-          "rows": {
-            "accounts": "Konton",
-            "savingsGoals": "Sparmål",
-            "customCategories": "Egna kategorier",
-            "scansPerMonth": "Skanna med AI",
-            "fileImports": "Import från fil (CSV, Excel)"
-          }
-        },
-        "after": "Priserna visas i App Store och Google Play, i din valuta."
-      },
-      {
         "q": "Hur återställer jag mitt köp på en ny telefon?",
-        "a": "Pro är kopplat till ditt Apple-ID eller Google-konto. Logga in med samma konto på den nya telefonen, öppna Saldo Pocket och tryck på Återställ köp. Köp av Pro är inte öppnat ännu; så här kommer det att fungera."
+        "a": "Pro är kopplat till ditt Apple-ID eller Google-konto. Logga in med samma konto på den nya telefonen, öppna Saldo Pocket och tryck på Återställ köp."
       },
       {
         "q": "Hur exporterar jag mina data?",
-        "a": "Gå till Jag → Exportera data. Exportera alla mina data (JSON eller CSV) är gratis för alla. Med Pro kan du också exportera rapporter för en period och ett konto till Excel eller CSV."
+        "a": "Gå till Jag → Exportera data. Exportera alla mina data (JSON eller CSV) är gratis för alla."
       },
       {
         "q": "Hur importerar jag från internetbanken?",

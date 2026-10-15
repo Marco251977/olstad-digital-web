@@ -164,32 +164,15 @@
     "contactHeading": "联系我们",
     "contactBody": "电子邮件 {{email}}。请告诉我们你的手机型号和应用版本（在“我”页面底部）。",
     "faqHeading": "常见问题",
+    "proNote": "包含哪些内容，请在应用的 Pro 页面查看。",
     "faq": [
       {
-        "q": "免费版和 Pro 有什么区别？",
-        "a": "两者都包括预算、预测、从银行导入以及导出全部数据。Pro 提供更高的上限、完整历史（免费版显示本期和上一期）、Excel、CSV 和 PDF 报告、应计利息、调整预测以及多设备同步。",
-        "limits": {
-          "free": "免费版",
-          "pro": "Pro",
-          "perMonth": "每月 {{value}}",
-          "total_other": "累计 {{value}}",
-          "rows": {
-            "accounts": "账户",
-            "savingsGoals": "储蓄目标",
-            "customCategories": "自定义分类",
-            "scansPerMonth": "AI 扫描",
-            "fileImports": "从文件导入（CSV、Excel）"
-          }
-        },
-        "after": "价格以你的币种显示在 App Store 和 Google Play 中。"
-      },
-      {
         "q": "如何在新手机上恢复购买？",
-        "a": "Pro 与你的 Apple ID 或 Google 账户绑定。在新手机上用同一账户登录，打开 Saldo Pocket，点按“恢复购买”。Pro 购买尚未开放；届时将按此方式运作。"
+        "a": "Pro 与你的 Apple ID 或 Google 账户绑定。在新手机上用同一账户登录，打开 Saldo Pocket，点按“恢复购买”。"
       },
       {
         "q": "如何导出我的数据？",
-        "a": "进入“我 → 导出数据”。“导出我的全部数据”（JSON 或 CSV）对所有人免费。使用 Pro，你还可以将某个周期和账户的报告导出为 Excel 或 CSV。"
+        "a": "进入“我 → 导出数据”。“导出我的全部数据”（JSON 或 CSV）对所有人免费。"
       },
       {
         "q": "如何从网上银行导入？",
