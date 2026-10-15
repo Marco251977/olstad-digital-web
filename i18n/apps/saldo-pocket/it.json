@@ -157,8 +157,11 @@
       },
       {
         "heading": "Eliminare il tuo account",
-        "planned": true,
-        "body": ["Quando arriverà l’accesso facoltativo, eliminerai l’account nell’app in Io → Account → Elimina account. L’account e tutto ciò che vi è salvato vengono eliminati dai nostri server entro 30 giorni. Se hai effettuato l’accesso con Facebook, vengono eliminati anche i dati ricevuti da Facebook; puoi inoltre rimuovere Saldo Pocket da Facebook in Impostazioni → App e siti web."]
+        "body": [
+          "Se usi l’app senza accedere, i tuoi dati si trovano solo sul telefono. Vengono eliminati quando elimini tutti i dati nell’app o quando rimuovi l’app dal telefono.",
+          "Se hai effettuato l’accesso, quando elimini il tuo account nell’app vengono eliminati anche i tuoi dati nel cloud: l’account, tutto ciò che vi è sincronizzato e tutto ciò che si trova sul telefono da cui elimini. Se hai effettuato l’accesso con Facebook, viene eliminato anche ciò che abbiamo ricevuto da Facebook. Puoi inoltre rimuovere Saldo Pocket dalle impostazioni di Facebook.",
+          "Se elimini solo i dati sul telefono, esci dall’account, ma l’account e i tuoi dati nel cloud restano. I dati sugli altri tuoi dispositivi non vengono eliminati automaticamente; eliminali dall’app su quei dispositivi. L’eliminazione non annulla un abbonamento; puoi farlo nell’App Store o su Google Play."
+        ]
       },
       {
         "heading": "Se non hai più l’app",

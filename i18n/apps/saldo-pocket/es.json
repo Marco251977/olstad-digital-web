@@ -157,8 +157,11 @@
       },
       {
         "heading": "Eliminar tu cuenta",
-        "planned": true,
-        "body": ["Cuando llegue el inicio de sesión opcional, eliminarás tu cuenta en la app en Yo → Cuenta → Eliminar cuenta. La cuenta y todo lo guardado con ella se eliminan de nuestros servidores en un plazo de 30 días. Si iniciaste sesión con Facebook, también se borran los datos que recibimos de Facebook; además puedes quitar Saldo Pocket en Facebook en Configuración → Apps y sitios web."]
+        "body": [
+          "Si usas la app sin iniciar sesión, tus datos solo están en tu teléfono. Se borran cuando borras todos los datos en la app o cuando quitas la app del teléfono.",
+          "Si has iniciado sesión, tus datos en la nube también se borran cuando eliminas tu cuenta en la app: la cuenta, todo lo sincronizado con ella y todo lo que hay en el teléfono desde el que la eliminas. Si iniciaste sesión con Facebook, también se borra lo que recibimos de Facebook. Además puedes quitar Saldo Pocket en la configuración de Facebook.",
+          "Si solo borras los datos del teléfono, se cierra tu sesión, pero tu cuenta y tus datos en la nube se conservan. Los datos de tus otros dispositivos no se borran automáticamente; bórralos en la app de cada uno. Eliminar la cuenta o los datos no cancela una suscripción; eso se hace en App Store o Google Play."
+        ]
       },
       {
         "heading": "Si ya no tienes la app",

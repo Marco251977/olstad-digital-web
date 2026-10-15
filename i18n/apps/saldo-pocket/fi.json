@@ -157,8 +157,11 @@
       },
       {
         "heading": "Tilin poistaminen",
-        "planned": true,
-        "body": ["Kun vapaaehtoinen kirjautuminen tulee, poistat tilin sovelluksessa kohdassa Minä → Tili → Poista tili. Tili ja kaikki sen mukana varmuuskopioitu poistetaan palvelimiltamme 30 päivän kuluessa. Jos kirjauduit Facebookilla, myös Facebookilta saamamme tiedot poistetaan; voit myös poistaa Saldo Pocketin Facebookissa kohdassa Asetukset → Sovellukset ja verkkosivustot."]
+        "body": [
+          "Jos käytät sovellusta kirjautumatta, tietosi ovat vain puhelimessasi. Ne poistetaan, kun poistat kaikki tiedot sovelluksessa tai poistat sovelluksen puhelimesta.",
+          "Jos olet kirjautunut sisään, myös pilvessä olevat tietosi poistetaan, kun poistat tilisi sovelluksessa: tili, kaikki siihen synkronoitu ja kaikki puhelimessa, jolla poistat. Jos kirjauduit Facebookilla, myös Facebookilta saamamme tiedot poistetaan. Voit lisäksi poistaa Saldo Pocketin Facebookin asetuksista.",
+          "Jos poistat vain puhelimen tiedot, sinut kirjataan ulos, mutta tilisi ja pilvessä olevat tietosi säilyvät. Muiden laitteidesi tietoja ei poisteta automaattisesti; poista ne sovelluksessa niillä laitteilla. Poistaminen ei peru tilausta; sen teet App Storessa tai Google Playssa."
+        ]
       },
       {
         "heading": "Jos sinulla ei enää ole sovellusta",

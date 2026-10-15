@@ -157,8 +157,11 @@
       },
       {
         "heading": "Slette kontoen",
-        "planned": true,
-        "body": ["Når valgfri innlogging kommer, sletter du kontoen i appen under Meg → Konto → Slett konto. Kontoen og alt som er sikkerhetskopiert med den, slettes fra serverne våre innen 30 dager. Logget du inn med Facebook, slettes også dataene vi fikk fra Facebook; du kan også fjerne Saldo Pocket i Facebook under Innstillinger → Apper og nettsteder."]
+        "body": [
+          "Bruker du appen uten å logge inn, ligger dataene dine bare på telefonen. De slettes når du sletter alle data i appen, eller når du fjerner appen fra telefonen.",
+          "Er du logget inn, slettes også dataene i skyen når du sletter kontoen i appen: kontoen, alt som er synket til den, og alt på telefonen du sletter fra. Logget du inn med Facebook, slettes også det vi fikk fra Facebook. Du kan i tillegg fjerne Saldo Pocket i Facebook-innstillingene dine.",
+          "Sletter du bare dataene på telefonen, blir du logget ut, men kontoen og dataene i skyen blir liggende. Data på andre enheter slettes ikke av seg selv; slett dem i appen der. Et abonnement sies ikke opp når du sletter; det gjør du i App Store eller Google Play."
+        ]
       },
       {
         "heading": "Hvis du ikke har appen lenger",

@@ -157,8 +157,11 @@
       },
       {
         "heading": "Supprimer votre compte",
-        "planned": true,
-        "body": ["Quand la connexion facultative arrivera, vous supprimerez votre compte dans l’app sous Moi → Compte → Supprimer le compte. Le compte et tout ce qui y est sauvegardé sont supprimés de nos serveurs sous 30 jours. Si vous vous êtes connecté(e) avec Facebook, les données reçues de Facebook sont aussi supprimées ; vous pouvez également retirer Saldo Pocket dans Facebook sous Paramètres → Apps et sites web."]
+        "body": [
+          "Si vous utilisez l’app sans vous connecter, vos données se trouvent uniquement sur votre téléphone. Elles sont supprimées quand vous supprimez toutes les données dans l’app, ou quand vous retirez l’app de votre téléphone.",
+          "Si vous êtes connecté, vos données dans le cloud sont aussi supprimées quand vous supprimez votre compte dans l’app : le compte, tout ce qui y est synchronisé et tout ce qui se trouve sur le téléphone depuis lequel vous supprimez. Si vous vous êtes connecté avec Facebook, ce que nous avons reçu de Facebook est aussi supprimé. Vous pouvez également retirer Saldo Pocket dans vos paramètres Facebook.",
+          "Si vous supprimez seulement les données du téléphone, vous êtes déconnecté, mais votre compte et vos données dans le cloud sont conservés. Les données de vos autres appareils ne sont pas supprimées automatiquement ; supprimez-les dans l’app sur ces appareils. La suppression ne résilie pas un abonnement ; cela se fait dans l’App Store ou sur Google Play."
+        ]
       },
       {
         "heading": "Si vous n’avez plus l’app",

@@ -157,8 +157,11 @@
       },
       {
         "heading": "Deleting your account",
-        "planned": true,
-        "body": ["When optional sign-in arrives, you delete your account in the app under Me → Account → Delete account. The account and everything backed up with it is deleted from our servers within 30 days. If you signed in with Facebook, this also deletes the data we received from Facebook; you can also remove Saldo Pocket in Facebook under Settings → Apps and websites."]
+        "body": [
+          "If you use the app without signing in, your data is only on your phone. It is deleted when you delete all data in the app, or when you remove the app from your phone.",
+          "If you are signed in, your data in the cloud is also deleted when you delete your account in the app: the account, everything synced to it, and everything on the phone you delete from. If you signed in with Facebook, what we received from Facebook is deleted too. You can also remove Saldo Pocket in your Facebook settings.",
+          "If you only delete the data on your phone, you are signed out, but your account and your data in the cloud stay. Data on your other devices is not deleted automatically; delete it in the app there. Deleting does not cancel a subscription; you do that in the App Store or Google Play."
+        ]
       },
       {
         "heading": "If you no longer have the app",
