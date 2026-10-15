@@ -15,6 +15,7 @@
           "Twój budżet jest zapisany na telefonie. Bez konta nie możemy go zobaczyć.",
           "Konto jest opcjonalne (Apple, Google, Facebook lub e-mail). Z kontem i Pro budżet jest synchronizowany z naszym serwerem w UE, aby korzystać z niego na kilku urządzeniach.",
           "Nie ma połączenia z bankiem.",
+          "Pliki CSV i Excel z banku są odczytywane tylko na Twoim telefonie i nigdzie nie są wysyłane.",
           "Nic z Twojego budżetu nie opuszcza telefonu, chyba że synchronizujesz z Pro albo wybierzesz odczyt wyciągu, paragonu lub faktury przez AI.",
           "Raporty o awariach nie zawierają danych osobowych.",
           "Możesz bezpłatnie wyeksportować i usunąć wszystko w aplikacji."
@@ -32,6 +33,13 @@
           "Obrazy, które zdecydujesz się zachować po imporcie."
         ],
         "after": ["Numery referencyjne płatności i numery kont z wyciągów i faktur nigdy nie są zapisywane."]
+      },
+      {
+        "heading": "Import plików CSV i Excel",
+        "body": [
+          "Gdy importujesz plik CSV lub Excel z banku, plik jest odczytywany tylko na Twoim telefonie. Nigdy nie trafia na serwer ani do AI i nie jest zapisywany jako plik.",
+          "Z każdej transakcji zapisywane są tylko data, opis, kwota i odbiorca. Numery kont, imiona i nazwiska, numery referencyjne płatności i pozostałe kolumny pliku są odrzucane. Odczyt przez AI dotyczy tylko zdjęć i plików PDF i tylko za Twoją zgodą."
+        ]
       },
       {
         "heading": "Odczyt wyciągów, paragonów i faktur przez AI (opcjonalnie)",
@@ -93,6 +101,7 @@
           "Na telefonie: do czasu ich usunięcia w aplikacji lub odinstalowania aplikacji.",
           "Twoje konto i zsynchronizowane dane: do czasu usunięcia konta w aplikacji.",
           "Obrazy i tekst do odczytu przez AI: nie są u nas przechowywane.",
+          "Importowane pliki CSV i Excel: nie są przechowywane. Zostają tylko transakcje, które zapiszesz.",
           "Licznik odczytów przez AI: 30 dni.",
           "Dziennik e-maili logowania (bez adresu): 7 dni.",
           "Raporty o awariach: najwyżej 90 dni."
@@ -158,7 +167,21 @@
     "faq": [
       {
         "q": "Czym różni się wersja Darmowa od Pro?",
-        "a": "Wersja Darmowa ma budżet, „Dziś możesz wydać”, 2 konta, 1 budżet, 1 cel oszczędnościowy, 5 własnych kategorii, 3 skanowania miesięcznie i eksport wszystkich danych. Pro daje do 10 kont, nieograniczone skanowania, cele i kategorie, stałe pozycje księgowane automatycznie, historię i statystyki w czasie oraz raporty do Excela i CSV. Ceny są widoczne w App Store i Google Play w Twojej walucie."
+        "a": "Obie wersje mają budżet, prognozę, import z banku i eksport wszystkich danych. Pro ma wyższe limity, całą historię (wersja Darmowa pokazuje bieżący i poprzedni okres), raporty w Excelu, CSV i PDF, naliczone odsetki, dostosowanie prognozy i synchronizację między urządzeniami.",
+        "limits": {
+          "free": "Darmowa",
+          "pro": "Pro",
+          "included": "W zestawie",
+          "perMonth": "{{value}} / mies.",
+          "rows": {
+            "accounts": "Konta",
+            "savingsGoals": "Cele oszczędnościowe",
+            "customCategories": "Własne kategorie",
+            "scansPerMonth": "Skanowanie z AI",
+            "fileImports": "Import z pliku (CSV, Excel)"
+          }
+        },
+        "after": "Ceny są widoczne w App Store i Google Play w Twojej walucie."
       },
       {
         "q": "Jak przywrócić zakup na nowym telefonie?",

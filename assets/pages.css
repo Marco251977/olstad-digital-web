@@ -180,6 +180,13 @@ section.planned { border-inline-start: 4px solid var(--planned-soft); padding-in
 .faq summary { cursor: pointer; min-height: 44px; padding-block: 0.75rem; font-weight: 600; }
 .faq details p { margin-block-start: 0; }
 
+/* Free and Pro (support): numbers from data/apps.json, at the end edge so they line up. */
+table.limits { border-collapse: collapse; margin-block: 0 1rem; inline-size: 100%; max-inline-size: 32rem; font-variant-numeric: tabular-nums; }
+table.limits th, table.limits td { padding: 0.5rem 0.75rem; border-block-end: 1px solid var(--border); text-align: start; vertical-align: top; }
+table.limits thead th { color: var(--text-secondary); font-size: 0.9rem; }
+table.limits tbody th { font-weight: 400; }
+table.limits td, table.limits thead th { text-align: end; white-space: nowrap; }
+
 .apps { list-style: none; padding: 0; display: grid; gap: 1rem; }
 .apps li { max-width: none; }
 .apps h2 { margin-block-start: 0; }

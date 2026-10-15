@@ -15,6 +15,7 @@
           "Budjettisi tallennetaan puhelimeesi. Ilman tiliä emme näe sitä.",
           "Tili on vapaaehtoinen (Apple, Google, Facebook tai sähköposti). Tilin ja Pron kanssa budjettisi synkronoidaan palvelimellemme EU:ssa, jotta voit käyttää sitä usealla laitteella.",
           "Pankkiyhteyttä ei ole.",
+          "Pankin CSV- ja Excel-tiedostot luetaan vain puhelimessasi, eikä niitä lähetetä minnekään.",
           "Mikään budjetistasi ei lähde puhelimesta, ellet synkronoi Prolla tai valitse tiliotteen, kuitin tai laskun lukemista tekoälyllä.",
           "Kaatumisraportit eivät sisällä henkilötietoja.",
           "Voit viedä ja poistaa kaiken sovelluksessa maksutta."
@@ -32,6 +33,13 @@
           "Kuvat, jotka päätät säilyttää tuonnin jälkeen."
         ],
         "after": ["Viitenumeroita ja tilinumeroita tiliotteista ja laskuista ei koskaan tallenneta."]
+      },
+      {
+        "heading": "CSV- ja Excel-tiedostojen tuonti",
+        "body": [
+          "Kun tuot pankista CSV- tai Excel-tiedoston, tiedosto luetaan vain puhelimessasi. Sitä ei koskaan ladata palvelimelle eikä lähetetä tekoälylle, eikä sitä tallenneta tiedostona.",
+          "Jokaisesta tapahtumasta tallennetaan vain päivämäärä, kuvaus, summa ja myyjä. Tilinumerot, nimet, viitenumerot ja tiedoston muut sarakkeet hylätään. Tekoälylukemista käytetään vain kuviin ja PDF-tiedostoihin, ja vain jos olet antanut luvan."
+        ]
       },
       {
         "heading": "Tiliotteiden, kuittien ja laskujen lukeminen tekoälyllä (valinnainen)",
@@ -93,6 +101,7 @@
           "Puhelimessa: kunnes poistat ne sovelluksessa tai poistat sovelluksen.",
           "Tilisi ja synkronoidut tiedot: kunnes poistat tilin sovelluksessa.",
           "Tekoälylukemisen kuvat ja teksti: emme tallenna niitä.",
+          "Tuomasi CSV- ja Excel-tiedostot: niitä ei tallenneta. Vain tallentamasi tapahtumat jäävät.",
           "Tekoälylukemisten laskenta: 30 päivää.",
           "Kirjautumissähköpostien loki (ilman osoitetta): 7 päivää.",
           "Kaatumisraportit: enintään 90 päivää."
@@ -158,7 +167,21 @@
     "faq": [
       {
         "q": "Mikä ero on Ilmaisella ja Prolla?",
-        "a": "Ilmaisessa on budjetti, ”Voit käyttää tänään”, 2 tiliä, 1 budjetti, 1 säästötavoite, 5 omaa luokkaa, 3 skannausta kuukaudessa ja kaikkien tietojen vienti. Pro antaa enintään 10 tiliä, rajattomasti skannauksia, tavoitteita ja luokkia, automaattisesti kirjattavat toistuvat erät, historian ja tilastot ajan mittaan sekä raportit Exceliin ja CSV-muotoon. Hinnat näkyvät App Storessa ja Google Playssa omassa valuutassasi."
+        "a": "Molemmissa on budjetti, ennuste, tuonti pankista ja kaikkien tietojen vienti. Pro-versiossa on korkeammat rajat, koko historia (Ilmainen näyttää nykyisen ja edellisen jakson), raportit Exceliin, CSV- ja PDF-muotoon, kertyneet korot, ennusteen muokkaus ja synkronointi laitteiden välillä.",
+        "limits": {
+          "free": "Ilmainen",
+          "pro": "Pro",
+          "included": "Sisältyy",
+          "perMonth": "{{value}} / kk",
+          "rows": {
+            "accounts": "Tilit",
+            "savingsGoals": "Säästötavoitteet",
+            "customCategories": "Omat kategoriat",
+            "scansPerMonth": "Skannaus tekoälyllä",
+            "fileImports": "Tuonti tiedostosta (CSV, Excel)"
+          }
+        },
+        "after": "Hinnat näkyvät App Storessa ja Google Playssa omassa valuutassasi."
       },
       {
         "q": "Miten palautan ostoksen uuteen puhelimeen?",

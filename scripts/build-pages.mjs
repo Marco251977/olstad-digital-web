@@ -122,6 +122,27 @@ function sectionHtml(s, lang, vars) {
   return parts.join('\n');
 }
 
+/**
+ * Free and Pro as a table: the numbers from data/apps.json (`limits`, the same as the app's FREE_LIMITS / PRO_LIMITS,
+ * checked by scripts/check-limits.mjs), the words from the language file (support.faq[].limits). A limit is a number
+ * or "included"; nothing is ever «unlimited». Numbers in the page's language (Intl).
+ */
+function limitsTable(app, t, lang) {
+  const { free, pro, monthly = [] } = app.limits ?? {};
+  if (!free || !pro) throw new Error(`${app.slug}: support has a limits table, data/apps.json has no limits`);
+  const number = new Intl.NumberFormat(lang);
+  const cell = (key, value) => {
+    if (value === 'included') return fill(t.included);
+    if (!Number.isInteger(value) || value < 0) throw new Error(`${app.slug}: limit ${key} = ${value} (a whole number or "included")`);
+    return monthly.includes(key) ? fill(t.perMonth, { value: esc(number.format(value)) }) : esc(number.format(value));
+  };
+  const keys = Object.keys(free);
+  const missing = [...keys, ...Object.keys(pro)].filter((k) => !(k in free) || !(k in pro) || !t.rows[k]);
+  if (missing.length) throw new Error(`${app.slug} (${lang}): limits ${[...new Set(missing)].join(', ')} lack a value or a name`);
+  const rows = keys.map((k) => `<tr><th scope="row">${fill(t.rows[k])}</th><td>${cell(k, free[k])}</td><td>${cell(k, pro[k])}</td></tr>`).join('');
+  return `<table class="limits"><thead><tr><td></td><th scope="col">${fill(t.free)}</th><th scope="col">${fill(t.pro)}</th></tr></thead><tbody>${rows}</tbody></table>`;
+}
+
 function appPage(app, page, lang) {
   const c = common[lang];
   const a = appTexts[app.slug][lang];
@@ -160,7 +181,10 @@ function appPage(app, page, lang) {
       nav,
       `<section class="card"><h2>${fill(a.support.contactHeading)}</h2><p>${fill(a.support.contactBody, vars)}</p></section>`,
       `<section class="faq"><h2>${fill(a.support.faqHeading)}</h2>`,
-      ...a.support.faq.map((f) => `<details><summary>${fill(f.q, vars)}</summary><p>${fill(f.a, vars)}</p></details>`),
+      ...a.support.faq.map(
+        (f) =>
+          `<details><summary>${fill(f.q, vars)}</summary><p>${fill(f.a, vars)}</p>${f.limits ? limitsTable(app, f.limits, lang) : ''}${f.after ? `<p>${fill(f.after, vars)}</p>` : ''}</details>`,
+      ),
       '</section>',
     ];
   }

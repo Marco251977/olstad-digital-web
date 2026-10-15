@@ -15,6 +15,7 @@
           "Tu presupuesto se guarda en tu teléfono. Sin cuenta, no podemos verlo.",
           "La cuenta es opcional (Apple, Google, Facebook o correo). Con cuenta y Pro, tu presupuesto se sincroniza con nuestro servidor en la UE para usarlo en varios dispositivos.",
           "No hay conexión bancaria.",
+          "Los archivos CSV y Excel de tu banco se leen solo en tu teléfono y nunca se envían a ningún sitio.",
           "Nada de tu presupuesto sale del teléfono salvo que sincronices con Pro o elijas la lectura con IA de un extracto, recibo o factura.",
           "Los informes de errores no contienen datos personales.",
           "Puedes exportar y eliminar todo en la app, gratis."
@@ -32,6 +33,13 @@
           "Las imágenes que decidas conservar después de una importación."
         ],
         "after": ["Las referencias de pago y los números de cuenta de los extractos y facturas nunca se guardan."]
+      },
+      {
+        "heading": "Importar archivos CSV y Excel",
+        "body": [
+          "Cuando importas un archivo CSV o Excel de tu banco, el archivo se lee solo en tu teléfono. Nunca se sube a un servidor ni se envía a la IA, y no se guarda como archivo.",
+          "De cada movimiento solo se guardan la fecha, la descripción, el importe y el comercio. Los números de cuenta, los nombres, las referencias de pago y el resto de columnas del archivo se descartan. La lectura con IA solo se usa para imágenes y PDF, y solo si das tu permiso."
+        ]
       },
       {
         "heading": "Lectura con IA de extractos, recibos y facturas (opcional)",
@@ -93,6 +101,7 @@
           "En el teléfono: hasta que los elimines en la app o desinstales la app.",
           "Tu cuenta y los datos sincronizados: hasta que elimines la cuenta en la app.",
           "Imágenes y texto para la lectura con IA: no los guardamos.",
+          "Archivos CSV y Excel que importas: no se guardan. Solo quedan los movimientos que guardas.",
           "Recuento de lecturas con IA: 30 días.",
           "Registro de correos de inicio de sesión (sin dirección): 7 días.",
           "Informes de errores: 90 días como máximo."
@@ -158,7 +167,21 @@
     "faq": [
       {
         "q": "¿Qué diferencia hay entre Gratis y Pro?",
-        "a": "Gratis incluye el presupuesto, «Hoy puedes gastar», 2 cuentas, 1 presupuesto, 1 meta de ahorro, 5 categorías propias, 3 escaneos al mes y la exportación de todos tus datos. Pro ofrece hasta 10 cuentas, escaneos, metas y categorías ilimitados, pagos fijos que se registran automáticamente, historial y estadísticas a lo largo del tiempo, e informes en Excel y CSV. Los precios se muestran en la App Store y en Google Play, en tu moneda."
+        "a": "Los dos tienen el presupuesto, la previsión, la importación desde tu banco y la exportación de todos tus datos. Pro tiene límites más altos, todo el historial (Gratis muestra el periodo actual y el anterior), informes en Excel, CSV y PDF, intereses acumulados, ajustes de la previsión y sincronización entre dispositivos.",
+        "limits": {
+          "free": "Gratis",
+          "pro": "Pro",
+          "included": "Incluido",
+          "perMonth": "{{value}} / mes",
+          "rows": {
+            "accounts": "Cuentas",
+            "savingsGoals": "Metas de ahorro",
+            "customCategories": "Categorías propias",
+            "scansPerMonth": "Escanear con IA",
+            "fileImports": "Importar archivo (CSV, Excel)"
+          }
+        },
+        "after": "Los precios se muestran en la App Store y en Google Play, en tu moneda."
       },
       {
         "q": "¿Cómo restauro mi compra en un teléfono nuevo?",

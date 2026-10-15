@@ -15,6 +15,7 @@
           "Din budget sparas på din telefon. Utan konto kan vi inte se den.",
           "Ett konto är valfritt (Apple, Google, Facebook eller e-post). Med konto och Pro synkas budgeten till vår server i EU så att du kan använda den på flera enheter.",
           "Det finns ingen bankkoppling.",
+          "CSV- och Excel-filer från banken läses bara på telefonen och skickas aldrig någonstans.",
           "Inget från din budget lämnar telefonen om du inte synkar med Pro eller väljer AI-läsning av en kontolista, ett kvitto eller en faktura.",
           "Kraschrapporter innehåller inga personuppgifter.",
           "Du kan exportera allt och radera allt i appen, gratis."
@@ -32,6 +33,13 @@
           "Bilder du väljer att behålla efter en import."
         ],
         "after": ["OCR-nummer och kontonummer på kontolistor och fakturor sparas aldrig."]
+      },
+      {
+        "heading": "Import av CSV- och Excel-filer",
+        "body": [
+          "När du importerar en CSV- eller Excel-fil från banken läses filen bara på telefonen. Den laddas aldrig upp till en server eller skickas till AI, och den sparas inte som fil.",
+          "För varje post sparas bara datum, beskrivning, belopp och leverantör. Kontonummer, namn, OCR-nummer och andra referenser tas bort, liksom filens övriga kolumner. AI-läsning används bara för bilder och PDF, och bara när du har sagt ja."
+        ]
       },
       {
         "heading": "AI-läsning av kontolistor, kvitton och fakturor (valfritt)",
@@ -93,6 +101,7 @@
           "På telefonen: tills du raderar dem i appen eller avinstallerar appen.",
           "Ditt konto och synkad data: tills du raderar kontot i appen.",
           "Bilder och text för AI-läsning: sparas inte hos oss.",
+          "CSV- och Excel-filer du importerar: sparas inte. Bara posterna du sparar finns kvar.",
           "Räkning av AI-läsningar: 30 dagar.",
           "Logg över inloggningsmejl (utan adress): 7 dagar.",
           "Kraschrapporter: högst 90 dagar."
@@ -158,7 +167,21 @@
     "faq": [
       {
         "q": "Vad är skillnaden mellan Gratis och Pro?",
-        "a": "Gratis har budgeten, ”Du kan spendera i dag”, 2 konton, 1 budget, 1 sparmål, 5 egna kategorier, 3 skanningar i månaden och export av alla dina data. Pro ger upp till 10 konton, obegränsat med skanningar, mål och kategorier, fasta poster som bokförs automatiskt, historik och statistik över tid samt rapporter till Excel och CSV. Priserna visas i App Store och Google Play, i din valuta."
+        "a": "Båda har budgeten, prognosen, import från banken och export av alla dina data. Pro har högre gränser, all historik (Gratis visar den här och förra perioden), rapporter till Excel, CSV och PDF, upplupen ränta, justering av prognosen och synk mellan enheter.",
+        "limits": {
+          "free": "Gratis",
+          "pro": "Pro",
+          "included": "Ingår",
+          "perMonth": "{{value}} / mån",
+          "rows": {
+            "accounts": "Konton",
+            "savingsGoals": "Sparmål",
+            "customCategories": "Egna kategorier",
+            "scansPerMonth": "Skanna med AI",
+            "fileImports": "Import från fil (CSV, Excel)"
+          }
+        },
+        "after": "Priserna visas i App Store och Google Play, i din valuta."
       },
       {
         "q": "Hur återställer jag mitt köp på en ny telefon?",

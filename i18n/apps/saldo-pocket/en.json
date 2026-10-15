@@ -15,6 +15,7 @@
           "Your budget is stored on your phone. Without an account, we cannot see it.",
           "An account is optional (Apple, Google, Facebook or e-mail). With an account and Pro, your budget is synced to our server in the EU so you can use it on several devices.",
           "There is no bank connection.",
+          "CSV and Excel files from your bank are read only on your phone and never sent anywhere.",
           "Nothing from your budget leaves the phone unless you sync with Pro or choose AI reading of a statement, receipt or bill.",
           "Crash reports contain no personal data.",
           "You can export everything and delete everything in the app, for free."
@@ -32,6 +33,13 @@
           "Pictures you choose to keep after an import."
         ],
         "after": ["KID numbers and account numbers on bank lists and bills are never stored."]
+      },
+      {
+        "heading": "Importing CSV and Excel files",
+        "body": [
+          "When you import a CSV or Excel file from your bank, the file is read only on your phone. It is never uploaded to a server or sent to AI, and it is not stored as a file.",
+          "For each entry, only the date, description, amount and vendor are saved. Account numbers, names, KID numbers and other references are discarded, along with the file’s other columns. AI reading is used only for pictures and PDFs, and only when you have said yes."
+        ]
       },
       {
         "heading": "AI reading of bank lists, receipts and bills (optional)",
@@ -93,6 +101,7 @@
           "On the phone: until you delete it in the app or uninstall the app.",
           "Your account and synced data: until you delete the account in the app.",
           "Pictures and text for AI reading: not stored by us.",
+          "CSV and Excel files you import: not stored. Only the entries you save remain.",
           "Count of AI readings: 30 days.",
           "Log of sign-in e-mails (no address): 7 days.",
           "Crash reports: at most 90 days."
@@ -158,7 +167,21 @@
     "faq": [
       {
         "q": "What is the difference between Free and Pro?",
-        "a": "Free has the budget, “You can spend today”, 2 accounts, 1 budget, 1 savings goal, 5 categories of your own, 3 scans a month and export of all your data. Pro gives up to 10 accounts, unlimited scans, goals and categories, recurring items that are posted automatically, history and statistics over time, and reports to Excel and CSV. Prices are shown in the App Store and Google Play, in your currency."
+        "a": "Both have the budget, the forecast, import from your bank and export of all your data. Pro has higher limits, all history (Free shows this period and the one before), reports to Excel, CSV and PDF, accrued interest, adjusting the forecast and sync between devices.",
+        "limits": {
+          "free": "Free",
+          "pro": "Pro",
+          "included": "Included",
+          "perMonth": "{{value}} / mo",
+          "rows": {
+            "accounts": "Accounts",
+            "savingsGoals": "Savings goals",
+            "customCategories": "Custom categories",
+            "scansPerMonth": "Scan with AI",
+            "fileImports": "File import (CSV, Excel)"
+          }
+        },
+        "after": "Prices are shown in the App Store and Google Play, in your currency."
       },
       {
         "q": "How do I restore my purchase on a new phone?",

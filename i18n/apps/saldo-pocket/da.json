@@ -15,6 +15,7 @@
           "Dit budget gemmes på din telefon. Uden konto kan vi ikke se det.",
           "En konto er valgfri (Apple, Google, Facebook eller e-mail). Med konto og Pro synkroniseres budgettet til vores server i EU, så du kan bruge det på flere enheder.",
           "Der er ingen bankforbindelse.",
+          "CSV- og Excel-filer fra banken læses kun på telefonen og sendes aldrig videre.",
           "Intet fra dit budget forlader telefonen, medmindre du synkroniserer med Pro eller vælger AI-læsning af en kontoudskrift, en kvittering eller en regning.",
           "Nedbrudsrapporter indeholder ingen personoplysninger.",
           "Du kan eksportere alt og slette alt i appen, gratis."
@@ -32,6 +33,13 @@
           "Billeder, du vælger at beholde efter en import."
         ],
         "after": ["Betalings-id'er (FI-koder) og kontonumre på kontoudskrifter og regninger gemmes aldrig."]
+      },
+      {
+        "heading": "Import af CSV- og Excel-filer",
+        "body": [
+          "Når du importerer en CSV- eller Excel-fil fra banken, læses filen kun på telefonen. Den uploades aldrig til en server eller sendes til AI, og den gemmes ikke som fil.",
+          "For hver postering gemmes kun dato, beskrivelse, beløb og leverandør. Kontonumre, navne, betalings-id’er (FI-koder) og andre referencer kasseres sammen med filens øvrige kolonner. AI-læsning bruges kun til billeder og PDF, og kun når du har sagt ja."
+        ]
       },
       {
         "heading": "AI-læsning af kontoudskrifter, kvitteringer og regninger (valgfrit)",
@@ -93,6 +101,7 @@
           "På telefonen: indtil du sletter dem i appen eller afinstallerer appen.",
           "Din konto og synkroniserede data: indtil du sletter kontoen i appen.",
           "Billeder og tekst til AI-læsning: gemmes ikke hos os.",
+          "CSV- og Excel-filer, du importerer: gemmes ikke. Kun de posteringer, du gemmer, bliver tilbage.",
           "Optælling af AI-læsninger: 30 dage.",
           "Log over login-e-mails (uden adresse): 7 dage.",
           "Nedbrudsrapporter: højst 90 dage."
@@ -158,7 +167,21 @@
     "faq": [
       {
         "q": "Hvad er forskellen på Gratis og Pro?",
-        "a": "Gratis har budgettet, ”Du kan bruge i dag”, 2 konti, 1 budget, 1 opsparingsmål, 5 egne kategorier, 3 scanninger om måneden og eksport af alle dine data. Pro giver op til 10 konti, ubegrænset med scanninger, mål og kategorier, faste posteringer, der bogføres automatisk, historik og statistik over tid samt rapporter til Excel og CSV. Priserne vises i App Store og Google Play, i din valuta."
+        "a": "Begge har budget, prognose, import fra banken og eksport af alle dine data. Pro har højere grænser, al historik (Gratis viser denne og forrige periode), rapporter til Excel, CSV og PDF, påløbne renter, justering af prognosen og synkronisering mellem enheder.",
+        "limits": {
+          "free": "Gratis",
+          "pro": "Pro",
+          "included": "Inkluderet",
+          "perMonth": "{{value}} / md.",
+          "rows": {
+            "accounts": "Konti",
+            "savingsGoals": "Opsparingsmål",
+            "customCategories": "Egne kategorier",
+            "scansPerMonth": "Scan med AI",
+            "fileImports": "Import fra fil (CSV, Excel)"
+          }
+        },
+        "after": "Priserne vises i App Store og Google Play, i din valuta."
       },
       {
         "q": "Hvordan gendanner jeg mit køb på en ny telefon?",

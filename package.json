@@ -6,7 +6,9 @@
   "scripts": {
     "build:pages": "node scripts/build-pages.mjs",
     "check:i18n": "node scripts/check-i18n.mjs",
-    "check": "npm run check:i18n && node scripts/build-pages.mjs --check"
+    "check:limits": "node scripts/check-limits.mjs",
+    "sync:limits": "node scripts/check-limits.mjs --write",
+    "check": "npm run check:i18n && npm run check:limits && node scripts/build-pages.mjs --check"
   },
   "devDependencies": {
     "app-core": "file:vendor/app-core-0.8.0.tgz"

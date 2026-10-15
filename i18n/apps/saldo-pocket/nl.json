@@ -15,6 +15,7 @@
           "Je budget wordt op je telefoon opgeslagen. Zonder account kunnen wij het niet zien.",
           "Een account is optioneel (Apple, Google, Facebook of e-mail). Met een account en Pro wordt je budget met onze server in de EU gesynchroniseerd, zodat je het op meerdere apparaten kunt gebruiken.",
           "Er is geen bankkoppeling.",
+          "CSV- en Excel-bestanden van je bank worden alleen op je telefoon gelezen en nergens naartoe gestuurd.",
           "Niets uit je budget verlaat de telefoon, tenzij je synchroniseert met Pro of kiest voor het lezen van een rekeningoverzicht, bon of factuur met AI.",
           "Crashrapporten bevatten geen persoonsgegevens.",
           "Je kunt alles in de app gratis exporteren en verwijderen."
@@ -32,6 +33,13 @@
           "Afbeeldingen die je na een import wilt bewaren."
         ],
         "after": ["Betalingskenmerken en rekeningnummers op overzichten en facturen worden nooit opgeslagen."]
+      },
+      {
+        "heading": "CSV- en Excel-bestanden importeren",
+        "body": [
+          "Als je een CSV- of Excel-bestand van je bank importeert, wordt het bestand alleen op je telefoon gelezen. Het wordt nooit naar een server geüpload of naar AI gestuurd, en het wordt niet als bestand bewaard.",
+          "Per transactie worden alleen de datum, de omschrijving, het bedrag en de leverancier opgeslagen. Rekeningnummers, namen, betalingskenmerken en de overige kolommen van het bestand worden weggegooid. Lezen met AI wordt alleen gebruikt voor afbeeldingen en pdf’s, en alleen als je toestemming hebt gegeven."
+        ]
       },
       {
         "heading": "Rekeningoverzichten, bonnen en facturen lezen met AI (optioneel)",
@@ -93,6 +101,7 @@
           "Op de telefoon: tot je ze in de app verwijdert of de app verwijdert.",
           "Je account en gesynchroniseerde gegevens: tot je het account in de app verwijdert.",
           "Foto’s en tekst voor lezen met AI: niet door ons bewaard.",
+          "CSV- en Excel-bestanden die je importeert: niet bewaard. Alleen de transacties die je opslaat, blijven.",
           "Telling van AI-lezingen: 30 dagen.",
           "Logboek van inlogmails (zonder adres): 7 dagen.",
           "Crashrapporten: hooguit 90 dagen."
@@ -158,7 +167,21 @@
     "faq": [
       {
         "q": "Wat is het verschil tussen Gratis en Pro?",
-        "a": "Gratis heeft het budget, ‘Vandaag kun je uitgeven’, 2 rekeningen, 1 budget, 1 spaardoel, 5 eigen categorieën, 3 scans per maand en export van al je gegevens. Pro geeft tot 10 rekeningen, onbeperkt scans, doelen en categorieën, vaste posten die automatisch worden geboekt, geschiedenis en statistieken door de tijd, en rapporten naar Excel en CSV. De prijzen staan in de App Store en Google Play, in je eigen valuta."
+        "a": "Beide hebben het budget, de prognose, importeren van je bank en export van al je gegevens. Pro heeft hogere limieten, de hele geschiedenis (Gratis toont de huidige en de vorige periode), rapporten in Excel, CSV en pdf, opgebouwde rente, de prognose aanpassen en synchronisatie tussen apparaten.",
+        "limits": {
+          "free": "Gratis",
+          "pro": "Pro",
+          "included": "Inbegrepen",
+          "perMonth": "{{value}} / mnd",
+          "rows": {
+            "accounts": "Rekeningen",
+            "savingsGoals": "Spaardoelen",
+            "customCategories": "Eigen categorieën",
+            "scansPerMonth": "Scannen met AI",
+            "fileImports": "Importeren uit bestand (CSV, Excel)"
+          }
+        },
+        "after": "De prijzen staan in de App Store en Google Play, in je eigen valuta."
       },
       {
         "q": "Hoe herstel ik mijn aankoop op een nieuwe telefoon?",

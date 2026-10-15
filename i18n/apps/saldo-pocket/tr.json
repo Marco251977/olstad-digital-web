@@ -15,6 +15,7 @@
           "Bütçen telefonunda saklanır. Hesap olmadan onu göremeyiz.",
           "Hesap isteğe bağlıdır (Apple, Google, Facebook veya e-posta). Hesap ve Pro ile bütçen, birden fazla cihazda kullanabilmen için AB’deki sunucumuzla eşitlenir.",
           "Banka bağlantısı yoktur.",
+          "Bankandan gelen CSV ve Excel dosyaları yalnızca telefonunda okunur ve hiçbir yere gönderilmez.",
           "Pro ile eşitleme yapmadıkça veya bir hesap dökümü, fiş ya da faturanın yapay zekâ ile okunmasını seçmedikçe bütçenden hiçbir şey telefondan çıkmaz.",
           "Çökme raporları kişisel veri içermez.",
           "Uygulamada her şeyi ücretsiz olarak dışa aktarabilir ve silebilirsin."
@@ -32,6 +33,13 @@
           "İçe aktarmadan sonra saklamayı seçtiğin resimler."
         ],
         "after": ["Hesap dökümlerindeki ve faturalardaki ödeme referansları ve hesap numaraları asla saklanmaz."]
+      },
+      {
+        "heading": "CSV ve Excel dosyalarını içe aktarma",
+        "body": [
+          "Bankandan bir CSV veya Excel dosyasını içe aktardığında dosya yalnızca telefonunda okunur. Hiçbir zaman bir sunucuya yüklenmez veya yapay zekâya gönderilmez ve dosya olarak saklanmaz.",
+          "Her işlem için yalnızca tarih, açıklama, tutar ve satıcı kaydedilir. Hesap numaraları, adlar, ödeme referansları ve dosyadaki diğer sütunlar atılır. Yapay zekâ ile okuma yalnızca görseller ve PDF’ler için ve yalnızca izin verdiğinde kullanılır."
+        ]
       },
       {
         "heading": "Hesap dökümlerinin, fişlerin ve faturaların yapay zekâyla okunması (isteğe bağlı)",
@@ -93,6 +101,7 @@
           "Telefonda: uygulamada silene veya uygulamayı kaldırana kadar.",
           "Hesabın ve eşitlenen veriler: hesabı uygulamada silene kadar.",
           "Yapay zekâ ile okuma için görseller ve metin: bizde saklanmaz.",
+          "İçe aktardığın CSV ve Excel dosyaları: saklanmaz. Yalnızca kaydettiğin işlemler kalır.",
           "Yapay zekâ okuma sayısı: 30 gün.",
           "Giriş e-postaları kaydı (adres olmadan): 7 gün.",
           "Çökme raporları: en fazla 90 gün."
@@ -158,7 +167,21 @@
     "faq": [
       {
         "q": "Ücretsiz ile Pro arasındaki fark nedir?",
-        "a": "Ücretsiz sürümde bütçe, “Bugün harcayabileceğin”, 2 hesap, 1 bütçe, 1 birikim hedefi, 5 kendi kategorin, ayda 3 tarama ve tüm verilerinin dışa aktarımı vardır. Pro; 10 hesaba kadar, sınırsız tarama, hedef ve kategori, otomatik kaydedilen düzenli kalemler, zaman içinde geçmiş ve istatistikler ile Excel ve CSV raporları sunar. Fiyatlar App Store ve Google Play’de kendi para biriminde gösterilir."
+        "a": "İkisinde de bütçe, tahmin, bankadan içe aktarma ve tüm verilerinin dışa aktarımı vardır. Pro’da daha yüksek sınırlar, tüm geçmiş (Ücretsiz sürüm bu dönemi ve öncekini gösterir), Excel, CSV ve PDF raporları, işlemiş faiz, tahmini düzenleme ve cihazlar arası eşitleme vardır.",
+        "limits": {
+          "free": "Ücretsiz",
+          "pro": "Pro",
+          "included": "Dahil",
+          "perMonth": "{{value}} / ay",
+          "rows": {
+            "accounts": "Hesaplar",
+            "savingsGoals": "Birikim hedefleri",
+            "customCategories": "Özel kategoriler",
+            "scansPerMonth": "Yapay zekâ ile tarama",
+            "fileImports": "Dosyadan içe aktarma (CSV, Excel)"
+          }
+        },
+        "after": "Fiyatlar App Store ve Google Play’de kendi para biriminde gösterilir."
       },
       {
         "q": "Satın alımımı yeni bir telefonda nasıl geri yüklerim?",

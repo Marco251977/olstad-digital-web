@@ -15,6 +15,7 @@
           "Dein Budget wird auf deinem Handy gespeichert. Ohne Konto können wir es nicht sehen.",
           "Ein Konto ist freiwillig (Apple, Google, Facebook oder E-Mail). Mit Konto und Pro wird dein Budget mit unserem Server in der EU synchronisiert, damit du es auf mehreren Geräten nutzen kannst.",
           "Es gibt keine Bankverbindung.",
+          "CSV- und Excel-Dateien von deiner Bank werden nur auf deinem Telefon gelesen und nirgendwohin gesendet.",
           "Nichts aus deinem Budget verlässt das Handy, außer du synchronisierst mit Pro oder wählst das Lesen eines Kontoauszugs, Belegs oder einer Rechnung mit KI.",
           "Absturzberichte enthalten keine personenbezogenen Daten.",
           "Du kannst alles in der App kostenlos exportieren und löschen."
@@ -32,6 +33,13 @@
           "Bilder, die du nach einem Import behalten möchtest."
         ],
         "after": ["Zahlungsreferenzen und Kontonummern auf Kontoauszügen und Rechnungen werden nie gespeichert."]
+      },
+      {
+        "heading": "Import von CSV- und Excel-Dateien",
+        "body": [
+          "Wenn du eine CSV- oder Excel-Datei von deiner Bank importierst, wird die Datei nur auf deinem Telefon gelesen. Sie wird nie auf einen Server hochgeladen oder an eine KI gesendet und nicht als Datei gespeichert.",
+          "Pro Buchung werden nur Datum, Beschreibung, Betrag und Händler gespeichert. Kontonummern, Namen, Zahlungsreferenzen und die übrigen Spalten der Datei werden verworfen. Das Lesen mit KI wird nur für Bilder und PDFs genutzt, und nur, wenn du zugestimmt hast."
+        ]
       },
       {
         "heading": "Lesen von Kontoauszügen, Belegen und Rechnungen mit KI (optional)",
@@ -93,6 +101,7 @@
           "Auf dem Handy: bis du sie in der App löschst oder die App deinstallierst.",
           "Dein Konto und synchronisierte Daten: bis du das Konto in der App löschst.",
           "Bilder und Text für das Lesen mit KI: werden bei uns nicht gespeichert.",
+          "CSV- und Excel-Dateien, die du importierst: werden nicht gespeichert. Nur die Buchungen, die du speicherst, bleiben.",
           "Zählung der KI-Lesungen: 30 Tage.",
           "Protokoll der Anmelde-E-Mails (ohne Adresse): 7 Tage.",
           "Absturzberichte: höchstens 90 Tage."
@@ -158,7 +167,21 @@
     "faq": [
       {
         "q": "Was ist der Unterschied zwischen Kostenlos und Pro?",
-        "a": "Kostenlos bietet das Budget, „Heute kannst du ausgeben“, 2 Konten, 1 Budget, 1 Sparziel, 5 eigene Kategorien, 3 Scans im Monat und den Export all deiner Daten. Pro bietet bis zu 10 Konten, unbegrenzt Scans, Ziele und Kategorien, Daueraufträge, die automatisch gebucht werden, Verlauf und Statistiken über die Zeit sowie Berichte nach Excel und CSV. Die Preise werden im App Store und bei Google Play in deiner Währung angezeigt."
+        "a": "Beide haben das Budget, die Prognose, den Import von deiner Bank und den Export all deiner Daten. Pro hat höhere Grenzen, den ganzen Verlauf (Kostenlos zeigt den aktuellen und den vorherigen Zeitraum), Berichte als Excel, CSV und PDF, aufgelaufene Zinsen, das Anpassen der Prognose und die Synchronisierung zwischen Geräten.",
+        "limits": {
+          "free": "Kostenlos",
+          "pro": "Pro",
+          "included": "Inklusive",
+          "perMonth": "{{value}} / Monat",
+          "rows": {
+            "accounts": "Konten",
+            "savingsGoals": "Sparziele",
+            "customCategories": "Eigene Kategorien",
+            "scansPerMonth": "Mit KI scannen",
+            "fileImports": "Import aus Datei (CSV, Excel)"
+          }
+        },
+        "after": "Die Preise werden im App Store und bei Google Play in deiner Währung angezeigt."
       },
       {
         "q": "Wie stelle ich meinen Kauf auf einem neuen Telefon wieder her?",

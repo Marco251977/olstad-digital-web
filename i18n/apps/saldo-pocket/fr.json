@@ -15,6 +15,7 @@
           "Votre budget est enregistré sur votre téléphone. Sans compte, nous ne pouvons pas le voir.",
           "Un compte est facultatif (Apple, Google, Facebook ou e-mail). Avec un compte et Pro, votre budget est synchronisé avec notre serveur dans l’UE pour l’utiliser sur plusieurs appareils.",
           "Il n’y a aucune connexion bancaire.",
+          "Les fichiers CSV et Excel de votre banque sont lus uniquement sur votre téléphone et ne sont envoyés nulle part.",
           "Rien de votre budget ne quitte le téléphone, sauf si vous synchronisez avec Pro ou choisissez la lecture par IA d’un relevé, d’un reçu ou d’une facture.",
           "Les rapports de plantage ne contiennent aucune donnée personnelle.",
           "Vous pouvez tout exporter et tout supprimer dans l’application, gratuitement."
@@ -32,6 +33,13 @@
           "Les images que vous choisissez de garder après une importation."
         ],
         "after": ["Les références de paiement et les numéros de compte figurant sur les relevés et factures ne sont jamais enregistrés."]
+      },
+      {
+        "heading": "Import de fichiers CSV et Excel",
+        "body": [
+          "Quand vous importez un fichier CSV ou Excel de votre banque, le fichier est lu uniquement sur votre téléphone. Il n’est jamais envoyé vers un serveur ni à l’IA, et il n’est pas conservé en tant que fichier.",
+          "Pour chaque opération, seuls la date, le libellé, le montant et le commerçant sont enregistrés. Les numéros de compte, les noms, les références de paiement et les autres colonnes du fichier sont écartés. La lecture par IA ne sert qu’aux images et aux PDF, et seulement avec votre accord."
+        ]
       },
       {
         "heading": "Lecture par IA de relevés, reçus et factures (facultatif)",
@@ -93,6 +101,7 @@
           "Sur le téléphone : jusqu’à ce que vous les supprimiez dans l’application ou désinstalliez l’application.",
           "Votre compte et les données synchronisées : jusqu’à ce que vous supprimiez le compte dans l’application.",
           "Images et texte pour la lecture par IA : non conservés chez nous.",
+          "Fichiers CSV et Excel que vous importez : non conservés. Seules les opérations que vous enregistrez restent.",
           "Décompte des lectures par IA : 30 jours.",
           "Journal des e-mails de connexion (sans adresse) : 7 jours.",
           "Rapports de plantage : 90 jours au plus."
@@ -158,7 +167,21 @@
     "faq": [
       {
         "q": "Quelle est la différence entre Gratuit et Pro ?",
-        "a": "Gratuit comprend le budget, « Vous pouvez dépenser aujourd’hui », 2 comptes, 1 budget, 1 objectif d’épargne, 5 catégories personnelles, 3 scans par mois et l’export de toutes vos données. Pro offre jusqu’à 10 comptes, des scans, objectifs et catégories illimités, des récurrents enregistrés automatiquement, l’historique et les statistiques dans le temps, et des rapports Excel et CSV. Les prix sont affichés dans l’App Store et Google Play, dans votre devise."
+        "a": "Les deux comprennent le budget, la prévision, l’import depuis votre banque et l’export de toutes vos données. Pro offre des limites plus élevées, tout l’historique (Gratuit affiche la période en cours et la précédente), des rapports Excel, CSV et PDF, les intérêts courus, l’ajustement de la prévision et la synchronisation entre appareils.",
+        "limits": {
+          "free": "Gratuit",
+          "pro": "Pro",
+          "included": "Inclus",
+          "perMonth": "{{value}} / mois",
+          "rows": {
+            "accounts": "Comptes",
+            "savingsGoals": "Objectifs d’épargne",
+            "customCategories": "Catégories personnalisées",
+            "scansPerMonth": "Scan avec l’IA",
+            "fileImports": "Import de fichier (CSV, Excel)"
+          }
+        },
+        "after": "Les prix sont affichés dans l’App Store et Google Play, dans votre devise."
       },
       {
         "q": "Comment restaurer mon achat sur un nouveau téléphone ?",

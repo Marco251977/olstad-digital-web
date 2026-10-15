@@ -15,6 +15,7 @@
           "Il tuo budget è salvato sul telefono. Senza account non possiamo vederlo.",
           "L’account è facoltativo (Apple, Google, Facebook o e-mail). Con account e Pro il budget viene sincronizzato con il nostro server nell’UE, così puoi usarlo su più dispositivi.",
           "Non c’è alcun collegamento bancario.",
+          "I file CSV ed Excel della tua banca vengono letti solo sul telefono e non vengono mai inviati da nessuna parte.",
           "Nulla del tuo budget lascia il telefono, a meno che tu non sincronizzi con Pro o scelga la lettura con IA di un estratto conto, uno scontrino o una fattura.",
           "I rapporti sugli arresti anomali non contengono dati personali.",
           "Puoi esportare ed eliminare tutto nell’app, gratis."
@@ -32,6 +33,13 @@
           "Le immagini che scegli di conservare dopo un’importazione."
         ],
         "after": ["I codici di pagamento e i numeri di conto presenti su estratti conto e fatture non vengono mai salvati."]
+      },
+      {
+        "heading": "Importazione di file CSV ed Excel",
+        "body": [
+          "Quando importi un file CSV o Excel dalla tua banca, il file viene letto solo sul telefono. Non viene mai caricato su un server né inviato all’IA, e non viene salvato come file.",
+          "Di ogni movimento vengono salvati solo data, descrizione, importo ed esercente. Numeri di conto, nomi, codici di pagamento e le altre colonne del file vengono scartati. La lettura con IA si usa solo per immagini e PDF, e solo se hai dato il consenso."
+        ]
       },
       {
         "heading": "Lettura con IA di estratti conto, scontrini e fatture (facoltativa)",
@@ -93,6 +101,7 @@
           "Sul telefono: finché non li elimini nell’app o disinstalli l’app.",
           "Il tuo account e i dati sincronizzati: finché non elimini l’account nell’app.",
           "Immagini e testo per la lettura con IA: non conservati da noi.",
+          "File CSV ed Excel che importi: non conservati. Restano solo i movimenti che salvi.",
           "Conteggio delle letture con IA: 30 giorni.",
           "Registro delle e-mail di accesso (senza indirizzo): 7 giorni.",
           "Rapporti sugli arresti anomali: al massimo 90 giorni."
@@ -158,7 +167,21 @@
     "faq": [
       {
         "q": "Qual è la differenza tra Gratis e Pro?",
-        "a": "Gratis offre il budget, «Oggi puoi spendere», 2 conti, 1 budget, 1 obiettivo di risparmio, 5 categorie personali, 3 scansioni al mese e l’esportazione di tutti i tuoi dati. Pro offre fino a 10 conti, scansioni, obiettivi e categorie illimitati, movimenti fissi registrati automaticamente, storico e statistiche nel tempo, e report in Excel e CSV. I prezzi sono indicati nell’App Store e su Google Play, nella tua valuta."
+        "a": "Entrambi hanno il budget, la previsione, l’importazione dalla banca e l’esportazione di tutti i tuoi dati. Pro ha limiti più alti, tutto lo storico (Gratis mostra il periodo attuale e quello precedente), report in Excel, CSV e PDF, interessi maturati, modifica della previsione e sincronizzazione tra dispositivi.",
+        "limits": {
+          "free": "Gratis",
+          "pro": "Pro",
+          "included": "Incluso",
+          "perMonth": "{{value}} / mese",
+          "rows": {
+            "accounts": "Conti",
+            "savingsGoals": "Obiettivi di risparmio",
+            "customCategories": "Categorie personalizzate",
+            "scansPerMonth": "Scansione con IA",
+            "fileImports": "Importazione da file (CSV, Excel)"
+          }
+        },
+        "after": "I prezzi sono indicati nell’App Store e su Google Play, nella tua valuta."
       },
       {
         "q": "Come ripristino l’acquisto su un nuovo telefono?",
