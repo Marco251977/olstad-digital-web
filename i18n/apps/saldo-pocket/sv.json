@@ -157,8 +157,11 @@
       },
       {
         "heading": "Radera ditt konto",
-        "planned": true,
-        "body": ["När valfri inloggning kommer raderar du kontot i appen under Jag → Konto → Radera konto. Kontot och allt som säkerhetskopierats med det raderas från våra servrar inom 30 dagar. Loggade du in med Facebook raderas också de data vi fick från Facebook; du kan också ta bort Saldo Pocket i Facebook under Inställningar → Appar och webbplatser."]
+        "body": [
+          "Använder du appen utan att logga in finns dina data bara på telefonen. De raderas när du raderar all data i appen eller när du tar bort appen från telefonen.",
+          "Är du inloggad raderas även dina data i molnet när du raderar kontot i appen: kontot, allt som synkats till det och allt på telefonen du raderar från. Loggade du in med Facebook raderas också det vi fick från Facebook. Du kan även ta bort Saldo Pocket i dina Facebook-inställningar.",
+          "Raderar du bara data på telefonen loggas du ut, men kontot och dina data i molnet finns kvar. Data på dina andra enheter raderas inte automatiskt; radera dem i appen där. Ett abonnemang sägs inte upp när du raderar; det gör du i App Store eller Google Play."
+        ]
       },
       {
         "heading": "Om du inte har appen längre",

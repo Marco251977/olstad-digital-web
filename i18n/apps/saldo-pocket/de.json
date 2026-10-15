@@ -157,8 +157,11 @@
       },
       {
         "heading": "Dein Konto löschen",
-        "planned": true,
-        "body": ["Wenn die optionale Anmeldung kommt, löschst du dein Konto in der App unter Ich → Konto → Konto löschen. Das Konto und alles, was damit gesichert wurde, wird innerhalb von 30 Tagen von unseren Servern gelöscht. Wenn du dich mit Facebook angemeldet hast, werden auch die Daten gelöscht, die wir von Facebook erhalten haben; du kannst Saldo Pocket auch in Facebook unter Einstellungen → Apps und Websites entfernen."]
+        "body": [
+          "Wenn du die App ohne Anmeldung nutzt, liegen deine Daten nur auf deinem Telefon. Sie werden gelöscht, wenn du in der App alle Daten löschst oder die App vom Telefon entfernst.",
+          "Wenn du angemeldet bist, werden beim Löschen deines Kontos in der App auch deine Daten in der Cloud gelöscht: das Konto, alles, was damit synchronisiert ist, und alles auf dem Telefon, auf dem du löschst. Hast du dich mit Facebook angemeldet, wird auch gelöscht, was wir von Facebook erhalten haben. Du kannst Saldo Pocket außerdem in deinen Facebook-Einstellungen entfernen.",
+          "Löschst du nur die Daten auf dem Telefon, wirst du abgemeldet, aber dein Konto und deine Daten in der Cloud bleiben erhalten. Daten auf deinen anderen Geräten werden nicht automatisch gelöscht; lösche sie dort in der App. Ein Abo wird beim Löschen nicht gekündigt; das machst du im App Store oder bei Google Play."
+        ]
       },
       {
         "heading": "Wenn du die App nicht mehr hast",

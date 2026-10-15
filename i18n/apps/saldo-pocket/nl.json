@@ -157,8 +157,11 @@
       },
       {
         "heading": "Je account verwijderen",
-        "planned": true,
-        "body": ["Als optioneel inloggen er is, verwijder je je account in de app via Ik → Account → Account verwijderen. Het account en alles wat ermee is geback-upt, wordt binnen 30 dagen van onze servers verwijderd. Heb je ingelogd met Facebook, dan worden ook de gegevens die we van Facebook kregen verwijderd; je kunt Saldo Pocket ook in Facebook verwijderen via Instellingen → Apps en websites."]
+        "body": [
+          "Gebruik je de app zonder in te loggen, dan staan je gegevens alleen op je telefoon. Ze worden verwijderd als je alle gegevens in de app verwijdert, of als je de app van je telefoon haalt.",
+          "Ben je ingelogd, dan worden ook je gegevens in de cloud verwijderd als je je account in de app verwijdert: het account, alles wat ermee is gesynchroniseerd en alles op de telefoon waarop je verwijdert. Heb je ingelogd met Facebook, dan wordt ook verwijderd wat we van Facebook kregen. Je kunt Saldo Pocket daarnaast verwijderen in je Facebook-instellingen.",
+          "Verwijder je alleen de gegevens op je telefoon, dan word je uitgelogd, maar je account en je gegevens in de cloud blijven bewaard. Gegevens op je andere apparaten worden niet automatisch verwijderd; verwijder ze daar in de app. Verwijderen zegt geen abonnement op; dat doe je in de App Store of Google Play."
+        ]
       },
       {
         "heading": "Als je de app niet meer hebt",

@@ -157,8 +157,11 @@
       },
       {
         "heading": "Hesabını silme",
-        "planned": true,
-        "body": ["İsteğe bağlı oturum açma geldiğinde hesabını uygulamada Ben → Hesap → Hesabı sil bölümünden silersin. Hesap ve onunla yedeklenen her şey 30 gün içinde sunucularımızdan silinir. Facebook ile oturum açtıysan Facebook’tan aldığımız veriler de silinir; Saldo Pocket’ı Facebook’ta Ayarlar → Uygulamalar ve web siteleri bölümünden de kaldırabilirsin."]
+        "body": [
+          "Uygulamayı giriş yapmadan kullanıyorsan verilerin yalnızca telefonundadır. Uygulamada tüm verileri sildiğinde veya uygulamayı telefonundan kaldırdığında silinir.",
+          "Giriş yaptıysan, uygulamada hesabını sildiğinde buluttaki verilerin de silinir: hesap, onunla eşitlenen her şey ve sildiğin telefondaki her şey. Facebook ile giriş yaptıysan Facebook’tan aldığımız veriler de silinir. Saldo Pocket’ı Facebook ayarlarından da kaldırabilirsin.",
+          "Yalnızca telefondaki verileri silersen oturumun kapanır, ancak hesabın ve buluttaki verilerin kalır. Diğer cihazlarındaki veriler kendiliğinden silinmez; onları o cihazdaki uygulamadan sil. Silmek aboneliği iptal etmez; bunu App Store’da veya Google Play’de yaparsın."
+        ]
       },
       {
         "heading": "Uygulama artık sende değilse",

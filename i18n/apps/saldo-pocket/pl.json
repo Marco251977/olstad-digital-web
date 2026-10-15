@@ -157,8 +157,11 @@
       },
       {
         "heading": "Usunięcie konta",
-        "planned": true,
-        "body": ["Gdy pojawi się opcjonalne logowanie, konto usuniesz w aplikacji w Ja → Konto → Usuń konto. Konto i wszystko, co z nim zarchiwizowano, zostanie usunięte z naszych serwerów w ciągu 30 dni. Jeśli logowałeś(-aś) się przez Facebook, usunięte zostaną też dane otrzymane z Facebooka; Saldo Pocket możesz także usunąć w Facebooku w Ustawienia → Aplikacje i witryny."]
+        "body": [
+          "Jeśli korzystasz z aplikacji bez logowania, Twoje dane są tylko na telefonie. Są usuwane, gdy usuniesz wszystkie dane w aplikacji albo usuniesz aplikację z telefonu.",
+          "Jeśli jesteś zalogowany(-a), po usunięciu konta w aplikacji usuwane są też Twoje dane w chmurze: konto, wszystko, co z nim zsynchronizowano, i wszystko na telefonie, z którego usuwasz. Jeśli logowałeś(-aś) się przez Facebook, usuwamy też to, co otrzymaliśmy z Facebooka. Saldo Pocket możesz także usunąć w ustawieniach Facebooka.",
+          "Jeśli usuniesz tylko dane z telefonu, zostaniesz wylogowany(-a), ale konto i Twoje dane w chmurze zostaną. Dane na Twoich innych urządzeniach nie są usuwane automatycznie; usuń je w aplikacji na tych urządzeniach. Usunięcie nie anuluje subskrypcji; zrobisz to w App Store lub Google Play."
+        ]
       },
       {
         "heading": "Jeśli nie masz już aplikacji",
