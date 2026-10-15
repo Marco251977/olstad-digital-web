@@ -59,24 +59,31 @@
 </section>
     <section>
 <h2>I korthet</h2>
-<ul><li>Din budget sparas på din telefon. Utan konto kan vi inte se den.</li><li>Ett konto är valfritt (Apple, Google, Facebook eller e-post). Med konto och Pro synkas budgeten till vår server i EU så att du kan använda den på flera enheter.</li><li>Det finns ingen bankkoppling.</li><li>CSV- och Excel-filer från banken läses bara på telefonen och skickas aldrig någonstans.</li><li>Inget från din budget lämnar telefonen om du inte synkar med Pro eller väljer AI-läsning av en kontolista, ett kvitto eller en faktura.</li><li>Kraschrapporter innehåller inga personuppgifter.</li><li>Du kan exportera allt och radera allt i appen, gratis.</li></ul>
+<ul><li>Din budget sparas på din telefon. Utan konto kan vi inte se den.</li><li>Ett konto är valfritt (Apple, Google, Facebook eller e-post). Med konto och Pro synkas budgeten till vår server i EU så att du kan använda den på flera enheter.</li><li>Det finns ingen bankkoppling.</li><li>CSV- och Excel-filer från banken läses bara på telefonen. Själva filen sparas, kopieras eller skickas aldrig.</li><li>Inget från din budget lämnar telefonen om du inte synkar med Pro eller väljer AI-läsning av en kontolista, ett kvitto eller en faktura.</li><li>Kraschrapporter innehåller inga personuppgifter.</li><li>Du kan exportera allt och radera allt i appen, gratis.</li></ul>
 </section>
     <section>
 <h2>Sparat på din telefon</h2>
 <p>Appen sparar detta i sin egen lagring på telefonen. Det skickas inte till oss, och det raderas när du raderar alla data i appen eller avinstallerar den:</p>
 <ul><li>Kontona du skapar (namn du väljer, saldo och valuta; inte bankkonton).</li><li>Dina poster: datum, belopp, valuta, kategori, leverantör och en valfri anteckning.</li><li>Fasta poster, sparmål, egna kategorier och kategorin appen kommer ihåg för varje leverantör.</li><li>Inställningar: lönedag, månadsbudget, språk och valuta, och om du tillåter AI-läsning.</li><li>Ett slumpmässigt enhets-ID som bara används för att räkna AI-läsningar (se nedan).</li><li>Bilder du väljer att behålla efter en import.</li></ul>
-<p>OCR-nummer och kontonummer på kontolistor och fakturor sparas aldrig.</p>
+<p>OCR-nummer sparas aldrig, och inte heller hela kontonumret. Appen kan spara de fyra sista siffrorna i kontonumret för att känna igen kontot.</p>
 </section>
     <section>
 <h2>Import av CSV- och Excel-filer</h2>
-<p>När du importerar en CSV- eller Excel-fil från banken läses filen bara på telefonen. Den laddas aldrig upp till en server eller skickas till AI, och den sparas inte som fil.</p>
-<p>För varje post sparas bara datum, beskrivning, belopp och leverantör. Kontonummer, namn, OCR-nummer och andra referenser tas bort, liksom filens övriga kolumner. AI-läsning används bara för bilder och PDF, och bara när du har sagt ja.</p>
+<p>När du importerar en CSV- eller Excel-fil från banken läses filen bara på telefonen. Själva filen sparas, kopieras eller skickas aldrig – varken till en server eller till AI.</p>
+<p>Från filen sparas bara datum (och bokföringsdag när filen har den), beskrivning, belopp, leverantör, bankens saldo för att stämma av kontot och de fyra sista siffrorna i kontonumret, för att känna igen kontot. OCR-nummer, andra referenser och filens övriga kolumner sparas inte.</p>
+<p>Poster som banken inte har bokfört än sparas som ”Väntar” och tas bort om de inte bokförs.</p>
+<p>Appen kommer ihåg hur kolumnerna i filen är ordnade, utan innehållet, så att nästa import går snabbare. När du är inloggad med Pro synkas det tillsammans med dina andra inställningar.</p>
+<p>AI-läsning används bara för bilder och PDF, och bara när du har sagt ja.</p>
 </section>
     <section>
 <h2>AI-läsning av kontolistor, kvitton och fakturor (valfritt)</h2>
 <p>När du importerar en skärmbild eller ett foto av en kontolista, eller skannar ett kvitto eller en faktura, kan du låta AI läsa den. Appen frågar om lov först, och du kan stänga av det när som helst på importskärmen. Utan lov läses allt på telefonen, och ingenting skickas.</p>
 <p>Med lov skickas bilden (eller texten som lästs från den), valutan, ditt land, dagens datum, appens kategorilista och enhets-ID:t via vår server hos Supabase (Irland) till Anthropic, som läser raderna med sin AI-modell (Claude) och skickar tillbaka dem. Varken vi eller Supabase sparar bilden, texten eller raderna. Anthropic använder inte data som skickas via deras API för att träna sina modeller, och raderar dem efter en begränsad tid enligt sina egna villkor.</p>
-<p>För att hålla tjänsten inom sina gränser (20 läsningar per enhet och dag) sparar vår server enhets-ID:t, datumet och antalet läsningar, och inget annat. Räkningarna raderas automatiskt efter 30 dagar.</p>
+<p>För att hålla tjänsten inom sina gränser (ett begränsat antal läsningar per enhet) sparar vår server enhets-ID:t, datumet och antalet läsningar, och inget annat. Räkningarna raderas automatiskt efter 30 dagar.</p>
+</section>
+    <section>
+<h2>Skanning av kvitton och fakturor</h2>
+<p>När du skannar ett kvitto eller en faktura läses bilden på telefonen, eller med AI om du har sagt ja (se ovan). Bilden raderas så snart den är läst, även om du avbryter eller något går fel. Från bilden sparas bara butik, datum, belopp och kategori. OCR-nummer och kontonummer sparas aldrig.</p>
 </section>
     <section>
 <h2>Kraschrapporter</h2>
@@ -112,7 +119,7 @@
 </section>
     <section>
 <h2>Hur länge data sparas</h2>
-<ul><li>På telefonen: tills du raderar dem i appen eller avinstallerar appen.</li><li>Ditt konto och synkad data: tills du raderar kontot i appen.</li><li>Bilder och text för AI-läsning: sparas inte hos oss.</li><li>CSV- och Excel-filer du importerar: sparas inte. Bara posterna du sparar finns kvar.</li><li>Räkning av AI-läsningar: 30 dagar.</li><li>Logg över inloggningsmejl (utan adress): 7 dagar.</li><li>Kraschrapporter: högst 90 dagar.</li></ul>
+<ul><li>På telefonen: tills du raderar dem i appen eller avinstallerar appen.</li><li>Ditt konto och synkad data: tills du raderar kontot i appen.</li><li>Bilder och text för AI-läsning: sparas inte hos oss.</li><li>CSV- och Excel-filer du importerar: sparas inte. Bara posterna du sparar och hur filens kolumner är ordnade finns kvar.</li><li>Räkning av AI-läsningar: 30 dagar.</li><li>Logg över inloggningsmejl (utan adress): 7 dagar.</li><li>Kraschrapporter: högst 90 dagar.</li></ul>
 </section>
     <section>
 <h2>Dina rättigheter</h2>

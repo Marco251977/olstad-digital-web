@@ -59,24 +59,31 @@
 </section>
     <section>
 <h2>In short</h2>
-<ul><li>Your budget is stored on your phone. Without an account, we cannot see it.</li><li>An account is optional (Apple, Google, Facebook or e-mail). With an account and Pro, your budget is synced to our server in the EU so you can use it on several devices.</li><li>There is no bank connection.</li><li>CSV and Excel files from your bank are read only on your phone and never sent anywhere.</li><li>Nothing from your budget leaves the phone unless you sync with Pro or choose AI reading of a statement, receipt or bill.</li><li>Crash reports contain no personal data.</li><li>You can export everything and delete everything in the app, for free.</li></ul>
+<ul><li>Your budget is stored on your phone. Without an account, we cannot see it.</li><li>An account is optional (Apple, Google, Facebook or e-mail). With an account and Pro, your budget is synced to our server in the EU so you can use it on several devices.</li><li>There is no bank connection.</li><li>CSV and Excel files from your bank are read only on your phone. The file itself is never stored, copied or sent anywhere.</li><li>Nothing from your budget leaves the phone unless you sync with Pro or choose AI reading of a statement, receipt or bill.</li><li>Crash reports contain no personal data.</li><li>You can export everything and delete everything in the app, for free.</li></ul>
 </section>
     <section>
 <h2>Stored on your phone</h2>
 <p>The app stores this in its own storage on your phone. It is not sent to us, and it is deleted when you delete all data in the app or uninstall it:</p>
 <ul><li>The accounts you create (names you choose, balance and currency; not bank accounts).</li><li>Your entries: date, amount, currency, category, vendor and an optional note.</li><li>Recurring items, savings goals, your own categories, and the category remembered for each vendor.</li><li>Settings: payday, monthly budget, your language and currency, and whether you allow AI reading.</li><li>A random device ID, used only to count AI readings (see below).</li><li>Pictures you choose to keep after an import.</li></ul>
-<p>KID numbers and account numbers on bank lists and bills are never stored.</p>
+<p>KID numbers are never stored, and neither is the full account number. The app may store the last four digits of the account number to recognize the account.</p>
 </section>
     <section>
 <h2>Importing CSV and Excel files</h2>
-<p>When you import a CSV or Excel file from your bank, the file is read only on your phone. It is never uploaded to a server or sent to AI, and it is not stored as a file.</p>
-<p>For each entry, only the date, description, amount and vendor are saved. Account numbers, names, KID numbers and other references are discarded, along with the file’s other columns. AI reading is used only for pictures and PDFs, and only when you have said yes.</p>
+<p>When you import a CSV or Excel file from your bank, the file is read only on your phone. The file itself is never stored, copied or sent anywhere – not to a server and not to AI.</p>
+<p>From the file, the app stores only the date (and the booking date when the file has one), description, amount, vendor, the bank’s balance for reconciling the account, and the last four digits of the account number, to recognize the account. KID numbers, other references and the file’s other columns are not stored.</p>
+<p>Entries the bank has not booked yet are stored as “Pending” and removed if they are not booked.</p>
+<p>The app remembers how the columns in the file are laid out, without their content, so the next import is quicker. When you are signed in with Pro, this is synced with your other settings.</p>
+<p>AI reading is used only for pictures and PDFs, and only when you have said yes.</p>
 </section>
     <section>
 <h2>AI reading of bank lists, receipts and bills (optional)</h2>
 <p>When you import a screenshot or photo of a bank list, or scan a receipt or bill, you can let AI read it. The app asks for your permission first, and you can turn it off at any time on the import screen. Without permission, everything is read on the phone and nothing is sent.</p>
 <p>With permission, the picture (or the text read from it), the currency, your country, today’s date, the app’s list of categories and the device ID are sent through our server at Supabase (Ireland) to Anthropic, which reads the rows with its AI model (Claude) and sends them back. Neither we nor Supabase store the picture, the text or the rows. Anthropic does not use data sent through its API to train its models, and deletes it after a limited time under its own terms.</p>
-<p>To keep the service within its limits (20 readings per device per day), our server stores the device ID, the date and the number of readings, and nothing else. These counts are deleted automatically after 30 days.</p>
+<p>To keep the service within its limits (a limited number of readings per device), our server stores the device ID, the date and the number of readings, and nothing else. These counts are deleted automatically after 30 days.</p>
+</section>
+    <section>
+<h2>Scanning receipts and bills</h2>
+<p>When you scan a receipt or bill, the picture is read on your phone, or by AI if you have said yes (see above). The picture is deleted as soon as it has been read, also if you cancel or something goes wrong. From the picture, only the store, date, amount and category are stored. KID numbers and account numbers are never stored.</p>
 </section>
     <section>
 <h2>Crash reports</h2>
@@ -112,7 +119,7 @@
 </section>
     <section>
 <h2>How long data is kept</h2>
-<ul><li>On the phone: until you delete it in the app or uninstall the app.</li><li>Your account and synced data: until you delete the account in the app.</li><li>Pictures and text for AI reading: not stored by us.</li><li>CSV and Excel files you import: not stored. Only the entries you save remain.</li><li>Count of AI readings: 30 days.</li><li>Log of sign-in e-mails (no address): 7 days.</li><li>Crash reports: at most 90 days.</li></ul>
+<ul><li>On the phone: until you delete it in the app or uninstall the app.</li><li>Your account and synced data: until you delete the account in the app.</li><li>Pictures and text for AI reading: not stored by us.</li><li>CSV and Excel files you import: not stored. Only the entries you save and the layout of the file’s columns remain.</li><li>Count of AI readings: 30 days.</li><li>Log of sign-in e-mails (no address): 7 days.</li><li>Crash reports: at most 90 days.</li></ul>
 </section>
     <section>
 <h2>Your rights</h2>

@@ -15,7 +15,7 @@
           "Dein Budget wird auf deinem Handy gespeichert. Ohne Konto können wir es nicht sehen.",
           "Ein Konto ist freiwillig (Apple, Google, Facebook oder E-Mail). Mit Konto und Pro wird dein Budget mit unserem Server in der EU synchronisiert, damit du es auf mehreren Geräten nutzen kannst.",
           "Es gibt keine Bankverbindung.",
-          "CSV- und Excel-Dateien von deiner Bank werden nur auf deinem Telefon gelesen und nirgendwohin gesendet.",
+          "CSV- und Excel-Dateien von deiner Bank werden nur auf deinem Telefon gelesen. Die Datei selbst wird nie gespeichert, kopiert oder gesendet.",
           "Nichts aus deinem Budget verlässt das Handy, außer du synchronisierst mit Pro oder wählst das Lesen eines Kontoauszugs, Belegs oder einer Rechnung mit KI.",
           "Absturzberichte enthalten keine personenbezogenen Daten.",
           "Du kannst alles in der App kostenlos exportieren und löschen."
@@ -32,13 +32,16 @@
           "Eine zufällige Geräte-ID, die nur zum Zählen der KI-Lesevorgänge dient (siehe unten).",
           "Bilder, die du nach einem Import behalten möchtest."
         ],
-        "after": ["Zahlungsreferenzen und Kontonummern auf Kontoauszügen und Rechnungen werden nie gespeichert."]
+        "after": ["Zahlungsreferenzen werden nie gespeichert, ebenso wenig die vollständige Kontonummer. Die App kann die letzten vier Ziffern der Kontonummer speichern, um das Konto wiederzuerkennen."]
       },
       {
         "heading": "Import von CSV- und Excel-Dateien",
         "body": [
-          "Wenn du eine CSV- oder Excel-Datei von deiner Bank importierst, wird die Datei nur auf deinem Telefon gelesen. Sie wird nie auf einen Server hochgeladen oder an eine KI gesendet und nicht als Datei gespeichert.",
-          "Pro Buchung werden nur Datum, Beschreibung, Betrag und Händler gespeichert. Kontonummern, Namen, Zahlungsreferenzen und die übrigen Spalten der Datei werden verworfen. Das Lesen mit KI wird nur für Bilder und PDFs genutzt, und nur, wenn du zugestimmt hast."
+          "Wenn du eine CSV- oder Excel-Datei von deiner Bank importierst, wird die Datei nur auf deinem Telefon gelesen. Die Datei selbst wird nie gespeichert, kopiert oder gesendet – weder an einen Server noch an eine KI.",
+          "Aus der Datei werden nur Datum (und Buchungsdatum, wenn die Datei eines hat), Beschreibung, Betrag, Händler, der Kontostand der Bank für den Abgleich des Kontos und die letzten vier Ziffern der Kontonummer gespeichert, um das Konto wiederzuerkennen. Zahlungsreferenzen, andere Referenzen und die übrigen Spalten der Datei werden nicht gespeichert.",
+          "Buchungen, die die Bank noch nicht gebucht hat, werden als „Vorgemerkt“ gespeichert und entfernt, wenn sie nicht gebucht werden.",
+          "Die App merkt sich, wie die Spalten der Datei aufgebaut sind, ohne deren Inhalt, damit der nächste Import schneller geht. Wenn du mit Pro angemeldet bist, wird das mit deinen anderen Einstellungen synchronisiert.",
+          "Das Lesen mit KI wird nur für Bilder und PDFs genutzt, und nur, wenn du zugestimmt hast."
         ]
       },
       {
@@ -46,8 +49,12 @@
         "body": [
           "Wenn du einen Screenshot oder ein Foto eines Kontoauszugs importierst oder einen Beleg oder eine Rechnung scannst, kannst du ihn von KI lesen lassen. Die App fragt zuerst um Erlaubnis, und du kannst es auf dem Importbildschirm jederzeit ausschalten. Ohne Erlaubnis wird alles auf dem Telefon gelesen, und nichts wird gesendet.",
           "Mit Erlaubnis werden das Bild (oder der daraus gelesene Text), die Währung, dein Land, das heutige Datum, die Kategorieliste der App und die Geräte-ID über {{server}} an Anthropic gesendet. Anthropic liest die Zeilen mit seinem KI-Modell (Claude) und sendet sie zurück. Weder wir noch Supabase speichern das Bild, den Text oder die Zeilen. Anthropic nutzt über seine API gesendete Daten nicht zum Training seiner Modelle und löscht sie nach begrenzter Zeit gemäß den eigenen Bedingungen.",
-          "Damit der Dienst in seinen Grenzen bleibt (20 Lesevorgänge pro Gerät und Tag), speichert unser Server die Geräte-ID, das Datum und die Anzahl der Lesevorgänge, sonst nichts. Diese Zählungen werden nach 30 Tagen automatisch gelöscht."
+          "Damit der Dienst in seinen Grenzen bleibt (eine begrenzte Zahl von Lesevorgängen pro Gerät), speichert unser Server die Geräte-ID, das Datum und die Anzahl der Lesevorgänge, sonst nichts. Diese Zählungen werden nach 30 Tagen automatisch gelöscht."
         ]
+      },
+      {
+        "heading": "Scannen von Belegen und Rechnungen",
+        "body": ["Wenn du einen Beleg oder eine Rechnung scannst, wird das Bild auf dem Telefon gelesen oder mit KI, wenn du zugestimmt hast (siehe oben). Das Bild wird gelöscht, sobald es gelesen ist, auch wenn du abbrichst oder etwas schiefgeht. Aus dem Bild werden nur Geschäft, Datum, Betrag und Kategorie gespeichert. Zahlungsreferenzen und Kontonummern werden nie gespeichert."]
       },
       {
         "heading": "Absturzberichte",
@@ -101,7 +108,7 @@
           "Auf dem Handy: bis du sie in der App löschst oder die App deinstallierst.",
           "Dein Konto und synchronisierte Daten: bis du das Konto in der App löschst.",
           "Bilder und Text für das Lesen mit KI: werden bei uns nicht gespeichert.",
-          "CSV- und Excel-Dateien, die du importierst: werden nicht gespeichert. Nur die Buchungen, die du speicherst, bleiben.",
+          "CSV- und Excel-Dateien, die du importierst: werden nicht gespeichert. Nur die Buchungen, die du speicherst, und der Aufbau der Spalten bleiben.",
           "Zählung der KI-Lesungen: 30 Tage.",
           "Protokoll der Anmelde-E-Mails (ohne Adresse): 7 Tage.",
           "Absturzberichte: höchstens 90 Tage."
@@ -176,7 +183,7 @@
       },
       {
         "q": "Wie importiere ich aus dem Onlinebanking?",
-        "a": "Tippe auf + und Aus dem Onlinebanking importieren. Nutze Screenshots oder Fotos der Liste oder eine PDF-, CSV- oder Excel-Datei, die du aus deiner Bank exportiert hast. Du prüfst jede Zeile, bevor etwas gespeichert wird, und Zeilen, die du schon hast, sind markiert. Saldo Pocket verbindet sich nie mit deiner Bank."
+        "a": "Tippe auf + und wähle, wie du die Umsätze holen willst (Screenshots oder eine Datei aus dem Onlinebanking). Du prüfst jede Zeile, bevor etwas gespeichert wird, und Zeilen, die du schon hast, sind markiert. Saldo Pocket verbindet sich nie mit deiner Bank."
       },
       {
         "q": "Wie lösche ich meine Daten?",

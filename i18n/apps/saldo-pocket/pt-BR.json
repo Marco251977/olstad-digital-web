@@ -15,7 +15,7 @@
           "Seu orçamento fica salvo no seu celular. Sem conta, não conseguimos vê-lo.",
           "A conta é opcional (Apple, Google, Facebook ou e-mail). Com conta e Pro, seu orçamento é sincronizado com nosso servidor na UE para você usar em vários dispositivos.",
           "Não há conexão bancária.",
-          "Os arquivos CSV e Excel do seu banco são lidos só no seu celular e nunca são enviados para lugar nenhum.",
+          "Os arquivos CSV e Excel do seu banco são lidos só no seu celular. O arquivo em si nunca é guardado, copiado nem enviado.",
           "Nada do seu orçamento sai do celular, a menos que você sincronize com o Pro ou escolha a leitura por IA de um extrato, recibo ou fatura.",
           "Os relatórios de falhas não contêm dados pessoais.",
           "Você pode exportar e excluir tudo no app, de graça."
@@ -32,13 +32,16 @@
           "Um ID aleatório do aparelho, usado apenas para contar as leituras por IA (veja abaixo).",
           "Imagens que você escolher manter depois de uma importação."
         ],
-        "after": ["Linhas digitáveis, códigos de pagamento e números de conta de extratos e boletos nunca são guardados."]
+        "after": ["Linhas digitáveis e códigos de pagamento nunca são guardados, nem o número completo da conta. O app pode guardar os quatro últimos dígitos do número da conta para reconhecer a conta."]
       },
       {
         "heading": "Importação de arquivos CSV e Excel",
         "body": [
-          "Quando você importa um arquivo CSV ou Excel do seu banco, o arquivo é lido só no seu celular. Ele nunca é enviado para um servidor nem para a IA, e não fica guardado como arquivo.",
-          "De cada lançamento, só são guardados a data, a descrição, o valor e o estabelecimento. Números de conta, nomes, códigos de pagamento e as outras colunas do arquivo são descartados. A leitura por IA só é usada para imagens e PDF, e só com a sua permissão."
+          "Quando você importa um arquivo CSV ou Excel do seu banco, o arquivo é lido só no seu celular. O arquivo em si nunca é guardado, copiado nem enviado – nem para um servidor, nem para a IA.",
+          "Do arquivo, só são guardados a data (e a data de lançamento, quando o arquivo tem), a descrição, o valor, o estabelecimento, o saldo do banco para conferir a conta e os quatro últimos dígitos do número da conta, para reconhecer a conta. Códigos de pagamento, outras referências e as outras colunas do arquivo não são guardados.",
+          "Lançamentos que o banco ainda não compensou são guardados como “Pendente” e removidos se não forem compensados.",
+          "O app lembra como as colunas do arquivo estão organizadas, sem o conteúdo, para que a próxima importação seja mais rápida. Quando você está conectado com o Pro, isso é sincronizado com as suas outras configurações.",
+          "A leitura por IA só é usada para imagens e PDF, e só com a sua permissão."
         ]
       },
       {
@@ -46,8 +49,12 @@
         "body": [
           "Quando você importa uma captura de tela ou foto de um extrato, ou escaneia um recibo ou boleto, pode deixar a IA ler. O app pede sua permissão primeiro, e você pode desativar a qualquer momento na tela de importação. Sem permissão, tudo é lido no celular e nada é enviado.",
           "Com permissão, a imagem (ou o texto lido dela), a moeda, seu país, a data de hoje, a lista de categorias do app e o ID do aparelho são enviados por meio de {{server}} para a Anthropic, que lê as linhas com seu modelo de IA (Claude) e as devolve. Nem nós nem a Supabase guardamos a imagem, o texto ou as linhas. A Anthropic não usa dados enviados pela sua API para treinar seus modelos e os exclui após um tempo limitado, conforme seus próprios termos.",
-          "Para manter o serviço dentro dos limites (20 leituras por aparelho por dia), nosso servidor guarda o ID do aparelho, a data e o número de leituras, e nada mais. Essas contagens são excluídas automaticamente após 30 dias."
+          "Para manter o serviço dentro dos limites (um número limitado de leituras por aparelho), nosso servidor guarda o ID do aparelho, a data e o número de leituras, e nada mais. Essas contagens são excluídas automaticamente após 30 dias."
         ]
+      },
+      {
+        "heading": "Escanear recibos e boletos",
+        "body": ["Quando você escaneia um recibo ou boleto, a imagem é lida no celular, ou pela IA se você tiver dado permissão (veja acima). A imagem é apagada assim que é lida, também se você cancelar ou algo der errado. Da imagem, só são guardados a loja, a data, o valor e a categoria. Linhas digitáveis, códigos de pagamento e números de conta nunca são guardados."]
       },
       {
         "heading": "Relatórios de falhas",
@@ -101,7 +108,7 @@
           "No celular: até você excluí-los no app ou desinstalar o app.",
           "Sua conta e os dados sincronizados: até você excluir a conta no app.",
           "Imagens e texto da leitura por IA: não ficam guardados conosco.",
-          "Arquivos CSV e Excel que você importa: não ficam guardados. Só ficam os lançamentos que você salva.",
+          "Arquivos CSV e Excel que você importa: não ficam guardados. Só ficam os lançamentos que você salva e a organização das colunas do arquivo.",
           "Contagem de leituras por IA: 30 dias.",
           "Registro dos e-mails de login (sem endereço): 7 dias.",
           "Relatórios de falhas: no máximo 90 dias."
@@ -176,7 +183,7 @@
       },
       {
         "q": "Como importo do internet banking?",
-        "a": "Toque em + e em Importar do internet banking. Use capturas de tela ou fotos da lista, ou um arquivo PDF, CSV ou Excel exportado do seu banco. Você revisa cada linha antes de salvar qualquer coisa, e as linhas que você já tem ficam marcadas. O Saldo Pocket nunca se conecta ao seu banco."
+        "a": "Toque em + e escolha como quer trazer seus lançamentos (capturas de tela ou um arquivo do internet banking). Você revisa cada linha antes de salvar qualquer coisa, e as linhas que você já tem ficam marcadas. O Saldo Pocket nunca se conecta ao seu banco."
       },
       {
         "q": "Como apago meus dados?",

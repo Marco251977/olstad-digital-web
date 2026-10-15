@@ -15,7 +15,7 @@
           "Dit budget gemmes på din telefon. Uden konto kan vi ikke se det.",
           "En konto er valgfri (Apple, Google, Facebook eller e-mail). Med konto og Pro synkroniseres budgettet til vores server i EU, så du kan bruge det på flere enheder.",
           "Der er ingen bankforbindelse.",
-          "CSV- og Excel-filer fra banken læses kun på telefonen og sendes aldrig videre.",
+          "CSV- og Excel-filer fra banken læses kun på telefonen. Selve filen gemmes, kopieres eller sendes aldrig.",
           "Intet fra dit budget forlader telefonen, medmindre du synkroniserer med Pro eller vælger AI-læsning af en kontoudskrift, en kvittering eller en regning.",
           "Nedbrudsrapporter indeholder ingen personoplysninger.",
           "Du kan eksportere alt og slette alt i appen, gratis."
@@ -32,13 +32,16 @@
           "Et tilfældigt enheds-id, der kun bruges til at tælle AI-læsninger (se nedenfor).",
           "Billeder, du vælger at beholde efter en import."
         ],
-        "after": ["Betalings-id'er (FI-koder) og kontonumre på kontoudskrifter og regninger gemmes aldrig."]
+        "after": ["Betalings-id'er (FI-koder) gemmes aldrig, og det gør hele kontonummeret heller ikke. Appen kan gemme de sidste fire cifre i kontonummeret for at genkende kontoen."]
       },
       {
         "heading": "Import af CSV- og Excel-filer",
         "body": [
-          "Når du importerer en CSV- eller Excel-fil fra banken, læses filen kun på telefonen. Den uploades aldrig til en server eller sendes til AI, og den gemmes ikke som fil.",
-          "For hver postering gemmes kun dato, beskrivelse, beløb og leverandør. Kontonumre, navne, betalings-id’er (FI-koder) og andre referencer kasseres sammen med filens øvrige kolonner. AI-læsning bruges kun til billeder og PDF, og kun når du har sagt ja."
+          "Når du importerer en CSV- eller Excel-fil fra banken, læses filen kun på telefonen. Selve filen gemmes, kopieres eller sendes aldrig – hverken til en server eller til AI.",
+          "Fra filen gemmes kun dato (og bogføringsdato, når filen har den), beskrivelse, beløb, leverandør, bankens saldo til afstemning af kontoen og de sidste fire cifre i kontonummeret, så kontoen kan genkendes. Betalings-id'er (FI-koder), andre referencer og filens øvrige kolonner gemmes ikke.",
+          "Posteringer, som banken endnu ikke har bogført, gemmes som »Afventer« og fjernes, hvis de ikke bliver bogført.",
+          "Appen husker, hvordan kolonnerne i filen er sat op, uden indholdet, så næste import går hurtigere. Når du er logget ind med Pro, synkroniseres det sammen med dine øvrige indstillinger.",
+          "AI-læsning bruges kun til billeder og PDF, og kun når du har sagt ja."
         ]
       },
       {
@@ -46,8 +49,12 @@
         "body": [
           "Når du importerer et skærmbillede eller foto af en kontoudskrift eller scanner en kvittering eller regning, kan du lade AI læse den. Appen beder om lov først, og du kan slå det fra når som helst på importskærmen. Uden lov læses alt på telefonen, og intet sendes.",
           "Med lov sendes billedet (eller teksten, der er læst fra det), valutaen, dit land, dagens dato, appens kategoriliste og enheds-id'et gennem {{server}} til Anthropic, som læser rækkerne med sin AI-model (Claude) og sender dem tilbage. Hverken vi eller Supabase gemmer billedet, teksten eller rækkerne. Anthropic bruger ikke data, der sendes gennem deres API, til at træne deres modeller og sletter dem efter begrænset tid efter deres egne vilkår.",
-          "For at holde tjenesten inden for grænserne (20 læsninger pr. enhed pr. dag) gemmer vores server enheds-id'et, datoen og antallet af læsninger og intet andet. Optællingerne slettes automatisk efter 30 dage."
+          "For at holde tjenesten inden for grænserne (et begrænset antal læsninger pr. enhed) gemmer vores server enheds-id'et, datoen og antallet af læsninger og intet andet. Optællingerne slettes automatisk efter 30 dage."
         ]
+      },
+      {
+        "heading": "Scanning af kvitteringer og regninger",
+        "body": ["Når du scanner en kvittering eller regning, læses billedet på telefonen eller med AI, hvis du har sagt ja (se ovenfor). Billedet slettes, så snart det er læst, også hvis du afbryder, eller noget går galt. Fra billedet gemmes kun butik, dato, beløb og kategori. Betalings-id'er og kontonumre gemmes aldrig."]
       },
       {
         "heading": "Nedbrudsrapporter",
@@ -101,7 +108,7 @@
           "På telefonen: indtil du sletter dem i appen eller afinstallerer appen.",
           "Din konto og synkroniserede data: indtil du sletter kontoen i appen.",
           "Billeder og tekst til AI-læsning: gemmes ikke hos os.",
-          "CSV- og Excel-filer, du importerer: gemmes ikke. Kun de posteringer, du gemmer, bliver tilbage.",
+          "CSV- og Excel-filer, du importerer: gemmes ikke. Kun de posteringer, du gemmer, og opsætningen af filens kolonner bliver tilbage.",
           "Optælling af AI-læsninger: 30 dage.",
           "Log over login-e-mails (uden adresse): 7 dage.",
           "Nedbrudsrapporter: højst 90 dage."
@@ -176,7 +183,7 @@
       },
       {
         "q": "Hvordan importerer jeg fra netbanken?",
-        "a": "Tryk på + og Importér fra netbank. Brug skærmbilleder eller fotos af listen eller en PDF-, CSV- eller Excel-fil, du har eksporteret fra banken. Du gennemgår hver række, før noget gemmes, og rækker, du allerede har, er markeret. Saldo Pocket forbinder sig aldrig til din bank."
+        "a": "Tryk på + og vælg, hvordan du vil hente posteringerne (skærmbilleder eller en fil fra netbanken). Du gennemgår hver række, før noget gemmes, og rækker, du allerede har, er markeret. Saldo Pocket forbinder sig aldrig til din bank."
       },
       {
         "q": "Hvordan sletter jeg mine data?",

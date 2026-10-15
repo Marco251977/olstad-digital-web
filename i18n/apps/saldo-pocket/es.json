@@ -15,7 +15,7 @@
           "Tu presupuesto se guarda en tu teléfono. Sin cuenta, no podemos verlo.",
           "La cuenta es opcional (Apple, Google, Facebook o correo). Con cuenta y Pro, tu presupuesto se sincroniza con nuestro servidor en la UE para usarlo en varios dispositivos.",
           "No hay conexión bancaria.",
-          "Los archivos CSV y Excel de tu banco se leen solo en tu teléfono y nunca se envían a ningún sitio.",
+          "Los archivos CSV y Excel de tu banco se leen solo en tu teléfono. El archivo en sí nunca se guarda, se copia ni se envía.",
           "Nada de tu presupuesto sale del teléfono salvo que sincronices con Pro o elijas la lectura con IA de un extracto, recibo o factura.",
           "Los informes de errores no contienen datos personales.",
           "Puedes exportar y eliminar todo en la app, gratis."
@@ -32,13 +32,16 @@
           "Un identificador aleatorio del dispositivo, usado solo para contar las lecturas con IA (ver abajo).",
           "Las imágenes que decidas conservar después de una importación."
         ],
-        "after": ["Las referencias de pago y los números de cuenta de los extractos y facturas nunca se guardan."]
+        "after": ["Las referencias de pago nunca se guardan, ni tampoco el número de cuenta completo. La app puede guardar los cuatro últimos dígitos del número de cuenta para reconocer la cuenta."]
       },
       {
         "heading": "Importar archivos CSV y Excel",
         "body": [
-          "Cuando importas un archivo CSV o Excel de tu banco, el archivo se lee solo en tu teléfono. Nunca se sube a un servidor ni se envía a la IA, y no se guarda como archivo.",
-          "De cada movimiento solo se guardan la fecha, la descripción, el importe y el comercio. Los números de cuenta, los nombres, las referencias de pago y el resto de columnas del archivo se descartan. La lectura con IA solo se usa para imágenes y PDF, y solo si das tu permiso."
+          "Cuando importas un archivo CSV o Excel de tu banco, el archivo se lee solo en tu teléfono. El archivo en sí nunca se guarda, se copia ni se envía: ni a un servidor ni a la IA.",
+          "Del archivo solo se guardan la fecha (y la fecha contable cuando el archivo la incluye), la descripción, el importe, el comercio, el saldo del banco para cuadrar la cuenta y los cuatro últimos dígitos del número de cuenta, para reconocer la cuenta. Las referencias de pago, otras referencias y el resto de columnas del archivo no se guardan.",
+          "Los movimientos que el banco aún no ha contabilizado se guardan como «Pendiente» y se eliminan si no se llegan a contabilizar.",
+          "La app recuerda cómo están organizadas las columnas del archivo, sin su contenido, para que la próxima importación sea más rápida. Si has iniciado sesión con Pro, esto se sincroniza con el resto de tus ajustes.",
+          "La lectura con IA solo se usa para imágenes y PDF, y solo si das tu permiso."
         ]
       },
       {
@@ -46,8 +49,12 @@
         "body": [
           "Cuando importas una captura o una foto de un extracto, o escaneas un recibo o una factura, puedes dejar que la IA lo lea. La app te pide permiso primero y puedes desactivarlo en cualquier momento en la pantalla de importación. Sin permiso, todo se lee en el teléfono y no se envía nada.",
           "Con permiso, la imagen (o el texto leído de ella), la moneda, tu país, la fecha de hoy, la lista de categorías de la app y el identificador del dispositivo se envían a través de {{server}} a Anthropic, que lee las filas con su modelo de IA (Claude) y las devuelve. Ni nosotros ni Supabase guardamos la imagen, el texto ni las filas. Anthropic no usa los datos enviados a través de su API para entrenar sus modelos y los elimina tras un tiempo limitado según sus propias condiciones.",
-          "Para mantener el servicio dentro de sus límites (20 lecturas por dispositivo al día), nuestro servidor guarda el identificador del dispositivo, la fecha y el número de lecturas, y nada más. Estos recuentos se borran automáticamente a los 30 días."
+          "Para mantener el servicio dentro de sus límites (un número limitado de lecturas por dispositivo), nuestro servidor guarda el identificador del dispositivo, la fecha y el número de lecturas, y nada más. Estos recuentos se borran automáticamente a los 30 días."
         ]
+      },
+      {
+        "heading": "Escaneo de recibos y facturas",
+        "body": ["Cuando escaneas un recibo o una factura, la imagen se lee en tu teléfono, o con IA si has dado tu permiso (ver arriba). La imagen se borra en cuanto se ha leído, también si cancelas o algo falla. De la imagen solo se guardan la tienda, la fecha, el importe y la categoría. Las referencias de pago y los números de cuenta nunca se guardan."]
       },
       {
         "heading": "Informes de errores",
@@ -101,7 +108,7 @@
           "En el teléfono: hasta que los elimines en la app o desinstales la app.",
           "Tu cuenta y los datos sincronizados: hasta que elimines la cuenta en la app.",
           "Imágenes y texto para la lectura con IA: no los guardamos.",
-          "Archivos CSV y Excel que importas: no se guardan. Solo quedan los movimientos que guardas.",
+          "Archivos CSV y Excel que importas: no se guardan. Solo quedan los movimientos que guardas y la organización de las columnas del archivo.",
           "Recuento de lecturas con IA: 30 días.",
           "Registro de correos de inicio de sesión (sin dirección): 7 días.",
           "Informes de errores: 90 días como máximo."
@@ -176,7 +183,7 @@
       },
       {
         "q": "¿Cómo importo desde la banca en línea?",
-        "a": "Toca + e Importar de la banca en línea. Usa capturas o fotos de la lista, o un archivo PDF, CSV o Excel que hayas exportado de tu banco. Revisas cada fila antes de guardar nada, y las filas que ya tienes aparecen marcadas. Saldo Pocket nunca se conecta a tu banco."
+        "a": "Toca + y elige cómo quieres traer tus movimientos (capturas o un archivo de tu banco). Revisas cada fila antes de guardar nada, y las filas que ya tienes aparecen marcadas. Saldo Pocket nunca se conecta a tu banco."
       },
       {
         "q": "¿Cómo borro mis datos?",

@@ -59,24 +59,31 @@
 </section>
     <section>
 <h2>Kısaca</h2>
-<ul><li>Bütçen telefonunda saklanır. Hesap olmadan onu göremeyiz.</li><li>Hesap isteğe bağlıdır (Apple, Google, Facebook veya e-posta). Hesap ve Pro ile bütçen, birden fazla cihazda kullanabilmen için AB’deki sunucumuzla eşitlenir.</li><li>Banka bağlantısı yoktur.</li><li>Bankandan gelen CSV ve Excel dosyaları yalnızca telefonunda okunur ve hiçbir yere gönderilmez.</li><li>Pro ile eşitleme yapmadıkça veya bir hesap dökümü, fiş ya da faturanın yapay zekâ ile okunmasını seçmedikçe bütçenden hiçbir şey telefondan çıkmaz.</li><li>Çökme raporları kişisel veri içermez.</li><li>Uygulamada her şeyi ücretsiz olarak dışa aktarabilir ve silebilirsin.</li></ul>
+<ul><li>Bütçen telefonunda saklanır. Hesap olmadan onu göremeyiz.</li><li>Hesap isteğe bağlıdır (Apple, Google, Facebook veya e-posta). Hesap ve Pro ile bütçen, birden fazla cihazda kullanabilmen için AB’deki sunucumuzla eşitlenir.</li><li>Banka bağlantısı yoktur.</li><li>Bankandan gelen CSV ve Excel dosyaları yalnızca telefonunda okunur. Dosyanın kendisi asla saklanmaz, kopyalanmaz veya gönderilmez.</li><li>Pro ile eşitleme yapmadıkça veya bir hesap dökümü, fiş ya da faturanın yapay zekâ ile okunmasını seçmedikçe bütçenden hiçbir şey telefondan çıkmaz.</li><li>Çökme raporları kişisel veri içermez.</li><li>Uygulamada her şeyi ücretsiz olarak dışa aktarabilir ve silebilirsin.</li></ul>
 </section>
     <section>
 <h2>Telefonunda saklananlar</h2>
 <p>Uygulama bunları telefondaki kendi depolama alanında saklar. Bize gönderilmez; uygulamada tüm verileri sildiğinde veya uygulamayı kaldırdığında silinir:</p>
 <ul><li>Oluşturduğun hesaplar (seçtiğin adlar, bakiye ve para birimi; banka hesabı değildir).</li><li>Kayıtların: tarih, tutar, para birimi, kategori, satıcı ve isteğe bağlı bir not.</li><li>Düzenli kalemler, birikim hedefleri, kendi kategorilerin ve her satıcı için hatırlanan kategori.</li><li>Ayarlar: maaş günü, aylık bütçe, dil ve para birimi ile yapay zekâyla okumaya izin verip vermediğin.</li><li>Yalnızca yapay zekâ okumalarını saymak için kullanılan rastgele bir cihaz kimliği (aşağıya bak).</li><li>İçe aktarmadan sonra saklamayı seçtiğin resimler.</li></ul>
-<p>Hesap dökümlerindeki ve faturalardaki ödeme referansları ve hesap numaraları asla saklanmaz.</p>
+<p>Ödeme referansları asla saklanmaz, hesap numarasının tamamı da saklanmaz. Uygulama, hesabı tanımak için hesap numarasının son dört hanesini saklayabilir.</p>
 </section>
     <section>
 <h2>CSV ve Excel dosyalarını içe aktarma</h2>
-<p>Bankandan bir CSV veya Excel dosyasını içe aktardığında dosya yalnızca telefonunda okunur. Hiçbir zaman bir sunucuya yüklenmez veya yapay zekâya gönderilmez ve dosya olarak saklanmaz.</p>
-<p>Her işlem için yalnızca tarih, açıklama, tutar ve satıcı kaydedilir. Hesap numaraları, adlar, ödeme referansları ve dosyadaki diğer sütunlar atılır. Yapay zekâ ile okuma yalnızca görseller ve PDF’ler için ve yalnızca izin verdiğinde kullanılır.</p>
+<p>Bankandan bir CSV veya Excel dosyasını içe aktardığında dosya yalnızca telefonunda okunur. Dosyanın kendisi asla saklanmaz, kopyalanmaz veya gönderilmez; ne bir sunucuya ne de yapay zekâya.</p>
+<p>Dosyadan yalnızca tarih (dosyada varsa valör tarihi de), açıklama, tutar, satıcı, hesabı mutabık kılmak için bankanın bakiyesi ve hesabı tanımak için hesap numarasının son dört hanesi saklanır. Ödeme referansları, diğer referanslar ve dosyadaki diğer sütunlar saklanmaz.</p>
+<p>Bankanın henüz kesinleştirmediği işlemler “Bekliyor” olarak saklanır ve kesinleşmezse kaldırılır.</p>
+<p>Uygulama, bir sonraki içe aktarma daha hızlı olsun diye dosyadaki sütunların düzenini içerikleri olmadan hatırlar. Pro ile giriş yaptıysan bu, diğer ayarlarınla birlikte eşitlenir.</p>
+<p>Yapay zekâ ile okuma yalnızca görseller ve PDF’ler için ve yalnızca izin verdiğinde kullanılır.</p>
 </section>
     <section>
 <h2>Hesap dökümlerinin, fişlerin ve faturaların yapay zekâyla okunması (isteğe bağlı)</h2>
 <p>Bir hesap dökümünün ekran görüntüsünü veya fotoğrafını içe aktardığında ya da bir fiş veya fatura taradığında, yapay zekânın okumasına izin verebilirsin. Uygulama önce izin ister ve içe aktarma ekranında bunu istediğin zaman kapatabilirsin. İzin olmadan her şey telefonda okunur ve hiçbir şey gönderilmez.</p>
 <p>İzinle resim (veya ondan okunan metin), para birimi, ülken, bugünün tarihi, uygulamanın kategori listesi ve cihaz kimliği Supabase’deki (İrlanda) sunucumuz üzerinden Anthropic’e gönderilir; Anthropic satırları kendi yapay zekâ modeliyle (Claude) okuyup geri gönderir. Ne biz ne de Supabase resmi, metni veya satırları saklar. Anthropic, API’si üzerinden gönderilen verileri modellerini eğitmek için kullanmaz ve kendi koşullarına göre sınırlı bir süre sonra siler.</p>
-<p>Hizmeti sınırları içinde tutmak için (cihaz başına günde 20 okuma) sunucumuz cihaz kimliğini, tarihi ve okuma sayısını saklar, başka hiçbir şeyi saklamaz. Bu sayımlar 30 gün sonra otomatik olarak silinir.</p>
+<p>Hizmeti sınırları içinde tutmak için (cihaz başına sınırlı sayıda okuma) sunucumuz cihaz kimliğini, tarihi ve okuma sayısını saklar, başka hiçbir şeyi saklamaz. Bu sayımlar 30 gün sonra otomatik olarak silinir.</p>
+</section>
+    <section>
+<h2>Fiş ve fatura tarama</h2>
+<p>Bir fiş veya fatura taradığında görsel telefonunda okunur ya da izin verdiysen yapay zekâ ile okunur (yukarıya bak). Görsel okunur okunmaz silinir; iptal etsen ya da bir şeyler ters gitse bile. Görselden yalnızca mağaza, tarih, tutar ve kategori saklanır. Ödeme referansları ve hesap numaraları asla saklanmaz.</p>
 </section>
     <section>
 <h2>Çökme raporları</h2>
@@ -112,7 +119,7 @@
 </section>
     <section>
 <h2>Veriler ne kadar saklanır</h2>
-<ul><li>Telefonda: uygulamada silene veya uygulamayı kaldırana kadar.</li><li>Hesabın ve eşitlenen veriler: hesabı uygulamada silene kadar.</li><li>Yapay zekâ ile okuma için görseller ve metin: bizde saklanmaz.</li><li>İçe aktardığın CSV ve Excel dosyaları: saklanmaz. Yalnızca kaydettiğin işlemler kalır.</li><li>Yapay zekâ okuma sayısı: 30 gün.</li><li>Giriş e-postaları kaydı (adres olmadan): 7 gün.</li><li>Çökme raporları: en fazla 90 gün.</li></ul>
+<ul><li>Telefonda: uygulamada silene veya uygulamayı kaldırana kadar.</li><li>Hesabın ve eşitlenen veriler: hesabı uygulamada silene kadar.</li><li>Yapay zekâ ile okuma için görseller ve metin: bizde saklanmaz.</li><li>İçe aktardığın CSV ve Excel dosyaları: saklanmaz. Yalnızca kaydettiğin işlemler ve dosyadaki sütunların düzeni kalır.</li><li>Yapay zekâ okuma sayısı: 30 gün.</li><li>Giriş e-postaları kaydı (adres olmadan): 7 gün.</li><li>Çökme raporları: en fazla 90 gün.</li></ul>
 </section>
     <section>
 <h2>Hakların</h2>

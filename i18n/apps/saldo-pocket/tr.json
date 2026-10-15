@@ -15,7 +15,7 @@
           "Bütçen telefonunda saklanır. Hesap olmadan onu göremeyiz.",
           "Hesap isteğe bağlıdır (Apple, Google, Facebook veya e-posta). Hesap ve Pro ile bütçen, birden fazla cihazda kullanabilmen için AB’deki sunucumuzla eşitlenir.",
           "Banka bağlantısı yoktur.",
-          "Bankandan gelen CSV ve Excel dosyaları yalnızca telefonunda okunur ve hiçbir yere gönderilmez.",
+          "Bankandan gelen CSV ve Excel dosyaları yalnızca telefonunda okunur. Dosyanın kendisi asla saklanmaz, kopyalanmaz veya gönderilmez.",
           "Pro ile eşitleme yapmadıkça veya bir hesap dökümü, fiş ya da faturanın yapay zekâ ile okunmasını seçmedikçe bütçenden hiçbir şey telefondan çıkmaz.",
           "Çökme raporları kişisel veri içermez.",
           "Uygulamada her şeyi ücretsiz olarak dışa aktarabilir ve silebilirsin."
@@ -32,13 +32,16 @@
           "Yalnızca yapay zekâ okumalarını saymak için kullanılan rastgele bir cihaz kimliği (aşağıya bak).",
           "İçe aktarmadan sonra saklamayı seçtiğin resimler."
         ],
-        "after": ["Hesap dökümlerindeki ve faturalardaki ödeme referansları ve hesap numaraları asla saklanmaz."]
+        "after": ["Ödeme referansları asla saklanmaz, hesap numarasının tamamı da saklanmaz. Uygulama, hesabı tanımak için hesap numarasının son dört hanesini saklayabilir."]
       },
       {
         "heading": "CSV ve Excel dosyalarını içe aktarma",
         "body": [
-          "Bankandan bir CSV veya Excel dosyasını içe aktardığında dosya yalnızca telefonunda okunur. Hiçbir zaman bir sunucuya yüklenmez veya yapay zekâya gönderilmez ve dosya olarak saklanmaz.",
-          "Her işlem için yalnızca tarih, açıklama, tutar ve satıcı kaydedilir. Hesap numaraları, adlar, ödeme referansları ve dosyadaki diğer sütunlar atılır. Yapay zekâ ile okuma yalnızca görseller ve PDF’ler için ve yalnızca izin verdiğinde kullanılır."
+          "Bankandan bir CSV veya Excel dosyasını içe aktardığında dosya yalnızca telefonunda okunur. Dosyanın kendisi asla saklanmaz, kopyalanmaz veya gönderilmez; ne bir sunucuya ne de yapay zekâya.",
+          "Dosyadan yalnızca tarih (dosyada varsa valör tarihi de), açıklama, tutar, satıcı, hesabı mutabık kılmak için bankanın bakiyesi ve hesabı tanımak için hesap numarasının son dört hanesi saklanır. Ödeme referansları, diğer referanslar ve dosyadaki diğer sütunlar saklanmaz.",
+          "Bankanın henüz kesinleştirmediği işlemler “Bekliyor” olarak saklanır ve kesinleşmezse kaldırılır.",
+          "Uygulama, bir sonraki içe aktarma daha hızlı olsun diye dosyadaki sütunların düzenini içerikleri olmadan hatırlar. Pro ile giriş yaptıysan bu, diğer ayarlarınla birlikte eşitlenir.",
+          "Yapay zekâ ile okuma yalnızca görseller ve PDF’ler için ve yalnızca izin verdiğinde kullanılır."
         ]
       },
       {
@@ -46,8 +49,12 @@
         "body": [
           "Bir hesap dökümünün ekran görüntüsünü veya fotoğrafını içe aktardığında ya da bir fiş veya fatura taradığında, yapay zekânın okumasına izin verebilirsin. Uygulama önce izin ister ve içe aktarma ekranında bunu istediğin zaman kapatabilirsin. İzin olmadan her şey telefonda okunur ve hiçbir şey gönderilmez.",
           "İzinle resim (veya ondan okunan metin), para birimi, ülken, bugünün tarihi, uygulamanın kategori listesi ve cihaz kimliği {{server}} üzerinden Anthropic’e gönderilir; Anthropic satırları kendi yapay zekâ modeliyle (Claude) okuyup geri gönderir. Ne biz ne de Supabase resmi, metni veya satırları saklar. Anthropic, API’si üzerinden gönderilen verileri modellerini eğitmek için kullanmaz ve kendi koşullarına göre sınırlı bir süre sonra siler.",
-          "Hizmeti sınırları içinde tutmak için (cihaz başına günde 20 okuma) sunucumuz cihaz kimliğini, tarihi ve okuma sayısını saklar, başka hiçbir şeyi saklamaz. Bu sayımlar 30 gün sonra otomatik olarak silinir."
+          "Hizmeti sınırları içinde tutmak için (cihaz başına sınırlı sayıda okuma) sunucumuz cihaz kimliğini, tarihi ve okuma sayısını saklar, başka hiçbir şeyi saklamaz. Bu sayımlar 30 gün sonra otomatik olarak silinir."
         ]
+      },
+      {
+        "heading": "Fiş ve fatura tarama",
+        "body": ["Bir fiş veya fatura taradığında görsel telefonunda okunur ya da izin verdiysen yapay zekâ ile okunur (yukarıya bak). Görsel okunur okunmaz silinir; iptal etsen ya da bir şeyler ters gitse bile. Görselden yalnızca mağaza, tarih, tutar ve kategori saklanır. Ödeme referansları ve hesap numaraları asla saklanmaz."]
       },
       {
         "heading": "Çökme raporları",
@@ -101,7 +108,7 @@
           "Telefonda: uygulamada silene veya uygulamayı kaldırana kadar.",
           "Hesabın ve eşitlenen veriler: hesabı uygulamada silene kadar.",
           "Yapay zekâ ile okuma için görseller ve metin: bizde saklanmaz.",
-          "İçe aktardığın CSV ve Excel dosyaları: saklanmaz. Yalnızca kaydettiğin işlemler kalır.",
+          "İçe aktardığın CSV ve Excel dosyaları: saklanmaz. Yalnızca kaydettiğin işlemler ve dosyadaki sütunların düzeni kalır.",
           "Yapay zekâ okuma sayısı: 30 gün.",
           "Giriş e-postaları kaydı (adres olmadan): 7 gün.",
           "Çökme raporları: en fazla 90 gün."
@@ -176,7 +183,7 @@
       },
       {
         "q": "İnternet bankacılığından nasıl içe aktarırım?",
-        "a": "+ ve İnternet bankacılığından içe aktar’a dokun. Listenin ekran görüntülerini veya fotoğraflarını ya da bankandan dışa aktardığın bir PDF, CSV veya Excel dosyasını kullan. Hiçbir şey kaydedilmeden önce her satırı gözden geçirirsin; zaten sahip olduğun satırlar işaretlenir. Saldo Pocket bankana asla bağlanmaz."
+        "a": "+ simgesine dokun ve işlemleri nasıl getirmek istediğini seç (ekran görüntüleri veya internet bankacılığından bir dosya). Hiçbir şey kaydedilmeden önce her satırı gözden geçirirsin; zaten sahip olduğun satırlar işaretlenir. Saldo Pocket bankana asla bağlanmaz."
       },
       {
         "q": "Verilerimi nasıl silerim?",

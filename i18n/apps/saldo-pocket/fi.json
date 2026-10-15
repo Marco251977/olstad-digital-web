@@ -15,7 +15,7 @@
           "Budjettisi tallennetaan puhelimeesi. Ilman tiliä emme näe sitä.",
           "Tili on vapaaehtoinen (Apple, Google, Facebook tai sähköposti). Tilin ja Pron kanssa budjettisi synkronoidaan palvelimellemme EU:ssa, jotta voit käyttää sitä usealla laitteella.",
           "Pankkiyhteyttä ei ole.",
-          "Pankin CSV- ja Excel-tiedostot luetaan vain puhelimessasi, eikä niitä lähetetä minnekään.",
+          "Pankin CSV- ja Excel-tiedostot luetaan vain puhelimessasi. Itse tiedostoa ei koskaan tallenneta, kopioida eikä lähetetä minnekään.",
           "Mikään budjetistasi ei lähde puhelimesta, ellet synkronoi Prolla tai valitse tiliotteen, kuitin tai laskun lukemista tekoälyllä.",
           "Kaatumisraportit eivät sisällä henkilötietoja.",
           "Voit viedä ja poistaa kaiken sovelluksessa maksutta."
@@ -32,13 +32,16 @@
           "Satunnainen laitetunnus, jota käytetään vain tekoälylukemisten laskemiseen (ks. alla).",
           "Kuvat, jotka päätät säilyttää tuonnin jälkeen."
         ],
-        "after": ["Viitenumeroita ja tilinumeroita tiliotteista ja laskuista ei koskaan tallenneta."]
+        "after": ["Viitenumeroita ei koskaan tallenneta, eikä myöskään koko tilinumeroa. Sovellus voi tallentaa tilinumeron neljä viimeistä numeroa tunnistaakseen tilin."]
       },
       {
         "heading": "CSV- ja Excel-tiedostojen tuonti",
         "body": [
-          "Kun tuot pankista CSV- tai Excel-tiedoston, tiedosto luetaan vain puhelimessasi. Sitä ei koskaan ladata palvelimelle eikä lähetetä tekoälylle, eikä sitä tallenneta tiedostona.",
-          "Jokaisesta tapahtumasta tallennetaan vain päivämäärä, kuvaus, summa ja myyjä. Tilinumerot, nimet, viitenumerot ja tiedoston muut sarakkeet hylätään. Tekoälylukemista käytetään vain kuviin ja PDF-tiedostoihin, ja vain jos olet antanut luvan."
+          "Kun tuot pankista CSV- tai Excel-tiedoston, tiedosto luetaan vain puhelimessasi. Itse tiedostoa ei koskaan tallenneta, kopioida eikä lähetetä – ei palvelimelle eikä tekoälylle.",
+          "Tiedostosta tallennetaan vain päivämäärä (ja kirjauspäivä, kun tiedostossa on sellainen), kuvaus, summa, myyjä, pankin saldo tilin täsmäyttämistä varten sekä tilinumeron neljä viimeistä numeroa tilin tunnistamiseksi. Viitenumeroita, muita viitteitä ja tiedoston muita sarakkeita ei tallenneta.",
+          "Tapahtumat, joita pankki ei ole vielä kirjannut, tallennetaan tilassa ”Odottaa” ja poistetaan, jos niitä ei kirjata.",
+          "Sovellus muistaa, miten tiedoston sarakkeet on järjestetty, ilman niiden sisältöä, jotta seuraava tuonti käy nopeammin. Kun olet kirjautunut sisään Prolla, tämä synkronoidaan muiden asetustesi kanssa.",
+          "Tekoälylukemista käytetään vain kuviin ja PDF-tiedostoihin, ja vain jos olet antanut luvan."
         ]
       },
       {
@@ -46,8 +49,12 @@
         "body": [
           "Kun tuot kuvakaappauksen tai valokuvan tiliotteesta tai skannaat kuitin tai laskun, voit antaa tekoälyn lukea sen. Sovellus kysyy ensin lupaa, ja voit poistaa sen käytöstä milloin tahansa tuontinäkymässä. Ilman lupaa kaikki luetaan puhelimessa, eikä mitään lähetetä.",
           "Luvalla kuva (tai siitä luettu teksti), valuutta, maasi, päivämäärä, sovelluksen luokkaluettelo ja laitetunnus lähetetään {{server}} kautta Anthropicille, joka lukee rivit tekoälymallillaan (Claude) ja lähettää ne takaisin. Emme me eikä Supabase tallenna kuvaa, tekstiä tai rivejä. Anthropic ei käytä API:nsa kautta lähetettyjä tietoja mallien kouluttamiseen ja poistaa ne rajatun ajan jälkeen omien ehtojensa mukaisesti.",
-          "Jotta palvelu pysyy rajoissaan (20 lukemista laitetta kohden päivässä), palvelimemme tallentaa laitetunnuksen, päivämäärän ja lukemisten määrän, eikä mitään muuta. Nämä laskurit poistetaan automaattisesti 30 päivän kuluttua."
+          "Jotta palvelu pysyy rajoissaan (rajoitettu määrä lukemisia laitetta kohden), palvelimemme tallentaa laitetunnuksen, päivämäärän ja lukemisten määrän, eikä mitään muuta. Nämä laskurit poistetaan automaattisesti 30 päivän kuluttua."
         ]
+      },
+      {
+        "heading": "Kuittien ja laskujen skannaus",
+        "body": ["Kun skannaat kuitin tai laskun, kuva luetaan puhelimessa tai tekoälyllä, jos olet antanut luvan (katso yllä). Kuva poistetaan heti, kun se on luettu, myös jos keskeytät tai jokin menee pieleen. Kuvasta tallennetaan vain kauppa, päivämäärä, summa ja luokka. Viitenumeroita ja tilinumeroita ei koskaan tallenneta."]
       },
       {
         "heading": "Kaatumisraportit",
@@ -101,7 +108,7 @@
           "Puhelimessa: kunnes poistat ne sovelluksessa tai poistat sovelluksen.",
           "Tilisi ja synkronoidut tiedot: kunnes poistat tilin sovelluksessa.",
           "Tekoälylukemisen kuvat ja teksti: emme tallenna niitä.",
-          "Tuomasi CSV- ja Excel-tiedostot: niitä ei tallenneta. Vain tallentamasi tapahtumat jäävät.",
+          "Tuomasi CSV- ja Excel-tiedostot: niitä ei tallenneta. Vain tallentamasi tapahtumat ja tiedoston sarakkeiden järjestys jäävät.",
           "Tekoälylukemisten laskenta: 30 päivää.",
           "Kirjautumissähköpostien loki (ilman osoitetta): 7 päivää.",
           "Kaatumisraportit: enintään 90 päivää."
@@ -176,7 +183,7 @@
       },
       {
         "q": "Miten tuon tiedot verkkopankista?",
-        "a": "Napauta + ja Tuo verkkopankista. Käytä kuvakaappauksia tai valokuvia listasta tai pankista viemääsi PDF-, CSV- tai Excel-tiedostoa. Käyt jokaisen rivin läpi ennen kuin mitään tallennetaan, ja jo olemassa olevat rivit on merkitty. Saldo Pocket ei koskaan muodosta yhteyttä pankkiisi."
+        "a": "Napauta + ja valitse, miten haluat tuoda tapahtumat (kuvakaappauksina tai tiedostona verkkopankista). Käyt jokaisen rivin läpi ennen kuin mitään tallennetaan, ja jo olemassa olevat rivit on merkitty. Saldo Pocket ei koskaan muodosta yhteyttä pankkiisi."
       },
       {
         "q": "Miten poistan tietoni?",

@@ -59,24 +59,31 @@
 </section>
     <section>
 <h2>In het kort</h2>
-<ul><li>Je budget wordt op je telefoon opgeslagen. Zonder account kunnen wij het niet zien.</li><li>Een account is optioneel (Apple, Google, Facebook of e-mail). Met een account en Pro wordt je budget met onze server in de EU gesynchroniseerd, zodat je het op meerdere apparaten kunt gebruiken.</li><li>Er is geen bankkoppeling.</li><li>CSV- en Excel-bestanden van je bank worden alleen op je telefoon gelezen en nergens naartoe gestuurd.</li><li>Niets uit je budget verlaat de telefoon, tenzij je synchroniseert met Pro of kiest voor het lezen van een rekeningoverzicht, bon of factuur met AI.</li><li>Crashrapporten bevatten geen persoonsgegevens.</li><li>Je kunt alles in de app gratis exporteren en verwijderen.</li></ul>
+<ul><li>Je budget wordt op je telefoon opgeslagen. Zonder account kunnen wij het niet zien.</li><li>Een account is optioneel (Apple, Google, Facebook of e-mail). Met een account en Pro wordt je budget met onze server in de EU gesynchroniseerd, zodat je het op meerdere apparaten kunt gebruiken.</li><li>Er is geen bankkoppeling.</li><li>CSV- en Excel-bestanden van je bank worden alleen op je telefoon gelezen. Het bestand zelf wordt nooit bewaard, gekopieerd of verstuurd.</li><li>Niets uit je budget verlaat de telefoon, tenzij je synchroniseert met Pro of kiest voor het lezen van een rekeningoverzicht, bon of factuur met AI.</li><li>Crashrapporten bevatten geen persoonsgegevens.</li><li>Je kunt alles in de app gratis exporteren en verwijderen.</li></ul>
 </section>
     <section>
 <h2>Opgeslagen op je telefoon</h2>
 <p>De app slaat dit op in zijn eigen opslag op de telefoon. Het wordt niet naar ons gestuurd en wordt gewist als je alle gegevens in de app wist of de app verwijdert:</p>
 <ul><li>De rekeningen die je aanmaakt (namen die je kiest, saldo en valuta; geen bankrekeningen).</li><li>Je posten: datum, bedrag, valuta, categorie, leverancier en een optionele notitie.</li><li>Vaste posten, spaardoelen, eigen categorieën en de categorie die de app voor elke leverancier onthoudt.</li><li>Instellingen: betaaldag, maandbudget, taal en valuta, en of je lezen met AI toestaat.</li><li>Een willekeurige apparaat-ID, alleen gebruikt om het lezen met AI te tellen (zie hieronder).</li><li>Afbeeldingen die je na een import wilt bewaren.</li></ul>
-<p>Betalingskenmerken en rekeningnummers op overzichten en facturen worden nooit opgeslagen.</p>
+<p>Betalingskenmerken worden nooit opgeslagen, en het volledige rekeningnummer ook niet. De app kan de laatste vier cijfers van het rekeningnummer opslaan om de rekening te herkennen.</p>
 </section>
     <section>
 <h2>CSV- en Excel-bestanden importeren</h2>
-<p>Als je een CSV- of Excel-bestand van je bank importeert, wordt het bestand alleen op je telefoon gelezen. Het wordt nooit naar een server geüpload of naar AI gestuurd, en het wordt niet als bestand bewaard.</p>
-<p>Per transactie worden alleen de datum, de omschrijving, het bedrag en de leverancier opgeslagen. Rekeningnummers, namen, betalingskenmerken en de overige kolommen van het bestand worden weggegooid. Lezen met AI wordt alleen gebruikt voor afbeeldingen en pdf’s, en alleen als je toestemming hebt gegeven.</p>
+<p>Als je een CSV- of Excel-bestand van je bank importeert, wordt het bestand alleen op je telefoon gelezen. Het bestand zelf wordt nooit bewaard, gekopieerd of verstuurd – niet naar een server en niet naar AI.</p>
+<p>Uit het bestand worden alleen de datum (en de boekdatum als het bestand die heeft), de omschrijving, het bedrag, de leverancier, het saldo van de bank om de rekening af te stemmen en de laatste vier cijfers van het rekeningnummer opgeslagen, om de rekening te herkennen. Betalingskenmerken, andere referenties en de overige kolommen van het bestand worden niet opgeslagen.</p>
+<p>Transacties die de bank nog niet heeft geboekt, worden opgeslagen als ‘In afwachting’ en verwijderd als ze niet worden geboekt.</p>
+<p>De app onthoudt hoe de kolommen in het bestand zijn ingedeeld, zonder de inhoud, zodat de volgende import sneller gaat. Als je bent ingelogd met Pro, wordt dit samen met je andere instellingen gesynchroniseerd.</p>
+<p>Lezen met AI wordt alleen gebruikt voor afbeeldingen en pdf’s, en alleen als je toestemming hebt gegeven.</p>
 </section>
     <section>
 <h2>Rekeningoverzichten, bonnen en facturen lezen met AI (optioneel)</h2>
 <p>Als je een screenshot of foto van een rekeningoverzicht importeert, of een bon of factuur scant, kun je die door AI laten lezen. De app vraagt eerst toestemming, en je kunt het op het importscherm altijd uitzetten. Zonder toestemming wordt alles op de telefoon gelezen en wordt er niets verstuurd.</p>
 <p>Met toestemming worden de afbeelding (of de tekst die eruit is gelezen), de valuta, je land, de datum van vandaag, de categorielijst van de app en de apparaat-ID via onze server bij Supabase (Ierland) naar Anthropic gestuurd, dat de rijen leest met zijn AI-model (Claude) en ze terugstuurt. Noch wij noch Supabase slaan de afbeelding, de tekst of de rijen op. Anthropic gebruikt gegevens die via zijn API worden verstuurd niet om zijn modellen te trainen en verwijdert ze na beperkte tijd volgens zijn eigen voorwaarden.</p>
-<p>Om de dienst binnen zijn grenzen te houden (20 keer lezen per apparaat per dag), slaat onze server de apparaat-ID, de datum en het aantal keren lezen op, en verder niets. Deze tellingen worden na 30 dagen automatisch verwijderd.</p>
+<p>Om de dienst binnen zijn grenzen te houden (een beperkt aantal keer lezen per apparaat), slaat onze server de apparaat-ID, de datum en het aantal keren lezen op, en verder niets. Deze tellingen worden na 30 dagen automatisch verwijderd.</p>
+</section>
+    <section>
+<h2>Bonnen en facturen scannen</h2>
+<p>Als je een bon of factuur scant, wordt de afbeelding op je telefoon gelezen, of met AI als je toestemming hebt gegeven (zie hierboven). De afbeelding wordt verwijderd zodra die is gelezen, ook als je annuleert of er iets misgaat. Uit de afbeelding worden alleen de winkel, de datum, het bedrag en de categorie opgeslagen. Betalingskenmerken en rekeningnummers worden nooit opgeslagen.</p>
 </section>
     <section>
 <h2>Crashrapporten</h2>
@@ -112,7 +119,7 @@
 </section>
     <section>
 <h2>Hoe lang gegevens worden bewaard</h2>
-<ul><li>Op de telefoon: tot je ze in de app verwijdert of de app verwijdert.</li><li>Je account en gesynchroniseerde gegevens: tot je het account in de app verwijdert.</li><li>Foto’s en tekst voor lezen met AI: niet door ons bewaard.</li><li>CSV- en Excel-bestanden die je importeert: niet bewaard. Alleen de transacties die je opslaat, blijven.</li><li>Telling van AI-lezingen: 30 dagen.</li><li>Logboek van inlogmails (zonder adres): 7 dagen.</li><li>Crashrapporten: hooguit 90 dagen.</li></ul>
+<ul><li>Op de telefoon: tot je ze in de app verwijdert of de app verwijdert.</li><li>Je account en gesynchroniseerde gegevens: tot je het account in de app verwijdert.</li><li>Foto’s en tekst voor lezen met AI: niet door ons bewaard.</li><li>CSV- en Excel-bestanden die je importeert: niet bewaard. Alleen de transacties die je opslaat en de indeling van de kolommen blijven.</li><li>Telling van AI-lezingen: 30 dagen.</li><li>Logboek van inlogmails (zonder adres): 7 dagen.</li><li>Crashrapporten: hooguit 90 dagen.</li></ul>
 </section>
     <section>
 <h2>Je rechten</h2>

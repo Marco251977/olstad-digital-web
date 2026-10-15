@@ -15,7 +15,7 @@
           "Budsjettet ditt lagres på telefonen din. Uten konto kan vi ikke se det.",
           "Konto er valgfritt (Apple, Google, Facebook eller e-post). Med konto og Pro synkes budsjettet til serveren vår i EU, så du kan bruke det på flere enheter.",
           "Det finnes ingen bankkobling.",
-          "CSV- og Excel-filer fra banken leses bare på telefonen og sendes aldri noe sted.",
+          "CSV- og Excel-filer fra banken leses bare på telefonen. Selve fila lagres, kopieres eller sendes aldri.",
           "Ingenting fra budsjettet ditt forlater telefonen med mindre du synker med Pro eller velger AI-lesing av en kontoliste, kvittering eller faktura.",
           "Krasjrapporter inneholder ingen personopplysninger.",
           "Du kan eksportere alt og slette alt i appen, gratis."
@@ -32,13 +32,16 @@
           "En tilfeldig enhets-ID, som bare brukes til å telle AI-lesinger (se nedenfor).",
           "Bilder du velger å beholde etter en import."
         ],
-        "after": ["KID-nummer og kontonummer på kontolister og fakturaer lagres aldri."]
+        "after": ["KID-nummer lagres aldri, og heller ikke hele kontonummeret. Appen kan lagre de fire siste sifrene i kontonummeret for å kjenne igjen kontoen."]
       },
       {
         "heading": "Import av CSV- og Excel-filer",
         "body": [
-          "Når du importerer en CSV- eller Excel-fil fra banken, leses filen bare på telefonen. Den lastes aldri opp til en server eller sendes til AI, og den lagres ikke som fil.",
-          "For hver post lagres bare dato, beskrivelse, beløp og leverandør. Kontonummer, navn, KID og andre referanser forkastes, sammen med resten av kolonnene i filen. AI-lesing brukes bare for bilder og PDF, og bare når du har sagt ja."
+          "Når du importerer en CSV- eller Excel-fil fra banken, leses fila bare på telefonen. Selve fila lagres, kopieres eller sendes aldri – verken til en server eller til AI.",
+          "Fra fila lagres bare dato (og bokføringsdato når fila har den), beskrivelse, beløp, leverandør, bankens saldo for å avstemme kontoen, og de fire siste sifrene i kontonummeret, for å kjenne igjen kontoen. KID, andre referanser og resten av kolonnene i fila lagres ikke.",
+          "Poster som ikke er bokført ennå, lagres som «Venter» og fjernes hvis de ikke blir bokført.",
+          "Appen husker hvordan kolonnene i fila er satt opp, uten innholdet, så neste import går raskere. Når du er logget inn med Pro, synkes dette sammen med de andre innstillingene dine.",
+          "AI-lesing brukes bare for bilder og PDF, og bare når du har sagt ja."
         ]
       },
       {
@@ -46,8 +49,12 @@
         "body": [
           "Når du importerer et skjermbilde eller foto av en kontoliste, eller skanner en kvittering eller faktura, kan du la AI lese den. Appen spør om lov først, og du kan slå det av når som helst på importskjermen. Uten lov leses alt på telefonen, og ingenting sendes.",
           "Med lov sendes bildet (eller teksten som er lest fra det), valutaen, landet ditt, dagens dato, appens kategoriliste og enhets-ID-en gjennom {{server}} til Anthropic, som leser radene med sin AI-modell (Claude) og sender dem tilbake. Verken vi eller Supabase lagrer bildet, teksten eller radene. Anthropic bruker ikke data som sendes gjennom API-et sitt til å trene modellene sine, og sletter dem etter en begrenset tid etter sine egne vilkår.",
-          "For å holde tjenesten innenfor grensene (20 lesinger per enhet per dag) lagrer serveren vår enhets-ID-en, datoen og antall lesinger, og ingenting annet. Disse tellingene slettes automatisk etter 30 dager."
+          "For å holde tjenesten innenfor grensene (et begrenset antall lesinger per enhet) lagrer serveren vår enhets-ID-en, datoen og antall lesinger, og ingenting annet. Disse tellingene slettes automatisk etter 30 dager."
         ]
+      },
+      {
+        "heading": "Skanning av kvitteringer og fakturaer",
+        "body": ["Når du skanner en kvittering eller faktura, leses bildet på telefonen, eller med AI hvis du har sagt ja (se over). Bildet slettes så snart det er lest, også hvis du avbryter eller noe går galt. Fra bildet lagres bare butikk, dato, beløp og kategori. KID og kontonummer lagres aldri."]
       },
       {
         "heading": "Krasjrapporter",
@@ -101,7 +108,7 @@
           "På telefonen: til du sletter dem i appen eller avinstallerer appen.",
           "Kontoen din og synkede data: til du sletter kontoen i appen.",
           "Bilder og tekst for AI-lesing: lagres ikke hos oss.",
-          "CSV- og Excel-filer du importerer: lagres ikke. Bare postene du lagrer, blir igjen.",
+          "CSV- og Excel-filer du importerer: lagres ikke. Bare postene du lagrer og oppsettet av kolonnene i fila blir igjen.",
           "Telling av AI-lesinger: 30 dager.",
           "Logg over innloggings-e-post (uten adresse): 7 dager.",
           "Krasjrapporter: høyst 90 dager."
@@ -176,7 +183,7 @@
       },
       {
         "q": "Hvordan importerer jeg fra nettbanken?",
-        "a": "Trykk + og Importer fra nettbank. Bruk skjermbilder eller foto av listen, eller en PDF-, CSV- eller Excel-fil du har eksportert fra banken. Du går gjennom hver rad før noe lagres, og rader du har fra før, er merket. Saldo Pocket kobler seg aldri til banken din."
+        "a": "Trykk + og velg hvordan du vil hente transaksjonene (skjermbilder eller fil fra nettbanken). Du går gjennom hver rad før noe lagres, og rader du har fra før, er merket. Saldo Pocket kobler seg aldri til banken din."
       },
       {
         "q": "Hvordan sletter jeg dataene mine?",
