@@ -160,6 +160,9 @@ function appPage(app, page, lang) {
       nav,
       `<section class="card"><h2>${fill(a.support.contactHeading)}</h2><p>${fill(a.support.contactBody, vars)}</p></section>`,
       `<section class="faq"><h2>${fill(a.support.faqHeading)}</h2>`,
+      // Round 40c: no Free/Pro comparison on the site (limits, prices, trial and what Pro has live only in the app, so
+      // the pages never need updating when the app changes) – one line pointing to Pro in the app.
+      `<p>${fill(a.support.proNote, vars)}</p>`,
       ...a.support.faq.map((f) => `<details><summary>${fill(f.q, vars)}</summary><p>${fill(f.a, vars)}</p></details>`),
       '</section>',
     ];

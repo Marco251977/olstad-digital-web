@@ -15,6 +15,7 @@
           "Il tuo budget è salvato sul telefono. Senza account non possiamo vederlo.",
           "L’account è facoltativo (Apple, Google, Facebook o e-mail). Con account e Pro il budget viene sincronizzato con il nostro server nell’UE, così puoi usarlo su più dispositivi.",
           "Non c’è alcun collegamento bancario.",
+          "I file CSV ed Excel della tua banca vengono letti solo sul telefono. Il file in sé non viene mai salvato, copiato né inviato.",
           "Nulla del tuo budget lascia il telefono, a meno che tu non sincronizzi con Pro o scelga la lettura con IA di un estratto conto, uno scontrino o una fattura.",
           "I rapporti sugli arresti anomali non contengono dati personali.",
           "Puoi esportare ed eliminare tutto nell’app, gratis."
@@ -31,15 +32,29 @@
           "Un ID casuale del dispositivo, usato solo per contare le letture con IA (vedi sotto).",
           "Le immagini che scegli di conservare dopo un’importazione."
         ],
-        "after": ["I codici di pagamento e i numeri di conto presenti su estratti conto e fatture non vengono mai salvati."]
+        "after": ["I codici di pagamento non vengono mai salvati, e nemmeno il numero di conto completo. L’app può salvare le ultime quattro cifre del numero di conto per riconoscere il conto."]
+      },
+      {
+        "heading": "Importazione di file CSV ed Excel",
+        "body": [
+          "Quando importi un file CSV o Excel dalla tua banca, il file viene letto solo sul telefono. Il file in sé non viene mai salvato, copiato né inviato: né a un server né all’IA.",
+          "Dal file vengono salvati solo la data (e la data contabile, se il file la riporta), la descrizione, l’importo, l’esercente, il saldo della banca per riconciliare il conto e le ultime quattro cifre del numero di conto, per riconoscere il conto. Codici di pagamento, altri riferimenti e le altre colonne del file non vengono salvati.",
+          "I movimenti che la banca non ha ancora contabilizzato vengono salvati come «In attesa» e rimossi se non vengono contabilizzati.",
+          "L’app ricorda come sono disposte le colonne del file, senza il loro contenuto, così la prossima importazione è più veloce. Se hai effettuato l’accesso con Pro, questo viene sincronizzato con le altre impostazioni.",
+          "La lettura con IA si usa solo per immagini e PDF, e solo se hai dato il consenso."
+        ]
       },
       {
         "heading": "Lettura con IA di estratti conto, scontrini e fatture (facoltativa)",
         "body": [
           "Quando importi uno screenshot o una foto di un estratto conto, o scansioni uno scontrino o una fattura, puoi lasciarlo leggere all’IA. L’app ti chiede prima il permesso e puoi disattivarlo in qualsiasi momento nella schermata di importazione. Senza permesso, tutto viene letto sul telefono e nulla viene inviato.",
           "Con il permesso, l’immagine (o il testo letto da essa), la valuta, il tuo paese, la data di oggi, l’elenco delle categorie dell’app e l’ID del dispositivo vengono inviati tramite {{server}} ad Anthropic, che legge le righe con il suo modello di IA (Claude) e le restituisce. Né noi né Supabase salviamo l’immagine, il testo o le righe. Anthropic non usa i dati inviati tramite la sua API per addestrare i propri modelli e li elimina dopo un tempo limitato secondo i propri termini.",
-          "Per mantenere il servizio nei suoi limiti (20 letture per dispositivo al giorno), il nostro server salva l’ID del dispositivo, la data e il numero di letture, e nient’altro. Questi conteggi vengono eliminati automaticamente dopo 30 giorni."
+          "Per mantenere il servizio nei suoi limiti (un numero limitato di letture per dispositivo), il nostro server salva l’ID del dispositivo, la data e il numero di letture, e nient’altro. Questi conteggi vengono eliminati automaticamente dopo 30 giorni."
         ]
+      },
+      {
+        "heading": "Scansione di scontrini e fatture",
+        "body": ["Quando scansioni uno scontrino o una fattura, l’immagine viene letta sul telefono, oppure con l’IA se hai dato il consenso (vedi sopra). L’immagine viene eliminata appena letta, anche se annulli o qualcosa va storto. Dall’immagine vengono salvati solo negozio, data, importo e categoria. Codici di pagamento e numeri di conto non vengono mai salvati."]
       },
       {
         "heading": "Rapporti sugli arresti anomali",
@@ -93,6 +108,7 @@
           "Sul telefono: finché non li elimini nell’app o disinstalli l’app.",
           "Il tuo account e i dati sincronizzati: finché non elimini l’account nell’app.",
           "Immagini e testo per la lettura con IA: non conservati da noi.",
+          "File CSV ed Excel che importi: non conservati. Restano solo i movimenti che salvi e la disposizione delle colonne del file.",
           "Conteggio delle letture con IA: 30 giorni.",
           "Registro delle e-mail di accesso (senza indirizzo): 7 giorni.",
           "Rapporti sugli arresti anomali: al massimo 90 giorni."
@@ -155,22 +171,19 @@
     "contactHeading": "Contatti",
     "contactBody": "E-mail {{email}}. Indicaci il modello del telefono e la versione dell’app (in fondo a Io).",
     "faqHeading": "Domande frequenti",
+    "proNote": "Apri Pro nell’app per vedere cosa è incluso.",
     "faq": [
       {
-        "q": "Qual è la differenza tra Gratis e Pro?",
-        "a": "Gratis offre il budget, «Oggi puoi spendere», 2 conti, 1 budget, 1 obiettivo di risparmio, 5 categorie personali, 3 scansioni al mese e l’esportazione di tutti i tuoi dati. Pro offre fino a 10 conti, scansioni, obiettivi e categorie illimitati, movimenti fissi registrati automaticamente, storico e statistiche nel tempo, e report in Excel e CSV. I prezzi sono indicati nell’App Store e su Google Play, nella tua valuta."
-      },
-      {
         "q": "Come ripristino l’acquisto su un nuovo telefono?",
-        "a": "Pro è legato al tuo ID Apple o al tuo account Google. Accedi con lo stesso account sul nuovo telefono, apri Saldo Pocket e tocca Ripristina acquisti. Gli acquisti di Pro non sono ancora aperti; ecco come funzionerà."
+        "a": "Pro è legato al tuo ID Apple o al tuo account Google. Accedi con lo stesso account sul nuovo telefono, apri Saldo Pocket e tocca Ripristina acquisti."
       },
       {
         "q": "Come esporto i miei dati?",
-        "a": "Vai su Io → Esporta dati. Esporta tutti i miei dati (JSON o CSV) è gratis per tutti. Con Pro puoi anche esportare report per un periodo e un conto in Excel o CSV."
+        "a": "Vai su Io → Esporta dati. Esporta tutti i miei dati (JSON o CSV) è gratis per tutti."
       },
       {
         "q": "Come importo dall’home banking?",
-        "a": "Tocca + e Importa dall’home banking. Usa screenshot o foto dell’elenco, oppure un file PDF, CSV o Excel esportato dalla tua banca. Controlli ogni riga prima di salvare qualsiasi cosa, e le righe che hai già sono segnalate. Saldo Pocket non si collega mai alla tua banca."
+        "a": "Tocca + e scegli come vuoi portare i movimenti (screenshot o un file dall’home banking). Controlli ogni riga prima di salvare qualsiasi cosa, e le righe che hai già sono segnalate. Saldo Pocket non si collega mai alla tua banca."
       },
       {
         "q": "Come elimino i miei dati?",

@@ -51,7 +51,7 @@
     <p class="app-name">Saldo Pocket</p>
     <h1>Polityka prywatności</h1>
     <p class="lede">Ta polityka wyjaśnia, co Saldo Pocket przechowuje, co wysyła i komu oraz co możesz z tym zrobić. W skrócie: Twój budżet zostaje na telefonie.</p>
-    <p class="updated">Ostatnia zmiana: 10 października 2026</p>
+    <p class="updated">Ostatnia zmiana: 15 października 2026</p>
     <ul class="page-nav"><li><a href="/pl/saldo-pocket/privacy" aria-current="page">Polityka prywatności</a></li><li><a href="/pl/saldo-pocket/terms">Warunki korzystania</a></li><li><a href="/pl/saldo-pocket/delete-account">Usuwanie konta i danych</a></li><li><a href="/pl/saldo-pocket/support">Pomoc</a></li></ul>
     <section>
 <h2>Kto jest odpowiedzialny</h2>
@@ -59,19 +59,31 @@
 </section>
     <section>
 <h2>W skrócie</h2>
-<ul><li>Twój budżet jest zapisany na telefonie. Bez konta nie możemy go zobaczyć.</li><li>Konto jest opcjonalne (Apple, Google, Facebook lub e-mail). Z kontem i Pro budżet jest synchronizowany z naszym serwerem w UE, aby korzystać z niego na kilku urządzeniach.</li><li>Nie ma połączenia z bankiem.</li><li>Nic z Twojego budżetu nie opuszcza telefonu, chyba że synchronizujesz z Pro albo wybierzesz odczyt wyciągu, paragonu lub faktury przez AI.</li><li>Raporty o awariach nie zawierają danych osobowych.</li><li>Możesz bezpłatnie wyeksportować i usunąć wszystko w aplikacji.</li></ul>
+<ul><li>Twój budżet jest zapisany na telefonie. Bez konta nie możemy go zobaczyć.</li><li>Konto jest opcjonalne (Apple, Google, Facebook lub e-mail). Z kontem i Pro budżet jest synchronizowany z naszym serwerem w UE, aby korzystać z niego na kilku urządzeniach.</li><li>Nie ma połączenia z bankiem.</li><li>Pliki CSV i Excel z banku są odczytywane tylko na Twoim telefonie. Sam plik nigdy nie jest zapisywany, kopiowany ani wysyłany.</li><li>Nic z Twojego budżetu nie opuszcza telefonu, chyba że synchronizujesz z Pro albo wybierzesz odczyt wyciągu, paragonu lub faktury przez AI.</li><li>Raporty o awariach nie zawierają danych osobowych.</li><li>Możesz bezpłatnie wyeksportować i usunąć wszystko w aplikacji.</li></ul>
 </section>
     <section>
 <h2>Przechowywane na Twoim telefonie</h2>
 <p>Aplikacja przechowuje to we własnej pamięci na telefonie. Nie jest to wysyłane do nas i zostaje usunięte, gdy usuniesz wszystkie dane w aplikacji lub ją odinstalujesz:</p>
 <ul><li>Konta, które tworzysz (wybrane przez Ciebie nazwy, saldo i waluta; nie są to konta bankowe).</li><li>Twoje operacje: data, kwota, waluta, kategoria, odbiorca i opcjonalna notatka.</li><li>Stałe pozycje, cele oszczędnościowe, własne kategorie i kategoria zapamiętana dla każdego odbiorcy.</li><li>Ustawienia: dzień wypłaty, budżet miesięczny, język i waluta oraz to, czy zezwalasz na odczyt przez AI.</li><li>Losowy identyfikator urządzenia, używany tylko do liczenia odczytów przez AI (zob. niżej).</li><li>Obrazy, które zdecydujesz się zachować po imporcie.</li></ul>
-<p>Numery referencyjne płatności i numery kont z wyciągów i faktur nigdy nie są zapisywane.</p>
+<p>Numery referencyjne płatności nigdy nie są zapisywane, podobnie jak pełny numer konta. Aplikacja może zapisać ostatnie cztery cyfry numeru konta, aby rozpoznać konto.</p>
+</section>
+    <section>
+<h2>Import plików CSV i Excel</h2>
+<p>Gdy importujesz plik CSV lub Excel z banku, plik jest odczytywany tylko na Twoim telefonie. Sam plik nigdy nie jest zapisywany, kopiowany ani wysyłany – ani na serwer, ani do AI.</p>
+<p>Z pliku zapisywane są tylko data (i data księgowania, jeśli plik ją zawiera), opis, kwota, odbiorca, saldo z banku do uzgodnienia konta oraz ostatnie cztery cyfry numeru konta, aby rozpoznać konto. Numery referencyjne płatności, inne odnośniki i pozostałe kolumny pliku nie są zapisywane.</p>
+<p>Transakcje, których bank jeszcze nie zaksięgował, są zapisywane jako „Oczekuje” i usuwane, jeśli nie zostaną zaksięgowane.</p>
+<p>Aplikacja zapamiętuje układ kolumn w pliku, bez ich zawartości, aby kolejny import był szybszy. Gdy jesteś zalogowany z Pro, jest to synchronizowane razem z pozostałymi ustawieniami.</p>
+<p>Odczyt przez AI dotyczy tylko zdjęć i plików PDF i tylko za Twoją zgodą.</p>
 </section>
     <section>
 <h2>Odczyt wyciągów, paragonów i faktur przez AI (opcjonalnie)</h2>
 <p>Gdy importujesz zrzut ekranu lub zdjęcie wyciągu albo skanujesz paragon lub fakturę, możesz pozwolić, aby AI je odczytała. Aplikacja najpierw prosi o zgodę, a na ekranie importu możesz to w każdej chwili wyłączyć. Bez zgody wszystko jest odczytywane na telefonie i nic nie jest wysyłane.</p>
 <p>Za zgodą obraz (lub odczytany z niego tekst), waluta, Twój kraj, dzisiejsza data, lista kategorii aplikacji i identyfikator urządzenia są wysyłane przez nasz serwer w Supabase (Irlandia) do Anthropic, który odczytuje wiersze za pomocą swojego modelu AI (Claude) i odsyła je z powrotem. Ani my, ani Supabase nie przechowujemy obrazu, tekstu ani wierszy. Anthropic nie używa danych przesyłanych przez swoje API do trenowania modeli i usuwa je po ograniczonym czasie zgodnie z własnymi warunkami.</p>
-<p>Aby usługa mieściła się w limitach (20 odczytów na urządzenie dziennie), nasz serwer przechowuje identyfikator urządzenia, datę i liczbę odczytów — nic więcej. Te liczniki są automatycznie usuwane po 30 dniach.</p>
+<p>Aby usługa mieściła się w limitach (ograniczona liczba odczytów na urządzenie), nasz serwer przechowuje identyfikator urządzenia, datę i liczbę odczytów — nic więcej. Te liczniki są automatycznie usuwane po 30 dniach.</p>
+</section>
+    <section>
+<h2>Skanowanie paragonów i faktur</h2>
+<p>Gdy skanujesz paragon lub fakturę, obraz jest odczytywany na telefonie albo przez AI, jeśli wyraziłeś zgodę (patrz wyżej). Obraz jest usuwany zaraz po odczytaniu, także gdy anulujesz lub coś pójdzie nie tak. Z obrazu zapisywane są tylko sklep, data, kwota i kategoria. Numery referencyjne płatności i numery kont nigdy nie są zapisywane.</p>
 </section>
     <section>
 <h2>Raporty o awariach</h2>
@@ -107,7 +119,7 @@
 </section>
     <section>
 <h2>Jak długo przechowujemy dane</h2>
-<ul><li>Na telefonie: do czasu ich usunięcia w aplikacji lub odinstalowania aplikacji.</li><li>Twoje konto i zsynchronizowane dane: do czasu usunięcia konta w aplikacji.</li><li>Obrazy i tekst do odczytu przez AI: nie są u nas przechowywane.</li><li>Licznik odczytów przez AI: 30 dni.</li><li>Dziennik e-maili logowania (bez adresu): 7 dni.</li><li>Raporty o awariach: najwyżej 90 dni.</li></ul>
+<ul><li>Na telefonie: do czasu ich usunięcia w aplikacji lub odinstalowania aplikacji.</li><li>Twoje konto i zsynchronizowane dane: do czasu usunięcia konta w aplikacji.</li><li>Obrazy i tekst do odczytu przez AI: nie są u nas przechowywane.</li><li>Importowane pliki CSV i Excel: nie są przechowywane. Zostają tylko transakcje, które zapiszesz, i układ kolumn pliku.</li><li>Licznik odczytów przez AI: 30 dni.</li><li>Dziennik e-maili logowania (bez adresu): 7 dni.</li><li>Raporty o awariach: najwyżej 90 dni.</li></ul>
 </section>
     <section>
 <h2>Twoje prawa</h2>

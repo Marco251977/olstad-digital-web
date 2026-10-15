@@ -15,6 +15,7 @@
           "Twój budżet jest zapisany na telefonie. Bez konta nie możemy go zobaczyć.",
           "Konto jest opcjonalne (Apple, Google, Facebook lub e-mail). Z kontem i Pro budżet jest synchronizowany z naszym serwerem w UE, aby korzystać z niego na kilku urządzeniach.",
           "Nie ma połączenia z bankiem.",
+          "Pliki CSV i Excel z banku są odczytywane tylko na Twoim telefonie. Sam plik nigdy nie jest zapisywany, kopiowany ani wysyłany.",
           "Nic z Twojego budżetu nie opuszcza telefonu, chyba że synchronizujesz z Pro albo wybierzesz odczyt wyciągu, paragonu lub faktury przez AI.",
           "Raporty o awariach nie zawierają danych osobowych.",
           "Możesz bezpłatnie wyeksportować i usunąć wszystko w aplikacji."
@@ -31,15 +32,29 @@
           "Losowy identyfikator urządzenia, używany tylko do liczenia odczytów przez AI (zob. niżej).",
           "Obrazy, które zdecydujesz się zachować po imporcie."
         ],
-        "after": ["Numery referencyjne płatności i numery kont z wyciągów i faktur nigdy nie są zapisywane."]
+        "after": ["Numery referencyjne płatności nigdy nie są zapisywane, podobnie jak pełny numer konta. Aplikacja może zapisać ostatnie cztery cyfry numeru konta, aby rozpoznać konto."]
+      },
+      {
+        "heading": "Import plików CSV i Excel",
+        "body": [
+          "Gdy importujesz plik CSV lub Excel z banku, plik jest odczytywany tylko na Twoim telefonie. Sam plik nigdy nie jest zapisywany, kopiowany ani wysyłany – ani na serwer, ani do AI.",
+          "Z pliku zapisywane są tylko data (i data księgowania, jeśli plik ją zawiera), opis, kwota, odbiorca, saldo z banku do uzgodnienia konta oraz ostatnie cztery cyfry numeru konta, aby rozpoznać konto. Numery referencyjne płatności, inne odnośniki i pozostałe kolumny pliku nie są zapisywane.",
+          "Transakcje, których bank jeszcze nie zaksięgował, są zapisywane jako „Oczekuje” i usuwane, jeśli nie zostaną zaksięgowane.",
+          "Aplikacja zapamiętuje układ kolumn w pliku, bez ich zawartości, aby kolejny import był szybszy. Gdy jesteś zalogowany z Pro, jest to synchronizowane razem z pozostałymi ustawieniami.",
+          "Odczyt przez AI dotyczy tylko zdjęć i plików PDF i tylko za Twoją zgodą."
+        ]
       },
       {
         "heading": "Odczyt wyciągów, paragonów i faktur przez AI (opcjonalnie)",
         "body": [
           "Gdy importujesz zrzut ekranu lub zdjęcie wyciągu albo skanujesz paragon lub fakturę, możesz pozwolić, aby AI je odczytała. Aplikacja najpierw prosi o zgodę, a na ekranie importu możesz to w każdej chwili wyłączyć. Bez zgody wszystko jest odczytywane na telefonie i nic nie jest wysyłane.",
           "Za zgodą obraz (lub odczytany z niego tekst), waluta, Twój kraj, dzisiejsza data, lista kategorii aplikacji i identyfikator urządzenia są wysyłane przez {{server}} do Anthropic, który odczytuje wiersze za pomocą swojego modelu AI (Claude) i odsyła je z powrotem. Ani my, ani Supabase nie przechowujemy obrazu, tekstu ani wierszy. Anthropic nie używa danych przesyłanych przez swoje API do trenowania modeli i usuwa je po ograniczonym czasie zgodnie z własnymi warunkami.",
-          "Aby usługa mieściła się w limitach (20 odczytów na urządzenie dziennie), nasz serwer przechowuje identyfikator urządzenia, datę i liczbę odczytów — nic więcej. Te liczniki są automatycznie usuwane po 30 dniach."
+          "Aby usługa mieściła się w limitach (ograniczona liczba odczytów na urządzenie), nasz serwer przechowuje identyfikator urządzenia, datę i liczbę odczytów — nic więcej. Te liczniki są automatycznie usuwane po 30 dniach."
         ]
+      },
+      {
+        "heading": "Skanowanie paragonów i faktur",
+        "body": ["Gdy skanujesz paragon lub fakturę, obraz jest odczytywany na telefonie albo przez AI, jeśli wyraziłeś zgodę (patrz wyżej). Obraz jest usuwany zaraz po odczytaniu, także gdy anulujesz lub coś pójdzie nie tak. Z obrazu zapisywane są tylko sklep, data, kwota i kategoria. Numery referencyjne płatności i numery kont nigdy nie są zapisywane."]
       },
       {
         "heading": "Raporty o awariach",
@@ -93,6 +108,7 @@
           "Na telefonie: do czasu ich usunięcia w aplikacji lub odinstalowania aplikacji.",
           "Twoje konto i zsynchronizowane dane: do czasu usunięcia konta w aplikacji.",
           "Obrazy i tekst do odczytu przez AI: nie są u nas przechowywane.",
+          "Importowane pliki CSV i Excel: nie są przechowywane. Zostają tylko transakcje, które zapiszesz, i układ kolumn pliku.",
           "Licznik odczytów przez AI: 30 dni.",
           "Dziennik e-maili logowania (bez adresu): 7 dni.",
           "Raporty o awariach: najwyżej 90 dni."
@@ -155,22 +171,19 @@
     "contactHeading": "Kontakt",
     "contactBody": "E-mail {{email}}. Podaj, proszę, model telefonu i wersję aplikacji (na dole ekranu Ja).",
     "faqHeading": "Najczęstsze pytania",
+    "proNote": "Sprawdź Pro w aplikacji, aby zobaczyć, co obejmuje.",
     "faq": [
       {
-        "q": "Czym różni się wersja Darmowa od Pro?",
-        "a": "Wersja Darmowa ma budżet, „Dziś możesz wydać”, 2 konta, 1 budżet, 1 cel oszczędnościowy, 5 własnych kategorii, 3 skanowania miesięcznie i eksport wszystkich danych. Pro daje do 10 kont, nieograniczone skanowania, cele i kategorie, stałe pozycje księgowane automatycznie, historię i statystyki w czasie oraz raporty do Excela i CSV. Ceny są widoczne w App Store i Google Play w Twojej walucie."
-      },
-      {
         "q": "Jak przywrócić zakup na nowym telefonie?",
-        "a": "Pro jest powiązane z Twoim Apple ID lub kontem Google. Zaloguj się na nowym telefonie tym samym kontem, otwórz Saldo Pocket i dotknij Przywróć zakupy. Zakup Pro nie jest jeszcze dostępny; tak to będzie działać."
+        "a": "Pro jest powiązane z Twoim Apple ID lub kontem Google. Zaloguj się na nowym telefonie tym samym kontem, otwórz Saldo Pocket i dotknij Przywróć zakupy."
       },
       {
         "q": "Jak wyeksportować dane?",
-        "a": "Przejdź do Ja → Eksport danych. Eksportuj wszystkie moje dane (JSON lub CSV) jest bezpłatne dla wszystkich. Z Pro możesz też eksportować raporty za okres i dla konta do Excela lub CSV."
+        "a": "Przejdź do Ja → Eksport danych. Eksportuj wszystkie moje dane (JSON lub CSV) jest bezpłatne dla wszystkich."
       },
       {
         "q": "Jak zaimportować dane z bankowości internetowej?",
-        "a": "Dotknij + i Import z bankowości internetowej. Użyj zrzutów ekranu lub zdjęć listy albo pliku PDF, CSV lub Excel wyeksportowanego z banku. Przeglądasz każdy wiersz, zanim cokolwiek zostanie zapisane, a wiersze, które już masz, są oznaczone. Saldo Pocket nigdy nie łączy się z Twoim bankiem."
+        "a": "Dotknij + i wybierz, jak chcesz pobrać transakcje (zrzuty ekranu lub plik z bankowości internetowej). Przeglądasz każdy wiersz, zanim cokolwiek zostanie zapisane, a wiersze, które już masz, są oznaczone. Saldo Pocket nigdy nie łączy się z Twoim bankiem."
       },
       {
         "q": "Jak usunąć dane?",

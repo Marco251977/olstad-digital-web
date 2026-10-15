@@ -15,6 +15,7 @@
           "Votre budget est enregistré sur votre téléphone. Sans compte, nous ne pouvons pas le voir.",
           "Un compte est facultatif (Apple, Google, Facebook ou e-mail). Avec un compte et Pro, votre budget est synchronisé avec notre serveur dans l’UE pour l’utiliser sur plusieurs appareils.",
           "Il n’y a aucune connexion bancaire.",
+          "Les fichiers CSV et Excel de votre banque sont lus uniquement sur votre téléphone. Le fichier lui-même n’est jamais conservé, copié ni envoyé.",
           "Rien de votre budget ne quitte le téléphone, sauf si vous synchronisez avec Pro ou choisissez la lecture par IA d’un relevé, d’un reçu ou d’une facture.",
           "Les rapports de plantage ne contiennent aucune donnée personnelle.",
           "Vous pouvez tout exporter et tout supprimer dans l’application, gratuitement."
@@ -31,15 +32,29 @@
           "Un identifiant d’appareil aléatoire, utilisé uniquement pour compter les lectures par IA (voir ci-dessous).",
           "Les images que vous choisissez de garder après une importation."
         ],
-        "after": ["Les références de paiement et les numéros de compte figurant sur les relevés et factures ne sont jamais enregistrés."]
+        "after": ["Les références de paiement ne sont jamais enregistrées, pas plus que le numéro de compte complet. L’app peut enregistrer les quatre derniers chiffres du numéro de compte pour reconnaître le compte."]
+      },
+      {
+        "heading": "Import de fichiers CSV et Excel",
+        "body": [
+          "Quand vous importez un fichier CSV ou Excel de votre banque, le fichier est lu uniquement sur votre téléphone. Le fichier lui-même n’est jamais conservé, copié ni envoyé – ni vers un serveur ni à l’IA.",
+          "Du fichier, seuls la date (et la date de comptabilisation quand le fichier l’indique), le libellé, le montant, le commerçant, le solde de la banque pour rapprocher le compte et les quatre derniers chiffres du numéro de compte, pour reconnaître le compte, sont enregistrés. Les références de paiement, les autres références et les autres colonnes du fichier ne sont pas enregistrées.",
+          "Les opérations que la banque n’a pas encore comptabilisées sont enregistrées « En attente » et supprimées si elles ne sont pas comptabilisées.",
+          "L’app retient la disposition des colonnes du fichier, sans leur contenu, pour que la prochaine importation soit plus rapide. Si vous êtes connecté avec Pro, elle est synchronisée avec vos autres réglages.",
+          "La lecture par IA ne sert qu’aux images et aux PDF, et seulement avec votre accord."
+        ]
       },
       {
         "heading": "Lecture par IA de relevés, reçus et factures (facultatif)",
         "body": [
           "Lorsque vous importez une capture d’écran ou une photo d’un relevé, ou scannez un reçu ou une facture, vous pouvez laisser l’IA le lire. L’app vous demande d’abord l’autorisation, et vous pouvez la désactiver à tout moment sur l’écran d’importation. Sans autorisation, tout est lu sur le téléphone et rien n’est envoyé.",
           "Avec autorisation, l’image (ou le texte qui en a été lu), la devise, votre pays, la date du jour, la liste des catégories de l’app et l’identifiant de l’appareil sont envoyés via {{server}} à Anthropic, qui lit les lignes avec son modèle d’IA (Claude) et les renvoie. Ni nous ni Supabase n’enregistrons l’image, le texte ou les lignes. Anthropic n’utilise pas les données envoyées via son API pour entraîner ses modèles et les supprime après une durée limitée selon ses propres conditions.",
-          "Pour maintenir le service dans ses limites (20 lectures par appareil et par jour), notre serveur enregistre l’identifiant de l’appareil, la date et le nombre de lectures, et rien d’autre. Ces compteurs sont supprimés automatiquement après 30 jours."
+          "Pour maintenir le service dans ses limites (un nombre limité de lectures par appareil), notre serveur enregistre l’identifiant de l’appareil, la date et le nombre de lectures, et rien d’autre. Ces compteurs sont supprimés automatiquement après 30 jours."
         ]
+      },
+      {
+        "heading": "Numérisation de reçus et de factures",
+        "body": ["Quand vous scannez un reçu ou une facture, l’image est lue sur votre téléphone, ou par l’IA si vous avez donné votre accord (voir ci-dessus). L’image est supprimée dès qu’elle a été lue, même si vous annulez ou si une erreur survient. De l’image, seuls le magasin, la date, le montant et la catégorie sont enregistrés. Les références de paiement et les numéros de compte ne sont jamais enregistrés."]
       },
       {
         "heading": "Rapports de plantage",
@@ -93,6 +108,7 @@
           "Sur le téléphone : jusqu’à ce que vous les supprimiez dans l’application ou désinstalliez l’application.",
           "Votre compte et les données synchronisées : jusqu’à ce que vous supprimiez le compte dans l’application.",
           "Images et texte pour la lecture par IA : non conservés chez nous.",
+          "Fichiers CSV et Excel que vous importez : non conservés. Seules les opérations que vous enregistrez et la disposition des colonnes du fichier restent.",
           "Décompte des lectures par IA : 30 jours.",
           "Journal des e-mails de connexion (sans adresse) : 7 jours.",
           "Rapports de plantage : 90 jours au plus."
@@ -155,22 +171,19 @@
     "contactHeading": "Contact",
     "contactBody": "E-mail {{email}}. Indiquez-nous votre modèle de téléphone et la version de l’app (en bas de Moi).",
     "faqHeading": "Questions fréquentes",
+    "proNote": "Consultez Pro dans l’app pour voir ce qui est inclus.",
     "faq": [
       {
-        "q": "Quelle est la différence entre Gratuit et Pro ?",
-        "a": "Gratuit comprend le budget, « Vous pouvez dépenser aujourd’hui », 2 comptes, 1 budget, 1 objectif d’épargne, 5 catégories personnelles, 3 scans par mois et l’export de toutes vos données. Pro offre jusqu’à 10 comptes, des scans, objectifs et catégories illimités, des récurrents enregistrés automatiquement, l’historique et les statistiques dans le temps, et des rapports Excel et CSV. Les prix sont affichés dans l’App Store et Google Play, dans votre devise."
-      },
-      {
         "q": "Comment restaurer mon achat sur un nouveau téléphone ?",
-        "a": "Pro est lié à votre identifiant Apple ou à votre compte Google. Connectez-vous avec le même compte sur le nouveau téléphone, ouvrez Saldo Pocket et touchez Restaurer les achats. Les achats de Pro ne sont pas encore ouverts ; voici comment cela fonctionnera."
+        "a": "Pro est lié à votre identifiant Apple ou à votre compte Google. Connectez-vous avec le même compte sur le nouveau téléphone, ouvrez Saldo Pocket et touchez Restaurer les achats."
       },
       {
         "q": "Comment exporter mes données ?",
-        "a": "Allez dans Moi → Exporter les données. Exporter toutes mes données (JSON ou CSV) est gratuit pour tous. Avec Pro, vous pouvez aussi exporter des rapports pour une période et un compte vers Excel ou CSV."
+        "a": "Allez dans Moi → Exporter les données. Exporter toutes mes données (JSON ou CSV) est gratuit pour tous."
       },
       {
         "q": "Comment importer depuis ma banque en ligne ?",
-        "a": "Touchez + puis Importer depuis la banque en ligne. Utilisez des captures d’écran ou des photos de la liste, ou un fichier PDF, CSV ou Excel exporté de votre banque. Vous vérifiez chaque ligne avant tout enregistrement, et les lignes que vous avez déjà sont signalées. Saldo Pocket ne se connecte jamais à votre banque."
+        "a": "Touchez + et choisissez comment récupérer vos opérations (captures d’écran ou fichier de votre banque en ligne). Vous vérifiez chaque ligne avant tout enregistrement, et les lignes que vous avez déjà sont signalées. Saldo Pocket ne se connecte jamais à votre banque."
       },
       {
         "q": "Comment supprimer mes données ?",

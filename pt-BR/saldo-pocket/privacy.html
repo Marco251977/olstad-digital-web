@@ -51,7 +51,7 @@
     <p class="app-name">Saldo Pocket</p>
     <h1>Política de privacidade</h1>
     <p class="lede">Esta política explica o que o Saldo Pocket guarda, o que envia e para quem, e o que você pode fazer a respeito. Resumindo: seu orçamento fica no seu celular.</p>
-    <p class="updated">Última atualização: 10 de outubro de 2026</p>
+    <p class="updated">Última atualização: 15 de outubro de 2026</p>
     <ul class="page-nav"><li><a href="/pt-BR/saldo-pocket/privacy" aria-current="page">Política de privacidade</a></li><li><a href="/pt-BR/saldo-pocket/terms">Termos de uso</a></li><li><a href="/pt-BR/saldo-pocket/delete-account">Excluir conta e dados</a></li><li><a href="/pt-BR/saldo-pocket/support">Suporte</a></li></ul>
     <section>
 <h2>Quem é o responsável</h2>
@@ -59,19 +59,31 @@
 </section>
     <section>
 <h2>Resumindo</h2>
-<ul><li>Seu orçamento fica salvo no seu celular. Sem conta, não conseguimos vê-lo.</li><li>A conta é opcional (Apple, Google, Facebook ou e-mail). Com conta e Pro, seu orçamento é sincronizado com nosso servidor na UE para você usar em vários dispositivos.</li><li>Não há conexão bancária.</li><li>Nada do seu orçamento sai do celular, a menos que você sincronize com o Pro ou escolha a leitura por IA de um extrato, recibo ou fatura.</li><li>Os relatórios de falhas não contêm dados pessoais.</li><li>Você pode exportar e excluir tudo no app, de graça.</li></ul>
+<ul><li>Seu orçamento fica salvo no seu celular. Sem conta, não conseguimos vê-lo.</li><li>A conta é opcional (Apple, Google, Facebook ou e-mail). Com conta e Pro, seu orçamento é sincronizado com nosso servidor na UE para você usar em vários dispositivos.</li><li>Não há conexão bancária.</li><li>Os arquivos CSV e Excel do seu banco são lidos só no seu celular. O arquivo em si nunca é guardado, copiado nem enviado.</li><li>Nada do seu orçamento sai do celular, a menos que você sincronize com o Pro ou escolha a leitura por IA de um extrato, recibo ou fatura.</li><li>Os relatórios de falhas não contêm dados pessoais.</li><li>Você pode exportar e excluir tudo no app, de graça.</li></ul>
 </section>
     <section>
 <h2>Guardado no seu celular</h2>
 <p>O app guarda isto no próprio armazenamento do celular. Nada disso é enviado para nós, e tudo é apagado quando você apaga todos os dados no app ou o desinstala:</p>
 <ul><li>As contas que você cria (nomes que você escolhe, saldo e moeda; não são contas bancárias).</li><li>Seus lançamentos: data, valor, moeda, categoria, estabelecimento e uma observação opcional.</li><li>Fixos, metas de economia, categorias próprias e a categoria que o app lembra para cada estabelecimento.</li><li>Ajustes: dia do pagamento, orçamento mensal, idioma e moeda, e se você permite a leitura por IA.</li><li>Um ID aleatório do aparelho, usado apenas para contar as leituras por IA (veja abaixo).</li><li>Imagens que você escolher manter depois de uma importação.</li></ul>
-<p>Linhas digitáveis, códigos de pagamento e números de conta de extratos e boletos nunca são guardados.</p>
+<p>Linhas digitáveis e códigos de pagamento nunca são guardados, nem o número completo da conta. O app pode guardar os quatro últimos dígitos do número da conta para reconhecer a conta.</p>
+</section>
+    <section>
+<h2>Importação de arquivos CSV e Excel</h2>
+<p>Quando você importa um arquivo CSV ou Excel do seu banco, o arquivo é lido só no seu celular. O arquivo em si nunca é guardado, copiado nem enviado – nem para um servidor, nem para a IA.</p>
+<p>Do arquivo, só são guardados a data (e a data de lançamento, quando o arquivo tem), a descrição, o valor, o estabelecimento, o saldo do banco para conferir a conta e os quatro últimos dígitos do número da conta, para reconhecer a conta. Códigos de pagamento, outras referências e as outras colunas do arquivo não são guardados.</p>
+<p>Lançamentos que o banco ainda não compensou são guardados como “Pendente” e removidos se não forem compensados.</p>
+<p>O app lembra como as colunas do arquivo estão organizadas, sem o conteúdo, para que a próxima importação seja mais rápida. Quando você está conectado com o Pro, isso é sincronizado com as suas outras configurações.</p>
+<p>A leitura por IA só é usada para imagens e PDF, e só com a sua permissão.</p>
 </section>
     <section>
 <h2>Leitura por IA de extratos, recibos e boletos (opcional)</h2>
 <p>Quando você importa uma captura de tela ou foto de um extrato, ou escaneia um recibo ou boleto, pode deixar a IA ler. O app pede sua permissão primeiro, e você pode desativar a qualquer momento na tela de importação. Sem permissão, tudo é lido no celular e nada é enviado.</p>
 <p>Com permissão, a imagem (ou o texto lido dela), a moeda, seu país, a data de hoje, a lista de categorias do app e o ID do aparelho são enviados por meio de nosso servidor na Supabase (Irlanda) para a Anthropic, que lê as linhas com seu modelo de IA (Claude) e as devolve. Nem nós nem a Supabase guardamos a imagem, o texto ou as linhas. A Anthropic não usa dados enviados pela sua API para treinar seus modelos e os exclui após um tempo limitado, conforme seus próprios termos.</p>
-<p>Para manter o serviço dentro dos limites (20 leituras por aparelho por dia), nosso servidor guarda o ID do aparelho, a data e o número de leituras, e nada mais. Essas contagens são excluídas automaticamente após 30 dias.</p>
+<p>Para manter o serviço dentro dos limites (um número limitado de leituras por aparelho), nosso servidor guarda o ID do aparelho, a data e o número de leituras, e nada mais. Essas contagens são excluídas automaticamente após 30 dias.</p>
+</section>
+    <section>
+<h2>Escanear recibos e boletos</h2>
+<p>Quando você escaneia um recibo ou boleto, a imagem é lida no celular, ou pela IA se você tiver dado permissão (veja acima). A imagem é apagada assim que é lida, também se você cancelar ou algo der errado. Da imagem, só são guardados a loja, a data, o valor e a categoria. Linhas digitáveis, códigos de pagamento e números de conta nunca são guardados.</p>
 </section>
     <section>
 <h2>Relatórios de falhas</h2>
@@ -107,7 +119,7 @@
 </section>
     <section>
 <h2>Por quanto tempo os dados ficam guardados</h2>
-<ul><li>No celular: até você excluí-los no app ou desinstalar o app.</li><li>Sua conta e os dados sincronizados: até você excluir a conta no app.</li><li>Imagens e texto da leitura por IA: não ficam guardados conosco.</li><li>Contagem de leituras por IA: 30 dias.</li><li>Registro dos e-mails de login (sem endereço): 7 dias.</li><li>Relatórios de falhas: no máximo 90 dias.</li></ul>
+<ul><li>No celular: até você excluí-los no app ou desinstalar o app.</li><li>Sua conta e os dados sincronizados: até você excluir a conta no app.</li><li>Imagens e texto da leitura por IA: não ficam guardados conosco.</li><li>Arquivos CSV e Excel que você importa: não ficam guardados. Só ficam os lançamentos que você salva e a organização das colunas do arquivo.</li><li>Contagem de leituras por IA: 30 dias.</li><li>Registro dos e-mails de login (sem endereço): 7 dias.</li><li>Relatórios de falhas: no máximo 90 dias.</li></ul>
 </section>
     <section>
 <h2>Seus direitos</h2>

@@ -15,6 +15,7 @@
           "Je budget wordt op je telefoon opgeslagen. Zonder account kunnen wij het niet zien.",
           "Een account is optioneel (Apple, Google, Facebook of e-mail). Met een account en Pro wordt je budget met onze server in de EU gesynchroniseerd, zodat je het op meerdere apparaten kunt gebruiken.",
           "Er is geen bankkoppeling.",
+          "CSV- en Excel-bestanden van je bank worden alleen op je telefoon gelezen. Het bestand zelf wordt nooit bewaard, gekopieerd of verstuurd.",
           "Niets uit je budget verlaat de telefoon, tenzij je synchroniseert met Pro of kiest voor het lezen van een rekeningoverzicht, bon of factuur met AI.",
           "Crashrapporten bevatten geen persoonsgegevens.",
           "Je kunt alles in de app gratis exporteren en verwijderen."
@@ -31,15 +32,29 @@
           "Een willekeurige apparaat-ID, alleen gebruikt om het lezen met AI te tellen (zie hieronder).",
           "Afbeeldingen die je na een import wilt bewaren."
         ],
-        "after": ["Betalingskenmerken en rekeningnummers op overzichten en facturen worden nooit opgeslagen."]
+        "after": ["Betalingskenmerken worden nooit opgeslagen, en het volledige rekeningnummer ook niet. De app kan de laatste vier cijfers van het rekeningnummer opslaan om de rekening te herkennen."]
+      },
+      {
+        "heading": "CSV- en Excel-bestanden importeren",
+        "body": [
+          "Als je een CSV- of Excel-bestand van je bank importeert, wordt het bestand alleen op je telefoon gelezen. Het bestand zelf wordt nooit bewaard, gekopieerd of verstuurd – niet naar een server en niet naar AI.",
+          "Uit het bestand worden alleen de datum (en de boekdatum als het bestand die heeft), de omschrijving, het bedrag, de leverancier, het saldo van de bank om de rekening af te stemmen en de laatste vier cijfers van het rekeningnummer opgeslagen, om de rekening te herkennen. Betalingskenmerken, andere referenties en de overige kolommen van het bestand worden niet opgeslagen.",
+          "Transacties die de bank nog niet heeft geboekt, worden opgeslagen als ‘In afwachting’ en verwijderd als ze niet worden geboekt.",
+          "De app onthoudt hoe de kolommen in het bestand zijn ingedeeld, zonder de inhoud, zodat de volgende import sneller gaat. Als je bent ingelogd met Pro, wordt dit samen met je andere instellingen gesynchroniseerd.",
+          "Lezen met AI wordt alleen gebruikt voor afbeeldingen en pdf’s, en alleen als je toestemming hebt gegeven."
+        ]
       },
       {
         "heading": "Rekeningoverzichten, bonnen en facturen lezen met AI (optioneel)",
         "body": [
           "Als je een screenshot of foto van een rekeningoverzicht importeert, of een bon of factuur scant, kun je die door AI laten lezen. De app vraagt eerst toestemming, en je kunt het op het importscherm altijd uitzetten. Zonder toestemming wordt alles op de telefoon gelezen en wordt er niets verstuurd.",
           "Met toestemming worden de afbeelding (of de tekst die eruit is gelezen), de valuta, je land, de datum van vandaag, de categorielijst van de app en de apparaat-ID via {{server}} naar Anthropic gestuurd, dat de rijen leest met zijn AI-model (Claude) en ze terugstuurt. Noch wij noch Supabase slaan de afbeelding, de tekst of de rijen op. Anthropic gebruikt gegevens die via zijn API worden verstuurd niet om zijn modellen te trainen en verwijdert ze na beperkte tijd volgens zijn eigen voorwaarden.",
-          "Om de dienst binnen zijn grenzen te houden (20 keer lezen per apparaat per dag), slaat onze server de apparaat-ID, de datum en het aantal keren lezen op, en verder niets. Deze tellingen worden na 30 dagen automatisch verwijderd."
+          "Om de dienst binnen zijn grenzen te houden (een beperkt aantal keer lezen per apparaat), slaat onze server de apparaat-ID, de datum en het aantal keren lezen op, en verder niets. Deze tellingen worden na 30 dagen automatisch verwijderd."
         ]
+      },
+      {
+        "heading": "Bonnen en facturen scannen",
+        "body": ["Als je een bon of factuur scant, wordt de afbeelding op je telefoon gelezen, of met AI als je toestemming hebt gegeven (zie hierboven). De afbeelding wordt verwijderd zodra die is gelezen, ook als je annuleert of er iets misgaat. Uit de afbeelding worden alleen de winkel, de datum, het bedrag en de categorie opgeslagen. Betalingskenmerken en rekeningnummers worden nooit opgeslagen."]
       },
       {
         "heading": "Crashrapporten",
@@ -93,6 +108,7 @@
           "Op de telefoon: tot je ze in de app verwijdert of de app verwijdert.",
           "Je account en gesynchroniseerde gegevens: tot je het account in de app verwijdert.",
           "Foto’s en tekst voor lezen met AI: niet door ons bewaard.",
+          "CSV- en Excel-bestanden die je importeert: niet bewaard. Alleen de transacties die je opslaat en de indeling van de kolommen blijven.",
           "Telling van AI-lezingen: 30 dagen.",
           "Logboek van inlogmails (zonder adres): 7 dagen.",
           "Crashrapporten: hooguit 90 dagen."
@@ -155,22 +171,19 @@
     "contactHeading": "Contact",
     "contactBody": "E-mail {{email}}. Vermeld graag je telefoonmodel en de appversie (onderaan bij Ik).",
     "faqHeading": "Veelgestelde vragen",
+    "proNote": "Bekijk Pro in de app om te zien wat erbij zit.",
     "faq": [
       {
-        "q": "Wat is het verschil tussen Gratis en Pro?",
-        "a": "Gratis heeft het budget, ‘Vandaag kun je uitgeven’, 2 rekeningen, 1 budget, 1 spaardoel, 5 eigen categorieën, 3 scans per maand en export van al je gegevens. Pro geeft tot 10 rekeningen, onbeperkt scans, doelen en categorieën, vaste posten die automatisch worden geboekt, geschiedenis en statistieken door de tijd, en rapporten naar Excel en CSV. De prijzen staan in de App Store en Google Play, in je eigen valuta."
-      },
-      {
         "q": "Hoe herstel ik mijn aankoop op een nieuwe telefoon?",
-        "a": "Pro is gekoppeld aan je Apple ID of Google-account. Log op de nieuwe telefoon in met hetzelfde account, open Saldo Pocket en tik op Aankopen herstellen. Pro kopen is nog niet mogelijk; zo gaat het werken."
+        "a": "Pro is gekoppeld aan je Apple ID of Google-account. Log op de nieuwe telefoon in met hetzelfde account, open Saldo Pocket en tik op Aankopen herstellen."
       },
       {
         "q": "Hoe exporteer ik mijn gegevens?",
-        "a": "Ga naar Ik → Gegevens exporteren. Al mijn gegevens exporteren (JSON of CSV) is gratis voor iedereen. Met Pro kun je ook rapporten voor een periode en een rekening exporteren naar Excel of CSV."
+        "a": "Ga naar Ik → Gegevens exporteren. Al mijn gegevens exporteren (JSON of CSV) is gratis voor iedereen."
       },
       {
         "q": "Hoe importeer ik uit internetbankieren?",
-        "a": "Tik op + en Importeren uit internetbankieren. Gebruik screenshots of foto’s van de lijst, of een pdf-, CSV- of Excel-bestand dat je uit je bank hebt geëxporteerd. Je bekijkt elke rij voordat er iets wordt opgeslagen, en rijen die je al hebt zijn gemarkeerd. Saldo Pocket maakt nooit verbinding met je bank."
+        "a": "Tik op + en kies hoe je je transacties wilt ophalen (screenshots of een bestand uit internetbankieren). Je bekijkt elke rij voordat er iets wordt opgeslagen, en rijen die je al hebt zijn gemarkeerd. Saldo Pocket maakt nooit verbinding met je bank."
       },
       {
         "q": "Hoe wis ik mijn gegevens?",

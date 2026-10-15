@@ -15,6 +15,7 @@
           "Your budget is stored on your phone. Without an account, we cannot see it.",
           "An account is optional (Apple, Google, Facebook or e-mail). With an account and Pro, your budget is synced to our server in the EU so you can use it on several devices.",
           "There is no bank connection.",
+          "CSV and Excel files from your bank are read only on your phone. The file itself is never stored, copied or sent anywhere.",
           "Nothing from your budget leaves the phone unless you sync with Pro or choose AI reading of a statement, receipt or bill.",
           "Crash reports contain no personal data.",
           "You can export everything and delete everything in the app, for free."
@@ -31,15 +32,29 @@
           "A random device ID, used only to count AI readings (see below).",
           "Pictures you choose to keep after an import."
         ],
-        "after": ["KID numbers and account numbers on bank lists and bills are never stored."]
+        "after": ["KID numbers are never stored, and neither is the full account number. The app may store the last four digits of the account number to recognize the account."]
+      },
+      {
+        "heading": "Importing CSV and Excel files",
+        "body": [
+          "When you import a CSV or Excel file from your bank, the file is read only on your phone. The file itself is never stored, copied or sent anywhere – not to a server and not to AI.",
+          "From the file, the app stores only the date (and the booking date when the file has one), description, amount, vendor, the bank’s balance for reconciling the account, and the last four digits of the account number, to recognize the account. KID numbers, other references and the file’s other columns are not stored.",
+          "Entries the bank has not booked yet are stored as “Pending” and removed if they are not booked.",
+          "The app remembers how the columns in the file are laid out, without their content, so the next import is quicker. When you are signed in with Pro, this is synced with your other settings.",
+          "AI reading is used only for pictures and PDFs, and only when you have said yes."
+        ]
       },
       {
         "heading": "AI reading of bank lists, receipts and bills (optional)",
         "body": [
           "When you import a screenshot or photo of a bank list, or scan a receipt or bill, you can let AI read it. The app asks for your permission first, and you can turn it off at any time on the import screen. Without permission, everything is read on the phone and nothing is sent.",
           "With permission, the picture (or the text read from it), the currency, your country, today’s date, the app’s list of categories and the device ID are sent through {{server}} to Anthropic, which reads the rows with its AI model (Claude) and sends them back. Neither we nor Supabase store the picture, the text or the rows. Anthropic does not use data sent through its API to train its models, and deletes it after a limited time under its own terms.",
-          "To keep the service within its limits (20 readings per device per day), our server stores the device ID, the date and the number of readings, and nothing else. These counts are deleted automatically after 30 days."
+          "To keep the service within its limits (a limited number of readings per device), our server stores the device ID, the date and the number of readings, and nothing else. These counts are deleted automatically after 30 days."
         ]
+      },
+      {
+        "heading": "Scanning receipts and bills",
+        "body": ["When you scan a receipt or bill, the picture is read on your phone, or by AI if you have said yes (see above). The picture is deleted as soon as it has been read, also if you cancel or something goes wrong. From the picture, only the store, date, amount and category are stored. KID numbers and account numbers are never stored."]
       },
       {
         "heading": "Crash reports",
@@ -93,6 +108,7 @@
           "On the phone: until you delete it in the app or uninstall the app.",
           "Your account and synced data: until you delete the account in the app.",
           "Pictures and text for AI reading: not stored by us.",
+          "CSV and Excel files you import: not stored. Only the entries you save and the layout of the file’s columns remain.",
           "Count of AI readings: 30 days.",
           "Log of sign-in e-mails (no address): 7 days.",
           "Crash reports: at most 90 days."
@@ -155,22 +171,19 @@
     "contactHeading": "Contact",
     "contactBody": "E-mail {{email}}. Please tell us your phone model and the app version (at the bottom of Me).",
     "faqHeading": "Frequently asked questions",
+    "proNote": "See Pro in the app for what is included.",
     "faq": [
       {
-        "q": "What is the difference between Free and Pro?",
-        "a": "Free has the budget, “You can spend today”, 2 accounts, 1 budget, 1 savings goal, 5 categories of your own, 3 scans a month and export of all your data. Pro gives up to 10 accounts, unlimited scans, goals and categories, recurring items that are posted automatically, history and statistics over time, and reports to Excel and CSV. Prices are shown in the App Store and Google Play, in your currency."
-      },
-      {
         "q": "How do I restore my purchase on a new phone?",
-        "a": "Pro is tied to your Apple ID or Google account. Sign in with the same account on the new phone, open Saldo Pocket and tap Restore purchases. Pro purchases are not open yet; this is how it will work."
+        "a": "Pro is tied to your Apple ID or Google account. Sign in with the same account on the new phone, open Saldo Pocket and tap Restore purchases."
       },
       {
         "q": "How do I export my data?",
-        "a": "Go to Me → Export data. Export all my data (JSON or CSV) is free for everyone. With Pro you can also export reports for a period and an account to Excel or CSV."
+        "a": "Go to Me → Export data. Export all my data (JSON or CSV) is free for everyone."
       },
       {
         "q": "How do I import from my online bank?",
-        "a": "Tap + and Import from online bank. Use screenshots or photos of the list, or a PDF, CSV or Excel file you have exported from your bank. You review every row before anything is saved, and rows you already have are marked. Saldo Pocket never connects to your bank."
+        "a": "Tap + and choose how you want to bring in your transactions (screenshots or a file from your online bank). You review every row before anything is saved, and rows you already have are marked. Saldo Pocket never connects to your bank."
       },
       {
         "q": "How do I delete my data?",

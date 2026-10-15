@@ -51,7 +51,7 @@
     <p class="app-name">Saldo Pocket</p>
     <h1>Personvernerklæring</h1>
     <p class="lede">Denne erklæringen forklarer hva Saldo Pocket lagrer, hva den sender og til hvem, og hva du kan gjøre med det. Kortversjonen: budsjettet ditt blir på telefonen.</p>
-    <p class="updated">Sist endret: 10. oktober 2026</p>
+    <p class="updated">Sist endret: 15. oktober 2026</p>
     <ul class="page-nav"><li><a href="/nb/saldo-pocket/privacy" aria-current="page">Personvernerklæring</a></li><li><a href="/nb/saldo-pocket/terms">Vilkår for bruk</a></li><li><a href="/nb/saldo-pocket/delete-account">Slett konto og data</a></li><li><a href="/nb/saldo-pocket/support">Brukerstøtte</a></li></ul>
     <section>
 <h2>Hvem som er ansvarlig</h2>
@@ -59,19 +59,31 @@
 </section>
     <section>
 <h2>Kort fortalt</h2>
-<ul><li>Budsjettet ditt lagres på telefonen din. Uten konto kan vi ikke se det.</li><li>Konto er valgfritt (Apple, Google, Facebook eller e-post). Med konto og Pro synkes budsjettet til serveren vår i EU, så du kan bruke det på flere enheter.</li><li>Det finnes ingen bankkobling.</li><li>Ingenting fra budsjettet ditt forlater telefonen med mindre du synker med Pro eller velger AI-lesing av en kontoliste, kvittering eller faktura.</li><li>Krasjrapporter inneholder ingen personopplysninger.</li><li>Du kan eksportere alt og slette alt i appen, gratis.</li></ul>
+<ul><li>Budsjettet ditt lagres på telefonen din. Uten konto kan vi ikke se det.</li><li>Konto er valgfritt (Apple, Google, Facebook eller e-post). Med konto og Pro synkes budsjettet til serveren vår i EU, så du kan bruke det på flere enheter.</li><li>Det finnes ingen bankkobling.</li><li>CSV- og Excel-filer fra banken leses bare på telefonen. Selve fila lagres, kopieres eller sendes aldri.</li><li>Ingenting fra budsjettet ditt forlater telefonen med mindre du synker med Pro eller velger AI-lesing av en kontoliste, kvittering eller faktura.</li><li>Krasjrapporter inneholder ingen personopplysninger.</li><li>Du kan eksportere alt og slette alt i appen, gratis.</li></ul>
 </section>
     <section>
 <h2>Lagret på telefonen din</h2>
 <p>Appen lagrer dette i sin egen lagring på telefonen. Det sendes ikke til oss, og det slettes når du sletter alle data i appen eller avinstallerer den:</p>
 <ul><li>Kontoene du lager (navn du velger, saldo og valuta; ikke bankkontoer).</li><li>Postene dine: dato, beløp, valuta, kategori, leverandør og et valgfritt notat.</li><li>Faste poster, sparemål, egne kategorier og kategorien appen husker for hver leverandør.</li><li>Innstillinger: lønningsdag, månedsbudsjett, språk og valuta, og om du tillater AI-lesing.</li><li>En tilfeldig enhets-ID, som bare brukes til å telle AI-lesinger (se nedenfor).</li><li>Bilder du velger å beholde etter en import.</li></ul>
-<p>KID-nummer og kontonummer på kontolister og fakturaer lagres aldri.</p>
+<p>KID-nummer lagres aldri, og heller ikke hele kontonummeret. Appen kan lagre de fire siste sifrene i kontonummeret for å kjenne igjen kontoen.</p>
+</section>
+    <section>
+<h2>Import av CSV- og Excel-filer</h2>
+<p>Når du importerer en CSV- eller Excel-fil fra banken, leses fila bare på telefonen. Selve fila lagres, kopieres eller sendes aldri – verken til en server eller til AI.</p>
+<p>Fra fila lagres bare dato (og bokføringsdato når fila har den), beskrivelse, beløp, leverandør, bankens saldo for å avstemme kontoen, og de fire siste sifrene i kontonummeret, for å kjenne igjen kontoen. KID, andre referanser og resten av kolonnene i fila lagres ikke.</p>
+<p>Poster som ikke er bokført ennå, lagres som «Venter» og fjernes hvis de ikke blir bokført.</p>
+<p>Appen husker hvordan kolonnene i fila er satt opp, uten innholdet, så neste import går raskere. Når du er logget inn med Pro, synkes dette sammen med de andre innstillingene dine.</p>
+<p>AI-lesing brukes bare for bilder og PDF, og bare når du har sagt ja.</p>
 </section>
     <section>
 <h2>AI-lesing av kontolister, kvitteringer og fakturaer (valgfritt)</h2>
 <p>Når du importerer et skjermbilde eller foto av en kontoliste, eller skanner en kvittering eller faktura, kan du la AI lese den. Appen spør om lov først, og du kan slå det av når som helst på importskjermen. Uten lov leses alt på telefonen, og ingenting sendes.</p>
 <p>Med lov sendes bildet (eller teksten som er lest fra det), valutaen, landet ditt, dagens dato, appens kategoriliste og enhets-ID-en gjennom vår server hos Supabase (Irland) til Anthropic, som leser radene med sin AI-modell (Claude) og sender dem tilbake. Verken vi eller Supabase lagrer bildet, teksten eller radene. Anthropic bruker ikke data som sendes gjennom API-et sitt til å trene modellene sine, og sletter dem etter en begrenset tid etter sine egne vilkår.</p>
-<p>For å holde tjenesten innenfor grensene (20 lesinger per enhet per dag) lagrer serveren vår enhets-ID-en, datoen og antall lesinger, og ingenting annet. Disse tellingene slettes automatisk etter 30 dager.</p>
+<p>For å holde tjenesten innenfor grensene (et begrenset antall lesinger per enhet) lagrer serveren vår enhets-ID-en, datoen og antall lesinger, og ingenting annet. Disse tellingene slettes automatisk etter 30 dager.</p>
+</section>
+    <section>
+<h2>Skanning av kvitteringer og fakturaer</h2>
+<p>Når du skanner en kvittering eller faktura, leses bildet på telefonen, eller med AI hvis du har sagt ja (se over). Bildet slettes så snart det er lest, også hvis du avbryter eller noe går galt. Fra bildet lagres bare butikk, dato, beløp og kategori. KID og kontonummer lagres aldri.</p>
 </section>
     <section>
 <h2>Krasjrapporter</h2>
@@ -107,7 +119,7 @@
 </section>
     <section>
 <h2>Hvor lenge data lagres</h2>
-<ul><li>På telefonen: til du sletter dem i appen eller avinstallerer appen.</li><li>Kontoen din og synkede data: til du sletter kontoen i appen.</li><li>Bilder og tekst for AI-lesing: lagres ikke hos oss.</li><li>Telling av AI-lesinger: 30 dager.</li><li>Logg over innloggings-e-post (uten adresse): 7 dager.</li><li>Krasjrapporter: høyst 90 dager.</li></ul>
+<ul><li>På telefonen: til du sletter dem i appen eller avinstallerer appen.</li><li>Kontoen din og synkede data: til du sletter kontoen i appen.</li><li>Bilder og tekst for AI-lesing: lagres ikke hos oss.</li><li>CSV- og Excel-filer du importerer: lagres ikke. Bare postene du lagrer og oppsettet av kolonnene i fila blir igjen.</li><li>Telling av AI-lesinger: 30 dager.</li><li>Logg over innloggings-e-post (uten adresse): 7 dager.</li><li>Krasjrapporter: høyst 90 dager.</li></ul>
 </section>
     <section>
 <h2>Dine rettigheter</h2>
