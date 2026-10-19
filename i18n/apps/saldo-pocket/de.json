@@ -49,7 +49,8 @@
         "body": [
           "Wenn du einen Screenshot oder ein Foto eines Kontoauszugs importierst oder einen Beleg oder eine Rechnung scannst, kannst du ihn von KI lesen lassen. Die App fragt zuerst um Erlaubnis, und du kannst es auf dem Importbildschirm jederzeit ausschalten. Ohne Erlaubnis wird alles auf dem Telefon gelesen, und nichts wird gesendet.",
           "Mit Erlaubnis werden das Bild (oder der daraus gelesene Text), die Währung, dein Land, das heutige Datum, die Kategorieliste der App und die Geräte-ID über {{server}} an Anthropic gesendet. Anthropic liest die Zeilen mit seinem KI-Modell (Claude) und sendet sie zurück. Weder wir noch Supabase speichern das Bild, den Text oder die Zeilen. Anthropic nutzt über seine API gesendete Daten nicht zum Training seiner Modelle und löscht sie nach begrenzter Zeit gemäß den eigenen Bedingungen.",
-          "Damit der Dienst in seinen Grenzen bleibt (eine begrenzte Zahl von Lesevorgängen pro Gerät), speichert unser Server die Geräte-ID, das Datum und die Anzahl der Lesevorgänge, sonst nichts. Diese Zählungen werden nach 30 Tagen automatisch gelöscht."
+          "Damit der Dienst in seinen Grenzen bleibt (eine begrenzte Zahl von Lesevorgängen pro Gerät), speichert unser Server die Geräte-ID, das Datum und die Anzahl der Lesevorgänge, sonst nichts. Diese Zählungen werden nach 30 Tagen automatisch gelöscht.",
+          "Für das Limit der Gratisversion bei KI-Scans zählt unser Server die Scans pro Monat mit einer gehashten Geräte-ID – einem Einwegcode aus der ID des Telefons, erstellt mit einem geheimen Schlüssel, nie die ID selbst. Die gehashte Geräte-ID wird nur zum Zählen kostenloser KI-Scans verwendet, nicht zum Tracking. Gespeichert werden nur der Code, der Monat und die Anzahl; die Zählung wird nach 13 Monaten automatisch gelöscht."
         ]
       },
       {
@@ -110,6 +111,7 @@
           "Bilder und Text für das Lesen mit KI: werden bei uns nicht gespeichert.",
           "CSV- und Excel-Dateien, die du importierst: werden nicht gespeichert. Nur die Buchungen, die du speicherst, und der Aufbau der Spalten bleiben.",
           "Zählung der KI-Lesungen: 30 Tage.",
+          "Zählung kostenloser KI-Scans (gehashte Geräte-ID, Monat und Anzahl): 13 Monate.",
           "Protokoll der Anmelde-E-Mails (ohne Adresse): 7 Tage.",
           "Absturzberichte: höchstens 90 Tage."
         ]
@@ -144,16 +146,17 @@
         ],
         "body": [
           "Damit wird alles gelöscht, was die App auf deinem Telefon speichert: Konten, Buchungen, Daueraufträge, Ziele, Kategorien, Händler, Einstellungen, gespeicherte Bilder und Dateien, die Geräte-ID sowie deine Sprach- und Währungswahl. Die App startet danach wie neu.",
+          "Die Zählung kostenloser Scans und Dateiimporte bleibt erhalten – nur Zahlen, nichts über dich oder deine Daten –, auf dem Telefon und auf unserem Server, damit das Gratis-Limit weiter gilt.",
           "Das kann nicht rückgängig gemacht werden. Wenn du eine Kopie möchtest, exportiere deine Daten vorher unter Ich → Daten exportieren. Das ist kostenlos."
         ]
       },
       {
         "heading": "App deinstallieren",
-        "body": ["Wenn du Saldo Pocket deinstallierst, werden auch alle ihre Daten vom Telefon gelöscht."]
+        "body": ["Wenn du Saldo Pocket deinstallierst, werden auch alle ihre Daten vom Telefon gelöscht.", "Ausnahme: Die Zählung kostenloser Scans und Dateiimporte (nur Zahlen) kann im Schlüsselbund des Telefons (iPhone) oder in der Android-Sicherung erhalten bleiben, damit das Gratis-Limit auch nach einer Neuinstallation gilt."]
       },
       {
         "heading": "Was auf unserem Server bleibt",
-        "body": ["Wenn du das Lesen mit KI genutzt hast, hat unser Server eine Zählung der Lesevorgänge pro Geräte-ID und Tag, ohne jeden Inhalt. Sie wird nach 30 Tagen automatisch gelöscht. Die Geräte-ID ist zufällig und wird zusammen mit allem anderen vom Telefon gelöscht, sodass die Zählung nicht mit dir verbunden werden kann."]
+        "body": ["Wenn du das Lesen mit KI genutzt hast, hat unser Server eine Zählung der Lesevorgänge pro Geräte-ID und Tag, ohne jeden Inhalt. Sie wird nach 30 Tagen automatisch gelöscht. Die Geräte-ID ist zufällig und wird zusammen mit allem anderen vom Telefon gelöscht, sodass die Zählung nicht mit dir verbunden werden kann.", "Kostenlose KI-Scans werden außerdem pro Monat mit einer gehashten Geräte-ID gezählt (ein Einwegcode, nie die ID selbst). Die gehashte Geräte-ID wird nur zum Zählen kostenloser KI-Scans verwendet, nicht zum Tracking, und die Zählung wird nach 13 Monaten automatisch gelöscht."]
       },
       {
         "heading": "Dein Konto löschen",

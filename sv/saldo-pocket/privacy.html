@@ -51,7 +51,7 @@
     <p class="app-name">Saldo Pocket</p>
     <h1>Integritetspolicy</h1>
     <p class="lede">Den här policyn förklarar vad Saldo Pocket sparar, vad den skickar och till vem, och vad du kan göra åt det. Kortversionen: din budget stannar på telefonen.</p>
-    <p class="updated">Senast ändrad: 15 oktober 2026</p>
+    <p class="updated">Senast ändrad: 19 oktober 2026</p>
     <ul class="page-nav"><li><a href="/sv/saldo-pocket/privacy" aria-current="page">Integritetspolicy</a></li><li><a href="/sv/saldo-pocket/terms">Användarvillkor</a></li><li><a href="/sv/saldo-pocket/delete-account">Radera konto och data</a></li><li><a href="/sv/saldo-pocket/support">Support</a></li></ul>
     <section>
 <h2>Vem som är ansvarig</h2>
@@ -80,6 +80,7 @@
 <p>När du importerar en skärmbild eller ett foto av en kontolista, eller skannar ett kvitto eller en faktura, kan du låta AI läsa den. Appen frågar om lov först, och du kan stänga av det när som helst på importskärmen. Utan lov läses allt på telefonen, och ingenting skickas.</p>
 <p>Med lov skickas bilden (eller texten som lästs från den), valutan, ditt land, dagens datum, appens kategorilista och enhets-ID:t via vår server hos Supabase (Irland) till Anthropic, som läser raderna med sin AI-modell (Claude) och skickar tillbaka dem. Varken vi eller Supabase sparar bilden, texten eller raderna. Anthropic använder inte data som skickas via deras API för att träna sina modeller, och raderar dem efter en begränsad tid enligt sina egna villkor.</p>
 <p>För att hålla tjänsten inom sina gränser (ett begränsat antal läsningar per enhet) sparar vår server enhets-ID:t, datumet och antalet läsningar, och inget annat. Räkningarna raderas automatiskt efter 30 dagar.</p>
+<p>För gratisversionens gräns för AI-skanningar räknar vår server skanningar per månad med ett hashat enhets-ID – en envägskod av telefonens ID, gjord med en hemlig nyckel, aldrig själva ID:t. Det hashade enhets-ID:t används bara för att räkna gratis AI-skanningar, inte för spårning. Bara koden, månaden och antalet sparas, och räkningen raderas automatiskt efter 13 månader.</p>
 </section>
     <section>
 <h2>Skanning av kvitton och fakturor</h2>
@@ -119,7 +120,7 @@
 </section>
     <section>
 <h2>Hur länge data sparas</h2>
-<ul><li>På telefonen: tills du raderar dem i appen eller avinstallerar appen.</li><li>Ditt konto och synkad data: tills du raderar kontot i appen.</li><li>Bilder och text för AI-läsning: sparas inte hos oss.</li><li>CSV- och Excel-filer du importerar: sparas inte. Bara posterna du sparar och hur filens kolumner är ordnade finns kvar.</li><li>Räkning av AI-läsningar: 30 dagar.</li><li>Logg över inloggningsmejl (utan adress): 7 dagar.</li><li>Kraschrapporter: högst 90 dagar.</li></ul>
+<ul><li>På telefonen: tills du raderar dem i appen eller avinstallerar appen.</li><li>Ditt konto och synkad data: tills du raderar kontot i appen.</li><li>Bilder och text för AI-läsning: sparas inte hos oss.</li><li>CSV- och Excel-filer du importerar: sparas inte. Bara posterna du sparar och hur filens kolumner är ordnade finns kvar.</li><li>Räkning av AI-läsningar: 30 dagar.</li><li>Räkning av gratis AI-skanningar (hashat enhets-ID, månad och antal): 13 månader.</li><li>Logg över inloggningsmejl (utan adress): 7 dagar.</li><li>Kraschrapporter: högst 90 dagar.</li></ul>
 </section>
     <section>
 <h2>Dina rättigheter</h2>

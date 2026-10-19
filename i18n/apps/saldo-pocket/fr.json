@@ -49,7 +49,8 @@
         "body": [
           "Lorsque vous importez une capture d’écran ou une photo d’un relevé, ou scannez un reçu ou une facture, vous pouvez laisser l’IA le lire. L’app vous demande d’abord l’autorisation, et vous pouvez la désactiver à tout moment sur l’écran d’importation. Sans autorisation, tout est lu sur le téléphone et rien n’est envoyé.",
           "Avec autorisation, l’image (ou le texte qui en a été lu), la devise, votre pays, la date du jour, la liste des catégories de l’app et l’identifiant de l’appareil sont envoyés via {{server}} à Anthropic, qui lit les lignes avec son modèle d’IA (Claude) et les renvoie. Ni nous ni Supabase n’enregistrons l’image, le texte ou les lignes. Anthropic n’utilise pas les données envoyées via son API pour entraîner ses modèles et les supprime après une durée limitée selon ses propres conditions.",
-          "Pour maintenir le service dans ses limites (un nombre limité de lectures par appareil), notre serveur enregistre l’identifiant de l’appareil, la date et le nombre de lectures, et rien d’autre. Ces compteurs sont supprimés automatiquement après 30 jours."
+          "Pour maintenir le service dans ses limites (un nombre limité de lectures par appareil), notre serveur enregistre l’identifiant de l’appareil, la date et le nombre de lectures, et rien d’autre. Ces compteurs sont supprimés automatiquement après 30 jours.",
+          "Pour la limite de scans par IA de la version gratuite, notre serveur compte les scans par mois avec un identifiant d’appareil haché – un code à sens unique créé à partir de l’identifiant du téléphone avec une clé secrète, jamais l’identifiant lui-même. L’identifiant d’appareil haché sert uniquement à compter les scans gratuits par IA, pas au suivi. Seuls le code, le mois et le nombre sont conservés, et le décompte est supprimé automatiquement après 13 mois."
         ]
       },
       {
@@ -110,6 +111,7 @@
           "Images et texte pour la lecture par IA : non conservés chez nous.",
           "Fichiers CSV et Excel que vous importez : non conservés. Seules les opérations que vous enregistrez et la disposition des colonnes du fichier restent.",
           "Décompte des lectures par IA : 30 jours.",
+          "Décompte des scans gratuits par IA (identifiant d’appareil haché, mois et nombre) : 13 mois.",
           "Journal des e-mails de connexion (sans adresse) : 7 jours.",
           "Rapports de plantage : 90 jours au plus."
         ]
@@ -144,16 +146,17 @@
         ],
         "body": [
           "Cela supprime tout ce que l’app conserve sur votre téléphone : comptes, opérations, récurrents, objectifs, catégories, commerçants, réglages, images et fichiers enregistrés, l’identifiant de l’appareil ainsi que vos choix de langue et de devise. L’app redémarre ensuite comme neuve.",
+          "Le décompte des scans et imports de fichiers gratuits est conservé – seulement des chiffres, rien sur vous ni vos données –, sur le téléphone et sur notre serveur, afin que la limite gratuite s’applique toujours.",
           "C’est irréversible. Si vous voulez une copie, exportez d’abord vos données dans Moi → Exporter les données. C’est gratuit."
         ]
       },
       {
         "heading": "Désinstaller l’app",
-        "body": ["Désinstaller Saldo Pocket supprime aussi toutes ses données du téléphone."]
+        "body": ["Désinstaller Saldo Pocket supprime aussi toutes ses données du téléphone.", "Exception : le décompte des scans et imports de fichiers gratuits (seulement des chiffres) peut rester dans le trousseau du téléphone (iPhone) ou dans la sauvegarde Android, afin que la limite gratuite s’applique aussi après une nouvelle installation."]
       },
       {
         "heading": "Ce qui reste sur notre serveur",
-        "body": ["Si vous avez utilisé la lecture par IA, notre serveur conserve un compteur de lectures par identifiant d’appareil et par jour, sans aucun contenu. Il est supprimé automatiquement après 30 jours. L’identifiant est aléatoire et est supprimé du téléphone avec tout le reste : le compteur ne peut donc pas être relié à vous."]
+        "body": ["Si vous avez utilisé la lecture par IA, notre serveur conserve un compteur de lectures par identifiant d’appareil et par jour, sans aucun contenu. Il est supprimé automatiquement après 30 jours. L’identifiant est aléatoire et est supprimé du téléphone avec tout le reste : le compteur ne peut donc pas être relié à vous.", "Les scans gratuits par IA sont aussi comptés par mois avec un identifiant d’appareil haché (un code à sens unique, jamais l’identifiant lui-même). Il sert uniquement à compter les scans gratuits par IA, pas au suivi, et le décompte est supprimé automatiquement après 13 mois."]
       },
       {
         "heading": "Supprimer votre compte",

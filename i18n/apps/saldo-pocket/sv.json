@@ -49,7 +49,8 @@
         "body": [
           "När du importerar en skärmbild eller ett foto av en kontolista, eller skannar ett kvitto eller en faktura, kan du låta AI läsa den. Appen frågar om lov först, och du kan stänga av det när som helst på importskärmen. Utan lov läses allt på telefonen, och ingenting skickas.",
           "Med lov skickas bilden (eller texten som lästs från den), valutan, ditt land, dagens datum, appens kategorilista och enhets-ID:t via {{server}} till Anthropic, som läser raderna med sin AI-modell (Claude) och skickar tillbaka dem. Varken vi eller Supabase sparar bilden, texten eller raderna. Anthropic använder inte data som skickas via deras API för att träna sina modeller, och raderar dem efter en begränsad tid enligt sina egna villkor.",
-          "För att hålla tjänsten inom sina gränser (ett begränsat antal läsningar per enhet) sparar vår server enhets-ID:t, datumet och antalet läsningar, och inget annat. Räkningarna raderas automatiskt efter 30 dagar."
+          "För att hålla tjänsten inom sina gränser (ett begränsat antal läsningar per enhet) sparar vår server enhets-ID:t, datumet och antalet läsningar, och inget annat. Räkningarna raderas automatiskt efter 30 dagar.",
+          "För gratisversionens gräns för AI-skanningar räknar vår server skanningar per månad med ett hashat enhets-ID – en envägskod av telefonens ID, gjord med en hemlig nyckel, aldrig själva ID:t. Det hashade enhets-ID:t används bara för att räkna gratis AI-skanningar, inte för spårning. Bara koden, månaden och antalet sparas, och räkningen raderas automatiskt efter 13 månader."
         ]
       },
       {
@@ -110,6 +111,7 @@
           "Bilder och text för AI-läsning: sparas inte hos oss.",
           "CSV- och Excel-filer du importerar: sparas inte. Bara posterna du sparar och hur filens kolumner är ordnade finns kvar.",
           "Räkning av AI-läsningar: 30 dagar.",
+          "Räkning av gratis AI-skanningar (hashat enhets-ID, månad och antal): 13 månader.",
           "Logg över inloggningsmejl (utan adress): 7 dagar.",
           "Kraschrapporter: högst 90 dagar."
         ]
@@ -144,16 +146,17 @@
         ],
         "body": [
           "Det raderar allt appen har på din telefon: konton, poster, fasta poster, mål, kategorier, leverantörer, inställningar, sparade bilder och filer, enhets-ID:t samt val av språk och valuta. Appen startar sedan om som ny.",
+          "Räkningen av gratis skanningar och filimporter finns kvar – bara siffror, inget om dig eller dina data – både på telefonen och på vår server, så gratisgränsen gäller fortfarande.",
           "Det går inte att ångra. Vill du ha en kopia, exportera dina data först under Jag → Exportera data. Det är gratis."
         ]
       },
       {
         "heading": "Avinstallera appen",
-        "body": ["När du avinstallerar Saldo Pocket raderas också alla dess data från telefonen."]
+        "body": ["När du avinstallerar Saldo Pocket raderas också alla dess data från telefonen.", "Undantag: räkningen av gratis skanningar och filimporter (bara siffror) kan finnas kvar i telefonens nyckelring (iPhone) eller i Androids säkerhetskopia, så gratisgränsen gäller även efter en ny installation."]
       },
       {
         "heading": "Det som finns kvar på vår server",
-        "body": ["Har du använt AI-läsning har vår server en räkning av läsningar per enhets-ID och dag, utan något innehåll. Den raderas automatiskt efter 30 dagar. Enhets-ID:t är slumpmässigt och raderas från telefonen tillsammans med allt annat, så räkningen kan inte kopplas till dig."]
+        "body": ["Har du använt AI-läsning har vår server en räkning av läsningar per enhets-ID och dag, utan något innehåll. Den raderas automatiskt efter 30 dagar. Enhets-ID:t är slumpmässigt och raderas från telefonen tillsammans med allt annat, så räkningen kan inte kopplas till dig.", "Gratis AI-skanningar räknas också per månad med ett hashat enhets-ID (en envägskod, aldrig själva ID:t). Det hashade enhets-ID:t används bara för att räkna gratis AI-skanningar, inte för spårning, och räkningen raderas automatiskt efter 13 månader."]
       },
       {
         "heading": "Radera ditt konto",

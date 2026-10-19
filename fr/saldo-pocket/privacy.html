@@ -51,7 +51,7 @@
     <p class="app-name">Saldo Pocket</p>
     <h1>Politique de confidentialité</h1>
     <p class="lede">Cette politique explique ce que Saldo Pocket enregistre, ce qu’elle envoie et à qui, et ce que vous pouvez faire. En bref : votre budget reste sur votre téléphone.</p>
-    <p class="updated">Dernière mise à jour : 15 octobre 2026</p>
+    <p class="updated">Dernière mise à jour : 19 octobre 2026</p>
     <ul class="page-nav"><li><a href="/fr/saldo-pocket/privacy" aria-current="page">Politique de confidentialité</a></li><li><a href="/fr/saldo-pocket/terms">Conditions d’utilisation</a></li><li><a href="/fr/saldo-pocket/delete-account">Supprimer le compte et les données</a></li><li><a href="/fr/saldo-pocket/support">Assistance</a></li></ul>
     <section>
 <h2>Qui est responsable</h2>
@@ -80,6 +80,7 @@
 <p>Lorsque vous importez une capture d’écran ou une photo d’un relevé, ou scannez un reçu ou une facture, vous pouvez laisser l’IA le lire. L’app vous demande d’abord l’autorisation, et vous pouvez la désactiver à tout moment sur l’écran d’importation. Sans autorisation, tout est lu sur le téléphone et rien n’est envoyé.</p>
 <p>Avec autorisation, l’image (ou le texte qui en a été lu), la devise, votre pays, la date du jour, la liste des catégories de l’app et l’identifiant de l’appareil sont envoyés via notre serveur chez Supabase (Irlande) à Anthropic, qui lit les lignes avec son modèle d’IA (Claude) et les renvoie. Ni nous ni Supabase n’enregistrons l’image, le texte ou les lignes. Anthropic n’utilise pas les données envoyées via son API pour entraîner ses modèles et les supprime après une durée limitée selon ses propres conditions.</p>
 <p>Pour maintenir le service dans ses limites (un nombre limité de lectures par appareil), notre serveur enregistre l’identifiant de l’appareil, la date et le nombre de lectures, et rien d’autre. Ces compteurs sont supprimés automatiquement après 30 jours.</p>
+<p>Pour la limite de scans par IA de la version gratuite, notre serveur compte les scans par mois avec un identifiant d’appareil haché – un code à sens unique créé à partir de l’identifiant du téléphone avec une clé secrète, jamais l’identifiant lui-même. L’identifiant d’appareil haché sert uniquement à compter les scans gratuits par IA, pas au suivi. Seuls le code, le mois et le nombre sont conservés, et le décompte est supprimé automatiquement après 13 mois.</p>
 </section>
     <section>
 <h2>Numérisation de reçus et de factures</h2>
@@ -119,7 +120,7 @@
 </section>
     <section>
 <h2>Durée de conservation</h2>
-<ul><li>Sur le téléphone : jusqu’à ce que vous les supprimiez dans l’application ou désinstalliez l’application.</li><li>Votre compte et les données synchronisées : jusqu’à ce que vous supprimiez le compte dans l’application.</li><li>Images et texte pour la lecture par IA : non conservés chez nous.</li><li>Fichiers CSV et Excel que vous importez : non conservés. Seules les opérations que vous enregistrez et la disposition des colonnes du fichier restent.</li><li>Décompte des lectures par IA : 30 jours.</li><li>Journal des e-mails de connexion (sans adresse) : 7 jours.</li><li>Rapports de plantage : 90 jours au plus.</li></ul>
+<ul><li>Sur le téléphone : jusqu’à ce que vous les supprimiez dans l’application ou désinstalliez l’application.</li><li>Votre compte et les données synchronisées : jusqu’à ce que vous supprimiez le compte dans l’application.</li><li>Images et texte pour la lecture par IA : non conservés chez nous.</li><li>Fichiers CSV et Excel que vous importez : non conservés. Seules les opérations que vous enregistrez et la disposition des colonnes du fichier restent.</li><li>Décompte des lectures par IA : 30 jours.</li><li>Décompte des scans gratuits par IA (identifiant d’appareil haché, mois et nombre) : 13 mois.</li><li>Journal des e-mails de connexion (sans adresse) : 7 jours.</li><li>Rapports de plantage : 90 jours au plus.</li></ul>
 </section>
     <section>
 <h2>Vos droits</h2>
