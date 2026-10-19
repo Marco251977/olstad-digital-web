@@ -51,7 +51,7 @@
     <p class="app-name">Saldo Pocket</p>
     <h1>Privacybeleid</h1>
     <p class="lede">Dit beleid legt uit wat Saldo Pocket opslaat, wat de app verstuurt en naar wie, en wat je eraan kunt doen. Kort gezegd: je budget blijft op je telefoon.</p>
-    <p class="updated">Laatst gewijzigd: 15 oktober 2026</p>
+    <p class="updated">Laatst gewijzigd: 19 oktober 2026</p>
     <ul class="page-nav"><li><a href="/nl/saldo-pocket/privacy" aria-current="page">Privacybeleid</a></li><li><a href="/nl/saldo-pocket/terms">Gebruiksvoorwaarden</a></li><li><a href="/nl/saldo-pocket/delete-account">Account en gegevens verwijderen</a></li><li><a href="/nl/saldo-pocket/support">Ondersteuning</a></li></ul>
     <section>
 <h2>Wie verantwoordelijk is</h2>
@@ -80,6 +80,7 @@
 <p>Als je een screenshot of foto van een rekeningoverzicht importeert, of een bon of factuur scant, kun je die door AI laten lezen. De app vraagt eerst toestemming, en je kunt het op het importscherm altijd uitzetten. Zonder toestemming wordt alles op de telefoon gelezen en wordt er niets verstuurd.</p>
 <p>Met toestemming worden de afbeelding (of de tekst die eruit is gelezen), de valuta, je land, de datum van vandaag, de categorielijst van de app en de apparaat-ID via onze server bij Supabase (Ierland) naar Anthropic gestuurd, dat de rijen leest met zijn AI-model (Claude) en ze terugstuurt. Noch wij noch Supabase slaan de afbeelding, de tekst of de rijen op. Anthropic gebruikt gegevens die via zijn API worden verstuurd niet om zijn modellen te trainen en verwijdert ze na beperkte tijd volgens zijn eigen voorwaarden.</p>
 <p>Om de dienst binnen zijn grenzen te houden (een beperkt aantal keer lezen per apparaat), slaat onze server de apparaat-ID, de datum en het aantal keren lezen op, en verder niets. Deze tellingen worden na 30 dagen automatisch verwijderd.</p>
+<p>Voor de limiet op AI-scans in de gratis versie telt onze server scans per maand met een gehashte apparaat-ID – een eenrichtingscode van de ID van de telefoon, gemaakt met een geheime sleutel, nooit de ID zelf. De gehashte apparaat-ID wordt alleen gebruikt om gratis AI-scans te tellen, niet om je te volgen. Alleen de code, de maand en het aantal worden bewaard, en de telling wordt na 13 maanden automatisch verwijderd.</p>
 </section>
     <section>
 <h2>Bonnen en facturen scannen</h2>
@@ -119,7 +120,7 @@
 </section>
     <section>
 <h2>Hoe lang gegevens worden bewaard</h2>
-<ul><li>Op de telefoon: tot je ze in de app verwijdert of de app verwijdert.</li><li>Je account en gesynchroniseerde gegevens: tot je het account in de app verwijdert.</li><li>Foto’s en tekst voor lezen met AI: niet door ons bewaard.</li><li>CSV- en Excel-bestanden die je importeert: niet bewaard. Alleen de transacties die je opslaat en de indeling van de kolommen blijven.</li><li>Telling van AI-lezingen: 30 dagen.</li><li>Logboek van inlogmails (zonder adres): 7 dagen.</li><li>Crashrapporten: hooguit 90 dagen.</li></ul>
+<ul><li>Op de telefoon: tot je ze in de app verwijdert of de app verwijdert.</li><li>Je account en gesynchroniseerde gegevens: tot je het account in de app verwijdert.</li><li>Foto’s en tekst voor lezen met AI: niet door ons bewaard.</li><li>CSV- en Excel-bestanden die je importeert: niet bewaard. Alleen de transacties die je opslaat en de indeling van de kolommen blijven.</li><li>Telling van AI-lezingen: 30 dagen.</li><li>Telling van gratis AI-scans (gehashte apparaat-ID, maand en aantal): 13 maanden.</li><li>Logboek van inlogmails (zonder adres): 7 dagen.</li><li>Crashrapporten: hooguit 90 dagen.</li></ul>
 </section>
     <section>
 <h2>Je rechten</h2>

@@ -49,7 +49,8 @@
         "body": [
           "Kun tuot kuvakaappauksen tai valokuvan tiliotteesta tai skannaat kuitin tai laskun, voit antaa tekoälyn lukea sen. Sovellus kysyy ensin lupaa, ja voit poistaa sen käytöstä milloin tahansa tuontinäkymässä. Ilman lupaa kaikki luetaan puhelimessa, eikä mitään lähetetä.",
           "Luvalla kuva (tai siitä luettu teksti), valuutta, maasi, päivämäärä, sovelluksen luokkaluettelo ja laitetunnus lähetetään {{server}} kautta Anthropicille, joka lukee rivit tekoälymallillaan (Claude) ja lähettää ne takaisin. Emme me eikä Supabase tallenna kuvaa, tekstiä tai rivejä. Anthropic ei käytä API:nsa kautta lähetettyjä tietoja mallien kouluttamiseen ja poistaa ne rajatun ajan jälkeen omien ehtojensa mukaisesti.",
-          "Jotta palvelu pysyy rajoissaan (rajoitettu määrä lukemisia laitetta kohden), palvelimemme tallentaa laitetunnuksen, päivämäärän ja lukemisten määrän, eikä mitään muuta. Nämä laskurit poistetaan automaattisesti 30 päivän kuluttua."
+          "Jotta palvelu pysyy rajoissaan (rajoitettu määrä lukemisia laitetta kohden), palvelimemme tallentaa laitetunnuksen, päivämäärän ja lukemisten määrän, eikä mitään muuta. Nämä laskurit poistetaan automaattisesti 30 päivän kuluttua.",
+          "Ilmaisversion tekoälyskannausten rajaa varten palvelimemme laskee skannaukset kuukausittain tiivistetyllä laitetunnisteella – yksisuuntaisella koodilla, joka on tehty puhelimen tunnisteesta salaisella avaimella, ei koskaan itse tunnisteella. Tiivistettyä laitetunnistetta käytetään vain ilmaisten tekoälyskannausten laskemiseen, ei seurantaan. Vain koodi, kuukausi ja määrä tallennetaan, ja laskuri poistetaan automaattisesti 13 kuukauden kuluttua."
         ]
       },
       {
@@ -110,6 +111,7 @@
           "Tekoälylukemisen kuvat ja teksti: emme tallenna niitä.",
           "Tuomasi CSV- ja Excel-tiedostot: niitä ei tallenneta. Vain tallentamasi tapahtumat ja tiedoston sarakkeiden järjestys jäävät.",
           "Tekoälylukemisten laskenta: 30 päivää.",
+          "Ilmaisten tekoälyskannausten laskuri (tiivistetty laitetunniste, kuukausi ja määrä): 13 kuukautta.",
           "Kirjautumissähköpostien loki (ilman osoitetta): 7 päivää.",
           "Kaatumisraportit: enintään 90 päivää."
         ]
@@ -144,16 +146,17 @@
         ],
         "body": [
           "Tämä poistaa kaiken, mitä sovellus säilyttää puhelimessasi: tilit, tapahtumat, toistuvat erät, tavoitteet, luokat, myyjät, asetukset, tallennetut kuvat ja tiedostot, laitetunnuksen sekä kieli- ja valuuttavalinnat. Sovellus käynnistyy sitten alusta kuin uusi.",
+          "Ilmaisten skannausten ja tiedostotuontien laskuri jää – vain lukuja, ei mitään sinusta tai tiedoistasi – sekä puhelimeen että palvelimellemme, joten ilmaisraja on yhä voimassa.",
           "Tätä ei voi perua. Jos haluat kopion, vie tietosi ensin kohdassa Minä → Vie tiedot. Se on maksutonta."
         ]
       },
       {
         "heading": "Sovelluksen poistaminen",
-        "body": ["Kun poistat Saldo Pocketin, myös kaikki sen tiedot poistetaan puhelimesta."]
+        "body": ["Kun poistat Saldo Pocketin, myös kaikki sen tiedot poistetaan puhelimesta.", "Poikkeus: ilmaisten skannausten ja tiedostotuontien laskuri (vain lukuja) voi jäädä puhelimen avainnippuun (iPhone) tai Androidin varmuuskopioon, joten ilmaisraja on voimassa myös uuden asennuksen jälkeen."]
       },
       {
         "heading": "Mitä palvelimellemme jää",
-        "body": ["Jos olet käyttänyt tekoälylukemista, palvelimellamme on laskuri lukemisista laitetunnusta ja päivää kohden, ilman mitään sisältöä. Se poistetaan automaattisesti 30 päivän kuluttua. Laitetunnus on satunnainen ja poistetaan puhelimesta kaiken muun mukana, joten laskuria ei voi yhdistää sinuun."]
+        "body": ["Jos olet käyttänyt tekoälylukemista, palvelimellamme on laskuri lukemisista laitetunnusta ja päivää kohden, ilman mitään sisältöä. Se poistetaan automaattisesti 30 päivän kuluttua. Laitetunnus on satunnainen ja poistetaan puhelimesta kaiken muun mukana, joten laskuria ei voi yhdistää sinuun.", "Ilmaiset tekoälyskannaukset lasketaan myös kuukausittain tiivistetyllä laitetunnisteella (yksisuuntainen koodi, ei koskaan itse tunniste). Sitä käytetään vain ilmaisten tekoälyskannausten laskemiseen, ei seurantaan, ja laskuri poistetaan automaattisesti 13 kuukauden kuluttua."]
       },
       {
         "heading": "Tilin poistaminen",

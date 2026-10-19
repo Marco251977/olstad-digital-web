@@ -49,7 +49,8 @@
         "body": [
           "Gdy importujesz zrzut ekranu lub zdjęcie wyciągu albo skanujesz paragon lub fakturę, możesz pozwolić, aby AI je odczytała. Aplikacja najpierw prosi o zgodę, a na ekranie importu możesz to w każdej chwili wyłączyć. Bez zgody wszystko jest odczytywane na telefonie i nic nie jest wysyłane.",
           "Za zgodą obraz (lub odczytany z niego tekst), waluta, Twój kraj, dzisiejsza data, lista kategorii aplikacji i identyfikator urządzenia są wysyłane przez {{server}} do Anthropic, który odczytuje wiersze za pomocą swojego modelu AI (Claude) i odsyła je z powrotem. Ani my, ani Supabase nie przechowujemy obrazu, tekstu ani wierszy. Anthropic nie używa danych przesyłanych przez swoje API do trenowania modeli i usuwa je po ograniczonym czasie zgodnie z własnymi warunkami.",
-          "Aby usługa mieściła się w limitach (ograniczona liczba odczytów na urządzenie), nasz serwer przechowuje identyfikator urządzenia, datę i liczbę odczytów — nic więcej. Te liczniki są automatycznie usuwane po 30 dniach."
+          "Aby usługa mieściła się w limitach (ograniczona liczba odczytów na urządzenie), nasz serwer przechowuje identyfikator urządzenia, datę i liczbę odczytów — nic więcej. Te liczniki są automatycznie usuwane po 30 dniach.",
+          "Na potrzeby limitu skanów AI w wersji darmowej nasz serwer liczy skany w miesiącu za pomocą zahaszowanego identyfikatora urządzenia – jednokierunkowego kodu utworzonego z identyfikatora telefonu tajnym kluczem, nigdy samego identyfikatora. Zahaszowany identyfikator urządzenia służy wyłącznie do liczenia darmowych skanów AI, nie do śledzenia. Zapisywane są tylko kod, miesiąc i liczba, a licznik jest automatycznie usuwany po 13 miesiącach."
         ]
       },
       {
@@ -110,6 +111,7 @@
           "Obrazy i tekst do odczytu przez AI: nie są u nas przechowywane.",
           "Importowane pliki CSV i Excel: nie są przechowywane. Zostają tylko transakcje, które zapiszesz, i układ kolumn pliku.",
           "Licznik odczytów przez AI: 30 dni.",
+          "Licznik darmowych skanów AI (zahaszowany identyfikator urządzenia, miesiąc i liczba): 13 miesięcy.",
           "Dziennik e-maili logowania (bez adresu): 7 dni.",
           "Raporty o awariach: najwyżej 90 dni."
         ]
@@ -144,16 +146,17 @@
         ],
         "body": [
           "Usuwa to wszystko, co aplikacja przechowuje na Twoim telefonie: konta, operacje, stałe pozycje, cele, kategorie, odbiorców, ustawienia, zapisane obrazy i pliki, identyfikator urządzenia oraz wybór języka i waluty. Aplikacja uruchomi się potem od nowa.",
+          "Licznik darmowych skanów i importów plików zostaje – tylko liczby, nic o Tobie ani Twoich danych – na telefonie i na naszym serwerze, aby darmowy limit nadal obowiązywał.",
           "Tego nie można cofnąć. Jeśli chcesz mieć kopię, najpierw wyeksportuj dane w Ja → Eksport danych. To bezpłatne."
         ]
       },
       {
         "heading": "Odinstalowanie aplikacji",
-        "body": ["Odinstalowanie Saldo Pocket usuwa również wszystkie jej dane z telefonu."]
+        "body": ["Odinstalowanie Saldo Pocket usuwa również wszystkie jej dane z telefonu.", "Wyjątek: licznik darmowych skanów i importów plików (tylko liczby) może pozostać w pęku kluczy telefonu (iPhone) lub w kopii zapasowej Androida, aby darmowy limit obowiązywał także po ponownej instalacji."]
       },
       {
         "heading": "Co zostaje na naszym serwerze",
-        "body": ["Jeśli korzystałeś(-aś) z odczytu przez AI, nasz serwer ma licznik odczytów dla identyfikatora urządzenia i dnia, bez żadnej treści. Jest on automatycznie usuwany po 30 dniach. Identyfikator urządzenia jest losowy i usuwany z telefonu razem z całą resztą, więc licznika nie da się powiązać z Tobą."]
+        "body": ["Jeśli korzystałeś(-aś) z odczytu przez AI, nasz serwer ma licznik odczytów dla identyfikatora urządzenia i dnia, bez żadnej treści. Jest on automatycznie usuwany po 30 dniach. Identyfikator urządzenia jest losowy i usuwany z telefonu razem z całą resztą, więc licznika nie da się powiązać z Tobą.", "Darmowe skany AI są też liczone w miesiącu za pomocą zahaszowanego identyfikatora urządzenia (jednokierunkowy kod, nigdy sam identyfikator). Służy on wyłącznie do liczenia darmowych skanów AI, nie do śledzenia, a licznik jest automatycznie usuwany po 13 miesiącach."]
       },
       {
         "heading": "Usunięcie konta",

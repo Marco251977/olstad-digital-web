@@ -51,7 +51,7 @@
     <p class="app-name">Saldo Pocket</p>
     <h1>Datenschutzerklärung</h1>
     <p class="lede">Diese Erklärung beschreibt, was Saldo Pocket speichert, was die App sendet und an wen, und was du dagegen tun kannst. Kurz gesagt: Dein Budget bleibt auf deinem Telefon.</p>
-    <p class="updated">Zuletzt geändert: 15. Oktober 2026</p>
+    <p class="updated">Zuletzt geändert: 19. Oktober 2026</p>
     <ul class="page-nav"><li><a href="/de/saldo-pocket/privacy" aria-current="page">Datenschutzerklärung</a></li><li><a href="/de/saldo-pocket/terms">Nutzungsbedingungen</a></li><li><a href="/de/saldo-pocket/delete-account">Konto und Daten löschen</a></li><li><a href="/de/saldo-pocket/support">Support</a></li></ul>
     <section>
 <h2>Wer verantwortlich ist</h2>
@@ -80,6 +80,7 @@
 <p>Wenn du einen Screenshot oder ein Foto eines Kontoauszugs importierst oder einen Beleg oder eine Rechnung scannst, kannst du ihn von KI lesen lassen. Die App fragt zuerst um Erlaubnis, und du kannst es auf dem Importbildschirm jederzeit ausschalten. Ohne Erlaubnis wird alles auf dem Telefon gelesen, und nichts wird gesendet.</p>
 <p>Mit Erlaubnis werden das Bild (oder der daraus gelesene Text), die Währung, dein Land, das heutige Datum, die Kategorieliste der App und die Geräte-ID über unseren Server bei Supabase (Irland) an Anthropic gesendet. Anthropic liest die Zeilen mit seinem KI-Modell (Claude) und sendet sie zurück. Weder wir noch Supabase speichern das Bild, den Text oder die Zeilen. Anthropic nutzt über seine API gesendete Daten nicht zum Training seiner Modelle und löscht sie nach begrenzter Zeit gemäß den eigenen Bedingungen.</p>
 <p>Damit der Dienst in seinen Grenzen bleibt (eine begrenzte Zahl von Lesevorgängen pro Gerät), speichert unser Server die Geräte-ID, das Datum und die Anzahl der Lesevorgänge, sonst nichts. Diese Zählungen werden nach 30 Tagen automatisch gelöscht.</p>
+<p>Für das Limit der Gratisversion bei KI-Scans zählt unser Server die Scans pro Monat mit einer gehashten Geräte-ID – einem Einwegcode aus der ID des Telefons, erstellt mit einem geheimen Schlüssel, nie die ID selbst. Die gehashte Geräte-ID wird nur zum Zählen kostenloser KI-Scans verwendet, nicht zum Tracking. Gespeichert werden nur der Code, der Monat und die Anzahl; die Zählung wird nach 13 Monaten automatisch gelöscht.</p>
 </section>
     <section>
 <h2>Scannen von Belegen und Rechnungen</h2>
@@ -119,7 +120,7 @@
 </section>
     <section>
 <h2>Wie lange Daten gespeichert werden</h2>
-<ul><li>Auf dem Handy: bis du sie in der App löschst oder die App deinstallierst.</li><li>Dein Konto und synchronisierte Daten: bis du das Konto in der App löschst.</li><li>Bilder und Text für das Lesen mit KI: werden bei uns nicht gespeichert.</li><li>CSV- und Excel-Dateien, die du importierst: werden nicht gespeichert. Nur die Buchungen, die du speicherst, und der Aufbau der Spalten bleiben.</li><li>Zählung der KI-Lesungen: 30 Tage.</li><li>Protokoll der Anmelde-E-Mails (ohne Adresse): 7 Tage.</li><li>Absturzberichte: höchstens 90 Tage.</li></ul>
+<ul><li>Auf dem Handy: bis du sie in der App löschst oder die App deinstallierst.</li><li>Dein Konto und synchronisierte Daten: bis du das Konto in der App löschst.</li><li>Bilder und Text für das Lesen mit KI: werden bei uns nicht gespeichert.</li><li>CSV- und Excel-Dateien, die du importierst: werden nicht gespeichert. Nur die Buchungen, die du speicherst, und der Aufbau der Spalten bleiben.</li><li>Zählung der KI-Lesungen: 30 Tage.</li><li>Zählung kostenloser KI-Scans (gehashte Geräte-ID, Monat und Anzahl): 13 Monate.</li><li>Protokoll der Anmelde-E-Mails (ohne Adresse): 7 Tage.</li><li>Absturzberichte: höchstens 90 Tage.</li></ul>
 </section>
     <section>
 <h2>Deine Rechte</h2>

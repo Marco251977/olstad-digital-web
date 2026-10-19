@@ -49,7 +49,8 @@
         "body": [
           "Quando importi uno screenshot o una foto di un estratto conto, o scansioni uno scontrino o una fattura, puoi lasciarlo leggere all’IA. L’app ti chiede prima il permesso e puoi disattivarlo in qualsiasi momento nella schermata di importazione. Senza permesso, tutto viene letto sul telefono e nulla viene inviato.",
           "Con il permesso, l’immagine (o il testo letto da essa), la valuta, il tuo paese, la data di oggi, l’elenco delle categorie dell’app e l’ID del dispositivo vengono inviati tramite {{server}} ad Anthropic, che legge le righe con il suo modello di IA (Claude) e le restituisce. Né noi né Supabase salviamo l’immagine, il testo o le righe. Anthropic non usa i dati inviati tramite la sua API per addestrare i propri modelli e li elimina dopo un tempo limitato secondo i propri termini.",
-          "Per mantenere il servizio nei suoi limiti (un numero limitato di letture per dispositivo), il nostro server salva l’ID del dispositivo, la data e il numero di letture, e nient’altro. Questi conteggi vengono eliminati automaticamente dopo 30 giorni."
+          "Per mantenere il servizio nei suoi limiti (un numero limitato di letture per dispositivo), il nostro server salva l’ID del dispositivo, la data e il numero di letture, e nient’altro. Questi conteggi vengono eliminati automaticamente dopo 30 giorni.",
+          "Per il limite di scansioni con IA della versione gratuita, il nostro server conta le scansioni al mese con un ID dispositivo con hash: un codice a senso unico creato dall’ID del telefono con una chiave segreta, mai l’ID stesso. L’ID dispositivo con hash serve solo a contare le scansioni gratuite con IA, non al tracciamento. Si conservano solo il codice, il mese e il numero, e il conteggio viene cancellato automaticamente dopo 13 mesi."
         ]
       },
       {
@@ -110,6 +111,7 @@
           "Immagini e testo per la lettura con IA: non conservati da noi.",
           "File CSV ed Excel che importi: non conservati. Restano solo i movimenti che salvi e la disposizione delle colonne del file.",
           "Conteggio delle letture con IA: 30 giorni.",
+          "Conteggio delle scansioni gratuite con IA (ID dispositivo con hash, mese e numero): 13 mesi.",
           "Registro delle e-mail di accesso (senza indirizzo): 7 giorni.",
           "Rapporti sugli arresti anomali: al massimo 90 giorni."
         ]
@@ -144,16 +146,17 @@
         ],
         "body": [
           "Così elimini tutto ciò che l’app conserva sul tuo telefono: conti, movimenti, movimenti fissi, obiettivi, categorie, esercenti, impostazioni, immagini e file salvati, l’ID del dispositivo e le scelte di lingua e valuta. L’app riparte poi come nuova.",
+          "Il conteggio di scansioni e importazioni di file gratuite resta – solo numeri, niente su di te o sui tuoi dati – sul telefono e sul nostro server, così il limite gratuito continua a valere.",
           "Non si può annullare. Se vuoi una copia, esporta prima i tuoi dati in Io → Esporta dati. È gratis."
         ]
       },
       {
         "heading": "Disinstallare l’app",
-        "body": ["Disinstallando Saldo Pocket vengono eliminati anche tutti i suoi dati dal telefono."]
+        "body": ["Disinstallando Saldo Pocket vengono eliminati anche tutti i suoi dati dal telefono.", "Eccezione: il conteggio di scansioni e importazioni di file gratuite (solo numeri) può restare nel portachiavi del telefono (iPhone) o nel backup di Android, così il limite gratuito vale anche dopo una nuova installazione."]
       },
       {
         "heading": "Cosa resta sul nostro server",
-        "body": ["Se hai usato la lettura con IA, il nostro server ha un conteggio delle letture per ID del dispositivo e giorno, senza alcun contenuto. Viene eliminato automaticamente dopo 30 giorni. L’ID è casuale e viene eliminato dal telefono insieme a tutto il resto, quindi il conteggio non può essere collegato a te."]
+        "body": ["Se hai usato la lettura con IA, il nostro server ha un conteggio delle letture per ID del dispositivo e giorno, senza alcun contenuto. Viene eliminato automaticamente dopo 30 giorni. L’ID è casuale e viene eliminato dal telefono insieme a tutto il resto, quindi il conteggio non può essere collegato a te.", "Le scansioni gratuite con IA sono contate anche al mese con un ID dispositivo con hash (un codice a senso unico, mai l’ID stesso). Serve solo a contare le scansioni gratuite con IA, non al tracciamento, e il conteggio viene cancellato automaticamente dopo 13 mesi."]
       },
       {
         "heading": "Eliminare il tuo account",

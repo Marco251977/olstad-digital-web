@@ -51,7 +51,7 @@
     <p class="app-name">Saldo Pocket</p>
     <h1>Privacy policy</h1>
     <p class="lede">This policy explains what Saldo Pocket stores, what it sends and to whom, and what you can do about it. The short version: your budget stays on your phone.</p>
-    <p class="updated">Last updated: October 15, 2026</p>
+    <p class="updated">Last updated: October 19, 2026</p>
     <ul class="page-nav"><li><a href="/en/saldo-pocket/privacy" aria-current="page">Privacy policy</a></li><li><a href="/en/saldo-pocket/terms">Terms of use</a></li><li><a href="/en/saldo-pocket/delete-account">Delete account and data</a></li><li><a href="/en/saldo-pocket/support">Support</a></li></ul>
     <section>
 <h2>Who is responsible</h2>
@@ -80,6 +80,7 @@
 <p>When you import a screenshot or photo of a bank list, or scan a receipt or bill, you can let AI read it. The app asks for your permission first, and you can turn it off at any time on the import screen. Without permission, everything is read on the phone and nothing is sent.</p>
 <p>With permission, the picture (or the text read from it), the currency, your country, today’s date, the app’s list of categories and the device ID are sent through our server at Supabase (Ireland) to Anthropic, which reads the rows with its AI model (Claude) and sends them back. Neither we nor Supabase store the picture, the text or the rows. Anthropic does not use data sent through its API to train its models, and deletes it after a limited time under its own terms.</p>
 <p>To keep the service within its limits (a limited number of readings per device), our server stores the device ID, the date and the number of readings, and nothing else. These counts are deleted automatically after 30 days.</p>
+<p>For the free version’s limit on AI scans, our server counts scans per month with a hashed device ID – a one-way code made from the phone’s ID with a secret key, never the ID itself. The hashed device ID is used only to count free AI scans, not for tracking. Only the code, the month and the number are stored, and the count is deleted automatically after 13 months.</p>
 </section>
     <section>
 <h2>Scanning receipts and bills</h2>
@@ -119,7 +120,7 @@
 </section>
     <section>
 <h2>How long data is kept</h2>
-<ul><li>On the phone: until you delete it in the app or uninstall the app.</li><li>Your account and synced data: until you delete the account in the app.</li><li>Pictures and text for AI reading: not stored by us.</li><li>CSV and Excel files you import: not stored. Only the entries you save and the layout of the file’s columns remain.</li><li>Count of AI readings: 30 days.</li><li>Log of sign-in e-mails (no address): 7 days.</li><li>Crash reports: at most 90 days.</li></ul>
+<ul><li>On the phone: until you delete it in the app or uninstall the app.</li><li>Your account and synced data: until you delete the account in the app.</li><li>Pictures and text for AI reading: not stored by us.</li><li>CSV and Excel files you import: not stored. Only the entries you save and the layout of the file’s columns remain.</li><li>Count of AI readings: 30 days.</li><li>Count of free AI scans (hashed device ID, month and number): 13 months.</li><li>Log of sign-in e-mails (no address): 7 days.</li><li>Crash reports: at most 90 days.</li></ul>
 </section>
     <section>
 <h2>Your rights</h2>

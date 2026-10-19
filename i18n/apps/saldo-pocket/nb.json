@@ -49,7 +49,8 @@
         "body": [
           "Når du importerer et skjermbilde eller foto av en kontoliste, eller skanner en kvittering eller faktura, kan du la AI lese den. Appen spør om lov først, og du kan slå det av når som helst på importskjermen. Uten lov leses alt på telefonen, og ingenting sendes.",
           "Med lov sendes bildet (eller teksten som er lest fra det), valutaen, landet ditt, dagens dato, appens kategoriliste og enhets-ID-en gjennom {{server}} til Anthropic, som leser radene med sin AI-modell (Claude) og sender dem tilbake. Verken vi eller Supabase lagrer bildet, teksten eller radene. Anthropic bruker ikke data som sendes gjennom API-et sitt til å trene modellene sine, og sletter dem etter en begrenset tid etter sine egne vilkår.",
-          "For å holde tjenesten innenfor grensene (et begrenset antall lesinger per enhet) lagrer serveren vår enhets-ID-en, datoen og antall lesinger, og ingenting annet. Disse tellingene slettes automatisk etter 30 dager."
+          "For å holde tjenesten innenfor grensene (et begrenset antall lesinger per enhet) lagrer serveren vår enhets-ID-en, datoen og antall lesinger, og ingenting annet. Disse tellingene slettes automatisk etter 30 dager.",
+          "For gratisversjonens grense på AI-skann teller serveren vår skann per måned med en hashet enhets-ID – en enveiskode av telefonens ID, laget med en hemmelig nøkkel, aldri selve ID-en. Hashet enhets-ID brukes kun til å telle gratis AI-skann, ikke til sporing. Bare koden, måneden og antallet lagres, og tellingen slettes automatisk etter 13 måneder."
         ]
       },
       {
@@ -110,6 +111,7 @@
           "Bilder og tekst for AI-lesing: lagres ikke hos oss.",
           "CSV- og Excel-filer du importerer: lagres ikke. Bare postene du lagrer og oppsettet av kolonnene i fila blir igjen.",
           "Telling av AI-lesinger: 30 dager.",
+          "Telling av gratis AI-skann (hashet enhets-ID, måned og antall): 13 måneder.",
           "Logg over innloggings-e-post (uten adresse): 7 dager.",
           "Krasjrapporter: høyst 90 dager."
         ]
@@ -144,16 +146,17 @@
         ],
         "body": [
           "Dette sletter alt appen har på telefonen din: kontoer, poster, faste poster, mål, kategorier, leverandører, innstillinger, lagrede bilder og filer, enhets-ID-en og valg av språk og valuta. Appen starter så på nytt som ny.",
+          "Tellingen av gratis skann og filimport blir liggende – bare tall, ingenting om deg eller dataene dine – både på telefonen og på serveren, så gratisgrensen fortsatt gjelder.",
           "Det kan ikke angres. Vil du ha en kopi, eksporter dataene først under Meg → Eksporter data. Det er gratis."
         ]
       },
       {
         "heading": "Avinstallere appen",
-        "body": ["Når du avinstallerer Saldo Pocket, slettes også alle dataene fra telefonen."]
+        "body": ["Når du avinstallerer Saldo Pocket, slettes også alle dataene fra telefonen.", "Unntak: tellingen av gratis skann og filimport (bare tall) kan bli liggende i telefonens nøkkelring (iPhone) eller i Androids sikkerhetskopi, så gratisgrensen gjelder også etter en ny installasjon."]
       },
       {
         "heading": "Det som ligger igjen på serveren vår",
-        "body": ["Har du brukt AI-lesing, har serveren vår en telling av lesinger per enhets-ID og dag, uten noe innhold. Den slettes automatisk etter 30 dager. Enhets-ID-en er tilfeldig og slettes fra telefonen sammen med alt annet, så tellingen kan ikke knyttes til deg."]
+        "body": ["Har du brukt AI-lesing, har serveren vår en telling av lesinger per enhets-ID og dag, uten noe innhold. Den slettes automatisk etter 30 dager. Enhets-ID-en er tilfeldig og slettes fra telefonen sammen med alt annet, så tellingen kan ikke knyttes til deg.", "Gratis AI-skann telles også per måned med en hashet enhets-ID (en enveiskode, aldri selve ID-en). Hashet enhets-ID brukes kun til å telle gratis AI-skann, ikke til sporing, og tellingen slettes automatisk etter 13 måneder."]
       },
       {
         "heading": "Slette kontoen",

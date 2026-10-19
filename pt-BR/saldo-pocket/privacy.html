@@ -51,7 +51,7 @@
     <p class="app-name">Saldo Pocket</p>
     <h1>Política de privacidade</h1>
     <p class="lede">Esta política explica o que o Saldo Pocket guarda, o que envia e para quem, e o que você pode fazer a respeito. Resumindo: seu orçamento fica no seu celular.</p>
-    <p class="updated">Última atualização: 15 de outubro de 2026</p>
+    <p class="updated">Última atualização: 19 de outubro de 2026</p>
     <ul class="page-nav"><li><a href="/pt-BR/saldo-pocket/privacy" aria-current="page">Política de privacidade</a></li><li><a href="/pt-BR/saldo-pocket/terms">Termos de uso</a></li><li><a href="/pt-BR/saldo-pocket/delete-account">Excluir conta e dados</a></li><li><a href="/pt-BR/saldo-pocket/support">Suporte</a></li></ul>
     <section>
 <h2>Quem é o responsável</h2>
@@ -80,6 +80,7 @@
 <p>Quando você importa uma captura de tela ou foto de um extrato, ou escaneia um recibo ou boleto, pode deixar a IA ler. O app pede sua permissão primeiro, e você pode desativar a qualquer momento na tela de importação. Sem permissão, tudo é lido no celular e nada é enviado.</p>
 <p>Com permissão, a imagem (ou o texto lido dela), a moeda, seu país, a data de hoje, a lista de categorias do app e o ID do aparelho são enviados por meio de nosso servidor na Supabase (Irlanda) para a Anthropic, que lê as linhas com seu modelo de IA (Claude) e as devolve. Nem nós nem a Supabase guardamos a imagem, o texto ou as linhas. A Anthropic não usa dados enviados pela sua API para treinar seus modelos e os exclui após um tempo limitado, conforme seus próprios termos.</p>
 <p>Para manter o serviço dentro dos limites (um número limitado de leituras por aparelho), nosso servidor guarda o ID do aparelho, a data e o número de leituras, e nada mais. Essas contagens são excluídas automaticamente após 30 dias.</p>
+<p>Para o limite de escaneamentos com IA da versão gratuita, nosso servidor conta os escaneamentos por mês com um ID de dispositivo com hash – um código de mão única criado a partir do ID do celular com uma chave secreta, nunca o próprio ID. O ID de dispositivo com hash é usado apenas para contar escaneamentos gratuitos com IA, não para rastreamento. Só o código, o mês e o número são guardados, e a contagem é apagada automaticamente após 13 meses.</p>
 </section>
     <section>
 <h2>Escanear recibos e boletos</h2>
@@ -119,7 +120,7 @@
 </section>
     <section>
 <h2>Por quanto tempo os dados ficam guardados</h2>
-<ul><li>No celular: até você excluí-los no app ou desinstalar o app.</li><li>Sua conta e os dados sincronizados: até você excluir a conta no app.</li><li>Imagens e texto da leitura por IA: não ficam guardados conosco.</li><li>Arquivos CSV e Excel que você importa: não ficam guardados. Só ficam os lançamentos que você salva e a organização das colunas do arquivo.</li><li>Contagem de leituras por IA: 30 dias.</li><li>Registro dos e-mails de login (sem endereço): 7 dias.</li><li>Relatórios de falhas: no máximo 90 dias.</li></ul>
+<ul><li>No celular: até você excluí-los no app ou desinstalar o app.</li><li>Sua conta e os dados sincronizados: até você excluir a conta no app.</li><li>Imagens e texto da leitura por IA: não ficam guardados conosco.</li><li>Arquivos CSV e Excel que você importa: não ficam guardados. Só ficam os lançamentos que você salva e a organização das colunas do arquivo.</li><li>Contagem de leituras por IA: 30 dias.</li><li>Contagem de escaneamentos gratuitos com IA (ID de dispositivo com hash, mês e número): 13 meses.</li><li>Registro dos e-mails de login (sem endereço): 7 dias.</li><li>Relatórios de falhas: no máximo 90 dias.</li></ul>
 </section>
     <section>
 <h2>Seus direitos</h2>

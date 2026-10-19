@@ -51,7 +51,7 @@
     <p class="app-name">Saldo Pocket</p>
     <h1>Polityka prywatności</h1>
     <p class="lede">Ta polityka wyjaśnia, co Saldo Pocket przechowuje, co wysyła i komu oraz co możesz z tym zrobić. W skrócie: Twój budżet zostaje na telefonie.</p>
-    <p class="updated">Ostatnia zmiana: 15 października 2026</p>
+    <p class="updated">Ostatnia zmiana: 19 października 2026</p>
     <ul class="page-nav"><li><a href="/pl/saldo-pocket/privacy" aria-current="page">Polityka prywatności</a></li><li><a href="/pl/saldo-pocket/terms">Warunki korzystania</a></li><li><a href="/pl/saldo-pocket/delete-account">Usuwanie konta i danych</a></li><li><a href="/pl/saldo-pocket/support">Pomoc</a></li></ul>
     <section>
 <h2>Kto jest odpowiedzialny</h2>
@@ -80,6 +80,7 @@
 <p>Gdy importujesz zrzut ekranu lub zdjęcie wyciągu albo skanujesz paragon lub fakturę, możesz pozwolić, aby AI je odczytała. Aplikacja najpierw prosi o zgodę, a na ekranie importu możesz to w każdej chwili wyłączyć. Bez zgody wszystko jest odczytywane na telefonie i nic nie jest wysyłane.</p>
 <p>Za zgodą obraz (lub odczytany z niego tekst), waluta, Twój kraj, dzisiejsza data, lista kategorii aplikacji i identyfikator urządzenia są wysyłane przez nasz serwer w Supabase (Irlandia) do Anthropic, który odczytuje wiersze za pomocą swojego modelu AI (Claude) i odsyła je z powrotem. Ani my, ani Supabase nie przechowujemy obrazu, tekstu ani wierszy. Anthropic nie używa danych przesyłanych przez swoje API do trenowania modeli i usuwa je po ograniczonym czasie zgodnie z własnymi warunkami.</p>
 <p>Aby usługa mieściła się w limitach (ograniczona liczba odczytów na urządzenie), nasz serwer przechowuje identyfikator urządzenia, datę i liczbę odczytów — nic więcej. Te liczniki są automatycznie usuwane po 30 dniach.</p>
+<p>Na potrzeby limitu skanów AI w wersji darmowej nasz serwer liczy skany w miesiącu za pomocą zahaszowanego identyfikatora urządzenia – jednokierunkowego kodu utworzonego z identyfikatora telefonu tajnym kluczem, nigdy samego identyfikatora. Zahaszowany identyfikator urządzenia służy wyłącznie do liczenia darmowych skanów AI, nie do śledzenia. Zapisywane są tylko kod, miesiąc i liczba, a licznik jest automatycznie usuwany po 13 miesiącach.</p>
 </section>
     <section>
 <h2>Skanowanie paragonów i faktur</h2>
@@ -119,7 +120,7 @@
 </section>
     <section>
 <h2>Jak długo przechowujemy dane</h2>
-<ul><li>Na telefonie: do czasu ich usunięcia w aplikacji lub odinstalowania aplikacji.</li><li>Twoje konto i zsynchronizowane dane: do czasu usunięcia konta w aplikacji.</li><li>Obrazy i tekst do odczytu przez AI: nie są u nas przechowywane.</li><li>Importowane pliki CSV i Excel: nie są przechowywane. Zostają tylko transakcje, które zapiszesz, i układ kolumn pliku.</li><li>Licznik odczytów przez AI: 30 dni.</li><li>Dziennik e-maili logowania (bez adresu): 7 dni.</li><li>Raporty o awariach: najwyżej 90 dni.</li></ul>
+<ul><li>Na telefonie: do czasu ich usunięcia w aplikacji lub odinstalowania aplikacji.</li><li>Twoje konto i zsynchronizowane dane: do czasu usunięcia konta w aplikacji.</li><li>Obrazy i tekst do odczytu przez AI: nie są u nas przechowywane.</li><li>Importowane pliki CSV i Excel: nie są przechowywane. Zostają tylko transakcje, które zapiszesz, i układ kolumn pliku.</li><li>Licznik odczytów przez AI: 30 dni.</li><li>Licznik darmowych skanów AI (zahaszowany identyfikator urządzenia, miesiąc i liczba): 13 miesięcy.</li><li>Dziennik e-maili logowania (bez adresu): 7 dni.</li><li>Raporty o awariach: najwyżej 90 dni.</li></ul>
 </section>
     <section>
 <h2>Twoje prawa</h2>

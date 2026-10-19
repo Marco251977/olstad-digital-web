@@ -49,7 +49,8 @@
         "body": [
           "When you import a screenshot or photo of a bank list, or scan a receipt or bill, you can let AI read it. The app asks for your permission first, and you can turn it off at any time on the import screen. Without permission, everything is read on the phone and nothing is sent.",
           "With permission, the picture (or the text read from it), the currency, your country, today’s date, the app’s list of categories and the device ID are sent through {{server}} to Anthropic, which reads the rows with its AI model (Claude) and sends them back. Neither we nor Supabase store the picture, the text or the rows. Anthropic does not use data sent through its API to train its models, and deletes it after a limited time under its own terms.",
-          "To keep the service within its limits (a limited number of readings per device), our server stores the device ID, the date and the number of readings, and nothing else. These counts are deleted automatically after 30 days."
+          "To keep the service within its limits (a limited number of readings per device), our server stores the device ID, the date and the number of readings, and nothing else. These counts are deleted automatically after 30 days.",
+          "For the free version’s limit on AI scans, our server counts scans per month with a hashed device ID – a one-way code made from the phone’s ID with a secret key, never the ID itself. The hashed device ID is used only to count free AI scans, not for tracking. Only the code, the month and the number are stored, and the count is deleted automatically after 13 months."
         ]
       },
       {
@@ -110,6 +111,7 @@
           "Pictures and text for AI reading: not stored by us.",
           "CSV and Excel files you import: not stored. Only the entries you save and the layout of the file’s columns remain.",
           "Count of AI readings: 30 days.",
+          "Count of free AI scans (hashed device ID, month and number): 13 months.",
           "Log of sign-in e-mails (no address): 7 days.",
           "Crash reports: at most 90 days."
         ]
@@ -144,16 +146,17 @@
         ],
         "body": [
           "This deletes everything the app keeps on your phone: accounts, entries, recurring items, goals, categories, vendors, settings, saved pictures and files, the device ID, and your language and currency choices. The app then starts again as new.",
+          "The count of free scans and file imports stays – only numbers, nothing about you or your data – both on the phone and on our server, so the free limit still applies.",
           "It cannot be undone. If you want a copy, export your data first under Me → Export data. It is free."
         ]
       },
       {
         "heading": "Uninstalling the app",
-        "body": ["Uninstalling Saldo Pocket also deletes all its data from your phone."]
+        "body": ["Uninstalling Saldo Pocket also deletes all its data from your phone.", "Exception: the count of free scans and file imports (only numbers) may stay in the phone’s keychain (iPhone) or in Android’s backup, so the free limit also applies after a new install."]
       },
       {
         "heading": "What is left on our server",
-        "body": ["If you have used AI reading, our server keeps a count of readings per device ID and day, without any content. It is deleted automatically after 30 days. The device ID is random and is deleted from your phone with everything else, so the count cannot be linked to you."]
+        "body": ["If you have used AI reading, our server keeps a count of readings per device ID and day, without any content. It is deleted automatically after 30 days. The device ID is random and is deleted from your phone with everything else, so the count cannot be linked to you.", "Free AI scans are also counted per month with a hashed device ID (a one-way code, never the ID itself). The hashed device ID is used only to count free AI scans, not for tracking, and the count is deleted automatically after 13 months."]
       },
       {
         "heading": "Deleting your account",

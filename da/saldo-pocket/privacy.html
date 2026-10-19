@@ -51,7 +51,7 @@
     <p class="app-name">Saldo Pocket</p>
     <h1>Privatlivspolitik</h1>
     <p class="lede">Denne politik forklarer, hvad Saldo Pocket gemmer, hvad den sender og til hvem, og hvad du kan gøre ved det. Den korte version: dit budget bliver på telefonen.</p>
-    <p class="updated">Sidst ændret: 15. oktober 2026</p>
+    <p class="updated">Sidst ændret: 19. oktober 2026</p>
     <ul class="page-nav"><li><a href="/da/saldo-pocket/privacy" aria-current="page">Privatlivspolitik</a></li><li><a href="/da/saldo-pocket/terms">Vilkår for brug</a></li><li><a href="/da/saldo-pocket/delete-account">Slet konto og data</a></li><li><a href="/da/saldo-pocket/support">Support</a></li></ul>
     <section>
 <h2>Hvem der er ansvarlig</h2>
@@ -80,6 +80,7 @@
 <p>Når du importerer et skærmbillede eller foto af en kontoudskrift eller scanner en kvittering eller regning, kan du lade AI læse den. Appen beder om lov først, og du kan slå det fra når som helst på importskærmen. Uden lov læses alt på telefonen, og intet sendes.</p>
 <p>Med lov sendes billedet (eller teksten, der er læst fra det), valutaen, dit land, dagens dato, appens kategoriliste og enheds-id'et gennem vores server hos Supabase (Irland) til Anthropic, som læser rækkerne med sin AI-model (Claude) og sender dem tilbage. Hverken vi eller Supabase gemmer billedet, teksten eller rækkerne. Anthropic bruger ikke data, der sendes gennem deres API, til at træne deres modeller og sletter dem efter begrænset tid efter deres egne vilkår.</p>
 <p>For at holde tjenesten inden for grænserne (et begrænset antal læsninger pr. enhed) gemmer vores server enheds-id'et, datoen og antallet af læsninger og intet andet. Optællingerne slettes automatisk efter 30 dage.</p>
+<p>Til gratisversionens grænse for AI-scanninger tæller vores server scanninger pr. måned med et hashet enheds-id – en envejskode af telefonens id, lavet med en hemmelig nøgle, aldrig selve id’et. Det hashede enheds-id bruges kun til at tælle gratis AI-scanninger, ikke til sporing. Kun koden, måneden og antallet gemmes, og optællingen slettes automatisk efter 13 måneder.</p>
 </section>
     <section>
 <h2>Scanning af kvitteringer og regninger</h2>
@@ -119,7 +120,7 @@
 </section>
     <section>
 <h2>Hvor længe data gemmes</h2>
-<ul><li>På telefonen: indtil du sletter dem i appen eller afinstallerer appen.</li><li>Din konto og synkroniserede data: indtil du sletter kontoen i appen.</li><li>Billeder og tekst til AI-læsning: gemmes ikke hos os.</li><li>CSV- og Excel-filer, du importerer: gemmes ikke. Kun de posteringer, du gemmer, og opsætningen af filens kolonner bliver tilbage.</li><li>Optælling af AI-læsninger: 30 dage.</li><li>Log over login-e-mails (uden adresse): 7 dage.</li><li>Nedbrudsrapporter: højst 90 dage.</li></ul>
+<ul><li>På telefonen: indtil du sletter dem i appen eller afinstallerer appen.</li><li>Din konto og synkroniserede data: indtil du sletter kontoen i appen.</li><li>Billeder og tekst til AI-læsning: gemmes ikke hos os.</li><li>CSV- og Excel-filer, du importerer: gemmes ikke. Kun de posteringer, du gemmer, og opsætningen af filens kolonner bliver tilbage.</li><li>Optælling af AI-læsninger: 30 dage.</li><li>Optælling af gratis AI-scanninger (hashet enheds-id, måned og antal): 13 måneder.</li><li>Log over login-e-mails (uden adresse): 7 dage.</li><li>Nedbrudsrapporter: højst 90 dage.</li></ul>
 </section>
     <section>
 <h2>Dine rettigheder</h2>

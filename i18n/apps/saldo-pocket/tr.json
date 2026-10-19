@@ -49,7 +49,8 @@
         "body": [
           "Bir hesap dökümünün ekran görüntüsünü veya fotoğrafını içe aktardığında ya da bir fiş veya fatura taradığında, yapay zekânın okumasına izin verebilirsin. Uygulama önce izin ister ve içe aktarma ekranında bunu istediğin zaman kapatabilirsin. İzin olmadan her şey telefonda okunur ve hiçbir şey gönderilmez.",
           "İzinle resim (veya ondan okunan metin), para birimi, ülken, bugünün tarihi, uygulamanın kategori listesi ve cihaz kimliği {{server}} üzerinden Anthropic’e gönderilir; Anthropic satırları kendi yapay zekâ modeliyle (Claude) okuyup geri gönderir. Ne biz ne de Supabase resmi, metni veya satırları saklar. Anthropic, API’si üzerinden gönderilen verileri modellerini eğitmek için kullanmaz ve kendi koşullarına göre sınırlı bir süre sonra siler.",
-          "Hizmeti sınırları içinde tutmak için (cihaz başına sınırlı sayıda okuma) sunucumuz cihaz kimliğini, tarihi ve okuma sayısını saklar, başka hiçbir şeyi saklamaz. Bu sayımlar 30 gün sonra otomatik olarak silinir."
+          "Hizmeti sınırları içinde tutmak için (cihaz başına sınırlı sayıda okuma) sunucumuz cihaz kimliğini, tarihi ve okuma sayısını saklar, başka hiçbir şeyi saklamaz. Bu sayımlar 30 gün sonra otomatik olarak silinir.",
+          "Ücretsiz sürümün yapay zekâ tarama sınırı için sunucumuz taramaları ayda bir, karma (hash) bir cihaz kimliğiyle sayar: telefonun kimliğinden gizli bir anahtarla üretilen tek yönlü bir kod, asla kimliğin kendisi değil. Karma cihaz kimliği yalnızca ücretsiz yapay zekâ taramalarını saymak için kullanılır, izleme için değil. Yalnızca kod, ay ve sayı saklanır; sayım 13 ay sonra otomatik olarak silinir."
         ]
       },
       {
@@ -110,6 +111,7 @@
           "Yapay zekâ ile okuma için görseller ve metin: bizde saklanmaz.",
           "İçe aktardığın CSV ve Excel dosyaları: saklanmaz. Yalnızca kaydettiğin işlemler ve dosyadaki sütunların düzeni kalır.",
           "Yapay zekâ okuma sayısı: 30 gün.",
+          "Ücretsiz yapay zekâ tarama sayısı (karma cihaz kimliği, ay ve sayı): 13 ay.",
           "Giriş e-postaları kaydı (adres olmadan): 7 gün.",
           "Çökme raporları: en fazla 90 gün."
         ]
@@ -144,16 +146,17 @@
         ],
         "body": [
           "Bu, uygulamanın telefonunda tuttuğu her şeyi siler: hesaplar, kayıtlar, düzenli kalemler, hedefler, kategoriler, satıcılar, ayarlar, kaydedilen resimler ve dosyalar, cihaz kimliği ile dil ve para birimi seçimlerin. Ardından uygulama yeni gibi baştan başlar.",
+          "Ücretsiz tarama ve dosya içe aktarma sayısı kalır – yalnızca sayılar, sen veya verilerin hakkında hiçbir şey yok – hem telefonda hem sunucumuzda, böylece ücretsiz sınır geçerli olmaya devam eder.",
           "Bu işlem geri alınamaz. Bir kopya istiyorsan önce verilerini Ben → Verileri dışa aktar bölümünden dışa aktar. Ücretsizdir."
         ]
       },
       {
         "heading": "Uygulamayı kaldırma",
-        "body": ["Saldo Pocket’ı kaldırdığında tüm verileri de telefondan silinir."]
+        "body": ["Saldo Pocket’ı kaldırdığında tüm verileri de telefondan silinir.", "İstisna: ücretsiz tarama ve dosya içe aktarma sayısı (yalnızca sayılar) telefonun anahtar zincirinde (iPhone) veya Android yedeğinde kalabilir; böylece ücretsiz sınır yeniden kurulumdan sonra da geçerli olur."]
       },
       {
         "heading": "Sunucumuzda kalanlar",
-        "body": ["Yapay zekâyla okumayı kullandıysan sunucumuzda cihaz kimliği ve gün başına, hiçbir içerik barındırmayan bir okuma sayımı bulunur. Bu sayım 30 gün sonra otomatik olarak silinir. Cihaz kimliği rastgeledir ve diğer her şeyle birlikte telefondan silinir; bu nedenle sayım seninle ilişkilendirilemez."]
+        "body": ["Yapay zekâyla okumayı kullandıysan sunucumuzda cihaz kimliği ve gün başına, hiçbir içerik barındırmayan bir okuma sayımı bulunur. Bu sayım 30 gün sonra otomatik olarak silinir. Cihaz kimliği rastgeledir ve diğer her şeyle birlikte telefondan silinir; bu nedenle sayım seninle ilişkilendirilemez.", "Ücretsiz yapay zekâ taramaları ayrıca ayda bir, karma bir cihaz kimliğiyle sayılır (tek yönlü bir kod, asla kimliğin kendisi değil). Yalnızca ücretsiz yapay zekâ taramalarını saymak için kullanılır, izleme için değil; sayım 13 ay sonra otomatik olarak silinir."]
       },
       {
         "heading": "Hesabını silme",

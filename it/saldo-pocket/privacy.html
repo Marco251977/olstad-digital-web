@@ -51,7 +51,7 @@
     <p class="app-name">Saldo Pocket</p>
     <h1>Informativa sulla privacy</h1>
     <p class="lede">Questa informativa spiega cosa salva Saldo Pocket, cosa invia e a chi, e cosa puoi fare. In breve: il tuo budget resta sul telefono.</p>
-    <p class="updated">Ultimo aggiornamento: 15 ottobre 2026</p>
+    <p class="updated">Ultimo aggiornamento: 19 ottobre 2026</p>
     <ul class="page-nav"><li><a href="/it/saldo-pocket/privacy" aria-current="page">Informativa sulla privacy</a></li><li><a href="/it/saldo-pocket/terms">Condizioni d’uso</a></li><li><a href="/it/saldo-pocket/delete-account">Elimina account e dati</a></li><li><a href="/it/saldo-pocket/support">Assistenza</a></li></ul>
     <section>
 <h2>Chi è il titolare</h2>
@@ -80,6 +80,7 @@
 <p>Quando importi uno screenshot o una foto di un estratto conto, o scansioni uno scontrino o una fattura, puoi lasciarlo leggere all’IA. L’app ti chiede prima il permesso e puoi disattivarlo in qualsiasi momento nella schermata di importazione. Senza permesso, tutto viene letto sul telefono e nulla viene inviato.</p>
 <p>Con il permesso, l’immagine (o il testo letto da essa), la valuta, il tuo paese, la data di oggi, l’elenco delle categorie dell’app e l’ID del dispositivo vengono inviati tramite il nostro server presso Supabase (Irlanda) ad Anthropic, che legge le righe con il suo modello di IA (Claude) e le restituisce. Né noi né Supabase salviamo l’immagine, il testo o le righe. Anthropic non usa i dati inviati tramite la sua API per addestrare i propri modelli e li elimina dopo un tempo limitato secondo i propri termini.</p>
 <p>Per mantenere il servizio nei suoi limiti (un numero limitato di letture per dispositivo), il nostro server salva l’ID del dispositivo, la data e il numero di letture, e nient’altro. Questi conteggi vengono eliminati automaticamente dopo 30 giorni.</p>
+<p>Per il limite di scansioni con IA della versione gratuita, il nostro server conta le scansioni al mese con un ID dispositivo con hash: un codice a senso unico creato dall’ID del telefono con una chiave segreta, mai l’ID stesso. L’ID dispositivo con hash serve solo a contare le scansioni gratuite con IA, non al tracciamento. Si conservano solo il codice, il mese e il numero, e il conteggio viene cancellato automaticamente dopo 13 mesi.</p>
 </section>
     <section>
 <h2>Scansione di scontrini e fatture</h2>
@@ -119,7 +120,7 @@
 </section>
     <section>
 <h2>Per quanto tempo conserviamo i dati</h2>
-<ul><li>Sul telefono: finché non li elimini nell’app o disinstalli l’app.</li><li>Il tuo account e i dati sincronizzati: finché non elimini l’account nell’app.</li><li>Immagini e testo per la lettura con IA: non conservati da noi.</li><li>File CSV ed Excel che importi: non conservati. Restano solo i movimenti che salvi e la disposizione delle colonne del file.</li><li>Conteggio delle letture con IA: 30 giorni.</li><li>Registro delle e-mail di accesso (senza indirizzo): 7 giorni.</li><li>Rapporti sugli arresti anomali: al massimo 90 giorni.</li></ul>
+<ul><li>Sul telefono: finché non li elimini nell’app o disinstalli l’app.</li><li>Il tuo account e i dati sincronizzati: finché non elimini l’account nell’app.</li><li>Immagini e testo per la lettura con IA: non conservati da noi.</li><li>File CSV ed Excel che importi: non conservati. Restano solo i movimenti che salvi e la disposizione delle colonne del file.</li><li>Conteggio delle letture con IA: 30 giorni.</li><li>Conteggio delle scansioni gratuite con IA (ID dispositivo con hash, mese e numero): 13 mesi.</li><li>Registro delle e-mail di accesso (senza indirizzo): 7 giorni.</li><li>Rapporti sugli arresti anomali: al massimo 90 giorni.</li></ul>
 </section>
     <section>
 <h2>I tuoi diritti</h2>
