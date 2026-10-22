@@ -52,7 +52,7 @@
     <h1 id="title">Saldo Pocket खुल रहा है</h1>
     <p class="lede" id="status">Saldo Pocket अपने-आप नहीं खुला? बटन पर टैप करें।</p>
     <p id="open-row"><a class="button" id="open" href="saldopocket://auth/callback">Saldo Pocket खोलें</a></p>
-    <p class="updated" id="hint">ऐप वाले फ़ोन पर नहीं हैं? वहाँ Saldo Pocket खोलें और ईमेल का कोड डालें।</p>
+    <p class="updated" id="hint">ऐप वाले फोन पर नहीं हैं? वहाँ Saldo Pocket खोलें और ईमेल का कोड डालें।</p>
     <script>
 (function () {
   var params = location.search.slice(1) + '&' + location.hash.slice(1);
@@ -71,11 +71,11 @@
     setTimeout(function () { location.href = document.getElementById('open').href; }, 300);
   }
   if (!phone) {
-    document.getElementById('title').textContent = "लिंक अपने फ़ोन पर खोलें";
-    document.getElementById('status').textContent = "यह लिंक आपको यहाँ साइन इन नहीं कर सकता। इसे उस फ़ोन पर खोलें जिसमें Saldo Pocket है, या ईमेल का कोड ऐप में डालें।";
+    document.getElementById('title').textContent = "लिंक अपने फोन पर खोलें";
+    document.getElementById('status').textContent = "यह लिंक आपको यहाँ साइन इन नहीं कर सकता। इसे उस फोन पर खोलें जिसमें Saldo Pocket है, या ईमेल का कोड ऐप में डालें।";
     document.getElementById('open-row').style.display = 'none';
     document.getElementById('hint').style.display = 'none';
-    document.title = "Saldo Pocket – लिंक अपने फ़ोन पर खोलें";
+    document.title = "Saldo Pocket – लिंक अपने फोन पर खोलें";
   }
 })();
 </script>
