@@ -38,7 +38,7 @@
         "heading": "CSV ve Excel dosyalarını içe aktarma",
         "body": [
           "Bankandan bir CSV veya Excel dosyasını içe aktardığında dosya yalnızca telefonunda okunur. Dosyanın kendisi asla saklanmaz, kopyalanmaz veya gönderilmez; ne bir sunucuya ne de yapay zekâya.",
-          "Dosyadan yalnızca tarih (dosyada varsa valör tarihi de), açıklama, tutar, satıcı, hesabı mutabık kılmak için bankanın bakiyesi ve hesabı tanımak için hesap numarasının son dört hanesi saklanır. Ödeme referansları, diğer referanslar ve dosyadaki diğer sütunlar saklanmaz.",
+          "Dosyadan yalnızca tarih (dosyada varsa kayıt tarihi de), açıklama, tutar, satıcı, hesabı mutabık kılmak için bankanın bakiyesi ve hesabı tanımak için hesap numarasının son dört hanesi saklanır. Ödeme referansları, diğer referanslar ve dosyadaki diğer sütunlar saklanmaz.",
           "Bankanın henüz kesinleştirmediği işlemler normal işlemler olarak saklanır ve hemen hesaba katılır. Böyle bir işlem bankadan daha sonra yapılan bir içe aktarmada yoksa uygulama onu kaldırmak isteyip istemediğini sorar. Kendiliğinden asla kaldırılmaz.",
           "Uygulama, bir sonraki içe aktarma daha hızlı olsun diye dosyadaki sütunların düzenini içerikleri olmadan hatırlar. Pro ile giriş yaptıysan bu, diğer ayarlarınla birlikte eşitlenir.",
           "Yapay zekâ ile okuma yalnızca görseller ve PDF’ler için ve yalnızca izin verdiğinde kullanılır."
@@ -50,7 +50,7 @@
           "Bir hesap dökümünün ekran görüntüsünü veya fotoğrafını içe aktardığında ya da bir fiş veya fatura taradığında, yapay zekânın okumasına izin verebilirsin. Uygulama önce izin ister ve içe aktarma ekranında bunu istediğin zaman kapatabilirsin. İzin olmadan her şey telefonda okunur ve hiçbir şey gönderilmez.",
           "İzinle resim (veya ondan okunan metin), para birimi, ülken, bugünün tarihi, uygulamanın kategori listesi ve cihaz kimliği {{server}} üzerinden Anthropic’e gönderilir; Anthropic satırları kendi yapay zekâ modeliyle (Claude) okuyup geri gönderir. Ne biz ne de Supabase resmi, metni veya satırları saklar. Anthropic, API’si üzerinden gönderilen verileri modellerini eğitmek için kullanmaz ve kendi koşullarına göre sınırlı bir süre sonra siler.",
           "Hizmeti sınırları içinde tutmak için (cihaz başına sınırlı sayıda okuma) sunucumuz cihaz kimliğini, tarihi ve okuma sayısını saklar, başka hiçbir şeyi saklamaz. Bu sayımlar 30 gün sonra otomatik olarak silinir.",
-          "Ücretsiz sürümün yapay zekâ tarama sınırı için sunucumuz taramaları ayda bir, karma (hash) bir cihaz kimliğiyle sayar: telefonun kimliğinden gizli bir anahtarla üretilen tek yönlü bir kod, asla kimliğin kendisi değil. Karma cihaz kimliği yalnızca ücretsiz yapay zekâ taramalarını saymak için kullanılır, izleme için değil. Yalnızca kod, ay ve sayı saklanır; sayım 13 ay sonra otomatik olarak silinir."
+          "Ücretsiz sürümün yapay zekâ tarama sınırı için sunucumuz taramaları aylık olarak, karma (hash) bir cihaz kimliğiyle sayar: telefonun kimliğinden gizli bir anahtarla üretilen tek yönlü bir kod, asla kimliğin kendisi değil. Karma cihaz kimliği yalnızca ücretsiz yapay zekâ taramalarını saymak için kullanılır, izleme için değil. Yalnızca kod, ay ve sayı saklanır; sayım 13 ay sonra otomatik olarak silinir."
         ]
       },
       {
@@ -73,7 +73,7 @@
         "heading": "İsteğe bağlı hesap ve eşitleme (Pro)",
         "body": [
           "Apple, Google, Facebook (Meta) veya e-posta ile giriş yapabilirsin. Giriş, {{region}} konumundaki sunucularda Supabase tarafından yönetilir. Bu durumda e-posta adresini, bir hesap kimliğini, sağlayıcı paylaşırsa adını, uygulama dilini ve test sürümlerinde bir test işaretini saklarız. Apple ile e-posta adresini gizleyebilirsin; o zaman yalnızca Apple’ın yönlendirme adresini görürüz.",
-          "Pro ile bütçen hesabınla eşitlenir: hesaplar, kayıtlar, düzenli kayıtlar, bütçe, birikim hedefleri, kendi kategorilerin, hatırlanan satıcılar ve seni izleyen ayarlar (maaş günü, maaş, bütçe). Her değişiklik ne zaman ve hangi cihazda yapıldığıyla birlikte saklanır. Veriler aktarımda ve depolamada şifrelenir ve yalnızca hesabın onları okuyabilir.",
+          "Pro ile bütçen hesabınla eşitlenir: hesaplar, kayıtlar, düzenli kayıtlar, bütçe, birikim hedefleri, kendi kategorilerin, hatırlanan satıcılar ve seninle birlikte gelen ayarlar (maaş günü, maaş, bütçe). Her değişiklik ne zaman ve hangi cihazda yapıldığıyla birlikte saklanır. Veriler aktarımda ve depolamada şifrelenir ve yalnızca hesabın onları okuyabilir.",
           "Giriş kodları ve bağlantıları, adresin ve dilinle Resend üzerinden e-postayla gönderilir. Her e-postanın bir kez gönderilmesi için sunucu yalnızca mesaj kimliğini, türünü ve durumunu 7 gün saklar, adresi asla saklamaz.",
           "İstediğin zaman çıkış yapabilirsin; veriler telefonda kalır. «Hesabı sil», hesabı ve sunucuda onunla saklanan tüm verileri kaldırır."
         ]
@@ -156,7 +156,7 @@
       },
       {
         "heading": "Sunucumuzda kalanlar",
-        "body": ["Yapay zekâyla okumayı kullandıysan sunucumuzda cihaz kimliği ve gün başına, hiçbir içerik barındırmayan bir okuma sayımı bulunur. Bu sayım 30 gün sonra otomatik olarak silinir. Cihaz kimliği rastgeledir ve diğer her şeyle birlikte telefondan silinir; bu nedenle sayım seninle ilişkilendirilemez.", "Ücretsiz yapay zekâ taramaları ayrıca ayda bir, karma bir cihaz kimliğiyle sayılır (tek yönlü bir kod, asla kimliğin kendisi değil). Yalnızca ücretsiz yapay zekâ taramalarını saymak için kullanılır, izleme için değil; sayım 13 ay sonra otomatik olarak silinir."]
+        "body": ["Yapay zekâyla okumayı kullandıysan sunucumuzda cihaz kimliği ve gün başına, hiçbir içerik barındırmayan bir okuma sayımı bulunur. Bu sayım 30 gün sonra otomatik olarak silinir. Cihaz kimliği rastgeledir ve diğer her şeyle birlikte telefondan silinir; bu nedenle sayım seninle ilişkilendirilemez.", "Ücretsiz yapay zekâ taramaları ayrıca aylık olarak, karma bir cihaz kimliğiyle sayılır (tek yönlü bir kod, asla kimliğin kendisi değil). Yalnızca ücretsiz yapay zekâ taramalarını saymak için kullanılır, izleme için değil; sayım 13 ay sonra otomatik olarak silinir."]
       },
       {
         "heading": "Hesabını silme",
@@ -210,11 +210,11 @@
       },
       {
         "heading": "Hesap ve eşitleme",
-        "body": ["Uygulamayı hesapsız kullanabilirsin. Giriş yapar ve Pro’ya sahipsen verilerin hesabınla eşitlenir, böylece birden çok cihazda kullanabilirsin. Girişini koru; hesabına giriş yapabilen herkes eşitlenen verileri görebilir."]
+        "body": ["Uygulamayı hesapsız kullanabilirsin. Giriş yapar ve Pro’ya sahipsen verilerin hesabınla eşitlenir, böylece birden çok cihazda kullanabilirsin. Giriş bilgilerini güvende tut; hesabına giriş yapabilen herkes eşitlenen verileri görebilir."]
       },
       {
         "heading": "Ücretsiz ve Pro",
-        "body": ["Ücretsiz sürüm hiçbir şeye mal olmaz. Pro, App Store veya Google Play’den abonelik (aylık ya da yıllık) veya tek seferlik satın alma olarak alınır. Fiyat, satın almadan önce mağazada gösterilir."],
+        "body": ["Ücretsiz sürüm için hiçbir ücret alınmaz. Pro, App Store veya Google Play’den abonelik (aylık ya da yıllık) veya tek seferlik satın alma olarak alınır. Fiyat, satın almadan önce mağazada gösterilir."],
         "list": [
           "Abonelik, dönem bitmeden en az 24 saat önce mağazadan iptal edene kadar otomatik olarak yenilenir.",
           "Aboneliği App Store veya Google Play hesap ayarlarından yönetir ve iptal edersin.",
@@ -227,7 +227,7 @@
       },
       {
         "heading": "Verilerin",
-        "body": ["Verilerin sana aittir. Bunları ücretsiz sürümde de dahil olmak üzere uygulamada istediğin zaman dışa aktarabilir ve silebilirsin. Kişisel verileri nasıl işlediğimiz gizlilik politikasında açıklanır."]
+        "body": ["Verilerin sana aittir. Bunları, ücretsiz sürüm dahil, uygulamada istediğin zaman dışa aktarabilir ve silebilirsin. Kişisel verileri nasıl işlediğimiz gizlilik politikasında açıklanır."]
       },
       {
         "heading": "Sorumluluk",
@@ -239,7 +239,7 @@
       },
       {
         "heading": "Uygulanacak hukuk",
-        "body": ["Bu koşullar Norveç hukukuna tabidir. Tüketiciysen yaşadığın ülkenin hukukunun sağladığı korumayı da korursun."]
+        "body": ["Bu koşullar Norveç hukukuna tabidir. Tüketiciysen yaşadığın ülkenin hukukunun sağladığı korumadan da yararlanmaya devam edersin."]
       }
     ]
   },

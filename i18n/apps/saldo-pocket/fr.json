@@ -27,7 +27,7 @@
         "list": [
           "Les comptes que vous créez (noms choisis par vous, solde et devise ; pas des comptes bancaires).",
           "Vos opérations : date, montant, devise, catégorie, commerçant et une note facultative.",
-          "Les récurrents, les objectifs d’épargne, vos propres catégories et la catégorie mémorisée pour chaque commerçant.",
+          "Les opérations récurrentes, les objectifs d’épargne, vos propres catégories et la catégorie mémorisée pour chaque commerçant.",
           "Les réglages : jour de paie, budget mensuel, langue et devise, et si vous autorisez la lecture par IA.",
           "Un identifiant d’appareil aléatoire, utilisé uniquement pour compter les lectures par IA (voir ci-dessous).",
           "Les images que vous choisissez de garder après une importation."
@@ -73,14 +73,14 @@
         "heading": "Compte facultatif et synchronisation (Pro)",
         "body": [
           "Vous pouvez vous connecter avec Apple, Google, Facebook (Meta) ou un e-mail. La connexion est gérée par Supabase sur des serveurs en {{region}}. Nous enregistrons alors votre adresse e-mail, un identifiant de compte, votre nom si le fournisseur le partage, la langue de l’application et, dans les versions de test, un indicateur de test. Avec Apple, vous pouvez masquer votre adresse e-mail ; nous ne voyons alors que l’adresse de relais d’Apple.",
-          "Avec Pro, votre budget est synchronisé avec votre compte : comptes, opérations, opérations récurrentes, budget, objectifs d’épargne, catégories personnelles, fournisseurs mémorisés et les réglages qui vous suivent (jour de paie, salaire, budget). Chaque modification est enregistrée avec sa date et l’appareil. Les données sont chiffrées pendant le transfert et au repos, et seul votre compte peut les lire.",
+          "Avec Pro, votre budget est synchronisé avec votre compte : comptes, opérations, opérations récurrentes, budget, objectifs d’épargne, catégories personnelles, commerçants mémorisés et les réglages qui vous suivent (jour de paie, salaire, budget). Chaque modification est enregistrée avec sa date et l’appareil. Les données sont chiffrées pendant le transfert et au repos, et seul votre compte peut les lire.",
           "Les codes et liens de connexion sont envoyés par e-mail via Resend, avec votre adresse et votre langue. Pour envoyer chaque e-mail une seule fois, le serveur ne garde que l’identifiant du message, son type et son statut pendant 7 jours, jamais l’adresse.",
           "Vous pouvez vous déconnecter à tout moment ; les données restent sur le téléphone. « Supprimer le compte » supprime le compte et toutes les données enregistrées avec lui sur le serveur."
         ]
       },
       {
         "heading": "Widget et rappels",
-        "body": ["Le widget affiche des chiffres issus des données de votre téléphone, et les rappels des récurrents sont programmés sur le téléphone. Rien n’est envoyé dans les deux cas."]
+        "body": ["Le widget affiche des chiffres issus des données de votre téléphone, et les rappels des opérations récurrentes sont programmés sur le téléphone. Rien n’est envoyé dans les deux cas."]
       },
       {
         "heading": "Avec qui nous partageons des données",
@@ -129,7 +129,7 @@
       },
       {
         "heading": "Modifications",
-        "body": ["Si nous modifions cette politique, nous mettons à jour cette page et la date en haut. Si la modification compte pour l’utilisation de vos données, nous vous le dirons dans l’app."]
+        "body": ["Si nous modifions cette politique, nous mettons à jour cette page et la date en haut. Si la modification a une incidence sur l’utilisation de vos données, nous vous en informerons dans l’app."]
       }
     ]
   },
@@ -145,7 +145,7 @@
           "Touchez Tout supprimer."
         ],
         "body": [
-          "Cela supprime tout ce que l’app conserve sur votre téléphone : comptes, opérations, récurrents, objectifs, catégories, commerçants, réglages, images et fichiers enregistrés, l’identifiant de l’appareil ainsi que vos choix de langue et de devise. L’app redémarre ensuite comme neuve.",
+          "Cela supprime tout ce que l’app conserve sur votre téléphone : comptes, opérations, opérations récurrentes, objectifs, catégories, commerçants, réglages, images et fichiers enregistrés, l’identifiant de l’appareil ainsi que vos choix de langue et de devise. L’app redémarre ensuite comme neuve.",
           "Le décompte des scans et imports de fichiers gratuits est conservé – seulement des chiffres, rien sur vous ni vos données –, sur le téléphone et sur notre serveur, afin que la limite gratuite s’applique toujours.",
           "C’est irréversible. Si vous voulez une copie, exportez d’abord vos données dans Moi → Exporter les données. C’est gratuit."
         ]
@@ -202,7 +202,7 @@
     "sections": [
       {
         "heading": "Qui nous sommes",
-        "body": ["{{company}} (n° d’org. {{orgNumber}}, {{country}}) conçoit et exploite Saldo Pocket. Contact : {{email}}."]
+        "body": ["{{company}} (n° d’immatriculation {{orgNumber}}, {{country}}) conçoit et exploite Saldo Pocket. Contact : {{email}}."]
       },
       {
         "heading": "Ce qu’est l’application",

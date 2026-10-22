@@ -70,7 +70,7 @@
     <section>
 <h2>CSV ve Excel dosyalarını içe aktarma</h2>
 <p>Bankandan bir CSV veya Excel dosyasını içe aktardığında dosya yalnızca telefonunda okunur. Dosyanın kendisi asla saklanmaz, kopyalanmaz veya gönderilmez; ne bir sunucuya ne de yapay zekâya.</p>
-<p>Dosyadan yalnızca tarih (dosyada varsa valör tarihi de), açıklama, tutar, satıcı, hesabı mutabık kılmak için bankanın bakiyesi ve hesabı tanımak için hesap numarasının son dört hanesi saklanır. Ödeme referansları, diğer referanslar ve dosyadaki diğer sütunlar saklanmaz.</p>
+<p>Dosyadan yalnızca tarih (dosyada varsa kayıt tarihi de), açıklama, tutar, satıcı, hesabı mutabık kılmak için bankanın bakiyesi ve hesabı tanımak için hesap numarasının son dört hanesi saklanır. Ödeme referansları, diğer referanslar ve dosyadaki diğer sütunlar saklanmaz.</p>
 <p>Bankanın henüz kesinleştirmediği işlemler normal işlemler olarak saklanır ve hemen hesaba katılır. Böyle bir işlem bankadan daha sonra yapılan bir içe aktarmada yoksa uygulama onu kaldırmak isteyip istemediğini sorar. Kendiliğinden asla kaldırılmaz.</p>
 <p>Uygulama, bir sonraki içe aktarma daha hızlı olsun diye dosyadaki sütunların düzenini içerikleri olmadan hatırlar. Pro ile giriş yaptıysan bu, diğer ayarlarınla birlikte eşitlenir.</p>
 <p>Yapay zekâ ile okuma yalnızca görseller ve PDF’ler için ve yalnızca izin verdiğinde kullanılır.</p>
@@ -80,7 +80,7 @@
 <p>Bir hesap dökümünün ekran görüntüsünü veya fotoğrafını içe aktardığında ya da bir fiş veya fatura taradığında, yapay zekânın okumasına izin verebilirsin. Uygulama önce izin ister ve içe aktarma ekranında bunu istediğin zaman kapatabilirsin. İzin olmadan her şey telefonda okunur ve hiçbir şey gönderilmez.</p>
 <p>İzinle resim (veya ondan okunan metin), para birimi, ülken, bugünün tarihi, uygulamanın kategori listesi ve cihaz kimliği Supabase’deki (İrlanda) sunucumuz üzerinden Anthropic’e gönderilir; Anthropic satırları kendi yapay zekâ modeliyle (Claude) okuyup geri gönderir. Ne biz ne de Supabase resmi, metni veya satırları saklar. Anthropic, API’si üzerinden gönderilen verileri modellerini eğitmek için kullanmaz ve kendi koşullarına göre sınırlı bir süre sonra siler.</p>
 <p>Hizmeti sınırları içinde tutmak için (cihaz başına sınırlı sayıda okuma) sunucumuz cihaz kimliğini, tarihi ve okuma sayısını saklar, başka hiçbir şeyi saklamaz. Bu sayımlar 30 gün sonra otomatik olarak silinir.</p>
-<p>Ücretsiz sürümün yapay zekâ tarama sınırı için sunucumuz taramaları ayda bir, karma (hash) bir cihaz kimliğiyle sayar: telefonun kimliğinden gizli bir anahtarla üretilen tek yönlü bir kod, asla kimliğin kendisi değil. Karma cihaz kimliği yalnızca ücretsiz yapay zekâ taramalarını saymak için kullanılır, izleme için değil. Yalnızca kod, ay ve sayı saklanır; sayım 13 ay sonra otomatik olarak silinir.</p>
+<p>Ücretsiz sürümün yapay zekâ tarama sınırı için sunucumuz taramaları aylık olarak, karma (hash) bir cihaz kimliğiyle sayar: telefonun kimliğinden gizli bir anahtarla üretilen tek yönlü bir kod, asla kimliğin kendisi değil. Karma cihaz kimliği yalnızca ücretsiz yapay zekâ taramalarını saymak için kullanılır, izleme için değil. Yalnızca kod, ay ve sayı saklanır; sayım 13 ay sonra otomatik olarak silinir.</p>
 </section>
     <section>
 <h2>Fiş ve fatura tarama</h2>
@@ -101,7 +101,7 @@
     <section>
 <h2>İsteğe bağlı hesap ve eşitleme (Pro)</h2>
 <p>Apple, Google, Facebook (Meta) veya e-posta ile giriş yapabilirsin. Giriş, İrlanda konumundaki sunucularda Supabase tarafından yönetilir. Bu durumda e-posta adresini, bir hesap kimliğini, sağlayıcı paylaşırsa adını, uygulama dilini ve test sürümlerinde bir test işaretini saklarız. Apple ile e-posta adresini gizleyebilirsin; o zaman yalnızca Apple’ın yönlendirme adresini görürüz.</p>
-<p>Pro ile bütçen hesabınla eşitlenir: hesaplar, kayıtlar, düzenli kayıtlar, bütçe, birikim hedefleri, kendi kategorilerin, hatırlanan satıcılar ve seni izleyen ayarlar (maaş günü, maaş, bütçe). Her değişiklik ne zaman ve hangi cihazda yapıldığıyla birlikte saklanır. Veriler aktarımda ve depolamada şifrelenir ve yalnızca hesabın onları okuyabilir.</p>
+<p>Pro ile bütçen hesabınla eşitlenir: hesaplar, kayıtlar, düzenli kayıtlar, bütçe, birikim hedefleri, kendi kategorilerin, hatırlanan satıcılar ve seninle birlikte gelen ayarlar (maaş günü, maaş, bütçe). Her değişiklik ne zaman ve hangi cihazda yapıldığıyla birlikte saklanır. Veriler aktarımda ve depolamada şifrelenir ve yalnızca hesabın onları okuyabilir.</p>
 <p>Giriş kodları ve bağlantıları, adresin ve dilinle Resend üzerinden e-postayla gönderilir. Her e-postanın bir kez gönderilmesi için sunucu yalnızca mesaj kimliğini, türünü ve durumunu 7 gün saklar, adresi asla saklamaz.</p>
 <p>İstediğin zaman çıkış yapabilirsin; veriler telefonda kalır. «Hesabı sil», hesabı ve sunucuda onunla saklanan tüm verileri kaldırır.</p>
 </section>

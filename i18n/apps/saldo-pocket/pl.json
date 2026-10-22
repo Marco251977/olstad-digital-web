@@ -48,7 +48,7 @@
         "heading": "Odczyt wyciągów, paragonów i faktur przez AI (opcjonalnie)",
         "body": [
           "Gdy importujesz zrzut ekranu lub zdjęcie wyciągu albo skanujesz paragon lub fakturę, możesz pozwolić, aby AI je odczytała. Aplikacja najpierw prosi o zgodę, a na ekranie importu możesz to w każdej chwili wyłączyć. Bez zgody wszystko jest odczytywane na telefonie i nic nie jest wysyłane.",
-          "Za zgodą obraz (lub odczytany z niego tekst), waluta, Twój kraj, dzisiejsza data, lista kategorii aplikacji i identyfikator urządzenia są wysyłane przez {{server}} do Anthropic, który odczytuje wiersze za pomocą swojego modelu AI (Claude) i odsyła je z powrotem. Ani my, ani Supabase nie przechowujemy obrazu, tekstu ani wierszy. Anthropic nie używa danych przesyłanych przez swoje API do trenowania modeli i usuwa je po ograniczonym czasie zgodnie z własnymi warunkami.",
+          "Za zgodą obraz (lub odczytany z niego tekst), waluta, Twój kraj, dzisiejsza data, lista kategorii aplikacji i identyfikator urządzenia są wysyłane przez {{server}} do Anthropic, który odczytuje wiersze za pomocą swojego modelu AI (Claude) i odsyła je z powrotem. Ani my, ani Supabase nie przechowujemy obrazu, tekstu ani wierszy. Anthropic nie używa danych przesyłanych przez swoje API do trenowania modeli i usuwa je po upływie określonego czasu zgodnie z własnymi warunkami.",
           "Aby usługa mieściła się w limitach (ograniczona liczba odczytów na urządzenie), nasz serwer przechowuje identyfikator urządzenia, datę i liczbę odczytów — nic więcej. Te liczniki są automatycznie usuwane po 30 dniach.",
           "Na potrzeby limitu skanów AI w wersji darmowej nasz serwer liczy skany w miesiącu za pomocą zahaszowanego identyfikatora urządzenia – jednokierunkowego kodu utworzonego z identyfikatora telefonu tajnym kluczem, nigdy samego identyfikatora. Zahaszowany identyfikator urządzenia służy wyłącznie do liczenia darmowych skanów AI, nie do śledzenia. Zapisywane są tylko kod, miesiąc i liczba, a licznik jest automatycznie usuwany po 13 miesiącach."
         ]
@@ -67,7 +67,7 @@
       },
       {
         "heading": "Zakup Pro",
-        "body": ["Pro kupuje się w App Store lub Google Play. Płatność obsługuje Apple lub Google według własnych polityk prywatności; nigdy nie widzimy danych Twojej karty. RevenueCat śledzi, czy masz Pro, za pomocą anonimowego ID tworzonego przez aplikację lub ID Twojego konta, gdy jesteś zalogowany, aby Pro było przypisane do konta."]
+        "body": ["Pro kupuje się w App Store lub Google Play. Płatność obsługuje Apple lub Google według własnych polityk prywatności; nigdy nie widzimy danych Twojej karty. RevenueCat przechowuje informację, czy masz Pro, za pomocą anonimowego ID tworzonego przez aplikację lub ID Twojego konta, gdy jesteś zalogowany, aby Pro było przypisane do konta."]
       },
       {
         "heading": "Opcjonalne konto i synchronizacja (Pro)",
@@ -140,9 +140,9 @@
         "heading": "Usuń wszystko w aplikacji",
         "steps": [
           "Otwórz Saldo Pocket.",
-          "Przejdź do Ja.",
-          "Dotknij Usuń wszystkie dane.",
-          "Dotknij Usuń wszystko."
+          "Przejdź do zakładki „Ja”.",
+          "Dotknij „Usuń wszystkie dane”.",
+          "Dotknij „Usuń wszystko”."
         ],
         "body": [
           "Usuwa to wszystko, co aplikacja przechowuje na Twoim telefonie: konta, operacje, stałe pozycje, cele, kategorie, odbiorców, ustawienia, zapisane obrazy i pliki, identyfikator urządzenia oraz wybór języka i waluty. Aplikacja uruchomi się potem od nowa.",
@@ -202,7 +202,7 @@
     "sections": [
       {
         "heading": "Kim jesteśmy",
-        "body": ["{{company}} (nr org. {{orgNumber}}, {{country}}) tworzy i prowadzi Saldo Pocket. Kontakt: {{email}}."]
+        "body": ["{{company}} (nr rej. {{orgNumber}}, {{country}}) tworzy i prowadzi Saldo Pocket. Kontakt: {{email}}."]
       },
       {
         "heading": "Czym jest aplikacja",
@@ -213,7 +213,7 @@
         "body": ["Z aplikacji możesz korzystać bez konta. Jeśli się zalogujesz i masz Pro, dane są synchronizowane z Twoim kontem, aby korzystać z nich na kilku urządzeniach. Chroń swoje logowanie; kto zaloguje się na Twoje konto, zobaczy zsynchronizowane dane."]
       },
       {
-        "heading": "Bezpłatnie i Pro",
+        "heading": "Wersja bezpłatna i Pro",
         "body": ["Wersja bezpłatna nic nie kosztuje. Pro kupuje się w App Store lub Google Play jako subskrypcję (miesięczną lub roczną) albo zakup jednorazowy. Cena jest widoczna w sklepie przed zakupem."],
         "list": [
           "Subskrypcja odnawia się automatycznie, dopóki nie anulujesz jej w sklepie najpóźniej 24 godziny przed końcem okresu.",

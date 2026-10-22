@@ -80,7 +80,7 @@
 <p>Cuando importas una captura o una foto de un extracto, o escaneas un recibo o una factura, puedes dejar que la IA lo lea. La app te pide permiso primero y puedes desactivarlo en cualquier momento en la pantalla de importación. Sin permiso, todo se lee en el teléfono y no se envía nada.</p>
 <p>Con permiso, la imagen (o el texto leído de ella), la moneda, tu país, la fecha de hoy, la lista de categorías de la app y el identificador del dispositivo se envían a través de nuestro servidor en Supabase (Irlanda) a Anthropic, que lee las filas con su modelo de IA (Claude) y las devuelve. Ni nosotros ni Supabase guardamos la imagen, el texto ni las filas. Anthropic no usa los datos enviados a través de su API para entrenar sus modelos y los elimina tras un tiempo limitado según sus propias condiciones.</p>
 <p>Para mantener el servicio dentro de sus límites (un número limitado de lecturas por dispositivo), nuestro servidor guarda el identificador del dispositivo, la fecha y el número de lecturas, y nada más. Estos recuentos se borran automáticamente a los 30 días.</p>
-<p>Para el límite de escaneos con IA de la versión gratuita, nuestro servidor cuenta los escaneos por mes con un ID de dispositivo cifrado (hash): un código de un solo sentido creado a partir del ID del teléfono con una clave secreta, nunca el ID en sí. El ID de dispositivo cifrado se usa solo para contar los escaneos gratuitos con IA, no para rastrearte. Solo se guardan el código, el mes y el número, y el recuento se borra automáticamente a los 13 meses.</p>
+<p>Para el límite de escaneos con IA de la versión gratuita, nuestro servidor cuenta los escaneos por mes con un hash del ID del dispositivo: un código de un solo sentido creado a partir del ID del teléfono con una clave secreta, nunca el ID en sí. El hash del ID del dispositivo se usa solo para contar los escaneos gratuitos con IA, no para rastrearte. Solo se guardan el código, el mes y el número, y el recuento se borra automáticamente a los 13 meses.</p>
 </section>
     <section>
 <h2>Escaneo de recibos y facturas</h2>
@@ -101,7 +101,7 @@
     <section>
 <h2>Cuenta opcional y sincronización (Pro)</h2>
 <p>Puedes iniciar sesión con Apple, Google, Facebook (Meta) o correo. El inicio de sesión lo gestiona Supabase en servidores en Irlanda. Guardamos tu dirección de correo, un ID de cuenta, tu nombre si el proveedor lo comparte, el idioma de la app y, en versiones de prueba, una marca de prueba. Con Apple puedes ocultar tu correo; entonces solo vemos la dirección de reenvío de Apple.</p>
-<p>Con Pro, tu presupuesto se sincroniza con tu cuenta: cuentas, movimientos, movimientos fijos, presupuesto, metas de ahorro, categorías propias, proveedores recordados y los ajustes que te acompañan (día de cobro, sueldo, presupuesto). Cada cambio se guarda con cuándo y en qué dispositivo se hizo. Los datos se cifran en tránsito y en reposo, y solo tu cuenta puede leerlos.</p>
+<p>Con Pro, tu presupuesto se sincroniza con tu cuenta: cuentas, movimientos, movimientos fijos, presupuesto, metas de ahorro, categorías propias, comercios recordados y los ajustes que te acompañan (día de cobro, sueldo, presupuesto). Cada cambio se guarda junto con la fecha y el dispositivo en que se hizo. Los datos se cifran en tránsito y en reposo, y solo tu cuenta puede leerlos.</p>
 <p>Los códigos y enlaces de inicio de sesión se envían por correo a través de Resend, con tu dirección e idioma. Para enviar cada correo una sola vez, el servidor solo guarda el ID del mensaje, el tipo y el estado durante 7 días, nunca la dirección.</p>
 <p>Puedes cerrar sesión cuando quieras; los datos se quedan en el teléfono. «Eliminar cuenta» borra la cuenta y todos los datos guardados con ella en el servidor.</p>
 </section>
@@ -120,7 +120,7 @@
 </section>
     <section>
 <h2>Cuánto tiempo se guardan los datos</h2>
-<ul><li>En el teléfono: hasta que los elimines en la app o desinstales la app.</li><li>Tu cuenta y los datos sincronizados: hasta que elimines la cuenta en la app.</li><li>Imágenes y texto para la lectura con IA: no los guardamos.</li><li>Archivos CSV y Excel que importas: no se guardan. Solo quedan los movimientos que guardas y la organización de las columnas del archivo.</li><li>Recuento de lecturas con IA: 30 días.</li><li>Recuento de escaneos gratuitos con IA (ID de dispositivo cifrado, mes y número): 13 meses.</li><li>Registro de correos de inicio de sesión (sin dirección): 7 días.</li><li>Informes de errores: 90 días como máximo.</li></ul>
+<ul><li>En el teléfono: hasta que los elimines en la app o desinstales la app.</li><li>Tu cuenta y los datos sincronizados: hasta que elimines la cuenta en la app.</li><li>Imágenes y texto para la lectura con IA: no los guardamos.</li><li>Archivos CSV y Excel que importas: no se guardan. Solo quedan los movimientos que guardas y la organización de las columnas del archivo.</li><li>Recuento de lecturas con IA: 30 días.</li><li>Recuento de escaneos gratuitos con IA (hash del ID del dispositivo, mes y número): 13 meses.</li><li>Registro de correos de inicio de sesión (sin dirección): 7 días.</li><li>Informes de errores: 90 días como máximo.</li></ul>
 </section>
     <section>
 <h2>Tus derechos</h2>

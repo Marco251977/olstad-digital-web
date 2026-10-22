@@ -45,9 +45,9 @@
         ]
       },
       {
-        "heading": "AI reading of bank lists, receipts and bills (optional)",
+        "heading": "AI reading of transaction lists, receipts and bills (optional)",
         "body": [
-          "When you import a screenshot or photo of a bank list, or scan a receipt or bill, you can let AI read it. The app asks for your permission first, and you can turn it off at any time on the import screen. Without permission, everything is read on the phone and nothing is sent.",
+          "When you import a screenshot or photo of a transaction list from your bank, or scan a receipt or bill, you can let AI read it. The app asks for your permission first, and you can turn it off at any time on the import screen. Without permission, everything is read on the phone and nothing is sent.",
           "With permission, the picture (or the text read from it), the currency, your country, today’s date, the app’s list of categories and the device ID are sent through {{server}} to Anthropic, which reads the rows with its AI model (Claude) and sends them back. Neither we nor Supabase store the picture, the text or the rows. Anthropic does not use data sent through its API to train its models, and deletes it after a limited time under its own terms.",
           "To keep the service within its limits (a limited number of readings per device), our server stores the device ID, the date and the number of readings, and nothing else. These counts are deleted automatically after 30 days.",
           "For the free version’s limit on AI scans, our server counts scans per month with a hashed device ID – a one-way code made from the phone’s ID with a secret key, never the ID itself. The hashed device ID is used only to count free AI scans, not for tracking. Only the code, the month and the number are stored, and the count is deleted automatically after 13 months."
@@ -55,7 +55,7 @@
       },
       {
         "heading": "Scanning receipts and bills",
-        "body": ["When you scan a receipt or bill, the picture is read on your phone, or by AI if you have said yes (see above). The picture is deleted as soon as it has been read, also if you cancel or something goes wrong. From the picture, only the store, date, amount and category are stored. KID numbers and account numbers are never stored."]
+        "body": ["When you scan a receipt or bill, the picture is read on your phone, or by AI if you have said yes (see above). The picture is deleted as soon as it has been read, even if you cancel or something goes wrong. From the picture, only the store, date, amount and category are stored. KID numbers and account numbers are never stored."]
       },
       {
         "heading": "Crash reports",
@@ -75,7 +75,7 @@
           "You can sign in with Apple, Google, Facebook (Meta) or e-mail. Sign-in is handled by Supabase on servers in {{region}}. We then store your e-mail address, an account ID, your name if the provider shares it, your app language and, on test versions, a test flag. With Apple you can hide your e-mail address; we then only see Apple’s relay address.",
           "With Pro, your budget is synced to your account: accounts, entries, recurring items, budget, savings goals, your own categories, remembered vendors and the settings that follow you (payday, salary, budget). Each change is stored with when it was made and on which device. The data is encrypted in transit and at rest, and only your account can read it.",
           "Sign-in codes and links are sent by e-mail through Resend, with your address and language. To send each e-mail once, the server keeps only the message ID, type and status for 7 days, never the address.",
-          "You can sign out at any time; the data stays on the phone. «Delete account» removes the account and all data stored with it on the server."
+          "You can sign out at any time; the data stays on the phone. “Delete account” removes the account and all data stored with it on the server."
         ]
       },
       {
@@ -145,7 +145,7 @@
           "Tap Delete everything."
         ],
         "body": [
-          "This deletes everything the app keeps on your phone: accounts, entries, recurring items, goals, categories, vendors, settings, saved pictures and files, the device ID, and your language and currency choices. The app then starts again as new.",
+          "This deletes everything the app keeps on your phone: accounts, entries, recurring items, goals, categories, vendors, settings, saved pictures and files, the device ID, and your language and currency choices. The app then starts over from scratch.",
           "The count of free scans and file imports stays – only numbers, nothing about you or your data – both on the phone and on our server, so the free limit still applies.",
           "It cannot be undone. If you want a copy, export your data first under Me → Export data. It is free."
         ]
@@ -218,20 +218,20 @@
         "list": [
           "A subscription renews automatically until you cancel it in the store at least 24 hours before the period ends.",
           "You manage and cancel it in your App Store or Google Play account settings.",
-          "If a free trial is offered, it turns into a paid subscription when it ends unless you cancel before."
+          "If a free trial is offered, it turns into a paid subscription when it ends unless you cancel before then."
         ]
       },
       {
         "heading": "The stores’ terms",
-        "body": ["Purchases on iPhone and iPad also follow Apple’s standard licence agreement (EULA), and purchases on Android follow Google Play’s terms. Refunds are handled by the store you bought from."]
+        "body": ["Purchases on iPhone and iPad also follow Apple’s standard license agreement (EULA), and purchases on Android follow Google Play’s terms. Refunds are handled by the store you bought from."]
       },
       {
         "heading": "Your data",
-        "body": ["Your data is yours. You can export it and delete it in the app at any time, also on the free version. How we handle personal data is described in the privacy policy."]
+        "body": ["Your data is yours. You can export it and delete it in the app at any time, even on the free version. How we handle personal data is described in the privacy policy."]
       },
       {
         "heading": "Responsibility",
-        "body": ["We work to keep the app correct and available, but it is provided as it is. As far as the law allows, we are not responsible for indirect losses. Your rights as a consumer are not limited by these terms."]
+        "body": ["We work to keep the app correct and available, but it is provided as is. As far as the law allows, we are not responsible for indirect losses. Your rights as a consumer are not limited by these terms."]
       },
       {
         "heading": "Changes",
@@ -239,7 +239,7 @@
       },
       {
         "heading": "Law",
-        "body": ["These terms follow Norwegian law. If you are a consumer, you also keep the protection the law of the country where you live gives you."]
+        "body": ["These terms are governed by Norwegian law. If you are a consumer, you also keep the protection given to you by the law of the country where you live."]
       }
     ]
   },

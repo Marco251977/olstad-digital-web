@@ -49,7 +49,7 @@
         "body": [
           "När du importerar en skärmbild eller ett foto av en kontolista, eller skannar ett kvitto eller en faktura, kan du låta AI läsa den. Appen frågar om lov först, och du kan stänga av det när som helst på importskärmen. Utan lov läses allt på telefonen, och ingenting skickas.",
           "Med lov skickas bilden (eller texten som lästs från den), valutan, ditt land, dagens datum, appens kategorilista och enhets-ID:t via {{server}} till Anthropic, som läser raderna med sin AI-modell (Claude) och skickar tillbaka dem. Varken vi eller Supabase sparar bilden, texten eller raderna. Anthropic använder inte data som skickas via deras API för att träna sina modeller, och raderar dem efter en begränsad tid enligt sina egna villkor.",
-          "För att hålla tjänsten inom sina gränser (ett begränsat antal läsningar per enhet) sparar vår server enhets-ID:t, datumet och antalet läsningar, och inget annat. Räkningarna raderas automatiskt efter 30 dagar.",
+          "För att hålla tjänsten inom sina gränser (ett begränsat antal läsningar per enhet) sparar vår server enhets-ID:t, datumet och antalet läsningar, och inget annat. Uppgifterna raderas automatiskt efter 30 dagar.",
           "För gratisversionens gräns för AI-skanningar räknar vår server skanningar per månad med ett hashat enhets-ID – en envägskod av telefonens ID, gjord med en hemlig nyckel, aldrig själva ID:t. Det hashade enhets-ID:t används bara för att räkna gratis AI-skanningar, inte för spårning. Bara koden, månaden och antalet sparas, och räkningen raderas automatiskt efter 13 månader."
         ]
       },
@@ -216,7 +216,7 @@
         "heading": "Gratis och Pro",
         "body": ["Gratisversionen kostar ingenting. Pro köps i App Store eller Google Play, som prenumeration (månad eller år) eller som engångsköp. Priset visas i butiken innan du köper."],
         "list": [
-          "En prenumeration förnyas automatiskt tills du säger upp den i butiken senast 24 timmar innan perioden tar slut.",
+          "En prenumeration förnyas automatiskt om du inte säger upp den i butiken senast 24 timmar innan perioden tar slut.",
           "Du hanterar och säger upp den i kontoinställningarna i App Store eller Google Play.",
           "Om en gratis provperiod erbjuds övergår den till betald prenumeration när den tar slut, om du inte säger upp före."
         ]

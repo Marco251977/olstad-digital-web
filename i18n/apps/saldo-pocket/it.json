@@ -59,7 +59,7 @@
       },
       {
         "heading": "Rapporti sugli arresti anomali",
-        "body": ["Quando l’app si arresta o si verifica un errore, viene inviato un rapporto a Sentry (nell’UE): cosa è andato storto e dove nell’app, la versione dell’app, il modello del telefono e la versione del sistema. La raccolta di dati personali, come l’indirizzo IP o l’identità dell’utente, è disattivata. I rapporti sono conservati al massimo 90 giorni e usati solo per correggere gli errori."]
+        "body": ["Quando l’app si arresta in modo anomalo o si verifica un errore, viene inviato un rapporto a Sentry (nell’UE): cosa è andato storto e dove nell’app, la versione dell’app, il modello del telefono e la versione del sistema. La raccolta di dati personali, come l’indirizzo IP o l’identità dell’utente, è disattivata. I rapporti sono conservati al massimo 90 giorni e usati solo per correggere gli errori."]
       },
       {
         "heading": "Aggiornamenti dell’app",
@@ -73,7 +73,7 @@
         "heading": "Account facoltativo e sincronizzazione (Pro)",
         "body": [
           "Puoi accedere con Apple, Google, Facebook (Meta) o e-mail. L’accesso è gestito da Supabase su server in {{region}}. Salviamo quindi il tuo indirizzo e-mail, un ID account, il tuo nome se il fornitore lo condivide, la lingua dell’app e, nelle versioni di prova, un indicatore di test. Con Apple puoi nascondere l’indirizzo e-mail; vediamo allora solo l’indirizzo di inoltro di Apple.",
-          "Con Pro il budget viene sincronizzato con il tuo account: conti, movimenti, movimenti ricorrenti, budget, obiettivi di risparmio, categorie personali, fornitori memorizzati e le impostazioni che ti seguono (giorno di paga, stipendio, budget). Ogni modifica è salvata con quando e su quale dispositivo è stata fatta. I dati sono cifrati durante il trasferimento e l’archiviazione, e solo il tuo account può leggerli.",
+          "Con Pro il budget viene sincronizzato con il tuo account: conti, movimenti, movimenti fissi, budget, obiettivi di risparmio, categorie personali, esercenti memorizzati e le impostazioni che ti seguono (giorno di paga, stipendio, budget). Ogni modifica viene salvata indicando quando e su quale dispositivo è stata fatta. I dati sono cifrati durante il trasferimento e l’archiviazione, e solo il tuo account può leggerli.",
           "Codici e link di accesso sono inviati via e-mail tramite Resend, con il tuo indirizzo e la tua lingua. Per inviare ogni e-mail una sola volta, il server conserva solo ID del messaggio, tipo e stato per 7 giorni, mai l’indirizzo.",
           "Puoi uscire in qualsiasi momento; i dati restano sul telefono. «Elimina account» rimuove l’account e tutti i dati salvati con esso sul server."
         ]
@@ -129,7 +129,7 @@
       },
       {
         "heading": "Modifiche",
-        "body": ["Se modifichiamo questa informativa, aggiorniamo questa pagina e la data in alto. Se la modifica conta per l’uso dei tuoi dati, te lo diremo nell’app."]
+        "body": ["Se modifichiamo questa informativa, aggiorniamo questa pagina e la data in alto. Se la modifica è rilevante per l’uso dei tuoi dati, te lo comunicheremo nell’app."]
       }
     ]
   },
@@ -156,7 +156,7 @@
       },
       {
         "heading": "Cosa resta sul nostro server",
-        "body": ["Se hai usato la lettura con IA, il nostro server ha un conteggio delle letture per ID del dispositivo e giorno, senza alcun contenuto. Viene eliminato automaticamente dopo 30 giorni. L’ID è casuale e viene eliminato dal telefono insieme a tutto il resto, quindi il conteggio non può essere collegato a te.", "Le scansioni gratuite con IA sono contate anche al mese con un ID dispositivo con hash (un codice a senso unico, mai l’ID stesso). Serve solo a contare le scansioni gratuite con IA, non al tracciamento, e il conteggio viene cancellato automaticamente dopo 13 mesi."]
+        "body": ["Se hai usato la lettura con IA, il nostro server conserva un conteggio delle letture per ID del dispositivo e giorno, senza alcun contenuto. Viene eliminato automaticamente dopo 30 giorni. L’ID è casuale e viene eliminato dal telefono insieme a tutto il resto, quindi il conteggio non può essere collegato a te.", "Le scansioni gratuite con IA sono contate anche al mese con un ID dispositivo con hash (un codice a senso unico, mai l’ID stesso). Serve solo a contare le scansioni gratuite con IA, non al tracciamento, e il conteggio viene cancellato automaticamente dopo 13 mesi."]
       },
       {
         "heading": "Eliminare il tuo account",
@@ -202,7 +202,7 @@
     "sections": [
       {
         "heading": "Chi siamo",
-        "body": ["{{company}} (n. org. {{orgNumber}}, {{country}}) realizza e gestisce Saldo Pocket. Contattaci a {{email}}."]
+        "body": ["{{company}} (n. registro {{orgNumber}}, {{country}}) realizza e gestisce Saldo Pocket. Contattaci a {{email}}."]
       },
       {
         "heading": "Cos’è l’app",
