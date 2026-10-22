@@ -39,7 +39,7 @@
         "body": [
           "Når du importerer en CSV- eller Excel-fil fra banken, leses fila bare på telefonen. Selve fila lagres, kopieres eller sendes aldri – verken til en server eller til AI.",
           "Fra fila lagres bare dato (og bokføringsdato når fila har den), beskrivelse, beløp, leverandør, bankens saldo for å avstemme kontoen, og de fire siste sifrene i kontonummeret, for å kjenne igjen kontoen. KID, andre referanser og resten av kolonnene i fila lagres ikke.",
-          "Poster som ikke er bokført ennå, lagres som «Venter» og fjernes hvis de ikke blir bokført.",
+          "Poster som ikke er bokført ennå, lagres som vanlige poster og telles med en gang. Kommer en slik post ikke med i en senere import fra banken, spør appen om du vil fjerne den. Den fjernes aldri av seg selv.",
           "Appen husker hvordan kolonnene i fila er satt opp, uten innholdet, så neste import går raskere. Når du er logget inn med Pro, synkes dette sammen med de andre innstillingene dine.",
           "AI-lesing brukes bare for bilder og PDF, og bare når du har sagt ja."
         ]

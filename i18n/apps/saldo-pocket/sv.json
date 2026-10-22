@@ -39,7 +39,7 @@
         "body": [
           "När du importerar en CSV- eller Excel-fil från banken läses filen bara på telefonen. Själva filen sparas, kopieras eller skickas aldrig – varken till en server eller till AI.",
           "Från filen sparas bara datum (och bokföringsdag när filen har den), beskrivning, belopp, leverantör, bankens saldo för att stämma av kontot och de fyra sista siffrorna i kontonumret, för att känna igen kontot. OCR-nummer, andra referenser och filens övriga kolumner sparas inte.",
-          "Poster som banken inte har bokfört än sparas som ”Väntar” och tas bort om de inte bokförs.",
+          "Poster som banken inte har bokfört än sparas som vanliga poster och räknas direkt. Saknas en sådan post i en senare import från banken frågar appen om du vill ta bort den. Den tas aldrig bort av sig själv.",
           "Appen kommer ihåg hur kolumnerna i filen är ordnade, utan innehållet, så att nästa import går snabbare. När du är inloggad med Pro synkas det tillsammans med dina andra inställningar.",
           "AI-läsning används bara för bilder och PDF, och bara när du har sagt ja."
         ]

@@ -39,7 +39,7 @@
         "body": [
           "Gdy importujesz plik CSV lub Excel z banku, plik jest odczytywany tylko na Twoim telefonie. Sam plik nigdy nie jest zapisywany, kopiowany ani wysyłany – ani na serwer, ani do AI.",
           "Z pliku zapisywane są tylko data (i data księgowania, jeśli plik ją zawiera), opis, kwota, odbiorca, saldo z banku do uzgodnienia konta oraz ostatnie cztery cyfry numeru konta, aby rozpoznać konto. Numery referencyjne płatności, inne odnośniki i pozostałe kolumny pliku nie są zapisywane.",
-          "Transakcje, których bank jeszcze nie zaksięgował, są zapisywane jako „Oczekuje” i usuwane, jeśli nie zostaną zaksięgowane.",
+          "Transakcje, których bank jeszcze nie zaksięgował, są zapisywane jako zwykłe transakcje i od razu liczone. Jeśli takiej transakcji brakuje w późniejszym imporcie z banku, aplikacja pyta, czy chcesz ją usunąć. Nigdy nie jest usuwana sama.",
           "Aplikacja zapamiętuje układ kolumn w pliku, bez ich zawartości, aby kolejny import był szybszy. Gdy jesteś zalogowany z Pro, jest to synchronizowane razem z pozostałymi ustawieniami.",
           "Odczyt przez AI dotyczy tylko zdjęć i plików PDF i tylko za Twoją zgodą."
         ]

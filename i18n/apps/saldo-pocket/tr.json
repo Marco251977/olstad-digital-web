@@ -39,7 +39,7 @@
         "body": [
           "Bankandan bir CSV veya Excel dosyasını içe aktardığında dosya yalnızca telefonunda okunur. Dosyanın kendisi asla saklanmaz, kopyalanmaz veya gönderilmez; ne bir sunucuya ne de yapay zekâya.",
           "Dosyadan yalnızca tarih (dosyada varsa valör tarihi de), açıklama, tutar, satıcı, hesabı mutabık kılmak için bankanın bakiyesi ve hesabı tanımak için hesap numarasının son dört hanesi saklanır. Ödeme referansları, diğer referanslar ve dosyadaki diğer sütunlar saklanmaz.",
-          "Bankanın henüz kesinleştirmediği işlemler “Bekliyor” olarak saklanır ve kesinleşmezse kaldırılır.",
+          "Bankanın henüz kesinleştirmediği işlemler normal işlemler olarak saklanır ve hemen hesaba katılır. Böyle bir işlem bankadan daha sonra yapılan bir içe aktarmada yoksa uygulama onu kaldırmak isteyip istemediğini sorar. Kendiliğinden asla kaldırılmaz.",
           "Uygulama, bir sonraki içe aktarma daha hızlı olsun diye dosyadaki sütunların düzenini içerikleri olmadan hatırlar. Pro ile giriş yaptıysan bu, diğer ayarlarınla birlikte eşitlenir.",
           "Yapay zekâ ile okuma yalnızca görseller ve PDF’ler için ve yalnızca izin verdiğinde kullanılır."
         ]

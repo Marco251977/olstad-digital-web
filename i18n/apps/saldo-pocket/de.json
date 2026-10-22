@@ -39,7 +39,7 @@
         "body": [
           "Wenn du eine CSV- oder Excel-Datei von deiner Bank importierst, wird die Datei nur auf deinem Telefon gelesen. Die Datei selbst wird nie gespeichert, kopiert oder gesendet – weder an einen Server noch an eine KI.",
           "Aus der Datei werden nur Datum (und Buchungsdatum, wenn die Datei eines hat), Beschreibung, Betrag, Händler, der Kontostand der Bank für den Abgleich des Kontos und die letzten vier Ziffern der Kontonummer gespeichert, um das Konto wiederzuerkennen. Zahlungsreferenzen, andere Referenzen und die übrigen Spalten der Datei werden nicht gespeichert.",
-          "Buchungen, die die Bank noch nicht gebucht hat, werden als „Vorgemerkt“ gespeichert und entfernt, wenn sie nicht gebucht werden.",
+          "Buchungen, die die Bank noch nicht gebucht hat, werden als normale Buchungen gespeichert und sofort mitgezählt. Fehlt eine solche Buchung in einem späteren Import von der Bank, fragt die App, ob du sie entfernen möchtest. Sie wird nie von selbst entfernt.",
           "Die App merkt sich, wie die Spalten der Datei aufgebaut sind, ohne deren Inhalt, damit der nächste Import schneller geht. Wenn du mit Pro angemeldet bist, wird das mit deinen anderen Einstellungen synchronisiert.",
           "Das Lesen mit KI wird nur für Bilder und PDFs genutzt, und nur, wenn du zugestimmt hast."
         ]
