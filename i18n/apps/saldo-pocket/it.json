@@ -39,7 +39,7 @@
         "body": [
           "Quando importi un file CSV o Excel dalla tua banca, il file viene letto solo sul telefono. Il file in sé non viene mai salvato, copiato né inviato: né a un server né all’IA.",
           "Dal file vengono salvati solo la data (e la data contabile, se il file la riporta), la descrizione, l’importo, l’esercente, il saldo della banca per riconciliare il conto e le ultime quattro cifre del numero di conto, per riconoscere il conto. Codici di pagamento, altri riferimenti e le altre colonne del file non vengono salvati.",
-          "I movimenti che la banca non ha ancora contabilizzato vengono salvati come «In attesa» e rimossi se non vengono contabilizzati.",
+          "I movimenti che la banca non ha ancora contabilizzato vengono salvati come movimenti normali e conteggiati subito. Se uno di questi manca in un’importazione successiva dalla banca, l’app ti chiede se vuoi rimuoverlo. Non viene mai rimosso da solo.",
           "L’app ricorda come sono disposte le colonne del file, senza il loro contenuto, così la prossima importazione è più veloce. Se hai effettuato l’accesso con Pro, questo viene sincronizzato con le altre impostazioni.",
           "La lettura con IA si usa solo per immagini e PDF, e solo se hai dato il consenso."
         ]

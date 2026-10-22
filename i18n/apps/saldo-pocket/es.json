@@ -39,7 +39,7 @@
         "body": [
           "Cuando importas un archivo CSV o Excel de tu banco, el archivo se lee solo en tu teléfono. El archivo en sí nunca se guarda, se copia ni se envía: ni a un servidor ni a la IA.",
           "Del archivo solo se guardan la fecha (y la fecha contable cuando el archivo la incluye), la descripción, el importe, el comercio, el saldo del banco para cuadrar la cuenta y los cuatro últimos dígitos del número de cuenta, para reconocer la cuenta. Las referencias de pago, otras referencias y el resto de columnas del archivo no se guardan.",
-          "Los movimientos que el banco aún no ha contabilizado se guardan como «Pendiente» y se eliminan si no se llegan a contabilizar.",
+          "Los movimientos que el banco aún no ha contabilizado se guardan como movimientos normales y se cuentan de inmediato. Si uno de ellos falta en una importación posterior del banco, la app te pregunta si quieres eliminarlo. Nunca se elimina por sí solo.",
           "La app recuerda cómo están organizadas las columnas del archivo, sin su contenido, para que la próxima importación sea más rápida. Si has iniciado sesión con Pro, esto se sincroniza con el resto de tus ajustes.",
           "La lectura con IA solo se usa para imágenes y PDF, y solo si das tu permiso."
         ]

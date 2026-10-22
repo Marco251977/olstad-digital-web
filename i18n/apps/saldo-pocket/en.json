@@ -39,7 +39,7 @@
         "body": [
           "When you import a CSV or Excel file from your bank, the file is read only on your phone. The file itself is never stored, copied or sent anywhere – not to a server and not to AI.",
           "From the file, the app stores only the date (and the booking date when the file has one), description, amount, vendor, the bank’s balance for reconciling the account, and the last four digits of the account number, to recognize the account. KID numbers, other references and the file’s other columns are not stored.",
-          "Entries the bank has not booked yet are stored as “Pending” and removed if they are not booked.",
+          "Entries the bank has not booked yet are stored as ordinary entries and counted straight away. If such an entry is missing from a later import from your bank, the app asks whether you want to remove it. It is never removed by itself.",
           "The app remembers how the columns in the file are laid out, without their content, so the next import is quicker. When you are signed in with Pro, this is synced with your other settings.",
           "AI reading is used only for pictures and PDFs, and only when you have said yes."
         ]

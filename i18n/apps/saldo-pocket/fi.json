@@ -39,7 +39,7 @@
         "body": [
           "Kun tuot pankista CSV- tai Excel-tiedoston, tiedosto luetaan vain puhelimessasi. Itse tiedostoa ei koskaan tallenneta, kopioida eikä lähetetä – ei palvelimelle eikä tekoälylle.",
           "Tiedostosta tallennetaan vain päivämäärä (ja kirjauspäivä, kun tiedostossa on sellainen), kuvaus, summa, myyjä, pankin saldo tilin täsmäyttämistä varten sekä tilinumeron neljä viimeistä numeroa tilin tunnistamiseksi. Viitenumeroita, muita viitteitä ja tiedoston muita sarakkeita ei tallenneta.",
-          "Tapahtumat, joita pankki ei ole vielä kirjannut, tallennetaan tilassa ”Odottaa” ja poistetaan, jos niitä ei kirjata.",
+          "Tapahtumat, joita pankki ei ole vielä kirjannut, tallennetaan tavallisina tapahtumina ja lasketaan heti mukaan. Jos tällainen tapahtuma puuttuu myöhemmästä tuonnista pankista, sovellus kysyy, haluatko poistaa sen. Sitä ei koskaan poisteta itsestään.",
           "Sovellus muistaa, miten tiedoston sarakkeet on järjestetty, ilman niiden sisältöä, jotta seuraava tuonti käy nopeammin. Kun olet kirjautunut sisään Prolla, tämä synkronoidaan muiden asetustesi kanssa.",
           "Tekoälylukemista käytetään vain kuviin ja PDF-tiedostoihin, ja vain jos olet antanut luvan."
         ]

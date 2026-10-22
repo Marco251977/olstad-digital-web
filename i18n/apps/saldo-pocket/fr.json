@@ -39,7 +39,7 @@
         "body": [
           "Quand vous importez un fichier CSV ou Excel de votre banque, le fichier est lu uniquement sur votre téléphone. Le fichier lui-même n’est jamais conservé, copié ni envoyé – ni vers un serveur ni à l’IA.",
           "Du fichier, seuls la date (et la date de comptabilisation quand le fichier l’indique), le libellé, le montant, le commerçant, le solde de la banque pour rapprocher le compte et les quatre derniers chiffres du numéro de compte, pour reconnaître le compte, sont enregistrés. Les références de paiement, les autres références et les autres colonnes du fichier ne sont pas enregistrées.",
-          "Les opérations que la banque n’a pas encore comptabilisées sont enregistrées « En attente » et supprimées si elles ne sont pas comptabilisées.",
+          "Les opérations que la banque n’a pas encore comptabilisées sont enregistrées comme des opérations ordinaires et comptées tout de suite. Si une telle opération manque dans une importation ultérieure de la banque, l’app vous demande si vous voulez la supprimer. Elle n’est jamais supprimée d’elle-même.",
           "L’app retient la disposition des colonnes du fichier, sans leur contenu, pour que la prochaine importation soit plus rapide. Si vous êtes connecté avec Pro, elle est synchronisée avec vos autres réglages.",
           "La lecture par IA ne sert qu’aux images et aux PDF, et seulement avec votre accord."
         ]

@@ -39,7 +39,7 @@
         "body": [
           "Als je een CSV- of Excel-bestand van je bank importeert, wordt het bestand alleen op je telefoon gelezen. Het bestand zelf wordt nooit bewaard, gekopieerd of verstuurd – niet naar een server en niet naar AI.",
           "Uit het bestand worden alleen de datum (en de boekdatum als het bestand die heeft), de omschrijving, het bedrag, de leverancier, het saldo van de bank om de rekening af te stemmen en de laatste vier cijfers van het rekeningnummer opgeslagen, om de rekening te herkennen. Betalingskenmerken, andere referenties en de overige kolommen van het bestand worden niet opgeslagen.",
-          "Transacties die de bank nog niet heeft geboekt, worden opgeslagen als ‘In afwachting’ en verwijderd als ze niet worden geboekt.",
+          "Transacties die de bank nog niet heeft geboekt, worden opgeslagen als gewone transacties en meteen meegeteld. Ontbreekt zo’n transactie in een latere import van de bank, dan vraagt de app of je hem wilt verwijderen. Hij wordt nooit vanzelf verwijderd.",
           "De app onthoudt hoe de kolommen in het bestand zijn ingedeeld, zonder de inhoud, zodat de volgende import sneller gaat. Als je bent ingelogd met Pro, wordt dit samen met je andere instellingen gesynchroniseerd.",
           "Lezen met AI wordt alleen gebruikt voor afbeeldingen en pdf’s, en alleen als je toestemming hebt gegeven."
         ]
