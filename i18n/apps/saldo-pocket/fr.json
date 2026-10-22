@@ -120,7 +120,7 @@
         "heading": "Vos droits",
         "body": [
           "Vous pouvez consulter, corriger et exporter toutes vos données dans l’app (Moi → Exporter les données, gratuit pour tous) et les supprimer (Moi → Supprimer toutes les données). Vous pouvez vous opposer au traitement et retirer votre consentement à la lecture par IA à tout moment.",
-          "Pour toute question, écrivez à {{email}}. Vous pouvez aussi saisir l’autorité norvégienne de protection des données (Datatilsynet) ou celle de votre pays (en France, la CNIL)."
+          "Pour toute question, écrivez à {{email}}. L’autorité de contrôle est l’autorité norvégienne de protection des données (Datatilsynet), que vous pouvez saisir. Si vous résidez dans l’UE/EEE, vous pouvez aussi saisir l’autorité de protection des données de votre propre pays."
         ]
       },
       {

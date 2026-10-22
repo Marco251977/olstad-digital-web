@@ -120,7 +120,7 @@
         "heading": "Your rights",
         "body": [
           "You can see, correct and export all your data in the app (Me → Export data, free for everyone), and delete it (Me → Delete all data). You can object to processing and withdraw your consent for AI reading at any time.",
-          "If you have questions, write to {{email}}. You can also complain to the Norwegian Data Protection Authority (Datatilsynet) or the data protection authority where you live."
+          "If you have questions, write to {{email}}. The supervisory authority is the Norwegian Data Protection Authority (Datatilsynet), and you can complain to it. If you live in the EU/EEA, you can also complain to the data protection authority in your own country."
         ]
       },
       {
