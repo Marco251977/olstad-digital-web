@@ -76,15 +76,15 @@
 <p>AI reading is used only for pictures and PDFs, and only when you have said yes.</p>
 </section>
     <section>
-<h2>AI reading of bank lists, receipts and bills (optional)</h2>
-<p>When you import a screenshot or photo of a bank list, or scan a receipt or bill, you can let AI read it. The app asks for your permission first, and you can turn it off at any time on the import screen. Without permission, everything is read on the phone and nothing is sent.</p>
+<h2>AI reading of transaction lists, receipts and bills (optional)</h2>
+<p>When you import a screenshot or photo of a transaction list from your bank, or scan a receipt or bill, you can let AI read it. The app asks for your permission first, and you can turn it off at any time on the import screen. Without permission, everything is read on the phone and nothing is sent.</p>
 <p>With permission, the picture (or the text read from it), the currency, your country, today’s date, the app’s list of categories and the device ID are sent through our server at Supabase (Ireland) to Anthropic, which reads the rows with its AI model (Claude) and sends them back. Neither we nor Supabase store the picture, the text or the rows. Anthropic does not use data sent through its API to train its models, and deletes it after a limited time under its own terms.</p>
 <p>To keep the service within its limits (a limited number of readings per device), our server stores the device ID, the date and the number of readings, and nothing else. These counts are deleted automatically after 30 days.</p>
 <p>For the free version’s limit on AI scans, our server counts scans per month with a hashed device ID – a one-way code made from the phone’s ID with a secret key, never the ID itself. The hashed device ID is used only to count free AI scans, not for tracking. Only the code, the month and the number are stored, and the count is deleted automatically after 13 months.</p>
 </section>
     <section>
 <h2>Scanning receipts and bills</h2>
-<p>When you scan a receipt or bill, the picture is read on your phone, or by AI if you have said yes (see above). The picture is deleted as soon as it has been read, also if you cancel or something goes wrong. From the picture, only the store, date, amount and category are stored. KID numbers and account numbers are never stored.</p>
+<p>When you scan a receipt or bill, the picture is read on your phone, or by AI if you have said yes (see above). The picture is deleted as soon as it has been read, even if you cancel or something goes wrong. From the picture, only the store, date, amount and category are stored. KID numbers and account numbers are never stored.</p>
 </section>
     <section>
 <h2>Crash reports</h2>
@@ -103,7 +103,7 @@
 <p>You can sign in with Apple, Google, Facebook (Meta) or e-mail. Sign-in is handled by Supabase on servers in Ireland. We then store your e-mail address, an account ID, your name if the provider shares it, your app language and, on test versions, a test flag. With Apple you can hide your e-mail address; we then only see Apple’s relay address.</p>
 <p>With Pro, your budget is synced to your account: accounts, entries, recurring items, budget, savings goals, your own categories, remembered vendors and the settings that follow you (payday, salary, budget). Each change is stored with when it was made and on which device. The data is encrypted in transit and at rest, and only your account can read it.</p>
 <p>Sign-in codes and links are sent by e-mail through Resend, with your address and language. To send each e-mail once, the server keeps only the message ID, type and status for 7 days, never the address.</p>
-<p>You can sign out at any time; the data stays on the phone. «Delete account» removes the account and all data stored with it on the server.</p>
+<p>You can sign out at any time; the data stays on the phone. “Delete account” removes the account and all data stored with it on the server.</p>
 </section>
     <section>
 <h2>Widget and reminders</h2>

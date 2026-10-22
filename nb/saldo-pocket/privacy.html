@@ -78,9 +78,9 @@
     <section>
 <h2>AI-lesing av kontolister, kvitteringer og fakturaer (valgfritt)</h2>
 <p>Når du importerer et skjermbilde eller foto av en kontoliste, eller skanner en kvittering eller faktura, kan du la AI lese den. Appen spør om lov først, og du kan slå det av når som helst på importskjermen. Uten lov leses alt på telefonen, og ingenting sendes.</p>
-<p>Med lov sendes bildet (eller teksten som er lest fra det), valutaen, landet ditt, dagens dato, appens kategoriliste og enhets-ID-en gjennom vår server hos Supabase (Irland) til Anthropic, som leser radene med sin AI-modell (Claude) og sender dem tilbake. Verken vi eller Supabase lagrer bildet, teksten eller radene. Anthropic bruker ikke data som sendes gjennom API-et sitt til å trene modellene sine, og sletter dem etter en begrenset tid etter sine egne vilkår.</p>
+<p>Med lov sendes bildet (eller teksten som er lest fra det), valutaen, landet ditt, dagens dato, appens kategoriliste og enhets-ID-en gjennom vår server hos Supabase (Irland) til Anthropic, som leser radene med sin AI-modell (Claude) og sender dem tilbake. Verken vi eller Supabase lagrer bildet, teksten eller radene. Anthropic bruker ikke data som sendes gjennom API-et sitt, til å trene modellene sine, og sletter dem etter en begrenset tid i henhold til sine egne vilkår.</p>
 <p>For å holde tjenesten innenfor grensene (et begrenset antall lesinger per enhet) lagrer serveren vår enhets-ID-en, datoen og antall lesinger, og ingenting annet. Disse tellingene slettes automatisk etter 30 dager.</p>
-<p>For gratisversjonens grense på AI-skann teller serveren vår skann per måned med en hashet enhets-ID – en enveiskode av telefonens ID, laget med en hemmelig nøkkel, aldri selve ID-en. Hashet enhets-ID brukes kun til å telle gratis AI-skann, ikke til sporing. Bare koden, måneden og antallet lagres, og tellingen slettes automatisk etter 13 måneder.</p>
+<p>For gratisversjonens grense på AI-skann teller serveren vår skann per måned med en hashet enhets-ID – en enveiskode av telefonens ID, laget med en hemmelig nøkkel, aldri selve ID-en. Den hashede enhets-ID-en brukes kun til å telle gratis AI-skann, ikke til sporing. Bare koden, måneden og antallet lagres, og tellingen slettes automatisk etter 13 måneder.</p>
 </section>
     <section>
 <h2>Skanning av kvitteringer og fakturaer</h2>

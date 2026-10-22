@@ -48,7 +48,7 @@
         "heading": "Tiliotteiden, kuittien ja laskujen lukeminen tekoälyllä (valinnainen)",
         "body": [
           "Kun tuot kuvakaappauksen tai valokuvan tiliotteesta tai skannaat kuitin tai laskun, voit antaa tekoälyn lukea sen. Sovellus kysyy ensin lupaa, ja voit poistaa sen käytöstä milloin tahansa tuontinäkymässä. Ilman lupaa kaikki luetaan puhelimessa, eikä mitään lähetetä.",
-          "Luvalla kuva (tai siitä luettu teksti), valuutta, maasi, päivämäärä, sovelluksen luokkaluettelo ja laitetunnus lähetetään {{server}} kautta Anthropicille, joka lukee rivit tekoälymallillaan (Claude) ja lähettää ne takaisin. Emme me eikä Supabase tallenna kuvaa, tekstiä tai rivejä. Anthropic ei käytä API:nsa kautta lähetettyjä tietoja mallien kouluttamiseen ja poistaa ne rajatun ajan jälkeen omien ehtojensa mukaisesti.",
+          "Luvalla kuva (tai siitä luettu teksti), valuutta, maasi, päivämäärä, sovelluksen luokkaluettelo ja laitetunnus lähetetään palvelimemme ({{server}}) kautta Anthropicille, joka lukee rivit tekoälymallillaan (Claude) ja lähettää ne takaisin. Me ja Supabase emme tallenna kuvaa, tekstiä tai rivejä. Anthropic ei käytä API:nsa kautta lähetettyjä tietoja mallien kouluttamiseen ja poistaa ne rajatun ajan jälkeen omien ehtojensa mukaisesti.",
           "Jotta palvelu pysyy rajoissaan (rajoitettu määrä lukemisia laitetta kohden), palvelimemme tallentaa laitetunnuksen, päivämäärän ja lukemisten määrän, eikä mitään muuta. Nämä laskurit poistetaan automaattisesti 30 päivän kuluttua.",
           "Ilmaisversion tekoälyskannausten rajaa varten palvelimemme laskee skannaukset kuukausittain tiivistetyllä laitetunnisteella – yksisuuntaisella koodilla, joka on tehty puhelimen tunnisteesta salaisella avaimella, ei koskaan itse tunnisteella. Tiivistettyä laitetunnistetta käytetään vain ilmaisten tekoälyskannausten laskemiseen, ei seurantaan. Vain koodi, kuukausi ja määrä tallennetaan, ja laskuri poistetaan automaattisesti 13 kuukauden kuluttua."
         ]
@@ -198,7 +198,7 @@
     ]
   },
   "terms": {
-    "intro": "Nämä ehdot koskevat Saldo Pocketin käyttöä. Saldo Pocket on {{company}}:n budjettisovellus. Käyttämällä sovellusta hyväksyt ehdot.",
+    "intro": "Nämä ehdot koskevat Saldo Pocketin käyttöä. Saldo Pocket on budjettisovellus, jonka tekee {{company}}. Käyttämällä sovellusta hyväksyt ehdot.",
     "sections": [
       {
         "heading": "Keitä olemme",

@@ -50,7 +50,7 @@
           "Cuando importas una captura o una foto de un extracto, o escaneas un recibo o una factura, puedes dejar que la IA lo lea. La app te pide permiso primero y puedes desactivarlo en cualquier momento en la pantalla de importación. Sin permiso, todo se lee en el teléfono y no se envía nada.",
           "Con permiso, la imagen (o el texto leído de ella), la moneda, tu país, la fecha de hoy, la lista de categorías de la app y el identificador del dispositivo se envían a través de {{server}} a Anthropic, que lee las filas con su modelo de IA (Claude) y las devuelve. Ni nosotros ni Supabase guardamos la imagen, el texto ni las filas. Anthropic no usa los datos enviados a través de su API para entrenar sus modelos y los elimina tras un tiempo limitado según sus propias condiciones.",
           "Para mantener el servicio dentro de sus límites (un número limitado de lecturas por dispositivo), nuestro servidor guarda el identificador del dispositivo, la fecha y el número de lecturas, y nada más. Estos recuentos se borran automáticamente a los 30 días.",
-          "Para el límite de escaneos con IA de la versión gratuita, nuestro servidor cuenta los escaneos por mes con un ID de dispositivo cifrado (hash): un código de un solo sentido creado a partir del ID del teléfono con una clave secreta, nunca el ID en sí. El ID de dispositivo cifrado se usa solo para contar los escaneos gratuitos con IA, no para rastrearte. Solo se guardan el código, el mes y el número, y el recuento se borra automáticamente a los 13 meses."
+          "Para el límite de escaneos con IA de la versión gratuita, nuestro servidor cuenta los escaneos por mes con un hash del ID del dispositivo: un código de un solo sentido creado a partir del ID del teléfono con una clave secreta, nunca el ID en sí. El hash del ID del dispositivo se usa solo para contar los escaneos gratuitos con IA, no para rastrearte. Solo se guardan el código, el mes y el número, y el recuento se borra automáticamente a los 13 meses."
         ]
       },
       {
@@ -73,7 +73,7 @@
         "heading": "Cuenta opcional y sincronización (Pro)",
         "body": [
           "Puedes iniciar sesión con Apple, Google, Facebook (Meta) o correo. El inicio de sesión lo gestiona Supabase en servidores en {{region}}. Guardamos tu dirección de correo, un ID de cuenta, tu nombre si el proveedor lo comparte, el idioma de la app y, en versiones de prueba, una marca de prueba. Con Apple puedes ocultar tu correo; entonces solo vemos la dirección de reenvío de Apple.",
-          "Con Pro, tu presupuesto se sincroniza con tu cuenta: cuentas, movimientos, movimientos fijos, presupuesto, metas de ahorro, categorías propias, proveedores recordados y los ajustes que te acompañan (día de cobro, sueldo, presupuesto). Cada cambio se guarda con cuándo y en qué dispositivo se hizo. Los datos se cifran en tránsito y en reposo, y solo tu cuenta puede leerlos.",
+          "Con Pro, tu presupuesto se sincroniza con tu cuenta: cuentas, movimientos, movimientos fijos, presupuesto, metas de ahorro, categorías propias, comercios recordados y los ajustes que te acompañan (día de cobro, sueldo, presupuesto). Cada cambio se guarda junto con la fecha y el dispositivo en que se hizo. Los datos se cifran en tránsito y en reposo, y solo tu cuenta puede leerlos.",
           "Los códigos y enlaces de inicio de sesión se envían por correo a través de Resend, con tu dirección e idioma. Para enviar cada correo una sola vez, el servidor solo guarda el ID del mensaje, el tipo y el estado durante 7 días, nunca la dirección.",
           "Puedes cerrar sesión cuando quieras; los datos se quedan en el teléfono. «Eliminar cuenta» borra la cuenta y todos los datos guardados con ella en el servidor."
         ]
@@ -111,7 +111,7 @@
           "Imágenes y texto para la lectura con IA: no los guardamos.",
           "Archivos CSV y Excel que importas: no se guardan. Solo quedan los movimientos que guardas y la organización de las columnas del archivo.",
           "Recuento de lecturas con IA: 30 días.",
-          "Recuento de escaneos gratuitos con IA (ID de dispositivo cifrado, mes y número): 13 meses.",
+          "Recuento de escaneos gratuitos con IA (hash del ID del dispositivo, mes y número): 13 meses.",
           "Registro de correos de inicio de sesión (sin dirección): 7 días.",
           "Informes de errores: 90 días como máximo."
         ]
@@ -156,7 +156,7 @@
       },
       {
         "heading": "Lo que queda en nuestro servidor",
-        "body": ["Si has usado la lectura con IA, nuestro servidor tiene un recuento de lecturas por identificador de dispositivo y día, sin ningún contenido. Se borra automáticamente a los 30 días. El identificador es aleatorio y se borra del teléfono junto con todo lo demás, así que el recuento no se puede vincular contigo.", "Los escaneos gratuitos con IA también se cuentan por mes con un ID de dispositivo cifrado (un código de un solo sentido, nunca el ID en sí). Se usa solo para contar los escaneos gratuitos con IA, no para rastrearte, y el recuento se borra automáticamente a los 13 meses."]
+        "body": ["Si has usado la lectura con IA, nuestro servidor tiene un recuento de lecturas por identificador de dispositivo y día, sin ningún contenido. Se borra automáticamente a los 30 días. El identificador es aleatorio y se borra del teléfono junto con todo lo demás, así que el recuento no se puede vincular contigo.", "Los escaneos gratuitos con IA también se cuentan por mes con un hash del ID del dispositivo (un código de un solo sentido, nunca el ID en sí). Se usa solo para contar los escaneos gratuitos con IA, no para rastrearte, y el recuento se borra automáticamente a los 13 meses."]
       },
       {
         "heading": "Eliminar tu cuenta",
@@ -202,7 +202,7 @@
     "sections": [
       {
         "heading": "Quiénes somos",
-        "body": ["{{company}} (n.º de org. {{orgNumber}}, {{country}}) crea y gestiona Saldo Pocket. Escríbenos a {{email}}."]
+        "body": ["{{company}} (n.º de registro {{orgNumber}}, {{country}}) crea y gestiona Saldo Pocket. Escríbenos a {{email}}."]
       },
       {
         "heading": "Qué es la app",

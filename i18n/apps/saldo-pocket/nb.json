@@ -48,9 +48,9 @@
         "heading": "AI-lesing av kontolister, kvitteringer og fakturaer (valgfritt)",
         "body": [
           "Når du importerer et skjermbilde eller foto av en kontoliste, eller skanner en kvittering eller faktura, kan du la AI lese den. Appen spør om lov først, og du kan slå det av når som helst på importskjermen. Uten lov leses alt på telefonen, og ingenting sendes.",
-          "Med lov sendes bildet (eller teksten som er lest fra det), valutaen, landet ditt, dagens dato, appens kategoriliste og enhets-ID-en gjennom {{server}} til Anthropic, som leser radene med sin AI-modell (Claude) og sender dem tilbake. Verken vi eller Supabase lagrer bildet, teksten eller radene. Anthropic bruker ikke data som sendes gjennom API-et sitt til å trene modellene sine, og sletter dem etter en begrenset tid etter sine egne vilkår.",
+          "Med lov sendes bildet (eller teksten som er lest fra det), valutaen, landet ditt, dagens dato, appens kategoriliste og enhets-ID-en gjennom {{server}} til Anthropic, som leser radene med sin AI-modell (Claude) og sender dem tilbake. Verken vi eller Supabase lagrer bildet, teksten eller radene. Anthropic bruker ikke data som sendes gjennom API-et sitt, til å trene modellene sine, og sletter dem etter en begrenset tid i henhold til sine egne vilkår.",
           "For å holde tjenesten innenfor grensene (et begrenset antall lesinger per enhet) lagrer serveren vår enhets-ID-en, datoen og antall lesinger, og ingenting annet. Disse tellingene slettes automatisk etter 30 dager.",
-          "For gratisversjonens grense på AI-skann teller serveren vår skann per måned med en hashet enhets-ID – en enveiskode av telefonens ID, laget med en hemmelig nøkkel, aldri selve ID-en. Hashet enhets-ID brukes kun til å telle gratis AI-skann, ikke til sporing. Bare koden, måneden og antallet lagres, og tellingen slettes automatisk etter 13 måneder."
+          "For gratisversjonens grense på AI-skann teller serveren vår skann per måned med en hashet enhets-ID – en enveiskode av telefonens ID, laget med en hemmelig nøkkel, aldri selve ID-en. Den hashede enhets-ID-en brukes kun til å telle gratis AI-skann, ikke til sporing. Bare koden, måneden og antallet lagres, og tellingen slettes automatisk etter 13 måneder."
         ]
       },
       {
@@ -156,7 +156,7 @@
       },
       {
         "heading": "Det som ligger igjen på serveren vår",
-        "body": ["Har du brukt AI-lesing, har serveren vår en telling av lesinger per enhets-ID og dag, uten noe innhold. Den slettes automatisk etter 30 dager. Enhets-ID-en er tilfeldig og slettes fra telefonen sammen med alt annet, så tellingen kan ikke knyttes til deg.", "Gratis AI-skann telles også per måned med en hashet enhets-ID (en enveiskode, aldri selve ID-en). Hashet enhets-ID brukes kun til å telle gratis AI-skann, ikke til sporing, og tellingen slettes automatisk etter 13 måneder."]
+        "body": ["Har du brukt AI-lesing, har serveren vår en telling av lesinger per enhets-ID og dag, uten noe innhold. Den slettes automatisk etter 30 dager. Enhets-ID-en er tilfeldig og slettes fra telefonen sammen med alt annet, så tellingen kan ikke knyttes til deg.", "Gratis AI-skann telles også per måned med en hashet enhets-ID (en enveiskode, aldri selve ID-en). Den hashede enhets-ID-en brukes kun til å telle gratis AI-skann, ikke til sporing, og tellingen slettes automatisk etter 13 måneder."]
       },
       {
         "heading": "Slette kontoen",
@@ -217,7 +217,7 @@
         "body": ["Gratisversjonen koster ingenting. Pro kjøpes i App Store eller Google Play, som abonnement (månedlig eller årlig) eller som engangskjøp. Prisen vises i butikken før du kjøper."],
         "list": [
           "Et abonnement fornyes automatisk til du sier det opp i butikken senest 24 timer før perioden er over.",
-          "Du administrerer og sier opp i kontoinnstillingene i App Store eller Google Play.",
+          "Du administrerer og sier opp abonnementet i kontoinnstillingene i App Store eller Google Play.",
           "Tilbys en gratis prøveperiode, går den over til betalt abonnement når den er over, med mindre du sier opp før."
         ]
       },
@@ -238,8 +238,8 @@
         "body": ["Vi kan oppdatere vilkårene. Viktige endringer vises i appen eller på denne siden, med dato øverst."]
       },
       {
-        "heading": "Lov",
-        "body": ["Vilkårene følger norsk rett. Er du forbruker, beholder du også vernet loven i landet du bor i gir deg."]
+        "heading": "Lovvalg",
+        "body": ["Vilkårene følger norsk rett. Er du forbruker, beholder du også det vernet loven i landet du bor i, gir deg."]
       }
     ]
   },

@@ -28,7 +28,7 @@
           "De rekeningen die je aanmaakt (namen die je kiest, saldo en valuta; geen bankrekeningen).",
           "Je posten: datum, bedrag, valuta, categorie, leverancier en een optionele notitie.",
           "Vaste posten, spaardoelen, eigen categorieën en de categorie die de app voor elke leverancier onthoudt.",
-          "Instellingen: betaaldag, maandbudget, taal en valuta, en of je lezen met AI toestaat.",
+          "Instellingen: salarisdag, maandbudget, taal en valuta, en of je lezen met AI toestaat.",
           "Een willekeurige apparaat-ID, alleen gebruikt om het lezen met AI te tellen (zie hieronder).",
           "Afbeeldingen die je na een import wilt bewaren."
         ],
@@ -145,7 +145,7 @@
           "Tik op Alles wissen."
         ],
         "body": [
-          "Dit wist alles wat de app op je telefoon bewaart: rekeningen, posten, vaste posten, doelen, categorieën, leveranciers, instellingen, bewaarde afbeeldingen en bestanden, de apparaat-ID en je keuze voor taal en valuta. De app begint daarna opnieuw als nieuw.",
+          "Dit wist alles wat de app op je telefoon bewaart: rekeningen, posten, vaste posten, doelen, categorieën, leveranciers, instellingen, bewaarde afbeeldingen en bestanden, de apparaat-ID en je keuze voor taal en valuta. De app start daarna weer als nieuw.",
           "De telling van gratis scans en bestandsimports blijft bestaan – alleen getallen, niets over jou of je gegevens – op de telefoon en op onze server, zodat de gratis limiet blijft gelden.",
           "Dit kan niet ongedaan worden gemaakt. Wil je een kopie, exporteer je gegevens dan eerst via Ik → Gegevens exporteren. Dat is gratis."
         ]
@@ -210,7 +210,7 @@
       },
       {
         "heading": "Account en synchronisatie",
-        "body": ["Je kunt de app zonder account gebruiken. Als je inlogt en Pro hebt, worden je gegevens met je account gesynchroniseerd, zodat je ze op meerdere apparaten kunt gebruiken. Bescherm je inlog; wie op je account kan inloggen, ziet de gesynchroniseerde gegevens."]
+        "body": ["Je kunt de app zonder account gebruiken. Als je inlogt en Pro hebt, worden je gegevens met je account gesynchroniseerd, zodat je ze op meerdere apparaten kunt gebruiken. Bescherm je inloggegevens; wie op je account kan inloggen, ziet de gesynchroniseerde gegevens."]
       },
       {
         "heading": "Gratis en Pro",
@@ -238,7 +238,7 @@
         "body": ["We kunnen deze voorwaarden bijwerken. Belangrijke wijzigingen staan in de app of op deze pagina, met de datum bovenaan."]
       },
       {
-        "heading": "Recht",
+        "heading": "Toepasselijk recht",
         "body": ["Op deze voorwaarden is Noors recht van toepassing. Als consument behoud je ook de bescherming die het recht van je woonland je geeft."]
       }
     ]

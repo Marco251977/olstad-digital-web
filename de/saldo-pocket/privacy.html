@@ -50,7 +50,7 @@
   <main id="content" class="wrap">
     <p class="app-name">Saldo Pocket</p>
     <h1>Datenschutzerklärung</h1>
-    <p class="lede">Diese Erklärung beschreibt, was Saldo Pocket speichert, was die App sendet und an wen, und was du dagegen tun kannst. Kurz gesagt: Dein Budget bleibt auf deinem Telefon.</p>
+    <p class="lede">Diese Erklärung beschreibt, was Saldo Pocket speichert, was die App sendet und an wen, und was du selbst tun kannst. Kurz gesagt: Dein Budget bleibt auf deinem Telefon.</p>
     <p class="updated">Zuletzt geändert: 22. Oktober 2026</p>
     <ul class="page-nav"><li><a href="/de/saldo-pocket/privacy" aria-current="page">Datenschutzerklärung</a></li><li><a href="/de/saldo-pocket/terms">Nutzungsbedingungen</a></li><li><a href="/de/saldo-pocket/delete-account">Konto und Daten löschen</a></li><li><a href="/de/saldo-pocket/support">Support</a></li></ul>
     <section>
@@ -63,21 +63,21 @@
 </section>
     <section>
 <h2>Auf deinem Telefon gespeichert</h2>
-<p>Die App speichert Folgendes in ihrem eigenen Speicher auf dem Telefon. Es wird nicht an uns gesendet und wird gelöscht, wenn du in der App alle Daten löschst oder sie deinstallierst:</p>
-<ul><li>Die Konten, die du anlegst (selbst gewählte Namen, Saldo und Währung; keine Bankkonten).</li><li>Deine Buchungen: Datum, Betrag, Währung, Kategorie, Händler und eine optionale Notiz.</li><li>Daueraufträge, Sparziele, eigene Kategorien und die Kategorie, die sich die App für jeden Händler merkt.</li><li>Einstellungen: Zahltag, Monatsbudget, Sprache und Währung sowie ob du das Lesen mit KI erlaubst.</li><li>Eine zufällige Geräte-ID, die nur zum Zählen der KI-Lesevorgänge dient (siehe unten).</li><li>Bilder, die du nach einem Import behalten möchtest.</li></ul>
+<p>Die App speichert Folgendes in ihrem eigenen Speicher auf dem Telefon. Es wird nicht an uns gesendet und wird gelöscht, wenn du in der App alle Daten löschst oder die App deinstallierst:</p>
+<ul><li>Die Konten, die du anlegst (selbst gewählte Namen, Kontostand und Währung; keine Bankkonten).</li><li>Deine Buchungen: Datum, Betrag, Währung, Kategorie, Händler und eine optionale Notiz.</li><li>Regelmäßige Buchungen, Sparziele, eigene Kategorien und die Kategorie, die sich die App für jeden Händler merkt.</li><li>Einstellungen: Zahltag, Monatsbudget, Sprache und Währung sowie ob du das Lesen mit KI erlaubst.</li><li>Eine zufällige Geräte-ID, die nur zum Zählen der KI-Lesevorgänge dient (siehe unten).</li><li>Bilder, die du nach einem Import behalten möchtest.</li></ul>
 <p>Zahlungsreferenzen werden nie gespeichert, ebenso wenig die vollständige Kontonummer. Die App kann die letzten vier Ziffern der Kontonummer speichern, um das Konto wiederzuerkennen.</p>
 </section>
     <section>
 <h2>Import von CSV- und Excel-Dateien</h2>
 <p>Wenn du eine CSV- oder Excel-Datei von deiner Bank importierst, wird die Datei nur auf deinem Telefon gelesen. Die Datei selbst wird nie gespeichert, kopiert oder gesendet – weder an einen Server noch an eine KI.</p>
 <p>Aus der Datei werden nur Datum (und Buchungsdatum, wenn die Datei eines hat), Beschreibung, Betrag, Händler, der Kontostand der Bank für den Abgleich des Kontos und die letzten vier Ziffern der Kontonummer gespeichert, um das Konto wiederzuerkennen. Zahlungsreferenzen, andere Referenzen und die übrigen Spalten der Datei werden nicht gespeichert.</p>
-<p>Buchungen, die die Bank noch nicht gebucht hat, werden als normale Buchungen gespeichert und sofort mitgezählt. Fehlt eine solche Buchung in einem späteren Import von der Bank, fragt die App, ob du sie entfernen möchtest. Sie wird nie von selbst entfernt.</p>
+<p>Umsätze, die die Bank noch nicht gebucht hat, werden als normale Buchungen gespeichert und sofort mitgezählt. Fehlt eine solche Buchung in einem späteren Import von der Bank, fragt die App, ob du sie entfernen möchtest. Sie wird nie von selbst entfernt.</p>
 <p>Die App merkt sich, wie die Spalten der Datei aufgebaut sind, ohne deren Inhalt, damit der nächste Import schneller geht. Wenn du mit Pro angemeldet bist, wird das mit deinen anderen Einstellungen synchronisiert.</p>
 <p>Das Lesen mit KI wird nur für Bilder und PDFs genutzt, und nur, wenn du zugestimmt hast.</p>
 </section>
     <section>
 <h2>Lesen von Kontoauszügen, Belegen und Rechnungen mit KI (optional)</h2>
-<p>Wenn du einen Screenshot oder ein Foto eines Kontoauszugs importierst oder einen Beleg oder eine Rechnung scannst, kannst du ihn von KI lesen lassen. Die App fragt zuerst um Erlaubnis, und du kannst es auf dem Importbildschirm jederzeit ausschalten. Ohne Erlaubnis wird alles auf dem Telefon gelesen, und nichts wird gesendet.</p>
+<p>Wenn du einen Screenshot oder ein Foto eines Kontoauszugs importierst oder einen Beleg oder eine Rechnung scannst, kannst du das von einer KI lesen lassen. Die App fragt zuerst um Erlaubnis, und du kannst es auf dem Importbildschirm jederzeit ausschalten. Ohne Erlaubnis wird alles auf dem Telefon gelesen, und nichts wird gesendet.</p>
 <p>Mit Erlaubnis werden das Bild (oder der daraus gelesene Text), die Währung, dein Land, das heutige Datum, die Kategorieliste der App und die Geräte-ID über unseren Server bei Supabase (Irland) an Anthropic gesendet. Anthropic liest die Zeilen mit seinem KI-Modell (Claude) und sendet sie zurück. Weder wir noch Supabase speichern das Bild, den Text oder die Zeilen. Anthropic nutzt über seine API gesendete Daten nicht zum Training seiner Modelle und löscht sie nach begrenzter Zeit gemäß den eigenen Bedingungen.</p>
 <p>Damit der Dienst in seinen Grenzen bleibt (eine begrenzte Zahl von Lesevorgängen pro Gerät), speichert unser Server die Geräte-ID, das Datum und die Anzahl der Lesevorgänge, sonst nichts. Diese Zählungen werden nach 30 Tagen automatisch gelöscht.</p>
 <p>Für das Limit der Gratisversion bei KI-Scans zählt unser Server die Scans pro Monat mit einer gehashten Geräte-ID – einem Einwegcode aus der ID des Telefons, erstellt mit einem geheimen Schlüssel, nie die ID selbst. Die gehashte Geräte-ID wird nur zum Zählen kostenloser KI-Scans verwendet, nicht zum Tracking. Gespeichert werden nur der Code, der Monat und die Anzahl; die Zählung wird nach 13 Monaten automatisch gelöscht.</p>
@@ -101,13 +101,13 @@
     <section>
 <h2>Freiwilliges Konto und Synchronisierung (Pro)</h2>
 <p>Du kannst dich mit Apple, Google, Facebook (Meta) oder E-Mail anmelden. Die Anmeldung übernimmt Supabase auf Servern in Irland. Wir speichern dann deine E-Mail-Adresse, eine Konto-ID, deinen Namen, falls der Anbieter ihn teilt, deine App-Sprache und in Testversionen ein Testkennzeichen. Mit Apple kannst du deine E-Mail-Adresse verbergen; wir sehen dann nur Apples Weiterleitungsadresse.</p>
-<p>Mit Pro wird dein Budget mit deinem Konto synchronisiert: Konten, Buchungen, Daueraufträge, Budget, Sparziele, eigene Kategorien, gemerkte Händler und die Einstellungen, die dir folgen (Zahltag, Gehalt, Budget). Jede Änderung wird mit Zeitpunkt und Gerät gespeichert. Die Daten sind bei der Übertragung und Speicherung verschlüsselt, und nur dein Konto kann sie lesen.</p>
+<p>Mit Pro wird dein Budget mit deinem Konto synchronisiert: Konten, Buchungen, regelmäßige Buchungen, Budget, Sparziele, eigene Kategorien, gemerkte Händler und die Einstellungen, die dir folgen (Zahltag, Gehalt, Budget). Jede Änderung wird mit Zeitpunkt und Gerät gespeichert. Die Daten sind bei der Übertragung und Speicherung verschlüsselt, und nur dein Konto kann sie lesen.</p>
 <p>Codes und Links zur Anmeldung werden per E-Mail über Resend mit deiner Adresse und Sprache verschickt. Damit jede E-Mail nur einmal versendet wird, behält der Server nur Nachrichten-ID, Art und Status für 7 Tage, nie die Adresse.</p>
 <p>Du kannst dich jederzeit abmelden; die Daten bleiben auf dem Handy. «Konto löschen» entfernt das Konto und alle damit auf dem Server gespeicherten Daten.</p>
 </section>
     <section>
 <h2>Widget und Erinnerungen</h2>
-<p>Das Widget zeigt Zahlen aus den Daten auf deinem Telefon, und Erinnerungen an Daueraufträge werden auf dem Telefon eingerichtet. Für beides wird nichts gesendet.</p>
+<p>Das Widget zeigt Zahlen aus den Daten auf deinem Telefon, und Erinnerungen an regelmäßige Buchungen werden auf dem Telefon eingerichtet. Für beides wird nichts gesendet.</p>
 </section>
     <section>
 <h2>Mit wem wir Daten teilen</h2>
@@ -120,7 +120,7 @@
 </section>
     <section>
 <h2>Wie lange Daten gespeichert werden</h2>
-<ul><li>Auf dem Handy: bis du sie in der App löschst oder die App deinstallierst.</li><li>Dein Konto und synchronisierte Daten: bis du das Konto in der App löschst.</li><li>Bilder und Text für das Lesen mit KI: werden bei uns nicht gespeichert.</li><li>CSV- und Excel-Dateien, die du importierst: werden nicht gespeichert. Nur die Buchungen, die du speicherst, und der Aufbau der Spalten bleiben.</li><li>Zählung der KI-Lesungen: 30 Tage.</li><li>Zählung kostenloser KI-Scans (gehashte Geräte-ID, Monat und Anzahl): 13 Monate.</li><li>Protokoll der Anmelde-E-Mails (ohne Adresse): 7 Tage.</li><li>Absturzberichte: höchstens 90 Tage.</li></ul>
+<ul><li>Auf dem Handy: bis du sie in der App löschst oder die App deinstallierst.</li><li>Dein Konto und synchronisierte Daten: bis du das Konto in der App löschst.</li><li>Bilder und Text für das Lesen mit KI: werden bei uns nicht gespeichert.</li><li>CSV- und Excel-Dateien, die du importierst: werden nicht gespeichert. Nur die Buchungen, die du speicherst, und der Aufbau der Spalten bleiben.</li><li>Zählung der KI-Lesevorgänge: 30 Tage.</li><li>Zählung kostenloser KI-Scans (gehashte Geräte-ID, Monat und Anzahl): 13 Monate.</li><li>Protokoll der Anmelde-E-Mails (ohne Adresse): 7 Tage.</li><li>Absturzberichte: höchstens 90 Tage.</li></ul>
 </section>
     <section>
 <h2>Deine Rechte</h2>
