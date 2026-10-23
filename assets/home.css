@@ -18,6 +18,7 @@ main { flex: 1; }
 img { max-width: 100%; display: block; }
 a { color: var(--accent-text); text-underline-offset: 0.18em; }
 a:focus-visible, summary:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
+[hidden] { display: none !important; }
 .ltr { direction: ltr; unicode-bidi: isolate; }
 .icon { flex: none; }
 [dir="rtl"] .icon.dir { transform: scaleX(-1); }
