@@ -1,0 +1,63 @@
+{
+  "title": "Olstad Digital – sovelluksia arkeen",
+  "nav": {
+    "apps": "Sovellukset",
+    "principles": "Periaatteet"
+  },
+  "hero": {
+    "title": "Sovelluksia, joita useimmat osaavat ja haluavat käyttää.",
+    "body": "Olstad Digital tekee yksinkertaisia sovelluksia arkeen – omalla kielelläsi, omassa valuutassasi ja ilman mainoksia."
+  },
+  "appsHeading": "Sovelluksemme",
+  "categories": {
+    "finance": "Talous",
+    "travel": "Matkailu"
+  },
+  "links": {
+    "privacy": "Tietosuoja",
+    "support": "Tuki",
+    "deleteData": "Poista tiedot",
+    "website": "Verkkosivusto"
+  },
+  "store": {
+    "label": "{{app}} – {{store}}",
+    "comingSoon": "Tulossa pian App Storeen ja Google Playhin"
+  },
+  "imageAlt": "{{app}}: sovelluksen aloitusnäkymä",
+  "about": {
+    "plantravel": "Löydä lennot, hotellit, vuokra-autot ja elämykset – ja suunnittele koko matka yhdessä paikassa."
+  },
+  "principles": {
+    "heading": "Periaatteet",
+    "privacy": {
+      "title": "Tietosuoja ensin",
+      "body": "Emme koskaan myy tietoja. Vain se, mitä sovellus tarvitsee, selitettynä selkokielellä."
+    },
+    "language": {
+      "title": "Sinun kielesi, sinun valuuttasi",
+      "body": "18 kieltä ensimmäisestä päivästä. Numerot, päivämäärät ja summat niin kuin olet tottunut."
+    },
+    "ads": {
+      "title": "Ei mainoksia",
+      "body": "Sovelluksissa ei ole mainoksia. Maksat vain, jos haluat enemmän."
+    }
+  },
+  "signIn": "Kirjaudu",
+  "admin": {
+    "title": "Ylläpito",
+    "email": "Sähköposti",
+    "sendCode": "Lähetä koodi",
+    "code": "Sähköpostin koodi",
+    "verify": "Kirjaudu",
+    "sent": "Lähetimme koodin osoitteeseen {{email}}.",
+    "refused": "Tällä osoitteella ei ole pääsyä.",
+    "wrongCode": "Koodi on väärä tai vanhentunut.",
+    "failed": "Jokin meni vikaan. Yritä uudelleen.",
+    "coming": "Tulossa",
+    "comingBody": "Tilastot tulevat tähän.",
+    "signOut": "Kirjaudu ulos",
+    "checking": "Tarkistetaan …",
+    "tooMany": "Liian monta yritystä. Odota hetki ja yritä uudelleen.",
+    "notConfigured": "Kirjautumista ei ole määritetty palvelimella."
+  }
+}

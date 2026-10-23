@@ -1,0 +1,63 @@
+{
+  "title": "Olstad Digital – apps para o dia a dia",
+  "nav": {
+    "apps": "Apps",
+    "principles": "Princípios"
+  },
+  "hero": {
+    "title": "Apps que quase todo mundo consegue e quer usar.",
+    "body": "A Olstad Digital cria apps simples para o dia a dia – no seu idioma, na sua moeda e sem anúncios."
+  },
+  "appsHeading": "Nossos apps",
+  "categories": {
+    "finance": "Finanças",
+    "travel": "Viagem"
+  },
+  "links": {
+    "privacy": "Privacidade",
+    "support": "Suporte",
+    "deleteData": "Excluir dados",
+    "website": "Site"
+  },
+  "store": {
+    "label": "{{app}} na {{store}}",
+    "comingSoon": "Em breve na App Store e no Google Play"
+  },
+  "imageAlt": "{{app}}: a tela inicial do app",
+  "about": {
+    "plantravel": "Encontre voos, hotéis, carros de aluguel e experiências – e planeje a viagem inteira em um só lugar."
+  },
+  "principles": {
+    "heading": "Princípios",
+    "privacy": {
+      "title": "Privacidade em primeiro lugar",
+      "body": "Nunca vendemos dados. Só o que o app precisa, explicado em palavras simples."
+    },
+    "language": {
+      "title": "Seu idioma, sua moeda",
+      "body": "18 idiomas desde o primeiro dia. Números, datas e valores do jeito que você conhece."
+    },
+    "ads": {
+      "title": "Sem anúncios",
+      "body": "Os apps não mostram publicidade. Você só paga se quiser mais."
+    }
+  },
+  "signIn": "Entrar",
+  "admin": {
+    "title": "Administração",
+    "email": "E-mail",
+    "sendCode": "Enviar código",
+    "code": "Código do e-mail",
+    "verify": "Entrar",
+    "sent": "Enviamos um código para {{email}}.",
+    "refused": "Este endereço não tem acesso.",
+    "wrongCode": "O código está errado ou expirou.",
+    "failed": "Algo deu errado. Tente de novo.",
+    "coming": "Em breve",
+    "comingBody": "As estatísticas aparecerão aqui.",
+    "signOut": "Sair",
+    "checking": "Verificando …",
+    "tooMany": "Muitas tentativas. Aguarde um pouco e tente de novo.",
+    "notConfigured": "O login não está configurado no servidor."
+  }
+}

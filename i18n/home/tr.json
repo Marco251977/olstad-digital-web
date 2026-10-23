@@ -1,0 +1,63 @@
+{
+  "title": "Olstad Digital – günlük hayat için uygulamalar",
+  "nav": {
+    "apps": "Uygulamalar",
+    "principles": "İlkeler"
+  },
+  "hero": {
+    "title": "Çoğu insanın kullanabileceği ve kullanmak isteyeceği uygulamalar.",
+    "body": "Olstad Digital günlük hayat için basit uygulamalar yapar – senin dilinde, senin para biriminde ve reklamsız."
+  },
+  "appsHeading": "Uygulamalarımız",
+  "categories": {
+    "finance": "Finans",
+    "travel": "Seyahat"
+  },
+  "links": {
+    "privacy": "Gizlilik",
+    "support": "Destek",
+    "deleteData": "Verileri sil",
+    "website": "Web sitesi"
+  },
+  "store": {
+    "label": "{{store}} üzerinde {{app}}",
+    "comingSoon": "Yakında App Store ve Google Play’de"
+  },
+  "imageAlt": "{{app}}: uygulamanın ana ekranı",
+  "about": {
+    "plantravel": "Uçuş, otel, kiralık araç ve etkinlik bul – ve tüm seyahati tek bir yerde planla."
+  },
+  "principles": {
+    "heading": "İlkeler",
+    "privacy": {
+      "title": "Önce gizlilik",
+      "body": "Verileri asla satmayız. Yalnızca uygulamanın ihtiyaç duyduğu kadarı, açık bir dille anlatılır."
+    },
+    "language": {
+      "title": "Senin dilin, senin para birimin",
+      "body": "İlk günden 18 dil. Sayılar, tarihler ve tutarlar alıştığın gibi."
+    },
+    "ads": {
+      "title": "Reklam yok",
+      "body": "Uygulamalar reklam göstermez. Yalnızca daha fazlasını istersen ödersin."
+    }
+  },
+  "signIn": "Giriş yap",
+  "admin": {
+    "title": "Yönetim",
+    "email": "E-posta",
+    "sendCode": "Kod gönder",
+    "code": "E-postadaki kod",
+    "verify": "Giriş yap",
+    "sent": "{{email}} adresine bir kod gönderdik.",
+    "refused": "Bu adresin erişimi yok.",
+    "wrongCode": "Kod yanlış ya da süresi dolmuş.",
+    "failed": "Bir sorun oluştu. Tekrar dene.",
+    "coming": "Yakında",
+    "comingBody": "İstatistikler burada görünecek.",
+    "signOut": "Çıkış yap",
+    "checking": "Kontrol ediliyor …",
+    "tooMany": "Çok fazla deneme. Biraz bekle ve tekrar dene.",
+    "notConfigured": "Giriş sunucuda ayarlanmamış."
+  }
+}

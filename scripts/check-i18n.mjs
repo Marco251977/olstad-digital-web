@@ -10,7 +10,7 @@ import { CORE_LANGUAGES } from 'app-core';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const { apps } = JSON.parse(fs.readFileSync(path.join(root, 'data/apps.json'), 'utf8'));
-const dirs = ['i18n/common', ...apps.filter((a) => a.slug).map((a) => `i18n/apps/${a.slug}`)];
+const dirs = ['i18n/common', 'i18n/home', ...apps.filter((a) => a.slug).map((a) => `i18n/apps/${a.slug}`)];
 const problems = [];
 
 /** Every leaf as path → text (arrays by index). */

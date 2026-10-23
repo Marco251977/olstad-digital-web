@@ -1,0 +1,63 @@
+{
+  "title": "Olstad Digital – appar för vardagen",
+  "nav": {
+    "apps": "Appar",
+    "principles": "Principer"
+  },
+  "hero": {
+    "title": "Appar som de flesta kan och vill använda.",
+    "body": "Olstad Digital gör enkla appar för vardagen – på ditt språk, i din valuta och utan annonser."
+  },
+  "appsHeading": "Våra appar",
+  "categories": {
+    "finance": "Ekonomi",
+    "travel": "Resor"
+  },
+  "links": {
+    "privacy": "Integritet",
+    "support": "Support",
+    "deleteData": "Radera data",
+    "website": "Webbplats"
+  },
+  "store": {
+    "label": "{{app}} i {{store}}",
+    "comingSoon": "Kommer snart till App Store och Google Play"
+  },
+  "imageAlt": "{{app}}: appens startskärm",
+  "about": {
+    "plantravel": "Hitta flyg, hotell, hyrbil och upplevelser – och planera hela resan på ett ställe."
+  },
+  "principles": {
+    "heading": "Principer",
+    "privacy": {
+      "title": "Integritet först",
+      "body": "Vi säljer aldrig data. Bara det appen behöver, förklarat på vanlig svenska."
+    },
+    "language": {
+      "title": "Ditt språk, din valuta",
+      "body": "18 språk från första dagen. Siffror, datum och belopp som du är van vid."
+    },
+    "ads": {
+      "title": "Inga annonser",
+      "body": "Apparna visar ingen reklam. Du betalar bara om du vill ha mer."
+    }
+  },
+  "signIn": "Logga in",
+  "admin": {
+    "title": "Admin",
+    "email": "E-post",
+    "sendCode": "Skicka kod",
+    "code": "Koden från e-posten",
+    "verify": "Logga in",
+    "sent": "Vi har skickat en kod till {{email}}.",
+    "refused": "Den här adressen har inte åtkomst.",
+    "wrongCode": "Koden är fel eller har gått ut.",
+    "failed": "Något gick fel. Försök igen.",
+    "coming": "Kommer",
+    "comingBody": "Statistik kommer här.",
+    "signOut": "Logga ut",
+    "checking": "Kontrollerar …",
+    "tooMany": "För många försök. Vänta en stund och försök igen.",
+    "notConfigured": "Inloggningen är inte konfigurerad på servern."
+  }
+}

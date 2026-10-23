@@ -1,0 +1,63 @@
+{
+  "title": "Olstad Digital – Apps für den Alltag",
+  "nav": {
+    "apps": "Apps",
+    "principles": "Grundsätze"
+  },
+  "hero": {
+    "title": "Apps, die die meisten nutzen können – und wollen.",
+    "body": "Olstad Digital macht einfache Apps für den Alltag – in deiner Sprache, in deiner Währung und ohne Werbung."
+  },
+  "appsHeading": "Unsere Apps",
+  "categories": {
+    "finance": "Finanzen",
+    "travel": "Reisen"
+  },
+  "links": {
+    "privacy": "Datenschutz",
+    "support": "Support",
+    "deleteData": "Daten löschen",
+    "website": "Website"
+  },
+  "store": {
+    "label": "{{app}} im {{store}}",
+    "comingSoon": "Bald im App Store und bei Google Play"
+  },
+  "imageAlt": "{{app}}: Startbildschirm der App",
+  "about": {
+    "plantravel": "Finde Flüge, Hotels, Mietwagen und Erlebnisse – und plane die ganze Reise an einem Ort."
+  },
+  "principles": {
+    "heading": "Grundsätze",
+    "privacy": {
+      "title": "Datenschutz zuerst",
+      "body": "Wir verkaufen niemals Daten. Nur was die App braucht, verständlich erklärt."
+    },
+    "language": {
+      "title": "Deine Sprache, deine Währung",
+      "body": "18 Sprachen vom ersten Tag an. Zahlen, Daten und Beträge so, wie du sie kennst."
+    },
+    "ads": {
+      "title": "Keine Werbung",
+      "body": "Die Apps zeigen keine Werbung. Du zahlst nur, wenn du mehr willst."
+    }
+  },
+  "signIn": "Anmelden",
+  "admin": {
+    "title": "Admin",
+    "email": "E-Mail",
+    "sendCode": "Code senden",
+    "code": "Code aus der E-Mail",
+    "verify": "Anmelden",
+    "sent": "Wir haben einen Code an {{email}} gesendet.",
+    "refused": "Diese Adresse hat keinen Zugang.",
+    "wrongCode": "Der Code ist falsch oder abgelaufen.",
+    "failed": "Etwas ist schiefgelaufen. Versuch es noch einmal.",
+    "coming": "Kommt bald",
+    "comingBody": "Hier erscheinen bald Statistiken.",
+    "signOut": "Abmelden",
+    "checking": "Wird geprüft …",
+    "tooMany": "Zu viele Versuche. Warte kurz und versuch es noch einmal.",
+    "notConfigured": "Die Anmeldung ist auf dem Server nicht eingerichtet."
+  }
+}

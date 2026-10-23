@@ -22,6 +22,31 @@
           "33:62:21:0F:F1:E4:21:F6:B6:6B:E7:53:E7:8A:94:35:CA:1C:2B:85:E8:29:24:B5:C8:A8:6D:26:EB:48:98:AB"
         ],
         "androidSha256PlayAppSigning": []
+      },
+      "home": {
+        "id": "saldo-pocket",
+        "icon": "/apps/saldo-pocket/icon.png",
+        "image": "/apps/saldo-pocket/home.webp",
+        "category": "finance",
+        "platforms": [
+          "iOS",
+          "Android"
+        ],
+        "color": {
+          "light": "#2F7A5B",
+          "dark": "#1F4E3B"
+        },
+        "stores": {
+          "appStore": "6821035069",
+          "googlePlay": "com.saldopocket.app"
+        },
+        "website": null,
+        "links": [
+          "privacy",
+          "support",
+          "delete-account"
+        ],
+        "published": false
       }
     },
     {
@@ -29,7 +54,31 @@
       "external": {
         "privacy": "https://plantravelapp.com/{lang}/privacy",
         "delete-account": "https://plantravelapp.com/{lang}/delete-account",
-        "support": null
+        "support": "https://plantravelapp.com/{lang}/support"
+      },
+      "home": {
+        "id": "plantravel",
+        "icon": "/apps/plantravel/icon.png",
+        "image": "/apps/plantravel/home.webp",
+        "category": "travel",
+        "platforms": [
+          "iOS",
+          "Android"
+        ],
+        "color": {
+          "light": "#0E2A47",
+          "dark": "#0E2A47"
+        },
+        "stores": {
+          "appStore": "6796367244",
+          "googlePlay": "com.olstaddigital.plantravel"
+        },
+        "website": "https://plantravelapp.no",
+        "links": [
+          "privacy",
+          "support"
+        ],
+        "published": true
       }
     }
   ]

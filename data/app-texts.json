@@ -1,0 +1,27 @@
+{
+  "generatedBy": "saldo-pocket scripts/privacy.mjs",
+  "apps": {
+    "saldo-pocket": {
+      "about": {
+        "ar": "اعرف كم يمكنك أن تنفق اليوم وكيف سينتهي الشهر، من راتب إلى راتب.",
+        "da": "Se, hvad du kan bruge i dag, og hvordan måneden ender – fra løn til løn.",
+        "de": "Was du heute ausgeben kannst und wie der Monat endet – von Gehalt zu Gehalt.",
+        "en": "See what you can spend today and how the month will end – payday to payday.",
+        "es": "Mira cuánto puedes gastar hoy y cómo terminará el mes, de sueldo a sueldo.",
+        "fi": "Paljonko voit käyttää tänään ja miten kuukausi päättyy – palkasta palkkaan.",
+        "fr": "Ce que vous pouvez dépenser aujourd’hui et la fin du mois, d’une paie à l’autre.",
+        "hi": "देखें आज कितना खर्च कर सकते हैं और महीना कैसे खत्म होगा – सैलरी से सैलरी तक।",
+        "it": "Quanto puoi spendere oggi e come finirà il mese, da stipendio a stipendio.",
+        "ja": "今日使える金額と、月末がどうなるかがわかる。給料日から次の給料日まで。",
+        "ko": "오늘 쓸 수 있는 금액과 이번 달이 어떻게 끝날지 확인하세요. 급여일부터 급여일까지.",
+        "nb": "Se hva du kan bruke i dag og hvordan måneden ender – fra lønn til lønn.",
+        "nl": "Wat je vandaag kunt uitgeven en hoe de maand eindigt – van salaris tot salaris.",
+        "pl": "Zobacz, ile możesz dziś wydać i jak skończy się miesiąc – od wypłaty do wypłaty.",
+        "pt-BR": "Quanto você pode gastar hoje e como o mês termina, de salário a salário.",
+        "sv": "Se vad du kan spendera i dag och hur månaden slutar – från lön till lön.",
+        "tr": "Bugün ne kadar harcayabileceğini ve ayın nasıl biteceğini gör – maaştan maaşa.",
+        "zh-Hans": "看清今天能花多少、月底会怎样——从发薪日到下个发薪日。"
+      }
+    }
+  }
+}

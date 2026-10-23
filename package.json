@@ -6,9 +6,11 @@
   "scripts": {
     "build:pages": "node scripts/build-pages.mjs",
     "check:i18n": "node scripts/check-i18n.mjs",
-    "check": "npm run check:i18n && node scripts/build-pages.mjs --check"
+    "check": "npm run check:i18n && npm run check:contrast && node scripts/build-pages.mjs --check && npm test",
+    "check:contrast": "node scripts/check-contrast.mjs",
+    "test": "node --test test/*.test.mjs"
   },
   "devDependencies": {
-    "app-core": "file:vendor/app-core-0.8.0.tgz"
+    "app-core": "file:vendor/app-core-0.55.0.tgz"
   }
 }

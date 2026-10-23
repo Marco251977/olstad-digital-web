@@ -1,0 +1,63 @@
+{
+  "title": "Olstad Digital – everyday apps",
+  "nav": {
+    "apps": "Apps",
+    "principles": "Principles"
+  },
+  "hero": {
+    "title": "Apps people can use – and want to.",
+    "body": "Olstad Digital makes simple everyday apps – in your language, in your currency and without ads."
+  },
+  "appsHeading": "Our apps",
+  "categories": {
+    "finance": "Finance",
+    "travel": "Travel"
+  },
+  "links": {
+    "privacy": "Privacy",
+    "support": "Support",
+    "deleteData": "Delete data",
+    "website": "Website"
+  },
+  "store": {
+    "label": "{{app}} on {{store}}",
+    "comingSoon": "Coming soon to the App Store and Google Play"
+  },
+  "imageAlt": "{{app}}: the app's home screen",
+  "about": {
+    "plantravel": "Find flights, hotels, cars and experiences – and plan the whole trip in one place."
+  },
+  "principles": {
+    "heading": "Principles",
+    "privacy": {
+      "title": "Privacy first",
+      "body": "We never sell data. Only what the app needs, explained in plain words."
+    },
+    "language": {
+      "title": "Your language, your currency",
+      "body": "18 languages from day one. Numbers, dates and amounts the way you know them."
+    },
+    "ads": {
+      "title": "No ads",
+      "body": "The apps show no advertising. You only pay if you want more."
+    }
+  },
+  "signIn": "Log in",
+  "admin": {
+    "title": "Admin",
+    "email": "E-mail",
+    "sendCode": "Send code",
+    "code": "Code from the e-mail",
+    "verify": "Log in",
+    "sent": "We sent a code to {{email}}.",
+    "refused": "This address does not have access.",
+    "wrongCode": "The code is wrong or has expired.",
+    "failed": "Something went wrong. Try again.",
+    "coming": "Coming",
+    "comingBody": "Statistics will appear here.",
+    "signOut": "Log out",
+    "checking": "Checking …",
+    "tooMany": "Too many attempts. Wait a little and try again.",
+    "notConfigured": "Sign-in is not set up on the server."
+  }
+}

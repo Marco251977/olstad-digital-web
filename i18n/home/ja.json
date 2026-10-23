@@ -1,0 +1,63 @@
+{
+  "title": "Olstad Digital – 毎日のためのアプリ",
+  "nav": {
+    "apps": "アプリ",
+    "principles": "大切にしていること"
+  },
+  "hero": {
+    "title": "誰もが使えて、使いたくなるアプリ。",
+    "body": "Olstad Digital は、毎日のためのシンプルなアプリを作っています。あなたの言語と通貨で、広告なしで。"
+  },
+  "appsHeading": "アプリ一覧",
+  "categories": {
+    "finance": "ファイナンス",
+    "travel": "旅行"
+  },
+  "links": {
+    "privacy": "プライバシー",
+    "support": "サポート",
+    "deleteData": "データを削除",
+    "website": "ウェブサイト"
+  },
+  "store": {
+    "label": "{{store}} の {{app}}",
+    "comingSoon": "App Store と Google Play で近日公開"
+  },
+  "imageAlt": "{{app}}：アプリのホーム画面",
+  "about": {
+    "plantravel": "フライト、ホテル、レンタカー、アクティビティを探して、旅のすべてを一か所で計画できます。"
+  },
+  "principles": {
+    "heading": "大切にしていること",
+    "privacy": {
+      "title": "プライバシー第一",
+      "body": "データを売ることはありません。アプリに必要なものだけを、わかりやすく説明します。"
+    },
+    "language": {
+      "title": "あなたの言語、あなたの通貨",
+      "body": "初日から18言語に対応。数字、日付、金額はいつもの形式で表示します。"
+    },
+    "ads": {
+      "title": "広告なし",
+      "body": "アプリに広告は表示されません。もっと使いたいときだけお支払いください。"
+    }
+  },
+  "signIn": "ログイン",
+  "admin": {
+    "title": "管理",
+    "email": "メールアドレス",
+    "sendCode": "コードを送信",
+    "code": "メールに届いたコード",
+    "verify": "ログイン",
+    "sent": "{{email}} にコードを送信しました。",
+    "refused": "このアドレスにはアクセス権がありません。",
+    "wrongCode": "コードが正しくないか、有効期限が切れています。",
+    "failed": "問題が発生しました。もう一度お試しください。",
+    "coming": "準備中",
+    "comingBody": "ここに統計が表示されます。",
+    "signOut": "ログアウト",
+    "checking": "確認しています…",
+    "tooMany": "試行回数が多すぎます。少し待ってからもう一度お試しください。",
+    "notConfigured": "サーバーでログインが設定されていません。"
+  }
+}

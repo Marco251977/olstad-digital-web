@@ -1,0 +1,63 @@
+{
+  "title": "Olstad Digital – apper for hverdagen",
+  "nav": {
+    "apps": "Apper",
+    "principles": "Prinsipper"
+  },
+  "hero": {
+    "title": "Apper folk flest kan og vil bruke.",
+    "body": "Olstad Digital lager enkle apper for hverdagen – på ditt språk, i din valuta og uten annonser."
+  },
+  "appsHeading": "Våre apper",
+  "categories": {
+    "finance": "Økonomi",
+    "travel": "Reise"
+  },
+  "links": {
+    "privacy": "Personvern",
+    "support": "Support",
+    "deleteData": "Slett data",
+    "website": "Nettside"
+  },
+  "store": {
+    "label": "{{app}} i {{store}}",
+    "comingSoon": "Kommer snart til App Store og Google Play"
+  },
+  "imageAlt": "{{app}}: appens hjemskjerm",
+  "about": {
+    "plantravel": "Finn fly, hotell, leiebil og opplevelser – og planlegg hele turen på ett sted."
+  },
+  "principles": {
+    "heading": "Prinsipper",
+    "privacy": {
+      "title": "Personvern først",
+      "body": "Vi selger aldri data. Bare det appen trenger, forklart i klartekst."
+    },
+    "language": {
+      "title": "Ditt språk, din valuta",
+      "body": "18 språk fra første dag. Tall, datoer og beløp slik du er vant til."
+    },
+    "ads": {
+      "title": "Ingen annonser",
+      "body": "Appene viser ingen reklame. Du betaler bare hvis du vil ha mer."
+    }
+  },
+  "signIn": "Logg inn",
+  "admin": {
+    "title": "Admin",
+    "email": "E-post",
+    "sendCode": "Send kode",
+    "code": "Koden fra e-posten",
+    "verify": "Logg inn",
+    "sent": "Vi har sendt en kode til {{email}}.",
+    "refused": "Denne adressen har ikke tilgang.",
+    "wrongCode": "Koden er feil eller utløpt.",
+    "failed": "Noe gikk galt. Prøv igjen.",
+    "coming": "Kommer",
+    "comingBody": "Statistikk kommer her.",
+    "signOut": "Logg ut",
+    "checking": "Sjekker …",
+    "tooMany": "For mange forsøk. Vent litt og prøv igjen.",
+    "notConfigured": "Innloggingen er ikke satt opp på serveren."
+  }
+}
