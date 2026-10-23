@@ -68,3 +68,14 @@ test('/admin: the allowlist is checked on the server before any code is sent', a
   assert.equal(allowed('', env), false);
   assert.doesNotMatch(read('admin.html'), /owner@|marco\.olstad/, 'the allowlist is never in the page');
 });
+
+test('the sentence about an app is its own store short description (data/app-texts.json), never bank-connection wording', () => {
+  const texts = JSON.parse(read('data/app-texts.json')).apps;
+  for (const l of LANGS) {
+    const html = read(`${l}/index.html`);
+    const mine = texts['saldo-pocket'].about[l].replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    assert.ok(html.includes(`<p class="about">${mine}</p>`), l);
+    assert.equal(JSON.parse(read(`i18n/home/${l}.json`)).about['saldo-pocket'], undefined, `${l}: one source only`);
+  }
+  for (const l of LANGS) assert.doesNotMatch(read(`${l}/index.html`), /bankkobling|bank connection|Bankverbindung|Ingen bank/i, l);
+});

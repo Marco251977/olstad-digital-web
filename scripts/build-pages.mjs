@@ -34,6 +34,11 @@ const texts = (dir, lang) => read(`${dir}/${lang}.json`);
 const common = Object.fromEntries(LANGS.map((l) => [l, texts('i18n/common', l)]));
 const homeTexts = Object.fromEntries(LANGS.map((l) => [l, texts('i18n/home', l)]));
 const theme = read('data/theme.json');
+// The apps' own store short descriptions (written by each app's sync script, e.g. Saldo Pocket's scripts/privacy.mjs --sync).
+const storeTexts = fs.existsSync(path.join(root, 'data/app-texts.json')) ? read('data/app-texts.json').apps : {};
+for (const app of apps.filter((a) => a.home)) {
+  for (const lang of LANGS) if (!storeTexts[app.home.id]?.about?.[lang] && !homeTexts[lang].about?.[app.home.id]) throw new Error(`${app.home.id} ${lang}: no sentence (data/app-texts.json or i18n/home about)`);
+}
 const appTexts = Object.fromEntries(apps.filter((a) => a.slug).map((a) => [a.slug, Object.fromEntries(LANGS.map((l) => [l, texts(`i18n/apps/${a.slug}`, l)]))]));
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -387,7 +392,7 @@ const unprefixed = ['/privacy', ...apps.filter((a) => a.slug).flatMap((a) => a.p
 for (const p of unprefixed) files.set(`${p.slice(1)}.html`, fallbackPage(p));
 // The front page per language, «/» (the middleware sends visitors to their language; without it, English), /admin and the colour tokens.
 const year = String(Math.max(2026, new Date().getUTCFullYear()));
-for (const lang of LANGS) files.set(`${lang}/index.html`, frontPage({ lang, dir: dirOf(lang), apps, company, home: homeTexts[lang], common: common[lang], esc, fill, origin: ORIGIN, langs: LANGS, year }));
+for (const lang of LANGS) files.set(`${lang}/index.html`, frontPage({ lang, dir: dirOf(lang), apps, company, home: homeTexts[lang], common: common[lang], esc, fill, origin: ORIGIN, langs: LANGS, year, storeTexts }));
 files.set('index.html', fallbackPage(''));
 files.set('admin.html', adminPage({ homes: homeTexts, company, esc, fallback: FALLBACK_LANGUAGE }));
 files.set('assets/home-tokens.css', tokensCss(theme));

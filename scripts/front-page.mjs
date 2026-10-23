@@ -87,7 +87,7 @@ function footer({ lang, company, esc, fill, common, home, year }) {
   </footer>`;
 }
 
-function appCard(app, { lang, esc, fill, h, common }) {
+function appCard(app, { lang, esc, fill, h, about }) {
   const a = app.home;
   const name = esc(app.name);
   const stores = storeLinks(a.stores, lang);
@@ -117,7 +117,7 @@ function appCard(app, { lang, esc, fill, h, common }) {
               <p class="meta">${meta}</p>
             </div>
           </div>
-          <p class="about">${fill(h.about[a.id])}</p>
+          <p class="about">${about(a.id)}</p>
           ${buttons.length ? `<div class="buttons">${buttons.join('')}</div>` : ''}
           ${soon}
           <ul class="app-links" aria-label="${name}">${links}</ul>
@@ -125,10 +125,13 @@ function appCard(app, { lang, esc, fill, h, common }) {
       </article>`;
 }
 
-export function frontPage({ lang, dir, apps, company, home: h, common, esc, fill, origin, langs, year }) {
+export function frontPage({ lang, dir, apps, company, home: h, common, esc, fill, origin, langs, year, storeTexts }) {
   const shown = apps.filter((a) => a.home).sort((x, y) => Number(y.home.published) - Number(x.home.published));
   const alternates = [...langs.map((l) => `<link rel="alternate" hreflang="${l}" href="${origin}/${l}">`), `<link rel="alternate" hreflang="x-default" href="${origin}/">`].join('\n  ');
-  const ctx = { lang, esc, fill, h, common };
+  // The sentence about each app: the app's own store short description (data/app-texts.json, written by the app's
+  // sync script – ONE source with the store listing), else i18n/home about.<id> for an app without one in its code.
+  const about = (id) => (storeTexts?.[id]?.about?.[lang] ? esc(storeTexts[id].about[lang]) : fill(h.about[id]));
+  const ctx = { lang, esc, fill, h, common, about };
   const principle = (k) => `<li><h3>${fill(h.principles[k].title)}</h3><p>${fill(h.principles[k].body)}</p></li>`;
   return `${head({ lang, dir, title: fill(h.title), description: fill(h.hero.body), canonical: `${origin}/${lang}`, alternates, esc })}
 <body>
