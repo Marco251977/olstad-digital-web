@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Admin – Olstad Digital</title>
+  <meta name="description" content="Admin">
+  <meta name="color-scheme" content="light dark">
+  
+  
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preload" href="/assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/fonts/hanken-grotesk.css">
+  <link rel="stylesheet" href="/assets/home-tokens.css">
+  <link rel="stylesheet" href="/assets/home.css">
+  <meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-row">
+      <a class="logo" href="/en" aria-label="Olstad Digital – Olstad Digital" lang="en" dir="ltr">Olstad Digital</a>
+    </div>
+  </header>
+  <main id="content" class="wrap admin">
+    <h1 data-t="title">Admin</h1>
+    <form id="email-form" class="admin-form">
+      <label for="email" data-t="email">E-mail</label>
+      <input id="email" name="email" type="email" autocomplete="email" required>
+      <button class="btn primary" type="submit" data-t="sendCode">Send code</button>
+    </form>
+    <form id="code-form" class="admin-form" hidden>
+      <p id="sent"></p>
+      <label for="code" data-t="code">Code from the e-mail</label>
+      <input id="code" name="code" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6,10}" required>
+      <button class="btn primary" type="submit" data-t="verify">Log in</button>
+    </form>
+    <section id="inside" hidden>
+      <p class="section-label" id="who"></p>
+      <h2 data-t="coming">Coming</h2>
+      <p data-t="comingBody">Statistics will appear here.</p>
+      <button class="btn ghost" id="sign-out" type="button" data-t="signOut">Log out</button>
+    </section>
+    <p id="message" role="status" aria-live="polite"></p>
+  </main>
+  <script>
+(function () {
+  var TEXTS = {"en":{"title":"Admin","email":"E-mail","sendCode":"Send code","code":"Code from the e-mail","verify":"Log in","sent":"We sent a code to %email%.","refused":"This address does not have access.","wrongCode":"The code is wrong or has expired.","failed":"Something went wrong. Try again.","coming":"Coming","comingBody":"Statistics will appear here.","signOut":"Log out","checking":"Checking …","signIn":"Log in"},"es":{"title":"Administración","email":"Correo electrónico","sendCode":"Enviar código","code":"Código del correo","verify":"Iniciar sesión","sent":"Hemos enviado un código a %email%.","refused":"Esta dirección no tiene acceso.","wrongCode":"El código es incorrecto o ha caducado.","failed":"Algo salió mal. Inténtalo de nuevo.","coming":"Próximamente","comingBody":"Aquí aparecerán las estadísticas.","signOut":"Cerrar sesión","checking":"Comprobando …","signIn":"Iniciar sesión"},"pt-BR":{"title":"Administração","email":"E-mail","sendCode":"Enviar código","code":"Código do e-mail","verify":"Entrar","sent":"Enviamos um código para %email%.","refused":"Este endereço não tem acesso.","wrongCode":"O código está errado ou expirou.","failed":"Algo deu errado. Tente de novo.","coming":"Em breve","comingBody":"As estatísticas aparecerão aqui.","signOut":"Sair","checking":"Verificando …","signIn":"Entrar"},"fr":{"title":"Administration","email":"E-mail","sendCode":"Envoyer le code","code":"Code reçu par e-mail","verify":"Se connecter","sent":"Nous avons envoyé un code à %email%.","refused":"Cette adresse n’a pas accès.","wrongCode":"Le code est incorrect ou a expiré.","failed":"Une erreur s’est produite. Réessayez.","coming":"Bientôt","comingBody":"Les statistiques apparaîtront ici.","signOut":"Se déconnecter","checking":"Vérification …","signIn":"Se connecter"},"de":{"title":"Admin","email":"E-Mail","sendCode":"Code senden","code":"Code aus der E-Mail","verify":"Anmelden","sent":"Wir haben einen Code an %email% gesendet.","refused":"Diese Adresse hat keinen Zugang.","wrongCode":"Der Code ist falsch oder abgelaufen.","failed":"Etwas ist schiefgelaufen. Versuch es noch einmal.","coming":"Kommt bald","comingBody":"Hier erscheinen bald Statistiken.","signOut":"Abmelden","checking":"Wird geprüft …","signIn":"Anmelden"},"it":{"title":"Amministrazione","email":"E-mail","sendCode":"Invia codice","code":"Codice dall’e-mail","verify":"Accedi","sent":"Abbiamo inviato un codice a %email%.","refused":"Questo indirizzo non ha accesso.","wrongCode":"Il codice è errato o scaduto.","failed":"Qualcosa è andato storto. Riprova.","coming":"In arrivo","comingBody":"Qui compariranno le statistiche.","signOut":"Esci","checking":"Verifica in corso …","signIn":"Accedi"},"ja":{"title":"管理","email":"メールアドレス","sendCode":"コードを送信","code":"メールに届いたコード","verify":"ログイン","sent":"%email% にコードを送信しました。","refused":"このアドレスにはアクセス権がありません。","wrongCode":"コードが正しくないか、有効期限が切れています。","failed":"問題が発生しました。もう一度お試しください。","coming":"準備中","comingBody":"ここに統計が表示されます。","signOut":"ログアウト","checking":"確認しています…","signIn":"ログイン"},"ko":{"title":"관리","email":"이메일","sendCode":"코드 보내기","code":"이메일로 받은 코드","verify":"로그인","sent":"%email%(으)로 코드를 보냈어요.","refused":"이 주소는 접근 권한이 없어요.","wrongCode":"코드가 틀렸거나 만료되었어요.","failed":"문제가 생겼어요. 다시 시도해 주세요.","coming":"준비 중","comingBody":"여기에 통계가 표시될 거예요.","signOut":"로그아웃","checking":"확인 중…","signIn":"로그인"},"zh-Hans":{"title":"管理","email":"电子邮件","sendCode":"发送验证码","code":"邮件中的验证码","verify":"登录","sent":"我们已向 %email% 发送验证码。","refused":"此地址没有访问权限。","wrongCode":"验证码错误或已过期。","failed":"出了点问题，请重试。","coming":"即将推出","comingBody":"统计数据将显示在这里。","signOut":"退出登录","checking":"正在检查…","signIn":"登录"},"nb":{"title":"Admin","email":"E-post","sendCode":"Send kode","code":"Koden fra e-posten","verify":"Logg inn","sent":"Vi har sendt en kode til %email%.","refused":"Denne adressen har ikke tilgang.","wrongCode":"Koden er feil eller utløpt.","failed":"Noe gikk galt. Prøv igjen.","coming":"Kommer","comingBody":"Statistikk kommer her.","signOut":"Logg ut","checking":"Sjekker …","signIn":"Logg inn"},"nl":{"title":"Beheer","email":"E-mail","sendCode":"Code versturen","code":"Code uit de e-mail","verify":"Inloggen","sent":"We hebben een code naar %email% gestuurd.","refused":"Dit adres heeft geen toegang.","wrongCode":"De code is onjuist of verlopen.","failed":"Er ging iets mis. Probeer het opnieuw.","coming":"Binnenkort","comingBody":"Hier komen statistieken.","signOut":"Uitloggen","checking":"Controleren …","signIn":"Inloggen"},"sv":{"title":"Admin","email":"E-post","sendCode":"Skicka kod","code":"Koden från e-posten","verify":"Logga in","sent":"Vi har skickat en kod till %email%.","refused":"Den här adressen har inte åtkomst.","wrongCode":"Koden är fel eller har gått ut.","failed":"Något gick fel. Försök igen.","coming":"Kommer","comingBody":"Statistik kommer här.","signOut":"Logga ut","checking":"Kontrollerar …","signIn":"Logga in"},"pl":{"title":"Administracja","email":"E-mail","sendCode":"Wyślij kod","code":"Kod z e-maila","verify":"Zaloguj się","sent":"Wysłaliśmy kod na adres %email%.","refused":"Ten adres nie ma dostępu.","wrongCode":"Kod jest błędny lub wygasł.","failed":"Coś poszło nie tak. Spróbuj ponownie.","coming":"Wkrótce","comingBody":"Tutaj pojawią się statystyki.","signOut":"Wyloguj się","checking":"Sprawdzanie …","signIn":"Zaloguj się"},"fi":{"title":"Ylläpito","email":"Sähköposti","sendCode":"Lähetä koodi","code":"Sähköpostin koodi","verify":"Kirjaudu","sent":"Lähetimme koodin osoitteeseen %email%.","refused":"Tällä osoitteella ei ole pääsyä.","wrongCode":"Koodi on väärä tai vanhentunut.","failed":"Jokin meni vikaan. Yritä uudelleen.","coming":"Tulossa","comingBody":"Tilastot tulevat tähän.","signOut":"Kirjaudu ulos","checking":"Tarkistetaan …","signIn":"Kirjaudu"},"da":{"title":"Admin","email":"E-mail","sendCode":"Send kode","code":"Koden fra e-mailen","verify":"Log ind","sent":"Vi har sendt en kode til %email%.","refused":"Denne adresse har ikke adgang.","wrongCode":"Koden er forkert eller udløbet.","failed":"Noget gik galt. Prøv igen.","coming":"Kommer","comingBody":"Statistik kommer her.","signOut":"Log ud","checking":"Kontrollerer …","signIn":"Log ind"},"ar":{"title":"الإدارة","email":"البريد الإلكتروني","sendCode":"إرسال الرمز","code":"الرمز من البريد الإلكتروني","verify":"تسجيل الدخول","sent":"أرسلنا رمزًا إلى %email%.","refused":"ليس لهذا العنوان صلاحية الدخول.","wrongCode":"الرمز غير صحيح أو انتهت صلاحيته.","failed":"حدث خطأ ما. حاول مرة أخرى.","coming":"قريبًا","comingBody":"ستظهر الإحصاءات هنا.","signOut":"تسجيل الخروج","checking":"جارٍ التحقق…","signIn":"تسجيل الدخول"},"hi":{"title":"एडमिन","email":"ईमेल","sendCode":"कोड भेजें","code":"ईमेल वाला कोड","verify":"लॉग इन","sent":"हमने %email% पर एक कोड भेजा है।","refused":"इस पते को एक्सेस नहीं है।","wrongCode":"कोड गलत है या उसकी अवधि खत्म हो गई है।","failed":"कुछ गड़बड़ हुई। फिर से कोशिश करें।","coming":"जल्द आ रहा है","comingBody":"आँकड़े यहाँ दिखेंगे।","signOut":"लॉग आउट","checking":"जाँच हो रही है…","signIn":"लॉग इन"},"tr":{"title":"Yönetim","email":"E-posta","sendCode":"Kod gönder","code":"E-postadaki kod","verify":"Giriş yap","sent":"%email% adresine bir kod gönderdik.","refused":"Bu adresin erişimi yok.","wrongCode":"Kod yanlış ya da süresi dolmuş.","failed":"Bir sorun oluştu. Tekrar dene.","coming":"Yakında","comingBody":"İstatistikler burada görünecek.","signOut":"Çıkış yap","checking":"Kontrol ediliyor …","signIn":"Giriş yap"}};
+  var RTL = ["ar"];
+  var saved = (document.cookie.match(/(?:^|; )lang=([^;]+)/) || [])[1];
+  var asked = new URLSearchParams(location.search).get('lang');
+  var browser = (navigator.languages || [navigator.language]).map(function (l) { return l === 'nn' || l === 'no' || /^n[bno]-/.test(l) ? 'nb' : /^zh/.test(l) ? 'zh-Hans' : /^pt/.test(l) ? 'pt-BR' : l.split('-')[0]; });
+  var lang = [asked, saved].concat(browser).filter(function (l) { return l && TEXTS[l]; })[0] || 'en';
+  var t = TEXTS[lang];
+  document.documentElement.lang = lang;
+  document.documentElement.dir = RTL.indexOf(lang) >= 0 ? 'rtl' : 'ltr';
+  document.title = t.title + ' – Olstad Digital';
+  document.querySelectorAll('[data-t]').forEach(function (el) { el.textContent = t[el.getAttribute('data-t')]; });
+  var $ = function (id) { return document.getElementById(id); };
+  var say = function (key) { $('message').textContent = key ? t[key] : ''; };
+  var call = function (body, token) {
+    return fetch('/api/admin', { method: 'POST', headers: Object.assign({ 'content-type': 'application/json' }, token ? { authorization: 'Bearer ' + token } : {}), body: JSON.stringify(body) })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { j.status = r.status; return j; }); });
+  };
+  var KEY = 'admin.session';
+  var show = function (email) {
+    $('email-form').hidden = true; $('code-form').hidden = true; $('inside').hidden = false; $('who').textContent = email; say('');
+  };
+  var check = function (token) {
+    say('checking');
+    return call({ action: 'me' }, token).then(function (j) {
+      if (j.status === 200) return show(j.email);
+      try { sessionStorage.removeItem(KEY); } catch (e) {}
+      say(j.status === 403 ? 'refused' : '');
+    });
+  };
+  var token; try { token = sessionStorage.getItem(KEY); } catch (e) {}
+  if (token) check(token);
+  var email = '';
+  $('email-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    email = $('email').value.trim();
+    call({ action: 'code', email: email }).then(function (j) {
+      if (j.status === 200) { $('email-form').hidden = true; $('code-form').hidden = false; $('sent').textContent = t.sent.replace('%email%', email); $('code').focus(); say(''); }
+      else say(j.status === 403 ? 'refused' : 'failed');
+    }, function () { say('failed'); });
+  });
+  $('code-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    call({ action: 'verify', email: email, code: $('code').value.trim() }).then(function (j) {
+      if (j.status === 200 && j.accessToken) { try { sessionStorage.setItem(KEY, j.accessToken); } catch (e) {} return check(j.accessToken); }
+      say(j.status === 403 ? 'refused' : j.status === 401 ? 'wrongCode' : 'failed');
+    }, function () { say('failed'); });
+  });
+  $('sign-out').addEventListener('click', function () {
+    try { sessionStorage.removeItem(KEY); } catch (e) {}
+    location.reload();
+  });
+})();
+  </script>
+</body>
+</html>

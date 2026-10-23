@@ -1,0 +1,62 @@
+{
+  "title": "Olstad Digital – aplikacje na co dzień",
+  "nav": {
+    "apps": "Aplikacje",
+    "principles": "Zasady"
+  },
+  "hero": {
+    "title": "Aplikacje, z których większość ludzi umie i chce korzystać.",
+    "body": "Olstad Digital tworzy proste aplikacje na co dzień – w Twoim języku, w Twojej walucie i bez reklam."
+  },
+  "appsHeading": "Nasze aplikacje",
+  "categories": {
+    "finance": "Finanse",
+    "travel": "Podróże"
+  },
+  "links": {
+    "privacy": "Prywatność",
+    "support": "Pomoc",
+    "deleteData": "Usuń dane",
+    "website": "Strona"
+  },
+  "store": {
+    "label": "{{app}} w {{store}}",
+    "comingSoon": "Wkrótce w App Store i Google Play"
+  },
+  "imageAlt": "{{app}}: ekran główny aplikacji",
+  "about": {
+    "saldo-pocket": "Zobacz, ile możesz dziś wydać i jak skończy się okres – od wypłaty do wypłaty albo co miesiąc. Bez połączenia z bankiem.",
+    "plantravel": "Znajdź loty, hotele, samochody na wynajem i atrakcje – i zaplanuj całą podróż w jednym miejscu."
+  },
+  "principles": {
+    "heading": "Zasady",
+    "privacy": {
+      "title": "Prywatność przede wszystkim",
+      "body": "Nigdy nie sprzedajemy danych. Tylko to, czego aplikacja potrzebuje, wyjaśnione prostymi słowami."
+    },
+    "language": {
+      "title": "Twój język, Twoja waluta",
+      "body": "18 języków od pierwszego dnia. Liczby, daty i kwoty tak, jak jesteś przyzwyczajony."
+    },
+    "ads": {
+      "title": "Bez reklam",
+      "body": "Aplikacje nie wyświetlają reklam. Płacisz tylko wtedy, gdy chcesz więcej."
+    }
+  },
+  "signIn": "Zaloguj się",
+  "admin": {
+    "title": "Administracja",
+    "email": "E-mail",
+    "sendCode": "Wyślij kod",
+    "code": "Kod z e-maila",
+    "verify": "Zaloguj się",
+    "sent": "Wysłaliśmy kod na adres {{email}}.",
+    "refused": "Ten adres nie ma dostępu.",
+    "wrongCode": "Kod jest błędny lub wygasł.",
+    "failed": "Coś poszło nie tak. Spróbuj ponownie.",
+    "coming": "Wkrótce",
+    "comingBody": "Tutaj pojawią się statystyki.",
+    "signOut": "Wyloguj się",
+    "checking": "Sprawdzanie …"
+  }
+}

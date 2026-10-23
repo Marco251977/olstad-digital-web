@@ -1,0 +1,62 @@
+{
+  "title": "Olstad Digital – des applis pour le quotidien",
+  "nav": {
+    "apps": "Applis",
+    "principles": "Principes"
+  },
+  "hero": {
+    "title": "Des applis que tout le monde peut et veut utiliser.",
+    "body": "Olstad Digital crée des applis simples pour le quotidien – dans votre langue, dans votre devise et sans publicité."
+  },
+  "appsHeading": "Nos applis",
+  "categories": {
+    "finance": "Finances",
+    "travel": "Voyage"
+  },
+  "links": {
+    "privacy": "Confidentialité",
+    "support": "Assistance",
+    "deleteData": "Supprimer les données",
+    "website": "Site web"
+  },
+  "store": {
+    "label": "{{app}} sur {{store}}",
+    "comingSoon": "Bientôt sur l’App Store et Google Play"
+  },
+  "imageAlt": "{{app}} : l’écran d’accueil de l’appli",
+  "about": {
+    "saldo-pocket": "Voyez ce que vous pouvez dépenser aujourd’hui et comment la période va se terminer – d’une paie à l’autre ou par mois. Sans connexion à la banque.",
+    "plantravel": "Trouvez vols, hôtels, voitures de location et activités – et planifiez tout le voyage au même endroit."
+  },
+  "principles": {
+    "heading": "Principes",
+    "privacy": {
+      "title": "La confidentialité d’abord",
+      "body": "Nous ne vendons jamais de données. Seulement ce dont l’appli a besoin, expliqué simplement."
+    },
+    "language": {
+      "title": "Votre langue, votre devise",
+      "body": "18 langues dès le premier jour. Nombres, dates et montants comme vous en avez l’habitude."
+    },
+    "ads": {
+      "title": "Sans publicité",
+      "body": "Les applis n’affichent aucune publicité. Vous ne payez que si vous voulez plus."
+    }
+  },
+  "signIn": "Se connecter",
+  "admin": {
+    "title": "Administration",
+    "email": "E-mail",
+    "sendCode": "Envoyer le code",
+    "code": "Code reçu par e-mail",
+    "verify": "Se connecter",
+    "sent": "Nous avons envoyé un code à {{email}}.",
+    "refused": "Cette adresse n’a pas accès.",
+    "wrongCode": "Le code est incorrect ou a expiré.",
+    "failed": "Une erreur s’est produite. Réessayez.",
+    "coming": "Bientôt",
+    "comingBody": "Les statistiques apparaîtront ici.",
+    "signOut": "Se déconnecter",
+    "checking": "Vérification …"
+  }
+}

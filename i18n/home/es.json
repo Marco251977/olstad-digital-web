@@ -1,0 +1,62 @@
+{
+  "title": "Olstad Digital – apps para el día a día",
+  "nav": {
+    "apps": "Apps",
+    "principles": "Principios"
+  },
+  "hero": {
+    "title": "Apps que casi todo el mundo puede y quiere usar.",
+    "body": "Olstad Digital crea apps sencillas para el día a día – en tu idioma, en tu moneda y sin anuncios."
+  },
+  "appsHeading": "Nuestras apps",
+  "categories": {
+    "finance": "Finanzas",
+    "travel": "Viajes"
+  },
+  "links": {
+    "privacy": "Privacidad",
+    "support": "Soporte",
+    "deleteData": "Eliminar datos",
+    "website": "Sitio web"
+  },
+  "store": {
+    "label": "{{app}} en {{store}}",
+    "comingSoon": "Pronto en App Store y Google Play"
+  },
+  "imageAlt": "{{app}}: la pantalla de inicio de la app",
+  "about": {
+    "saldo-pocket": "Mira cuánto puedes gastar hoy y cómo terminará el periodo – de sueldo a sueldo o por mes. Sin conexión con el banco.",
+    "plantravel": "Encuentra vuelos, hoteles, coches de alquiler y experiencias – y planifica todo el viaje en un solo lugar."
+  },
+  "principles": {
+    "heading": "Principios",
+    "privacy": {
+      "title": "La privacidad primero",
+      "body": "Nunca vendemos datos. Solo lo que la app necesita, explicado con palabras claras."
+    },
+    "language": {
+      "title": "Tu idioma, tu moneda",
+      "body": "18 idiomas desde el primer día. Números, fechas e importes como estás acostumbrado."
+    },
+    "ads": {
+      "title": "Sin anuncios",
+      "body": "Las apps no muestran publicidad. Solo pagas si quieres más."
+    }
+  },
+  "signIn": "Iniciar sesión",
+  "admin": {
+    "title": "Administración",
+    "email": "Correo electrónico",
+    "sendCode": "Enviar código",
+    "code": "Código del correo",
+    "verify": "Iniciar sesión",
+    "sent": "Hemos enviado un código a {{email}}.",
+    "refused": "Esta dirección no tiene acceso.",
+    "wrongCode": "El código es incorrecto o ha caducado.",
+    "failed": "Algo salió mal. Inténtalo de nuevo.",
+    "coming": "Próximamente",
+    "comingBody": "Aquí aparecerán las estadísticas.",
+    "signOut": "Cerrar sesión",
+    "checking": "Comprobando …"
+  }
+}

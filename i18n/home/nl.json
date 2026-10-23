@@ -1,0 +1,62 @@
+{
+  "title": "Olstad Digital – apps voor elke dag",
+  "nav": {
+    "apps": "Apps",
+    "principles": "Principes"
+  },
+  "hero": {
+    "title": "Apps die de meeste mensen kunnen en willen gebruiken.",
+    "body": "Olstad Digital maakt eenvoudige apps voor elke dag – in jouw taal, in jouw valuta en zonder advertenties."
+  },
+  "appsHeading": "Onze apps",
+  "categories": {
+    "finance": "Financiën",
+    "travel": "Reizen"
+  },
+  "links": {
+    "privacy": "Privacy",
+    "support": "Support",
+    "deleteData": "Gegevens wissen",
+    "website": "Website"
+  },
+  "store": {
+    "label": "{{app}} in de {{store}}",
+    "comingSoon": "Binnenkort in de App Store en Google Play"
+  },
+  "imageAlt": "{{app}}: het startscherm van de app",
+  "about": {
+    "saldo-pocket": "Zie wat je vandaag kunt uitgeven en hoe de periode eindigt – van salaris tot salaris of per maand. Geen bankkoppeling.",
+    "plantravel": "Vind vluchten, hotels, huurauto’s en belevenissen – en plan de hele reis op één plek."
+  },
+  "principles": {
+    "heading": "Principes",
+    "privacy": {
+      "title": "Privacy eerst",
+      "body": "We verkopen nooit gegevens. Alleen wat de app nodig heeft, in gewone taal uitgelegd."
+    },
+    "language": {
+      "title": "Jouw taal, jouw valuta",
+      "body": "18 talen vanaf dag één. Getallen, datums en bedragen zoals je gewend bent."
+    },
+    "ads": {
+      "title": "Geen advertenties",
+      "body": "De apps tonen geen reclame. Je betaalt alleen als je meer wilt."
+    }
+  },
+  "signIn": "Inloggen",
+  "admin": {
+    "title": "Beheer",
+    "email": "E-mail",
+    "sendCode": "Code versturen",
+    "code": "Code uit de e-mail",
+    "verify": "Inloggen",
+    "sent": "We hebben een code naar {{email}} gestuurd.",
+    "refused": "Dit adres heeft geen toegang.",
+    "wrongCode": "De code is onjuist of verlopen.",
+    "failed": "Er ging iets mis. Probeer het opnieuw.",
+    "coming": "Binnenkort",
+    "comingBody": "Hier komen statistieken.",
+    "signOut": "Uitloggen",
+    "checking": "Controleren …"
+  }
+}

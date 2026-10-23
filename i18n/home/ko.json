@@ -1,0 +1,62 @@
+{
+  "title": "Olstad Digital – 일상을 위한 앱",
+  "nav": {
+    "apps": "앱",
+    "principles": "원칙"
+  },
+  "hero": {
+    "title": "누구나 쓸 수 있고, 쓰고 싶은 앱.",
+    "body": "Olstad Digital은 일상을 위한 간단한 앱을 만들어요. 내 언어로, 내 통화로, 광고 없이."
+  },
+  "appsHeading": "우리의 앱",
+  "categories": {
+    "finance": "금융",
+    "travel": "여행"
+  },
+  "links": {
+    "privacy": "개인정보",
+    "support": "지원",
+    "deleteData": "데이터 삭제",
+    "website": "웹사이트"
+  },
+  "store": {
+    "label": "{{store}}의 {{app}}",
+    "comingSoon": "App Store와 Google Play에 곧 출시"
+  },
+  "imageAlt": "{{app}}: 앱 홈 화면",
+  "about": {
+    "saldo-pocket": "오늘 쓸 수 있는 금액과 기간이 어떻게 끝날지 확인하세요. 급여일부터 급여일까지 또는 월별로. 은행 연결은 필요 없어요.",
+    "plantravel": "항공편, 호텔, 렌터카, 체험을 찾고 여행 전체를 한곳에서 계획하세요."
+  },
+  "principles": {
+    "heading": "원칙",
+    "privacy": {
+      "title": "개인정보 보호 우선",
+      "body": "데이터를 절대 판매하지 않아요. 앱에 필요한 것만, 쉬운 말로 설명해요."
+    },
+    "language": {
+      "title": "내 언어, 내 통화",
+      "body": "첫날부터 18개 언어. 숫자, 날짜, 금액을 익숙한 형식으로 보여 줘요."
+    },
+    "ads": {
+      "title": "광고 없음",
+      "body": "앱에는 광고가 없어요. 더 필요할 때만 결제하면 돼요."
+    }
+  },
+  "signIn": "로그인",
+  "admin": {
+    "title": "관리",
+    "email": "이메일",
+    "sendCode": "코드 보내기",
+    "code": "이메일로 받은 코드",
+    "verify": "로그인",
+    "sent": "{{email}}(으)로 코드를 보냈어요.",
+    "refused": "이 주소는 접근 권한이 없어요.",
+    "wrongCode": "코드가 틀렸거나 만료되었어요.",
+    "failed": "문제가 생겼어요. 다시 시도해 주세요.",
+    "coming": "준비 중",
+    "comingBody": "여기에 통계가 표시될 거예요.",
+    "signOut": "로그아웃",
+    "checking": "확인 중…"
+  }
+}

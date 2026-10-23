@@ -1,0 +1,62 @@
+{
+  "title": "Olstad Digital – apps til hverdagen",
+  "nav": {
+    "apps": "Apps",
+    "principles": "Principper"
+  },
+  "hero": {
+    "title": "Apps, de fleste kan og vil bruge.",
+    "body": "Olstad Digital laver enkle apps til hverdagen – på dit sprog, i din valuta og uden annoncer."
+  },
+  "appsHeading": "Vores apps",
+  "categories": {
+    "finance": "Økonomi",
+    "travel": "Rejser"
+  },
+  "links": {
+    "privacy": "Privatliv",
+    "support": "Support",
+    "deleteData": "Slet data",
+    "website": "Websted"
+  },
+  "store": {
+    "label": "{{app}} i {{store}}",
+    "comingSoon": "Kommer snart til App Store og Google Play"
+  },
+  "imageAlt": "{{app}}: appens startskærm",
+  "about": {
+    "saldo-pocket": "Se, hvad du kan bruge i dag, og hvordan perioden ender – fra løn til løn eller pr. måned. Ingen bankforbindelse.",
+    "plantravel": "Find fly, hotel, lejebil og oplevelser – og planlæg hele turen ét sted."
+  },
+  "principles": {
+    "heading": "Principper",
+    "privacy": {
+      "title": "Privatliv først",
+      "body": "Vi sælger aldrig data. Kun det, appen har brug for, forklaret i klart sprog."
+    },
+    "language": {
+      "title": "Dit sprog, din valuta",
+      "body": "18 sprog fra første dag. Tal, datoer og beløb, som du er vant til."
+    },
+    "ads": {
+      "title": "Ingen annoncer",
+      "body": "Apps’ene viser ingen reklamer. Du betaler kun, hvis du vil have mere."
+    }
+  },
+  "signIn": "Log ind",
+  "admin": {
+    "title": "Admin",
+    "email": "E-mail",
+    "sendCode": "Send kode",
+    "code": "Koden fra e-mailen",
+    "verify": "Log ind",
+    "sent": "Vi har sendt en kode til {{email}}.",
+    "refused": "Denne adresse har ikke adgang.",
+    "wrongCode": "Koden er forkert eller udløbet.",
+    "failed": "Noget gik galt. Prøv igen.",
+    "coming": "Kommer",
+    "comingBody": "Statistik kommer her.",
+    "signOut": "Log ud",
+    "checking": "Kontrollerer …"
+  }
+}

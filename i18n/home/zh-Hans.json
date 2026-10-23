@@ -1,0 +1,62 @@
+{
+  "title": "Olstad Digital – 日常生活应用",
+  "nav": {
+    "apps": "应用",
+    "principles": "原则"
+  },
+  "hero": {
+    "title": "人人都会用、也想用的应用。",
+    "body": "Olstad Digital 打造简单的日常应用——使用你的语言和货币，没有广告。"
+  },
+  "appsHeading": "我们的应用",
+  "categories": {
+    "finance": "财务",
+    "travel": "旅行"
+  },
+  "links": {
+    "privacy": "隐私",
+    "support": "支持",
+    "deleteData": "删除数据",
+    "website": "网站"
+  },
+  "store": {
+    "label": "{{store}} 上的 {{app}}",
+    "comingSoon": "即将登陆 App Store 和 Google Play"
+  },
+  "imageAlt": "{{app}}：应用主屏幕",
+  "about": {
+    "saldo-pocket": "看看今天能花多少，以及这个周期会如何结束——从发薪日到下个发薪日，或按月计算。无需连接银行。",
+    "plantravel": "查找机票、酒店、租车和体验活动，在一个地方规划整趟旅程。"
+  },
+  "principles": {
+    "heading": "原则",
+    "privacy": {
+      "title": "隐私优先",
+      "body": "我们从不出售数据。只收集应用需要的内容，并用通俗的语言说明。"
+    },
+    "language": {
+      "title": "你的语言，你的货币",
+      "body": "第一天起就支持18种语言。数字、日期和金额都以你熟悉的方式显示。"
+    },
+    "ads": {
+      "title": "没有广告",
+      "body": "应用中不显示任何广告。只有想要更多功能时才需付费。"
+    }
+  },
+  "signIn": "登录",
+  "admin": {
+    "title": "管理",
+    "email": "电子邮件",
+    "sendCode": "发送验证码",
+    "code": "邮件中的验证码",
+    "verify": "登录",
+    "sent": "我们已向 {{email}} 发送验证码。",
+    "refused": "此地址没有访问权限。",
+    "wrongCode": "验证码错误或已过期。",
+    "failed": "出了点问题，请重试。",
+    "coming": "即将推出",
+    "comingBody": "统计数据将显示在这里。",
+    "signOut": "退出登录",
+    "checking": "正在检查…"
+  }
+}

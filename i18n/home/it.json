@@ -1,0 +1,62 @@
+{
+  "title": "Olstad Digital – app per tutti i giorni",
+  "nav": {
+    "apps": "App",
+    "principles": "Principi"
+  },
+  "hero": {
+    "title": "App che quasi tutti sanno e vogliono usare.",
+    "body": "Olstad Digital crea app semplici per tutti i giorni – nella tua lingua, nella tua valuta e senza pubblicità."
+  },
+  "appsHeading": "Le nostre app",
+  "categories": {
+    "finance": "Finanza",
+    "travel": "Viaggi"
+  },
+  "links": {
+    "privacy": "Privacy",
+    "support": "Assistenza",
+    "deleteData": "Elimina dati",
+    "website": "Sito web"
+  },
+  "store": {
+    "label": "{{app}} su {{store}}",
+    "comingSoon": "Presto su App Store e Google Play"
+  },
+  "imageAlt": "{{app}}: la schermata iniziale dell’app",
+  "about": {
+    "saldo-pocket": "Scopri quanto puoi spendere oggi e come finirà il periodo – da stipendio a stipendio o al mese. Nessun collegamento alla banca.",
+    "plantravel": "Trova voli, hotel, auto a noleggio ed esperienze – e pianifica tutto il viaggio in un unico posto."
+  },
+  "principles": {
+    "heading": "Principi",
+    "privacy": {
+      "title": "Prima la privacy",
+      "body": "Non vendiamo mai dati. Solo ciò che serve all’app, spiegato in parole semplici."
+    },
+    "language": {
+      "title": "La tua lingua, la tua valuta",
+      "body": "18 lingue dal primo giorno. Numeri, date e importi come sei abituato a vederli."
+    },
+    "ads": {
+      "title": "Niente pubblicità",
+      "body": "Le app non mostrano pubblicità. Paghi solo se vuoi di più."
+    }
+  },
+  "signIn": "Accedi",
+  "admin": {
+    "title": "Amministrazione",
+    "email": "E-mail",
+    "sendCode": "Invia codice",
+    "code": "Codice dall’e-mail",
+    "verify": "Accedi",
+    "sent": "Abbiamo inviato un codice a {{email}}.",
+    "refused": "Questo indirizzo non ha accesso.",
+    "wrongCode": "Il codice è errato o scaduto.",
+    "failed": "Qualcosa è andato storto. Riprova.",
+    "coming": "In arrivo",
+    "comingBody": "Qui compariranno le statistiche.",
+    "signOut": "Esci",
+    "checking": "Verifica in corso …"
+  }
+}

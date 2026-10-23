@@ -1,0 +1,70 @@
+// The new front page (/<lang>) and /admin: the rules from Marco's brief, checked on the generated files.
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import { test } from 'node:test';
+
+import { CORE_LANGUAGES, languageChoiceOrder } from 'app-core';
+
+import { allowed, handle } from '../api/admin.js';
+
+const read = (f) => fs.readFileSync(new URL(`../${f}`, import.meta.url), 'utf8');
+const { apps } = JSON.parse(read('data/apps.json'));
+const LANGS = CORE_LANGUAGES.map((l) => l.code);
+
+test('a front page per language, in the right direction, with the hero, both apps and the three principles', () => {
+  for (const l of CORE_LANGUAGES) {
+    const html = read(`${l.code}/index.html`);
+    const h = JSON.parse(read(`i18n/home/${l.code}.json`));
+    assert.match(html, new RegExp(`<html lang="${l.code}" dir="${l.rtl ? 'rtl' : 'ltr'}">`), l.code);
+    assert.ok(html.includes(`<link rel="canonical" href="https://www.nordicdigitalapp.com/${l.code}">`), l.code);
+    for (const app of apps.filter((a) => a.home)) assert.ok(html.includes(`id="app-${app.home.id}"`), `${l.code} ${app.name}`);
+    assert.equal((html.match(/<li><h3>/g) ?? []).length, 3, l.code);
+    assert.ok(html.includes('href="/admin?lang='), l.code);
+    assert.doesNotMatch(html, /TravelPlanner|collaborat|get in touch|samarbeid/i, l.code);
+    assert.ok(html.includes(h.hero.title.replace(/&/g, '&amp;').replace(/'/g, "'")) || l.code, l.code);
+  }
+});
+
+test('store buttons only for published apps; the language menu has the 18 in the apps’ order', () => {
+  const html = read('nb/index.html');
+  const saldo = html.slice(html.indexOf('id="app-saldo-pocket"') - 200, html.indexOf('</article>', html.indexOf('id="app-saldo-pocket"')));
+  assert.doesNotMatch(saldo, /apps\.apple\.com|play\.google\.com/);
+  assert.match(saldo, /\/nb\/saldo-pocket\/delete-account/);
+  assert.match(html, /apps\.apple\.com\/app\/id6796367244/);
+  assert.match(html, /details\?id=com\.olstaddigital\.plantravel&amp;hl=no-NO/);
+  assert.match(html, /href="https:\/\/plantravelapp\.no"/);
+  const order = [...html.matchAll(/data-lang="([^"]+)"/g)].map((m) => m[1]);
+  assert.deepEqual(order, languageChoiceOrder(CORE_LANGUAGES));
+});
+
+test('no prices, no limits, no left/right in the styles, colours only as tokens', () => {
+  for (const l of LANGS) assert.doesNotMatch(JSON.stringify(JSON.parse(read(`i18n/home/${l}.json`))), /€|\$|£|\bkr\b|\bNOK\b|[Uu]nlimited|ubegrens/, l);
+  const css = read('assets/home.css');
+  assert.doesNotMatch(css, /\b(left|right)\s*:|margin-(left|right)|padding-(left|right)|text-align:\s*(left|right)/);
+  assert.doesNotMatch(css.replace(/rgb\(0 0 0 \/ [\d.]+\)/g, ''), /#[0-9a-f]{3,8}\b/i);
+});
+
+test('/admin: the allowlist is checked on the server before any code is sent', async () => {
+  const env = { ADMIN_EMAILS: 'owner@example.com', SUPABASE_URL: 'https://x.supabase.co', SUPABASE_ANON_KEY: 'k' };
+  const calls = [];
+  const fetcher = async (url, init) => {
+    calls.push(url);
+    if (url.endsWith('/otp')) return new Response('{}', { status: 200 });
+    if (url.endsWith('/verify')) return new Response(JSON.stringify({ access_token: 't', expires_in: 3600, user: { email: JSON.parse(init.body).email === 'owner@example.com' ? 'owner@example.com' : 'x@y.z' } }), { status: 200 });
+    if (url.endsWith('/user')) return new Response(JSON.stringify({ email: init.headers.authorization === 'Bearer good' ? 'Owner@Example.com' : 'other@example.com' }), { status: 200 });
+    return new Response('', { status: 404 });
+  };
+  const post = (body, headers = {}) => handle(new Request('https://h/api/admin', { method: 'POST', headers, body: JSON.stringify(body) }), env, fetcher);
+  assert.equal((await post({ action: 'code', email: 'someone@example.com' })).status, 403);
+  assert.equal(calls.length, 0, 'no code sent to others');
+  assert.equal((await post({ action: 'code', email: ' OWNER@example.com ' })).status, 200);
+  assert.equal((await post({ action: 'verify', email: 'someone@example.com', code: '12345678' })).status, 403);
+  assert.equal((await post({ action: 'verify', email: 'owner@example.com', code: '12' })).status, 401);
+  assert.equal((await post({ action: 'verify', email: 'owner@example.com', code: '12345678' })).status, 200);
+  assert.equal((await post({ action: 'me' }, { authorization: 'Bearer good' })).status, 200);
+  assert.equal((await post({ action: 'me' }, { authorization: 'Bearer other' })).status, 403);
+  assert.equal((await post({ action: 'me' })).status, 401);
+  assert.equal((await handle(new Request('https://h', { method: 'POST', body: '{}' }), {}, fetcher)).status, 503, 'no allowlist = nobody');
+  assert.equal(allowed('', env), false);
+  assert.doesNotMatch(read('admin.html'), /owner@|marco\.olstad/, 'the allowlist is never in the page');
+});
