@@ -53,11 +53,13 @@
     "refused": "Denne adressen har ikke tilgang.",
     "wrongCode": "Koden er feil eller utløpt.",
     "failed": "Noe gikk galt. Prøv igjen.",
-    "coming": "Kommer",
-    "comingBody": "Statistikk kommer her.",
     "signOut": "Logg ut",
     "checking": "Sjekker …",
     "tooMany": "For mange forsøk. Vent litt og prøv igjen.",
-    "notConfigured": "Innloggingen er ikke satt opp på serveren."
+    "notConfigured": "Innloggingen er ikke satt opp på serveren.",
+    "apps": "Apper",
+    "noData": "Ingen data ennå",
+    "allApps": "Alle apper",
+    "seeStats": "Se statistikk"
   }
 }

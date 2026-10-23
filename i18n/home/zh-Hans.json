@@ -53,11 +53,13 @@
     "refused": "此地址没有访问权限。",
     "wrongCode": "验证码错误或已过期。",
     "failed": "出了点问题，请重试。",
-    "coming": "即将推出",
-    "comingBody": "统计数据将显示在这里。",
     "signOut": "退出登录",
     "checking": "正在检查…",
     "tooMany": "尝试次数过多。请稍候再试。",
-    "notConfigured": "服务器上尚未设置登录。"
+    "notConfigured": "服务器上尚未设置登录。",
+    "apps": "应用",
+    "noData": "暂无数据",
+    "allApps": "所有应用",
+    "seeStats": "查看统计"
   }
 }

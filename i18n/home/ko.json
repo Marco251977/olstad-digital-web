@@ -53,11 +53,13 @@
     "refused": "이 주소는 접근 권한이 없어요.",
     "wrongCode": "코드가 틀렸거나 만료되었어요.",
     "failed": "문제가 생겼어요. 다시 시도해 주세요.",
-    "coming": "준비 중",
-    "comingBody": "여기에 통계가 표시될 거예요.",
     "signOut": "로그아웃",
     "checking": "확인 중…",
     "tooMany": "시도 횟수가 너무 많아요. 잠시 후 다시 시도해 주세요.",
-    "notConfigured": "서버에 로그인이 설정되어 있지 않아요."
+    "notConfigured": "서버에 로그인이 설정되어 있지 않아요.",
+    "apps": "앱",
+    "noData": "아직 데이터가 없어요",
+    "allApps": "모든 앱",
+    "seeStats": "통계 보기"
   }
 }

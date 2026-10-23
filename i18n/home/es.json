@@ -53,11 +53,13 @@
     "refused": "Esta dirección no tiene acceso.",
     "wrongCode": "El código es incorrecto o ha caducado.",
     "failed": "Algo salió mal. Inténtalo de nuevo.",
-    "coming": "Próximamente",
-    "comingBody": "Aquí aparecerán las estadísticas.",
     "signOut": "Cerrar sesión",
     "checking": "Comprobando …",
     "tooMany": "Demasiados intentos. Espera un poco e inténtalo de nuevo.",
-    "notConfigured": "El inicio de sesión no está configurado en el servidor."
+    "notConfigured": "El inicio de sesión no está configurado en el servidor.",
+    "apps": "Apps",
+    "noData": "Aún no hay datos",
+    "allApps": "Todas las apps",
+    "seeStats": "Ver estadísticas"
   }
 }

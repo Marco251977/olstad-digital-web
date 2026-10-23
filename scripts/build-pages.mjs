@@ -394,7 +394,9 @@ for (const p of unprefixed) files.set(`${p.slice(1)}.html`, fallbackPage(p));
 const year = String(Math.max(2026, new Date().getUTCFullYear()));
 for (const lang of LANGS) files.set(`${lang}/index.html`, frontPage({ lang, dir: dirOf(lang), apps, company, home: homeTexts[lang], common: common[lang], esc, fill, origin: ORIGIN, langs: LANGS, year, storeTexts }));
 files.set('index.html', fallbackPage(''));
-files.set('admin.html', adminPage({ homes: homeTexts, company, esc, fallback: FALLBACK_LANGUAGE }));
+// /admin: one card per app in the app list; /admin/<app>: that app's statistics (a new app in data/apps.json = a new card and page).
+files.set('admin.html', adminPage({ homes: homeTexts, company, esc, fallback: FALLBACK_LANGUAGE, apps }));
+for (const app of apps.filter((x) => x.home)) files.set(`admin/${app.home.id}.html`, adminPage({ homes: homeTexts, company, esc, fallback: FALLBACK_LANGUAGE, apps, app }));
 files.set('assets/home-tokens.css', tokensCss(theme));
 files.set('middleware.js', middleware(['/', ...unprefixed]));
 

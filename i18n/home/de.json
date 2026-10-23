@@ -53,11 +53,13 @@
     "refused": "Diese Adresse hat keinen Zugang.",
     "wrongCode": "Der Code ist falsch oder abgelaufen.",
     "failed": "Etwas ist schiefgelaufen. Versuch es noch einmal.",
-    "coming": "Kommt bald",
-    "comingBody": "Hier erscheinen bald Statistiken.",
     "signOut": "Abmelden",
     "checking": "Wird geprüft …",
     "tooMany": "Zu viele Versuche. Warte kurz und versuch es noch einmal.",
-    "notConfigured": "Die Anmeldung ist auf dem Server nicht eingerichtet."
+    "notConfigured": "Die Anmeldung ist auf dem Server nicht eingerichtet.",
+    "apps": "Apps",
+    "noData": "Noch keine Daten",
+    "allApps": "Alle Apps",
+    "seeStats": "Statistik ansehen"
   }
 }

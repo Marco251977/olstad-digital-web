@@ -53,11 +53,13 @@
     "refused": "Tällä osoitteella ei ole pääsyä.",
     "wrongCode": "Koodi on väärä tai vanhentunut.",
     "failed": "Jokin meni vikaan. Yritä uudelleen.",
-    "coming": "Tulossa",
-    "comingBody": "Tilastot tulevat tähän.",
     "signOut": "Kirjaudu ulos",
     "checking": "Tarkistetaan …",
     "tooMany": "Liian monta yritystä. Odota hetki ja yritä uudelleen.",
-    "notConfigured": "Kirjautumista ei ole määritetty palvelimella."
+    "notConfigured": "Kirjautumista ei ole määritetty palvelimella.",
+    "apps": "Sovellukset",
+    "noData": "Ei vielä tietoja",
+    "allApps": "Kaikki sovellukset",
+    "seeStats": "Näytä tilastot"
   }
 }
