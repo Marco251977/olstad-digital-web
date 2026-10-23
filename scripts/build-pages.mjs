@@ -17,6 +17,9 @@ import { CORE_LANGUAGES, FALLBACK_LANGUAGE } from 'app-core';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = (file) => JSON.parse(fs.readFileSync(path.join(root, file), 'utf8'));
 const company = read('data/company.json');
+// Prompt 129 (Saldo Pocket): the privacy facts – retention numbers and the providers' terms – written by the app's
+// scripts/privacy-sync.mjs from its one source (src/shared/privacy-facts.ts, privacy-recipients.ts); never edited here.
+const privacyFacts = read('data/privacy-facts.json');
 const { apps } = read('data/apps.json');
 const LANGS = CORE_LANGUAGES.map((l) => l.code);
 const ORIGIN = `https://${company.domain}`;
@@ -39,6 +42,22 @@ function companyVars(lang) {
     orgNumber: `<span class="ltr">${esc(company.orgNumber)}</span>`,
     email: `<a href="mailto:${esc(company.email)}" class="ltr">${esc(company.email)}</a>`,
     country: esc(country),
+    // The business address from the Register of Business Enterprises (data/company.json), then the country.
+    address: [...(company.address ?? []), country].map(esc).join(', '),
+  };
+}
+
+/** Prompt 129: an app's privacy facts as placeholders – numbers in the page's language, the providers' terms as links. */
+function factVars(slug, lang) {
+  const f = privacyFacts.apps?.[slug];
+  if (!f) return {};
+  const n = (x) => new Intl.NumberFormat(lang).format(x);
+  const link = (url) => `<a href="${esc(url)}" class="ltr" rel="noopener">${esc(new URL(url).host.replace(/^www\./, ''))}</a>`;
+  return {
+    ...Object.fromEntries(Object.entries(f.numbers).map(([k, v]) => [k, n(v)])),
+    ...Object.fromEntries(Object.entries(f.terms).map(([k, url]) => [`link${k}`, link(url)])),
+    // The app's own menu names in this language ({{menuMe}}, {{menuExport}}, {{menuDelete}}, {{menuDeleteConfirm}}).
+    ...Object.fromEntries(Object.entries(f.labels?.[lang] ?? {}).map(([k, v]) => [k, esc(v)])),
   };
 }
 
@@ -68,8 +87,7 @@ function layout({ lang, title, description, pagePath, body }) {
   ${alternates}
   <link rel="alternate" hreflang="x-default" href="${ORIGIN}${pagePath}">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="/assets/fonts/inter.css">
   <link rel="stylesheet" href="/assets/pages.css">
 </head>
 <body>
@@ -129,6 +147,7 @@ function appPage(app, page, lang) {
   const region = app.supabase?.country ? (new Intl.DisplayNames([lang], { type: 'region' }).of(app.supabase.country) ?? app.supabase.country) : null;
   const vars = {
     ...companyVars(lang),
+    ...factVars(app.slug, lang),
     server: region ? fill(a.serverRegion, { region: esc(region) }) : fill(a.server),
     // The data centre's country alone (privacy: where sign-in and sync are stored).
     region: region ? esc(region) : '',
@@ -374,6 +393,22 @@ const unprefixed = ['/privacy', ...apps.filter((a) => a.slug).flatMap((a) => a.p
 for (const p of unprefixed) files.set(`${p.slice(1)}.html`, fallbackPage(p));
 files.set('index.html', homePage());
 files.set('middleware.js', middleware(unprefixed));
+
+// Prompt 129: the legal pages say the same on every language – the same sections and items as the source language (nb),
+// the same placeholders in every text (numbers, links, menu names, company details come from one source), and every
+// recipient of the app's data named on every language (the app's own list, data/privacy-facts.json).
+for (const app of apps.filter((a) => a.slug)) {
+  const shape = (v) => (Array.isArray(v) ? v.map(shape) : v && typeof v === 'object' ? Object.fromEntries(Object.entries(v).map(([k, x]) => [k, shape(x)])) : typeof v === 'string' ? [...new Set(v.match(/\{\{\w+\}\}/g) ?? [])].sort().join(' ') : v);
+  for (const key of ['privacy', 'deleteAccount']) {
+    const source = JSON.stringify(shape(appTexts[app.slug].nb[key]));
+    for (const lang of LANGS) if (JSON.stringify(shape(appTexts[app.slug][lang][key])) !== source) throw new Error(`${app.slug} ${lang} ${key}: sections, items or placeholders differ from nb`);
+  }
+  const names = privacyFacts.apps?.[app.slug]?.recipients ?? [];
+  for (const lang of LANGS) {
+    const text = JSON.stringify(appTexts[app.slug][lang].privacy);
+    for (const name of names) if (!text.includes(name)) throw new Error(`${app.slug} ${lang} privacy: recipient ${name} not named`);
+  }
+}
 
 for (const [file, content] of files) {
   const left = content.match(/\{\{\w+\}\}/);

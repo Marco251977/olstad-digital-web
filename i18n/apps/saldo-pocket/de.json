@@ -3,36 +3,50 @@
   "server": "unseren Server bei Supabase",
   "serverRegion": "unseren Server bei Supabase ({{region}})",
   "privacy": {
-    "intro": "Diese Erklärung beschreibt, was Saldo Pocket speichert, was die App sendet und an wen, und was du selbst tun kannst. Kurz gesagt: Dein Budget bleibt auf deinem Telefon.",
+    "intro": "Diese Erklärung beschreibt, was Saldo Pocket speichert, was die App sendet und an wen, wie lange es gespeichert wird und was du selbst tun kannst. Kurz gesagt: Dein Budget bleibt auf deinem Telefon.",
     "sections": [
       {
         "heading": "Wer verantwortlich ist",
-        "body": ["{{company}} (Org.-Nr. {{orgNumber}}, {{country}}) ist Verantwortlicher für die hier beschriebene Verarbeitung. Kontakt: {{email}}."]
+        "body": [
+          "{{company}} (Org.-Nr. {{orgNumber}}, {{address}}) ist Verantwortlicher für die hier beschriebene Verarbeitung. Kontakt: {{email}}."
+        ]
       },
       {
         "heading": "Kurz gesagt",
         "list": [
           "Dein Budget wird auf deinem Handy gespeichert. Ohne Konto können wir es nicht sehen.",
-          "Ein Konto ist freiwillig (Apple, Google, Facebook oder E-Mail). Mit Konto und Pro wird dein Budget mit unserem Server in der EU synchronisiert, damit du es auf mehreren Geräten nutzen kannst.",
+          "Ein Konto ist freiwillig (Apple, Google, Facebook oder E-Mail). Mit Konto und Pro wird dein Budget mit unserem Server in der EU (Irland) synchronisiert, damit du es auf mehreren Geräten nutzen kannst.",
           "Es gibt keine Bankverbindung.",
           "CSV- und Excel-Dateien von deiner Bank werden nur auf deinem Telefon gelesen. Die Datei selbst wird nie gespeichert, kopiert oder gesendet.",
-          "Nichts aus deinem Budget verlässt das Handy, außer du synchronisierst mit Pro oder wählst das Lesen eines Kontoauszugs, Belegs oder einer Rechnung mit KI.",
-          "Absturzberichte enthalten keine personenbezogenen Daten.",
+          "Die App sendet dein Budget nur dann an unseren Server, wenn du mit Pro synchronisierst, und Bilder zum Lesen mit KI nur, wenn du zugestimmt hast. Ist auf deinem Telefon die Datensicherung eingeschaltet, nimmt Apple (iCloud) oder Google (dein Google-Konto) die Daten der App mit in die Sicherung auf.",
+          "Absturzberichte enthalten keinen Namen, keine E-Mail-Adresse, kein Konto und keine IP-Adresse.",
           "Du kannst alles in der App kostenlos exportieren und löschen."
         ]
       },
       {
         "heading": "Auf deinem Telefon gespeichert",
-        "body": ["Die App speichert Folgendes in ihrem eigenen Speicher auf dem Telefon. Es wird nicht an uns gesendet und wird gelöscht, wenn du in der App alle Daten löschst oder die App deinstallierst:"],
+        "body": [
+          "Die App speichert Folgendes in ihrem eigenen Speicher auf dem Telefon. Es wird nicht an uns gesendet und wird gelöscht, wenn du in der App alle Daten löschst oder die App deinstallierst:"
+        ],
         "list": [
           "Die Konten, die du anlegst (selbst gewählte Namen, Kontostand und Währung; keine Bankkonten).",
           "Deine Buchungen: Datum, Betrag, Währung, Kategorie, Händler und eine optionale Notiz.",
           "Regelmäßige Buchungen, Sparziele, eigene Kategorien und die Kategorie, die sich die App für jeden Händler merkt.",
           "Einstellungen: Zahltag, Monatsbudget, Sprache und Währung sowie ob du das Lesen mit KI erlaubst.",
-          "Eine zufällige Geräte-ID, die nur zum Zählen der KI-Lesevorgänge dient (siehe unten).",
+          "Eine zufällige Geräte-ID. Sie verlässt das Telefon nur als Einwegcode, zum Zählen der KI-Lesevorgänge (siehe unten).",
+          "Wenn du angemeldet bist: deine Anmeldung, im sicheren Speicher des Telefons (Schlüsselbund auf dem iPhone, Android Keystore). Sie wird nie in eine Sicherung übernommen.",
           "Bilder, die du nach einem Import behalten möchtest."
         ],
-        "after": ["Zahlungsreferenzen werden nie gespeichert, ebenso wenig die vollständige Kontonummer. Die App kann die letzten vier Ziffern der Kontonummer speichern, um das Konto wiederzuerkennen."]
+        "after": [
+          "Zahlungsreferenzen werden nie gespeichert, ebenso wenig die vollständige Kontonummer. Die App kann die letzten vier Ziffern der Kontonummer speichern, um das Konto wiederzuerkennen."
+        ]
+      },
+      {
+        "heading": "Datensicherung auf dem Telefon",
+        "body": [
+          "Ist die Datensicherung eingeschaltet, nimmt das Telefon die Daten der App mit auf: unter Android in die Sicherung in deinem Google-Konto, auf dem iPhone in iCloud. So ist dein Budget auf einem neuen Telefon wieder da. Die Sicherung speichern Apple und Google nach ihren eigenen Bedingungen, und du schaltest sie in den Einstellungen des Telefons ein und aus.",
+          "Deine Anmeldung und der sichere Speicher werden nie übernommen, daher meldest du dich auf einem neuen Telefon erneut an."
+        ]
       },
       {
         "heading": "Import von CSV- und Excel-Dateien",
@@ -48,59 +62,74 @@
         "heading": "Lesen von Kontoauszügen, Belegen und Rechnungen mit KI (optional)",
         "body": [
           "Wenn du einen Screenshot oder ein Foto eines Kontoauszugs importierst oder einen Beleg oder eine Rechnung scannst, kannst du das von einer KI lesen lassen. Die App fragt zuerst um Erlaubnis, und du kannst es auf dem Importbildschirm jederzeit ausschalten. Ohne Erlaubnis wird alles auf dem Telefon gelesen, und nichts wird gesendet.",
-          "Mit Erlaubnis werden das Bild (oder der daraus gelesene Text), die Währung, dein Land, das heutige Datum, die Kategorieliste der App und die Geräte-ID über {{server}} an Anthropic gesendet. Anthropic liest die Zeilen mit seinem KI-Modell (Claude) und sendet sie zurück. Weder wir noch Supabase speichern das Bild, den Text oder die Zeilen. Anthropic nutzt über seine API gesendete Daten nicht zum Training seiner Modelle und löscht sie nach begrenzter Zeit gemäß den eigenen Bedingungen.",
-          "Damit der Dienst in seinen Grenzen bleibt (eine begrenzte Zahl von Lesevorgängen pro Gerät), speichert unser Server die Geräte-ID, das Datum und die Anzahl der Lesevorgänge, sonst nichts. Diese Zählungen werden nach 30 Tagen automatisch gelöscht.",
-          "Für das Limit der Gratisversion bei KI-Scans zählt unser Server die Scans pro Monat mit einer gehashten Geräte-ID – einem Einwegcode aus der ID des Telefons, erstellt mit einem geheimen Schlüssel, nie die ID selbst. Die gehashte Geräte-ID wird nur zum Zählen kostenloser KI-Scans verwendet, nicht zum Tracking. Gespeichert werden nur der Code, der Monat und die Anzahl; die Zählung wird nach 13 Monaten automatisch gelöscht."
+          "Mit Erlaubnis werden das Bild, das heutige Datum, die Währung, dein Land, die Kategorien der App (als Codes) und die Spaltenüberschriften des Kontos (nur die Überschriften, nicht der Inhalt) über {{server}} an Anthropic (USA) gesendet. Anthropic liest die Buchungen mit seinem KI-Modell (Claude) und sendet sie zurück. Die Anfrage läuft über den Supabase-Server, der dir am nächsten ist; weder wir noch Supabase speichern das Bild oder die Buchungen. Anthropic nutzt über seine API gesendete Daten nicht zum Training seiner Modelle und löscht sie innerhalb von {{anthropicDays}} Tagen ({{linkAnthropic}}).",
+          "Damit der Dienst in seinen Grenzen bleibt, zählt unser Server die KI-Lesevorgänge pro Gerät und Tag. Das Telefon sendet nur einen Einwegcode aus der zufälligen Geräte-ID, und der Server erzeugt daraus vor dem Speichern mit einem geheimen Schlüssel einen neuen Code, sodass die Zählung nicht mit dir oder deinem Konto verknüpft werden kann. Gespeichert werden nur der Code, das Datum und die Anzahl; die Zählung wird nach {{aiCountDays}} Tagen automatisch gelöscht.",
+          "Nur in der Gratisversion: Für das Limit bei KI-Scans sendet das Telefon einen Einwegcode aus der ID des Telefons, nie die ID selbst. Der Server erzeugt daraus mit einem geheimen Schlüssel einen neuen Code und speichert nur diesen, den Monat, ob es sich um eine Testversion handelt, und die Anzahl. Die gehashte Geräte-ID wird nur zum Zählen kostenloser KI-Scans verwendet, nicht zum Tracking, und die Zählung wird nach {{scanCountMonths}} Monaten automatisch gelöscht. Mit Pro wird keine Telefon-ID gesendet."
         ]
       },
       {
         "heading": "Scannen von Belegen und Rechnungen",
-        "body": ["Wenn du einen Beleg oder eine Rechnung scannst, wird das Bild auf dem Telefon gelesen oder mit KI, wenn du zugestimmt hast (siehe oben). Das Bild wird gelöscht, sobald es gelesen ist, auch wenn du abbrichst oder etwas schiefgeht. Aus dem Bild werden nur Geschäft, Datum, Betrag und Kategorie gespeichert. Zahlungsreferenzen und Kontonummern werden nie gespeichert."]
+        "body": [
+          "Wenn du einen Beleg oder eine Rechnung scannst, wird das Bild auf dem Telefon gelesen oder mit KI, wenn du zugestimmt hast (siehe oben). Das Bild wird gelöscht, sobald es gelesen ist, auch wenn du abbrichst oder etwas schiefgeht. Aus dem Bild werden nur Geschäft, Datum, Betrag und Kategorie gespeichert. Zahlungsreferenzen und Kontonummern werden nie gespeichert."
+        ]
       },
       {
         "heading": "Absturzberichte",
-        "body": ["Wenn die App abstürzt oder ein Fehler auftritt, wird ein Bericht an Sentry (in der EU) gesendet: was schiefgelaufen ist und wo in der App, die App-Version sowie Telefonmodell und Systemversion. Die Erfassung personenbezogener Daten wie IP-Adresse oder Nutzeridentität ist ausgeschaltet. Berichte werden höchstens 90 Tage aufbewahrt und nur zur Fehlerbehebung genutzt."]
+        "body": [
+          "Wenn die App abstürzt oder ein Fehler auftritt, wird ein Bericht an Sentry (EU, Deutschland) gesendet: was schiefgelaufen ist und wo in der App, was kurz davor passiert ist (ohne Inhalte aus deinem Budget), die App-Version sowie Telefonmodell und Systemversion. Sentry speichert die IP-Adresse nicht, und die Berichte enthalten keinen Namen, keine E-Mail-Adresse und kein Konto. Sie werden höchstens {{crashMaxDays}} Tage aufbewahrt und nur zur Fehlerbehebung genutzt."
+        ]
       },
       {
         "heading": "App-Updates",
-        "body": ["Die App sucht bei Expo, dem Dienst, der sie ausliefert, nach Updates. Wie bei jeder Verbindung ins Internet sieht Expo die IP-Adresse des Telefons. Andere Daten werden nicht gesendet."]
+        "body": [
+          "Bei jedem Start fragt die App bei Expo (USA), dem Dienst, der die Updates ausliefert, ob es ein neues gibt. Expo erhält dabei die IP-Adresse, die Plattform (iOS oder Android), die App-Version und eine zufällige ID der Installation – nichts über dich oder dein Budget."
+        ]
       },
       {
         "heading": "Kauf von Pro",
-        "body": ["Pro wird im App Store oder bei Google Play gekauft. Apple oder Google wickeln die Zahlung nach ihren eigenen Datenschutzerklärungen ab; wir sehen deine Kartendaten nie. RevenueCat hält fest, ob du Pro hast, mit einer anonymen ID, die die App erstellt, oder deiner Konto-ID, wenn du angemeldet bist, damit Pro deinem Konto folgt."]
+        "body": [
+          "Pro wird im App Store oder bei Google Play gekauft. Apple oder Google wickeln die Zahlung nach ihren eigenen Datenschutzerklärungen ab; wir sehen deine Kartendaten nie.",
+          "RevenueCat (USA) hält fest, ob du Pro hast. Die App kontaktiert RevenueCat bei jedem Start, auch in der Gratisversion, mit einer anonymen Kunden-ID, die RevenueCat erstellt, oder mit deiner Konto-ID, wenn du angemeldet bist, damit Pro deinem Konto folgt. RevenueCat erhält die Käufe und Belege vom Store, die Plattform und die App-Version. In Testversionen und bei Testkäufen wird der Kunde als Test markiert. Der Kaufverlauf bleibt beim Store und bei RevenueCat erhalten, auch wenn du dein Konto löschst, damit dein Kauf nicht verloren geht."
+        ]
       },
       {
         "heading": "Freiwilliges Konto und Synchronisierung (Pro)",
         "body": [
           "Du kannst dich mit Apple, Google, Facebook (Meta) oder E-Mail anmelden. Die Anmeldung übernimmt Supabase auf Servern in {{region}}. Wir speichern dann deine E-Mail-Adresse, eine Konto-ID, deinen Namen, falls der Anbieter ihn teilt, deine App-Sprache und in Testversionen ein Testkennzeichen. Mit Apple kannst du deine E-Mail-Adresse verbergen; wir sehen dann nur Apples Weiterleitungsadresse.",
           "Mit Pro wird dein Budget mit deinem Konto synchronisiert: Konten, Buchungen, regelmäßige Buchungen, Budget, Sparziele, eigene Kategorien, gemerkte Händler und die Einstellungen, die dir folgen (Zahltag, Gehalt, Budget). Jede Änderung wird mit Zeitpunkt und Gerät gespeichert. Die Daten sind bei der Übertragung und Speicherung verschlüsselt, und nur dein Konto kann sie lesen.",
-          "Codes und Links zur Anmeldung werden per E-Mail über Resend mit deiner Adresse und Sprache verschickt. Damit jede E-Mail nur einmal versendet wird, behält der Server nur Nachrichten-ID, Art und Status für 7 Tage, nie die Adresse.",
-          "Du kannst dich jederzeit abmelden; die Daten bleiben auf dem Handy. «Konto löschen» entfernt das Konto und alle damit auf dem Server gespeicherten Daten."
+          "Codes und Links zur Anmeldung werden per E-Mail über Resend (USA) mit deiner Adresse und Sprache verschickt. Der Link öffnet unsere Website, die bei Vercel gehostet wird, und leitet dich zur App weiter. Damit jede E-Mail nur einmal versendet wird, behält unser Server nur Nachrichten-ID, Art und Status für {{emailLogDays}} Tage, nie die Adresse.",
+          "Du kannst dich jederzeit abmelden; die Daten bleiben auf dem Handy. „Konto löschen“ entfernt das Konto und alle damit auf unserem Server gespeicherten Daten. Erhalten bleiben: der Kaufverlauf beim Store und bei RevenueCat, die Zählungen ohne Namen oder Konto (gelöscht nach {{aiCountDays}} Tagen bzw. {{scanCountMonths}} Monaten) und die eigenen Protokolle der Dienste nach deren Bedingungen."
         ]
       },
       {
         "heading": "Widget und Erinnerungen",
-        "body": ["Das Widget zeigt Zahlen aus den Daten auf deinem Telefon, und Erinnerungen an regelmäßige Buchungen werden auf dem Telefon eingerichtet. Für beides wird nichts gesendet."]
+        "body": [
+          "Das Widget zeigt Zahlen aus den Daten auf deinem Telefon, und Erinnerungen an regelmäßige Buchungen werden auf dem Telefon eingerichtet. Für beides wird nichts gesendet."
+        ]
       },
       {
         "heading": "Mit wem wir Daten teilen",
         "list": [
-          "Supabase (Irland, EU): Anmeldung, Synchronisierung für Pro sowie der Server für das Lesen mit KI und dessen Zählung.",
+          "Supabase (Irland, EU): Anmeldung, Synchronisierung für Pro, der Server für das Lesen mit KI und die Zählungen.",
           "Anthropic (USA): Lesen mit KI, nur mit deiner Erlaubnis.",
           "Resend (USA): E-Mails mit Anmeldecodes und -links.",
-          "RevenueCat (USA): Käufe von Pro.",
-          "Sentry (EU): Absturzberichte ohne personenbezogene Daten.",
+          "RevenueCat (USA): Pro-Status und Käufe.",
+          "Sentry (EU, Deutschland): Absturzberichte, ohne IP-Adresse.",
           "Expo (USA): App-Updates.",
-          "Apple, Google und Meta: App Store, Google Play und die Anmeldung mit ihnen, wenn du sie wählst."
+          "Vercel (USA): unsere Website, auch die Seite, die der Anmeldelink öffnet.",
+          "Apple, Google und Meta: App Store, Google Play, die Anmeldung mit ihnen, wenn du sie wählst, und die Datensicherung des Telefons.",
+          "Wechselkurse: Unser Server ruft Kurse von Frankfurter und ExchangeRate-API ab. Dabei werden keine Daten über dich gesendet."
         ],
-        "after": ["Wo Daten in die USA gehen, nutzen die Anbieter die EU-Standardvertragsklauseln oder das EU-US Data Privacy Framework. Wir verkaufen nie Daten, und die App hat keine Werbung und kein Tracking."]
+        "after": [
+          "Wo Daten in die USA gehen, nutzen die Anbieter die EU-Standardvertragsklauseln oder das EU-US Data Privacy Framework. Wir verkaufen nie Daten, und die App hat keine Werbung und kein Tracking."
+        ]
       },
       {
         "heading": "Rechtsgrundlage",
         "list": [
-          "Bereitstellung der App, die du nutzt (Art. 6 Abs. 1 lit. b DSGVO).",
-          "Deine Einwilligung zum Lesen mit KI (Art. 6 Abs. 1 lit. a DSGVO). Du kannst sie jederzeit widerrufen.",
-          "Unser berechtigtes Interesse, Fehler zu beheben und den Dienst in seinen Grenzen zu halten (Art. 6 Abs. 1 lit. f DSGVO)."
+          "Bereitstellung der App, die du nutzt (Art. 6 Abs. 1 lit. b DSGVO): Konto und Synchronisierung (Supabase), Anmeldung mit Apple, Google, Facebook oder E-Mail (Resend) und Kauf von Pro (App Store, Google Play und RevenueCat).",
+          "Deine Einwilligung zum Lesen mit KI (Art. 6 Abs. 1 lit. a DSGVO), über Supabase an Anthropic. Du kannst sie jederzeit widerrufen.",
+          "Unser berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO), Fehler zu beheben (Sentry), App-Updates auszuliefern (Expo), den Dienst in seinen Grenzen zu halten (die Zählungen) und die Website zu betreiben (Vercel)."
         ]
       },
       {
@@ -108,28 +137,34 @@
         "list": [
           "Auf dem Handy: bis du sie in der App löschst oder die App deinstallierst.",
           "Dein Konto und synchronisierte Daten: bis du das Konto in der App löschst.",
-          "Bilder und Text für das Lesen mit KI: werden bei uns nicht gespeichert.",
+          "Bilder für das Lesen mit KI: werden bei uns nicht gespeichert. Bei Anthropic: werden innerhalb von {{anthropicDays}} Tagen gelöscht, außer Anfragen, die wegen Missbrauchs markiert werden ({{linkAnthropic}}).",
           "CSV- und Excel-Dateien, die du importierst: werden nicht gespeichert. Nur die Buchungen, die du speicherst, und der Aufbau der Spalten bleiben.",
-          "Zählung der KI-Lesevorgänge: 30 Tage.",
-          "Zählung kostenloser KI-Scans (gehashte Geräte-ID, Monat und Anzahl): 13 Monate.",
-          "Protokoll der Anmelde-E-Mails (ohne Adresse): 7 Tage.",
-          "Absturzberichte: höchstens 90 Tage."
+          "Zählung der KI-Lesevorgänge (Einwegcode, Datum und Anzahl): {{aiCountDays}} Tage.",
+          "Zählung kostenloser KI-Scans (gehashte Geräte-ID, Monat und Anzahl): {{scanCountMonths}} Monate.",
+          "Protokoll der Anmelde-E-Mails (ohne Adresse): {{emailLogDays}} Tage.",
+          "Absturzberichte: höchstens {{crashMaxDays}} Tage.",
+          "Anmelde-E-Mails bei Resend: {{resendDays}} Tage ({{linkResend}}). Eigene Protokolle und Sicherungen von Supabase: höchstens {{supabaseLogDays}} Tage ({{linkSupabase}}). RevenueCat ({{linkRevenueCat}}), Expo ({{linkExpo}}) und Vercel ({{linkVercel}}): nach deren Bedingungen, die keine feste Frist nennen.",
+          "Datensicherung auf dem Telefon: bei Apple oder Google, nach deren Bedingungen, bis du sie löschst."
         ]
       },
       {
         "heading": "Deine Rechte",
         "body": [
-          "Du kannst alle deine Daten in der App einsehen, berichtigen und exportieren (Ich → Daten exportieren, kostenlos für alle) und löschen (Ich → Alle Daten löschen). Du kannst der Verarbeitung widersprechen und deine Einwilligung zum Lesen mit KI jederzeit widerrufen.",
+          "Du kannst alle deine Daten in der App einsehen, berichtigen und exportieren ({{menuMe}} → {{menuExport}}, kostenlos für alle) und löschen ({{menuMe}} → {{menuDelete}}). Du kannst der Verarbeitung widersprechen und deine Einwilligung zum Lesen mit KI jederzeit widerrufen.",
           "Bei Fragen schreib an {{email}}. Die Aufsichtsbehörde ist die norwegische Datenschutzbehörde (Datatilsynet), bei der du dich beschweren kannst. Wenn du in der EU bzw. im EWR wohnst, kannst du dich auch bei der Datenschutzbehörde in deinem eigenen Land beschweren."
         ]
       },
       {
         "heading": "Kinder",
-        "body": ["Saldo Pocket ist nicht für Kinder unter 13 Jahren gedacht, und wir verarbeiten wissentlich keine Daten von ihnen."]
+        "body": [
+          "Saldo Pocket ist nicht für Kinder unter 13 Jahren gedacht, und wir verarbeiten wissentlich keine Daten von ihnen."
+        ]
       },
       {
         "heading": "Änderungen",
-        "body": ["Wenn wir diese Erklärung ändern, aktualisieren wir diese Seite und das Datum oben. Ist die Änderung für die Nutzung deiner Daten wichtig, sagen wir es dir in der App."]
+        "body": [
+          "Wenn wir diese Erklärung ändern, aktualisieren wir diese Seite und das Datum oben. Ist die Änderung für die Nutzung deiner Daten wichtig, sagen wir es dir in der App."
+        ]
       }
     ]
   },
@@ -140,35 +175,44 @@
         "heading": "Alles in der App löschen",
         "steps": [
           "Öffne Saldo Pocket.",
-          "Geh zu Ich.",
-          "Tippe auf Alle Daten löschen.",
-          "Tippe auf Alles löschen."
+          "Geh zu „{{menuMe}}“.",
+          "Tippe auf „{{menuDelete}}“.",
+          "Tippe auf „{{menuDeleteConfirm}}“."
         ],
         "body": [
-          "Damit wird alles gelöscht, was die App auf deinem Telefon speichert: Konten, Buchungen, regelmäßige Buchungen, Ziele, Kategorien, Händler, Einstellungen, gespeicherte Bilder und Dateien, die Geräte-ID sowie deine Sprach- und Währungswahl. Die App startet danach wie neu.",
+          "Damit wird alles gelöscht, was die App auf deinem Telefon speichert: Konten, Buchungen, regelmäßige Buchungen, Ziele, Kategorien, Händler, Einstellungen, deine Anmeldung, gespeicherte Bilder und Dateien, die Daten des Widgets, die Geräte-ID sowie deine Sprach- und Währungswahl. Die App startet danach wie neu.",
           "Die Zählung kostenloser Scans und Dateiimporte bleibt erhalten – nur Zahlen, nichts über dich oder deine Daten –, auf dem Telefon und auf unserem Server, damit das Gratis-Limit weiter gilt.",
-          "Das kann nicht rückgängig gemacht werden. Wenn du eine Kopie möchtest, exportiere deine Daten vorher unter Ich → Daten exportieren. Das ist kostenlos."
+          "Das kann nicht rückgängig gemacht werden. Wenn du eine Kopie möchtest, exportiere deine Daten vorher unter {{menuMe}} → {{menuExport}}. Das ist kostenlos."
         ]
       },
       {
         "heading": "App deinstallieren",
-        "body": ["Wenn du Saldo Pocket deinstallierst, werden auch alle ihre Daten vom Telefon gelöscht.", "Ausnahme: Die Zählung kostenloser Scans und Dateiimporte (nur Zahlen) kann im Schlüsselbund des Telefons (iPhone) oder in der Android-Sicherung erhalten bleiben, damit das Gratis-Limit auch nach einer Neuinstallation gilt."]
+        "body": [
+          "Wenn du Saldo Pocket deinstallierst, werden auch alle ihre Daten vom Telefon gelöscht.",
+          "Ausnahme: Die Zählung kostenloser Scans und Dateiimporte (nur Zahlen) kann im Schlüsselbund des Telefons (iPhone) oder in der Android-Sicherung erhalten bleiben, damit das Gratis-Limit auch nach einer Neuinstallation gilt. Ist auf deinem Telefon die Datensicherung eingeschaltet, bleibt eine Kopie der App-Daten bei Apple oder Google, bis du sie dort löschst."
+        ]
       },
       {
         "heading": "Was auf unserem Server bleibt",
-        "body": ["Wenn du das Lesen mit KI genutzt hast, führt unser Server eine Zählung der Lesevorgänge pro Geräte-ID und Tag, ohne jeden Inhalt. Sie wird nach 30 Tagen automatisch gelöscht. Die Geräte-ID ist zufällig und wird zusammen mit allem anderen vom Telefon gelöscht, sodass die Zählung nicht mit dir verbunden werden kann.", "Kostenlose KI-Scans werden außerdem pro Monat mit einer gehashten Geräte-ID gezählt (ein Einwegcode, nie die ID selbst). Die gehashte Geräte-ID wird nur zum Zählen kostenloser KI-Scans verwendet, nicht zum Tracking, und die Zählung wird nach 13 Monaten automatisch gelöscht."]
+        "body": [
+          "Wenn du das Lesen mit KI genutzt hast, führt unser Server eine Zählung der Lesevorgänge pro Gerät und Tag, gespeichert als Einwegcode und ohne jeden Inhalt. Sie wird nach {{aiCountDays}} Tagen automatisch gelöscht und kann nicht mit dir verknüpft werden.",
+          "Kostenlose KI-Scans werden außerdem pro Monat mit einer gehashten Geräte-ID gezählt (ein Einwegcode, nie die ID selbst). Die gehashte Geräte-ID wird nur zum Zählen kostenloser KI-Scans verwendet, nicht zum Tracking, und die Zählung wird nach {{scanCountMonths}} Monaten automatisch gelöscht.",
+          "Dein Kauf und der Kaufverlauf bleiben im App Store oder bei Google Play und bei RevenueCat erhalten, damit du Pro wiederherstellen kannst. Die Dienste, die wir nutzen, haben eigene Protokolle, die nach deren Bedingungen gelöscht werden."
+        ]
       },
       {
         "heading": "Dein Konto löschen",
         "body": [
           "Wenn du die App ohne Anmeldung nutzt, liegen deine Daten nur auf deinem Telefon. Sie werden gelöscht, wenn du in der App alle Daten löschst oder die App vom Telefon entfernst.",
-          "Wenn du angemeldet bist, werden beim Löschen deines Kontos in der App auch deine Daten in der Cloud gelöscht: das Konto, alles, was damit synchronisiert ist, und alles auf dem Telefon, auf dem du löschst. Hast du dich mit Facebook angemeldet, wird auch gelöscht, was wir von Facebook erhalten haben. Du kannst Saldo Pocket außerdem in deinen Facebook-Einstellungen entfernen.",
+          "Wenn du angemeldet bist, werden beim Löschen deines Kontos in der App auch deine Daten in der Cloud gelöscht: das Konto, alles, was damit synchronisiert ist, und alles auf dem Telefon, auf dem du löschst. Hast du dich mit Facebook angemeldet, wird auch gelöscht, was wir von Facebook erhalten haben. Du kannst Saldo Pocket außerdem in deinen Facebook-Einstellungen entfernen. Was erhalten bleibt, steht oben.",
           "Löschst du nur die Daten auf dem Telefon, wirst du abgemeldet, aber dein Konto und deine Daten in der Cloud bleiben erhalten. Daten auf deinen anderen Geräten werden nicht automatisch gelöscht; lösche sie dort in der App. Ein Abo wird beim Löschen nicht gekündigt; das machst du im App Store oder bei Google Play."
         ]
       },
       {
         "heading": "Wenn du die App nicht mehr hast",
-        "body": ["Schreib an {{email}} mit dem Betreff „Saldo-Pocket-Daten löschen“. Wir antworten innerhalb von 30 Tagen. Da es kein Konto gibt, haben wir in der Regel nichts über dich gespeichert, und das bestätigen wir dir."]
+        "body": [
+          "Schreib an {{email}} mit dem Betreff „Saldo-Pocket-Daten löschen“. Wir antworten innerhalb von 30 Tagen. Wenn du die App ohne Anmeldung genutzt hast, haben wir in der Regel nichts über dich gespeichert, und das bestätigen wir dir. Wenn du ein Konto hattest, gib die E-Mail-Adresse an, mit der du dich angemeldet hast; dann löschen wir das Konto und die Daten in der Cloud und bestätigen es dir."
+        ]
       }
     ]
   },
@@ -202,19 +246,27 @@
     "sections": [
       {
         "heading": "Wer wir sind",
-        "body": ["{{company}} (Org.-Nr. {{orgNumber}}, {{country}}) entwickelt und betreibt Saldo Pocket. Kontakt: {{email}}."]
+        "body": [
+          "{{company}} (Org.-Nr. {{orgNumber}}, {{country}}) entwickelt und betreibt Saldo Pocket. Kontakt: {{email}}."
+        ]
       },
       {
         "heading": "Was die App ist",
-        "body": ["Saldo Pocket gibt dir einen Überblick über dein Geld: Konten, Buchungen, Budget und Ziele. Die Zahlen beruhen auf dem, was du eingibst und importierst. Sie sind ein Überblick, keine Finanzberatung; prüfe wichtige Entscheidungen mit deiner Bank."]
+        "body": [
+          "Saldo Pocket gibt dir einen Überblick über dein Geld: Konten, Buchungen, Budget und Ziele. Die Zahlen beruhen auf dem, was du eingibst und importierst. Sie sind ein Überblick, keine Finanzberatung; prüfe wichtige Entscheidungen mit deiner Bank."
+        ]
       },
       {
         "heading": "Konto und Synchronisierung",
-        "body": ["Du kannst die App ohne Konto nutzen. Wenn du dich anmeldest und Pro hast, werden deine Daten mit deinem Konto synchronisiert, damit du sie auf mehreren Geräten nutzen kannst. Schütze deine Anmeldung; wer sich in dein Konto einloggen kann, sieht die synchronisierten Daten."]
+        "body": [
+          "Du kannst die App ohne Konto nutzen. Wenn du dich anmeldest und Pro hast, werden deine Daten mit deinem Konto synchronisiert, damit du sie auf mehreren Geräten nutzen kannst. Schütze deine Anmeldung; wer sich in dein Konto einloggen kann, sieht die synchronisierten Daten."
+        ]
       },
       {
         "heading": "Kostenlos und Pro",
-        "body": ["Die kostenlose Version kostet nichts. Pro wird im App Store oder bei Google Play gekauft, als Abo (monatlich oder jährlich) oder als Einmalkauf. Der Preis wird vor dem Kauf im Store angezeigt."],
+        "body": [
+          "Die kostenlose Version kostet nichts. Pro wird im App Store oder bei Google Play gekauft, als Abo (monatlich oder jährlich) oder als Einmalkauf. Der Preis wird vor dem Kauf im Store angezeigt."
+        ],
         "list": [
           "Ein Abo verlängert sich automatisch, bis du es spätestens 24 Stunden vor Ablauf des Zeitraums im Store kündigst.",
           "Du verwaltest und kündigst es in den Kontoeinstellungen des App Store oder von Google Play.",
@@ -223,23 +275,33 @@
       },
       {
         "heading": "Bedingungen der Stores",
-        "body": ["Käufe auf iPhone und iPad unterliegen zusätzlich Apples Standard-Lizenzvertrag (EULA), Käufe auf Android den Bedingungen von Google Play. Erstattungen übernimmt der Store, in dem du gekauft hast."]
+        "body": [
+          "Käufe auf iPhone und iPad unterliegen zusätzlich Apples Standard-Lizenzvertrag (EULA), Käufe auf Android den Bedingungen von Google Play. Erstattungen übernimmt der Store, in dem du gekauft hast."
+        ]
       },
       {
         "heading": "Deine Daten",
-        "body": ["Deine Daten gehören dir. Du kannst sie jederzeit in der App exportieren und löschen, auch in der kostenlosen Version. Wie wir personenbezogene Daten verarbeiten, steht in der Datenschutzerklärung."]
+        "body": [
+          "Deine Daten gehören dir. Du kannst sie jederzeit in der App exportieren und löschen, auch in der kostenlosen Version. Wie wir personenbezogene Daten verarbeiten, steht in der Datenschutzerklärung."
+        ]
       },
       {
         "heading": "Haftung",
-        "body": ["Wir bemühen uns, die App korrekt und verfügbar zu halten, stellen sie aber so bereit, wie sie ist. Soweit gesetzlich zulässig, haften wir nicht für indirekte Schäden. Deine Rechte als Verbraucher werden durch diese Bedingungen nicht eingeschränkt."]
+        "body": [
+          "Wir bemühen uns, die App korrekt und verfügbar zu halten, stellen sie aber so bereit, wie sie ist. Soweit gesetzlich zulässig, haften wir nicht für indirekte Schäden. Deine Rechte als Verbraucher werden durch diese Bedingungen nicht eingeschränkt."
+        ]
       },
       {
         "heading": "Änderungen",
-        "body": ["Wir können diese Bedingungen aktualisieren. Wichtige Änderungen werden in der App oder auf dieser Seite angezeigt, mit Datum oben."]
+        "body": [
+          "Wir können diese Bedingungen aktualisieren. Wichtige Änderungen werden in der App oder auf dieser Seite angezeigt, mit Datum oben."
+        ]
       },
       {
         "heading": "Recht",
-        "body": ["Es gilt norwegisches Recht. Als Verbraucher behältst du zusätzlich den Schutz, den dir das Recht deines Wohnsitzlandes gibt."]
+        "body": [
+          "Es gilt norwegisches Recht. Als Verbraucher behältst du zusätzlich den Schutz, den dir das Recht deines Wohnsitzlandes gibt."
+        ]
       }
     ]
   },

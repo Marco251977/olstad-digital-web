@@ -3,36 +3,50 @@
   "server": "nasz serwer w Supabase",
   "serverRegion": "nasz serwer w Supabase ({{region}})",
   "privacy": {
-    "intro": "Ta polityka wyjaśnia, co Saldo Pocket przechowuje, co wysyła i komu oraz co możesz z tym zrobić. W skrócie: Twój budżet zostaje na telefonie.",
+    "intro": "Ta polityka wyjaśnia, co Saldo Pocket przechowuje, co wysyła i komu, jak długo dane są przechowywane oraz co możesz z tym zrobić. W skrócie: Twój budżet zostaje na telefonie.",
     "sections": [
       {
         "heading": "Kto jest odpowiedzialny",
-        "body": ["{{company}} (nr rej. {{orgNumber}}, {{country}}) jest administratorem danych w zakresie opisanego tu przetwarzania. Kontakt: {{email}}."]
+        "body": [
+          "{{company}} (nr rej. {{orgNumber}}, {{address}}) jest administratorem danych w zakresie opisanego tu przetwarzania. Kontakt: {{email}}."
+        ]
       },
       {
         "heading": "W skrócie",
         "list": [
           "Twój budżet jest zapisany na telefonie. Bez konta nie możemy go zobaczyć.",
-          "Konto jest opcjonalne (Apple, Google, Facebook lub e-mail). Z kontem i Pro budżet jest synchronizowany z naszym serwerem w UE, aby korzystać z niego na kilku urządzeniach.",
+          "Konto jest opcjonalne (Apple, Google, Facebook lub e-mail). Z kontem i Pro budżet jest synchronizowany z naszym serwerem w UE (Irlandia), aby korzystać z niego na kilku urządzeniach.",
           "Nie ma połączenia z bankiem.",
           "Pliki CSV i Excel z banku są odczytywane tylko na Twoim telefonie. Sam plik nigdy nie jest zapisywany, kopiowany ani wysyłany.",
-          "Nic z Twojego budżetu nie opuszcza telefonu, chyba że synchronizujesz z Pro albo wybierzesz odczyt wyciągu, paragonu lub faktury przez AI.",
-          "Raporty o awariach nie zawierają danych osobowych.",
+          "Aplikacja wysyła Twój budżet na nasz serwer tylko wtedy, gdy synchronizujesz z Pro, a obrazy do odczytu przez AI tylko wtedy, gdy wyrazisz zgodę. Jeśli na telefonie masz włączoną kopię zapasową, Apple (iCloud) lub Google (Twoje konto Google) uwzględnia w niej dane aplikacji.",
+          "Raporty o awariach nie zawierają imienia i nazwiska, adresu e-mail, konta ani adresu IP.",
           "Możesz bezpłatnie wyeksportować i usunąć wszystko w aplikacji."
         ]
       },
       {
         "heading": "Przechowywane na Twoim telefonie",
-        "body": ["Aplikacja przechowuje to we własnej pamięci na telefonie. Nie jest to wysyłane do nas i zostaje usunięte, gdy usuniesz wszystkie dane w aplikacji lub ją odinstalujesz:"],
+        "body": [
+          "Aplikacja przechowuje to we własnej pamięci na telefonie. Nie jest to wysyłane do nas i zostaje usunięte, gdy usuniesz wszystkie dane w aplikacji lub ją odinstalujesz:"
+        ],
         "list": [
           "Konta, które tworzysz (wybrane przez Ciebie nazwy, saldo i waluta; nie są to konta bankowe).",
           "Twoje operacje: data, kwota, waluta, kategoria, odbiorca i opcjonalna notatka.",
           "Stałe pozycje, cele oszczędnościowe, własne kategorie i kategoria zapamiętana dla każdego odbiorcy.",
           "Ustawienia: dzień wypłaty, budżet miesięczny, język i waluta oraz to, czy zezwalasz na odczyt przez AI.",
-          "Losowy identyfikator urządzenia, używany tylko do liczenia odczytów przez AI (zob. niżej).",
+          "Losowy identyfikator urządzenia. Opuszcza telefon tylko jako kod jednokierunkowy, na potrzeby liczenia odczytów przez AI (zob. niżej).",
+          "Gdy jesteś zalogowany(-a): dane logowania, w bezpiecznej pamięci telefonu (pęk kluczy na iPhonie, Android Keystore). Nigdy nie trafiają do kopii zapasowej.",
           "Obrazy, które zdecydujesz się zachować po imporcie."
         ],
-        "after": ["Numery referencyjne płatności nigdy nie są zapisywane, podobnie jak pełny numer konta. Aplikacja może zapisać ostatnie cztery cyfry numeru konta, aby rozpoznać konto."]
+        "after": [
+          "Numery referencyjne płatności nigdy nie są zapisywane, podobnie jak pełny numer konta. Aplikacja może zapisać ostatnie cztery cyfry numeru konta, aby rozpoznać konto."
+        ]
+      },
+      {
+        "heading": "Kopia zapasowa na telefonie",
+        "body": [
+          "Jeśli masz włączoną kopię zapasową, telefon uwzględnia w niej dane aplikacji: na Androidzie w kopii zapasowej na Twoim koncie Google, na iPhonie w iCloud. Dzięki temu budżet wraca na nowym telefonie. Kopię zapasową przechowują Apple i Google na własnych warunkach, a włączasz ją i wyłączasz w ustawieniach telefonu.",
+          "Dane logowania i bezpieczna pamięć nigdy nie trafiają do kopii zapasowej, więc na nowym telefonie logujesz się ponownie."
+        ]
       },
       {
         "heading": "Import plików CSV i Excel",
@@ -48,59 +62,74 @@
         "heading": "Odczyt wyciągów, paragonów i faktur przez AI (opcjonalnie)",
         "body": [
           "Gdy importujesz zrzut ekranu lub zdjęcie wyciągu albo skanujesz paragon lub fakturę, możesz pozwolić, aby AI je odczytała. Aplikacja najpierw prosi o zgodę, a na ekranie importu możesz to w każdej chwili wyłączyć. Bez zgody wszystko jest odczytywane na telefonie i nic nie jest wysyłane.",
-          "Za zgodą obraz (lub odczytany z niego tekst), waluta, Twój kraj, dzisiejsza data, lista kategorii aplikacji i identyfikator urządzenia są wysyłane przez {{server}} do Anthropic, który odczytuje wiersze za pomocą swojego modelu AI (Claude) i odsyła je z powrotem. Ani my, ani Supabase nie przechowujemy obrazu, tekstu ani wierszy. Anthropic nie używa danych przesyłanych przez swoje API do trenowania modeli i usuwa je po upływie określonego czasu zgodnie z własnymi warunkami.",
-          "Aby usługa mieściła się w limitach (ograniczona liczba odczytów na urządzenie), nasz serwer przechowuje identyfikator urządzenia, datę i liczbę odczytów — nic więcej. Te liczniki są automatycznie usuwane po 30 dniach.",
-          "Na potrzeby limitu skanów AI w wersji darmowej nasz serwer liczy skany w miesiącu za pomocą zahaszowanego identyfikatora urządzenia – jednokierunkowego kodu utworzonego z identyfikatora telefonu tajnym kluczem, nigdy samego identyfikatora. Zahaszowany identyfikator urządzenia służy wyłącznie do liczenia darmowych skanów AI, nie do śledzenia. Zapisywane są tylko kod, miesiąc i liczba, a licznik jest automatycznie usuwany po 13 miesiącach."
+          "Za zgodą obraz, dzisiejsza data, waluta, Twój kraj, kategorie aplikacji (jako kody) i nagłówki kolumn konta (tylko nagłówki, bez zawartości) są wysyłane przez {{server}} do Anthropic (USA), który odczytuje transakcje za pomocą swojego modelu AI (Claude) i odsyła je z powrotem. Zapytanie przechodzi przez najbliższy Ci serwer Supabase; ani my, ani Supabase nie przechowujemy obrazu ani transakcji. Anthropic nie używa danych przesyłanych przez swoje API do trenowania modeli i usuwa je w ciągu {{anthropicDays}} dni ({{linkAnthropic}}).",
+          "Aby usługa mieściła się w limitach, nasz serwer liczy odczyty przez AI na urządzenie i dzień. Telefon wysyła tylko jednokierunkowy kod utworzony z losowego identyfikatora urządzenia, a serwer przed zapisaniem tworzy z niego nowy kod za pomocą tajnego klucza, więc licznika nie da się powiązać z Tobą ani z Twoim kontem. Zapisywane są tylko kod, data i liczba, a licznik jest automatycznie usuwany po {{aiCountDays}} dniach.",
+          "Tylko w wersji darmowej: na potrzeby limitu skanów AI telefon wysyła jednokierunkowy kod utworzony z identyfikatora telefonu, nigdy sam identyfikator. Serwer tworzy z niego nowy kod za pomocą tajnego klucza i zapisuje tylko ten kod, miesiąc, informację, czy to wersja testowa, oraz liczbę. Zahaszowany identyfikator urządzenia służy wyłącznie do liczenia darmowych skanów AI, nie do śledzenia, a licznik jest automatycznie usuwany po {{scanCountMonths}} miesiącach. Z Pro żaden identyfikator telefonu nie jest wysyłany."
         ]
       },
       {
         "heading": "Skanowanie paragonów i faktur",
-        "body": ["Gdy skanujesz paragon lub fakturę, obraz jest odczytywany na telefonie albo przez AI, jeśli wyraziłeś zgodę (patrz wyżej). Obraz jest usuwany zaraz po odczytaniu, także gdy anulujesz lub coś pójdzie nie tak. Z obrazu zapisywane są tylko sklep, data, kwota i kategoria. Numery referencyjne płatności i numery kont nigdy nie są zapisywane."]
+        "body": [
+          "Gdy skanujesz paragon lub fakturę, obraz jest odczytywany na telefonie albo przez AI, jeśli wyraziłeś zgodę (patrz wyżej). Obraz jest usuwany zaraz po odczytaniu, także gdy anulujesz lub coś pójdzie nie tak. Z obrazu zapisywane są tylko sklep, data, kwota i kategoria. Numery referencyjne płatności i numery kont nigdy nie są zapisywane."
+        ]
       },
       {
         "heading": "Raporty o awariach",
-        "body": ["Gdy aplikacja ulegnie awarii lub wystąpi błąd, raport jest wysyłany do Sentry (w UE): co poszło nie tak i gdzie w aplikacji, wersja aplikacji oraz model telefonu i wersja systemu. Zbieranie danych osobowych, takich jak adres IP czy tożsamość użytkownika, jest wyłączone. Raporty są przechowywane najwyżej 90 dni i służą wyłącznie do naprawiania błędów."]
+        "body": [
+          "Gdy aplikacja ulegnie awarii lub wystąpi błąd, raport jest wysyłany do Sentry (UE, Niemcy): co poszło nie tak i gdzie w aplikacji, co działo się tuż wcześniej (bez treści z Twojego budżetu), wersja aplikacji oraz model telefonu i wersja systemu. Sentry nie zapisuje adresu IP, a raporty nie zawierają imienia i nazwiska, adresu e-mail ani konta. Są przechowywane najwyżej {{crashMaxDays}} dni i służą wyłącznie do naprawiania błędów."
+        ]
       },
       {
         "heading": "Aktualizacje aplikacji",
-        "body": ["Aplikacja sprawdza aktualizacje w Expo, usłudze, która je dostarcza. Jak przy każdym połączeniu z internetem, Expo widzi adres IP telefonu. Żadne inne dane nie są wysyłane."]
+        "body": [
+          "Przy każdym uruchomieniu aplikacja pyta Expo (USA), usługę dostarczającą aktualizacje, czy jest nowa wersja. Expo otrzymuje wtedy adres IP, platformę (iOS lub Android), wersję aplikacji i losowy identyfikator instalacji – nic o Tobie ani o Twoim budżecie."
+        ]
       },
       {
         "heading": "Zakup Pro",
-        "body": ["Pro kupuje się w App Store lub Google Play. Płatność obsługuje Apple lub Google według własnych polityk prywatności; nigdy nie widzimy danych Twojej karty. RevenueCat przechowuje informację, czy masz Pro, za pomocą anonimowego ID tworzonego przez aplikację lub ID Twojego konta, gdy jesteś zalogowany, aby Pro było przypisane do konta."]
+        "body": [
+          "Pro kupuje się w App Store lub Google Play. Płatność obsługuje Apple lub Google według własnych polityk prywatności; nigdy nie widzimy danych Twojej karty.",
+          "RevenueCat (USA) przechowuje informację, czy masz Pro. Aplikacja łączy się z RevenueCat przy każdym uruchomieniu, także w wersji darmowej, z anonimowym identyfikatorem klienta tworzonym przez RevenueCat lub z ID Twojego konta, gdy jesteś zalogowany(-a), aby Pro było przypisane do konta. RevenueCat otrzymuje ze sklepu zakupy i potwierdzenia zakupu, a także platformę i wersję aplikacji. W wersjach testowych i przy zakupach testowych klient jest oznaczany jako testowy. Historia zakupów zostaje w sklepie i w RevenueCat także wtedy, gdy usuniesz konto, więc Twój zakup nie przepada."
+        ]
       },
       {
         "heading": "Opcjonalne konto i synchronizacja (Pro)",
         "body": [
           "Możesz zalogować się przez Apple, Google, Facebook (Meta) lub e-mail. Logowaniem zajmuje się Supabase na serwerach w kraju: {{region}}. Zapisujemy wtedy Twój adres e-mail, ID konta, imię i nazwisko, jeśli dostawca je udostępnia, język aplikacji oraz w wersjach testowych znacznik testu. Z Apple możesz ukryć adres e-mail; widzimy wtedy tylko adres przekazujący Apple.",
           "Z Pro budżet jest synchronizowany z Twoim kontem: konta, operacje, operacje stałe, budżet, cele oszczędnościowe, własne kategorie, zapamiętani odbiorcy i ustawienia, które Ci towarzyszą (dzień wypłaty, pensja, budżet). Każda zmiana jest zapisywana z czasem i urządzeniem. Dane są szyfrowane podczas przesyłania i przechowywania, a odczytać je może tylko Twoje konto.",
-          "Kody i linki do logowania są wysyłane e-mailem przez Resend, z Twoim adresem i językiem. Aby każdy e-mail został wysłany raz, serwer przechowuje tylko ID wiadomości, typ i status przez 7 dni, nigdy adres.",
-          "Możesz wylogować się w każdej chwili; dane zostają na telefonie. «Usuń konto» usuwa konto i wszystkie dane zapisane z nim na serwerze."
+          "Kody i linki do logowania są wysyłane e-mailem przez Resend (USA), z Twoim adresem i językiem. Link otwiera naszą stronę internetową, hostowaną w Vercel, która przekierowuje Cię do aplikacji. Aby każdy e-mail został wysłany tylko raz, nasz serwer przechowuje wyłącznie ID wiadomości, typ i status przez {{emailLogDays}} dni, nigdy adres.",
+          "Możesz wylogować się w każdej chwili; dane zostają na telefonie. «Usuń konto» usuwa konto i wszystkie dane zapisane z nim na naszym serwerze. Co zostaje: historia zakupów w sklepie i w RevenueCat, liczniki niepowiązane z imieniem i nazwiskiem ani kontem (usuwane po {{aiCountDays}} dniach i {{scanCountMonths}} miesiącach) oraz logi samych usług, przechowywane zgodnie z ich warunkami."
         ]
       },
       {
         "heading": "Widżet i przypomnienia",
-        "body": ["Widżet pokazuje liczby z danych na telefonie, a przypomnienia o stałych pozycjach są ustawiane na telefonie. W żadnym z tych przypadków nic nie jest wysyłane."]
+        "body": [
+          "Widżet pokazuje liczby z danych na telefonie, a przypomnienia o stałych pozycjach są ustawiane na telefonie. W żadnym z tych przypadków nic nie jest wysyłane."
+        ]
       },
       {
         "heading": "Komu udostępniamy dane",
         "list": [
-          "Supabase (Irlandia, UE): logowanie, synchronizacja dla Pro oraz serwer odczytu przez AI i jego licznik.",
+          "Supabase (Irlandia, UE): logowanie, synchronizacja dla Pro, serwer odczytu przez AI i liczniki.",
           "Anthropic (USA): odczyt przez AI, tylko za Twoją zgodą.",
           "Resend (USA): e-maile z kodami i linkami do logowania.",
-          "RevenueCat (USA): zakupy Pro.",
-          "Sentry (UE): raporty o awariach bez danych osobowych.",
+          "RevenueCat (USA): status Pro i zakupy.",
+          "Sentry (UE, Niemcy): raporty o awariach, bez adresu IP.",
           "Expo (USA): aktualizacje aplikacji.",
-          "Apple, Google i Meta: App Store, Google Play i logowanie przez nie, jeśli je wybierzesz."
+          "Vercel (USA): nasza strona internetowa, w tym strona otwierana przez link do logowania.",
+          "Apple, Google i Meta: App Store, Google Play, logowanie przez nie, jeśli je wybierzesz, oraz kopia zapasowa telefonu.",
+          "Kursy walut: nasz serwer pobiera kursy z Frankfurter i ExchangeRate-API. Żadne dane o Tobie nie są tam wysyłane."
         ],
-        "after": ["Gdy dane trafiają do USA, dostawcy stosują standardowe klauzule umowne UE lub EU–US Data Privacy Framework. Nigdy nie sprzedajemy danych, a aplikacja nie ma reklam ani śledzenia."]
+        "after": [
+          "Gdy dane trafiają do USA, dostawcy stosują standardowe klauzule umowne UE lub EU–US Data Privacy Framework. Nigdy nie sprzedajemy danych, a aplikacja nie ma reklam ani śledzenia."
+        ]
       },
       {
         "heading": "Podstawa prawna",
         "list": [
-          "Świadczenie usługi aplikacji, z której korzystasz (art. 6 ust. 1 lit. b RODO).",
-          "Twoja zgoda na odczyt przez AI (art. 6 ust. 1 lit. a RODO). Możesz ją w każdej chwili wycofać.",
-          "Nasz prawnie uzasadniony interes w naprawianiu błędów i utrzymaniu usługi w limitach (art. 6 ust. 1 lit. f RODO)."
+          "Świadczenie usługi aplikacji, z której korzystasz (art. 6 ust. 1 lit. b RODO): konto i synchronizacja (Supabase), logowanie przez Apple, Google, Facebook lub e-mail (Resend) oraz zakup Pro (App Store, Google Play i RevenueCat).",
+          "Twoja zgoda na odczyt przez AI (art. 6 ust. 1 lit. a RODO), przez Supabase do Anthropic. Możesz ją w każdej chwili wycofać.",
+          "Nasz prawnie uzasadniony interes (art. 6 ust. 1 lit. f RODO) w naprawianiu błędów (Sentry), dostarczaniu aktualizacji aplikacji (Expo), utrzymaniu usługi w limitach (liczniki) i prowadzeniu strony internetowej (Vercel)."
         ]
       },
       {
@@ -108,28 +137,34 @@
         "list": [
           "Na telefonie: do czasu ich usunięcia w aplikacji lub odinstalowania aplikacji.",
           "Twoje konto i zsynchronizowane dane: do czasu usunięcia konta w aplikacji.",
-          "Obrazy i tekst do odczytu przez AI: nie są u nas przechowywane.",
+          "Obrazy do odczytu przez AI: nie są u nas przechowywane. W Anthropic: usuwane w ciągu {{anthropicDays}} dni, z wyjątkiem zapytań oznaczonych jako możliwe nadużycie ({{linkAnthropic}}).",
           "Importowane pliki CSV i Excel: nie są przechowywane. Zostają tylko transakcje, które zapiszesz, i układ kolumn pliku.",
-          "Licznik odczytów przez AI: 30 dni.",
-          "Licznik darmowych skanów AI (zahaszowany identyfikator urządzenia, miesiąc i liczba): 13 miesięcy.",
-          "Dziennik e-maili logowania (bez adresu): 7 dni.",
-          "Raporty o awariach: najwyżej 90 dni."
+          "Licznik odczytów przez AI (kod jednokierunkowy, data i liczba): {{aiCountDays}} dni.",
+          "Licznik darmowych skanów AI (zahaszowany identyfikator urządzenia, miesiąc i liczba): {{scanCountMonths}} miesięcy.",
+          "Dziennik e-maili logowania (bez adresu): {{emailLogDays}} dni.",
+          "Raporty o awariach: najwyżej {{crashMaxDays}} dni.",
+          "E-maile logowania w Resend: {{resendDays}} dni ({{linkResend}}). Własne logi i kopie zapasowe Supabase: najwyżej {{supabaseLogDays}} dni ({{linkSupabase}}). RevenueCat ({{linkRevenueCat}}), Expo ({{linkExpo}}) i Vercel ({{linkVercel}}): zgodnie z ich warunkami, które nie podają stałego okresu.",
+          "Kopia zapasowa na telefonie: u Apple lub Google, zgodnie z ich warunkami, dopóki jej nie usuniesz."
         ]
       },
       {
         "heading": "Twoje prawa",
         "body": [
-          "Wszystkie swoje dane możesz przeglądać, poprawiać i eksportować w aplikacji (Ja → Eksport danych, bezpłatnie dla wszystkich) oraz usuwać (Ja → Usuń wszystkie dane). Możesz w każdej chwili sprzeciwić się przetwarzaniu i wycofać zgodę na odczyt przez AI.",
+          "Wszystkie swoje dane możesz przeglądać, poprawiać i eksportować w aplikacji ({{menuMe}} → {{menuExport}}, bezpłatnie dla wszystkich) oraz usuwać ({{menuMe}} → {{menuDelete}}). Możesz w każdej chwili sprzeciwić się przetwarzaniu i wycofać zgodę na odczyt przez AI.",
           "Jeśli masz pytania, napisz na {{email}}. Organem nadzorczym jest norweski organ ochrony danych (Datatilsynet), do którego możesz złożyć skargę. Jeśli mieszkasz w UE/EOG, możesz też złożyć skargę do organu ochrony danych we własnym kraju."
         ]
       },
       {
         "heading": "Dzieci",
-        "body": ["Saldo Pocket nie jest przeznaczone dla dzieci poniżej 13 lat i świadomie nie przetwarzamy ich danych."]
+        "body": [
+          "Saldo Pocket nie jest przeznaczone dla dzieci poniżej 13 lat i świadomie nie przetwarzamy ich danych."
+        ]
       },
       {
         "heading": "Zmiany",
-        "body": ["Jeśli zmienimy tę politykę, zaktualizujemy tę stronę i datę na górze. Jeśli zmiana ma znaczenie dla sposobu wykorzystania Twoich danych, poinformujemy o tym w aplikacji."]
+        "body": [
+          "Jeśli zmienimy tę politykę, zaktualizujemy tę stronę i datę na górze. Jeśli zmiana ma znaczenie dla sposobu wykorzystania Twoich danych, poinformujemy o tym w aplikacji."
+        ]
       }
     ]
   },
@@ -140,35 +175,44 @@
         "heading": "Usuń wszystko w aplikacji",
         "steps": [
           "Otwórz Saldo Pocket.",
-          "Przejdź do zakładki „Ja”.",
-          "Dotknij „Usuń wszystkie dane”.",
-          "Dotknij „Usuń wszystko”."
+          "Przejdź do zakładki „{{menuMe}}”.",
+          "Dotknij „{{menuDelete}}”.",
+          "Dotknij „{{menuDeleteConfirm}}”."
         ],
         "body": [
-          "Usuwa to wszystko, co aplikacja przechowuje na Twoim telefonie: konta, operacje, stałe pozycje, cele, kategorie, odbiorców, ustawienia, zapisane obrazy i pliki, identyfikator urządzenia oraz wybór języka i waluty. Aplikacja uruchomi się potem od nowa.",
+          "Usuwa to wszystko, co aplikacja przechowuje na Twoim telefonie: konta, operacje, stałe pozycje, cele, kategorie, odbiorców, ustawienia, dane logowania, zapisane obrazy i pliki, dane widżetu, identyfikator urządzenia oraz wybór języka i waluty. Aplikacja uruchomi się potem od nowa.",
           "Licznik darmowych skanów i importów plików zostaje – tylko liczby, nic o Tobie ani Twoich danych – na telefonie i na naszym serwerze, aby darmowy limit nadal obowiązywał.",
-          "Tego nie można cofnąć. Jeśli chcesz mieć kopię, najpierw wyeksportuj dane w Ja → Eksport danych. To bezpłatne."
+          "Tego nie można cofnąć. Jeśli chcesz mieć kopię, najpierw wyeksportuj dane w sekcji „{{menuMe}} → {{menuExport}}”. To bezpłatne."
         ]
       },
       {
         "heading": "Odinstalowanie aplikacji",
-        "body": ["Odinstalowanie Saldo Pocket usuwa również wszystkie jej dane z telefonu.", "Wyjątek: licznik darmowych skanów i importów plików (tylko liczby) może pozostać w pęku kluczy telefonu (iPhone) lub w kopii zapasowej Androida, aby darmowy limit obowiązywał także po ponownej instalacji."]
+        "body": [
+          "Odinstalowanie Saldo Pocket usuwa również wszystkie jej dane z telefonu.",
+          "Wyjątek: licznik darmowych skanów i importów plików (tylko liczby) może pozostać w pęku kluczy telefonu (iPhone) lub w kopii zapasowej Androida, aby darmowy limit obowiązywał także po ponownej instalacji. Jeśli na telefonie masz włączoną kopię zapasową, kopia danych aplikacji zostaje u Apple lub Google, dopóki jej tam nie usuniesz."
+        ]
       },
       {
         "heading": "Co zostaje na naszym serwerze",
-        "body": ["Jeśli korzystałeś(-aś) z odczytu przez AI, nasz serwer ma licznik odczytów dla identyfikatora urządzenia i dnia, bez żadnej treści. Jest on automatycznie usuwany po 30 dniach. Identyfikator urządzenia jest losowy i usuwany z telefonu razem z całą resztą, więc licznika nie da się powiązać z Tobą.", "Darmowe skany AI są też liczone w miesiącu za pomocą zahaszowanego identyfikatora urządzenia (jednokierunkowy kod, nigdy sam identyfikator). Służy on wyłącznie do liczenia darmowych skanów AI, nie do śledzenia, a licznik jest automatycznie usuwany po 13 miesiącach."]
+        "body": [
+          "Jeśli korzystałeś(-aś) z odczytu przez AI, nasz serwer ma licznik odczytów na urządzenie i dzień, zapisany jako kod jednokierunkowy i bez żadnej treści. Jest automatycznie usuwany po {{aiCountDays}} dniach i nie da się go powiązać z Tobą.",
+          "Darmowe skany AI są też liczone w miesiącu za pomocą zahaszowanego identyfikatora urządzenia (jednokierunkowy kod, nigdy sam identyfikator). Zahaszowany identyfikator urządzenia służy wyłącznie do liczenia darmowych skanów AI, nie do śledzenia, a licznik jest automatycznie usuwany po {{scanCountMonths}} miesiącach.",
+          "Twój zakup i historia zakupów zostają w App Store lub Google Play oraz w RevenueCat, więc możesz przywrócić Pro. Usługi, z których korzystamy, mają własne logi, usuwane zgodnie z ich warunkami."
+        ]
       },
       {
         "heading": "Usunięcie konta",
         "body": [
           "Jeśli korzystasz z aplikacji bez logowania, Twoje dane są tylko na telefonie. Są usuwane, gdy usuniesz wszystkie dane w aplikacji albo usuniesz aplikację z telefonu.",
-          "Jeśli jesteś zalogowany(-a), po usunięciu konta w aplikacji usuwane są też Twoje dane w chmurze: konto, wszystko, co z nim zsynchronizowano, i wszystko na telefonie, z którego usuwasz. Jeśli logowałeś(-aś) się przez Facebook, usuwamy też to, co otrzymaliśmy z Facebooka. Saldo Pocket możesz także usunąć w ustawieniach Facebooka.",
+          "Jeśli jesteś zalogowany(-a), po usunięciu konta w aplikacji usuwane są też Twoje dane w chmurze: konto, wszystko, co z nim zsynchronizowano, i wszystko na telefonie, z którego usuwasz. Jeśli logowałeś(-aś) się przez Facebook, usuwamy też to, co otrzymaliśmy z Facebooka. Saldo Pocket możesz także usunąć w ustawieniach Facebooka. To, co zostaje, opisano wyżej.",
           "Jeśli usuniesz tylko dane z telefonu, zostaniesz wylogowany(-a), ale konto i Twoje dane w chmurze zostaną. Dane na Twoich innych urządzeniach nie są usuwane automatycznie; usuń je w aplikacji na tych urządzeniach. Usunięcie nie anuluje subskrypcji; zrobisz to w App Store lub Google Play."
         ]
       },
       {
         "heading": "Jeśli nie masz już aplikacji",
-        "body": ["Napisz na {{email}} z tematem „Usuń dane Saldo Pocket”. Odpowiemy w ciągu 30 dni. Ponieważ nie ma konta, zwykle nie mamy o Tobie żadnych zapisanych danych i to potwierdzimy."]
+        "body": [
+          "Napisz na {{email}} z tematem „Usuń dane Saldo Pocket”. Odpowiemy w ciągu 30 dni. Jeśli korzystałeś(-aś) z aplikacji bez logowania, zwykle nie mamy o Tobie żadnych zapisanych danych i to potwierdzimy. Jeśli miałeś(-aś) konto, podaj adres e-mail, którego używałeś(-aś) do logowania, a usuniemy konto i dane w chmurze i to potwierdzimy."
+        ]
       }
     ]
   },
@@ -202,19 +246,27 @@
     "sections": [
       {
         "heading": "Kim jesteśmy",
-        "body": ["{{company}} (nr rej. {{orgNumber}}, {{country}}) tworzy i prowadzi Saldo Pocket. Kontakt: {{email}}."]
+        "body": [
+          "{{company}} (nr rej. {{orgNumber}}, {{country}}) tworzy i prowadzi Saldo Pocket. Kontakt: {{email}}."
+        ]
       },
       {
         "heading": "Czym jest aplikacja",
-        "body": ["Saldo Pocket daje przegląd Twoich pieniędzy: kont, operacji, budżetu i celów. Liczby opierają się na tym, co wpisujesz i importujesz. To przegląd, a nie doradztwo finansowe; ważne decyzje sprawdzaj w swoim banku."]
+        "body": [
+          "Saldo Pocket daje przegląd Twoich pieniędzy: kont, operacji, budżetu i celów. Liczby opierają się na tym, co wpisujesz i importujesz. To przegląd, a nie doradztwo finansowe; ważne decyzje sprawdzaj w swoim banku."
+        ]
       },
       {
         "heading": "Konto i synchronizacja",
-        "body": ["Z aplikacji możesz korzystać bez konta. Jeśli się zalogujesz i masz Pro, dane są synchronizowane z Twoim kontem, aby korzystać z nich na kilku urządzeniach. Chroń swoje logowanie; kto zaloguje się na Twoje konto, zobaczy zsynchronizowane dane."]
+        "body": [
+          "Z aplikacji możesz korzystać bez konta. Jeśli się zalogujesz i masz Pro, dane są synchronizowane z Twoim kontem, aby korzystać z nich na kilku urządzeniach. Chroń swoje logowanie; kto zaloguje się na Twoje konto, zobaczy zsynchronizowane dane."
+        ]
       },
       {
         "heading": "Wersja bezpłatna i Pro",
-        "body": ["Wersja bezpłatna nic nie kosztuje. Pro kupuje się w App Store lub Google Play jako subskrypcję (miesięczną lub roczną) albo zakup jednorazowy. Cena jest widoczna w sklepie przed zakupem."],
+        "body": [
+          "Wersja bezpłatna nic nie kosztuje. Pro kupuje się w App Store lub Google Play jako subskrypcję (miesięczną lub roczną) albo zakup jednorazowy. Cena jest widoczna w sklepie przed zakupem."
+        ],
         "list": [
           "Subskrypcja odnawia się automatycznie, dopóki nie anulujesz jej w sklepie najpóźniej 24 godziny przed końcem okresu.",
           "Zarządzasz nią i anulujesz ją w ustawieniach konta App Store lub Google Play.",
@@ -223,23 +275,33 @@
       },
       {
         "heading": "Warunki sklepów",
-        "body": ["Zakupy na iPhonie i iPadzie podlegają także standardowej umowie licencyjnej Apple (EULA), a zakupy na Androidzie warunkom Google Play. Zwrotami zajmuje się sklep, w którym kupiono."]
+        "body": [
+          "Zakupy na iPhonie i iPadzie podlegają także standardowej umowie licencyjnej Apple (EULA), a zakupy na Androidzie warunkom Google Play. Zwrotami zajmuje się sklep, w którym kupiono."
+        ]
       },
       {
         "heading": "Twoje dane",
-        "body": ["Twoje dane należą do Ciebie. Możesz je w każdej chwili wyeksportować i usunąć w aplikacji, także w wersji bezpłatnej. Sposób przetwarzania danych osobowych opisuje polityka prywatności."]
+        "body": [
+          "Twoje dane należą do Ciebie. Możesz je w każdej chwili wyeksportować i usunąć w aplikacji, także w wersji bezpłatnej. Sposób przetwarzania danych osobowych opisuje polityka prywatności."
+        ]
       },
       {
         "heading": "Odpowiedzialność",
-        "body": ["Dbamy o to, by aplikacja była poprawna i dostępna, ale udostępniamy ją w obecnej postaci. W granicach prawa nie odpowiadamy za straty pośrednie. Te warunki nie ograniczają Twoich praw konsumenta."]
+        "body": [
+          "Dbamy o to, by aplikacja była poprawna i dostępna, ale udostępniamy ją w obecnej postaci. W granicach prawa nie odpowiadamy za straty pośrednie. Te warunki nie ograniczają Twoich praw konsumenta."
+        ]
       },
       {
         "heading": "Zmiany",
-        "body": ["Możemy aktualizować te warunki. Ważne zmiany pokazujemy w aplikacji lub na tej stronie, z datą na górze."]
+        "body": [
+          "Możemy aktualizować te warunki. Ważne zmiany pokazujemy w aplikacji lub na tej stronie, z datą na górze."
+        ]
       },
       {
         "heading": "Prawo",
-        "body": ["Warunki podlegają prawu norweskiemu. Jako konsument zachowujesz też ochronę, jaką daje Ci prawo kraju, w którym mieszkasz."]
+        "body": [
+          "Warunki podlegają prawu norweskiemu. Jako konsument zachowujesz też ochronę, jaką daje Ci prawo kraju, w którym mieszkasz."
+        ]
       }
     ]
   },

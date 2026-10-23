@@ -1,0 +1,148 @@
+{
+  "generatedBy": "saldo-pocket scripts/privacy.mjs",
+  "apps": {
+    "saldo-pocket": {
+      "numbers": {
+        "aiCountDays": 30,
+        "scanCountMonths": 13,
+        "emailLogDays": 7,
+        "crashMaxDays": 90,
+        "anthropicDays": 30,
+        "resendDays": 30,
+        "supabaseLogDays": 7
+      },
+      "terms": {
+        "Anthropic": "https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data",
+        "Resend": "https://resend.com/security/gdpr",
+        "RevenueCat": "https://www.revenuecat.com/privacy",
+        "Expo": "https://expo.dev/privacy",
+        "Supabase": "https://supabase.com/pricing",
+        "Vercel": "https://vercel.com/legal/privacy-policy"
+      },
+      "labels": {
+        "ar": {
+          "menuMe": "حسابي",
+          "menuExport": "تصدير البيانات",
+          "menuDelete": "حذف جميع البيانات على هذا الهاتف",
+          "menuDeleteConfirm": "احذف كل شيء على هذا الهاتف"
+        },
+        "da": {
+          "menuMe": "Mig",
+          "menuExport": "Eksportér data",
+          "menuDelete": "Slet alle data på telefonen",
+          "menuDeleteConfirm": "Slet alt på telefonen"
+        },
+        "de": {
+          "menuMe": "Ich",
+          "menuExport": "Daten exportieren",
+          "menuDelete": "Alle Daten auf diesem Handy löschen",
+          "menuDeleteConfirm": "Alles auf diesem Handy löschen"
+        },
+        "en": {
+          "menuMe": "Me",
+          "menuExport": "Export data",
+          "menuDelete": "Delete all data on this phone",
+          "menuDeleteConfirm": "Delete everything on this phone"
+        },
+        "es": {
+          "menuMe": "Yo",
+          "menuExport": "Exportar datos",
+          "menuDelete": "Borrar todos los datos de este teléfono",
+          "menuDeleteConfirm": "Borrar todo en este teléfono"
+        },
+        "fi": {
+          "menuMe": "Minä",
+          "menuExport": "Vie tiedot",
+          "menuDelete": "Poista kaikki tiedot tästä puhelimesta",
+          "menuDeleteConfirm": "Poista kaikki tästä puhelimesta"
+        },
+        "fr": {
+          "menuMe": "Moi",
+          "menuExport": "Exporter les données",
+          "menuDelete": "Supprimer toutes les données de ce téléphone",
+          "menuDeleteConfirm": "Tout supprimer sur ce téléphone"
+        },
+        "hi": {
+          "menuMe": "मैं",
+          "menuExport": "डेटा एक्सपोर्ट करें",
+          "menuDelete": "इस फोन का सारा डेटा हटाएँ",
+          "menuDeleteConfirm": "इस फोन से सब हटाएँ"
+        },
+        "it": {
+          "menuMe": "Io",
+          "menuExport": "Esporta dati",
+          "menuDelete": "Elimina tutti i dati su questo telefono",
+          "menuDeleteConfirm": "Elimina tutto su questo telefono"
+        },
+        "ja": {
+          "menuMe": "マイページ",
+          "menuExport": "データを書き出す",
+          "menuDelete": "このスマートフォンのデータをすべて削除",
+          "menuDeleteConfirm": "このスマートフォンからすべて削除"
+        },
+        "ko": {
+          "menuMe": "내 정보",
+          "menuExport": "데이터 내보내기",
+          "menuDelete": "이 휴대폰의 모든 데이터 삭제",
+          "menuDeleteConfirm": "이 휴대폰에서 모두 삭제"
+        },
+        "nb": {
+          "menuMe": "Meg",
+          "menuExport": "Eksporter data",
+          "menuDelete": "Slett alle data på telefonen",
+          "menuDeleteConfirm": "Slett alt på telefonen"
+        },
+        "nl": {
+          "menuMe": "Ik",
+          "menuExport": "Gegevens exporteren",
+          "menuDelete": "Alle gegevens op deze telefoon wissen",
+          "menuDeleteConfirm": "Alles op deze telefoon wissen"
+        },
+        "pl": {
+          "menuMe": "Ja",
+          "menuExport": "Eksport danych",
+          "menuDelete": "Usuń wszystkie dane z tego telefonu",
+          "menuDeleteConfirm": "Usuń wszystko z tego telefonu"
+        },
+        "pt-BR": {
+          "menuMe": "Eu",
+          "menuExport": "Exportar dados",
+          "menuDelete": "Apagar todos os dados deste celular",
+          "menuDeleteConfirm": "Apagar tudo neste celular"
+        },
+        "sv": {
+          "menuMe": "Jag",
+          "menuExport": "Exportera data",
+          "menuDelete": "Radera all data på telefonen",
+          "menuDeleteConfirm": "Radera allt på telefonen"
+        },
+        "tr": {
+          "menuMe": "Ben",
+          "menuExport": "Verileri dışa aktar",
+          "menuDelete": "Bu telefondaki tüm verileri sil",
+          "menuDeleteConfirm": "Bu telefondaki her şeyi sil"
+        },
+        "zh-Hans": {
+          "menuMe": "我",
+          "menuExport": "导出数据",
+          "menuDelete": "删除这部手机上的所有数据",
+          "menuDeleteConfirm": "删除这部手机上的全部内容"
+        }
+      },
+      "recipients": [
+        "Supabase",
+        "Anthropic",
+        "Resend",
+        "RevenueCat",
+        "Sentry",
+        "Expo",
+        "Vercel",
+        "Apple",
+        "Google",
+        "Meta",
+        "Frankfurter",
+        "ExchangeRate-API"
+      ]
+    }
+  }
+}

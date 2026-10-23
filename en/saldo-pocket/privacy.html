@@ -27,8 +27,7 @@
   <link rel="alternate" hreflang="tr" href="https://www.nordicdigitalapp.com/tr/saldo-pocket/privacy">
   <link rel="alternate" hreflang="x-default" href="https://www.nordicdigitalapp.com/saldo-pocket/privacy">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="/assets/fonts/inter.css">
   <link rel="stylesheet" href="/assets/pages.css">
 </head>
 <body>
@@ -50,81 +49,87 @@
   <main id="content" class="wrap">
     <p class="app-name">Saldo Pocket</p>
     <h1>Privacy policy</h1>
-    <p class="lede">This policy explains what Saldo Pocket stores, what it sends and to whom, and what you can do about it. The short version: your budget stays on your phone.</p>
+    <p class="lede">This policy explains what Saldo Pocket stores, what it sends and to whom, how long it is kept, and what you can do about it. The short version: your budget stays on your phone.</p>
     <p class="updated">Last updated: October 22, 2026</p>
     <ul class="page-nav"><li><a href="/en/saldo-pocket/privacy" aria-current="page">Privacy policy</a></li><li><a href="/en/saldo-pocket/terms">Terms of use</a></li><li><a href="/en/saldo-pocket/delete-account">Delete account and data</a></li><li><a href="/en/saldo-pocket/support">Support</a></li></ul>
     <section>
 <h2>Who is responsible</h2>
-<p>Olstad Digital (org. no. <span class="ltr">938 090 432</span>, Norway) is responsible for the processing described here. Contact us at <a href="mailto:kontakt@nordicdigitalapp.no" class="ltr">kontakt@nordicdigitalapp.no</a>.</p>
+<p>Olstad Digital (org. no. <span class="ltr">938 090 432</span>, Selma Ellefsens vei 3H, 0581 Oslo, Norway) is the controller for the processing described here. Contact us at <a href="mailto:kontakt@nordicdigitalapp.no" class="ltr">kontakt@nordicdigitalapp.no</a>.</p>
 </section>
     <section>
 <h2>In short</h2>
-<ul><li>Your budget is stored on your phone. Without an account, we cannot see it.</li><li>An account is optional (Apple, Google, Facebook or e-mail). With an account and Pro, your budget is synced to our server in the EU so you can use it on several devices.</li><li>There is no bank connection.</li><li>CSV and Excel files from your bank are read only on your phone. The file itself is never stored, copied or sent anywhere.</li><li>Nothing from your budget leaves the phone unless you sync with Pro or choose AI reading of a statement, receipt or bill.</li><li>Crash reports contain no personal data.</li><li>You can export everything and delete everything in the app, for free.</li></ul>
+<ul><li>Your budget is stored on your phone. Without an account, we cannot see it.</li><li>An account is optional (Apple, Google, Facebook or e-mail). With an account and Pro, your budget is synced to our server in the EU (Ireland), so you can use it on several devices.</li><li>There is no bank connection.</li><li>CSV and Excel files from your bank are read only on your phone. The file itself is never stored, copied or sent anywhere.</li><li>The app sends your budget to our server only when you sync with Pro, and pictures for AI reading only when you have said yes. If backup is turned on on your phone, Apple (iCloud) or Google (your Google account) includes the app's data in it.</li><li>Crash reports contain no name, e-mail, account or IP address.</li><li>You can export everything and delete everything in the app, for free.</li></ul>
 </section>
     <section>
 <h2>Stored on your phone</h2>
-<p>The app stores this in its own storage on your phone. It is not sent to us, and it is deleted when you delete all data in the app or uninstall it:</p>
-<ul><li>The accounts you create (names you choose, balance and currency; not bank accounts).</li><li>Your entries: date, amount, currency, category, vendor and an optional note.</li><li>Recurring items, savings goals, your own categories, and the category remembered for each vendor.</li><li>Settings: payday, monthly budget, your language and currency, and whether you allow AI reading.</li><li>A random device ID, used only to count AI readings (see below).</li><li>Pictures you choose to keep after an import.</li></ul>
-<p>KID numbers are never stored, and neither is the full account number. The app may store the last four digits of the account number to recognize the account.</p>
+<p>The app keeps the following in its own storage on your phone. It is not sent to us, and it is deleted when you delete all data in the app or uninstall it:</p>
+<ul><li>The accounts you create (names you choose, balance and currency; not bank accounts).</li><li>Your entries: date, amount, currency, category, vendor and an optional note.</li><li>Recurring items, savings goals, your own categories and the category the app remembers for each vendor.</li><li>Settings: payday, monthly budget, language and currency, and whether you allow AI reading.</li><li>A random device ID. It only leaves the phone as a one-way code, for counting AI readings (see below).</li><li>When you are signed in: your sign-in, in the phone's secure storage (the Keychain on iPhone, Android Keystore). It is never included in a backup.</li><li>Pictures you choose to keep after an import.</li></ul>
+<p>KID numbers are never stored, and neither is the full account number. The app may store the last four digits of the account number to recognise the account.</p>
+</section>
+    <section>
+<h2>Backup on your phone</h2>
+<p>If backup is turned on, the phone includes the app's data in it: on Android in the backup on your Google account, on iPhone in iCloud. Your budget then comes back on a new phone. Apple and Google store the backup under their own terms, and you turn it on and off in the phone's settings.</p>
+<p>Your sign-in and the secure storage are never included, so on a new phone you sign in again.</p>
 </section>
     <section>
 <h2>Importing CSV and Excel files</h2>
-<p>When you import a CSV or Excel file from your bank, the file is read only on your phone. The file itself is never stored, copied or sent anywhere – not to a server and not to AI.</p>
-<p>From the file, the app stores only the date (and the booking date when the file has one), description, amount, vendor, the bank’s balance for reconciling the account, and the last four digits of the account number, to recognize the account. KID numbers, other references and the file’s other columns are not stored.</p>
-<p>Entries the bank has not booked yet are stored as ordinary entries and counted straight away. If such an entry is missing from a later import from your bank, the app asks whether you want to remove it. It is never removed by itself.</p>
-<p>The app remembers how the columns in the file are laid out, without their content, so the next import is quicker. When you are signed in with Pro, this is synced with your other settings.</p>
+<p>When you import a CSV or Excel file from your bank, the file is read only on your phone. The file itself is never stored, copied or sent anywhere – neither to a server nor to AI.</p>
+<p>From the file, only the date (and booking date when the file has it), description, amount, vendor, the bank's balance to reconcile the account, and the last four digits of the account number, to recognise the account, are stored. KID numbers, other references and the file's other columns are not stored.</p>
+<p>Entries that are not yet booked are stored as ordinary entries and count straight away. If such an entry is missing from a later import from your bank, the app asks whether you want to remove it. It is never removed by itself.</p>
+<p>The app remembers how the file's columns are laid out, without their content, so the next import is quicker. When you are signed in with Pro, this is synced with your other settings.</p>
 <p>AI reading is used only for pictures and PDFs, and only when you have said yes.</p>
 </section>
     <section>
-<h2>AI reading of transaction lists, receipts and bills (optional)</h2>
-<p>When you import a screenshot or photo of a transaction list from your bank, or scan a receipt or bill, you can let AI read it. The app asks for your permission first, and you can turn it off at any time on the import screen. Without permission, everything is read on the phone and nothing is sent.</p>
-<p>With permission, the picture (or the text read from it), the currency, your country, today’s date, the app’s list of categories and the device ID are sent through our server at Supabase (Ireland) to Anthropic, which reads the rows with its AI model (Claude) and sends them back. Neither we nor Supabase store the picture, the text or the rows. Anthropic does not use data sent through its API to train its models, and deletes it after a limited time under its own terms.</p>
-<p>To keep the service within its limits (a limited number of readings per device), our server stores the device ID, the date and the number of readings, and nothing else. These counts are deleted automatically after 30 days.</p>
-<p>For the free version’s limit on AI scans, our server counts scans per month with a hashed device ID – a one-way code made from the phone’s ID with a secret key, never the ID itself. The hashed device ID is used only to count free AI scans, not for tracking. Only the code, the month and the number are stored, and the count is deleted automatically after 13 months.</p>
+<h2>AI reading of account lists, receipts and invoices (optional)</h2>
+<p>When you import a screenshot or photo of an account list, or scan a receipt or invoice, you can let AI read it. The app asks for permission first, and you can turn it off at any time on the import screen. Without permission, everything is read on your phone and nothing is sent.</p>
+<p>With permission, the picture, today's date, the currency, your country, the app's categories (as codes) and the account's column headings (only the headings, not their content) are sent through our server at Supabase (Ireland) to Anthropic (USA), which reads the entries with its AI model (Claude) and sends them back. The request goes through the Supabase server closest to you; neither we nor Supabase store the picture or the entries. Anthropic does not use data sent through its API to train its models, and deletes it within 30 days (<a href="https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data" class="ltr" rel="noopener">privacy.claude.com</a>).</p>
+<p>To keep the service within its limits, our server counts AI readings per device and day. The phone sends only a one-way code made from the random device ID, and the server makes a new code from it with a secret key before it is stored, so the count cannot be linked to you or your account. Only the code, the date and the number are stored, and the count is deleted automatically after 30 days.</p>
+<p>Only in the free version: for the limit on AI scans, the phone sends a one-way code made from the phone's ID, never the ID itself. The server makes a new code from it with a secret key and stores only that, the month, whether it is a test version, and the number. The hashed device ID is used only to count free AI scans, not for tracking, and the count is deleted automatically after 13 months. With Pro, no phone ID is sent.</p>
 </section>
     <section>
-<h2>Scanning receipts and bills</h2>
-<p>When you scan a receipt or bill, the picture is read on your phone, or by AI if you have said yes (see above). The picture is deleted as soon as it has been read, even if you cancel or something goes wrong. From the picture, only the store, date, amount and category are stored. KID numbers and account numbers are never stored.</p>
+<h2>Scanning receipts and invoices</h2>
+<p>When you scan a receipt or invoice, the picture is read on your phone, or by AI if you have said yes (see above). The picture is deleted as soon as it has been read, even if you cancel or something goes wrong. From the picture, only the store, date, amount and category are stored. KID and account numbers are never stored.</p>
 </section>
     <section>
 <h2>Crash reports</h2>
-<p>When the app crashes or an error occurs, a report is sent to Sentry (in the EU): what went wrong and where in the app, the app version, and the phone model and system version. Collection of personal data, such as IP address or user identity, is turned off. Reports are kept for at most 90 days and are used only to fix errors.</p>
+<p>When the app crashes or an error occurs, a report is sent to Sentry (EU, Germany): what went wrong and where in the app, what happened just before (without content from your budget), the app version, and the phone model and system version. Sentry does not store the IP address, and the reports contain no name, e-mail or account. They are kept for at most 90 days and are used only to fix errors.</p>
 </section>
     <section>
 <h2>App updates</h2>
-<p>The app checks for updates from Expo, the service that delivers them. As with any connection to the internet, Expo sees the phone’s IP address. No other data is sent.</p>
+<p>Each time it starts, the app asks Expo (USA), the service that delivers updates, whether there is a new one. Expo then receives the IP address, the platform (iOS or Android), the app's version and a random ID for the installation – nothing about you or your budget.</p>
 </section>
     <section>
 <h2>Buying Pro</h2>
-<p>Pro is bought in the App Store or Google Play. Apple or Google handles the payment under their own privacy policies; we never see your card details. RevenueCat keeps track of whether you have Pro, with an anonymous ID the app makes, or your account ID when you are signed in, so Pro follows your account.</p>
+<p>Pro is bought in the App Store or Google Play. Apple or Google handle the payment under their own privacy policies; we never see your card details.</p>
+<p>RevenueCat (USA) keeps track of whether you have Pro. The app contacts RevenueCat each time it starts, also in the free version, with an anonymous customer ID that RevenueCat creates, or your account ID when you are signed in, so Pro follows your account. RevenueCat receives the purchases and receipts from the store, the platform and the app's version. In test versions and for test purchases, the customer is marked as a test. The purchase history stays with the store and RevenueCat even if you delete your account, so your purchase is not lost.</p>
 </section>
     <section>
 <h2>Optional account and sync (Pro)</h2>
-<p>You can sign in with Apple, Google, Facebook (Meta) or e-mail. Sign-in is handled by Supabase on servers in Ireland. We then store your e-mail address, an account ID, your name if the provider shares it, your app language and, on test versions, a test flag. With Apple you can hide your e-mail address; we then only see Apple’s relay address.</p>
-<p>With Pro, your budget is synced to your account: accounts, entries, recurring items, budget, savings goals, your own categories, remembered vendors and the settings that follow you (payday, salary, budget). Each change is stored with when it was made and on which device. The data is encrypted in transit and at rest, and only your account can read it.</p>
-<p>Sign-in codes and links are sent by e-mail through Resend, with your address and language. To send each e-mail once, the server keeps only the message ID, type and status for 7 days, never the address.</p>
-<p>You can sign out at any time; the data stays on the phone. “Delete account” removes the account and all data stored with it on the server.</p>
+<p>You can sign in with Apple, Google, Facebook (Meta) or e-mail. Sign-in is handled by Supabase on servers in Ireland. We then store your e-mail address, an account ID, your name if the provider shares it, your app language and, in test versions, a test flag. With Apple you can hide your e-mail address; we then see only Apple's relay address.</p>
+<p>With Pro, your budget is synced to your account: accounts, entries, recurring items, budget, savings goals, your own categories, vendors the app remembers and the settings that follow you (payday, salary, budget). Each change is stored with when it was made and on which device. The data is encrypted in transit and at rest, and only your account can read it.</p>
+<p>Sign-in codes and links are sent by e-mail through Resend (USA), with your address and language. The link opens our website, hosted by Vercel, which passes you on to the app. To send each e-mail only once, our server keeps only the message ID, type and status for 7 days, never the address.</p>
+<p>You can sign out at any time; your data stays on the phone. «Delete account» removes the account and all data stored with it on our server. What stays: the purchase history with the store and RevenueCat, the counts with no name or account (deleted after 30 days and 13 months) and the services' own logs under their terms.</p>
 </section>
     <section>
 <h2>Widget and reminders</h2>
-<p>The widget shows numbers from the data on your phone, and reminders for recurring items are set up on your phone. Nothing is sent for either.</p>
+<p>The widget shows figures from the data on your phone, and reminders about recurring items are set up on your phone. Nothing is sent for either.</p>
 </section>
     <section>
 <h2>Who we share data with</h2>
-<ul><li>Supabase (Ireland, EU): sign-in, sync for Pro, and the server for AI reading and its count.</li><li>Anthropic (USA): AI reading, only with your permission.</li><li>Resend (USA): e-mails with sign-in codes and links.</li><li>RevenueCat (USA): purchases of Pro.</li><li>Sentry (EU): crash reports without personal data.</li><li>Expo (USA): app updates.</li><li>Apple, Google and Meta: the App Store, Google Play and signing in with them, when you choose to.</li></ul>
+<ul><li>Supabase (Ireland, EU): sign-in, sync for Pro, the server for AI reading and the counts.</li><li>Anthropic (USA): AI reading, only with your permission.</li><li>Resend (USA): e-mails with sign-in codes and links.</li><li>RevenueCat (USA): Pro status and purchases.</li><li>Sentry (EU, Germany): crash reports, without IP address.</li><li>Expo (USA): app updates.</li><li>Vercel (USA): our website, including the page the sign-in link opens.</li><li>Apple, Google and Meta: the App Store, Google Play, signing in with them when you choose to, and the phone's backup.</li><li>Exchange rates: our server fetches rates from Frankfurter and ExchangeRate-API. No data about you is sent there.</li></ul>
 <p>Where data goes to the USA, the providers use the EU standard contractual clauses or the EU–US Data Privacy Framework. We never sell data, and the app has no ads and no tracking.</p>
 </section>
     <section>
 <h2>Legal basis</h2>
-<ul><li>To provide the app you use (GDPR article 6(1)(b)).</li><li>Your consent for AI reading (article 6(1)(a)). You can withdraw it at any time.</li><li>Our legitimate interest in fixing errors and keeping the service within its limits (article 6(1)(f)).</li></ul>
+<ul><li>To provide the app you use (GDPR Article 6(1)(b)): account and sync (Supabase), signing in with Apple, Google, Facebook or e-mail (Resend), and buying Pro (App Store, Google Play and RevenueCat).</li><li>Your consent to AI reading (Article 6(1)(a)), through Supabase to Anthropic. You can withdraw it at any time.</li><li>Our legitimate interest (Article 6(1)(f)) in fixing errors (Sentry), delivering app updates (Expo), keeping the service within its limits (the counts) and running the website (Vercel).</li></ul>
 </section>
     <section>
 <h2>How long data is kept</h2>
-<ul><li>On the phone: until you delete it in the app or uninstall the app.</li><li>Your account and synced data: until you delete the account in the app.</li><li>Pictures and text for AI reading: not stored by us.</li><li>CSV and Excel files you import: not stored. Only the entries you save and the layout of the file’s columns remain.</li><li>Count of AI readings: 30 days.</li><li>Count of free AI scans (hashed device ID, month and number): 13 months.</li><li>Log of sign-in e-mails (no address): 7 days.</li><li>Crash reports: at most 90 days.</li></ul>
+<ul><li>On your phone: until you delete it in the app or uninstall the app.</li><li>Your account and synced data: until you delete your account in the app.</li><li>Pictures for AI reading: not stored by us. At Anthropic: deleted within 30 days, except requests flagged for misuse (<a href="https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data" class="ltr" rel="noopener">privacy.claude.com</a>).</li><li>CSV and Excel files you import: not stored. Only the entries you save and the layout of the file's columns remain.</li><li>Count of AI readings (one-way code, date and number): 30 days.</li><li>Count of free AI scans (hashed device ID, month and number): 13 months.</li><li>Log of sign-in e-mails (without the address): 7 days.</li><li>Crash reports: at most 90 days.</li><li>Sign-in e-mails at Resend: 30 days (<a href="https://resend.com/security/gdpr" class="ltr" rel="noopener">resend.com</a>). Supabase's own logs and backups: at most 7 days (<a href="https://supabase.com/pricing" class="ltr" rel="noopener">supabase.com</a>). RevenueCat (<a href="https://www.revenuecat.com/privacy" class="ltr" rel="noopener">revenuecat.com</a>), Expo (<a href="https://expo.dev/privacy" class="ltr" rel="noopener">expo.dev</a>) and Vercel (<a href="https://vercel.com/legal/privacy-policy" class="ltr" rel="noopener">vercel.com</a>): under their terms, which give no fixed period.</li><li>Backup on your phone: with Apple or Google, under their terms, until you delete it.</li></ul>
 </section>
     <section>
 <h2>Your rights</h2>
-<p>You can see, correct and export all your data in the app (Me → Export data, free for everyone), and delete it (Me → Delete all data). You can object to processing and withdraw your consent for AI reading at any time.</p>
+<p>You can see, correct and export all your data in the app (Me → Export data, free for everyone), and delete it (Me → Delete all data on this phone). You can object to the processing and withdraw your consent to AI reading at any time.</p>
 <p>If you have questions, write to <a href="mailto:kontakt@nordicdigitalapp.no" class="ltr">kontakt@nordicdigitalapp.no</a>. The supervisory authority is the Norwegian Data Protection Authority (Datatilsynet), and you can complain to it. If you live in the EU/EEA, you can also complain to the data protection authority in your own country.</p>
 </section>
     <section>
@@ -133,7 +138,7 @@
 </section>
     <section>
 <h2>Changes</h2>
-<p>If we change this policy, we update this page and the date at the top. If the change matters for how your data is used, we tell you in the app.</p>
+<p>If we change this policy, we update this page and the date at the top. If the change matters for how your data is used, we let you know in the app.</p>
 </section>
   </main>
   <footer class="site">

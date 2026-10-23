@@ -3,36 +3,50 @@
   "server": "il nostro server presso Supabase",
   "serverRegion": "il nostro server presso Supabase ({{region}})",
   "privacy": {
-    "intro": "Questa informativa spiega cosa salva Saldo Pocket, cosa invia e a chi, e cosa puoi fare. In breve: il tuo budget resta sul telefono.",
+    "intro": "Questa informativa spiega cosa salva Saldo Pocket, cosa invia e a chi, per quanto tempo conserva i dati e cosa puoi fare. In breve: il tuo budget resta sul telefono.",
     "sections": [
       {
         "heading": "Chi è il titolare",
-        "body": ["{{company}} (n. registro {{orgNumber}}, {{country}}) è titolare del trattamento descritto qui. Contattaci a {{email}}."]
+        "body": [
+          "{{company}} (n. registro {{orgNumber}}, {{address}}) è titolare del trattamento descritto qui. Contattaci a {{email}}."
+        ]
       },
       {
         "heading": "In breve",
         "list": [
           "Il tuo budget è salvato sul telefono. Senza account non possiamo vederlo.",
-          "L’account è facoltativo (Apple, Google, Facebook o e-mail). Con account e Pro il budget viene sincronizzato con il nostro server nell’UE, così puoi usarlo su più dispositivi.",
+          "L’account è facoltativo (Apple, Google, Facebook o e-mail). Con account e Pro il budget viene sincronizzato con il nostro server nell’UE (Irlanda), così puoi usarlo su più dispositivi.",
           "Non c’è alcun collegamento bancario.",
           "I file CSV ed Excel della tua banca vengono letti solo sul telefono. Il file in sé non viene mai salvato, copiato né inviato.",
-          "Nulla del tuo budget lascia il telefono, a meno che tu non sincronizzi con Pro o scelga la lettura con IA di un estratto conto, uno scontrino o una fattura.",
-          "I rapporti sugli arresti anomali non contengono dati personali.",
+          "L’app invia il tuo budget al nostro server solo quando sincronizzi con Pro, e le immagini per la lettura con IA solo se hai dato il consenso. Se sul telefono è attivo il backup, Apple (iCloud) o Google (il tuo account Google) vi include i dati dell’app.",
+          "I rapporti sugli arresti anomali non contengono nome, e-mail, account o indirizzo IP.",
           "Puoi esportare ed eliminare tutto nell’app, gratis."
         ]
       },
       {
         "heading": "Salvato sul tuo telefono",
-        "body": ["L’app salva questi dati nella propria memoria sul telefono. Non vengono inviati a noi e vengono eliminati quando elimini tutti i dati nell’app o la disinstalli:"],
+        "body": [
+          "L’app salva quanto segue nella propria memoria sul telefono. Non viene inviato a noi e viene eliminato quando elimini tutti i dati nell’app o la disinstalli:"
+        ],
         "list": [
           "I conti che crei (nomi scelti da te, saldo e valuta; non conti bancari).",
           "I tuoi movimenti: data, importo, valuta, categoria, esercente e una nota facoltativa.",
           "Movimenti fissi, obiettivi di risparmio, categorie personali e la categoria ricordata per ogni esercente.",
           "Impostazioni: giorno di paga, budget mensile, lingua e valuta, e se consenti la lettura con IA.",
-          "Un ID casuale del dispositivo, usato solo per contare le letture con IA (vedi sotto).",
+          "Un ID casuale del dispositivo. Lascia il telefono solo come codice a senso unico, per contare le letture con IA (vedi sotto).",
+          "Se hai effettuato l’accesso: la sessione di accesso, nella memoria protetta del telefono (il portachiavi su iPhone, Android Keystore). Non viene mai inclusa in un backup.",
           "Le immagini che scegli di conservare dopo un’importazione."
         ],
-        "after": ["I codici di pagamento non vengono mai salvati, e nemmeno il numero di conto completo. L’app può salvare le ultime quattro cifre del numero di conto per riconoscere il conto."]
+        "after": [
+          "I codici di pagamento non vengono mai salvati, e nemmeno il numero di conto completo. L’app può salvare le ultime quattro cifre del numero di conto per riconoscere il conto."
+        ]
+      },
+      {
+        "heading": "Backup del telefono",
+        "body": [
+          "Se il backup è attivo, il telefono vi include i dati dell’app: su Android nel backup del tuo account Google, su iPhone in iCloud. Così il budget torna su un nuovo telefono. Sono Apple e Google a conservare il backup, secondo i propri termini, e lo attivi o disattivi nelle impostazioni del telefono.",
+          "La sessione di accesso e la memoria protetta non vengono mai incluse, quindi su un nuovo telefono dovrai accedere di nuovo."
+        ]
       },
       {
         "heading": "Importazione di file CSV ed Excel",
@@ -48,59 +62,74 @@
         "heading": "Lettura con IA di estratti conto, scontrini e fatture (facoltativa)",
         "body": [
           "Quando importi uno screenshot o una foto di un estratto conto, o scansioni uno scontrino o una fattura, puoi lasciarlo leggere all’IA. L’app ti chiede prima il permesso e puoi disattivarlo in qualsiasi momento nella schermata di importazione. Senza permesso, tutto viene letto sul telefono e nulla viene inviato.",
-          "Con il permesso, l’immagine (o il testo letto da essa), la valuta, il tuo paese, la data di oggi, l’elenco delle categorie dell’app e l’ID del dispositivo vengono inviati tramite {{server}} ad Anthropic, che legge le righe con il suo modello di IA (Claude) e le restituisce. Né noi né Supabase salviamo l’immagine, il testo o le righe. Anthropic non usa i dati inviati tramite la sua API per addestrare i propri modelli e li elimina dopo un tempo limitato secondo i propri termini.",
-          "Per mantenere il servizio nei suoi limiti (un numero limitato di letture per dispositivo), il nostro server salva l’ID del dispositivo, la data e il numero di letture, e nient’altro. Questi conteggi vengono eliminati automaticamente dopo 30 giorni.",
-          "Per il limite di scansioni con IA della versione gratuita, il nostro server conta le scansioni al mese con un ID dispositivo con hash: un codice a senso unico creato dall’ID del telefono con una chiave segreta, mai l’ID stesso. L’ID dispositivo con hash serve solo a contare le scansioni gratuite con IA, non al tracciamento. Si conservano solo il codice, il mese e il numero, e il conteggio viene cancellato automaticamente dopo 13 mesi."
+          "Con il permesso, l’immagine, la data di oggi, la valuta, il tuo paese, le categorie dell’app (come codici) e le intestazioni delle colonne del conto (solo le intestazioni, non il contenuto) vengono inviate tramite {{server}} ad Anthropic (USA), che legge i movimenti con il suo modello di IA (Claude) e li restituisce. La richiesta passa per il server Supabase più vicino a te; né noi né Supabase salviamo l’immagine o i movimenti. Anthropic non usa i dati inviati tramite la sua API per addestrare i propri modelli e li elimina entro {{anthropicDays}} giorni ({{linkAnthropic}}).",
+          "Per mantenere il servizio nei suoi limiti, il nostro server conta le letture con IA per dispositivo e per giorno. Il telefono invia solo un codice a senso unico ricavato dall’ID casuale del dispositivo, e il server ne ricava un nuovo codice con una chiave segreta prima di salvarlo, così il conteggio non può essere collegato a te o al tuo account. Si salvano solo il codice, la data e il numero, e il conteggio viene eliminato automaticamente dopo {{aiCountDays}} giorni.",
+          "Solo nella versione gratuita: per il limite di scansioni con IA, il telefono invia un codice a senso unico ricavato dall’ID del telefono, mai l’ID stesso. Il server ne ricava un nuovo codice con una chiave segreta e salva solo quello, il mese, se si tratta di una versione di prova e il numero. L’ID dispositivo con hash serve solo a contare le scansioni gratuite con IA, non al tracciamento, e il conteggio viene cancellato automaticamente dopo {{scanCountMonths}} mesi. Con Pro non viene inviato alcun ID del telefono."
         ]
       },
       {
         "heading": "Scansione di scontrini e fatture",
-        "body": ["Quando scansioni uno scontrino o una fattura, l’immagine viene letta sul telefono, oppure con l’IA se hai dato il consenso (vedi sopra). L’immagine viene eliminata appena letta, anche se annulli o qualcosa va storto. Dall’immagine vengono salvati solo negozio, data, importo e categoria. Codici di pagamento e numeri di conto non vengono mai salvati."]
+        "body": [
+          "Quando scansioni uno scontrino o una fattura, l’immagine viene letta sul telefono, oppure con l’IA se hai dato il consenso (vedi sopra). L’immagine viene eliminata appena letta, anche se annulli o qualcosa va storto. Dall’immagine vengono salvati solo negozio, data, importo e categoria. Codici di pagamento e numeri di conto non vengono mai salvati."
+        ]
       },
       {
         "heading": "Rapporti sugli arresti anomali",
-        "body": ["Quando l’app si arresta in modo anomalo o si verifica un errore, viene inviato un rapporto a Sentry (nell’UE): cosa è andato storto e dove nell’app, la versione dell’app, il modello del telefono e la versione del sistema. La raccolta di dati personali, come l’indirizzo IP o l’identità dell’utente, è disattivata. I rapporti sono conservati al massimo 90 giorni e usati solo per correggere gli errori."]
+        "body": [
+          "Quando l’app si arresta in modo anomalo o si verifica un errore, viene inviato un rapporto a Sentry (UE, Germania): cosa è andato storto e dove nell’app, cosa è successo subito prima (senza contenuti del tuo budget), la versione dell’app, il modello del telefono e la versione del sistema. Sentry non salva l’indirizzo IP, e i rapporti non contengono nome, e-mail o account. Sono conservati al massimo {{crashMaxDays}} giorni e usati solo per correggere gli errori."
+        ]
       },
       {
         "heading": "Aggiornamenti dell’app",
-        "body": ["L’app cerca aggiornamenti presso Expo, il servizio che li fornisce. Come per qualsiasi connessione a internet, Expo vede l’indirizzo IP del telefono. Non vengono inviati altri dati."]
+        "body": [
+          "A ogni avvio l’app chiede a Expo (USA), il servizio che fornisce gli aggiornamenti, se ce n’è uno nuovo. Expo riceve così l’indirizzo IP, la piattaforma (iOS o Android), la versione dell’app e un ID casuale dell’installazione: nulla su di te o sul tuo budget."
+        ]
       },
       {
         "heading": "Acquisto di Pro",
-        "body": ["Pro si acquista sull’App Store o su Google Play. Apple o Google gestiscono il pagamento secondo le proprie informative sulla privacy; non vediamo mai i dati della tua carta. RevenueCat tiene traccia di chi ha Pro con un ID anonimo creato dall’app, o con l’ID del tuo account quando hai effettuato l’accesso, così Pro segue il tuo account."]
+        "body": [
+          "Pro si acquista sull’App Store o su Google Play. Apple o Google gestiscono il pagamento secondo le proprie informative sulla privacy; non vediamo mai i dati della tua carta.",
+          "RevenueCat (USA) tiene traccia del tuo stato Pro. L’app contatta RevenueCat a ogni avvio, anche nella versione gratuita, con un ID cliente anonimo creato da RevenueCat, o con l’ID del tuo account quando hai effettuato l’accesso, così Pro segue il tuo account. RevenueCat riceve gli acquisti e le ricevute dallo store, la piattaforma e la versione dell’app. Nelle versioni di prova e per gli acquisti di prova, il cliente viene contrassegnato come test. La cronologia acquisti resta presso lo store e RevenueCat anche se elimini l’account, così il tuo acquisto non va perso."
+        ]
       },
       {
         "heading": "Account facoltativo e sincronizzazione (Pro)",
         "body": [
           "Puoi accedere con Apple, Google, Facebook (Meta) o e-mail. L’accesso è gestito da Supabase su server in {{region}}. Salviamo quindi il tuo indirizzo e-mail, un ID account, il tuo nome se il fornitore lo condivide, la lingua dell’app e, nelle versioni di prova, un indicatore di test. Con Apple puoi nascondere l’indirizzo e-mail; vediamo allora solo l’indirizzo di inoltro di Apple.",
           "Con Pro il budget viene sincronizzato con il tuo account: conti, movimenti, movimenti fissi, budget, obiettivi di risparmio, categorie personali, esercenti memorizzati e le impostazioni che ti seguono (giorno di paga, stipendio, budget). Ogni modifica viene salvata indicando quando e su quale dispositivo è stata fatta. I dati sono cifrati durante il trasferimento e l’archiviazione, e solo il tuo account può leggerli.",
-          "Codici e link di accesso sono inviati via e-mail tramite Resend, con il tuo indirizzo e la tua lingua. Per inviare ogni e-mail una sola volta, il server conserva solo ID del messaggio, tipo e stato per 7 giorni, mai l’indirizzo.",
-          "Puoi uscire in qualsiasi momento; i dati restano sul telefono. «Elimina account» rimuove l’account e tutti i dati salvati con esso sul server."
+          "Codici e link di accesso sono inviati via e-mail tramite Resend (USA), con il tuo indirizzo e la tua lingua. Il link apre il nostro sito web, ospitato da Vercel, che ti rimanda all’app. Per inviare ogni e-mail una sola volta, il nostro server conserva solo ID del messaggio, tipo e stato per {{emailLogDays}} giorni, mai l’indirizzo.",
+          "Puoi uscire in qualsiasi momento; i dati restano sul telefono. «Elimina account» rimuove l’account e tutti i dati salvati con esso sul nostro server. Cosa resta: la cronologia acquisti presso lo store e RevenueCat, i conteggi senza nome né account (eliminati dopo {{aiCountDays}} giorni e {{scanCountMonths}} mesi) e i log dei servizi stessi, secondo i loro termini."
         ]
       },
       {
         "heading": "Widget e promemoria",
-        "body": ["Il widget mostra numeri dai dati sul tuo telefono, e i promemoria dei movimenti fissi sono programmati sul telefono. In nessuno dei due casi viene inviato nulla."]
+        "body": [
+          "Il widget mostra numeri dai dati sul tuo telefono, e i promemoria dei movimenti fissi sono programmati sul telefono. In nessuno dei due casi viene inviato nulla."
+        ]
       },
       {
         "heading": "Con chi condividiamo i dati",
         "list": [
-          "Supabase (Irlanda, UE): accesso, sincronizzazione per Pro e server per la lettura con IA e il relativo conteggio.",
+          "Supabase (Irlanda, UE): accesso, sincronizzazione per Pro, server per la lettura con IA e i conteggi.",
           "Anthropic (USA): lettura con IA, solo con il tuo permesso.",
           "Resend (USA): e-mail con codici e link di accesso.",
-          "RevenueCat (USA): acquisti di Pro.",
-          "Sentry (UE): rapporti sugli arresti anomali senza dati personali.",
+          "RevenueCat (USA): stato Pro e acquisti.",
+          "Sentry (UE, Germania): rapporti sugli arresti anomali, senza indirizzo IP.",
           "Expo (USA): aggiornamenti dell’app.",
-          "Apple, Google e Meta: App Store, Google Play e l’accesso con loro, se lo scegli."
+          "Vercel (USA): il nostro sito web, inclusa la pagina aperta dal link di accesso.",
+          "Apple, Google e Meta: App Store, Google Play, l’accesso con loro se lo scegli, e il backup del telefono.",
+          "Tassi di cambio: il nostro server ottiene i tassi da Frankfurter ed ExchangeRate-API. A loro non viene inviato alcun dato su di te."
         ],
-        "after": ["Quando i dati vanno negli Stati Uniti, i fornitori usano le clausole contrattuali tipo dell’UE o l’EU–US Data Privacy Framework. Non vendiamo mai dati e l’app non ha pubblicità né tracciamento."]
+        "after": [
+          "Quando i dati vanno negli Stati Uniti, i fornitori usano le clausole contrattuali tipo dell’UE o l’EU–US Data Privacy Framework. Non vendiamo mai dati e l’app non ha pubblicità né tracciamento."
+        ]
       },
       {
         "heading": "Base giuridica",
         "list": [
-          "Fornire l’app che usi (articolo 6, paragrafo 1, lettera b del GDPR).",
-          "Il tuo consenso alla lettura con IA (articolo 6, paragrafo 1, lettera a). Puoi revocarlo in qualsiasi momento.",
-          "Il nostro legittimo interesse a correggere gli errori e mantenere il servizio nei suoi limiti (articolo 6, paragrafo 1, lettera f)."
+          "Fornire l’app che usi (art. 6, par. 1, lett. b) GDPR): account e sincronizzazione (Supabase), accesso con Apple, Google, Facebook o e-mail (Resend) e acquisto di Pro (App Store, Google Play e RevenueCat).",
+          "Il tuo consenso alla lettura con IA (art. 6, par. 1, lett. a) GDPR), tramite Supabase verso Anthropic. Puoi revocarlo in qualsiasi momento.",
+          "Il nostro legittimo interesse (art. 6, par. 1, lett. f) GDPR) a correggere gli errori (Sentry), fornire gli aggiornamenti dell’app (Expo), mantenere il servizio nei suoi limiti (i conteggi) e gestire il sito web (Vercel)."
         ]
       },
       {
@@ -108,28 +137,34 @@
         "list": [
           "Sul telefono: finché non li elimini nell’app o disinstalli l’app.",
           "Il tuo account e i dati sincronizzati: finché non elimini l’account nell’app.",
-          "Immagini e testo per la lettura con IA: non conservati da noi.",
+          "Immagini per la lettura con IA: non conservate da noi. Presso Anthropic: eliminate entro {{anthropicDays}} giorni, salvo le richieste segnalate per abuso ({{linkAnthropic}}).",
           "File CSV ed Excel che importi: non conservati. Restano solo i movimenti che salvi e la disposizione delle colonne del file.",
-          "Conteggio delle letture con IA: 30 giorni.",
-          "Conteggio delle scansioni gratuite con IA (ID dispositivo con hash, mese e numero): 13 mesi.",
-          "Registro delle e-mail di accesso (senza indirizzo): 7 giorni.",
-          "Rapporti sugli arresti anomali: al massimo 90 giorni."
+          "Conteggio delle letture con IA (codice a senso unico, data e numero): {{aiCountDays}} giorni.",
+          "Conteggio delle scansioni gratuite con IA (ID dispositivo con hash, mese e numero): {{scanCountMonths}} mesi.",
+          "Registro delle e-mail di accesso (senza indirizzo): {{emailLogDays}} giorni.",
+          "Rapporti sugli arresti anomali: al massimo {{crashMaxDays}} giorni.",
+          "E-mail di accesso presso Resend: {{resendDays}} giorni ({{linkResend}}). Log e backup propri di Supabase: al massimo {{supabaseLogDays}} giorni ({{linkSupabase}}). RevenueCat ({{linkRevenueCat}}), Expo ({{linkExpo}}) e Vercel ({{linkVercel}}): secondo i loro termini, che non indicano un periodo fisso.",
+          "Backup del telefono: presso Apple o Google, secondo i loro termini, finché non lo elimini."
         ]
       },
       {
         "heading": "I tuoi diritti",
         "body": [
-          "Puoi vedere, correggere ed esportare tutti i tuoi dati nell’app (Io → Esporta dati, gratis per tutti) ed eliminarli (Io → Elimina tutti i dati). Puoi opporti al trattamento e revocare il consenso alla lettura con IA in qualsiasi momento.",
+          "Puoi vedere, correggere ed esportare tutti i tuoi dati nell’app ({{menuMe}} → {{menuExport}}, gratis per tutti) ed eliminarli ({{menuMe}} → {{menuDelete}}). Puoi opporti al trattamento e revocare il consenso alla lettura con IA in qualsiasi momento.",
           "Per domande scrivi a {{email}}. L’autorità di controllo è l’autorità norvegese per la protezione dei dati (Datatilsynet), a cui puoi presentare reclamo. Se vivi nell’UE/SEE, puoi presentare reclamo anche all’autorità per la protezione dei dati del tuo paese."
         ]
       },
       {
         "heading": "Minori",
-        "body": ["Saldo Pocket non è pensata per i minori di 13 anni, e non trattiamo consapevolmente i loro dati."]
+        "body": [
+          "Saldo Pocket non è pensata per i minori di 13 anni, e non trattiamo consapevolmente i loro dati."
+        ]
       },
       {
         "heading": "Modifiche",
-        "body": ["Se modifichiamo questa informativa, aggiorniamo questa pagina e la data in alto. Se la modifica è rilevante per l’uso dei tuoi dati, te lo comunicheremo nell’app."]
+        "body": [
+          "Se modifichiamo questa informativa, aggiorniamo questa pagina e la data in alto. Se la modifica è rilevante per l’uso dei tuoi dati, te lo comunicheremo nell’app."
+        ]
       }
     ]
   },
@@ -140,35 +175,44 @@
         "heading": "Elimina tutto nell’app",
         "steps": [
           "Apri Saldo Pocket.",
-          "Vai su Io.",
-          "Tocca Elimina tutti i dati.",
-          "Tocca Elimina tutto."
+          "Vai su «{{menuMe}}».",
+          "Tocca «{{menuDelete}}».",
+          "Tocca «{{menuDeleteConfirm}}»."
         ],
         "body": [
-          "Così elimini tutto ciò che l’app conserva sul tuo telefono: conti, movimenti, movimenti fissi, obiettivi, categorie, esercenti, impostazioni, immagini e file salvati, l’ID del dispositivo e le scelte di lingua e valuta. L’app riparte poi come nuova.",
+          "Così elimini tutto ciò che l’app conserva sul tuo telefono: conti, movimenti, movimenti fissi, obiettivi, categorie, esercenti, impostazioni, la sessione di accesso, immagini e file salvati, i dati del widget, l’ID del dispositivo e le scelte di lingua e valuta. L’app riparte poi come nuova.",
           "Il conteggio di scansioni e importazioni di file gratuite resta – solo numeri, niente su di te o sui tuoi dati – sul telefono e sul nostro server, così il limite gratuito continua a valere.",
-          "Non si può annullare. Se vuoi una copia, esporta prima i tuoi dati in Io → Esporta dati. È gratis."
+          "Non si può annullare. Se vuoi una copia, esporta prima i tuoi dati in {{menuMe}} → {{menuExport}}. È gratis."
         ]
       },
       {
         "heading": "Disinstallare l’app",
-        "body": ["Disinstallando Saldo Pocket vengono eliminati anche tutti i suoi dati dal telefono.", "Eccezione: il conteggio di scansioni e importazioni di file gratuite (solo numeri) può restare nel portachiavi del telefono (iPhone) o nel backup di Android, così il limite gratuito vale anche dopo una nuova installazione."]
+        "body": [
+          "Disinstallando Saldo Pocket vengono eliminati anche tutti i suoi dati dal telefono.",
+          "Eccezione: il conteggio di scansioni e importazioni di file gratuite (solo numeri) può restare nel portachiavi del telefono (iPhone) o nel backup di Android, così il limite gratuito vale anche dopo una nuova installazione. Se sul telefono è attivo il backup, una copia dei dati dell’app resta presso Apple o Google finché non la elimini lì."
+        ]
       },
       {
         "heading": "Cosa resta sul nostro server",
-        "body": ["Se hai usato la lettura con IA, il nostro server conserva un conteggio delle letture per ID del dispositivo e giorno, senza alcun contenuto. Viene eliminato automaticamente dopo 30 giorni. L’ID è casuale e viene eliminato dal telefono insieme a tutto il resto, quindi il conteggio non può essere collegato a te.", "Le scansioni gratuite con IA sono contate anche al mese con un ID dispositivo con hash (un codice a senso unico, mai l’ID stesso). Serve solo a contare le scansioni gratuite con IA, non al tracciamento, e il conteggio viene cancellato automaticamente dopo 13 mesi."]
+        "body": [
+          "Se hai usato la lettura con IA, il nostro server conserva un conteggio delle letture per dispositivo e per giorno, salvato come codice a senso unico e senza alcun contenuto. Viene eliminato automaticamente dopo {{aiCountDays}} giorni e non può essere collegato a te.",
+          "Le scansioni gratuite con IA sono contate anche al mese con un ID dispositivo con hash (un codice a senso unico, mai l’ID stesso). L’ID dispositivo con hash serve solo a contare le scansioni gratuite con IA, non al tracciamento, e il conteggio viene cancellato automaticamente dopo {{scanCountMonths}} mesi.",
+          "Il tuo acquisto e la cronologia acquisti restano presso l’App Store o Google Play e RevenueCat, così puoi ripristinare Pro. I servizi che usiamo hanno i propri log, che vengono eliminati secondo i loro termini."
+        ]
       },
       {
         "heading": "Eliminare il tuo account",
         "body": [
           "Se usi l’app senza accedere, i tuoi dati si trovano solo sul telefono. Vengono eliminati quando elimini tutti i dati nell’app o quando rimuovi l’app dal telefono.",
-          "Se hai effettuato l’accesso, quando elimini il tuo account nell’app vengono eliminati anche i tuoi dati nel cloud: l’account, tutto ciò che vi è sincronizzato e tutto ciò che si trova sul telefono da cui elimini. Se hai effettuato l’accesso con Facebook, viene eliminato anche ciò che abbiamo ricevuto da Facebook. Puoi inoltre rimuovere Saldo Pocket dalle impostazioni di Facebook.",
+          "Se hai effettuato l’accesso, quando elimini il tuo account nell’app vengono eliminati anche i tuoi dati nel cloud: l’account, tutto ciò che vi è sincronizzato e tutto ciò che si trova sul telefono da cui elimini. Se hai effettuato l’accesso con Facebook, viene eliminato anche ciò che abbiamo ricevuto da Facebook. Puoi inoltre rimuovere Saldo Pocket dalle impostazioni di Facebook. Quello che resta è indicato sopra.",
           "Se elimini solo i dati sul telefono, esci dall’account, ma l’account e i tuoi dati nel cloud restano. I dati sugli altri tuoi dispositivi non vengono eliminati automaticamente; eliminali dall’app su quei dispositivi. L’eliminazione non annulla un abbonamento; puoi farlo nell’App Store o su Google Play."
         ]
       },
       {
         "heading": "Se non hai più l’app",
-        "body": ["Scrivi a {{email}} con oggetto «Elimina dati Saldo Pocket». Rispondiamo entro 30 giorni. Poiché non c’è un account, di solito non abbiamo nulla salvato su di te, e te lo confermeremo."]
+        "body": [
+          "Scrivi a {{email}} con oggetto «Elimina dati Saldo Pocket». Rispondiamo entro 30 giorni. Se usavi l’app senza accedere, di solito non abbiamo nulla salvato su di te, e te lo confermeremo. Se avevi un account, indica l’indirizzo e-mail con cui accedevi: elimineremo l’account e i dati nel cloud e te lo confermeremo."
+        ]
       }
     ]
   },

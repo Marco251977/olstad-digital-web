@@ -3,36 +3,50 @@
   "server": "vår server hos Supabase",
   "serverRegion": "vår server hos Supabase ({{region}})",
   "privacy": {
-    "intro": "Den här policyn förklarar vad Saldo Pocket sparar, vad den skickar och till vem, och vad du kan göra åt det. Kortversionen: din budget stannar på telefonen.",
+    "intro": "Den här policyn förklarar vad Saldo Pocket sparar, vad den skickar och till vem, hur länge det sparas och vad du kan göra åt det. Kortversionen: din budget stannar på telefonen.",
     "sections": [
       {
         "heading": "Vem som är ansvarig",
-        "body": ["{{company}} (org.nr {{orgNumber}}, {{country}}) är personuppgiftsansvarig för behandlingen som beskrivs här. Kontakta oss på {{email}}."]
+        "body": [
+          "{{company}} (org.nr {{orgNumber}}, {{address}}) är personuppgiftsansvarig för behandlingen som beskrivs här. Kontakta oss på {{email}}."
+        ]
       },
       {
         "heading": "I korthet",
         "list": [
           "Din budget sparas på din telefon. Utan konto kan vi inte se den.",
-          "Ett konto är valfritt (Apple, Google, Facebook eller e-post). Med konto och Pro synkas budgeten till vår server i EU så att du kan använda den på flera enheter.",
+          "Ett konto är valfritt (Apple, Google, Facebook eller e-post). Med konto och Pro synkas budgeten till vår server i EU (Irland) så att du kan använda den på flera enheter.",
           "Det finns ingen bankkoppling.",
           "CSV- och Excel-filer från banken läses bara på telefonen. Själva filen sparas, kopieras eller skickas aldrig.",
-          "Inget från din budget lämnar telefonen om du inte synkar med Pro eller väljer AI-läsning av en kontolista, ett kvitto eller en faktura.",
-          "Kraschrapporter innehåller inga personuppgifter.",
+          "Appen skickar din budget till vår server bara när du synkar med Pro, och bilder för AI-läsning bara när du har sagt ja. Har du säkerhetskopiering påslagen på telefonen tar Apple (iCloud) eller Google (ditt Google-konto) med appens data i den.",
+          "Kraschrapporter innehåller inte namn, e-post, konto eller IP-adress.",
           "Du kan exportera allt och radera allt i appen, gratis."
         ]
       },
       {
         "heading": "Sparat på din telefon",
-        "body": ["Appen sparar detta i sin egen lagring på telefonen. Det skickas inte till oss, och det raderas när du raderar alla data i appen eller avinstallerar den:"],
+        "body": [
+          "Appen sparar detta i sin egen lagring på telefonen. Det skickas inte till oss, och det raderas när du raderar alla data i appen eller avinstallerar den:"
+        ],
         "list": [
           "Kontona du skapar (namn du väljer, saldo och valuta; inte bankkonton).",
           "Dina poster: datum, belopp, valuta, kategori, leverantör och en valfri anteckning.",
           "Fasta poster, sparmål, egna kategorier och kategorin appen kommer ihåg för varje leverantör.",
           "Inställningar: lönedag, månadsbudget, språk och valuta, och om du tillåter AI-läsning.",
-          "Ett slumpmässigt enhets-ID som bara används för att räkna AI-läsningar (se nedan).",
+          "Ett slumpmässigt enhets-ID. Det lämnar bara telefonen som en envägskod, för att räkna AI-läsningar (se nedan).",
+          "När du är inloggad: inloggningen, i telefonens säkra lagring (nyckelringen på iPhone, Android Keystore). Den tas aldrig med i en säkerhetskopia.",
           "Bilder du väljer att behålla efter en import."
         ],
-        "after": ["OCR-nummer sparas aldrig, och inte heller hela kontonumret. Appen kan spara de fyra sista siffrorna i kontonumret för att känna igen kontot."]
+        "after": [
+          "OCR-nummer sparas aldrig, och inte heller hela kontonumret. Appen kan spara de fyra sista siffrorna i kontonumret för att känna igen kontot."
+        ]
+      },
+      {
+        "heading": "Säkerhetskopia på telefonen",
+        "body": [
+          "Har du slagit på säkerhetskopiering tar telefonen med appens data i den: på Android i säkerhetskopian på ditt Google-konto, på iPhone i iCloud. Då kommer budgeten tillbaka på en ny telefon. Det är Apple och Google som sparar säkerhetskopian, enligt sina villkor, och du slår på och av den i telefonens inställningar.",
+          "Inloggningen och den säkra lagringen tas aldrig med, så på en ny telefon loggar du in igen."
+        ]
       },
       {
         "heading": "Import av CSV- och Excel-filer",
@@ -48,59 +62,74 @@
         "heading": "AI-läsning av kontolistor, kvitton och fakturor (valfritt)",
         "body": [
           "När du importerar en skärmbild eller ett foto av en kontolista, eller skannar ett kvitto eller en faktura, kan du låta AI läsa den. Appen frågar om lov först, och du kan stänga av det när som helst på importskärmen. Utan lov läses allt på telefonen, och ingenting skickas.",
-          "Med lov skickas bilden (eller texten som lästs från den), valutan, ditt land, dagens datum, appens kategorilista och enhets-ID:t via {{server}} till Anthropic, som läser raderna med sin AI-modell (Claude) och skickar tillbaka dem. Varken vi eller Supabase sparar bilden, texten eller raderna. Anthropic använder inte data som skickas via deras API för att träna sina modeller, och raderar dem efter en begränsad tid enligt sina egna villkor.",
-          "För att hålla tjänsten inom sina gränser (ett begränsat antal läsningar per enhet) sparar vår server enhets-ID:t, datumet och antalet läsningar, och inget annat. Uppgifterna raderas automatiskt efter 30 dagar.",
-          "För gratisversionens gräns för AI-skanningar räknar vår server skanningar per månad med ett hashat enhets-ID – en envägskod av telefonens ID, gjord med en hemlig nyckel, aldrig själva ID:t. Det hashade enhets-ID:t används bara för att räkna gratis AI-skanningar, inte för spårning. Bara koden, månaden och antalet sparas, och räkningen raderas automatiskt efter 13 månader."
+          "Med lov skickas bilden, dagens datum, valutan, ditt land, appens kategorier (som koder) och kolumnrubrikerna för kontot (bara rubrikerna, inte innehållet) via {{server}} till Anthropic (USA), som läser posterna med sin AI-modell (Claude) och skickar tillbaka dem. Förfrågan går via den Supabase-server som ligger närmast dig; varken vi eller Supabase sparar bilden eller posterna. Anthropic använder inte data som skickas via deras API för att träna sina modeller, och raderar dem inom {{anthropicDays}} dagar ({{linkAnthropic}}).",
+          "För att hålla tjänsten inom sina gränser räknar vår server AI-läsningar per enhet och dag. Telefonen skickar bara en envägskod av det slumpmässiga enhets-ID:t, och servern gör en ny kod av den med en hemlig nyckel innan den sparas, så att räkningen inte kan kopplas till dig eller ditt konto. Bara koden, datumet och antalet sparas, och räkningen raderas automatiskt efter {{aiCountDays}} dagar.",
+          "Bara i gratisversionen: för gränsen för AI-skanningar skickar telefonen en envägskod av telefonens ID, aldrig själva ID:t. Servern gör en ny kod av den med en hemlig nyckel och sparar bara den, månaden, om det är en testversion och antalet. Det hashade enhets-ID:t används bara för att räkna gratis AI-skanningar, inte för spårning, och räkningen raderas automatiskt efter {{scanCountMonths}} månader. Med Pro skickas inget telefon-ID."
         ]
       },
       {
         "heading": "Skanning av kvitton och fakturor",
-        "body": ["När du skannar ett kvitto eller en faktura läses bilden på telefonen, eller med AI om du har sagt ja (se ovan). Bilden raderas så snart den är läst, även om du avbryter eller något går fel. Från bilden sparas bara butik, datum, belopp och kategori. OCR-nummer och kontonummer sparas aldrig."]
+        "body": [
+          "När du skannar ett kvitto eller en faktura läses bilden på telefonen, eller med AI om du har sagt ja (se ovan). Bilden raderas så snart den är läst, även om du avbryter eller något går fel. Från bilden sparas bara butik, datum, belopp och kategori. OCR-nummer och kontonummer sparas aldrig."
+        ]
       },
       {
         "heading": "Kraschrapporter",
-        "body": ["När appen kraschar eller ett fel uppstår skickas en rapport till Sentry (i EU): vad som gick fel och var i appen, appversionen samt telefonmodell och systemversion. Insamling av personuppgifter, som IP-adress eller användaridentitet, är avstängd. Rapporterna sparas i högst 90 dagar och används bara för att rätta fel."]
+        "body": [
+          "När appen kraschar eller ett fel uppstår skickas en rapport till Sentry (EU, Tyskland): vad som gick fel och var i appen, vad som hände strax innan (utan innehåll från budgeten), appversionen samt telefonmodell och systemversion. Sentry sparar inte IP-adressen, och rapporterna innehåller inte namn, e-post eller konto. De sparas i högst {{crashMaxDays}} dagar och används bara för att rätta fel."
+        ]
       },
       {
         "heading": "Uppdateringar av appen",
-        "body": ["Appen söker efter uppdateringar hos Expo, tjänsten som levererar dem. Som vid all kontakt med internet ser Expo telefonens IP-adress. Inga andra data skickas."]
+        "body": [
+          "Vid varje start frågar appen Expo (USA), tjänsten som levererar uppdateringarna, om det finns en ny. Expo får då IP-adressen, plattformen (iOS eller Android), appens version och ett slumpmässigt ID för installationen – inget om dig eller din budget."
+        ]
       },
       {
         "heading": "Köp av Pro",
-        "body": ["Pro köps i App Store eller Google Play. Apple eller Google hanterar betalningen enligt sina egna integritetspolicyer; vi ser aldrig dina kortuppgifter. RevenueCat håller reda på om du har Pro, med ett anonymt ID som appen skapar, eller ditt konto-ID när du är inloggad, så att Pro följer kontot."]
+        "body": [
+          "Pro köps i App Store eller Google Play. Apple eller Google hanterar betalningen enligt sina egna integritetspolicyer; vi ser aldrig dina kortuppgifter.",
+          "RevenueCat (USA) håller reda på om du har Pro. Appen kontaktar RevenueCat vid varje start, även i gratisversionen, med ett anonymt kund-ID som RevenueCat skapar, eller ditt konto-ID när du är inloggad, så att Pro följer kontot. RevenueCat får köpen och kvittona från butiken, plattformen och appens version. I testversioner och vid testköp markeras kunden som test. Köphistoriken finns kvar hos butiken och RevenueCat även om du raderar kontot, så att ditt köp inte går förlorat."
+        ]
       },
       {
         "heading": "Valfritt konto och synk (Pro)",
         "body": [
           "Du kan logga in med Apple, Google, Facebook (Meta) eller e-post. Inloggningen hanteras av Supabase på servrar i {{region}}. Vi sparar då din e-postadress, ett konto-ID, ditt namn om leverantören delar det, appens språk och, i testversioner, en testflagga. Med Apple kan du dölja din e-postadress; då ser vi bara Apples vidarebefordringsadress.",
           "Med Pro synkas budgeten till ditt konto: konton, poster, återkommande poster, budget, sparmål, egna kategorier, leverantörer appen minns och inställningarna som följer dig (lönedag, lön, budget). Varje ändring sparas med när den gjordes och på vilken enhet. Data krypteras vid överföring och lagring, och bara ditt konto kan läsa dem.",
-          "Koder och länkar för inloggning skickas med e-post via Resend, med din adress och ditt språk. För att varje e-post ska skickas en gång sparar servern bara meddelande-ID, typ och status i 7 dagar, aldrig adressen.",
-          "Du kan logga ut när som helst; data stannar på telefonen. «Radera konto» tar bort kontot och all data som sparats med det på servern."
+          "Koder och länkar för inloggning skickas med e-post via Resend (USA), med din adress och ditt språk. Länken öppnar vår webbplats, som ligger hos Vercel, och skickar dig vidare till appen. För att varje e-post ska skickas en gång sparar vår server bara meddelande-ID, typ och status i {{emailLogDays}} dagar, aldrig adressen.",
+          "Du kan logga ut när som helst; data stannar på telefonen. «Radera konto» tar bort kontot och all data som sparats med det på vår server. Det här finns kvar: köphistoriken hos butiken och RevenueCat, räknarna utan namn eller konto (raderas efter {{aiCountDays}} dagar och {{scanCountMonths}} månader) och tjänsternas egna loggar enligt deras villkor."
         ]
       },
       {
         "heading": "Widget och påminnelser",
-        "body": ["Widgeten visar siffror från data på telefonen, och påminnelser om fasta poster ställs in på telefonen. Ingenting skickas för någon av dem."]
+        "body": [
+          "Widgeten visar siffror från data på telefonen, och påminnelser om fasta poster ställs in på telefonen. Ingenting skickas för någon av dem."
+        ]
       },
       {
         "heading": "Vilka vi delar data med",
         "list": [
-          "Supabase (Irland, EU): inloggning, synk för Pro och servern för AI-läsning och räkningen av den.",
+          "Supabase (Irland, EU): inloggning, synk för Pro, servern för AI-läsning och räknarna.",
           "Anthropic (USA): AI-läsning, bara med ditt tillstånd.",
           "Resend (USA): e-post med inloggningskoder och -länkar.",
-          "RevenueCat (USA): köp av Pro.",
-          "Sentry (EU): kraschrapporter utan personuppgifter.",
+          "RevenueCat (USA): Pro-status och köp.",
+          "Sentry (EU, Tyskland): kraschrapporter, utan IP-adress.",
           "Expo (USA): appuppdateringar.",
-          "Apple, Google och Meta: App Store, Google Play och inloggning med dem, när du väljer det."
+          "Vercel (USA): vår webbplats, även sidan som inloggningslänken öppnar.",
+          "Apple, Google och Meta: App Store, Google Play, inloggning med dem när du väljer det, och telefonens säkerhetskopia.",
+          "Valutakurser: vår server hämtar kurser från Frankfurter och ExchangeRate-API. Inga data om dig skickas dit."
         ],
-        "after": ["Där data går till USA använder leverantörerna EU:s standardavtalsklausuler eller EU–US Data Privacy Framework. Vi säljer aldrig data, och appen har ingen reklam och ingen spårning."]
+        "after": [
+          "Där data går till USA använder leverantörerna EU:s standardavtalsklausuler eller EU–US Data Privacy Framework. Vi säljer aldrig data, och appen har ingen reklam och ingen spårning."
+        ]
       },
       {
         "heading": "Rättslig grund",
         "list": [
-          "För att tillhandahålla appen du använder (dataskyddsförordningen artikel 6.1 b).",
-          "Ditt samtycke till AI-läsning (artikel 6.1 a). Du kan återkalla det när som helst.",
-          "Vårt berättigade intresse av att rätta fel och hålla tjänsten inom sina gränser (artikel 6.1 f)."
+          "För att tillhandahålla appen du använder (dataskyddsförordningen artikel 6.1 b): konto och synk (Supabase), inloggning med Apple, Google, Facebook eller e-post (Resend) och köp av Pro (App Store, Google Play och RevenueCat).",
+          "Ditt samtycke till AI-läsning (artikel 6.1 a), via Supabase till Anthropic. Du kan återkalla det när som helst.",
+          "Vårt berättigade intresse (artikel 6.1 f) av att rätta fel (Sentry), leverera appuppdateringar (Expo), hålla tjänsten inom sina gränser (räknarna) och driva webbplatsen (Vercel)."
         ]
       },
       {
@@ -108,28 +137,34 @@
         "list": [
           "På telefonen: tills du raderar dem i appen eller avinstallerar appen.",
           "Ditt konto och synkad data: tills du raderar kontot i appen.",
-          "Bilder och text för AI-läsning: sparas inte hos oss.",
+          "Bilder för AI-läsning: sparas inte hos oss. Hos Anthropic: raderas inom {{anthropicDays}} dagar, utom förfrågningar som flaggas för missbruk ({{linkAnthropic}}).",
           "CSV- och Excel-filer du importerar: sparas inte. Bara posterna du sparar och hur filens kolumner är ordnade finns kvar.",
-          "Räkning av AI-läsningar: 30 dagar.",
-          "Räkning av gratis AI-skanningar (hashat enhets-ID, månad och antal): 13 månader.",
-          "Logg över inloggningsmejl (utan adress): 7 dagar.",
-          "Kraschrapporter: högst 90 dagar."
+          "Räkning av AI-läsningar (envägskod, datum och antal): {{aiCountDays}} dagar.",
+          "Räkning av gratis AI-skanningar (hashat enhets-ID, månad och antal): {{scanCountMonths}} månader.",
+          "Logg över inloggningsmejl (utan adress): {{emailLogDays}} dagar.",
+          "Kraschrapporter: högst {{crashMaxDays}} dagar.",
+          "Inloggningsmejl hos Resend: {{resendDays}} dagar ({{linkResend}}). Supabases egna loggar och säkerhetskopior: högst {{supabaseLogDays}} dagar ({{linkSupabase}}). RevenueCat ({{linkRevenueCat}}), Expo ({{linkExpo}}) och Vercel ({{linkVercel}}): enligt deras villkor, som inte anger någon fast tid.",
+          "Säkerhetskopia på telefonen: hos Apple eller Google, enligt deras villkor, tills du raderar den."
         ]
       },
       {
         "heading": "Dina rättigheter",
         "body": [
-          "Du kan se, rätta och exportera alla dina data i appen (Jag → Exportera data, gratis för alla) och radera dem (Jag → Radera alla data). Du kan invända mot behandlingen och återkalla ditt samtycke till AI-läsning när som helst.",
+          "Du kan se, rätta och exportera alla dina data i appen ({{menuMe}} → {{menuExport}}, gratis för alla) och radera dem ({{menuMe}} → {{menuDelete}}). Du kan invända mot behandlingen och återkalla ditt samtycke till AI-läsning när som helst.",
           "Har du frågor, skriv till {{email}}. Tillsynsmyndigheten är norska Datatilsynet, och du kan klaga dit. Bor du i EU/EES kan du också klaga till dataskyddsmyndigheten i ditt eget land."
         ]
       },
       {
         "heading": "Barn",
-        "body": ["Saldo Pocket är inte gjord för barn under 13 år, och vi behandlar inte medvetet uppgifter om dem."]
+        "body": [
+          "Saldo Pocket är inte gjord för barn under 13 år, och vi behandlar inte medvetet uppgifter om dem."
+        ]
       },
       {
         "heading": "Ändringar",
-        "body": ["Om vi ändrar policyn uppdaterar vi den här sidan och datumet högst upp. Har ändringen betydelse för hur dina data används säger vi till i appen."]
+        "body": [
+          "Om vi ändrar policyn uppdaterar vi den här sidan och datumet högst upp. Har ändringen betydelse för hur dina data används säger vi till i appen."
+        ]
       }
     ]
   },
@@ -140,35 +175,44 @@
         "heading": "Radera allt i appen",
         "steps": [
           "Öppna Saldo Pocket.",
-          "Gå till Jag.",
-          "Tryck på Radera alla data.",
-          "Tryck på Radera allt."
+          "Gå till {{menuMe}}.",
+          "Tryck på {{menuDelete}}.",
+          "Tryck på {{menuDeleteConfirm}}."
         ],
         "body": [
-          "Det raderar allt appen har på din telefon: konton, poster, fasta poster, mål, kategorier, leverantörer, inställningar, sparade bilder och filer, enhets-ID:t samt val av språk och valuta. Appen startar sedan om som ny.",
+          "Det raderar allt appen har på din telefon: konton, poster, fasta poster, mål, kategorier, leverantörer, inställningar, inloggningen, sparade bilder och filer, widgetens data, enhets-ID:t samt val av språk och valuta. Appen startar sedan om som ny.",
           "Räkningen av gratis skanningar och filimporter finns kvar – bara siffror, inget om dig eller dina data – både på telefonen och på vår server, så gratisgränsen gäller fortfarande.",
-          "Det går inte att ångra. Vill du ha en kopia, exportera dina data först under Jag → Exportera data. Det är gratis."
+          "Det går inte att ångra. Vill du ha en kopia, exportera dina data först under {{menuMe}} → {{menuExport}}. Det är gratis."
         ]
       },
       {
         "heading": "Avinstallera appen",
-        "body": ["När du avinstallerar Saldo Pocket raderas också alla dess data från telefonen.", "Undantag: räkningen av gratis skanningar och filimporter (bara siffror) kan finnas kvar i telefonens nyckelring (iPhone) eller i Androids säkerhetskopia, så gratisgränsen gäller även efter en ny installation."]
+        "body": [
+          "När du avinstallerar Saldo Pocket raderas också alla dess data från telefonen.",
+          "Undantag: räkningen av gratis skanningar och filimporter (bara siffror) kan finnas kvar i telefonens nyckelring (iPhone) eller i Androids säkerhetskopia, så gratisgränsen gäller även efter en ny installation. Har du säkerhetskopiering påslagen på telefonen finns en kopia av appens data hos Apple eller Google tills du raderar den där."
+        ]
       },
       {
         "heading": "Det som finns kvar på vår server",
-        "body": ["Har du använt AI-läsning har vår server en räkning av läsningar per enhets-ID och dag, utan något innehåll. Den raderas automatiskt efter 30 dagar. Enhets-ID:t är slumpmässigt och raderas från telefonen tillsammans med allt annat, så räkningen kan inte kopplas till dig.", "Gratis AI-skanningar räknas också per månad med ett hashat enhets-ID (en envägskod, aldrig själva ID:t). Det hashade enhets-ID:t används bara för att räkna gratis AI-skanningar, inte för spårning, och räkningen raderas automatiskt efter 13 månader."]
+        "body": [
+          "Har du använt AI-läsning har vår server en räkning av läsningar per enhet och dag, sparad som en envägskod och utan något innehåll. Den raderas automatiskt efter {{aiCountDays}} dagar och kan inte kopplas till dig.",
+          "Gratis AI-skanningar räknas också per månad med ett hashat enhets-ID (en envägskod, aldrig själva ID:t). Det hashade enhets-ID:t används bara för att räkna gratis AI-skanningar, inte för spårning, och räkningen raderas automatiskt efter {{scanCountMonths}} månader.",
+          "Ditt köp och köphistoriken finns kvar hos App Store eller Google Play och RevenueCat, så att du kan återställa Pro. Tjänsterna vi använder har egna loggar som raderas enligt deras villkor."
+        ]
       },
       {
         "heading": "Radera ditt konto",
         "body": [
           "Använder du appen utan att logga in finns dina data bara på telefonen. De raderas när du raderar all data i appen eller när du tar bort appen från telefonen.",
-          "Är du inloggad raderas även dina data i molnet när du raderar kontot i appen: kontot, allt som synkats till det och allt på telefonen du raderar från. Loggade du in med Facebook raderas också det vi fick från Facebook. Du kan även ta bort Saldo Pocket i dina Facebook-inställningar.",
+          "Är du inloggad raderas även dina data i molnet när du raderar kontot i appen: kontot, allt som synkats till det och allt på telefonen du raderar från. Loggade du in med Facebook raderas också det vi fick från Facebook. Du kan även ta bort Saldo Pocket i dina Facebook-inställningar. Det som finns kvar står ovan.",
           "Raderar du bara data på telefonen loggas du ut, men kontot och dina data i molnet finns kvar. Data på dina andra enheter raderas inte automatiskt; radera dem i appen där. Ett abonnemang sägs inte upp när du raderar; det gör du i App Store eller Google Play."
         ]
       },
       {
         "heading": "Om du inte har appen längre",
-        "body": ["Skriv till {{email}} med ämnet ”Radera Saldo Pocket-data”. Vi svarar inom 30 dagar. Eftersom det inte finns något konto har vi oftast ingenting sparat om dig, och det bekräftar vi."]
+        "body": [
+          "Skriv till {{email}} med ämnet ”Radera Saldo Pocket-data”. Vi svarar inom 30 dagar. Använde du appen utan att logga in har vi oftast ingenting sparat om dig, och det bekräftar vi. Hade du ett konto, ange e-postadressen du loggade in med, så raderar vi kontot och data i molnet och bekräftar det."
+        ]
       }
     ]
   },
@@ -202,19 +246,27 @@
     "sections": [
       {
         "heading": "Vilka vi är",
-        "body": ["{{company}} (org.nr {{orgNumber}}, {{country}}) gör och driver Saldo Pocket. Kontakta oss på {{email}}."]
+        "body": [
+          "{{company}} (org.nr {{orgNumber}}, {{country}}) gör och driver Saldo Pocket. Kontakta oss på {{email}}."
+        ]
       },
       {
         "heading": "Vad appen är",
-        "body": ["Saldo Pocket ger dig överblick över dina pengar: konton, poster, budget och mål. Siffrorna bygger på det du lägger in och importerar. De är en överblick, inte ekonomisk rådgivning, så stäm av viktiga beslut med din bank."]
+        "body": [
+          "Saldo Pocket ger dig överblick över dina pengar: konton, poster, budget och mål. Siffrorna bygger på det du lägger in och importerar. De är en överblick, inte ekonomisk rådgivning, så stäm av viktiga beslut med din bank."
+        ]
       },
       {
         "heading": "Konto och synk",
-        "body": ["Du kan använda appen utan konto. Om du loggar in och har Pro synkas dina data till ditt konto så att du kan använda dem på flera enheter. Skydda din inloggning; den som kan logga in på kontot kan se de synkade data."]
+        "body": [
+          "Du kan använda appen utan konto. Om du loggar in och har Pro synkas dina data till ditt konto så att du kan använda dem på flera enheter. Skydda din inloggning; den som kan logga in på kontot kan se de synkade data."
+        ]
       },
       {
         "heading": "Gratis och Pro",
-        "body": ["Gratisversionen kostar ingenting. Pro köps i App Store eller Google Play, som prenumeration (månad eller år) eller som engångsköp. Priset visas i butiken innan du köper."],
+        "body": [
+          "Gratisversionen kostar ingenting. Pro köps i App Store eller Google Play, som prenumeration (månad eller år) eller som engångsköp. Priset visas i butiken innan du köper."
+        ],
         "list": [
           "En prenumeration förnyas automatiskt om du inte säger upp den i butiken senast 24 timmar innan perioden tar slut.",
           "Du hanterar och säger upp den i kontoinställningarna i App Store eller Google Play.",
@@ -223,23 +275,33 @@
       },
       {
         "heading": "Butikernas villkor",
-        "body": ["Köp på iPhone och iPad följer också Apples standardlicensavtal (EULA), och köp på Android följer Google Plays villkor. Återbetalning hanteras av butiken där du köpte."]
+        "body": [
+          "Köp på iPhone och iPad följer också Apples standardlicensavtal (EULA), och köp på Android följer Google Plays villkor. Återbetalning hanteras av butiken där du köpte."
+        ]
       },
       {
         "heading": "Dina data",
-        "body": ["Dina data är dina. Du kan exportera och radera dem i appen när som helst, även i gratisversionen. Hur vi hanterar personuppgifter står i integritetspolicyn."]
+        "body": [
+          "Dina data är dina. Du kan exportera och radera dem i appen när som helst, även i gratisversionen. Hur vi hanterar personuppgifter står i integritetspolicyn."
+        ]
       },
       {
         "heading": "Ansvar",
-        "body": ["Vi arbetar för att appen ska vara korrekt och tillgänglig, men den tillhandahålls i befintligt skick. I den mån lagen tillåter ansvarar vi inte för indirekta förluster. Dina rättigheter som konsument begränsas inte av villkoren."]
+        "body": [
+          "Vi arbetar för att appen ska vara korrekt och tillgänglig, men den tillhandahålls i befintligt skick. I den mån lagen tillåter ansvarar vi inte för indirekta förluster. Dina rättigheter som konsument begränsas inte av villkoren."
+        ]
       },
       {
         "heading": "Ändringar",
-        "body": ["Vi kan uppdatera villkoren. Viktiga ändringar visas i appen eller på den här sidan, med datum överst."]
+        "body": [
+          "Vi kan uppdatera villkoren. Viktiga ändringar visas i appen eller på den här sidan, med datum överst."
+        ]
       },
       {
         "heading": "Lag",
-        "body": ["Villkoren följer norsk lag. Är du konsument behåller du också det skydd som lagen i landet där du bor ger dig."]
+        "body": [
+          "Villkoren följer norsk lag. Är du konsument behåller du också det skydd som lagen i landet där du bor ger dig."
+        ]
       }
     ]
   },

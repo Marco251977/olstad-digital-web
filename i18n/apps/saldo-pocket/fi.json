@@ -3,36 +3,50 @@
   "server": "Supabasessa olevan palvelimemme",
   "serverRegion": "Supabasessa ({{region}}) olevan palvelimemme",
   "privacy": {
-    "intro": "Tämä seloste kertoo, mitä Saldo Pocket tallentaa, mitä se lähettää ja kenelle, ja mitä voit asialle tehdä. Lyhyesti: budjettisi pysyy puhelimessasi.",
+    "intro": "Tämä seloste kertoo, mitä Saldo Pocket tallentaa, mitä se lähettää ja kenelle, kuinka kauan tietoja säilytetään ja mitä voit asialle tehdä. Lyhyesti: budjettisi pysyy puhelimessasi.",
     "sections": [
       {
         "heading": "Kuka vastaa",
-        "body": ["{{company}} (Y-tunnus {{orgNumber}}, {{country}}) on tässä kuvatun käsittelyn rekisterinpitäjä. Ota yhteyttä: {{email}}."]
+        "body": [
+          "{{company}} (organisaationumero {{orgNumber}}, {{address}}) on tässä kuvatun käsittelyn rekisterinpitäjä. Ota yhteyttä: {{email}}."
+        ]
       },
       {
         "heading": "Lyhyesti",
         "list": [
           "Budjettisi tallennetaan puhelimeesi. Ilman tiliä emme näe sitä.",
-          "Tili on vapaaehtoinen (Apple, Google, Facebook tai sähköposti). Tilin ja Pron kanssa budjettisi synkronoidaan palvelimellemme EU:ssa, jotta voit käyttää sitä usealla laitteella.",
+          "Tili on vapaaehtoinen (Apple, Google, Facebook tai sähköposti). Tilin ja Pron kanssa budjettisi synkronoidaan palvelimellemme EU:ssa (Irlannissa), jotta voit käyttää sitä usealla laitteella.",
           "Pankkiyhteyttä ei ole.",
           "Pankin CSV- ja Excel-tiedostot luetaan vain puhelimessasi. Itse tiedostoa ei koskaan tallenneta, kopioida eikä lähetetä minnekään.",
-          "Mikään budjetistasi ei lähde puhelimesta, ellet synkronoi Prolla tai valitse tiliotteen, kuitin tai laskun lukemista tekoälyllä.",
-          "Kaatumisraportit eivät sisällä henkilötietoja.",
+          "Sovellus lähettää budjettisi palvelimellemme vain, kun synkronoit Prolla, ja kuvia tekoälylukemiseen vain, kun olet antanut luvan. Jos puhelimesi varmuuskopiointi on päällä, Apple (iCloud) tai Google (Google-tilisi) ottaa sovelluksen tiedot mukaan varmuuskopioon.",
+          "Kaatumisraporteissa ei ole nimeä, sähköpostiosoitetta, tiliä eikä IP-osoitetta.",
           "Voit viedä ja poistaa kaiken sovelluksessa maksutta."
         ]
       },
       {
         "heading": "Tallennettu puhelimeesi",
-        "body": ["Sovellus tallentaa nämä omaan tallennustilaansa puhelimessa. Niitä ei lähetetä meille, ja ne poistetaan, kun poistat kaikki tiedot sovelluksessa tai poistat sovelluksen:"],
+        "body": [
+          "Sovellus tallentaa nämä omaan tallennustilaansa puhelimessa. Niitä ei lähetetä meille, ja ne poistetaan, kun poistat kaikki tiedot sovelluksessa tai poistat sovelluksen:"
+        ],
         "list": [
           "Luomasi tilit (valitsemasi nimet, saldo ja valuutta; eivät pankkitilejä).",
           "Tapahtumasi: päivä, summa, valuutta, luokka, myyjä ja vapaaehtoinen muistiinpano.",
           "Toistuvat erät, säästötavoitteet, omat luokat ja kullekin myyjälle muistettu luokka.",
           "Asetukset: palkkapäivä, kuukausibudjetti, kieli ja valuutta sekä se, sallitko tekoälylukemisen.",
-          "Satunnainen laitetunnus, jota käytetään vain tekoälylukemisten laskemiseen (ks. alla).",
+          "Satunnainen laitetunnus. Se lähtee puhelimesta vain yksisuuntaisena koodina tekoälylukemisten laskemista varten (ks. alla).",
+          "Kun olet kirjautunut sisään: kirjautumistietosi puhelimen suojatussa tallennustilassa (iPhonen avainnippu, Android Keystore). Niitä ei koskaan oteta mukaan varmuuskopioon.",
           "Kuvat, jotka päätät säilyttää tuonnin jälkeen."
         ],
-        "after": ["Viitenumeroita ei koskaan tallenneta, eikä myöskään koko tilinumeroa. Sovellus voi tallentaa tilinumeron neljä viimeistä numeroa tunnistaakseen tilin."]
+        "after": [
+          "Viitenumeroita ei koskaan tallenneta, eikä myöskään koko tilinumeroa. Sovellus voi tallentaa tilinumeron neljä viimeistä numeroa tunnistaakseen tilin."
+        ]
+      },
+      {
+        "heading": "Varmuuskopio puhelimessa",
+        "body": [
+          "Jos varmuuskopiointi on päällä, puhelin ottaa sovelluksen tiedot mukaan varmuuskopioon: Androidissa Google-tilisi varmuuskopioon, iPhonessa iCloudiin. Silloin budjettisi palautuu uuteen puhelimeen. Varmuuskopion tallentavat Apple ja Google omien ehtojensa mukaisesti, ja voit ottaa sen käyttöön tai poistaa sen käytöstä puhelimen asetuksista.",
+          "Kirjautumistietoja ja suojattua tallennustilaa ei koskaan oteta mukaan, joten uudessa puhelimessa kirjaudut sisään uudelleen."
+        ]
       },
       {
         "heading": "CSV- ja Excel-tiedostojen tuonti",
@@ -48,59 +62,74 @@
         "heading": "Tiliotteiden, kuittien ja laskujen lukeminen tekoälyllä (valinnainen)",
         "body": [
           "Kun tuot kuvakaappauksen tai valokuvan tiliotteesta tai skannaat kuitin tai laskun, voit antaa tekoälyn lukea sen. Sovellus kysyy ensin lupaa, ja voit poistaa sen käytöstä milloin tahansa tuontinäkymässä. Ilman lupaa kaikki luetaan puhelimessa, eikä mitään lähetetä.",
-          "Luvalla kuva (tai siitä luettu teksti), valuutta, maasi, päivämäärä, sovelluksen luokkaluettelo ja laitetunnus lähetetään palvelimemme ({{server}}) kautta Anthropicille, joka lukee rivit tekoälymallillaan (Claude) ja lähettää ne takaisin. Me ja Supabase emme tallenna kuvaa, tekstiä tai rivejä. Anthropic ei käytä API:nsa kautta lähetettyjä tietoja mallien kouluttamiseen ja poistaa ne rajatun ajan jälkeen omien ehtojensa mukaisesti.",
-          "Jotta palvelu pysyy rajoissaan (rajoitettu määrä lukemisia laitetta kohden), palvelimemme tallentaa laitetunnuksen, päivämäärän ja lukemisten määrän, eikä mitään muuta. Nämä laskurit poistetaan automaattisesti 30 päivän kuluttua.",
-          "Ilmaisversion tekoälyskannausten rajaa varten palvelimemme laskee skannaukset kuukausittain tiivistetyllä laitetunnisteella – yksisuuntaisella koodilla, joka on tehty puhelimen tunnisteesta salaisella avaimella, ei koskaan itse tunnisteella. Tiivistettyä laitetunnistetta käytetään vain ilmaisten tekoälyskannausten laskemiseen, ei seurantaan. Vain koodi, kuukausi ja määrä tallennetaan, ja laskuri poistetaan automaattisesti 13 kuukauden kuluttua."
+          "Luvalla kuva, kuluva päivämäärä, valuutta, maasi, sovelluksen luokat (koodeina) ja tilin sarakeotsikot (vain otsikot, ei sisältöä) lähetetään {{server}} kautta Anthropicille (USA), joka lukee tapahtumat tekoälymallillaan (Claude) ja lähettää ne takaisin. Pyyntö kulkee sinua lähimmän Supabase-palvelimen kautta; kuvaa tai tapahtumia ei tallenneta meillä eikä Supabasessa. Anthropic ei käytä API:nsa kautta lähetettyjä tietoja mallien kouluttamiseen ja poistaa ne {{anthropicDays}} päivän kuluessa ({{linkAnthropic}}).",
+          "Jotta palvelu pysyy rajoissaan, palvelimemme laskee tekoälylukemiset laitetta ja päivää kohden. Puhelin lähettää satunnaisesta laitetunnuksesta vain yksisuuntaisen koodin, ja palvelin tekee siitä salaisella avaimella uuden koodin ennen tallennusta, joten laskuria ei voi yhdistää sinuun tai tiliisi. Vain koodi, päivämäärä ja määrä tallennetaan, ja laskuri poistetaan automaattisesti {{aiCountDays}} päivän kuluttua.",
+          "Vain ilmaisversiossa: tekoälyskannausten rajaa varten puhelin lähettää puhelimen tunnisteesta yksisuuntaisen koodin, ei koskaan itse tunnistetta. Palvelin tekee siitä salaisella avaimella uuden koodin ja tallentaa vain sen, kuukauden, tiedon siitä, onko kyseessä testiversio, sekä määrän. Tiivistettyä laitetunnistetta käytetään vain ilmaisten tekoälyskannausten laskemiseen, ei seurantaan, ja laskuri poistetaan automaattisesti {{scanCountMonths}} kuukauden kuluttua. Prolla puhelimen tunnistetta ei lähetetä."
         ]
       },
       {
         "heading": "Kuittien ja laskujen skannaus",
-        "body": ["Kun skannaat kuitin tai laskun, kuva luetaan puhelimessa tai tekoälyllä, jos olet antanut luvan (katso yllä). Kuva poistetaan heti, kun se on luettu, myös jos keskeytät tai jokin menee pieleen. Kuvasta tallennetaan vain kauppa, päivämäärä, summa ja luokka. Viitenumeroita ja tilinumeroita ei koskaan tallenneta."]
+        "body": [
+          "Kun skannaat kuitin tai laskun, kuva luetaan puhelimessa tai tekoälyllä, jos olet antanut luvan (katso yllä). Kuva poistetaan heti, kun se on luettu, myös jos keskeytät tai jokin menee pieleen. Kuvasta tallennetaan vain kauppa, päivämäärä, summa ja luokka. Viitenumeroita ja tilinumeroita ei koskaan tallenneta."
+        ]
       },
       {
         "heading": "Kaatumisraportit",
-        "body": ["Kun sovellus kaatuu tai tapahtuu virhe, raportti lähetetään Sentrylle (EU:ssa): mikä meni vikaan ja missä sovelluksessa, sovelluksen versio sekä puhelimen malli ja järjestelmäversio. Henkilötietojen, kuten IP-osoitteen tai käyttäjän tunnisteen, keruu on poistettu käytöstä. Raportteja säilytetään enintään 90 päivää, ja niitä käytetään vain virheiden korjaamiseen."]
+        "body": [
+          "Kun sovellus kaatuu tai tapahtuu virhe, raportti lähetetään Sentrylle (EU, Saksa): mikä meni vikaan ja missä kohtaa sovellusta, mitä tapahtui juuri ennen sitä (ilman budjettisi sisältöä), sovelluksen versio sekä puhelimen malli ja järjestelmäversio. Sentry ei tallenna IP-osoitetta, eikä raporteissa ole nimeä, sähköpostiosoitetta tai tiliä. Raportteja säilytetään enintään {{crashMaxDays}} päivää, ja niitä käytetään vain virheiden korjaamiseen."
+        ]
       },
       {
         "heading": "Sovelluksen päivitykset",
-        "body": ["Sovellus tarkistaa päivitykset Expolta, joka toimittaa ne. Kuten aina internetiä käytettäessä, Expo näkee puhelimen IP-osoitteen. Muita tietoja ei lähetetä."]
+        "body": [
+          "Aina käynnistyessään sovellus kysyy päivitykset toimittavalta Expolta (USA), onko uutta päivitystä saatavilla. Expo saa silloin IP-osoitteen, alustan (iOS tai Android), sovelluksen version ja asennuksen satunnaisen tunnisteen – ei mitään sinusta tai budjetistasi."
+        ]
       },
       {
         "heading": "Pron ostaminen",
-        "body": ["Pro ostetaan App Storesta tai Google Playsta. Apple tai Google hoitaa maksun omien tietosuojakäytäntöjensä mukaan; emme koskaan näe korttitietojasi. RevenueCat pitää kirjaa siitä, onko sinulla Pro, sovelluksen luoman nimettömän tunnisteen tai kirjautuneena tilisi tunnisteen avulla, jotta Pro seuraa tiliäsi."]
+        "body": [
+          "Pro ostetaan App Storesta tai Google Playsta. Apple tai Google hoitaa maksun omien tietosuojakäytäntöjensä mukaan; emme koskaan näe korttitietojasi.",
+          "RevenueCat (USA) pitää kirjaa siitä, onko sinulla Pro. Sovellus ottaa yhteyttä RevenueCatiin aina käynnistyessään, myös ilmaisversiossa, RevenueCatin luoman nimettömän asiakastunnisteen tai kirjautuneena tilitunnisteesi avulla, jotta Pro seuraa tiliäsi. RevenueCat saa ostot ja kuitit sovelluskaupasta sekä alustan ja sovelluksen version. Testiversioissa ja testiostoissa asiakas merkitään testiksi. Ostohistoria säilyy sovelluskaupassa ja RevenueCatissa, vaikka poistaisit tilisi, jotta ostoksesi ei katoa."
+        ]
       },
       {
         "heading": "Vapaaehtoinen tili ja synkronointi (Pro)",
         "body": [
           "Voit kirjautua Applella, Googlella, Facebookilla (Meta) tai sähköpostilla. Kirjautumisen hoitaa Supabase palvelimilla, joiden sijaintimaa on {{region}}. Tallennamme silloin sähköpostiosoitteesi, tilitunnisteen, nimesi jos palvelu jakaa sen, sovelluksen kielen ja testiversioissa testimerkinnän. Applella voit piilottaa sähköpostiosoitteesi; näemme silloin vain Applen välitysosoitteen.",
           "Prolla budjettisi synkronoidaan tilillesi: tilit, tapahtumat, toistuvat erät, budjetti, säästötavoitteet, omat luokat, muistetut maksunsaajat ja sinua seuraavat asetukset (palkkapäivä, palkka, budjetti). Jokainen muutos tallennetaan ajankohdan ja laitteen kanssa. Tiedot salataan siirrossa ja tallennuksessa, ja vain tilisi voi lukea ne.",
-          "Kirjautumiskoodit ja -linkit lähetetään sähköpostilla Resendin kautta osoitteesi ja kielesi kanssa. Jotta jokainen viesti lähtee kerran, palvelin säilyttää vain viestin tunnisteen, tyypin ja tilan 7 päivää, ei koskaan osoitetta.",
-          "Voit kirjautua ulos milloin tahansa; tiedot jäävät puhelimeen. «Poista tili» poistaa tilin ja kaikki sen mukana palvelimelle tallennetut tiedot."
+          "Kirjautumiskoodit ja -linkit lähetetään sähköpostilla Resendin (USA) kautta osoitteesi ja kielesi kanssa. Linkki avaa verkkosivustomme, joka on Vercelin palvelimilla, ja ohjaa sinut sieltä sovellukseen. Jotta jokainen viesti lähtee vain kerran, palvelimemme säilyttää vain viestin tunnisteen, tyypin ja tilan {{emailLogDays}} päivää, ei koskaan osoitetta.",
+          "Voit kirjautua ulos milloin tahansa; tiedot jäävät puhelimeen. «Poista tili» poistaa tilin ja kaikki sen mukana palvelimellemme tallennetut tiedot. Jäljelle jäävät: ostohistoria sovelluskaupassa ja RevenueCatissa, laskurit ilman nimeä tai tiliä (poistetaan {{aiCountDays}} päivän ja {{scanCountMonths}} kuukauden kuluttua) sekä palvelujen omat lokit niiden ehtojen mukaisesti."
         ]
       },
       {
         "heading": "Widget ja muistutukset",
-        "body": ["Widget näyttää lukuja puhelimessa olevista tiedoista, ja toistuvien erien muistutukset ajastetaan puhelimessa. Kummastakaan ei lähetetä mitään."]
+        "body": [
+          "Widget näyttää lukuja puhelimessa olevista tiedoista, ja toistuvien erien muistutukset ajastetaan puhelimessa. Kummastakaan ei lähetetä mitään."
+        ]
       },
       {
         "heading": "Kenen kanssa jaamme tietoja",
         "list": [
-          "Supabase (Irlanti, EU): kirjautuminen, Pron synkronointi sekä tekoälylukemisen palvelin ja sen laskenta.",
+          "Supabase (Irlanti, EU): kirjautuminen, Pron synkronointi, tekoälylukemisen palvelin ja laskurit.",
           "Anthropic (USA): tekoälylukeminen, vain luvallasi.",
           "Resend (USA): sähköpostit, joissa on kirjautumiskoodeja ja -linkkejä.",
-          "RevenueCat (USA): Pron ostot.",
-          "Sentry (EU): kaatumisraportit ilman henkilötietoja.",
+          "RevenueCat (USA): Pro-tila ja ostot.",
+          "Sentry (EU, Saksa): kaatumisraportit ilman IP-osoitetta.",
           "Expo (USA): sovelluspäivitykset.",
-          "Apple, Google ja Meta: App Store, Google Play ja kirjautuminen niillä, kun valitset sen."
+          "Vercel (USA): verkkosivustomme, myös sivu, jonka kirjautumislinkki avaa.",
+          "Apple, Google ja Meta: App Store, Google Play, kirjautuminen niillä, kun valitset sen, sekä puhelimen varmuuskopio.",
+          "Valuuttakurssit: palvelimemme hakee kurssit Frankfurterista ja ExchangeRate-API:sta. Sinusta ei lähetetä sinne mitään tietoja."
         ],
-        "after": ["Kun tietoja siirtyy Yhdysvaltoihin, palveluntarjoajat käyttävät EU:n vakiosopimuslausekkeita tai EU–US Data Privacy Frameworkia. Emme koskaan myy tietoja, eikä sovelluksessa ole mainoksia tai seurantaa."]
+        "after": [
+          "Kun tietoja siirtyy Yhdysvaltoihin, palveluntarjoajat käyttävät EU:n vakiosopimuslausekkeita tai EU–US Data Privacy Frameworkia. Emme koskaan myy tietoja, eikä sovelluksessa ole mainoksia tai seurantaa."
+        ]
       },
       {
         "heading": "Oikeusperuste",
         "list": [
-          "Käyttämäsi sovelluksen tarjoaminen (tietosuoja-asetuksen 6 artiklan 1 kohdan b alakohta).",
-          "Suostumuksesi tekoälylukemiseen (6 artiklan 1 kohdan a alakohta). Voit perua sen milloin tahansa.",
-          "Oikeutettu etumme korjata virheet ja pitää palvelu rajoissaan (6 artiklan 1 kohdan f alakohta)."
+          "Käyttämäsi sovelluksen tarjoaminen (tietosuoja-asetuksen 6 artiklan 1 kohdan b alakohta): tili ja synkronointi (Supabase), kirjautuminen Applella, Googlella, Facebookilla tai sähköpostilla (Resend) sekä Pron ostaminen (App Store, Google Play ja RevenueCat).",
+          "Suostumuksesi tekoälylukemiseen (6 artiklan 1 kohdan a alakohta) Supabasen kautta Anthropicille. Voit perua sen milloin tahansa.",
+          "Oikeutettu etumme (6 artiklan 1 kohdan f alakohta) korjata virheet (Sentry), toimittaa sovelluspäivitykset (Expo), pitää palvelu rajoissaan (laskurit) ja ylläpitää verkkosivustoa (Vercel)."
         ]
       },
       {
@@ -108,28 +137,34 @@
         "list": [
           "Puhelimessa: kunnes poistat ne sovelluksessa tai poistat sovelluksen.",
           "Tilisi ja synkronoidut tiedot: kunnes poistat tilin sovelluksessa.",
-          "Tekoälylukemisen kuvat ja teksti: emme tallenna niitä.",
+          "Tekoälylukemisen kuvat: emme tallenna niitä. Anthropicilla: poistetaan {{anthropicDays}} päivän kuluessa, paitsi väärinkäytön vuoksi merkityt pyynnöt ({{linkAnthropic}}).",
           "Tuomasi CSV- ja Excel-tiedostot: niitä ei tallenneta. Vain tallentamasi tapahtumat ja tiedoston sarakkeiden järjestys jäävät.",
-          "Tekoälylukemisten laskenta: 30 päivää.",
-          "Ilmaisten tekoälyskannausten laskuri (tiivistetty laitetunniste, kuukausi ja määrä): 13 kuukautta.",
-          "Kirjautumissähköpostien loki (ilman osoitetta): 7 päivää.",
-          "Kaatumisraportit: enintään 90 päivää."
+          "Tekoälylukemisten laskenta (yksisuuntainen koodi, päivämäärä ja määrä): {{aiCountDays}} päivää.",
+          "Ilmaisten tekoälyskannausten laskuri (tiivistetty laitetunniste, kuukausi ja määrä): {{scanCountMonths}} kuukautta.",
+          "Kirjautumissähköpostien loki (ilman osoitetta): {{emailLogDays}} päivää.",
+          "Kaatumisraportit: enintään {{crashMaxDays}} päivää.",
+          "Kirjautumissähköpostit Resendillä: {{resendDays}} päivää ({{linkResend}}). Supabasen omat lokit ja varmuuskopiot: enintään {{supabaseLogDays}} päivää ({{linkSupabase}}). RevenueCat ({{linkRevenueCat}}), Expo ({{linkExpo}}) ja Vercel ({{linkVercel}}): niiden ehtojen mukaisesti, joissa ei mainita kiinteää aikaa.",
+          "Varmuuskopio puhelimessa: Applella tai Googlella niiden ehtojen mukaisesti, kunnes poistat sen."
         ]
       },
       {
         "heading": "Oikeutesi",
         "body": [
-          "Voit nähdä, korjata ja viedä kaikki tietosi sovelluksessa (Minä → Vie tiedot, maksuton kaikille) ja poistaa ne (Minä → Poista kaikki tiedot). Voit vastustaa käsittelyä ja perua suostumuksesi tekoälylukemiseen milloin tahansa.",
+          "Voit nähdä, korjata ja viedä kaikki tietosi sovelluksessa ({{menuMe}} → {{menuExport}}, maksuton kaikille) ja poistaa ne ({{menuMe}} → {{menuDelete}}). Voit vastustaa käsittelyä ja perua suostumuksesi tekoälylukemiseen milloin tahansa.",
           "Jos sinulla on kysyttävää, kirjoita osoitteeseen {{email}}. Valvontaviranomainen on Norjan tietosuojaviranomainen (Datatilsynet), jolle voit tehdä valituksen. Jos asut EU:ssa tai ETA-alueella, voit tehdä valituksen myös oman maasi tietosuojaviranomaiselle."
         ]
       },
       {
         "heading": "Lapset",
-        "body": ["Saldo Pocketia ei ole tehty alle 13-vuotiaille lapsille, emmekä tietoisesti käsittele heidän tietojaan."]
+        "body": [
+          "Saldo Pocketia ei ole tehty alle 13-vuotiaille lapsille, emmekä tietoisesti käsittele heidän tietojaan."
+        ]
       },
       {
         "heading": "Muutokset",
-        "body": ["Jos muutamme selostetta, päivitämme tämän sivun ja yläreunan päivämäärän. Jos muutos vaikuttaa siihen, miten tietojasi käytetään, kerromme siitä sovelluksessa."]
+        "body": [
+          "Jos muutamme selostetta, päivitämme tämän sivun ja yläreunan päivämäärän. Jos muutos vaikuttaa siihen, miten tietojasi käytetään, kerromme siitä sovelluksessa."
+        ]
       }
     ]
   },
@@ -140,35 +175,44 @@
         "heading": "Poista kaikki sovelluksessa",
         "steps": [
           "Avaa Saldo Pocket.",
-          "Siirry kohtaan Minä.",
-          "Napauta Poista kaikki tiedot.",
-          "Napauta Poista kaikki."
+          "Siirry kohtaan ”{{menuMe}}”.",
+          "Napauta kohtaa ”{{menuDelete}}”.",
+          "Napauta kohtaa ”{{menuDeleteConfirm}}”."
         ],
         "body": [
-          "Tämä poistaa kaiken, mitä sovellus säilyttää puhelimessasi: tilit, tapahtumat, toistuvat erät, tavoitteet, luokat, myyjät, asetukset, tallennetut kuvat ja tiedostot, laitetunnuksen sekä kieli- ja valuuttavalinnat. Sovellus käynnistyy sitten alusta kuin uusi.",
+          "Tämä poistaa kaiken, mitä sovellus säilyttää puhelimessasi: tilit, tapahtumat, toistuvat erät, tavoitteet, luokat, myyjät, asetukset, kirjautumistietosi, tallennetut kuvat ja tiedostot, widgetin tiedot, laitetunnuksen sekä kieli- ja valuuttavalinnat. Sovellus käynnistyy sitten alusta kuin uusi.",
           "Ilmaisten skannausten ja tiedostotuontien laskuri jää – vain lukuja, ei mitään sinusta tai tiedoistasi – sekä puhelimeen että palvelimellemme, joten ilmaisraja on yhä voimassa.",
-          "Tätä ei voi perua. Jos haluat kopion, vie tietosi ensin kohdassa Minä → Vie tiedot. Se on maksutonta."
+          "Tätä ei voi perua. Jos haluat kopion, vie tietosi ensin kohdassa {{menuMe}} → {{menuExport}}. Se on maksutonta."
         ]
       },
       {
         "heading": "Sovelluksen poistaminen",
-        "body": ["Kun poistat Saldo Pocketin, myös kaikki sen tiedot poistetaan puhelimesta.", "Poikkeus: ilmaisten skannausten ja tiedostotuontien laskuri (vain lukuja) voi jäädä puhelimen avainnippuun (iPhone) tai Androidin varmuuskopioon, joten ilmaisraja on voimassa myös uuden asennuksen jälkeen."]
+        "body": [
+          "Kun poistat Saldo Pocketin, myös kaikki sen tiedot poistetaan puhelimesta.",
+          "Poikkeus: ilmaisten skannausten ja tiedostotuontien laskuri (vain lukuja) voi jäädä puhelimen avainnippuun (iPhone) tai Androidin varmuuskopioon, joten ilmaisraja on voimassa myös uuden asennuksen jälkeen. Jos puhelimesi varmuuskopiointi on päällä, kopio sovelluksen tiedoista säilyy Applella tai Googlella, kunnes poistat sen sieltä."
+        ]
       },
       {
         "heading": "Mitä palvelimellemme jää",
-        "body": ["Jos olet käyttänyt tekoälylukemista, palvelimellamme on laskuri lukemisista laitetunnusta ja päivää kohden, ilman mitään sisältöä. Se poistetaan automaattisesti 30 päivän kuluttua. Laitetunnus on satunnainen ja poistetaan puhelimesta kaiken muun mukana, joten laskuria ei voi yhdistää sinuun.", "Ilmaiset tekoälyskannaukset lasketaan myös kuukausittain tiivistetyllä laitetunnisteella (yksisuuntainen koodi, ei koskaan itse tunniste). Sitä käytetään vain ilmaisten tekoälyskannausten laskemiseen, ei seurantaan, ja laskuri poistetaan automaattisesti 13 kuukauden kuluttua."]
+        "body": [
+          "Jos olet käyttänyt tekoälylukemista, palvelimellamme on laskuri lukemisista laitetta ja päivää kohden, tallennettuna yksisuuntaisena koodina ja ilman mitään sisältöä. Se poistetaan automaattisesti {{aiCountDays}} päivän kuluttua, eikä sitä voi yhdistää sinuun.",
+          "Ilmaiset tekoälyskannaukset lasketaan myös kuukausittain tiivistetyllä laitetunnisteella (yksisuuntainen koodi, ei koskaan itse tunniste). Tiivistettyä laitetunnistetta käytetään vain ilmaisten tekoälyskannausten laskemiseen, ei seurantaan, ja laskuri poistetaan automaattisesti {{scanCountMonths}} kuukauden kuluttua.",
+          "Ostoksesi ja ostohistoriasi säilyvät App Storessa tai Google Playssa ja RevenueCatissa, jotta voit palauttaa Pron. Käyttämillämme palveluilla on omat lokinsa, jotka poistetaan niiden ehtojen mukaisesti."
+        ]
       },
       {
         "heading": "Tilin poistaminen",
         "body": [
           "Jos käytät sovellusta kirjautumatta, tietosi ovat vain puhelimessasi. Ne poistetaan, kun poistat kaikki tiedot sovelluksessa tai poistat sovelluksen puhelimesta.",
-          "Jos olet kirjautunut sisään, myös pilvessä olevat tietosi poistetaan, kun poistat tilisi sovelluksessa: tili, kaikki siihen synkronoitu ja kaikki puhelimessa, jolla poistat. Jos kirjauduit Facebookilla, myös Facebookilta saamamme tiedot poistetaan. Voit lisäksi poistaa Saldo Pocketin Facebookin asetuksista.",
+          "Jos olet kirjautunut sisään, myös pilvessä olevat tietosi poistetaan, kun poistat tilisi sovelluksessa: tili, kaikki siihen synkronoitu ja kaikki puhelimessa, jolla poistat. Jos kirjauduit Facebookilla, myös Facebookilta saamamme tiedot poistetaan. Voit lisäksi poistaa Saldo Pocketin Facebookin asetuksista. Mitä jää jäljelle, kerrotaan yllä.",
           "Jos poistat vain puhelimen tiedot, sinut kirjataan ulos, mutta tilisi ja pilvessä olevat tietosi säilyvät. Muiden laitteidesi tietoja ei poisteta automaattisesti; poista ne sovelluksessa niillä laitteilla. Poistaminen ei peru tilausta; sen teet App Storessa tai Google Playssa."
         ]
       },
       {
         "heading": "Jos sinulla ei enää ole sovellusta",
-        "body": ["Kirjoita osoitteeseen {{email}} aiheella ”Poista Saldo Pocket -tiedot”. Vastaamme 30 päivän kuluessa. Koska käyttäjätiliä ei ole, meillä ei yleensä ole sinusta tallennettuna mitään, ja vahvistamme sen."]
+        "body": [
+          "Kirjoita osoitteeseen {{email}} aiheella ”Poista Saldo Pocket -tiedot”. Vastaamme 30 päivän kuluessa. Jos käytit sovellusta kirjautumatta, meillä ei yleensä ole sinusta tallennettuna mitään, ja vahvistamme sen. Jos sinulla oli tili, kerro sähköpostiosoite, jolla kirjauduit, niin poistamme tilin ja pilvessä olevat tiedot ja vahvistamme sen."
+        ]
       }
     ]
   },
@@ -202,19 +246,27 @@
     "sections": [
       {
         "heading": "Keitä olemme",
-        "body": ["{{company}} (y-tunnus {{orgNumber}}, {{country}}) tekee ja ylläpitää Saldo Pocketia. Ota yhteyttä: {{email}}."]
+        "body": [
+          "{{company}} (y-tunnus {{orgNumber}}, {{country}}) tekee ja ylläpitää Saldo Pocketia. Ota yhteyttä: {{email}}."
+        ]
       },
       {
         "heading": "Mikä sovellus on",
-        "body": ["Saldo Pocket antaa yleiskuvan rahoistasi: tilit, tapahtumat, budjetti ja tavoitteet. Luvut perustuvat siihen, mitä syötät ja tuot. Ne ovat yleiskuva eivätkä talousneuvontaa, joten tarkista tärkeät päätökset pankkisi kanssa."]
+        "body": [
+          "Saldo Pocket antaa yleiskuvan rahoistasi: tilit, tapahtumat, budjetti ja tavoitteet. Luvut perustuvat siihen, mitä syötät ja tuot. Ne ovat yleiskuva eivätkä talousneuvontaa, joten tarkista tärkeät päätökset pankkisi kanssa."
+        ]
       },
       {
         "heading": "Tili ja synkronointi",
-        "body": ["Voit käyttää sovellusta ilman tiliä. Jos kirjaudut ja sinulla on Pro, tietosi synkronoidaan tilillesi, jotta voit käyttää niitä useilla laitteilla. Suojaa kirjautumisesi; jokainen, joka pääsee tilillesi, näkee synkronoidut tiedot."]
+        "body": [
+          "Voit käyttää sovellusta ilman tiliä. Jos kirjaudut ja sinulla on Pro, tietosi synkronoidaan tilillesi, jotta voit käyttää niitä useilla laitteilla. Suojaa kirjautumisesi; jokainen, joka pääsee tilillesi, näkee synkronoidut tiedot."
+        ]
       },
       {
         "heading": "Ilmainen ja Pro",
-        "body": ["Ilmaisversio on maksuton. Pro ostetaan App Storesta tai Google Playsta tilauksena (kuukausi tai vuosi) tai kertaostona. Hinta näkyy kaupassa ennen ostoa."],
+        "body": [
+          "Ilmaisversio on maksuton. Pro ostetaan App Storesta tai Google Playsta tilauksena (kuukausi tai vuosi) tai kertaostona. Hinta näkyy kaupassa ennen ostoa."
+        ],
         "list": [
           "Tilaus uusiutuu automaattisesti, kunnes peruutat sen kaupassa viimeistään 24 tuntia ennen jakson päättymistä.",
           "Hallitset ja peruutat tilauksen App Storen tai Google Playn tiliasetuksissa.",
@@ -223,23 +275,33 @@
       },
       {
         "heading": "Kauppojen ehdot",
-        "body": ["iPhonella ja iPadilla tehtyihin ostoihin sovelletaan myös Applen vakiokäyttöoikeussopimusta (EULA) ja Androidilla Google Playn ehtoja. Hyvitykset hoitaa kauppa, josta ostit."]
+        "body": [
+          "iPhonella ja iPadilla tehtyihin ostoihin sovelletaan myös Applen vakiokäyttöoikeussopimusta (EULA) ja Androidilla Google Playn ehtoja. Hyvitykset hoitaa kauppa, josta ostit."
+        ]
       },
       {
         "heading": "Tietosi",
-        "body": ["Tietosi ovat sinun. Voit viedä ja poistaa ne sovelluksessa milloin tahansa, myös ilmaisversiossa. Henkilötietojen käsittely on kuvattu tietosuojaselosteessa."]
+        "body": [
+          "Tietosi ovat sinun. Voit viedä ja poistaa ne sovelluksessa milloin tahansa, myös ilmaisversiossa. Henkilötietojen käsittely on kuvattu tietosuojaselosteessa."
+        ]
       },
       {
         "heading": "Vastuu",
-        "body": ["Pyrimme pitämään sovelluksen oikeana ja saatavilla, mutta se tarjotaan sellaisenaan. Lain sallimissa rajoissa emme vastaa välillisistä vahingoista. Nämä ehdot eivät rajoita kuluttajan oikeuksiasi."]
+        "body": [
+          "Pyrimme pitämään sovelluksen oikeana ja saatavilla, mutta se tarjotaan sellaisenaan. Lain sallimissa rajoissa emme vastaa välillisistä vahingoista. Nämä ehdot eivät rajoita kuluttajan oikeuksiasi."
+        ]
       },
       {
         "heading": "Muutokset",
-        "body": ["Voimme päivittää ehtoja. Tärkeät muutokset näytetään sovelluksessa tai tällä sivulla, päivämäärä ylhäällä."]
+        "body": [
+          "Voimme päivittää ehtoja. Tärkeät muutokset näytetään sovelluksessa tai tällä sivulla, päivämäärä ylhäällä."
+        ]
       },
       {
         "heading": "Sovellettava laki",
-        "body": ["Ehtoihin sovelletaan Norjan lakia. Kuluttajana säilytät myös asuinmaasi lain antaman suojan."]
+        "body": [
+          "Ehtoihin sovelletaan Norjan lakia. Kuluttajana säilytät myös asuinmaasi lain antaman suojan."
+        ]
       }
     ]
   },

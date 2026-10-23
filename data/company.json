@@ -1,6 +1,10 @@
 {
   "name": "Olstad Digital",
   "orgNumber": "938 090 432",
+  "address": [
+    "Selma Ellefsens vei 3H",
+    "0581 Oslo"
+  ],
   "email": "kontakt@nordicdigitalapp.no",
   "country": "NO",
   "domain": "www.nordicdigitalapp.com"
