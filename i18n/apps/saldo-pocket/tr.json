@@ -3,36 +3,50 @@
   "server": "Supabase’deki sunucumuz",
   "serverRegion": "Supabase’deki ({{region}}) sunucumuz",
   "privacy": {
-    "intro": "Bu politika, Saldo Pocket’ın neyi kaydettiğini, neyi kime gönderdiğini ve bu konuda neler yapabileceğini açıklar. Kısacası: bütçen telefonunda kalır.",
+    "intro": "Bu politika, Saldo Pocket’ın neyi kaydettiğini, neyi kime gönderdiğini, bunların ne kadar süre saklandığını ve bu konuda neler yapabileceğini açıklar. Kısacası: bütçen telefonunda kalır.",
     "sections": [
       {
         "heading": "Sorumlu kim",
-        "body": ["Burada anlatılan işlemenin veri sorumlusu {{company}}’dir (sicil no. {{orgNumber}}, {{country}}). Bize {{email}} adresinden ulaşabilirsin."]
+        "body": [
+          "Burada anlatılan işlemenin veri sorumlusu {{company}}’dir (sicil no. {{orgNumber}}, {{address}}). Bize {{email}} adresinden ulaşabilirsin."
+        ]
       },
       {
         "heading": "Kısaca",
         "list": [
           "Bütçen telefonunda saklanır. Hesap olmadan onu göremeyiz.",
-          "Hesap isteğe bağlıdır (Apple, Google, Facebook veya e-posta). Hesap ve Pro ile bütçen, birden fazla cihazda kullanabilmen için AB’deki sunucumuzla eşitlenir.",
+          "Hesap isteğe bağlıdır (Apple, Google, Facebook veya e-posta). Hesap ve Pro ile bütçen, birden fazla cihazda kullanabilmen için AB’deki (İrlanda) sunucumuzla eşitlenir.",
           "Banka bağlantısı yoktur.",
           "Bankandan gelen CSV ve Excel dosyaları yalnızca telefonunda okunur. Dosyanın kendisi asla saklanmaz, kopyalanmaz veya gönderilmez.",
-          "Pro ile eşitleme yapmadıkça veya bir hesap dökümü, fiş ya da faturanın yapay zekâ ile okunmasını seçmedikçe bütçenden hiçbir şey telefondan çıkmaz.",
-          "Çökme raporları kişisel veri içermez.",
+          "Uygulama bütçeni sunucumuza yalnızca Pro ile eşitleme yaptığında, yapay zekâ ile okunacak resimleri ise yalnızca izin verdiğinde gönderir. Telefonunda yedekleme açıksa Apple (iCloud) veya Google (Google hesabın) uygulamanın verilerini bu yedeğe dahil eder.",
+          "Çökme raporları ad, e-posta, hesap veya IP adresi içermez.",
           "Uygulamada her şeyi ücretsiz olarak dışa aktarabilir ve silebilirsin."
         ]
       },
       {
         "heading": "Telefonunda saklananlar",
-        "body": ["Uygulama bunları telefondaki kendi depolama alanında saklar. Bize gönderilmez; uygulamada tüm verileri sildiğinde veya uygulamayı kaldırdığında silinir:"],
+        "body": [
+          "Uygulama bunları telefondaki kendi depolama alanında saklar. Bize gönderilmez; uygulamada tüm verileri sildiğinde veya uygulamayı kaldırdığında silinir:"
+        ],
         "list": [
           "Oluşturduğun hesaplar (seçtiğin adlar, bakiye ve para birimi; banka hesabı değildir).",
           "Kayıtların: tarih, tutar, para birimi, kategori, satıcı ve isteğe bağlı bir not.",
           "Düzenli kalemler, birikim hedefleri, kendi kategorilerin ve her satıcı için hatırlanan kategori.",
           "Ayarlar: maaş günü, aylık bütçe, dil ve para birimi ile yapay zekâyla okumaya izin verip vermediğin.",
-          "Yalnızca yapay zekâ okumalarını saymak için kullanılan rastgele bir cihaz kimliği (aşağıya bak).",
+          "Rastgele bir cihaz kimliği. Telefondan yalnızca tek yönlü bir kod olarak, yapay zekâ okumalarını saymak için çıkar (aşağıya bak).",
+          "Giriş yaptığında: oturum bilgilerin, telefonun güvenli depolama alanında (iPhone’da Anahtar Zinciri, Android Keystore). Hiçbir zaman yedeğe dahil edilmez.",
           "İçe aktarmadan sonra saklamayı seçtiğin resimler."
         ],
-        "after": ["Ödeme referansları asla saklanmaz, hesap numarasının tamamı da saklanmaz. Uygulama, hesabı tanımak için hesap numarasının son dört hanesini saklayabilir."]
+        "after": [
+          "Ödeme referansları asla saklanmaz, hesap numarasının tamamı da saklanmaz. Uygulama, hesabı tanımak için hesap numarasının son dört hanesini saklayabilir."
+        ]
+      },
+      {
+        "heading": "Telefondaki yedekleme",
+        "body": [
+          "Yedekleme açıksa telefon uygulamanın verilerini yedeğe dahil eder: Android’de Google hesabındaki yedeğe, iPhone’da iCloud’a. Böylece bütçen yeni bir telefona geri gelir. Yedeği Apple ve Google kendi koşullarına göre saklar; yedeklemeyi telefonun ayarlarından açıp kapatırsın.",
+          "Oturum bilgilerin ve güvenli depolama alanı hiçbir zaman yedeğe dahil edilmez; bu yüzden yeni bir telefonda yeniden giriş yaparsın."
+        ]
       },
       {
         "heading": "CSV ve Excel dosyalarını içe aktarma",
@@ -48,59 +62,74 @@
         "heading": "Hesap dökümlerinin, fişlerin ve faturaların yapay zekâyla okunması (isteğe bağlı)",
         "body": [
           "Bir hesap dökümünün ekran görüntüsünü veya fotoğrafını içe aktardığında ya da bir fiş veya fatura taradığında, yapay zekânın okumasına izin verebilirsin. Uygulama önce izin ister ve içe aktarma ekranında bunu istediğin zaman kapatabilirsin. İzin olmadan her şey telefonda okunur ve hiçbir şey gönderilmez.",
-          "İzinle resim (veya ondan okunan metin), para birimi, ülken, bugünün tarihi, uygulamanın kategori listesi ve cihaz kimliği {{server}} üzerinden Anthropic’e gönderilir; Anthropic satırları kendi yapay zekâ modeliyle (Claude) okuyup geri gönderir. Ne biz ne de Supabase resmi, metni veya satırları saklar. Anthropic, API’si üzerinden gönderilen verileri modellerini eğitmek için kullanmaz ve kendi koşullarına göre sınırlı bir süre sonra siler.",
-          "Hizmeti sınırları içinde tutmak için (cihaz başına sınırlı sayıda okuma) sunucumuz cihaz kimliğini, tarihi ve okuma sayısını saklar, başka hiçbir şeyi saklamaz. Bu sayımlar 30 gün sonra otomatik olarak silinir.",
-          "Ücretsiz sürümün yapay zekâ tarama sınırı için sunucumuz taramaları aylık olarak, karma (hash) bir cihaz kimliğiyle sayar: telefonun kimliğinden gizli bir anahtarla üretilen tek yönlü bir kod, asla kimliğin kendisi değil. Karma cihaz kimliği yalnızca ücretsiz yapay zekâ taramalarını saymak için kullanılır, izleme için değil. Yalnızca kod, ay ve sayı saklanır; sayım 13 ay sonra otomatik olarak silinir."
+          "İzin verirsen resim, bugünün tarihi, para birimi, ülken, uygulamanın kategorileri (kod olarak) ve hesabın sütun başlıkları (yalnızca başlıklar, içerik değil) {{server}} üzerinden Anthropic’e (ABD) gönderilir; Anthropic kayıtları kendi yapay zekâ modeliyle (Claude) okuyup geri gönderir. İstek sana en yakın Supabase sunucusundan geçer; ne biz ne de Supabase resmi veya kayıtları saklar. Anthropic, API’si üzerinden gönderilen verileri modellerini eğitmek için kullanmaz ve {{anthropicDays}} gün içinde siler ({{linkAnthropic}}).",
+          "Hizmeti sınırları içinde tutmak için sunucumuz yapay zekâ okumalarını cihaz ve gün başına sayar. Telefon yalnızca rastgele cihaz kimliğinden üretilen tek yönlü bir kod gönderir; sunucu da bunu kaydetmeden önce ondan gizli bir anahtarla yeni bir kod üretir, böylece sayım seninle veya hesabınla ilişkilendirilemez. Yalnızca kod, tarih ve sayı saklanır; sayım {{aiCountDays}} gün sonra otomatik olarak silinir.",
+          "Yalnızca ücretsiz sürümde: yapay zekâ tarama sınırı için telefon, telefonun kimliğinden üretilen tek yönlü bir kod gönderir, asla kimliğin kendisini değil. Sunucu bundan gizli bir anahtarla yeni bir kod üretir ve yalnızca bu kodu, ayı, test sürümü olup olmadığını ve sayıyı saklar. Karma cihaz kimliği yalnızca ücretsiz yapay zekâ taramalarını saymak için kullanılır, izleme için değil; sayım {{scanCountMonths}} ay sonra otomatik olarak silinir. Pro ile hiçbir telefon kimliği gönderilmez."
         ]
       },
       {
         "heading": "Fiş ve fatura tarama",
-        "body": ["Bir fiş veya fatura taradığında görsel telefonunda okunur ya da izin verdiysen yapay zekâ ile okunur (yukarıya bak). Görsel okunur okunmaz silinir; iptal etsen ya da bir şeyler ters gitse bile. Görselden yalnızca mağaza, tarih, tutar ve kategori saklanır. Ödeme referansları ve hesap numaraları asla saklanmaz."]
+        "body": [
+          "Bir fiş veya fatura taradığında görsel telefonunda okunur ya da izin verdiysen yapay zekâ ile okunur (yukarıya bak). Görsel okunur okunmaz silinir; iptal etsen ya da bir şeyler ters gitse bile. Görselden yalnızca mağaza, tarih, tutar ve kategori saklanır. Ödeme referansları ve hesap numaraları asla saklanmaz."
+        ]
       },
       {
         "heading": "Çökme raporları",
-        "body": ["Uygulama çöktüğünde veya bir hata oluştuğunda Sentry’ye (AB’de) bir rapor gönderilir: neyin, uygulamanın neresinde ters gittiği, uygulama sürümü, telefon modeli ve sistem sürümü. IP adresi veya kullanıcı kimliği gibi kişisel verilerin toplanması kapalıdır. Raporlar en fazla 90 gün saklanır ve yalnızca hataları düzeltmek için kullanılır."]
+        "body": [
+          "Uygulama çöktüğünde veya bir hata oluştuğunda Sentry’ye (AB, Almanya) bir rapor gönderilir: neyin, uygulamanın neresinde ters gittiği, hemen öncesinde ne olduğu (bütçenden içerik olmadan), uygulama sürümü, telefon modeli ve sistem sürümü. Sentry IP adresini saklamaz; raporlar ad, e-posta veya hesap içermez. Raporlar en fazla {{crashMaxDays}} gün saklanır ve yalnızca hataları düzeltmek için kullanılır."
+        ]
       },
       {
         "heading": "Uygulama güncellemeleri",
-        "body": ["Uygulama, güncellemeleri sağlayan hizmet olan Expo’dan güncelleme olup olmadığını kontrol eder. İnternete yapılan her bağlantıda olduğu gibi Expo telefonun IP adresini görür. Başka veri gönderilmez."]
+        "body": [
+          "Uygulama her açılışta, güncellemeleri sağlayan hizmet olan Expo’ya (ABD) yeni bir güncelleme olup olmadığını sorar. Expo bu sırada IP adresini, platformu (iOS veya Android), uygulamanın sürümünü ve kurulum için rastgele bir kimliği alır; sen veya bütçen hakkında hiçbir şey almaz."
+        ]
       },
       {
         "heading": "Pro satın alma",
-        "body": ["Pro, App Store veya Google Play’den satın alınır. Ödemeyi Apple veya Google kendi gizlilik politikalarına göre yürütür; kart bilgilerini asla görmeyiz. RevenueCat, uygulamanın oluşturduğu anonim bir kimlikle ya da giriş yaptığında hesap kimliğinle Pro’ya sahip olup olmadığını takip eder; böylece Pro hesabını izler."]
+        "body": [
+          "Pro, App Store veya Google Play’den satın alınır. Ödemeyi Apple veya Google kendi gizlilik politikalarına göre yürütür; kart bilgilerini asla görmeyiz.",
+          "RevenueCat (ABD), Pro’ya sahip olup olmadığını kaydeder. Uygulama, ücretsiz sürümde de her açılışta RevenueCat’e bağlanır; bunu RevenueCat’in oluşturduğu anonim bir müşteri kimliğiyle ya da giriş yaptığında hesap kimliğinle yapar, böylece Pro hesabını izler. RevenueCat mağazadan satın alımları ve makbuzları, ayrıca platformu ve uygulamanın sürümünü alır. Test sürümlerinde ve test satın alımlarında müşteri test olarak işaretlenir. Hesabını silsen bile satın alma geçmişi mağazada ve RevenueCat’te kalır; böylece satın alman kaybolmaz."
+        ]
       },
       {
         "heading": "İsteğe bağlı hesap ve eşitleme (Pro)",
         "body": [
           "Apple, Google, Facebook (Meta) veya e-posta ile giriş yapabilirsin. Giriş, {{region}} konumundaki sunucularda Supabase tarafından yönetilir. Bu durumda e-posta adresini, bir hesap kimliğini, sağlayıcı paylaşırsa adını, uygulama dilini ve test sürümlerinde bir test işaretini saklarız. Apple ile e-posta adresini gizleyebilirsin; o zaman yalnızca Apple’ın yönlendirme adresini görürüz.",
           "Pro ile bütçen hesabınla eşitlenir: hesaplar, kayıtlar, düzenli kayıtlar, bütçe, birikim hedefleri, kendi kategorilerin, hatırlanan satıcılar ve seninle birlikte gelen ayarlar (maaş günü, maaş, bütçe). Her değişiklik ne zaman ve hangi cihazda yapıldığıyla birlikte saklanır. Veriler aktarımda ve depolamada şifrelenir ve yalnızca hesabın onları okuyabilir.",
-          "Giriş kodları ve bağlantıları, adresin ve dilinle Resend üzerinden e-postayla gönderilir. Her e-postanın bir kez gönderilmesi için sunucu yalnızca mesaj kimliğini, türünü ve durumunu 7 gün saklar, adresi asla saklamaz.",
-          "İstediğin zaman çıkış yapabilirsin; veriler telefonda kalır. «Hesabı sil», hesabı ve sunucuda onunla saklanan tüm verileri kaldırır."
+          "Giriş kodları ve bağlantıları, adresin ve dilinle Resend (ABD) üzerinden e-postayla gönderilir. Bağlantı, Vercel’de barındırılan web sitemizi açar ve seni uygulamaya yönlendirir. Her e-postanın yalnızca bir kez gönderilmesi için sunucumuz yalnızca mesaj kimliğini, türünü ve durumunu {{emailLogDays}} gün saklar, adresi asla saklamaz.",
+          "İstediğin zaman çıkış yapabilirsin; veriler telefonda kalır. «Hesabı sil», hesabı ve sunucumuzda onunla saklanan tüm verileri kaldırır. Kalanlar: mağazadaki ve RevenueCat’teki satın alma geçmişi, ad veya hesap içermeyen sayımlar ({{aiCountDays}} gün ve {{scanCountMonths}} ay sonra silinir) ve hizmetlerin kendi koşullarına göre tuttuğu kayıtlar."
         ]
       },
       {
         "heading": "Widget ve hatırlatıcılar",
-        "body": ["Widget telefondaki verilerden rakamlar gösterir ve düzenli kalem hatırlatıcıları telefonda kurulur. İkisi için de hiçbir şey gönderilmez."]
+        "body": [
+          "Widget telefondaki verilerden rakamlar gösterir ve düzenli kalem hatırlatıcıları telefonda kurulur. İkisi için de hiçbir şey gönderilmez."
+        ]
       },
       {
         "heading": "Verileri kiminle paylaşıyoruz",
         "list": [
-          "Supabase (İrlanda, AB): giriş, Pro için eşitleme ve yapay zekâ ile okuma sunucusu ile sayımı.",
+          "Supabase (İrlanda, AB): giriş, Pro için eşitleme, yapay zekâ ile okuma sunucusu ve sayımlar.",
           "Anthropic (ABD): yapay zekâ ile okuma, yalnızca iznin varsa.",
           "Resend (ABD): giriş kodu ve bağlantısı içeren e-postalar.",
-          "RevenueCat (ABD): Pro satın alımları.",
-          "Sentry (AB): kişisel veri içermeyen çökme raporları.",
+          "RevenueCat (ABD): Pro durumu ve satın alımlar.",
+          "Sentry (AB, Almanya): IP adresi içermeyen çökme raporları.",
           "Expo (ABD): uygulama güncellemeleri.",
-          "Apple, Google ve Meta: App Store, Google Play ve seçtiğinde onlarla giriş."
+          "Vercel (ABD): giriş bağlantısının açtığı sayfa da dahil olmak üzere web sitemiz.",
+          "Apple, Google ve Meta: App Store, Google Play, seçtiğinde onlarla giriş ve telefonun yedeği.",
+          "Döviz kurları: sunucumuz kurları Frankfurter ve ExchangeRate-API’den alır. Oraya seninle ilgili hiçbir veri gönderilmez."
         ],
-        "after": ["Veriler ABD’ye gittiğinde sağlayıcılar AB standart sözleşme maddelerini veya EU–US Data Privacy Framework’ü kullanır. Asla veri satmayız; uygulamada reklam ve izleme yoktur."]
+        "after": [
+          "Veriler ABD’ye gittiğinde sağlayıcılar AB standart sözleşme maddelerini veya EU–US Data Privacy Framework’ü kullanır. Asla veri satmayız; uygulamada reklam ve izleme yoktur."
+        ]
       },
       {
         "heading": "Hukuki dayanak",
         "list": [
-          "Kullandığın uygulamayı sunmak (GDPR madde 6(1)(b)).",
-          "Yapay zekâyla okuma için rızan (madde 6(1)(a)). Rızanı istediğin zaman geri çekebilirsin.",
-          "Hataları düzeltme ve hizmeti sınırları içinde tutma konusundaki meşru menfaatimiz (madde 6(1)(f))."
+          "Kullandığın uygulamayı sunmak (GDPR madde 6(1)(b)): hesap ve eşitleme (Supabase), Apple, Google, Facebook veya e-posta ile giriş (Resend) ve Pro satın alma (App Store, Google Play ve RevenueCat).",
+          "Yapay zekâyla okuma için rızan (madde 6(1)(a)); veriler Supabase üzerinden Anthropic’e gider. Rızanı istediğin zaman geri çekebilirsin.",
+          "Hataları düzeltme (Sentry), uygulama güncellemelerini sunma (Expo), hizmeti sınırları içinde tutma (sayımlar) ve web sitesini işletme (Vercel) konusundaki meşru menfaatimiz (madde 6(1)(f))."
         ]
       },
       {
@@ -108,28 +137,34 @@
         "list": [
           "Telefonda: uygulamada silene veya uygulamayı kaldırana kadar.",
           "Hesabın ve eşitlenen veriler: hesabı uygulamada silene kadar.",
-          "Yapay zekâ ile okuma için görseller ve metin: bizde saklanmaz.",
+          "Yapay zekâ ile okuma için görseller: bizde saklanmaz. Anthropic’te: kötüye kullanım şüphesiyle işaretlenen istekler dışında {{anthropicDays}} gün içinde silinir ({{linkAnthropic}}).",
           "İçe aktardığın CSV ve Excel dosyaları: saklanmaz. Yalnızca kaydettiğin işlemler ve dosyadaki sütunların düzeni kalır.",
-          "Yapay zekâ okuma sayısı: 30 gün.",
-          "Ücretsiz yapay zekâ tarama sayısı (karma cihaz kimliği, ay ve sayı): 13 ay.",
-          "Giriş e-postaları kaydı (adres olmadan): 7 gün.",
-          "Çökme raporları: en fazla 90 gün."
+          "Yapay zekâ okuma sayısı (tek yönlü kod, tarih ve sayı): {{aiCountDays}} gün.",
+          "Ücretsiz yapay zekâ tarama sayısı (karma cihaz kimliği, ay ve sayı): {{scanCountMonths}} ay.",
+          "Giriş e-postaları kaydı (adres olmadan): {{emailLogDays}} gün.",
+          "Çökme raporları: en fazla {{crashMaxDays}} gün.",
+          "Resend’deki giriş e-postaları: {{resendDays}} gün ({{linkResend}}). Supabase’in kendi kayıtları ve yedekleri: en fazla {{supabaseLogDays}} gün ({{linkSupabase}}). RevenueCat ({{linkRevenueCat}}), Expo ({{linkExpo}}) ve Vercel ({{linkVercel}}): sabit bir süre belirtmeyen kendi koşullarına göre.",
+          "Telefondaki yedek: Apple’da veya Google’da, onların koşullarına göre, sen silene kadar."
         ]
       },
       {
         "heading": "Hakların",
         "body": [
-          "Tüm verilerini uygulamada görebilir, düzeltebilir ve dışa aktarabilir (Ben → Verileri dışa aktar, herkes için ücretsiz) ve silebilirsin (Ben → Tüm verileri sil). İşlemeye itiraz edebilir ve yapay zekâyla okuma için verdiğin rızayı istediğin zaman geri çekebilirsin.",
+          "Tüm verilerini uygulamada görebilir, düzeltebilir ve dışa aktarabilir ({{menuMe}} → {{menuExport}}, herkes için ücretsiz) ve silebilirsin ({{menuMe}} → {{menuDelete}}). İşlemeye itiraz edebilir ve yapay zekâyla okuma için verdiğin rızayı istediğin zaman geri çekebilirsin.",
           "Soruların varsa {{email}} adresine yaz. Denetim makamı Norveç veri koruma kurumudur (Datatilsynet) ve oraya şikâyette bulunabilirsin. AB/AEA’da yaşıyorsan kendi ülkendeki veri koruma kurumuna da şikâyette bulunabilirsin."
         ]
       },
       {
         "heading": "Çocuklar",
-        "body": ["Saldo Pocket 13 yaşından küçük çocuklar için yapılmamıştır ve onların verilerini bilerek işlemeyiz."]
+        "body": [
+          "Saldo Pocket 13 yaşından küçük çocuklar için yapılmamıştır ve onların verilerini bilerek işlemeyiz."
+        ]
       },
       {
         "heading": "Değişiklikler",
-        "body": ["Bu politikayı değiştirirsek bu sayfayı ve en üstteki tarihi güncelleriz. Değişiklik verilerinin kullanımı açısından önemliyse bunu uygulamada bildiririz."]
+        "body": [
+          "Bu politikayı değiştirirsek bu sayfayı ve en üstteki tarihi güncelleriz. Değişiklik verilerinin kullanımı açısından önemliyse bunu uygulamada bildiririz."
+        ]
       }
     ]
   },
@@ -140,35 +175,44 @@
         "heading": "Uygulamada her şeyi sil",
         "steps": [
           "Saldo Pocket’ı aç.",
-          "Ben’e git.",
-          "Tüm verileri sil’e dokun.",
-          "Hepsini sil’e dokun."
+          "“{{menuMe}}” sekmesine git.",
+          "“{{menuDelete}}” düğmesine dokun.",
+          "“{{menuDeleteConfirm}}” düğmesine dokun."
         ],
         "body": [
-          "Bu, uygulamanın telefonunda tuttuğu her şeyi siler: hesaplar, kayıtlar, düzenli kalemler, hedefler, kategoriler, satıcılar, ayarlar, kaydedilen resimler ve dosyalar, cihaz kimliği ile dil ve para birimi seçimlerin. Ardından uygulama yeni gibi baştan başlar.",
+          "Bu, uygulamanın telefonunda tuttuğu her şeyi siler: hesaplar, kayıtlar, düzenli kalemler, hedefler, kategoriler, satıcılar, ayarlar, oturum bilgilerin, kaydedilen resimler ve dosyalar, widget verileri, cihaz kimliği ile dil ve para birimi seçimlerin. Ardından uygulama yeni gibi baştan başlar.",
           "Ücretsiz tarama ve dosya içe aktarma sayısı kalır – yalnızca sayılar, sen veya verilerin hakkında hiçbir şey yok – hem telefonda hem sunucumuzda, böylece ücretsiz sınır geçerli olmaya devam eder.",
-          "Bu işlem geri alınamaz. Bir kopya istiyorsan önce verilerini Ben → Verileri dışa aktar bölümünden dışa aktar. Ücretsizdir."
+          "Bu işlem geri alınamaz. Bir kopya istiyorsan önce verilerini “{{menuMe}} → {{menuExport}}” bölümünden dışa aktar. Ücretsizdir."
         ]
       },
       {
         "heading": "Uygulamayı kaldırma",
-        "body": ["Saldo Pocket’ı kaldırdığında tüm verileri de telefondan silinir.", "İstisna: ücretsiz tarama ve dosya içe aktarma sayısı (yalnızca sayılar) telefonun anahtar zincirinde (iPhone) veya Android yedeğinde kalabilir; böylece ücretsiz sınır yeniden kurulumdan sonra da geçerli olur."]
+        "body": [
+          "Saldo Pocket’ı kaldırdığında tüm verileri de telefondan silinir.",
+          "İstisna: ücretsiz tarama ve dosya içe aktarma sayısı (yalnızca sayılar) telefonun anahtar zincirinde (iPhone) veya Android yedeğinde kalabilir; böylece ücretsiz sınır yeniden kurulumdan sonra da geçerli olur. Telefonunda yedekleme açıksa uygulamanın verilerinin bir kopyası, sen oradan silene kadar Apple’da veya Google’da kalır."
+        ]
       },
       {
         "heading": "Sunucumuzda kalanlar",
-        "body": ["Yapay zekâyla okumayı kullandıysan sunucumuzda cihaz kimliği ve gün başına, hiçbir içerik barındırmayan bir okuma sayımı bulunur. Bu sayım 30 gün sonra otomatik olarak silinir. Cihaz kimliği rastgeledir ve diğer her şeyle birlikte telefondan silinir; bu nedenle sayım seninle ilişkilendirilemez.", "Ücretsiz yapay zekâ taramaları ayrıca aylık olarak, karma bir cihaz kimliğiyle sayılır (tek yönlü bir kod, asla kimliğin kendisi değil). Yalnızca ücretsiz yapay zekâ taramalarını saymak için kullanılır, izleme için değil; sayım 13 ay sonra otomatik olarak silinir."]
+        "body": [
+          "Yapay zekâyla okumayı kullandıysan sunucumuzda cihaz ve gün başına bir okuma sayımı bulunur; tek yönlü bir kod olarak ve hiçbir içerik olmadan saklanır. {{aiCountDays}} gün sonra otomatik olarak silinir ve seninle ilişkilendirilemez.",
+          "Ücretsiz yapay zekâ taramaları ayrıca aylık olarak, karma bir cihaz kimliğiyle sayılır (tek yönlü bir kod, asla kimliğin kendisi değil). Karma cihaz kimliği yalnızca ücretsiz yapay zekâ taramalarını saymak için kullanılır, izleme için değil; sayım {{scanCountMonths}} ay sonra otomatik olarak silinir.",
+          "Satın alman ve satın alma geçmişin App Store’da veya Google Play’de ve RevenueCat’te kalır; böylece Pro’yu geri yükleyebilirsin. Kullandığımız hizmetlerin kendi kayıtları vardır ve bunlar kendi koşullarına göre silinir."
+        ]
       },
       {
         "heading": "Hesabını silme",
         "body": [
           "Uygulamayı giriş yapmadan kullanıyorsan verilerin yalnızca telefonundadır. Uygulamada tüm verileri sildiğinde veya uygulamayı telefonundan kaldırdığında silinir.",
-          "Giriş yaptıysan, uygulamada hesabını sildiğinde buluttaki verilerin de silinir: hesap, onunla eşitlenen her şey ve sildiğin telefondaki her şey. Facebook ile giriş yaptıysan Facebook’tan aldığımız veriler de silinir. Saldo Pocket’ı Facebook ayarlarından da kaldırabilirsin.",
+          "Giriş yaptıysan, uygulamada hesabını sildiğinde buluttaki verilerin de silinir: hesap, onunla eşitlenen her şey ve sildiğin telefondaki her şey. Facebook ile giriş yaptıysan Facebook’tan aldığımız veriler de silinir. Saldo Pocket’ı Facebook ayarlarından da kaldırabilirsin. Kalanlar yukarıda açıklanmıştır.",
           "Yalnızca telefondaki verileri silersen oturumun kapanır, ancak hesabın ve buluttaki verilerin kalır. Diğer cihazlarındaki veriler kendiliğinden silinmez; onları o cihazdaki uygulamadan sil. Silmek aboneliği iptal etmez; bunu App Store’da veya Google Play’de yaparsın."
         ]
       },
       {
         "heading": "Uygulama artık sende değilse",
-        "body": ["{{email}} adresine “Saldo Pocket verilerini sil” konulu bir e-posta yaz. 30 gün içinde yanıt veririz. Hesap olmadığı için genellikle hakkında kayıtlı hiçbir şey yoktur; bunu sana teyit ederiz."]
+        "body": [
+          "{{email}} adresine “Saldo Pocket verilerini sil” konulu bir e-posta yaz. 30 gün içinde yanıt veririz. Uygulamayı giriş yapmadan kullandıysan genellikle hakkında kayıtlı hiçbir şey yoktur; bunu sana teyit ederiz. Hesabın varsa giriş yaptığın e-posta adresini belirt; hesabı ve buluttaki verileri silip bunu sana teyit ederiz."
+        ]
       }
     ]
   },
@@ -202,19 +246,27 @@
     "sections": [
       {
         "heading": "Biz kimiz",
-        "body": ["{{company}} (kuruluş no. {{orgNumber}}, {{country}}) Saldo Pocket’ı geliştirir ve işletir. Bize {{email}} adresinden ulaşabilirsin."]
+        "body": [
+          "{{company}} (kuruluş no. {{orgNumber}}, {{country}}) Saldo Pocket’ı geliştirir ve işletir. Bize {{email}} adresinden ulaşabilirsin."
+        ]
       },
       {
         "heading": "Uygulama nedir",
-        "body": ["Saldo Pocket paranın genel görünümünü sunar: hesaplar, kayıtlar, bütçe ve hedefler. Rakamlar girdiğin ve içe aktardığın verilere dayanır. Bunlar bir genel bakıştır, finansal tavsiye değildir; önemli kararları bankanla kontrol et."]
+        "body": [
+          "Saldo Pocket paranın genel görünümünü sunar: hesaplar, kayıtlar, bütçe ve hedefler. Rakamlar girdiğin ve içe aktardığın verilere dayanır. Bunlar bir genel bakıştır, finansal tavsiye değildir; önemli kararları bankanla kontrol et."
+        ]
       },
       {
         "heading": "Hesap ve eşitleme",
-        "body": ["Uygulamayı hesapsız kullanabilirsin. Giriş yapar ve Pro’ya sahipsen verilerin hesabınla eşitlenir, böylece birden çok cihazda kullanabilirsin. Giriş bilgilerini güvende tut; hesabına giriş yapabilen herkes eşitlenen verileri görebilir."]
+        "body": [
+          "Uygulamayı hesapsız kullanabilirsin. Giriş yapar ve Pro’ya sahipsen verilerin hesabınla eşitlenir, böylece birden çok cihazda kullanabilirsin. Giriş bilgilerini güvende tut; hesabına giriş yapabilen herkes eşitlenen verileri görebilir."
+        ]
       },
       {
         "heading": "Ücretsiz ve Pro",
-        "body": ["Ücretsiz sürüm için hiçbir ücret alınmaz. Pro, App Store veya Google Play’den abonelik (aylık ya da yıllık) veya tek seferlik satın alma olarak alınır. Fiyat, satın almadan önce mağazada gösterilir."],
+        "body": [
+          "Ücretsiz sürüm için hiçbir ücret alınmaz. Pro, App Store veya Google Play’den abonelik (aylık ya da yıllık) veya tek seferlik satın alma olarak alınır. Fiyat, satın almadan önce mağazada gösterilir."
+        ],
         "list": [
           "Abonelik, dönem bitmeden en az 24 saat önce mağazadan iptal edene kadar otomatik olarak yenilenir.",
           "Aboneliği App Store veya Google Play hesap ayarlarından yönetir ve iptal edersin.",
@@ -223,23 +275,33 @@
       },
       {
         "heading": "Mağazaların koşulları",
-        "body": ["iPhone ve iPad’deki satın almalar ayrıca Apple’ın standart lisans sözleşmesine (EULA), Android’dekiler ise Google Play koşullarına tabidir. İadeleri satın aldığın mağaza yönetir."]
+        "body": [
+          "iPhone ve iPad’deki satın almalar ayrıca Apple’ın standart lisans sözleşmesine (EULA), Android’dekiler ise Google Play koşullarına tabidir. İadeleri satın aldığın mağaza yönetir."
+        ]
       },
       {
         "heading": "Verilerin",
-        "body": ["Verilerin sana aittir. Bunları, ücretsiz sürüm dahil, uygulamada istediğin zaman dışa aktarabilir ve silebilirsin. Kişisel verileri nasıl işlediğimiz gizlilik politikasında açıklanır."]
+        "body": [
+          "Verilerin sana aittir. Bunları, ücretsiz sürüm dahil, uygulamada istediğin zaman dışa aktarabilir ve silebilirsin. Kişisel verileri nasıl işlediğimiz gizlilik politikasında açıklanır."
+        ]
       },
       {
         "heading": "Sorumluluk",
-        "body": ["Uygulamanın doğru ve erişilebilir olması için çalışırız, ancak uygulama olduğu gibi sunulur. Yasanın izin verdiği ölçüde dolaylı kayıplardan sorumlu değiliz. Tüketici hakların bu koşullarla sınırlanmaz."]
+        "body": [
+          "Uygulamanın doğru ve erişilebilir olması için çalışırız, ancak uygulama olduğu gibi sunulur. Yasanın izin verdiği ölçüde dolaylı kayıplardan sorumlu değiliz. Tüketici hakların bu koşullarla sınırlanmaz."
+        ]
       },
       {
         "heading": "Değişiklikler",
-        "body": ["Bu koşulları güncelleyebiliriz. Önemli değişiklikler uygulamada veya bu sayfada, tarih üstte olacak şekilde gösterilir."]
+        "body": [
+          "Bu koşulları güncelleyebiliriz. Önemli değişiklikler uygulamada veya bu sayfada, tarih üstte olacak şekilde gösterilir."
+        ]
       },
       {
         "heading": "Uygulanacak hukuk",
-        "body": ["Bu koşullar Norveç hukukuna tabidir. Tüketiciysen yaşadığın ülkenin hukukunun sağladığı korumadan da yararlanmaya devam edersin."]
+        "body": [
+          "Bu koşullar Norveç hukukuna tabidir. Tüketiciysen yaşadığın ülkenin hukukunun sağladığı korumadan da yararlanmaya devam edersin."
+        ]
       }
     ]
   },
