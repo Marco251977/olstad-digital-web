@@ -221,7 +221,13 @@ export function adminPage({ homes, company, esc, fallback }) {
   document.title = t.title + ' – ${esc(company.name)}';
   document.querySelectorAll('[data-t]').forEach(function (el) { el.textContent = t[el.getAttribute('data-t')]; });
   var $ = function (id) { return document.getElementById(id); };
-  var say = function (key) { $('message').textContent = key ? t[key] : ''; };
+  var say = function (key, detail) { $('message').textContent = key ? t[key] + (detail ? ' (' + detail + ')' : '') : ''; };
+  // The server's error code → its text; anything else says what failed (HTTP status and the server's code).
+  var KEYS = { refused: 'refused', rate_limited: 'tooMany', not_configured: 'notConfigured', wrong_code: 'wrongCode' };
+  var fail = function (j) {
+    if (KEYS[j.error]) return say(KEYS[j.error], j.missing ? j.missing.join(', ') : '');
+    say('failed', ['HTTP ' + j.status, j.code].filter(Boolean).join(' · '));
+  };
   var call = function (body, token) {
     return fetch('/api/admin', { method: 'POST', headers: Object.assign({ 'content-type': 'application/json' }, token ? { authorization: 'Bearer ' + token } : {}), body: JSON.stringify(body) })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { j.status = r.status; return j; }); });
@@ -235,7 +241,7 @@ export function adminPage({ homes, company, esc, fallback }) {
     return call({ action: 'me' }, token).then(function (j) {
       if (j.status === 200) return show(j.email);
       try { sessionStorage.removeItem(KEY); } catch (e) {}
-      say(j.status === 403 ? 'refused' : '');
+      if (j.status === 401) say(''); else fail(j);
     });
   };
   var token; try { token = sessionStorage.getItem(KEY); } catch (e) {}
@@ -246,15 +252,15 @@ export function adminPage({ homes, company, esc, fallback }) {
     email = $('email').value.trim();
     call({ action: 'code', email: email }).then(function (j) {
       if (j.status === 200) { $('email-form').hidden = true; $('code-form').hidden = false; $('sent').textContent = t.sent.replace('%email%', email); $('code').focus(); say(''); }
-      else say(j.status === 403 ? 'refused' : 'failed');
-    }, function () { say('failed'); });
+      else fail(j);
+    }, function () { say('failed', 'offline'); });
   });
   $('code-form').addEventListener('submit', function (e) {
     e.preventDefault();
     call({ action: 'verify', email: email, code: $('code').value.trim() }).then(function (j) {
       if (j.status === 200 && j.accessToken) { try { sessionStorage.setItem(KEY, j.accessToken); } catch (e) {} return check(j.accessToken); }
-      say(j.status === 403 ? 'refused' : j.status === 401 ? 'wrongCode' : 'failed');
-    }, function () { say('failed'); });
+      fail(j);
+    }, function () { say('failed', 'offline'); });
   });
   $('sign-out').addEventListener('click', function () {
     try { sessionStorage.removeItem(KEY); } catch (e) {}

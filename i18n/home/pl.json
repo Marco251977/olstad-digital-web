@@ -56,6 +56,8 @@
     "coming": "Wkrótce",
     "comingBody": "Tutaj pojawią się statystyki.",
     "signOut": "Wyloguj się",
-    "checking": "Sprawdzanie …"
+    "checking": "Sprawdzanie …",
+    "tooMany": "Zbyt wiele prób. Odczekaj chwilę i spróbuj ponownie.",
+    "notConfigured": "Logowanie nie jest skonfigurowane na serwerze."
   }
 }

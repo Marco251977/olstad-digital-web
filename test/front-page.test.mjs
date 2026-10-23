@@ -79,3 +79,20 @@ test('the sentence about an app is its own store short description (data/app-tex
   }
   for (const l of LANGS) assert.doesNotMatch(read(`${l}/index.html`), /bankkobling|bank connection|Bankverbindung|Ingen bank/i, l);
 });
+
+test('/admin: every failure is a code the page has a text for – too many attempts, not set up, server error with details', async () => {
+  const env = { ADMIN_EMAILS: 'owner@example.com', SUPABASE_URL: 'https://x.supabase.co', SUPABASE_ANON_KEY: 'k' };
+  const post = (body, fetcher, e = env) => handle(new Request('https://h/api/admin', { method: 'POST', body: JSON.stringify(body) }), e, fetcher);
+  const reply = (status, body) => async () => new Response(JSON.stringify(body), { status });
+  let r = await post({ action: 'code', email: 'owner@example.com' }, reply(429, { error_code: 'over_email_send_rate_limit' }));
+  assert.deepEqual([r.status, (await r.json()).error], [429, 'rate_limited']);
+  r = await post({ action: 'code', email: 'owner@example.com' }, reply(500, { error_code: 'unexpected_failure' }));
+  assert.deepEqual([r.status, await r.json()], [502, { error: 'server', status: 500, code: 'unexpected_failure' }]);
+  r = await post({ action: 'code', email: 'owner@example.com' }, async () => { throw new Error('network'); });
+  assert.deepEqual([r.status, (await r.json()).code], [502, 'exception']);
+  r = await post({ action: 'code', email: 'owner@example.com' }, reply(200, {}), { ADMIN_EMAILS: 'owner@example.com' });
+  assert.deepEqual([r.status, (await r.json()).missing], [503, ['SUPABASE_URL', 'SUPABASE_ANON_KEY']]);
+  const page = read('admin.html');
+  for (const k of ['tooMany', 'notConfigured', 'refused', 'wrongCode']) assert.match(page, new RegExp(`"${k}":`), k);
+  assert.match(page, /rate_limited: 'tooMany', not_configured: 'notConfigured'/);
+});

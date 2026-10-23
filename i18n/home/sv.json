@@ -56,6 +56,8 @@
     "coming": "Kommer",
     "comingBody": "Statistik kommer här.",
     "signOut": "Logga ut",
-    "checking": "Kontrollerar …"
+    "checking": "Kontrollerar …",
+    "tooMany": "För många försök. Vänta en stund och försök igen.",
+    "notConfigured": "Inloggningen är inte konfigurerad på servern."
   }
 }

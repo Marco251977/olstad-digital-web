@@ -56,6 +56,8 @@
     "coming": "Kommt bald",
     "comingBody": "Hier erscheinen bald Statistiken.",
     "signOut": "Abmelden",
-    "checking": "Wird geprüft …"
+    "checking": "Wird geprüft …",
+    "tooMany": "Zu viele Versuche. Warte kurz und versuch es noch einmal.",
+    "notConfigured": "Die Anmeldung ist auf dem Server nicht eingerichtet."
   }
 }

@@ -56,6 +56,8 @@
     "coming": "Próximamente",
     "comingBody": "Aquí aparecerán las estadísticas.",
     "signOut": "Cerrar sesión",
-    "checking": "Comprobando …"
+    "checking": "Comprobando …",
+    "tooMany": "Demasiados intentos. Espera un poco e inténtalo de nuevo.",
+    "notConfigured": "El inicio de sesión no está configurado en el servidor."
   }
 }

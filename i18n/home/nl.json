@@ -56,6 +56,8 @@
     "coming": "Binnenkort",
     "comingBody": "Hier komen statistieken.",
     "signOut": "Uitloggen",
-    "checking": "Controleren …"
+    "checking": "Controleren …",
+    "tooMany": "Te veel pogingen. Wacht even en probeer het opnieuw.",
+    "notConfigured": "Inloggen is niet ingesteld op de server."
   }
 }

@@ -56,6 +56,8 @@
     "coming": "Tulossa",
     "comingBody": "Tilastot tulevat tähän.",
     "signOut": "Kirjaudu ulos",
-    "checking": "Tarkistetaan …"
+    "checking": "Tarkistetaan …",
+    "tooMany": "Liian monta yritystä. Odota hetki ja yritä uudelleen.",
+    "notConfigured": "Kirjautumista ei ole määritetty palvelimella."
   }
 }
