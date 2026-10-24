@@ -11,14 +11,15 @@ import { MISSING, renderStats, statsView } from '../assets/admin-stats.js';
 import { summary } from '../lib/stats.js';
 
 const read = (f) => fs.readFileSync(new URL(`../${f}`, import.meta.url), 'utf8');
+const NAMES = JSON.parse(read('data/plantravel-event-names.json')).names;
 const SECRET = 'pt-secret-key-123456';
 const ENV = { ADMIN_EMAILS: 'owner@example.com', SUPABASE_URL: 'https://x.supabase.co', SUPABASE_ANON_KEY: 'anon', PLANTRAVEL_API_URL: 'https://api.plantravel.example/', PLANTRAVEL_STATS_KEY: SECRET };
 const SAMPLE = {
   period: { from: '2026-09-24', to: '2026-10-23', days: 30 },
   active: { day: 120, week: 640, month: 2100 },
   retention: { day1: 0.42, day7: 0.21, day30: 0.09 },
-  onboarding: { started: 300, completed: 240, skipped: 30 },
-  events: { search_flights: 900, open_plan: 450 },
+  onboarding: { started: 300, done: 240, skipped: 30 },
+  events: { 'search_done:flight': 900, app_active: 450, not_named_yet: 7 },
   platforms: { ios: 1200, android: 900 },
   versions: { '2.4.1': 1500, '2.4.0': 600 },
   languages: { nb: 1000, en: 700 },
@@ -59,7 +60,7 @@ test('signed in: the key goes to PlanTravel as a Bearer header from the server o
   assert.ok(!text.includes(SECRET), 'the key is not in the answer');
   assert.doesNotMatch(text, /@/, 'no e-mail address in the answer');
   const body = JSON.parse(text);
-  assert.deepEqual(body.data.events, { search_flights: 900, open_plan: 450 });
+  assert.deepEqual(body.data.events, { 'search_done:flight': 900, app_active: 450, not_named_yet: 7 });
   assert.equal(body.legacyUntil, '2026-10-24');
   const [call] = f.toPlanTravel();
   assert.equal(call.url, 'https://api.plantravel.example/stats/summary?includeTest=0');
@@ -137,7 +138,9 @@ test('the numbers are laid out in the page language, labels from the texts (id a
   assert.deepEqual(by.retention.rows.map((r) => r.label), ['Dag 1', 'Dag 7', 'Dag 30']);
   assert.equal(by.retention.rows[0].value, new Intl.NumberFormat('nb', { style: 'percent', maximumFractionDigits: 1 }).format(0.42));
   assert.deepEqual(by.onboarding.rows.map((r) => r.label), ['Startet', 'Fullført', 'Hoppet over']);
-  assert.deepEqual(by.events.rows.map((r) => r.label), ['search_flights', 'open_plan'], 'no text yet → the id');
+  assert.deepEqual(by.events.rows.map((r) => r.label), ['search_done:flight', 'app_active', 'not_named_yet'], 'without names → the id');
+  const named = statsView(summary(SAMPLE), t, 'nb', null, NAMES.nb).find((x) => x.id === 'events');
+  assert.deepEqual(named.rows.map((r) => r.label), [NAMES.nb['search_done:flight'], NAMES.nb.app_active, 'not_named_yet'], 'PlanTravel’s names, the id when missing');
   assert.deepEqual(by.platforms.rows.map((r) => r.label), ['iOS', 'Android']);
   assert.equal(by.languages.rows[0].label, new Intl.DisplayNames(['nb'], { type: 'language' }).of('nb'));
   assert.equal(by.legacy.legacy, true);
@@ -169,4 +172,25 @@ test('the view is written with textContent only – a server value is never read
   assert.ok(!made.some((e) => /<img/.test(e.textContent)));
   assert.doesNotMatch(read('assets/admin-stats.js'), /innerHTML|insertAdjacentHTML|outerHTML|document\.write/);
   assert.doesNotMatch(read('admin/plantravel.html'), /innerHTML|insertAdjacentHTML/);
+});
+
+test('PlanTravel’s format (docs/stats-summary.md): onboarding.done, retention null = «–», empty answer = all «–»', () => {
+  const t = textsFor('nb');
+  const answer = { period: { from: '2026-09-25', to: '2026-10-24', days: 30 }, active: { day: null, week: null, month: null }, retention: { day1: 0.42, day7: null, month1: null }, onboarding: { started: 60, done: 55, skipped: null }, events: null, platforms: null, versions: null, languages: null, providerClicks: null, legacy: null, includesTest: false };
+  const by = Object.fromEntries(statsView(summary(answer), t, 'nb', '2026-10-24', NAMES.nb).map((s) => [s.id, s]));
+  assert.deepEqual(by.onboarding.rows.map((r) => [r.label, r.value]), [['Startet', '60'], ['Fullført', '55'], ['Hoppet over', MISSING]]);
+  assert.deepEqual(by.retention.rows.map((r) => r.label), ['Dag 1', 'Dag 7', 'Måned 1']);
+  assert.deepEqual(by.retention.rows.slice(1).map((r) => r.value), [MISSING, MISSING]);
+  for (const id of ['events', 'platforms', 'versions', 'languages', 'providerClicks', 'legacy']) assert.deepEqual(by[id].rows, [{ label: MISSING, value: MISSING }], id);
+  const legacy = statsView(summary({ legacy: { visits: 5400, features: { inspire_search: 800 } } }), t, 'nb').find((s) => s.id === 'legacy');
+  assert.deepEqual(legacy.rows.map((r) => r.label), [t.stats.legacyNames.visits, t.stats.legacyNames.features, 'inspire_search']);
+});
+
+test('the event names are PlanTravel’s own file, copied unchanged and embedded only in its admin page', () => {
+  const page = read('admin/plantravel.html');
+  assert.ok(page.includes(`var NAMES = ${JSON.stringify(NAMES).replace(/</g, '\u003c')};`));
+  assert.doesNotMatch(read('admin/saldo-pocket.html'), /var NAMES/);
+  for (const l of CORE_LANGUAGES) assert.ok(NAMES[l.code], `${l.code} names`);
+  for (const l of CORE_LANGUAGES) assert.equal(JSON.parse(read(`i18n/home/${l.code}.json`)).admin.stats.eventNames, undefined, `${l.code}: never typed in here`);
+  assert.match(read('package.json'), /"check": "[^"]*npm run check:plantravel/);
 });

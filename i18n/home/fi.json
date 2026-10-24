@@ -83,7 +83,7 @@
       "onboarding": "Käyttöönotto",
       "onboardingSteps": {
         "started": "Aloitettu",
-        "completed": "Valmis",
+        "done": "Valmis",
         "skipped": "Ohitettu"
       },
       "events": "Käytetyt toiminnot",
@@ -98,7 +98,13 @@
       "languages": "Kieli",
       "legacy": "Vanhat luvut (ennen {{date}})",
       "legacyNote": "Vanhasta tilastosta. Laskettu eri tavalla, joten niitä ei voi verrata yllä oleviin lukuihin.",
-      "eventNames": {}
+      "legacyNames": {
+        "visits": "Käynnit verkkosivulla",
+        "searches": "Haut",
+        "destinationClicks": "Matkakohteiden klikkaukset",
+        "downloadClicks": "Latausten klikkaukset",
+        "features": "Toiminnot"
+      }
     }
   }
 }

@@ -64,9 +64,10 @@ function numberRows(obj, label, f) {
 
 /**
  * The page as sections { id, title, note?, rows: [{ label, value, sub?, group? }], tiles? } – all strings.
- * data = the server's summary (lib/stats.js), legacyUntil = the date the old numbers end (data/apps.json).
+ * data = the server's summary (lib/stats.js), legacyUntil = the date the old numbers end (data/apps.json), eventNames = the
+ * app's own names for its events in this language (event and «event:value» → name; a missing name shows the id).
  */
-export function statsView(data, t, lang, legacyUntil = null) {
+export function statsView(data, t, lang, legacyUntil = null, eventNames = {}) {
   const s = t.stats;
   const f = formatters(lang);
   const d = isObject(data) ? data : {};
@@ -102,7 +103,7 @@ export function statsView(data, t, lang, legacyUntil = null) {
         : [{ label: MISSING, value: MISSING }],
     },
     { id: 'onboarding', title: s.onboarding, rows: numberRows(d.onboarding, (k) => s.onboardingSteps?.[k] ?? k, f) },
-    { id: 'events', title: s.events, rows: mapRows(d.events, (k) => s.eventNames?.[k] ?? k, f.number) },
+    { id: 'events', title: s.events, rows: mapRows(d.events, (k) => eventNames?.[k] ?? k, f.number) },
     { id: 'providerClicks', title: s.providerClicks, rows: mapRows(d.providerClicks, (k) => k, f.number) },
     { id: 'platforms', title: s.platforms, rows: mapRows(d.platforms, (k) => s.platformNames?.[k] ?? k, f.number) },
     { id: 'versions', title: s.versions, rows: mapRows(d.versions, (k) => k, f.number) },

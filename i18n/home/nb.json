@@ -83,7 +83,7 @@
       "onboarding": "Oppstart",
       "onboardingSteps": {
         "started": "Startet",
-        "completed": "Fullført",
+        "done": "Fullført",
         "skipped": "Hoppet over"
       },
       "events": "Funksjoner i bruk",
@@ -98,7 +98,13 @@
       "languages": "Språk",
       "legacy": "Gamle tall (før {{date}})",
       "legacyNote": "Fra den gamle statistikken. Telt på en annen måte, så de kan ikke sammenlignes med tallene over.",
-      "eventNames": {}
+      "legacyNames": {
+        "visits": "Besøk på nettsiden",
+        "searches": "Søk",
+        "destinationClicks": "Klikk på reisemål",
+        "downloadClicks": "Klikk på nedlasting",
+        "features": "Funksjoner"
+      }
     }
   }
 }

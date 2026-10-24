@@ -83,7 +83,7 @@
       "onboarding": "시작 안내",
       "onboardingSteps": {
         "started": "시작",
-        "completed": "완료",
+        "done": "완료",
         "skipped": "건너뜀"
       },
       "events": "사용된 기능",
@@ -98,7 +98,13 @@
       "languages": "언어",
       "legacy": "이전 수치({{date}} 이전)",
       "legacyNote": "이전 통계의 수치예요. 집계 방식이 달라 위 수치와 비교할 수 없어요.",
-      "eventNames": {}
+      "legacyNames": {
+        "visits": "웹사이트 방문",
+        "searches": "검색",
+        "destinationClicks": "여행지 클릭",
+        "downloadClicks": "다운로드 클릭",
+        "features": "기능"
+      }
     }
   }
 }

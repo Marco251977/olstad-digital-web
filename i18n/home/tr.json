@@ -83,7 +83,7 @@
       "onboarding": "İlk kurulum",
       "onboardingSteps": {
         "started": "Başladı",
-        "completed": "Tamamlandı",
+        "done": "Tamamlandı",
         "skipped": "Atlandı"
       },
       "events": "Kullanılan özellikler",
@@ -98,7 +98,13 @@
       "languages": "Dil",
       "legacy": "Eski rakamlar ({{date}} öncesi)",
       "legacyNote": "Eski istatistiklerden. Farklı sayıldığı için yukarıdaki rakamlarla karşılaştırılamaz.",
-      "eventNames": {}
+      "legacyNames": {
+        "visits": "Web sitesi ziyaretleri",
+        "searches": "Aramalar",
+        "destinationClicks": "Varış noktası tıklamaları",
+        "downloadClicks": "İndirme tıklamaları",
+        "features": "Özellikler"
+      }
     }
   }
 }

@@ -177,7 +177,10 @@ export function frontPage({ lang, dir, apps, company, home: h, common, esc, fill
  * from /api/admin (action «stats»; «No data yet» until the app has a source). The page is in the visitor's language (the
  * saved choice, ?lang=, or the browser's), with every language's texts from i18n/home (admin.*).
  */
-export function adminPage({ homes, company, esc, fallback, apps, app = null }) {
+export function adminPage({ homes, company, esc, fallback, apps, app = null, eventNames = null }) {
+  // The app's names for its usage events per language (data/<app>-event-names.json, the app's own file); a missing name = the id.
+  const namesScript = eventNames ? `
+  var NAMES = ${JSON.stringify(eventNames).replace(/</g, '\u003c')};` : '';
   const texts = JSON.stringify(Object.fromEntries(Object.entries(homes).map(([l, h]) => [l, { ...h.admin, signIn: h.signIn }]))).replace(/\{\{(\w+)\}\}/g, '%$1%'); // {{x}} → %x% (filled in the page)
   const rtl = JSON.stringify(CORE_LANGUAGES.filter((l) => l.rtl).map((l) => l.code));
   const t = homes[fallback].admin;
@@ -225,7 +228,7 @@ export function adminPage({ homes, company, esc, fallback, apps, app = null }) {
   <script>
 (function () {
   var TEXTS = ${texts};
-  var RTL = ${rtl};
+  var RTL = ${rtl};${namesScript}
   var saved = (document.cookie.match(/(?:^|; )${LANGUAGE_COOKIE}=([^;]+)/) || [])[1];
   var asked = new URLSearchParams(location.search).get('lang');
   var browser = (navigator.languages || [navigator.language]).map(function (l) { return l === 'nn' || l === 'no' || /^n[bno]-/.test(l) ? 'nb' : /^zh/.test(l) ? 'zh-Hans' : /^pt/.test(l) ? 'pt-BR' : l.split('-')[0]; });
@@ -283,7 +286,7 @@ export function adminPage({ homes, company, esc, fallback, apps, app = null }) {
       if (j.status !== 200) return failed(j);
       if (!j.data) { box.removeAttribute('aria-busy'); return line(box, t.noData); }
       return import('/assets/admin-stats.js').then(function (m) {
-        m.renderStats(box, m.statsView(j.data, t, lang, j.legacyUntil));
+        m.renderStats(box, m.statsView(j.data, t, lang, j.legacyUntil, typeof NAMES === 'object' ? NAMES[lang] || {} : {}));
         box.removeAttribute('aria-busy');
       });
     }).catch(function () { failed({ error: 'offline', status: 0, code: 'offline' }); });

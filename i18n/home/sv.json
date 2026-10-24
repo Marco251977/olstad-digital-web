@@ -83,7 +83,7 @@
       "onboarding": "Introduktion",
       "onboardingSteps": {
         "started": "Påbörjad",
-        "completed": "Slutförd",
+        "done": "Slutförd",
         "skipped": "Hoppades över"
       },
       "events": "Funktioner som används",
@@ -98,7 +98,13 @@
       "languages": "Språk",
       "legacy": "Gamla siffror (före {{date}})",
       "legacyNote": "Från den gamla statistiken. Räknat på ett annat sätt, så de går inte att jämföra med siffrorna ovan.",
-      "eventNames": {}
+      "legacyNames": {
+        "visits": "Besök på webbplatsen",
+        "searches": "Sökningar",
+        "destinationClicks": "Klick på resmål",
+        "downloadClicks": "Klick på nedladdning",
+        "features": "Funktioner"
+      }
     }
   }
 }

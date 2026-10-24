@@ -83,7 +83,7 @@
       "onboarding": "初期設定",
       "onboardingSteps": {
         "started": "開始",
-        "completed": "完了",
+        "done": "完了",
         "skipped": "スキップ"
       },
       "events": "使われた機能",
@@ -98,7 +98,13 @@
       "languages": "言語",
       "legacy": "旧データ（{{date}}より前）",
       "legacyNote": "旧統計のデータです。数え方が異なるため、上の数値とは比較できません。",
-      "eventNames": {}
+      "legacyNames": {
+        "visits": "ウェブサイトへの訪問",
+        "searches": "検索",
+        "destinationClicks": "目的地のクリック",
+        "downloadClicks": "ダウンロードのクリック",
+        "features": "機能"
+      }
     }
   }
 }

@@ -83,7 +83,7 @@
       "onboarding": "शुरुआती सेटअप",
       "onboardingSteps": {
         "started": "शुरू किया",
-        "completed": "पूरा किया",
+        "done": "पूरा किया",
         "skipped": "छोड़ दिया"
       },
       "events": "इस्तेमाल हुए फीचर",
@@ -98,7 +98,13 @@
       "languages": "भाषा",
       "legacy": "पुराने आंकड़े ({{date}} से पहले)",
       "legacyNote": "पुराने आंकड़ों से। अलग तरीके से गिने गए, इसलिए ऊपर के आंकड़ों से तुलना नहीं की जा सकती।",
-      "eventNames": {}
+      "legacyNames": {
+        "visits": "वेबसाइट विज़िट",
+        "searches": "सर्च",
+        "destinationClicks": "डेस्टिनेशन पर क्लिक",
+        "downloadClicks": "डाउनलोड पर क्लिक",
+        "features": "फीचर"
+      }
     }
   }
 }

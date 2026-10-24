@@ -83,7 +83,7 @@
       "onboarding": "Introductie",
       "onboardingSteps": {
         "started": "Gestart",
-        "completed": "Voltooid",
+        "done": "Voltooid",
         "skipped": "Overgeslagen"
       },
       "events": "Gebruikte functies",
@@ -98,7 +98,13 @@
       "languages": "Taal",
       "legacy": "Oude cijfers (vóór {{date}})",
       "legacyNote": "Uit de oude statistieken. Anders geteld, dus niet vergelijkbaar met de cijfers hierboven.",
-      "eventNames": {}
+      "legacyNames": {
+        "visits": "Bezoeken aan de website",
+        "searches": "Zoekopdrachten",
+        "destinationClicks": "Klikken op bestemmingen",
+        "downloadClicks": "Klikken op downloaden",
+        "features": "Functies"
+      }
     }
   }
 }

@@ -83,7 +83,7 @@
       "onboarding": "Onboarding",
       "onboardingSteps": {
         "started": "Started",
-        "completed": "Completed",
+        "done": "Completed",
         "skipped": "Skipped"
       },
       "events": "Features used",
@@ -98,7 +98,13 @@
       "languages": "Language",
       "legacy": "Old numbers (before {{date}})",
       "legacyNote": "From the old statistics. Counted differently, so not comparable with the numbers above.",
-      "eventNames": {}
+      "legacyNames": {
+        "visits": "Website visits",
+        "searches": "Searches",
+        "destinationClicks": "Destination clicks",
+        "downloadClicks": "Download clicks",
+        "features": "Features"
+      }
     }
   }
 }

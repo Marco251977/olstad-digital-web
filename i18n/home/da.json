@@ -83,7 +83,7 @@
       "onboarding": "Introduktion",
       "onboardingSteps": {
         "started": "Startet",
-        "completed": "Gennemført",
+        "done": "Gennemført",
         "skipped": "Sprunget over"
       },
       "events": "Funktioner i brug",
@@ -98,7 +98,13 @@
       "languages": "Sprog",
       "legacy": "Gamle tal (før {{date}})",
       "legacyNote": "Fra den gamle statistik. Talt på en anden måde, så de kan ikke sammenlignes med tallene ovenfor.",
-      "eventNames": {}
+      "legacyNames": {
+        "visits": "Besøg på hjemmesiden",
+        "searches": "Søgninger",
+        "destinationClicks": "Klik på rejsemål",
+        "downloadClicks": "Klik på download",
+        "features": "Funktioner"
+      }
     }
   }
 }

@@ -83,7 +83,7 @@
       "onboarding": "Prise en main",
       "onboardingSteps": {
         "started": "Commencée",
-        "completed": "Terminée",
+        "done": "Terminée",
         "skipped": "Ignorée"
       },
       "events": "Fonctionnalités utilisées",
@@ -98,7 +98,13 @@
       "languages": "Langue",
       "legacy": "Anciens chiffres (avant le {{date}})",
       "legacyNote": "Issus des anciennes statistiques. Comptés autrement, donc non comparables aux chiffres ci-dessus.",
-      "eventNames": {}
+      "legacyNames": {
+        "visits": "Visites du site",
+        "searches": "Recherches",
+        "destinationClicks": "Clics sur les destinations",
+        "downloadClicks": "Clics sur le téléchargement",
+        "features": "Fonctionnalités"
+      }
     }
   }
 }

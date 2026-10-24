@@ -83,7 +83,7 @@
       "onboarding": "新手引导",
       "onboardingSteps": {
         "started": "已开始",
-        "completed": "已完成",
+        "done": "已完成",
         "skipped": "已跳过"
       },
       "events": "使用的功能",
@@ -98,7 +98,13 @@
       "languages": "语言",
       "legacy": "旧数据（{{date}} 之前）",
       "legacyNote": "来自旧统计。统计方式不同，因此无法与上面的数字比较。",
-      "eventNames": {}
+      "legacyNames": {
+        "visits": "网站访问",
+        "searches": "搜索",
+        "destinationClicks": "目的地点击",
+        "downloadClicks": "下载点击",
+        "features": "功能"
+      }
     }
   }
 }
