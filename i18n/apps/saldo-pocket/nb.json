@@ -219,7 +219,7 @@
   "support": {
     "intro": "Spørsmål, problemer eller ideer? Skriv til oss, så svarer vi så snart vi kan.",
     "contactHeading": "Kontakt",
-    "contactBody": "E-post {{email}}. Fortell gjerne hvilken telefonmodell du har og hvilken versjon av appen (nederst under Meg).",
+    "contactBody": "E-post {{email}}. Fortell gjerne hvilken telefonmodell du har og hvilken versjon av appen (nederst på fanen {{menuMe}}).",
     "faqHeading": "Vanlige spørsmål",
     "proNote": "Se Pro i appen for hva som er inkludert.",
     "faq": [
@@ -229,7 +229,7 @@
       },
       {
         "q": "Hvordan eksporterer jeg dataene mine?",
-        "a": "Gå til Meg → Eksporter data. Eksporter alle mine data (JSON eller CSV) er gratis for alle."
+        "a": "Gå til {{menuMe}} → {{menuExport}}. Eksporter alle mine data (JSON eller CSV) er gratis for alle."
       },
       {
         "q": "Hvordan importerer jeg fra nettbanken?",
@@ -237,7 +237,7 @@
       },
       {
         "q": "Hvordan sletter jeg dataene mine?",
-        "a": "Gå til Meg → Slett alle data. Alt på telefonen slettes. Les mer på siden om sletting av dataene dine."
+        "a": "Gå til {{menuMe}} → {{menuDelete}}. Alt på telefonen slettes. Les mer på siden om sletting av dataene dine."
       }
     ]
   },

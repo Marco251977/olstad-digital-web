@@ -219,7 +219,7 @@
   "support": {
     "intro": "Soruların, sorunların veya fikirlerin mi var? Bize yaz, en kısa sürede yanıt verelim.",
     "contactHeading": "İletişim",
-    "contactBody": "E-posta {{email}}. Lütfen telefon modelini ve uygulama sürümünü (Ben ekranının en altında) belirt.",
+    "contactBody": "E-posta {{email}}. Lütfen telefon modelini ve uygulama sürümünü ({{menuMe}} sekmesinin en altında) belirt.",
     "faqHeading": "Sık sorulan sorular",
     "proNote": "Neler dahil olduğunu görmek için uygulamada Pro’ya bak.",
     "faq": [
@@ -229,7 +229,7 @@
       },
       {
         "q": "Verilerimi nasıl dışa aktarırım?",
-        "a": "Ben → Verileri dışa aktar bölümüne git. Tüm verilerimi dışa aktar (JSON veya CSV) herkes için ücretsizdir."
+        "a": "{{menuMe}} → {{menuExport}} bölümüne git. Tüm verilerimi dışa aktar (JSON veya CSV) herkes için ücretsizdir."
       },
       {
         "q": "İnternet bankacılığından nasıl içe aktarırım?",
@@ -237,7 +237,7 @@
       },
       {
         "q": "Verilerimi nasıl silerim?",
-        "a": "Ben → Tüm verileri sil bölümüne git. Telefondaki her şey silinir. Daha fazlası için verilerini silme sayfasına bak."
+        "a": "{{menuMe}} → {{menuDelete}} bölümüne git. Telefondaki her şey silinir. Daha fazlası için verilerini silme sayfasına bak."
       }
     ]
   },

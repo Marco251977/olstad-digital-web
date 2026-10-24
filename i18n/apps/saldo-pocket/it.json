@@ -219,7 +219,7 @@
   "support": {
     "intro": "Domande, problemi o idee? Scrivici e ti risponderemo il prima possibile.",
     "contactHeading": "Contatti",
-    "contactBody": "E-mail {{email}}. Indicaci il modello del telefono e la versione dell’app (in fondo a Io).",
+    "contactBody": "E-mail {{email}}. Indicaci il modello del telefono e la versione dell’app (in fondo alla scheda «{{menuMe}}»).",
     "faqHeading": "Domande frequenti",
     "proNote": "Apri Pro nell’app per vedere cosa è incluso.",
     "faq": [
@@ -229,7 +229,7 @@
       },
       {
         "q": "Come esporto i miei dati?",
-        "a": "Vai su Io → Esporta dati. Esporta tutti i miei dati (JSON o CSV) è gratis per tutti."
+        "a": "Vai su {{menuMe}} → {{menuExport}}. Esporta tutti i miei dati (JSON o CSV) è gratis per tutti."
       },
       {
         "q": "Come importo dall’home banking?",
@@ -237,7 +237,7 @@
       },
       {
         "q": "Come elimino i miei dati?",
-        "a": "Vai su Io → Elimina tutti i dati. Tutto ciò che è sul telefono viene eliminato. Maggiori dettagli nella pagina sull’eliminazione dei dati."
+        "a": "Vai su {{menuMe}} → {{menuDelete}}. Tutto ciò che è sul telefono viene eliminato. Maggiori dettagli nella pagina sull’eliminazione dei dati."
       }
     ]
   },

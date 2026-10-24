@@ -21,112 +21,166 @@
       },
       "labels": {
         "ar": {
-          "menuMe": "حسابي",
+          "menuMe": "الملف الشخصي",
+          "menuData": "بياناتك",
           "menuExport": "تصدير البيانات",
           "menuDelete": "حذف جميع البيانات على هذا الهاتف",
-          "menuDeleteConfirm": "احذف كل شيء على هذا الهاتف"
+          "menuDeleteConfirm": "احذف كل شيء على هذا الهاتف",
+          "periodPay": "من راتب إلى راتب",
+          "periodCalendar": "شهر تقويمي"
         },
         "da": {
           "menuMe": "Mig",
+          "menuData": "Dine data",
           "menuExport": "Eksportér data",
           "menuDelete": "Slet alle data på telefonen",
-          "menuDeleteConfirm": "Slet alt på telefonen"
+          "menuDeleteConfirm": "Slet alt på telefonen",
+          "periodPay": "Løn til løn",
+          "periodCalendar": "Kalendermåned"
         },
         "de": {
           "menuMe": "Ich",
+          "menuData": "Deine Daten",
           "menuExport": "Daten exportieren",
           "menuDelete": "Alle Daten auf diesem Handy löschen",
-          "menuDeleteConfirm": "Alles auf diesem Handy löschen"
+          "menuDeleteConfirm": "Alles auf diesem Handy löschen",
+          "periodPay": "Von Gehalt zu Gehalt",
+          "periodCalendar": "Kalendermonat"
         },
         "en": {
           "menuMe": "Me",
+          "menuData": "Your data",
           "menuExport": "Export data",
           "menuDelete": "Delete all data on this phone",
-          "menuDeleteConfirm": "Delete everything on this phone"
+          "menuDeleteConfirm": "Delete everything on this phone",
+          "periodPay": "Payday to payday",
+          "periodCalendar": "Calendar month"
         },
         "es": {
           "menuMe": "Yo",
+          "menuData": "Tus datos",
           "menuExport": "Exportar datos",
           "menuDelete": "Borrar todos los datos de este teléfono",
-          "menuDeleteConfirm": "Borrar todo en este teléfono"
+          "menuDeleteConfirm": "Borrar todo en este teléfono",
+          "periodPay": "De sueldo a sueldo",
+          "periodCalendar": "Mes natural"
         },
         "fi": {
           "menuMe": "Minä",
+          "menuData": "Tietosi",
           "menuExport": "Vie tiedot",
           "menuDelete": "Poista kaikki tiedot tästä puhelimesta",
-          "menuDeleteConfirm": "Poista kaikki tästä puhelimesta"
+          "menuDeleteConfirm": "Poista kaikki tästä puhelimesta",
+          "periodPay": "Palkasta palkkaan",
+          "periodCalendar": "Kalenterikuukausi"
         },
         "fr": {
           "menuMe": "Moi",
+          "menuData": "Vos données",
           "menuExport": "Exporter les données",
           "menuDelete": "Supprimer toutes les données de ce téléphone",
-          "menuDeleteConfirm": "Tout supprimer sur ce téléphone"
+          "menuDeleteConfirm": "Tout supprimer sur ce téléphone",
+          "periodPay": "D’une paie à l’autre",
+          "periodCalendar": "Mois calendaire"
         },
         "hi": {
-          "menuMe": "मैं",
+          "menuMe": "प्रोफाइल",
+          "menuData": "आपका डेटा",
           "menuExport": "डेटा एक्सपोर्ट करें",
           "menuDelete": "इस फोन का सारा डेटा हटाएँ",
-          "menuDeleteConfirm": "इस फोन से सब हटाएँ"
+          "menuDeleteConfirm": "इस फोन से सब हटाएँ",
+          "periodPay": "सैलरी से सैलरी तक",
+          "periodCalendar": "कैलेंडर महीना"
         },
         "it": {
           "menuMe": "Io",
+          "menuData": "I tuoi dati",
           "menuExport": "Esporta dati",
           "menuDelete": "Elimina tutti i dati su questo telefono",
-          "menuDeleteConfirm": "Elimina tutto su questo telefono"
+          "menuDeleteConfirm": "Elimina tutto su questo telefono",
+          "periodPay": "Da stipendio a stipendio",
+          "periodCalendar": "Mese di calendario"
         },
         "ja": {
           "menuMe": "マイページ",
+          "menuData": "あなたのデータ",
           "menuExport": "データを書き出す",
           "menuDelete": "このスマートフォンのデータをすべて削除",
-          "menuDeleteConfirm": "このスマートフォンからすべて削除"
+          "menuDeleteConfirm": "このスマートフォンからすべて削除",
+          "periodPay": "給料日から次の給料日まで",
+          "periodCalendar": "暦月"
         },
         "ko": {
           "menuMe": "내 정보",
+          "menuData": "내 데이터",
           "menuExport": "데이터 내보내기",
           "menuDelete": "이 휴대폰의 모든 데이터 삭제",
-          "menuDeleteConfirm": "이 휴대폰에서 모두 삭제"
+          "menuDeleteConfirm": "이 휴대폰에서 모두 삭제",
+          "periodPay": "급여일부터 급여일까지",
+          "periodCalendar": "달력 월"
         },
         "nb": {
           "menuMe": "Meg",
+          "menuData": "Dine data",
           "menuExport": "Eksporter data",
           "menuDelete": "Slett alle data på telefonen",
-          "menuDeleteConfirm": "Slett alt på telefonen"
+          "menuDeleteConfirm": "Slett alt på telefonen",
+          "periodPay": "Lønn til lønn",
+          "periodCalendar": "Kalendermåned"
         },
         "nl": {
           "menuMe": "Ik",
+          "menuData": "Je gegevens",
           "menuExport": "Gegevens exporteren",
           "menuDelete": "Alle gegevens op deze telefoon wissen",
-          "menuDeleteConfirm": "Alles op deze telefoon wissen"
+          "menuDeleteConfirm": "Alles op deze telefoon wissen",
+          "periodPay": "Van salaris tot salaris",
+          "periodCalendar": "Kalendermaand"
         },
         "pl": {
           "menuMe": "Ja",
+          "menuData": "Twoje dane",
           "menuExport": "Eksport danych",
           "menuDelete": "Usuń wszystkie dane z tego telefonu",
-          "menuDeleteConfirm": "Usuń wszystko z tego telefonu"
+          "menuDeleteConfirm": "Usuń wszystko z tego telefonu",
+          "periodPay": "Od wypłaty do wypłaty",
+          "periodCalendar": "Miesiąc kalendarzowy"
         },
         "pt-BR": {
           "menuMe": "Eu",
+          "menuData": "Seus dados",
           "menuExport": "Exportar dados",
           "menuDelete": "Apagar todos os dados deste celular",
-          "menuDeleteConfirm": "Apagar tudo neste celular"
+          "menuDeleteConfirm": "Apagar tudo neste celular",
+          "periodPay": "De salário a salário",
+          "periodCalendar": "Mês do calendário"
         },
         "sv": {
           "menuMe": "Jag",
+          "menuData": "Dina data",
           "menuExport": "Exportera data",
           "menuDelete": "Radera all data på telefonen",
-          "menuDeleteConfirm": "Radera allt på telefonen"
+          "menuDeleteConfirm": "Radera allt på telefonen",
+          "periodPay": "Lön till lön",
+          "periodCalendar": "Kalendermånad"
         },
         "tr": {
           "menuMe": "Ben",
+          "menuData": "Verilerin",
           "menuExport": "Verileri dışa aktar",
           "menuDelete": "Bu telefondaki tüm verileri sil",
-          "menuDeleteConfirm": "Bu telefondaki her şeyi sil"
+          "menuDeleteConfirm": "Bu telefondaki her şeyi sil",
+          "periodPay": "Maaştan maaşa",
+          "periodCalendar": "Takvim ayı"
         },
         "zh-Hans": {
           "menuMe": "我",
+          "menuData": "你的数据",
           "menuExport": "导出数据",
           "menuDelete": "删除这部手机上的所有数据",
-          "menuDeleteConfirm": "删除这部手机上的全部内容"
+          "menuDeleteConfirm": "删除这部手机上的全部内容",
+          "periodPay": "从发薪日到下个发薪日",
+          "periodCalendar": "自然月"
         }
       },
       "recipients": [
