@@ -60,6 +60,45 @@
     "apps": "Appar",
     "noData": "Inga data än",
     "allApps": "Alla appar",
-    "seeStats": "Se statistik"
+    "seeStats": "Se statistik",
+    "includeTest": "Ta med testtrafik",
+    "loading": "Hämtar statistik …",
+    "retry": "Försök igen",
+    "statsNotConfigured": "Statistiken är inte ansluten på servern.",
+    "sourceRefused": "Appens server avvisade statistiknyckeln.",
+    "sourceFailed": "Det gick inte att hämta statistiken från appens server.",
+    "stats": {
+      "period": "Period",
+      "periodRange": "{{from}} – {{to}}",
+      "withTest": "Testtrafik ingår.",
+      "withoutTest": "Testtrafik ingår inte.",
+      "active": "Aktiva användare",
+      "day": "Per dag",
+      "week": "Per vecka",
+      "month": "Per månad",
+      "retention": "Andel som kommer tillbaka",
+      "dayN": "Dag {{n}}",
+      "weekN": "Vecka {{n}}",
+      "monthN": "Månad {{n}}",
+      "onboarding": "Introduktion",
+      "onboardingSteps": {
+        "started": "Påbörjad",
+        "completed": "Slutförd",
+        "skipped": "Hoppades över"
+      },
+      "events": "Funktioner som används",
+      "providerClicks": "Klick till leverantörer",
+      "platforms": "Plattform",
+      "platformNames": {
+        "ios": "iOS",
+        "android": "Android",
+        "web": "Webb"
+      },
+      "versions": "Appversion",
+      "languages": "Språk",
+      "legacy": "Gamla siffror (före {{date}})",
+      "legacyNote": "Från den gamla statistiken. Räknat på ett annat sätt, så de går inte att jämföra med siffrorna ovan.",
+      "eventNames": {}
+    }
   }
 }

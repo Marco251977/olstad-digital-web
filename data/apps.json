@@ -74,6 +74,10 @@
           "googlePlay": "com.olstaddigital.plantravel"
         },
         "website": "https://plantravelapp.no",
+        "stats": {
+          "source": "plantravel",
+          "legacyUntil": "2026-10-24"
+        },
         "links": [
           "privacy",
           "support"

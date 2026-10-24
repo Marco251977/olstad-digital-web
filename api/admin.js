@@ -2,13 +2,18 @@
 // Only the addresses in the allowlist get in: ADMIN_EMAILS (Vercel environment, comma separated) is checked here on
 // the server before a code is sent, before a code is checked and on every request after sign-in. Everyone else gets
 // 403, and no code is sent to them. Without ADMIN_EMAILS nobody gets in.
-// Environment (Vercel): ADMIN_EMAILS, SUPABASE_URL, SUPABASE_ANON_KEY (the project's public key – the apps ship it).
+// Environment (Vercel): ADMIN_EMAILS, SUPABASE_URL, SUPABASE_ANON_KEY (the project's public key – the apps ship it),
+// and per statistics source PLANTRAVEL_API_URL, PLANTRAVEL_STATS_KEY (secret; see lib/stats.js). Names in .env.example.
 // Actions (POST JSON): { action: 'code', email } · { action: 'verify', email, code } · { action: 'me' } + Bearer token ·
-// { action: 'stats', app } + Bearer token = that app's statistics (data null until it has a source; only apps in data/apps.json).
+// { action: 'stats', app, includeTest } + Bearer token = that app's statistics (only apps in data/apps.json): data null until
+// the app has a source (home.stats.source), else the aggregate numbers fetched on the server (lib/stats.js – the source's
+// key never leaves the server; includeTest true = with test traffic, default off).
 // Every failure is an error code the page turns into a text: refused (403), rate_limited (429), not_configured (503,
-// with the missing setting names), wrong_code / signed_out (401), server (502, with Supabase's status and code).
+// with the missing setting names), wrong_code / signed_out (401), server (502, with Supabase's status and code); for the
+// statistics also stats_not_configured (503), source_refused / source (502) and source_timeout (504).
 
 import appList from '../data/apps.json' with { type: 'json' };
+import { fetchStats } from '../lib/stats.js';
 
 /** The apps /admin shows: every app in the app list with a «home» part (the same list as the front page). */
 export const ADMIN_APPS = appList.apps.filter((a) => a.home).map((a) => a.home.id);
@@ -89,8 +94,11 @@ async function answer(request, env, fetcher) {
     if (!allowed(user.email, env)) return json(403, { error: 'refused' });
     if (body.action === 'me') return json(200, { email: user.email });
     if (!ADMIN_APPS.includes(body.app)) return json(404, { error: 'unknown_app' });
-    // No statistics source is connected yet (next round: usage events, RevenueCat, the stores) – «No data yet».
-    return json(200, { app: body.app, data: null });
+    const home = appList.apps.find((a) => a.home?.id === body.app).home;
+    // No statistics source connected (yet) – «No data yet».
+    if (!home.stats?.source) return json(200, { app: body.app, data: null });
+    const s = await fetchStats(home.stats.source, { includeTest: body.includeTest === true }, env, fetcher);
+    return json(s.status, s.status === 200 ? { app: body.app, legacyUntil: home.stats.legacyUntil ?? null, ...s.body } : s.body);
   }
   return json(400, { error: 'bad_request' });
 }

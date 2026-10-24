@@ -60,6 +60,45 @@
     "apps": "Apps",
     "noData": "Noch keine Daten",
     "allApps": "Alle Apps",
-    "seeStats": "Statistik ansehen"
+    "seeStats": "Statistik ansehen",
+    "includeTest": "Testverkehr einbeziehen",
+    "loading": "Statistik wird geladen …",
+    "retry": "Erneut versuchen",
+    "statsNotConfigured": "Die Statistik ist auf dem Server nicht verbunden.",
+    "sourceRefused": "Der Server der App hat den Statistikschlüssel abgelehnt.",
+    "sourceFailed": "Die Statistik konnte nicht vom Server der App abgerufen werden.",
+    "stats": {
+      "period": "Zeitraum",
+      "periodRange": "{{from}} – {{to}}",
+      "withTest": "Testverkehr ist enthalten.",
+      "withoutTest": "Testverkehr ist nicht enthalten.",
+      "active": "Aktive Nutzer",
+      "day": "Pro Tag",
+      "week": "Pro Woche",
+      "month": "Pro Monat",
+      "retention": "Anteil, der wiederkommt",
+      "dayN": "Tag {{n}}",
+      "weekN": "Woche {{n}}",
+      "monthN": "Monat {{n}}",
+      "onboarding": "Einführung",
+      "onboardingSteps": {
+        "started": "Begonnen",
+        "completed": "Abgeschlossen",
+        "skipped": "Übersprungen"
+      },
+      "events": "Genutzte Funktionen",
+      "providerClicks": "Klicks zu Anbietern",
+      "platforms": "Plattform",
+      "platformNames": {
+        "ios": "iOS",
+        "android": "Android",
+        "web": "Web"
+      },
+      "versions": "App-Version",
+      "languages": "Sprache",
+      "legacy": "Alte Zahlen (vor dem {{date}})",
+      "legacyNote": "Aus der alten Statistik. Anders gezählt, daher nicht mit den Zahlen oben vergleichbar.",
+      "eventNames": {}
+    }
   }
 }

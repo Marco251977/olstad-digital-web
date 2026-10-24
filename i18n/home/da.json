@@ -60,6 +60,45 @@
     "apps": "Apps",
     "noData": "Ingen data endnu",
     "allApps": "Alle apps",
-    "seeStats": "Se statistik"
+    "seeStats": "Se statistik",
+    "includeTest": "Medtag testtrafik",
+    "loading": "Henter statistik …",
+    "retry": "Prøv igen",
+    "statsNotConfigured": "Statistikken er ikke forbundet på serveren.",
+    "sourceRefused": "Appens server afviste statistiknøglen.",
+    "sourceFailed": "Kunne ikke hente statistikken fra appens server.",
+    "stats": {
+      "period": "Periode",
+      "periodRange": "{{from}} – {{to}}",
+      "withTest": "Testtrafik er med.",
+      "withoutTest": "Testtrafik er ikke med.",
+      "active": "Aktive brugere",
+      "day": "Pr. dag",
+      "week": "Pr. uge",
+      "month": "Pr. måned",
+      "retention": "Andel der kommer tilbage",
+      "dayN": "Dag {{n}}",
+      "weekN": "Uge {{n}}",
+      "monthN": "Måned {{n}}",
+      "onboarding": "Introduktion",
+      "onboardingSteps": {
+        "started": "Startet",
+        "completed": "Gennemført",
+        "skipped": "Sprunget over"
+      },
+      "events": "Funktioner i brug",
+      "providerClicks": "Klik til leverandører",
+      "platforms": "Platform",
+      "platformNames": {
+        "ios": "iOS",
+        "android": "Android",
+        "web": "Web"
+      },
+      "versions": "Appversion",
+      "languages": "Sprog",
+      "legacy": "Gamle tal (før {{date}})",
+      "legacyNote": "Fra den gamle statistik. Talt på en anden måde, så de kan ikke sammenlignes med tallene ovenfor.",
+      "eventNames": {}
+    }
   }
 }

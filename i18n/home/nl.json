@@ -60,6 +60,45 @@
     "apps": "Apps",
     "noData": "Nog geen gegevens",
     "allApps": "Alle apps",
-    "seeStats": "Statistieken bekijken"
+    "seeStats": "Statistieken bekijken",
+    "includeTest": "Testverkeer meenemen",
+    "loading": "Statistieken laden …",
+    "retry": "Opnieuw proberen",
+    "statsNotConfigured": "De statistieken zijn niet gekoppeld op de server.",
+    "sourceRefused": "De server van de app heeft de statistiekensleutel geweigerd.",
+    "sourceFailed": "De statistieken konden niet worden opgehaald van de server van de app.",
+    "stats": {
+      "period": "Periode",
+      "periodRange": "{{from}} – {{to}}",
+      "withTest": "Testverkeer is meegenomen.",
+      "withoutTest": "Testverkeer is niet meegenomen.",
+      "active": "Actieve gebruikers",
+      "day": "Per dag",
+      "week": "Per week",
+      "month": "Per maand",
+      "retention": "Aandeel dat terugkomt",
+      "dayN": "Dag {{n}}",
+      "weekN": "Week {{n}}",
+      "monthN": "Maand {{n}}",
+      "onboarding": "Introductie",
+      "onboardingSteps": {
+        "started": "Gestart",
+        "completed": "Voltooid",
+        "skipped": "Overgeslagen"
+      },
+      "events": "Gebruikte functies",
+      "providerClicks": "Klikken naar aanbieders",
+      "platforms": "Platform",
+      "platformNames": {
+        "ios": "iOS",
+        "android": "Android",
+        "web": "Web"
+      },
+      "versions": "App-versie",
+      "languages": "Taal",
+      "legacy": "Oude cijfers (vóór {{date}})",
+      "legacyNote": "Uit de oude statistieken. Anders geteld, dus niet vergelijkbaar met de cijfers hierboven.",
+      "eventNames": {}
+    }
   }
 }

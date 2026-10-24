@@ -60,6 +60,45 @@
     "apps": "ऐप",
     "noData": "अभी कोई डेटा नहीं",
     "allApps": "सभी ऐप",
-    "seeStats": "आंकड़े देखें"
+    "seeStats": "आंकड़े देखें",
+    "includeTest": "टेस्ट ट्रैफिक शामिल करें",
+    "loading": "आंकड़े लोड हो रहे हैं…",
+    "retry": "फिर से कोशिश करें",
+    "statsNotConfigured": "सर्वर पर आंकड़े कनेक्ट नहीं हैं।",
+    "sourceRefused": "ऐप के सर्वर ने आंकड़ों की कुंजी अस्वीकार कर दी।",
+    "sourceFailed": "ऐप के सर्वर से आंकड़े नहीं मिल सके।",
+    "stats": {
+      "period": "अवधि",
+      "periodRange": "{{from}} – {{to}}",
+      "withTest": "टेस्ट ट्रैफिक शामिल है।",
+      "withoutTest": "टेस्ट ट्रैफिक शामिल नहीं है।",
+      "active": "सक्रिय यूज़र",
+      "day": "प्रतिदिन",
+      "week": "प्रति सप्ताह",
+      "month": "प्रति माह",
+      "retention": "लौटकर आने वालों का हिस्सा",
+      "dayN": "दिन {{n}}",
+      "weekN": "सप्ताह {{n}}",
+      "monthN": "माह {{n}}",
+      "onboarding": "शुरुआती सेटअप",
+      "onboardingSteps": {
+        "started": "शुरू किया",
+        "completed": "पूरा किया",
+        "skipped": "छोड़ दिया"
+      },
+      "events": "इस्तेमाल हुए फीचर",
+      "providerClicks": "सप्लायर पर क्लिक",
+      "platforms": "प्लेटफॉर्म",
+      "platformNames": {
+        "ios": "iOS",
+        "android": "Android",
+        "web": "वेब"
+      },
+      "versions": "ऐप वर्शन",
+      "languages": "भाषा",
+      "legacy": "पुराने आंकड़े ({{date}} से पहले)",
+      "legacyNote": "पुराने आंकड़ों से। अलग तरीके से गिने गए, इसलिए ऊपर के आंकड़ों से तुलना नहीं की जा सकती।",
+      "eventNames": {}
+    }
   }
 }

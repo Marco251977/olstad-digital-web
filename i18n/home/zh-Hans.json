@@ -60,6 +60,45 @@
     "apps": "应用",
     "noData": "暂无数据",
     "allApps": "所有应用",
-    "seeStats": "查看统计"
+    "seeStats": "查看统计",
+    "includeTest": "包含测试流量",
+    "loading": "正在加载统计…",
+    "retry": "重试",
+    "statsNotConfigured": "服务器上未连接统计。",
+    "sourceRefused": "应用的服务器拒绝了统计密钥。",
+    "sourceFailed": "无法从应用的服务器获取统计。",
+    "stats": {
+      "period": "期间",
+      "periodRange": "{{from}} – {{to}}",
+      "withTest": "已包含测试流量。",
+      "withoutTest": "未包含测试流量。",
+      "active": "活跃用户",
+      "day": "每日",
+      "week": "每周",
+      "month": "每月",
+      "retention": "回访比例",
+      "dayN": "第 {{n}} 天",
+      "weekN": "第 {{n}} 周",
+      "monthN": "第 {{n}} 个月",
+      "onboarding": "新手引导",
+      "onboardingSteps": {
+        "started": "已开始",
+        "completed": "已完成",
+        "skipped": "已跳过"
+      },
+      "events": "使用的功能",
+      "providerClicks": "供应商点击",
+      "platforms": "平台",
+      "platformNames": {
+        "ios": "iOS",
+        "android": "Android",
+        "web": "网页"
+      },
+      "versions": "应用版本",
+      "languages": "语言",
+      "legacy": "旧数据（{{date}} 之前）",
+      "legacyNote": "来自旧统计。统计方式不同，因此无法与上面的数字比较。",
+      "eventNames": {}
+    }
   }
 }

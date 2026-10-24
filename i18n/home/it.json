@@ -60,6 +60,45 @@
     "apps": "App",
     "noData": "Nessun dato per ora",
     "allApps": "Tutte le app",
-    "seeStats": "Vedi statistiche"
+    "seeStats": "Vedi statistiche",
+    "includeTest": "Includi il traffico di test",
+    "loading": "Caricamento statistiche …",
+    "retry": "Riprova",
+    "statsNotConfigured": "Le statistiche non sono collegate sul server.",
+    "sourceRefused": "Il server dell’app ha rifiutato la chiave delle statistiche.",
+    "sourceFailed": "Impossibile recuperare le statistiche dal server dell’app.",
+    "stats": {
+      "period": "Periodo",
+      "periodRange": "{{from}} – {{to}}",
+      "withTest": "Il traffico di test è incluso.",
+      "withoutTest": "Il traffico di test non è incluso.",
+      "active": "Utenti attivi",
+      "day": "Al giorno",
+      "week": "A settimana",
+      "month": "Al mese",
+      "retention": "Quota di chi torna",
+      "dayN": "Giorno {{n}}",
+      "weekN": "Settimana {{n}}",
+      "monthN": "Mese {{n}}",
+      "onboarding": "Introduzione",
+      "onboardingSteps": {
+        "started": "Iniziata",
+        "completed": "Completata",
+        "skipped": "Saltata"
+      },
+      "events": "Funzioni usate",
+      "providerClicks": "Clic verso i fornitori",
+      "platforms": "Piattaforma",
+      "platformNames": {
+        "ios": "iOS",
+        "android": "Android",
+        "web": "Web"
+      },
+      "versions": "Versione dell’app",
+      "languages": "Lingua",
+      "legacy": "Vecchi numeri (prima del {{date}})",
+      "legacyNote": "Dalle vecchie statistiche. Contati in modo diverso, quindi non confrontabili con i numeri sopra.",
+      "eventNames": {}
+    }
   }
 }

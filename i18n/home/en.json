@@ -60,6 +60,45 @@
     "apps": "Apps",
     "noData": "No data yet",
     "allApps": "All apps",
-    "seeStats": "See statistics"
+    "seeStats": "See statistics",
+    "includeTest": "Include test traffic",
+    "loading": "Loading statistics …",
+    "retry": "Try again",
+    "statsNotConfigured": "Statistics are not connected on the server.",
+    "sourceRefused": "The app's server refused the statistics key.",
+    "sourceFailed": "Could not fetch the statistics from the app's server.",
+    "stats": {
+      "period": "Period",
+      "periodRange": "{{from}} – {{to}}",
+      "withTest": "Test traffic is included.",
+      "withoutTest": "Test traffic is not included.",
+      "active": "Active users",
+      "day": "Daily",
+      "week": "Weekly",
+      "month": "Monthly",
+      "retention": "Share who come back",
+      "dayN": "Day {{n}}",
+      "weekN": "Week {{n}}",
+      "monthN": "Month {{n}}",
+      "onboarding": "Onboarding",
+      "onboardingSteps": {
+        "started": "Started",
+        "completed": "Completed",
+        "skipped": "Skipped"
+      },
+      "events": "Features used",
+      "providerClicks": "Supplier clicks",
+      "platforms": "Platform",
+      "platformNames": {
+        "ios": "iOS",
+        "android": "Android",
+        "web": "Web"
+      },
+      "versions": "App version",
+      "languages": "Language",
+      "legacy": "Old numbers (before {{date}})",
+      "legacyNote": "From the old statistics. Counted differently, so not comparable with the numbers above.",
+      "eventNames": {}
+    }
   }
 }

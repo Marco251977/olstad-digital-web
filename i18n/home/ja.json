@@ -60,6 +60,45 @@
     "apps": "アプリ",
     "noData": "まだデータがありません",
     "allApps": "すべてのアプリ",
-    "seeStats": "統計を見る"
+    "seeStats": "統計を見る",
+    "includeTest": "テストトラフィックを含める",
+    "loading": "統計を読み込んでいます…",
+    "retry": "再試行",
+    "statsNotConfigured": "サーバーで統計が接続されていません。",
+    "sourceRefused": "アプリのサーバーが統計キーを拒否しました。",
+    "sourceFailed": "アプリのサーバーから統計を取得できませんでした。",
+    "stats": {
+      "period": "期間",
+      "periodRange": "{{from}}～{{to}}",
+      "withTest": "テストトラフィックを含みます。",
+      "withoutTest": "テストトラフィックを含みません。",
+      "active": "アクティブユーザー",
+      "day": "1日あたり",
+      "week": "1週間あたり",
+      "month": "1か月あたり",
+      "retention": "再訪率",
+      "dayN": "{{n}}日目",
+      "weekN": "{{n}}週目",
+      "monthN": "{{n}}か月目",
+      "onboarding": "初期設定",
+      "onboardingSteps": {
+        "started": "開始",
+        "completed": "完了",
+        "skipped": "スキップ"
+      },
+      "events": "使われた機能",
+      "providerClicks": "提供元へのクリック",
+      "platforms": "プラットフォーム",
+      "platformNames": {
+        "ios": "iOS",
+        "android": "Android",
+        "web": "Web"
+      },
+      "versions": "アプリのバージョン",
+      "languages": "言語",
+      "legacy": "旧データ（{{date}}より前）",
+      "legacyNote": "旧統計のデータです。数え方が異なるため、上の数値とは比較できません。",
+      "eventNames": {}
+    }
   }
 }

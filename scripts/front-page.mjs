@@ -188,7 +188,8 @@ export function adminPage({ homes, company, esc, fallback, apps, app = null }) {
   const inside = app
     ? `<a class="back" href="/admin">${back}<span data-t="allApps">${esc(t.allApps)}</span></a>
       <div class="admin-app-head">${icon(app)}<h2>${esc(app.name)}</h2></div>
-      <div id="stats" class="admin-card" data-app="${esc(app.home.id)}"><p class="muted" data-t="checking">${esc(t.checking)}</p></div>`
+      ${app.home.stats?.source ? `<label class="admin-toggle"><input type="checkbox" id="include-test" role="switch"><span data-t="includeTest">${esc(t.includeTest)}</span></label>` : ''}
+      <div id="stats" class="admin-stats" data-app="${esc(app.home.id)}" aria-live="polite"><p class="admin-card muted" data-t="checking">${esc(t.checking)}</p></div>`
     : `<h2 data-t="apps">${esc(t.apps)}</h2>
       <ul class="admin-apps">${apps
         .filter((a) => a.home)
@@ -237,30 +238,60 @@ export function adminPage({ homes, company, esc, fallback, apps, app = null }) {
   var $ = function (id) { return document.getElementById(id); };
   var say = function (key, detail) { $('message').textContent = key ? t[key] + (detail ? ' (' + detail + ')' : '') : ''; };
   // The server's error code → its text; anything else says what failed (HTTP status and the server's code).
-  var KEYS = { refused: 'refused', rate_limited: 'tooMany', not_configured: 'notConfigured', wrong_code: 'wrongCode' };
-  var fail = function (j) {
-    if (KEYS[j.error]) return say(KEYS[j.error], j.missing ? j.missing.join(', ') : '');
-    say('failed', ['HTTP ' + j.status, j.code].filter(Boolean).join(' · '));
+  var KEYS = { refused: 'refused', rate_limited: 'tooMany', not_configured: 'notConfigured', wrong_code: 'wrongCode', stats_not_configured: 'statsNotConfigured', source_refused: 'sourceRefused', source: 'sourceFailed', source_timeout: 'sourceFailed' };
+  var failText = function (j) {
+    if (KEYS[j.error]) return [KEYS[j.error], j.missing ? j.missing.join(', ') : j.code || ''];
+    if (!j.status) return ['failed', 'offline'];
+    return ['failed', ['HTTP ' + j.status, j.code].filter(Boolean).join(' · ')];
   };
+  var fail = function (j) { var f = failText(j); say(f[0], f[1]); };
   var call = function (body, token) {
     return fetch('/api/admin', { method: 'POST', headers: Object.assign({ 'content-type': 'application/json' }, token ? { authorization: 'Bearer ' + token } : {}), body: JSON.stringify(body) })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { j.status = r.status; return j; }); });
   };
   var KEY = 'admin.session';
   var signedOut = function () { $('email-form').hidden = false; $('code-form').hidden = true; $('inside').hidden = true; };
-  // The app page: the statistics from the server (data null = no source yet → «No data yet»).
+  // The app page: the statistics from the server (data null = no source yet → «No data yet»; otherwise aggregate numbers,
+  // laid out by /assets/admin-stats.js with textContent only). Loading, error (with «Try again») and the test-traffic switch.
+  var line = function (box, text) {
+    box.textContent = '';
+    var p = document.createElement('p');
+    p.className = 'admin-card muted';
+    p.textContent = text;
+    box.appendChild(p);
+    return p;
+  };
   var loadStats = function (token) {
     var box = $('stats');
     if (!box) return;
-    call({ action: 'stats', app: box.getAttribute('data-app') }, token).then(function (j) {
-      if (j.status !== 200) return fail(j);
-      box.textContent = '';
-      var p = document.createElement('p');
-      p.className = 'muted';
-      p.textContent = t.noData;
-      if (!j.data) box.appendChild(p);
-    }, function () { say('failed', 'offline'); });
+    var toggle = $('include-test');
+    line(box, t.loading);
+    box.setAttribute('aria-busy', 'true');
+    var failed = function (j) {
+      box.removeAttribute('aria-busy');
+      var f = failText(j); // shown in the card (with «Try again»), not again under it
+      var p = line(box, t[f[0]] + (f[1] ? ' (' + f[1] + ')' : ''));
+      var again = document.createElement('button');
+      again.type = 'button';
+      again.className = 'btn ghost';
+      again.textContent = t.retry;
+      again.addEventListener('click', function () { say(''); loadStats(token); });
+      p.appendChild(document.createElement('br'));
+      p.appendChild(again);
+    };
+    call({ action: 'stats', app: box.getAttribute('data-app'), includeTest: !!(toggle && toggle.checked) }, token).then(function (j) {
+      if (j.status !== 200) return failed(j);
+      if (!j.data) { box.removeAttribute('aria-busy'); return line(box, t.noData); }
+      return import('/assets/admin-stats.js').then(function (m) {
+        m.renderStats(box, m.statsView(j.data, t, lang, j.legacyUntil));
+        box.removeAttribute('aria-busy');
+      });
+    }).catch(function () { failed({ error: 'offline', status: 0, code: 'offline' }); });
   };
+  if ($('include-test')) $('include-test').addEventListener('change', function () {
+    var tk; try { tk = sessionStorage.getItem(KEY); } catch (e) {}
+    if (tk) loadStats(tk);
+  });
   var show = function (email, token) {
     $('email-form').hidden = true; $('code-form').hidden = true; $('inside').hidden = false; $('who').textContent = email; say('');
     loadStats(token);

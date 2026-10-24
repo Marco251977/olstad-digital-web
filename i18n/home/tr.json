@@ -60,6 +60,45 @@
     "apps": "Uygulamalar",
     "noData": "Henüz veri yok",
     "allApps": "Tüm uygulamalar",
-    "seeStats": "İstatistikleri gör"
+    "seeStats": "İstatistikleri gör",
+    "includeTest": "Test trafiğini dahil et",
+    "loading": "İstatistikler yükleniyor …",
+    "retry": "Tekrar dene",
+    "statsNotConfigured": "İstatistikler sunucuya bağlı değil.",
+    "sourceRefused": "Uygulamanın sunucusu istatistik anahtarını reddetti.",
+    "sourceFailed": "İstatistikler uygulamanın sunucusundan alınamadı.",
+    "stats": {
+      "period": "Dönem",
+      "periodRange": "{{from}} – {{to}}",
+      "withTest": "Test trafiği dahil.",
+      "withoutTest": "Test trafiği dahil değil.",
+      "active": "Aktif kullanıcılar",
+      "day": "Günlük",
+      "week": "Haftalık",
+      "month": "Aylık",
+      "retention": "Geri dönenlerin oranı",
+      "dayN": "{{n}}. gün",
+      "weekN": "{{n}}. hafta",
+      "monthN": "{{n}}. ay",
+      "onboarding": "İlk kurulum",
+      "onboardingSteps": {
+        "started": "Başladı",
+        "completed": "Tamamlandı",
+        "skipped": "Atlandı"
+      },
+      "events": "Kullanılan özellikler",
+      "providerClicks": "Sağlayıcılara tıklamalar",
+      "platforms": "Platform",
+      "platformNames": {
+        "ios": "iOS",
+        "android": "Android",
+        "web": "Web"
+      },
+      "versions": "Uygulama sürümü",
+      "languages": "Dil",
+      "legacy": "Eski rakamlar ({{date}} öncesi)",
+      "legacyNote": "Eski istatistiklerden. Farklı sayıldığı için yukarıdaki rakamlarla karşılaştırılamaz.",
+      "eventNames": {}
+    }
   }
 }

@@ -60,6 +60,45 @@
     "apps": "앱",
     "noData": "아직 데이터가 없어요",
     "allApps": "모든 앱",
-    "seeStats": "통계 보기"
+    "seeStats": "통계 보기",
+    "includeTest": "테스트 트래픽 포함",
+    "loading": "통계를 불러오는 중…",
+    "retry": "다시 시도",
+    "statsNotConfigured": "서버에 통계가 연결되어 있지 않아요.",
+    "sourceRefused": "앱 서버가 통계 키를 거부했어요.",
+    "sourceFailed": "앱 서버에서 통계를 가져오지 못했어요.",
+    "stats": {
+      "period": "기간",
+      "periodRange": "{{from}} – {{to}}",
+      "withTest": "테스트 트래픽이 포함돼요.",
+      "withoutTest": "테스트 트래픽이 포함되지 않아요.",
+      "active": "활성 사용자",
+      "day": "일간",
+      "week": "주간",
+      "month": "월간",
+      "retention": "다시 찾는 비율",
+      "dayN": "{{n}}일차",
+      "weekN": "{{n}}주차",
+      "monthN": "{{n}}개월차",
+      "onboarding": "시작 안내",
+      "onboardingSteps": {
+        "started": "시작",
+        "completed": "완료",
+        "skipped": "건너뜀"
+      },
+      "events": "사용된 기능",
+      "providerClicks": "공급업체 클릭",
+      "platforms": "플랫폼",
+      "platformNames": {
+        "ios": "iOS",
+        "android": "Android",
+        "web": "웹"
+      },
+      "versions": "앱 버전",
+      "languages": "언어",
+      "legacy": "이전 수치({{date}} 이전)",
+      "legacyNote": "이전 통계의 수치예요. 집계 방식이 달라 위 수치와 비교할 수 없어요.",
+      "eventNames": {}
+    }
   }
 }

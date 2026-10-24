@@ -60,6 +60,45 @@
     "apps": "التطبيقات",
     "noData": "لا توجد بيانات بعد",
     "allApps": "كل التطبيقات",
-    "seeStats": "عرض الإحصاءات"
+    "seeStats": "عرض الإحصاءات",
+    "includeTest": "تضمين حركة الاختبار",
+    "loading": "جارٍ تحميل الإحصاءات…",
+    "retry": "إعادة المحاولة",
+    "statsNotConfigured": "الإحصاءات غير متصلة على الخادم.",
+    "sourceRefused": "رفض خادم التطبيق مفتاح الإحصاءات.",
+    "sourceFailed": "تعذّر جلب الإحصاءات من خادم التطبيق.",
+    "stats": {
+      "period": "الفترة",
+      "periodRange": "{{from}} – {{to}}",
+      "withTest": "حركة الاختبار مضمّنة.",
+      "withoutTest": "حركة الاختبار غير مضمّنة.",
+      "active": "المستخدمون النشطون",
+      "day": "يوميًا",
+      "week": "أسبوعيًا",
+      "month": "شهريًا",
+      "retention": "نسبة العائدين",
+      "dayN": "اليوم {{n}}",
+      "weekN": "الأسبوع {{n}}",
+      "monthN": "الشهر {{n}}",
+      "onboarding": "البدء",
+      "onboardingSteps": {
+        "started": "بدأ",
+        "completed": "اكتمل",
+        "skipped": "تم تخطيه"
+      },
+      "events": "الميزات المستخدمة",
+      "providerClicks": "النقرات إلى المزوّدين",
+      "platforms": "المنصة",
+      "platformNames": {
+        "ios": "iOS",
+        "android": "Android",
+        "web": "الويب"
+      },
+      "versions": "إصدار التطبيق",
+      "languages": "اللغة",
+      "legacy": "الأرقام القديمة (قبل {{date}})",
+      "legacyNote": "من الإحصاءات القديمة. حُسبت بطريقة مختلفة، لذا لا يمكن مقارنتها بالأرقام أعلاه.",
+      "eventNames": {}
+    }
   }
 }

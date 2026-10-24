@@ -60,6 +60,45 @@
     "apps": "Sovellukset",
     "noData": "Ei vielä tietoja",
     "allApps": "Kaikki sovellukset",
-    "seeStats": "Näytä tilastot"
+    "seeStats": "Näytä tilastot",
+    "includeTest": "Sisällytä testiliikenne",
+    "loading": "Haetaan tilastoja …",
+    "retry": "Yritä uudelleen",
+    "statsNotConfigured": "Tilastoja ei ole yhdistetty palvelimella.",
+    "sourceRefused": "Sovelluksen palvelin hylkäsi tilastoavaimen.",
+    "sourceFailed": "Tilastoja ei saatu haettua sovelluksen palvelimelta.",
+    "stats": {
+      "period": "Ajanjakso",
+      "periodRange": "{{from}} – {{to}}",
+      "withTest": "Testiliikenne on mukana.",
+      "withoutTest": "Testiliikenne ei ole mukana.",
+      "active": "Aktiiviset käyttäjät",
+      "day": "Päivässä",
+      "week": "Viikossa",
+      "month": "Kuukaudessa",
+      "retention": "Palaavien osuus",
+      "dayN": "Päivä {{n}}",
+      "weekN": "Viikko {{n}}",
+      "monthN": "Kuukausi {{n}}",
+      "onboarding": "Käyttöönotto",
+      "onboardingSteps": {
+        "started": "Aloitettu",
+        "completed": "Valmis",
+        "skipped": "Ohitettu"
+      },
+      "events": "Käytetyt toiminnot",
+      "providerClicks": "Klikkaukset palveluntarjoajille",
+      "platforms": "Alusta",
+      "platformNames": {
+        "ios": "iOS",
+        "android": "Android",
+        "web": "Verkko"
+      },
+      "versions": "Sovellusversio",
+      "languages": "Kieli",
+      "legacy": "Vanhat luvut (ennen {{date}})",
+      "legacyNote": "Vanhasta tilastosta. Laskettu eri tavalla, joten niitä ei voi verrata yllä oleviin lukuihin.",
+      "eventNames": {}
+    }
   }
 }

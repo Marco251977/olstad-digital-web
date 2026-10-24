@@ -60,6 +60,45 @@
     "apps": "Aplikacje",
     "noData": "Brak danych",
     "allApps": "Wszystkie aplikacje",
-    "seeStats": "Zobacz statystyki"
+    "seeStats": "Zobacz statystyki",
+    "includeTest": "Uwzględnij ruch testowy",
+    "loading": "Wczytywanie statystyk …",
+    "retry": "Spróbuj ponownie",
+    "statsNotConfigured": "Statystyki nie są połączone na serwerze.",
+    "sourceRefused": "Serwer aplikacji odrzucił klucz statystyk.",
+    "sourceFailed": "Nie udało się pobrać statystyk z serwera aplikacji.",
+    "stats": {
+      "period": "Okres",
+      "periodRange": "{{from}} – {{to}}",
+      "withTest": "Ruch testowy jest uwzględniony.",
+      "withoutTest": "Ruch testowy nie jest uwzględniony.",
+      "active": "Aktywni użytkownicy",
+      "day": "Dziennie",
+      "week": "Tygodniowo",
+      "month": "Miesięcznie",
+      "retention": "Odsetek powracających",
+      "dayN": "Dzień {{n}}",
+      "weekN": "Tydzień {{n}}",
+      "monthN": "Miesiąc {{n}}",
+      "onboarding": "Wprowadzenie",
+      "onboardingSteps": {
+        "started": "Rozpoczęte",
+        "completed": "Ukończone",
+        "skipped": "Pominięte"
+      },
+      "events": "Używane funkcje",
+      "providerClicks": "Kliknięcia do dostawców",
+      "platforms": "Platforma",
+      "platformNames": {
+        "ios": "iOS",
+        "android": "Android",
+        "web": "Internet"
+      },
+      "versions": "Wersja aplikacji",
+      "languages": "Język",
+      "legacy": "Stare liczby (przed {{date}})",
+      "legacyNote": "Ze starych statystyk. Liczone inaczej, więc nie można ich porównać z liczbami powyżej.",
+      "eventNames": {}
+    }
   }
 }
