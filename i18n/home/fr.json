@@ -53,11 +53,13 @@
     "refused": "Cette adresse n’a pas accès.",
     "wrongCode": "Le code est incorrect ou a expiré.",
     "failed": "Une erreur s’est produite. Réessayez.",
-    "coming": "Bientôt",
-    "comingBody": "Les statistiques apparaîtront ici.",
     "signOut": "Se déconnecter",
     "checking": "Vérification …",
     "tooMany": "Trop de tentatives. Patientez un peu et réessayez.",
-    "notConfigured": "La connexion n’est pas configurée sur le serveur."
+    "notConfigured": "La connexion n’est pas configurée sur le serveur.",
+    "apps": "Applis",
+    "noData": "Pas encore de données",
+    "allApps": "Toutes les applis",
+    "seeStats": "Voir les statistiques"
   }
 }

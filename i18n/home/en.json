@@ -53,11 +53,13 @@
     "refused": "This address does not have access.",
     "wrongCode": "The code is wrong or has expired.",
     "failed": "Something went wrong. Try again.",
-    "coming": "Coming",
-    "comingBody": "Statistics will appear here.",
     "signOut": "Log out",
     "checking": "Checking …",
     "tooMany": "Too many attempts. Wait a little and try again.",
-    "notConfigured": "Sign-in is not set up on the server."
+    "notConfigured": "Sign-in is not set up on the server.",
+    "apps": "Apps",
+    "noData": "No data yet",
+    "allApps": "All apps",
+    "seeStats": "See statistics"
   }
 }

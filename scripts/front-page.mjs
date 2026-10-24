@@ -170,16 +170,31 @@ export function frontPage({ lang, dir, apps, company, home: h, common, esc, fill
 }
 
 /**
- * /admin: sign in with e-mail + a one-time code (Supabase, the Saldo project), only for the addresses in the server's
- * allowlist (Vercel environment ADMIN_EMAILS, checked in api/admin.js – never in the page). Everyone else is refused
- * before any code is sent. Today only «Coming»; statistics come later. The page is in the visitor's language (the saved
- * choice, ?lang=, or the browser's), with every language's texts from i18n/home (admin.*).
+ * /admin and /admin/<app>: sign in with e-mail + a one-time code (Supabase, the Saldo project), only for the addresses in
+ * the server's allowlist (Vercel environment ADMIN_EMAILS, checked in api/admin.js – never in the page). Everyone else is
+ * refused before any code is sent. After sign-in, /admin shows one card per app in the app list (data/apps.json, every
+ * app with a «home» part – a new app there = a new card and page), and /admin/<app> the statistics for that app, fetched
+ * from /api/admin (action «stats»; «No data yet» until the app has a source). The page is in the visitor's language (the
+ * saved choice, ?lang=, or the browser's), with every language's texts from i18n/home (admin.*).
  */
-export function adminPage({ homes, company, esc, fallback }) {
+export function adminPage({ homes, company, esc, fallback, apps, app = null }) {
   const texts = JSON.stringify(Object.fromEntries(Object.entries(homes).map(([l, h]) => [l, { ...h.admin, signIn: h.signIn }]))).replace(/\{\{(\w+)\}\}/g, '%$1%'); // {{x}} → %x% (filled in the page)
   const rtl = JSON.stringify(CORE_LANGUAGES.filter((l) => l.rtl).map((l) => l.code));
   const t = homes[fallback].admin;
-  return `${head({ lang: fallback, dir: 'ltr', title: `${esc(t.title)} – ${esc(company.name)}`, description: esc(t.title), canonical: null, esc, extra: '\n  <meta name="robots" content="noindex, nofollow">' })}
+  const icon = (a) => `<img class="app-icon" src="${esc(a.home.icon)}" alt="" width="56" height="56">`;
+  const back = `<svg class="icon dir" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M15 6l-6 6 6 6"/></svg>`;
+  const next = `<svg class="icon dir" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></svg>`;
+  const status = (a) => (a.home.stats ? 'seeStats' : 'noData');
+  const inside = app
+    ? `<a class="back" href="/admin">${back}<span data-t="allApps">${esc(t.allApps)}</span></a>
+      <div class="admin-app-head">${icon(app)}<h2>${esc(app.name)}</h2></div>
+      <div id="stats" class="admin-card" data-app="${esc(app.home.id)}"><p class="muted" data-t="checking">${esc(t.checking)}</p></div>`
+    : `<h2 data-t="apps">${esc(t.apps)}</h2>
+      <ul class="admin-apps">${apps
+        .filter((a) => a.home)
+        .map((a) => `<li><a class="admin-card admin-app-link" href="/admin/${esc(a.home.id)}">${icon(a)}<span class="admin-app-text"><strong>${esc(a.name)}</strong><span class="muted" data-t="${status(a)}">${esc(t[status(a)])}</span></span>${next}</a></li>`)
+        .join('')}</ul>`;
+  return `${head({ lang: fallback, dir: 'ltr', title: `${esc(app ? app.name : t.title)} – ${esc(company.name)}`, description: esc(t.title), canonical: null, esc, extra: '\n  <meta name="robots" content="noindex, nofollow">' })}
 <body>
   <header class="top">
     <div class="wrap top-row">
@@ -188,7 +203,7 @@ export function adminPage({ homes, company, esc, fallback }) {
   </header>
   <main id="content" class="wrap admin">
     <h1 data-t="title">${esc(t.title)}</h1>
-    <form id="email-form" class="admin-form">
+    <form id="email-form" class="admin-form" hidden>
       <label for="email" data-t="email">${esc(t.email)}</label>
       <input id="email" name="email" type="email" autocomplete="email" required>
       <button class="btn primary" type="submit" data-t="sendCode">${esc(t.sendCode)}</button>
@@ -199,10 +214,9 @@ export function adminPage({ homes, company, esc, fallback }) {
       <input id="code" name="code" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6,10}" required>
       <button class="btn primary" type="submit" data-t="verify">${esc(t.verify)}</button>
     </form>
-    <section id="inside" hidden>
-      <p class="section-label" id="who"></p>
-      <h2 data-t="coming">${esc(t.coming)}</h2>
-      <p data-t="comingBody">${esc(t.comingBody)}</p>
+    <section id="inside" class="admin-inside" hidden>
+      <p class="muted admin-who" id="who"></p>
+      ${inside}
       <button class="btn ghost" id="sign-out" type="button" data-t="signOut">${esc(t.signOut)}</button>
     </section>
     <p id="message" role="status" aria-live="polite"></p>
@@ -218,7 +232,7 @@ export function adminPage({ homes, company, esc, fallback }) {
   var t = TEXTS[lang];
   document.documentElement.lang = lang;
   document.documentElement.dir = RTL.indexOf(lang) >= 0 ? 'rtl' : 'ltr';
-  document.title = t.title + ' – ${esc(company.name)}';
+  ${app ? '' : `document.title = t.title + ' – ${esc(company.name)}';`}
   document.querySelectorAll('[data-t]').forEach(function (el) { el.textContent = t[el.getAttribute('data-t')]; });
   var $ = function (id) { return document.getElementById(id); };
   var say = function (key, detail) { $('message').textContent = key ? t[key] + (detail ? ' (' + detail + ')' : '') : ''; };
@@ -233,19 +247,35 @@ export function adminPage({ homes, company, esc, fallback }) {
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { j.status = r.status; return j; }); });
   };
   var KEY = 'admin.session';
-  var show = function (email) {
+  var signedOut = function () { $('email-form').hidden = false; $('code-form').hidden = true; $('inside').hidden = true; };
+  // The app page: the statistics from the server (data null = no source yet → «No data yet»).
+  var loadStats = function (token) {
+    var box = $('stats');
+    if (!box) return;
+    call({ action: 'stats', app: box.getAttribute('data-app') }, token).then(function (j) {
+      if (j.status !== 200) return fail(j);
+      box.textContent = '';
+      var p = document.createElement('p');
+      p.className = 'muted';
+      p.textContent = t.noData;
+      if (!j.data) box.appendChild(p);
+    }, function () { say('failed', 'offline'); });
+  };
+  var show = function (email, token) {
     $('email-form').hidden = true; $('code-form').hidden = true; $('inside').hidden = false; $('who').textContent = email; say('');
+    loadStats(token);
   };
   var check = function (token) {
     say('checking');
     return call({ action: 'me' }, token).then(function (j) {
-      if (j.status === 200) return show(j.email);
+      if (j.status === 200) return show(j.email, token);
       try { sessionStorage.removeItem(KEY); } catch (e) {}
+      signedOut();
       if (j.status === 401) say(''); else fail(j);
-    });
+    }, function () { signedOut(); say('failed', 'offline'); });
   };
   var token; try { token = sessionStorage.getItem(KEY); } catch (e) {}
-  if (token) check(token);
+  if (token) check(token); else signedOut();
   var email = '';
   $('email-form').addEventListener('submit', function (e) {
     e.preventDefault();
@@ -264,7 +294,7 @@ export function adminPage({ homes, company, esc, fallback }) {
   });
   $('sign-out').addEventListener('click', function () {
     try { sessionStorage.removeItem(KEY); } catch (e) {}
-    location.reload();
+    location.href = '/admin';
   });
 })();
   </script>

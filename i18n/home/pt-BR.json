@@ -53,11 +53,13 @@
     "refused": "Este endereço não tem acesso.",
     "wrongCode": "O código está errado ou expirou.",
     "failed": "Algo deu errado. Tente de novo.",
-    "coming": "Em breve",
-    "comingBody": "As estatísticas aparecerão aqui.",
     "signOut": "Sair",
     "checking": "Verificando …",
     "tooMany": "Muitas tentativas. Aguarde um pouco e tente de novo.",
-    "notConfigured": "O login não está configurado no servidor."
+    "notConfigured": "O login não está configurado no servidor.",
+    "apps": "Apps",
+    "noData": "Ainda não há dados",
+    "allApps": "Todos os apps",
+    "seeStats": "Ver estatísticas"
   }
 }

@@ -3,9 +3,15 @@
 // the server before a code is sent, before a code is checked and on every request after sign-in. Everyone else gets
 // 403, and no code is sent to them. Without ADMIN_EMAILS nobody gets in.
 // Environment (Vercel): ADMIN_EMAILS, SUPABASE_URL, SUPABASE_ANON_KEY (the project's public key – the apps ship it).
-// Actions (POST JSON): { action: 'code', email } · { action: 'verify', email, code } · { action: 'me' } + Bearer token.
+// Actions (POST JSON): { action: 'code', email } · { action: 'verify', email, code } · { action: 'me' } + Bearer token ·
+// { action: 'stats', app } + Bearer token = that app's statistics (data null until it has a source; only apps in data/apps.json).
 // Every failure is an error code the page turns into a text: refused (403), rate_limited (429), not_configured (503,
 // with the missing setting names), wrong_code / signed_out (401), server (502, with Supabase's status and code).
+
+import appList from '../data/apps.json' with { type: 'json' };
+
+/** The apps /admin shows: every app in the app list with a «home» part (the same list as the front page). */
+export const ADMIN_APPS = appList.apps.filter((a) => a.home).map((a) => a.home.id);
 
 const json = (status, body) => new Response(JSON.stringify(body), { status, headers: { 'content-type': 'application/json', 'cache-control': 'no-store' } });
 
@@ -73,7 +79,7 @@ async function answer(request, env, fetcher) {
     if (!allowed(session.user?.email, env)) return json(403, { error: 'refused' });
     return json(200, { accessToken: session.access_token, expiresIn: session.expires_in });
   }
-  if (body.action === 'me') {
+  if (body.action === 'me' || body.action === 'stats') {
     const token = /^Bearer\s+(.+)$/i.exec(request.headers.get('authorization') ?? '')?.[1];
     if (!token) return json(401, { error: 'signed_out' });
     // Supabase checks the token (signature and expiry) and gives the user it belongs to.
@@ -81,7 +87,10 @@ async function answer(request, env, fetcher) {
     if (!r.ok) return authFailure(r, 'user');
     const user = await r.json();
     if (!allowed(user.email, env)) return json(403, { error: 'refused' });
-    return json(200, { email: user.email });
+    if (body.action === 'me') return json(200, { email: user.email });
+    if (!ADMIN_APPS.includes(body.app)) return json(404, { error: 'unknown_app' });
+    // No statistics source is connected yet (next round: usage events, RevenueCat, the stores) – «No data yet».
+    return json(200, { app: body.app, data: null });
   }
   return json(400, { error: 'bad_request' });
 }

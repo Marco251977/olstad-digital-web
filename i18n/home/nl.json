@@ -53,11 +53,13 @@
     "refused": "Dit adres heeft geen toegang.",
     "wrongCode": "De code is onjuist of verlopen.",
     "failed": "Er ging iets mis. Probeer het opnieuw.",
-    "coming": "Binnenkort",
-    "comingBody": "Hier komen statistieken.",
     "signOut": "Uitloggen",
     "checking": "Controleren …",
     "tooMany": "Te veel pogingen. Wacht even en probeer het opnieuw.",
-    "notConfigured": "Inloggen is niet ingesteld op de server."
+    "notConfigured": "Inloggen is niet ingesteld op de server.",
+    "apps": "Apps",
+    "noData": "Nog geen gegevens",
+    "allApps": "Alle apps",
+    "seeStats": "Statistieken bekijken"
   }
 }

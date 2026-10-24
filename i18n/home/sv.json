@@ -53,11 +53,13 @@
     "refused": "Den här adressen har inte åtkomst.",
     "wrongCode": "Koden är fel eller har gått ut.",
     "failed": "Något gick fel. Försök igen.",
-    "coming": "Kommer",
-    "comingBody": "Statistik kommer här.",
     "signOut": "Logga ut",
     "checking": "Kontrollerar …",
     "tooMany": "För många försök. Vänta en stund och försök igen.",
-    "notConfigured": "Inloggningen är inte konfigurerad på servern."
+    "notConfigured": "Inloggningen är inte konfigurerad på servern.",
+    "apps": "Appar",
+    "noData": "Inga data än",
+    "allApps": "Alla appar",
+    "seeStats": "Se statistik"
   }
 }

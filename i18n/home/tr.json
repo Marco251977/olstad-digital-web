@@ -53,11 +53,13 @@
     "refused": "Bu adresin erişimi yok.",
     "wrongCode": "Kod yanlış ya da süresi dolmuş.",
     "failed": "Bir sorun oluştu. Tekrar dene.",
-    "coming": "Yakında",
-    "comingBody": "İstatistikler burada görünecek.",
     "signOut": "Çıkış yap",
     "checking": "Kontrol ediliyor …",
     "tooMany": "Çok fazla deneme. Biraz bekle ve tekrar dene.",
-    "notConfigured": "Giriş sunucuda ayarlanmamış."
+    "notConfigured": "Giriş sunucuda ayarlanmamış.",
+    "apps": "Uygulamalar",
+    "noData": "Henüz veri yok",
+    "allApps": "Tüm uygulamalar",
+    "seeStats": "İstatistikleri gör"
   }
 }

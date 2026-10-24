@@ -100,9 +100,23 @@ a:focus-visible, summary:focus-visible, button:focus-visible, input:focus-visibl
 .sign-in:hover { color: var(--text); text-decoration: underline; }
 
 /* /admin */
-.admin { padding-block: 48px 80px; max-width: 520px; }
+.admin { padding-block: 48px 80px; max-width: 640px; }
 .admin h1 { font-size: 2rem; margin: 0 0 24px; }
 .admin-form { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
 .admin-form input { font: inherit; width: 100%; min-height: 48px; padding: 10px 14px; border-radius: 12px; border: 1px solid var(--muted); background: var(--surface); color: var(--text); }
 .admin-form button { margin-top: 6px; }
 #message { color: var(--muted); min-height: 1.5em; }
+
+/* /admin: one card per app, and the app page */
+.admin-inside { display: flex; flex-direction: column; gap: 16px; }
+.admin-inside > .btn { align-self: flex-start; }
+.admin-apps { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.admin-card { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 16px 20px; }
+.admin-app-link { display: flex; align-items: center; gap: 16px; min-height: 88px; color: var(--text); text-decoration: none; }
+.admin-app-link:hover { border-color: var(--muted); }
+.admin-app-text { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.admin-app-head { display: flex; align-items: center; gap: 16px; }
+.admin-app-head h2 { margin: 0; }
+.back { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; align-self: flex-start; }
+.muted { color: var(--muted); }
+.admin-who { margin: 0; overflow-wrap: anywhere; }

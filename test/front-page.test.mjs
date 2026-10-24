@@ -96,3 +96,24 @@ test('/admin: every failure is a code the page has a text for – too many attem
   for (const k of ['tooMany', 'notConfigured', 'refused', 'wrongCode']) assert.match(page, new RegExp(`"${k}":`), k);
   assert.match(page, /rate_limited: 'tooMany', not_configured: 'notConfigured'/);
 });
+
+test('/admin: one card per app in the app list, a page per app, stats only for signed-in allowed users and known apps', async () => {
+  const ids = apps.filter((a) => a.home).map((a) => a.home.id);
+  const overview = read('admin.html');
+  for (const id of ids) {
+    assert.ok(overview.includes(`href="/admin/${id}"`), id);
+    const page = read(`admin/${id}.html`);
+    assert.ok(page.includes(`data-app="${id}"`), id);
+    assert.match(page, /href="\/admin"/);
+  }
+  assert.equal((overview.match(/class="admin-card admin-app-link"/g) ?? []).length, ids.length);
+  const env = { ADMIN_EMAILS: 'owner@example.com', SUPABASE_URL: 'https://x.supabase.co', SUPABASE_ANON_KEY: 'k' };
+  const fetcher = async (url, init) => new Response(JSON.stringify({ email: init.headers.authorization === 'Bearer good' ? 'owner@example.com' : 'other@example.com' }), { status: 200 });
+  const stats = (app, token) => handle(new Request('https://h/api/admin', { method: 'POST', headers: token ? { authorization: `Bearer ${token}` } : {}, body: JSON.stringify({ action: 'stats', app }) }), env, fetcher);
+  let r = await stats('saldo-pocket', 'good');
+  assert.deepEqual([r.status, await r.json()], [200, { app: 'saldo-pocket', data: null }]);
+  assert.equal((await stats('not-an-app', 'good')).status, 404);
+  assert.equal((await stats('saldo-pocket', 'other')).status, 403);
+  assert.equal((await stats('saldo-pocket')).status, 401);
+  for (const l of LANGS) for (const k of ['apps', 'noData', 'allApps', 'seeStats']) assert.ok(JSON.parse(read(`i18n/home/${l}.json`)).admin[k], `${l} ${k}`);
+});

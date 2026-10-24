@@ -53,11 +53,13 @@
     "refused": "Ten adres nie ma dostępu.",
     "wrongCode": "Kod jest błędny lub wygasł.",
     "failed": "Coś poszło nie tak. Spróbuj ponownie.",
-    "coming": "Wkrótce",
-    "comingBody": "Tutaj pojawią się statystyki.",
     "signOut": "Wyloguj się",
     "checking": "Sprawdzanie …",
     "tooMany": "Zbyt wiele prób. Odczekaj chwilę i spróbuj ponownie.",
-    "notConfigured": "Logowanie nie jest skonfigurowane na serwerze."
+    "notConfigured": "Logowanie nie jest skonfigurowane na serwerze.",
+    "apps": "Aplikacje",
+    "noData": "Brak danych",
+    "allApps": "Wszystkie aplikacje",
+    "seeStats": "Zobacz statystyki"
   }
 }
