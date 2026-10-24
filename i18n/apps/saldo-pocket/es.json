@@ -219,7 +219,7 @@
   "support": {
     "intro": "¿Preguntas, problemas o ideas? Escríbenos y te responderemos lo antes posible.",
     "contactHeading": "Contacto",
-    "contactBody": "Correo {{email}}. Indícanos el modelo de tu teléfono y la versión de la app (al final de Yo).",
+    "contactBody": "Correo {{email}}. Indícanos el modelo de tu teléfono y la versión de la app (al final de la pestaña «{{menuMe}}»).",
     "faqHeading": "Preguntas frecuentes",
     "proNote": "Consulta Pro en la app para ver qué incluye.",
     "faq": [
@@ -229,7 +229,7 @@
       },
       {
         "q": "¿Cómo exporto mis datos?",
-        "a": "Ve a Yo → Exportar datos. Exportar todos mis datos (JSON o CSV) es gratis para todos."
+        "a": "Ve a {{menuMe}} → {{menuExport}}. Exportar todos mis datos (JSON o CSV) es gratis para todos."
       },
       {
         "q": "¿Cómo importo desde la banca en línea?",
@@ -237,7 +237,7 @@
       },
       {
         "q": "¿Cómo borro mis datos?",
-        "a": "Ve a Yo → Borrar todos los datos. Se borra todo lo que hay en el teléfono. Más información en la página sobre cómo eliminar tus datos."
+        "a": "Ve a {{menuMe}} → {{menuDelete}}. Se borra todo lo que hay en el teléfono. Más información en la página sobre cómo eliminar tus datos."
       }
     ]
   },

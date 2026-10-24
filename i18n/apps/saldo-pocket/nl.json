@@ -219,7 +219,7 @@
   "support": {
     "intro": "Vragen, problemen of ideeën? Schrijf ons en we antwoorden zo snel mogelijk.",
     "contactHeading": "Contact",
-    "contactBody": "E-mail {{email}}. Vermeld graag je telefoonmodel en de appversie (onderaan bij Ik).",
+    "contactBody": "E-mail {{email}}. Vermeld graag je telefoonmodel en de appversie (onderaan op het tabblad {{menuMe}}).",
     "faqHeading": "Veelgestelde vragen",
     "proNote": "Bekijk Pro in de app om te zien wat erbij zit.",
     "faq": [
@@ -229,7 +229,7 @@
       },
       {
         "q": "Hoe exporteer ik mijn gegevens?",
-        "a": "Ga naar Ik → Gegevens exporteren. Al mijn gegevens exporteren (JSON of CSV) is gratis voor iedereen."
+        "a": "Ga naar {{menuMe}} → {{menuExport}}. Al mijn gegevens exporteren (JSON of CSV) is gratis voor iedereen."
       },
       {
         "q": "Hoe importeer ik uit internetbankieren?",
@@ -237,7 +237,7 @@
       },
       {
         "q": "Hoe wis ik mijn gegevens?",
-        "a": "Ga naar Ik → Alle gegevens wissen. Alles op de telefoon wordt gewist. Lees meer op de pagina over het verwijderen van je gegevens."
+        "a": "Ga naar {{menuMe}} → {{menuDelete}}. Alles op de telefoon wordt gewist. Lees meer op de pagina over het verwijderen van je gegevens."
       }
     ]
   },

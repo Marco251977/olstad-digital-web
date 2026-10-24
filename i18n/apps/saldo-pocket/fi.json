@@ -219,7 +219,7 @@
   "support": {
     "intro": "Kysymyksiä, ongelmia tai ideoita? Kirjoita meille, niin vastaamme niin pian kuin voimme.",
     "contactHeading": "Yhteystiedot",
-    "contactBody": "Sähköposti {{email}}. Kerro mielellään puhelimesi malli ja sovelluksen versio (Minä-näkymän alareunassa).",
+    "contactBody": "Sähköposti {{email}}. Kerro mielellään puhelimesi malli ja sovelluksen versio (välilehden {{menuMe}} alareunassa).",
     "faqHeading": "Usein kysyttyä",
     "proNote": "Katso sovelluksen Pro-näkymästä, mitä siihen sisältyy.",
     "faq": [
@@ -229,7 +229,7 @@
       },
       {
         "q": "Miten vien tietoni?",
-        "a": "Siirry kohtaan Minä → Vie tiedot. Vie kaikki tietoni (JSON tai CSV) on maksuton kaikille."
+        "a": "Siirry kohtaan {{menuMe}} → {{menuExport}}. Vie kaikki tietoni (JSON tai CSV) on maksuton kaikille."
       },
       {
         "q": "Miten tuon tiedot verkkopankista?",
@@ -237,7 +237,7 @@
       },
       {
         "q": "Miten poistan tietoni?",
-        "a": "Siirry kohtaan Minä → Poista kaikki tiedot. Kaikki puhelimessa oleva poistetaan. Lue lisää tietojen poistamista käsittelevältä sivulta."
+        "a": "Siirry kohtaan {{menuMe}} → {{menuDelete}}. Kaikki puhelimessa oleva poistetaan. Lue lisää tietojen poistamista käsittelevältä sivulta."
       }
     ]
   },

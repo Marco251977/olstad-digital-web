@@ -219,7 +219,7 @@
   "support": {
     "intro": "Fragen, Probleme oder Ideen? Schreib uns, wir antworten so schnell wie möglich.",
     "contactHeading": "Kontakt",
-    "contactBody": "E-Mail {{email}}. Nenn uns bitte dein Telefonmodell und die App-Version (unten unter Ich).",
+    "contactBody": "E-Mail {{email}}. Nenn uns bitte dein Telefonmodell und die App-Version (unten im Tab „{{menuMe}}“).",
     "faqHeading": "Häufige Fragen",
     "proNote": "Was enthalten ist, siehst du in der App unter Pro.",
     "faq": [
@@ -229,7 +229,7 @@
       },
       {
         "q": "Wie exportiere ich meine Daten?",
-        "a": "Geh zu Ich → Daten exportieren. Alle meine Daten exportieren (JSON oder CSV) ist für alle kostenlos."
+        "a": "Geh zu {{menuMe}} → {{menuExport}}. Alle meine Daten exportieren (JSON oder CSV) ist für alle kostenlos."
       },
       {
         "q": "Wie importiere ich aus dem Onlinebanking?",
@@ -237,7 +237,7 @@
       },
       {
         "q": "Wie lösche ich meine Daten?",
-        "a": "Geh zu Ich → Alle Daten löschen. Alles auf dem Telefon wird gelöscht. Mehr dazu auf der Seite über das Löschen deiner Daten."
+        "a": "Geh zu {{menuMe}} → {{menuDelete}}. Alles auf dem Telefon wird gelöscht. Mehr dazu auf der Seite über das Löschen deiner Daten."
       }
     ]
   },

@@ -219,7 +219,7 @@
   "support": {
     "intro": "Dúvidas, problemas ou ideias? Escreva para nós e responderemos o quanto antes.",
     "contactHeading": "Contato",
-    "contactBody": "E-mail {{email}}. Informe o modelo do seu celular e a versão do app (no fim da tela Eu).",
+    "contactBody": "E-mail {{email}}. Informe o modelo do seu celular e a versão do app (no fim da aba {{menuMe}}).",
     "faqHeading": "Perguntas frequentes",
     "proNote": "Veja o Pro no app para saber o que está incluído.",
     "faq": [
@@ -229,7 +229,7 @@
       },
       {
         "q": "Como exporto meus dados?",
-        "a": "Vá para Eu → Exportar dados. Exportar todos os meus dados (JSON ou CSV) é grátis para todos."
+        "a": "Vá para {{menuMe}} → {{menuExport}}. Exportar todos os meus dados (JSON ou CSV) é grátis para todos."
       },
       {
         "q": "Como importo do internet banking?",
@@ -237,7 +237,7 @@
       },
       {
         "q": "Como apago meus dados?",
-        "a": "Vá para Eu → Apagar todos os dados. Tudo no celular é apagado. Saiba mais na página sobre como excluir seus dados."
+        "a": "Vá para {{menuMe}} → {{menuDelete}}. Tudo no celular é apagado. Saiba mais na página sobre como excluir seus dados."
       }
     ]
   },

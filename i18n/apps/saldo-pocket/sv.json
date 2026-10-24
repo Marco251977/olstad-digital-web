@@ -219,7 +219,7 @@
   "support": {
     "intro": "Frågor, problem eller idéer? Skriv till oss så svarar vi så snart vi kan.",
     "contactHeading": "Kontakt",
-    "contactBody": "E-post {{email}}. Berätta gärna vilken telefonmodell du har och vilken version av appen (längst ned under Jag).",
+    "contactBody": "E-post {{email}}. Berätta gärna vilken telefonmodell du har och vilken version av appen (längst ned på fliken {{menuMe}}).",
     "faqHeading": "Vanliga frågor",
     "proNote": "Se Pro i appen för vad som ingår.",
     "faq": [
@@ -229,7 +229,7 @@
       },
       {
         "q": "Hur exporterar jag mina data?",
-        "a": "Gå till Jag → Exportera data. Exportera alla mina data (JSON eller CSV) är gratis för alla."
+        "a": "Gå till {{menuMe}} → {{menuExport}}. Exportera alla mina data (JSON eller CSV) är gratis för alla."
       },
       {
         "q": "Hur importerar jag från internetbanken?",
@@ -237,7 +237,7 @@
       },
       {
         "q": "Hur raderar jag mina data?",
-        "a": "Gå till Jag → Radera alla data. Allt på telefonen raderas. Läs mer på sidan om att radera dina data."
+        "a": "Gå till {{menuMe}} → {{menuDelete}}. Allt på telefonen raderas. Läs mer på sidan om att radera dina data."
       }
     ]
   },

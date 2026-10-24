@@ -219,7 +219,7 @@
   "support": {
     "intro": "Pytania, problemy lub pomysły? Napisz do nas, a odpowiemy tak szybko, jak to możliwe.",
     "contactHeading": "Kontakt",
-    "contactBody": "E-mail {{email}}. Podaj, proszę, model telefonu i wersję aplikacji (na dole ekranu Ja).",
+    "contactBody": "E-mail {{email}}. Podaj, proszę, model telefonu i wersję aplikacji (na dole zakładki {{menuMe}}).",
     "faqHeading": "Najczęstsze pytania",
     "proNote": "Sprawdź Pro w aplikacji, aby zobaczyć, co obejmuje.",
     "faq": [
@@ -229,7 +229,7 @@
       },
       {
         "q": "Jak wyeksportować dane?",
-        "a": "Przejdź do Ja → Eksport danych. Eksportuj wszystkie moje dane (JSON lub CSV) jest bezpłatne dla wszystkich."
+        "a": "Przejdź do {{menuMe}} → {{menuExport}}. Eksportuj wszystkie moje dane (JSON lub CSV) jest bezpłatne dla wszystkich."
       },
       {
         "q": "Jak zaimportować dane z bankowości internetowej?",
@@ -237,7 +237,7 @@
       },
       {
         "q": "Jak usunąć dane?",
-        "a": "Przejdź do Ja → Usuń wszystkie dane. Wszystko na telefonie zostanie usunięte. Więcej przeczytasz na stronie o usuwaniu danych."
+        "a": "Przejdź do {{menuMe}} → {{menuDelete}}. Wszystko na telefonie zostanie usunięte. Więcej przeczytasz na stronie o usuwaniu danych."
       }
     ]
   },
