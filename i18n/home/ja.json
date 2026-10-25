@@ -119,9 +119,7 @@
       "no": "いいえ",
       "answered": "回答数",
       "shareYes": "「はい」の割合",
-      "shareOfActive": "アクティブ端末に対する割合",
       "approx": "約{{value}}",
-      "basisStore": "推定：「はい」の回答数をストアが示すアクティブ端末数（{{devices}}）で割った値。",
       "byPlatform": "プラットフォーム別",
       "stores": "App StoreとGoogle Play",
       "countries": "国別",
@@ -139,13 +137,9 @@
       "reasons": {
         "not_fetched_yet": "まだ取得していません",
         "no_data_yet": "ストアからまだ数値が届いていません",
-        "not_on_ios": "iOSにはありません",
-        "not_on_android": "Androidにはありません",
         "apple_analytics_not_requested": "Apple Analyticsをリクエストしていません",
         "apple_analytics_pending": "Appleにリクエスト済み、まだ届いていません",
         "apple_analytics_unknown": "Appleに問い合わせできませんでした",
-        "ios_active_devices_not_available": "Androidのみ（Appleはアクティブ端末数を公開していません）",
-        "no_active_devices": "ストアからのアクティブ端末数はまだありません",
         "never_fetched": "一度も取得していません",
         "not_configured": "未設定",
         "bad_key": "キーが拒否されました",
@@ -179,7 +173,6 @@
       "rate": "1 {{from}} = {{rate}} {{to}}・{{date}}のレート",
       "rateStale": "古いレート",
       "rateMissing": "為替レートがないため、{{currency}}の金額は表示できません。",
-      "usage": "利用統計",
       "noDataYet": "まだデータがありません",
       "storeNames": {
         "ios": "App Store (iOS)",
@@ -190,7 +183,22 @@
         "apple_analytics": "Apple Analytics",
         "google_play": "Google Play",
         "revenuecat": "RevenueCat"
-      }
+      },
+      "periods": {
+        "today": "今日",
+        "week": "今週",
+        "month": "今月",
+        "year": "今年",
+        "last12": "過去12か月",
+        "all": "すべて"
+      },
+      "coversUsage": "対象期間：{{from}} – {{to}}（選択した期間に関係なく）",
+      "coversActive": "{{date}}までの日・週・月（選択した期間に関係なく）",
+      "coversAllData": "データのあるすべての日：{{from}} – {{to}}（選択した期間に関係なく）",
+      "snapshot": "{{what}}：{{date}}時点の状況（選択した期間に関係なく）",
+      "showMore": "さらに{{n}}件表示",
+      "shownOf": "{{total}}件中{{shown}}件を表示",
+      "noDataInPeriod": "選択した期間のデータはありません"
     },
     "approval": "承認待ち",
     "approvalHint": "アプリ独自の承認キューを新しいタブで開きます（別途ログイン）。",

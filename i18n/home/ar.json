@@ -119,9 +119,7 @@
       "no": "لا",
       "answered": "تمت الإجابة",
       "shareYes": "نسبة «نعم»",
-      "shareOfActive": "النسبة من الأجهزة النشطة",
       "approx": "حوالي {{value}}",
-      "basisStore": "تقدير: إجابات «نعم» مقسومة على الأجهزة النشطة التي تذكرها المتاجر ({{devices}}).",
       "byPlatform": "حسب المنصة",
       "stores": "App Store وGoogle Play",
       "countries": "حسب الدولة",
@@ -139,13 +137,9 @@
       "reasons": {
         "not_fetched_yet": "لم يتم الجلب بعد",
         "no_data_yet": "لم يقدّم المتجر أرقامًا بعد",
-        "not_on_ios": "غير متاح على iOS",
-        "not_on_android": "غير متاح على Android",
         "apple_analytics_not_requested": "لم يُطلب Apple Analytics",
         "apple_analytics_pending": "طُلب من Apple ولم يُسلَّم بعد",
         "apple_analytics_unknown": "تعذّر الاستعلام من Apple",
-        "ios_active_devices_not_available": "Android فقط (لا تذكر Apple الأجهزة النشطة)",
-        "no_active_devices": "لا يوجد عدد للأجهزة النشطة من المتاجر بعد",
         "never_fetched": "لم يتم الجلب قط",
         "not_configured": "غير مُعدّ",
         "bad_key": "تم رفض المفتاح",
@@ -179,7 +173,6 @@
       "rate": "1 {{from}} = {{rate}} {{to}} · سعر {{date}}",
       "rateStale": "سعر قديم",
       "rateMissing": "لا يوجد سعر صرف – لا يمكن عرض المبالغ بعملة {{currency}}.",
-      "usage": "إحصاءات الاستخدام",
       "noDataYet": "لا توجد بيانات بعد",
       "storeNames": {
         "ios": "App Store (iOS)",
@@ -190,7 +183,22 @@
         "apple_analytics": "Apple Analytics",
         "google_play": "Google Play",
         "revenuecat": "RevenueCat"
-      }
+      },
+      "periods": {
+        "today": "اليوم",
+        "week": "هذا الأسبوع",
+        "month": "هذا الشهر",
+        "year": "منذ بداية العام",
+        "last12": "آخر 12 شهرًا",
+        "all": "الكل"
+      },
+      "coversUsage": "يشمل {{from}} – {{to}}، بغض النظر عن الفترة المختارة.",
+      "coversActive": "اليوم والأسبوع والشهر حتى {{date}}، بغض النظر عن الفترة المختارة.",
+      "coversAllData": "يشمل كل الأيام التي توجد فيها بيانات، {{from}} – {{to}}، بغض النظر عن الفترة المختارة.",
+      "snapshot": "{{what}}: الحالة في {{date}}، بغض النظر عن الفترة المختارة.",
+      "showMore": "عرض {{n}} أخرى",
+      "shownOf": "عرض {{shown}} من {{total}}",
+      "noDataInPeriod": "لا توجد بيانات في الفترة المختارة"
     },
     "approval": "بانتظار الموافقة",
     "approvalHint": "يفتح قائمة الموافقة الخاصة بالتطبيق في علامة تبويب جديدة (بتسجيل دخول منفصل).",

@@ -277,7 +277,8 @@ export function adminPage({ homes, company, esc, fallback, apps, app = null, eve
   var KEY = 'admin.session';
   var signedOut = function () { $('email-form').hidden = false; $('code-form').hidden = true; $('inside').hidden = true; };
   // The app page: the statistics from the server (data null = no source yet → «No data yet»; otherwise aggregate numbers,
-  // laid out by /assets/admin-stats.js with textContent only). Loading, error (with «Try again») and the test-traffic switch.
+  // laid out by /assets/admin-stats.js with textContent only, with the period choice at the top). Loading, error (with «Try again»)
+  // and the test-traffic switch (the chosen period is kept when it fetches again).
   var line = function (box, text) {
     box.textContent = '';
     var p = document.createElement('p');
@@ -308,7 +309,7 @@ export function adminPage({ homes, company, esc, fallback, apps, app = null, eve
       if (j.status !== 200) return failed(j);
       if (!j.data) { box.removeAttribute('aria-busy'); return line(box, t.noData); }
       return import('/assets/admin-stats.js').then(function (m) {
-        m.renderStats(box, m.statsView(j.data, t, lang, typeof NAMES === 'object' ? NAMES[lang] || {} : {}), t);
+        m.mountStats(box, j.data, t, lang, typeof NAMES === 'object' ? NAMES[lang] || {} : {});
         box.removeAttribute('aria-busy');
       });
     }).catch(function () { failed({ error: 'offline', status: 0 }); });

@@ -119,9 +119,7 @@
       "no": "아니요",
       "answered": "응답 수",
       "shareYes": "예 비율",
-      "shareOfActive": "활성 기기 대비 비율",
       "approx": "약 {{value}}",
-      "basisStore": "추정: 예 응답 수를 스토어가 제공한 활성 기기 수({{devices}})로 나눈 값.",
       "byPlatform": "플랫폼별",
       "stores": "App Store 및 Google Play",
       "countries": "국가별",
@@ -139,13 +137,9 @@
       "reasons": {
         "not_fetched_yet": "아직 가져오지 않음",
         "no_data_yet": "스토어에서 아직 수치를 받지 못함",
-        "not_on_ios": "iOS에서는 제공되지 않음",
-        "not_on_android": "Android에서는 제공되지 않음",
         "apple_analytics_not_requested": "Apple Analytics를 요청하지 않음",
         "apple_analytics_pending": "Apple에 요청함, 아직 받지 못함",
         "apple_analytics_unknown": "Apple에 문의할 수 없음",
-        "ios_active_devices_not_available": "Android만(Apple은 활성 기기를 제공하지 않음)",
-        "no_active_devices": "스토어의 활성 기기 수가 아직 없음",
         "never_fetched": "가져온 적 없음",
         "not_configured": "설정되지 않음",
         "bad_key": "키가 거부됨",
@@ -179,7 +173,6 @@
       "rate": "1 {{from}} = {{rate}} {{to}} · {{date}} 환율",
       "rateStale": "이전 환율",
       "rateMissing": "환율이 없어 {{currency}} 금액을 표시할 수 없습니다.",
-      "usage": "사용 통계",
       "noDataYet": "아직 데이터가 없어요",
       "storeNames": {
         "ios": "App Store (iOS)",
@@ -190,7 +183,22 @@
         "apple_analytics": "Apple Analytics",
         "google_play": "Google Play",
         "revenuecat": "RevenueCat"
-      }
+      },
+      "periods": {
+        "today": "오늘",
+        "week": "이번 주",
+        "month": "이번 달",
+        "year": "올해",
+        "last12": "최근 12개월",
+        "all": "전체"
+      },
+      "coversUsage": "선택한 기간과 관계없이 {{from}} – {{to}} 기준입니다.",
+      "coversActive": "선택한 기간과 관계없이 {{date}}까지의 일, 주, 월 기준입니다.",
+      "coversAllData": "선택한 기간과 관계없이 데이터가 있는 모든 날짜({{from}} – {{to}}) 기준입니다.",
+      "snapshot": "{{what}}: 선택한 기간과 관계없이 {{date}} 기준 현황입니다.",
+      "showMore": "{{n}}개 더 보기",
+      "shownOf": "{{total}}개 중 {{shown}}개 표시",
+      "noDataInPeriod": "선택한 기간에 데이터가 없습니다"
     },
     "approval": "승인 대기",
     "approvalHint": "앱의 자체 승인 대기열을 새 탭에서 엽니다(별도 로그인).",

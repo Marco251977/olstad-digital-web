@@ -119,9 +119,7 @@
       "no": "Nie",
       "answered": "Odpowiedzi",
       "shareYes": "Odsetek „tak”",
-      "shareOfActive": "Odsetek aktywnych urządzeń",
       "approx": "ok. {{value}}",
-      "basisStore": "Szacunek: odpowiedzi „tak” podzielone przez aktywne urządzenia podawane przez sklepy ({{devices}}).",
       "byPlatform": "Według platformy",
       "stores": "App Store i Google Play",
       "countries": "Według kraju",
@@ -139,13 +137,9 @@
       "reasons": {
         "not_fetched_yet": "Jeszcze nie pobrano",
         "no_data_yet": "Sklep nie dostarczył jeszcze danych",
-        "not_on_ios": "Niedostępne w iOS",
-        "not_on_android": "Niedostępne w Androidzie",
         "apple_analytics_not_requested": "Nie zamówiono Apple Analytics",
         "apple_analytics_pending": "Zamówiono w Apple, jeszcze nie dostarczono",
         "apple_analytics_unknown": "Nie udało się zapytać Apple",
-        "ios_active_devices_not_available": "Tylko Android (Apple nie podaje aktywnych urządzeń)",
-        "no_active_devices": "Brak jeszcze liczby aktywnych urządzeń ze sklepów",
         "never_fetched": "Nigdy nie pobrano",
         "not_configured": "Nie skonfigurowano",
         "bad_key": "Klucz został odrzucony",
@@ -179,7 +173,6 @@
       "rate": "1 {{from}} = {{rate}} {{to}} · kurs z {{date}}",
       "rateStale": "stary kurs",
       "rateMissing": "Brak kursu walut – nie można pokazać kwot w {{currency}}.",
-      "usage": "Statystyki użycia",
       "noDataYet": "Brak danych",
       "storeNames": {
         "ios": "App Store (iOS)",
@@ -190,7 +183,22 @@
         "apple_analytics": "Apple Analytics",
         "google_play": "Google Play",
         "revenuecat": "RevenueCat"
-      }
+      },
+      "periods": {
+        "today": "Dzisiaj",
+        "week": "Ten tydzień",
+        "month": "Ten miesiąc",
+        "year": "Od początku roku",
+        "last12": "Ostatnie 12 miesięcy",
+        "all": "Wszystko"
+      },
+      "coversUsage": "Dotyczy okresu {{from}} – {{to}}, niezależnie od wybranego okresu.",
+      "coversActive": "Dzień, tydzień i miesiąc do {{date}}, niezależnie od wybranego okresu.",
+      "coversAllData": "Dotyczy wszystkich dni z danymi, {{from}} – {{to}}, niezależnie od wybranego okresu.",
+      "snapshot": "{{what}}: stan na {{date}}, niezależnie od wybranego okresu.",
+      "showMore": "Pokaż jeszcze {{n}}",
+      "shownOf": "Wyświetlono {{shown}} z {{total}}",
+      "noDataInPeriod": "Brak danych w wybranym okresie"
     },
     "approval": "Do zatwierdzenia",
     "approvalHint": "Otwiera własną kolejkę zatwierdzania aplikacji w nowej karcie (osobne logowanie).",

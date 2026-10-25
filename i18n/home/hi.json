@@ -119,9 +119,7 @@
       "no": "नहीं",
       "answered": "जवाब दिए",
       "shareYes": "“हां” का हिस्सा",
-      "shareOfActive": "सक्रिय डिवाइस में हिस्सा",
       "approx": "लगभग {{value}}",
-      "basisStore": "अनुमान: “हां” के जवाबों को स्टोर द्वारा बताए गए सक्रिय डिवाइस ({{devices}}) से भाग दिया गया।",
       "byPlatform": "प्लेटफॉर्म के अनुसार",
       "stores": "App Store और Google Play",
       "countries": "देश के अनुसार",
@@ -139,13 +137,9 @@
       "reasons": {
         "not_fetched_yet": "अभी नहीं लाया गया",
         "no_data_yet": "स्टोर ने अभी आंकड़े नहीं दिए",
-        "not_on_ios": "iOS पर उपलब्ध नहीं",
-        "not_on_android": "Android पर उपलब्ध नहीं",
         "apple_analytics_not_requested": "Apple Analytics का अनुरोध नहीं किया गया",
         "apple_analytics_pending": "Apple से अनुरोध किया गया, अभी नहीं मिला",
         "apple_analytics_unknown": "Apple से पूछा नहीं जा सका",
-        "ios_active_devices_not_available": "सिर्फ Android (Apple सक्रिय डिवाइस नहीं बताता)",
-        "no_active_devices": "स्टोर से अभी सक्रिय डिवाइस की संख्या नहीं मिली",
         "never_fetched": "कभी नहीं लाया गया",
         "not_configured": "सेट अप नहीं है",
         "bad_key": "की अस्वीकार कर दी गई",
@@ -179,7 +173,6 @@
       "rate": "1 {{from}} = {{rate}} {{to}} · {{date}} की दर",
       "rateStale": "पुरानी दर",
       "rateMissing": "विनिमय दर नहीं है – {{currency}} में रकम नहीं दिखाई जा सकती।",
-      "usage": "उपयोग के आंकड़े",
       "noDataYet": "अभी कोई डेटा नहीं",
       "storeNames": {
         "ios": "App Store (iOS)",
@@ -190,7 +183,22 @@
         "apple_analytics": "Apple Analytics",
         "google_play": "Google Play",
         "revenuecat": "RevenueCat"
-      }
+      },
+      "periods": {
+        "today": "आज",
+        "week": "इस हफ्ते",
+        "month": "इस महीने",
+        "year": "इस साल अब तक",
+        "last12": "पिछले 12 महीने",
+        "all": "सभी"
+      },
+      "coversUsage": "चुनी गई अवधि से अलग, {{from}} – {{to}} तक का डेटा।",
+      "coversActive": "चुनी गई अवधि से अलग, {{date}} तक का दिन, हफ्ता और महीना।",
+      "coversAllData": "चुनी गई अवधि से अलग, डेटा वाले सभी दिन: {{from}} – {{to}}।",
+      "snapshot": "{{what}}: {{date}} की स्थिति, चुनी गई अवधि से अलग।",
+      "showMore": "{{n}} और दिखाएं",
+      "shownOf": "{{total}} में से {{shown}} दिखाए गए",
+      "noDataInPeriod": "चुनी गई अवधि में कोई डेटा नहीं"
     },
     "approval": "मंजूरी के लिए",
     "approvalHint": "ऐप की अपनी मंजूरी कतार नए टैब में खोलता है (अलग लॉग-इन)।",

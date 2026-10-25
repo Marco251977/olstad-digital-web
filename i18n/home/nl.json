@@ -119,9 +119,7 @@
       "no": "Nee",
       "answered": "Beantwoord",
       "shareYes": "Aandeel ja",
-      "shareOfActive": "Aandeel van actieve apparaten",
       "approx": "ca. {{value}}",
-      "basisStore": "Schatting: ja-antwoorden gedeeld door de actieve apparaten die de stores opgeven ({{devices}}).",
       "byPlatform": "Per platform",
       "stores": "App Store en Google Play",
       "countries": "Per land",
@@ -139,13 +137,9 @@
       "reasons": {
         "not_fetched_yet": "Nog niet opgehaald",
         "no_data_yet": "De store heeft nog geen cijfers geleverd",
-        "not_on_ios": "Niet beschikbaar op iOS",
-        "not_on_android": "Niet beschikbaar op Android",
         "apple_analytics_not_requested": "Apple Analytics is niet aangevraagd",
         "apple_analytics_pending": "Aangevraagd bij Apple, nog niet geleverd",
         "apple_analytics_unknown": "Apple kon niet worden bevraagd",
-        "ios_active_devices_not_available": "Alleen Android (Apple geeft geen actieve apparaten op)",
-        "no_active_devices": "Nog geen aantal actieve apparaten van de stores",
         "never_fetched": "Nooit opgehaald",
         "not_configured": "Niet ingesteld",
         "bad_key": "De sleutel is geweigerd",
@@ -179,7 +173,6 @@
       "rate": "1 {{from}} = {{rate}} {{to}} · koers van {{date}}",
       "rateStale": "oude koers",
       "rateMissing": "Geen wisselkoers – bedragen in {{currency}} kunnen niet worden getoond.",
-      "usage": "Gebruiksstatistieken",
       "noDataYet": "Nog geen gegevens",
       "storeNames": {
         "ios": "App Store (iOS)",
@@ -190,7 +183,22 @@
         "apple_analytics": "Apple Analytics",
         "google_play": "Google Play",
         "revenuecat": "RevenueCat"
-      }
+      },
+      "periods": {
+        "today": "Vandaag",
+        "week": "Deze week",
+        "month": "Deze maand",
+        "year": "Dit jaar tot nu",
+        "last12": "Laatste 12 maanden",
+        "all": "Alles"
+      },
+      "coversUsage": "Geldt voor {{from}} – {{to}}, ongeacht de gekozen periode.",
+      "coversActive": "Dag, week en maand tot en met {{date}}, ongeacht de gekozen periode.",
+      "coversAllData": "Geldt voor alle dagen met gegevens, {{from}} – {{to}}, ongeacht de gekozen periode.",
+      "snapshot": "{{what}}: stand {{date}}, ongeacht de gekozen periode.",
+      "showMore": "Toon {{n}} meer",
+      "shownOf": "{{shown}} van {{total}} getoond",
+      "noDataInPeriod": "Geen gegevens in de gekozen periode"
     },
     "approval": "Ter goedkeuring",
     "approvalHint": "Opent de eigen goedkeuringswachtrij van de app in een nieuw tabblad (eigen inlog).",

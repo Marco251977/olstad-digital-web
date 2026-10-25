@@ -119,9 +119,7 @@
       "no": "Nej",
       "answered": "Svarat",
       "shareYes": "Andel ja",
-      "shareOfActive": "Andel av aktiva enheter",
       "approx": "ca. {{value}}",
-      "basisStore": "Uppskattning: ja-svar delat med aktiva enheter som butikerna anger ({{devices}}).",
       "byPlatform": "Per plattform",
       "stores": "App Store och Google Play",
       "countries": "Per land",
@@ -139,13 +137,9 @@
       "reasons": {
         "not_fetched_yet": "Inte hämtat än",
         "no_data_yet": "Butiken har inte levererat siffror än",
-        "not_on_ios": "Finns inte på iOS",
-        "not_on_android": "Finns inte på Android",
         "apple_analytics_not_requested": "Apple Analytics är inte beställt",
         "apple_analytics_pending": "Beställt hos Apple, inte levererat än",
         "apple_analytics_unknown": "Kunde inte fråga Apple",
-        "ios_active_devices_not_available": "Bara Android (Apple anger inte aktiva enheter)",
-        "no_active_devices": "Inga siffror för aktiva enheter från butikerna än",
         "never_fetched": "Aldrig hämtat",
         "not_configured": "Inte konfigurerat",
         "bad_key": "Nyckeln avvisades",
@@ -179,7 +173,6 @@
       "rate": "1 {{from}} = {{rate}} {{to}} · kurs från {{date}}",
       "rateStale": "gammal kurs",
       "rateMissing": "Växelkurs saknas – belopp i {{currency}} kan inte visas.",
-      "usage": "Användningsstatistik",
       "noDataYet": "Inga data än",
       "storeNames": {
         "ios": "App Store (iOS)",
@@ -190,7 +183,22 @@
         "apple_analytics": "Apple Analytics",
         "google_play": "Google Play",
         "revenuecat": "RevenueCat"
-      }
+      },
+      "periods": {
+        "today": "I dag",
+        "week": "Den här veckan",
+        "month": "Den här månaden",
+        "year": "Hittills i år",
+        "last12": "Senaste 12 månaderna",
+        "all": "Allt"
+      },
+      "coversUsage": "Gäller {{from}} – {{to}}, oavsett vald period.",
+      "coversActive": "Dag, vecka och månad fram till {{date}}, oavsett vald period.",
+      "coversAllData": "Gäller alla dagar med data, {{from}} – {{to}}, oavsett vald period.",
+      "snapshot": "{{what}}: status {{date}}, oavsett vald period.",
+      "showMore": "Visa {{n}} till",
+      "shownOf": "Visar {{shown}} av {{total}}",
+      "noDataInPeriod": "Inga data under vald period"
     },
     "approval": "Väntar på godkännande",
     "approvalHint": "Öppnar appens egen godkännandekö i en ny flik (egen inloggning).",

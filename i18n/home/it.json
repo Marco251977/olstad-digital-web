@@ -119,9 +119,7 @@
       "no": "No",
       "answered": "Risposte",
       "shareYes": "Quota di sì",
-      "shareOfActive": "Quota dei dispositivi attivi",
       "approx": "ca. {{value}}",
-      "basisStore": "Stima: risposte sì divise per i dispositivi attivi indicati dagli store ({{devices}}).",
       "byPlatform": "Per piattaforma",
       "stores": "App Store e Google Play",
       "countries": "Per paese",
@@ -139,13 +137,9 @@
       "reasons": {
         "not_fetched_yet": "Non ancora recuperato",
         "no_data_yet": "Lo store non ha ancora fornito dati",
-        "not_on_ios": "Non disponibile su iOS",
-        "not_on_android": "Non disponibile su Android",
         "apple_analytics_not_requested": "Apple Analytics non è stato richiesto",
         "apple_analytics_pending": "Richiesto ad Apple, non ancora fornito",
         "apple_analytics_unknown": "Impossibile interrogare Apple",
-        "ios_active_devices_not_available": "Solo Android (Apple non indica i dispositivi attivi)",
-        "no_active_devices": "Ancora nessun numero di dispositivi attivi dagli store",
         "never_fetched": "Mai recuperato",
         "not_configured": "Non configurato",
         "bad_key": "La chiave è stata rifiutata",
@@ -179,7 +173,6 @@
       "rate": "1 {{from}} = {{rate}} {{to}} · cambio del {{date}}",
       "rateStale": "cambio vecchio",
       "rateMissing": "Nessun tasso di cambio: gli importi in {{currency}} non possono essere mostrati.",
-      "usage": "Statistiche d’uso",
       "noDataYet": "Nessun dato per ora",
       "storeNames": {
         "ios": "App Store (iOS)",
@@ -190,7 +183,22 @@
         "apple_analytics": "Apple Analytics",
         "google_play": "Google Play",
         "revenuecat": "RevenueCat"
-      }
+      },
+      "periods": {
+        "today": "Oggi",
+        "week": "Questa settimana",
+        "month": "Questo mese",
+        "year": "Da inizio anno",
+        "last12": "Ultimi 12 mesi",
+        "all": "Tutto"
+      },
+      "coversUsage": "Riguarda {{from}} – {{to}}, qualunque sia il periodo scelto.",
+      "coversActive": "Giorno, settimana e mese fino al {{date}}, qualunque sia il periodo scelto.",
+      "coversAllData": "Riguarda tutti i giorni con dati, {{from}} – {{to}}, qualunque sia il periodo scelto.",
+      "snapshot": "{{what}}: stato al {{date}}, qualunque sia il periodo scelto.",
+      "showMore": "Mostra altri {{n}}",
+      "shownOf": "{{shown}} di {{total}} mostrati",
+      "noDataInPeriod": "Nessun dato nel periodo scelto"
     },
     "approval": "Da approvare",
     "approvalHint": "Apre la coda di approvazione dell’app in una nuova scheda (con accesso separato).",

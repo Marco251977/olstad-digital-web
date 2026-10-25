@@ -119,9 +119,7 @@
       "no": "Ei",
       "answered": "Vastanneet",
       "shareYes": "Kyllä-osuus",
-      "shareOfActive": "Osuus aktiivisista laitteista",
       "approx": "n. {{value}}",
-      "basisStore": "Arvio: kyllä-vastaukset jaettuna kauppojen ilmoittamilla aktiivisilla laitteilla ({{devices}}).",
       "byPlatform": "Alustoittain",
       "stores": "App Store ja Google Play",
       "countries": "Maittain",
@@ -139,13 +137,9 @@
       "reasons": {
         "not_fetched_yet": "Ei vielä haettu",
         "no_data_yet": "Kauppa ei ole vielä toimittanut lukuja",
-        "not_on_ios": "Ei saatavilla iOS:ssä",
-        "not_on_android": "Ei saatavilla Androidissa",
         "apple_analytics_not_requested": "Apple Analyticsia ei ole tilattu",
         "apple_analytics_pending": "Tilattu Applelta, ei vielä toimitettu",
         "apple_analytics_unknown": "Applelta ei voitu kysyä",
-        "ios_active_devices_not_available": "Vain Android (Apple ei ilmoita aktiivisia laitteita)",
-        "no_active_devices": "Kaupoista ei vielä aktiivisten laitteiden määrää",
         "never_fetched": "Ei koskaan haettu",
         "not_configured": "Ei määritetty",
         "bad_key": "Avain hylättiin",
@@ -179,7 +173,6 @@
       "rate": "1 {{from}} = {{rate}} {{to}} · kurssi {{date}}",
       "rateStale": "vanha kurssi",
       "rateMissing": "Valuuttakurssi puuttuu – summia valuutassa {{currency}} ei voida näyttää.",
-      "usage": "Käyttötilastot",
       "noDataYet": "Ei vielä tietoja",
       "storeNames": {
         "ios": "App Store (iOS)",
@@ -190,7 +183,22 @@
         "apple_analytics": "Apple Analytics",
         "google_play": "Google Play",
         "revenuecat": "RevenueCat"
-      }
+      },
+      "periods": {
+        "today": "Tänään",
+        "week": "Tämä viikko",
+        "month": "Tämä kuukausi",
+        "year": "Vuoden alusta",
+        "last12": "Viimeiset 12 kuukautta",
+        "all": "Kaikki"
+      },
+      "coversUsage": "Koskee ajanjaksoa {{from}} – {{to}} valitusta jaksosta riippumatta.",
+      "coversActive": "Päivä, viikko ja kuukausi {{date}} asti valitusta jaksosta riippumatta.",
+      "coversAllData": "Koskee kaikkia päiviä, joilta on tietoja, {{from}} – {{to}}, valitusta jaksosta riippumatta.",
+      "snapshot": "{{what}}: tilanne {{date}} valitusta jaksosta riippumatta.",
+      "showMore": "Näytä {{n}} lisää",
+      "shownOf": "Näytetään {{shown}}/{{total}}",
+      "noDataInPeriod": "Ei tietoja valitulta jaksolta"
     },
     "approval": "Odottaa hyväksyntää",
     "approvalHint": "Avaa sovelluksen oman hyväksyntäjonon uudessa välilehdessä (oma kirjautuminen).",

@@ -119,9 +119,7 @@
       "no": "Nein",
       "answered": "Beantwortet",
       "shareYes": "Anteil Ja",
-      "shareOfActive": "Anteil an aktiven Geräten",
       "approx": "ca. {{value}}",
-      "basisStore": "Schätzung: Ja-Antworten geteilt durch die aktiven Geräte laut Stores ({{devices}}).",
       "byPlatform": "Nach Plattform",
       "stores": "App Store und Google Play",
       "countries": "Nach Land",
@@ -139,13 +137,9 @@
       "reasons": {
         "not_fetched_yet": "Noch nicht abgerufen",
         "no_data_yet": "Der Store hat noch keine Zahlen geliefert",
-        "not_on_ios": "Unter iOS nicht verfügbar",
-        "not_on_android": "Unter Android nicht verfügbar",
         "apple_analytics_not_requested": "Apple Analytics wurde nicht angefordert",
         "apple_analytics_pending": "Bei Apple angefordert, noch nicht geliefert",
         "apple_analytics_unknown": "Apple konnte nicht abgefragt werden",
-        "ios_active_devices_not_available": "Nur Android (Apple meldet keine aktiven Geräte)",
-        "no_active_devices": "Noch keine Zahl aktiver Geräte aus den Stores",
         "never_fetched": "Nie abgerufen",
         "not_configured": "Nicht eingerichtet",
         "bad_key": "Der Schlüssel wurde abgelehnt",
@@ -179,7 +173,6 @@
       "rate": "1 {{from}} = {{rate}} {{to}} · Kurs vom {{date}}",
       "rateStale": "alter Kurs",
       "rateMissing": "Kein Wechselkurs – Beträge in {{currency}} können nicht angezeigt werden.",
-      "usage": "Nutzungsstatistik",
       "noDataYet": "Noch keine Daten",
       "storeNames": {
         "ios": "App Store (iOS)",
@@ -190,7 +183,22 @@
         "apple_analytics": "Apple Analytics",
         "google_play": "Google Play",
         "revenuecat": "RevenueCat"
-      }
+      },
+      "periods": {
+        "today": "Heute",
+        "week": "Diese Woche",
+        "month": "Dieser Monat",
+        "year": "Seit Jahresbeginn",
+        "last12": "Letzte 12 Monate",
+        "all": "Alles"
+      },
+      "coversUsage": "Gilt für {{from}} – {{to}}, unabhängig vom gewählten Zeitraum.",
+      "coversActive": "Tag, Woche und Monat bis {{date}}, unabhängig vom gewählten Zeitraum.",
+      "coversAllData": "Gilt für alle Tage mit Daten, {{from}} – {{to}}, unabhängig vom gewählten Zeitraum.",
+      "snapshot": "{{what}}: Stand {{date}}, unabhängig vom gewählten Zeitraum.",
+      "showMore": "{{n}} weitere anzeigen",
+      "shownOf": "{{shown}} von {{total}} angezeigt",
+      "noDataInPeriod": "Keine Daten im gewählten Zeitraum"
     },
     "approval": "Zur Freigabe",
     "approvalHint": "Öffnet die eigene Freigabeliste der App in einem neuen Tab (eigene Anmeldung).",

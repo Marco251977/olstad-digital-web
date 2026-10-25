@@ -166,4 +166,14 @@ a:focus-visible, summary:focus-visible, button:focus-visible, input:focus-visibl
 .stats-switch-btn { font: inherit; font-size: 0.875rem; min-height: 44px; padding: 6px 14px; border: 0; border-radius: 999px; background: transparent; color: var(--text); cursor: pointer; }
 .stats-switch-btn[aria-pressed="true"] { background: var(--surface); font-weight: 600; box-shadow: 0 0 0 1px var(--line); }
 .stats-switch-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.admin-inside > *, .admin-stats > *, .stats-section, .stats-part, .stats-series { min-width: 0; }
+/* The period choice at the top (one for every card) and «Show 10 more» under long tables and lists. */
+.stats-sections { display: grid; gap: 12px; }
+.stats-period-switch { display: flex; margin-bottom: 8px; border-radius: 22px; }
+.stats-period-switch .stats-switch-btn { flex: 1 1 auto; }
+.stats-more { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin-top: 8px; }
+.stats-more[hidden] { display: none; }
+.stats-more-status { margin: 0; font-size: 0.875rem; }
+.stats-more-btn { font: inherit; font-size: 0.9375rem; font-weight: 600; min-height: 44px; min-width: 44px; padding: 8px 16px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--accent-text); cursor: pointer; }
+.stats-more-btn:hover { background: var(--bar); }
+.stats-more-btn:focus-visible, .stats-table th:focus-visible, .stats-row dt:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.admin-inside > *, .admin-stats > *, .stats-sections > *, .stats-section, .stats-part, .stats-series { min-width: 0; }

@@ -119,9 +119,7 @@
       "no": "Hayır",
       "answered": "Yanıtlanan",
       "shareYes": "Evet oranı",
-      "shareOfActive": "Etkin cihazların oranı",
       "approx": "yaklaşık {{value}}",
-      "basisStore": "Tahmin: evet yanıtlarının mağazaların bildirdiği etkin cihazlara oranı ({{devices}}).",
       "byPlatform": "Platforma göre",
       "stores": "App Store ve Google Play",
       "countries": "Ülkeye göre",
@@ -139,13 +137,9 @@
       "reasons": {
         "not_fetched_yet": "Henüz alınmadı",
         "no_data_yet": "Mağaza henüz rakam vermedi",
-        "not_on_ios": "iOS’ta yok",
-        "not_on_android": "Android’de yok",
         "apple_analytics_not_requested": "Apple Analytics talep edilmedi",
         "apple_analytics_pending": "Apple’dan talep edildi, henüz gelmedi",
         "apple_analytics_unknown": "Apple’a sorulamadı",
-        "ios_active_devices_not_available": "Yalnızca Android (Apple etkin cihazları bildirmez)",
-        "no_active_devices": "Mağazalardan henüz etkin cihaz sayısı yok",
         "never_fetched": "Hiç alınmadı",
         "not_configured": "Ayarlanmadı",
         "bad_key": "Anahtar reddedildi",
@@ -179,7 +173,6 @@
       "rate": "1 {{from}} = {{rate}} {{to}} · {{date}} kuru",
       "rateStale": "eski kur",
       "rateMissing": "Döviz kuru yok – {{currency}} cinsinden tutarlar gösterilemiyor.",
-      "usage": "Kullanım istatistikleri",
       "noDataYet": "Henüz veri yok",
       "storeNames": {
         "ios": "App Store (iOS)",
@@ -190,7 +183,22 @@
         "apple_analytics": "Apple Analytics",
         "google_play": "Google Play",
         "revenuecat": "RevenueCat"
-      }
+      },
+      "periods": {
+        "today": "Bugün",
+        "week": "Bu hafta",
+        "month": "Bu ay",
+        "year": "Yılbaşından bu yana",
+        "last12": "Son 12 ay",
+        "all": "Tümü"
+      },
+      "coversUsage": "Seçilen dönemden bağımsız olarak {{from}} – {{to}} aralığını kapsar.",
+      "coversActive": "Seçilen dönemden bağımsız olarak {{date}} tarihine kadarki gün, hafta ve ay.",
+      "coversAllData": "Seçilen dönemden bağımsız olarak veri bulunan tüm günleri kapsar: {{from}} – {{to}}.",
+      "snapshot": "{{what}}: {{date}} itibarıyla durum, seçilen dönemden bağımsız.",
+      "showMore": "{{n}} tane daha göster",
+      "shownOf": "{{total}} içinden {{shown}} gösteriliyor",
+      "noDataInPeriod": "Seçilen dönemde veri yok"
     },
     "approval": "Onay bekleyenler",
     "approvalHint": "Uygulamanın kendi onay kuyruğunu yeni bir sekmede açar (ayrı giriş).",

@@ -8,7 +8,7 @@ import { test } from 'node:test';
 import { CORE_LANGUAGES } from 'app-core';
 
 import { handle } from '../api/admin.js';
-import { MISSING, renderStats, statsView } from '../assets/admin-stats.js';
+import { consentIn, MISSING, mountStats, PAGE, periodBar, periodRange, PERIODS, renderStats, statsView } from '../assets/admin-stats.js';
 import { summary } from '../lib/stats.js';
 
 const read = (f) => fs.readFileSync(new URL(`../${f}`, import.meta.url), 'utf8');
@@ -153,8 +153,9 @@ test('missing (null) values say «No data yet» – never 0; a real 0 stays 0', 
   assert.deepEqual(by.db.tiles.map((x) => x.value), ['0', NONE, NONE]);
   assert.equal(by.retention.rows[0].value, NONE);
   assert.equal(by.events.empty, NONE);
-  assert.equal(by.period.text, NONE);
-  assert.equal(by.period.note, t.stats.withTest);
+  assert.equal(by.period, undefined, 'the period is the choice at the top, not a card');
+  assert.equal(periodBar(data, t, 'nb').text, NONE);
+  assert.equal(periodBar(data, t, 'nb').note, t.stats.withTest);
   // A block the source did not send (null) = the section says «No data yet».
   for (const id of ['providerClicks', 'consent', 'stores']) assert.equal(by[id].empty, NONE, id);
   // An empty answer: PlanTravel's blocks, each «No data yet».
@@ -164,7 +165,7 @@ test('missing (null) values say «No data yet» – never 0; a real 0 stays 0', 
 test('PlanTravel: every block of /stats/summary has a section, laid out in the page language', () => {
   const t = textsFor('nb');
   const view = statsView(summary(SAMPLE), t, 'nb', NAMES.nb);
-  assert.deepEqual(view.map((s) => s.id), ['period', 'active', 'db', 'providerClicks', 'consent', 'stores', 'retention', 'onboarding', 'events', 'platforms', 'versions', 'languages']);
+  assert.deepEqual(view.map((s) => s.id), ['active', 'db', 'providerClicks', 'consent', 'stores', 'retention', 'onboarding', 'events', 'platforms', 'versions', 'languages']);
   const by = byId(view);
   assert.deepEqual(by.active.tiles.map((x) => x.value), ['12', '48', '130']);
   assert.deepEqual(by.db.tiles.map((x) => x.value), ['3', '5', '96']);
@@ -174,15 +175,16 @@ test('PlanTravel: every block of /stats/summary has a section, laid out in the p
   assert.deepEqual(by.providerClicks.series.views.day[0].cells, ['1', '1', '0', '0'], 'newest day first: total, then car/flight/hotel');
   const share = new Intl.NumberFormat('nb', { style: 'percent', maximumFractionDigits: 1 });
   assert.deepEqual(by.consent.tiles.map((x) => x.value), ['2', '1', '3', share.format(0.6667)]);
-  assert.equal(by.consent.groups[0].rows[0].value, `ca. ${share.format(0.0488)}`);
-  assert.ok(by.consent.groups[0].notes.some((n) => n.includes('41')));
-  assert.ok(by.consent.groups[0].notes.includes(t.stats.reasons.ios_active_devices_not_available));
+  assert.equal(by.consent.groups, undefined, '«Share of active devices» is gone (yes / store devices was misleading)');
+  assert.ok(!JSON.stringify(by.consent).includes(share.format(0.0488)));
   // Stores: only the metrics with numbers become columns; the others are listed with their reason; weeks/months as sent.
   const [ios, android] = by.stores.parts;
   assert.deepEqual(by.stores.notes, [t.stats.notes.store_counts_include_own_devices]);
   assert.deepEqual(ios.series.columns, [t.stats.metrics.downloads, t.stats.metrics.redownloads]);
   assert.deepEqual(ios.series.views.month.map((r) => r.cells), [['10', '1']]);
   assert.ok(ios.notes.includes(`${t.stats.metrics.uninstalls}: ${t.stats.reasons.apple_analytics_not_requested}`));
+  assert.ok(!ios.notes.some((n) => n.startsWith(t.stats.metrics.active_devices)), 'a metric that does not exist on iOS is not listed');
+  assert.ok(!android.notes.some((n) => n.startsWith(t.stats.metrics.redownloads)), 'nor one that does not exist on Android');
   const region = new Intl.DisplayNames(['nb'], { type: 'region' });
   assert.deepEqual(ios.table.rows.map((r) => r.label), [region.of('NO'), region.of('SE')]);
   assert.ok(android.series.columns.includes(t.stats.metrics.crashes), 'a real 0 is data');
@@ -237,7 +239,7 @@ test('Saldo: stats-summary with its own key from the server, the revenue also in
   const text = await r.text();
   assert.ok(!text.includes('saldo-secret-987') && !text.includes('anon-public'), 'no key in the answer');
   const body = JSON.parse(text);
-  assert.deepEqual(Object.keys(body.data), ['period', 'stores', 'revenue', 'usage', 'includesTest']);
+  assert.deepEqual(Object.keys(body.data), ['period', 'stores', 'revenue', 'includesTest'], 'usage (always null, no source) is not kept');
   const summaryCall = f.calls.find((c) => c.url.includes('/stats-summary'));
   assert.equal(summaryCall.url, 'https://saldo.supabase.example/functions/v1/stats-summary?includeTest=0');
   assert.equal(summaryCall.init.headers.authorization, 'Bearer saldo-secret-987');
@@ -252,7 +254,7 @@ test('Saldo: stats-summary with its own key from the server, the revenue also in
 
   const t = textsFor('nb');
   const by = byId(statsView(body.data, t, 'nb'));
-  assert.deepEqual(Object.keys(by), ['period', 'revenue', 'stores', 'usage']);
+  assert.deepEqual(Object.keys(by), ['revenue', 'stores']);
   const eur = (v) => new Intl.NumberFormat('nb', { style: 'currency', currency: 'EUR', maximumFractionDigits: 2 }).format(v);
   const nok = (v) => `ca. ${new Intl.NumberFormat('nb', { style: 'currency', currency: 'NOK', maximumFractionDigits: 2 }).format(v)}`;
   const [plans, platforms] = by.revenue.tables;
@@ -269,7 +271,6 @@ test('Saldo: stats-summary with its own key from the server, the revenue also in
   assert.ok(ios.notes[0].startsWith('Apple Analytics: '));
   assert.equal(android.empty, NONE);
   assert.ok(android.notes[0].startsWith('Google Play: ') && android.notes[0].includes(t.stats.reasons.no_files));
-  assert.equal(by.usage.empty, NONE);
 });
 
 test('Saldo: no exchange rate = said so, never 0 – the EUR numbers are still shown', async () => {
@@ -343,4 +344,157 @@ test('the event names are PlanTravel’s own file, copied unchanged and embedded
   for (const l of CORE_LANGUAGES) assert.ok(NAMES[l.code], `${l.code} names`);
   for (const l of CORE_LANGUAGES) assert.equal(JSON.parse(read(`i18n/home/${l.code}.json`)).admin.stats.eventNames, undefined, `${l.code}: never typed in here`);
   assert.match(read('package.json'), /"check": "[^"]*npm run check:plantravel/);
+});
+
+// ---- Period choice, consent share, «Show 10 more» (Marco 25.10) ----
+
+test('the period: today, this week (Monday), this month, year to date, last 12 months, all – ending on the UTC day', () => {
+  const r = (p, d) => { const x = periodRange(p, d); return [x.from, x.to]; };
+  assert.deepEqual(PERIODS, ['today', 'week', 'month', 'year', 'last12', 'all']);
+  assert.deepEqual(r('today', '2026-10-25'), ['2026-10-25', '2026-10-25']);
+  assert.deepEqual(r('week', '2026-10-25'), ['2026-10-19', '2026-10-25'], 'Sunday 25.10 → Monday 19.10');
+  assert.deepEqual(r('week', '2026-10-26'), ['2026-10-26', '2026-10-26'], 'a Monday starts its own week');
+  assert.deepEqual(r('month', '2026-10-25'), ['2026-10-01', '2026-10-25']);
+  assert.deepEqual(r('year', '2026-10-25'), ['2026-01-01', '2026-10-25']);
+  assert.deepEqual(r('last12', '2026-10-25'), ['2025-10-26', '2026-10-25']);
+  assert.deepEqual(r('last12', '2028-02-29'), ['2027-03-01', '2028-02-29'], 'leap day');
+  assert.deepEqual(r('all', '2026-10-25'), [null, '2026-10-25']);
+});
+
+test('every card that has numbers per day follows the period; totals-only numbers say which days they cover', () => {
+  const t = textsFor('nb');
+  const data = summary(SAMPLE);
+  const view = (period) => byId(statsView(data, t, 'nb', NAMES.nb, { period, today: '2026-10-27' }));
+  const today = view('today');
+  assert.deepEqual(today.db.tiles.map((x) => x.value), ['0', '2', '96'], 'new accounts/plans on 27.10 only; active plans are now');
+  assert.ok(today.db.notes.some((n) => n && n.includes(t.stats.activePlans)), 'active plans say they are a state now');
+  assert.deepEqual(today.db.series.views.day.map((r) => r.cells), [['0', '2']]);
+  assert.equal(today.providerClicks.tiles[0].value, '1');
+  assert.deepEqual(today.providerClicks.groups[0].rows.map((r) => [r.label, r.value]), [['kiwitaxi', '1'], ['booking', '0'], ['kiwi', '0']]);
+  assert.deepEqual(today.consent.tiles.map((x) => x.value), ['0', '0', '0', NONE], 'no answers that day: share = no data, never 0 %');
+  const all = view('all');
+  assert.deepEqual(all.db.tiles.map((x) => x.value), ['3', '5', '96']);
+  assert.equal(all.db.note, 'Fra 24. okt. 2026', '«all»: from the first day with data');
+  assert.equal(view('week').db.note, null, 'the data starts before the week (Monday 26.10): no «From»');
+  assert.equal(view('month').db.note, 'Fra 24. okt. 2026', 'the data starts after 1.10: «From <date>»');
+  assert.equal(byId(statsView(data, t, 'nb', NAMES.nb, { period: 'year', today: '2026-10-27' })).db.note, 'Fra 24. okt. 2026', 'starts after 1.1: «From <date>»');
+  assert.equal(view('week').consent.note, null, 'first answer 26.10 = the first day of the week');
+  assert.equal(view('month').consent.note, 'Fra 26. okt. 2026');
+  // The stores: the days in the period, weeks and months summed from them; countries cover every day.
+  const ios = today.stores.parts[0];
+  assert.deepEqual(ios.series.views.day.map((r) => r.cells), [[MISSING, MISSING]]);
+  assert.equal(ios.empty, null);
+  assert.ok(ios.table.note.startsWith('Gjelder alle dager med data'));
+  assert.equal(today.stores.parts[1].empty, t.stats.noDataInPeriod, 'Android has data, but not on 27.10');
+  assert.deepEqual(view('month').stores.parts[0].series.views.week.map((r) => r.cells), [['4', '0'], ['6', '1']]);
+  // Totals the server sends for its own window only: the window is said, whatever is chosen.
+  for (const id of ['events', 'platforms', 'versions', 'languages', 'retention', 'onboarding']) assert.equal(today[id].note, 'Gjelder 25. okt. 2026 – 27. okt. 2026, uansett valgt periode.', id);
+  assert.match(today.active.note, /^Dag, uke og måned fram til 27\. okt\. 2026/);
+  // Saldo: revenue per day follows the period; subscriptions are the state on the newest day.
+  const saldo = byId(statsView(summary(SALDO, 'saldo'), t, 'nb', {}, { period: 'today', today: '2026-10-26' }));
+  assert.deepEqual(saldo.revenue.series.views.day.map((r) => r.cells[0]), [MISSING]);
+  assert.ok(saldo.revenue.tables[0].note.includes('27. okt. 2026'));
+  const bar = periodBar(SAMPLE, t, 'nb', 'month', '2026-10-27');
+  assert.equal(bar.text, '1. okt. 2026 – 27. okt. 2026');
+  assert.deepEqual(bar.choices.map((c) => [c.label, c.pressed]), [['I dag', false], ['Denne uken', false], ['Denne måneden', true], ['Hittil i år', false], ['Siste 12 måneder', false], ['Alt', false]]);
+  assert.equal(periodBar(SAMPLE, t, 'nb', 'all', '2026-10-27').text, '24. okt. 2026 – 27. okt. 2026', '«all» shows the first day with data');
+});
+
+test('«Share yes» = yes / answered for the chosen period; there is no «share of active devices» any more', () => {
+  assert.deepEqual(consentIn(SAMPLE.consent, periodRange('all', '2026-10-27')), { yes: 2, no: 1, answered: 3, shareYes: 2 / 3 });
+  assert.deepEqual(consentIn(SAMPLE.consent, periodRange('today', '2026-10-27')), { yes: 0, no: 0, answered: 0, shareYes: null });
+  assert.deepEqual(consentIn({ byDay: { '2026-10-26': { yes: 3, no: 1 } } }, periodRange('month', '2026-10-27')), { yes: 3, no: 1, answered: 4, shareYes: 0.75 });
+  const t = textsFor('nb');
+  const tiles = byId(statsView(summary(SAMPLE), t, 'nb', NAMES.nb)).consent.tiles;
+  assert.deepEqual(tiles.map((x) => x.label), [t.stats.yes, t.stats.no, t.stats.answered, t.stats.shareYes]);
+  for (const l of CORE_LANGUAGES) {
+    const s = JSON.parse(read(`i18n/home/${l.code}.json`)).admin.stats;
+    for (const k of ['shareOfActive', 'basisStore']) assert.equal(s[k], undefined, `${l.code} ${k} removed`);
+    for (const k of PERIODS) assert.ok(s.periods[k], `${l.code} periods.${k}`);
+    for (const k of ['showMore', 'shownOf', 'noDataInPeriod', 'coversUsage', 'coversActive', 'coversAllData', 'snapshot']) assert.ok(s[k], `${l.code} ${k}`);
+  }
+});
+
+/** A small DOM: elements with children, attributes, listeners and click(). */
+function fakeDom() {
+  let focused = null;
+  class El {
+    constructor(tag) { this.tag = tag; this.children = []; this.attrs = {}; this._text = ''; this.style = {}; this.listeners = {}; this.hidden = false; }
+    set textContent(v) { this._text = String(v); this.children = []; }
+    get textContent() { return this._text; }
+    setAttribute(k, v) { this.attrs[k] = String(v); }
+    getAttribute(k) { return this.attrs[k]; }
+    addEventListener(type, fn) { (this.listeners[type] ??= []).push(fn); }
+    click() { for (const fn of this.listeners.click ?? []) fn(); }
+    appendChild(c) { this.children.push(c); return c; }
+    querySelector(sel) { return this.children.find((c) => sel.split(', ').includes(c.tag)) ?? null; }
+    focus() { focused = this; }
+    all() { return [this, ...this.children.flatMap((c) => c.all())]; }
+  }
+  return { doc: { createElement: (tag) => new El(tag) }, focused: () => focused };
+}
+
+test('long tables and lists: 10 rows, then a real button «Show 10 more» until every row is shown', () => {
+  const t = textsFor('nb');
+  const dom = fakeDom();
+  const box = dom.doc.createElement('div');
+  const rows = Array.from({ length: 25 }, (_, i) => ({ label: `L${i}`, cells: [String(i)] }));
+  renderStats(box, [{ id: 'x', title: 'X', rows: rows.map((r) => ({ label: r.label, value: r.cells[0] })), tables: [{ title: 'T', columns: ['n'], rows }] }], t, dom.doc);
+  const tbody = box.all().find((e) => e.tag === 'tbody');
+  const buttons = box.all().filter((e) => e.tag === 'button');
+  assert.equal(PAGE, 10);
+  assert.equal(buttons.length, 2, 'one for the list, one for the table');
+  const [listButton, tableButton] = buttons;
+  assert.equal(tbody.children.length, 10);
+  assert.equal(tableButton.type, 'button');
+  assert.equal(tableButton.textContent, 'Vis 10 til');
+  assert.equal(tableButton.attrs['aria-controls'], tbody.id);
+  const more = box.all().find((e) => e.children.includes(tableButton));
+  const status = more.children[0];
+  assert.equal(status.textContent, 'Viser 10 av 25');
+  tableButton.click();
+  assert.equal(tbody.children.length, 20);
+  assert.equal(tbody.children[0].children[0].textContent, 'L0', 'the order is unchanged (newest first stays first)');
+  assert.equal(dom.focused(), tbody.children[10].children[0], 'the focus goes to the first new row');
+  assert.equal(tableButton.textContent, 'Vis 5 til');
+  tableButton.click();
+  assert.equal(tbody.children.length, 25);
+  assert.equal(status.textContent, 'Viser 25 av 25');
+  assert.equal(more.hidden, true, 'everything shown: the button goes away');
+  const dl = box.all().find((e) => e.tag === 'dl');
+  assert.equal(dl.children.length, 10);
+  listButton.click();
+  assert.equal(dl.children.length, 20);
+  // 10 rows or fewer: no button.
+  const small = dom.doc.createElement('div');
+  renderStats(small, [{ id: 'y', title: 'Y', tables: [{ title: 'T', columns: ['n'], rows: rows.slice(0, 10) }] }], t, dom.doc);
+  assert.equal(small.all().filter((e) => e.tag === 'button').length, 0);
+  // Every series row is in the view (no cut at 31 days); the page shows 10 at a time.
+  const daysView = statsView(summary(SAMPLE), t, 'nb', NAMES.nb).find((s) => s.id === 'stores').parts[0].series.views.day;
+  assert.equal(daysView.length, 3);
+});
+
+test('the period buttons: real buttons in a labelled group, the chosen one aria-pressed, «all» by default', () => {
+  const t = textsFor('nb');
+  const dom = fakeDom();
+  const box = dom.doc.createElement('div');
+  const page = mountStats(box, summary(SAMPLE), t, 'nb', NAMES.nb, { today: '2026-10-27', period: 'all' }, dom.doc);
+  const buttons = box.all().filter((e) => e.tag === 'button' && e.attrs['data-period']);
+  assert.deepEqual(buttons.map((b) => b.textContent), ['I dag', 'Denne uken', 'Denne måneden', 'Hittil i år', 'Siste 12 måneder', 'Alt']);
+  assert.ok(buttons.every((b) => b.type === 'button'));
+  assert.deepEqual(buttons.map((b) => b.attrs['aria-pressed']), ['false', 'false', 'false', 'false', 'false', 'true']);
+  const group = box.all().find((e) => e.attrs.role === 'group' && e.children.includes(buttons[0]));
+  assert.ok(group.attrs['aria-labelledby']);
+  assert.equal(box.all().filter((e) => e.attrs['data-section'] === 'period').length, 1, 'the choice replaces the «Period» card');
+  const tileOf = (title) => box.all().find((e) => e.className === 'stats-tile-value' && box.all().some((x) => x.children.includes(e) && x.children[1]?.textContent === title))?.textContent;
+  assert.equal(tileOf(t.stats.newPlans), '5');
+  buttons[0].click();
+  assert.deepEqual(buttons.map((b) => b.attrs['aria-pressed']), ['true', 'false', 'false', 'false', 'false', 'false']);
+  assert.equal(tileOf(t.stats.newPlans), '2', 'every card follows the choice');
+  const range = box.all().find((e) => e.attrs['aria-live'] === 'polite');
+  assert.equal(range.textContent, '27. okt. 2026 – 27. okt. 2026');
+  assert.ok(box.all().find((e) => e.attrs['aria-live'] === 'off'), 'the sections are not read out on every change');
+  page.choose('all');
+  assert.equal(buttons[5].attrs['aria-pressed'], 'true');
+  assert.match(read('scripts/front-page.mjs'), /m\.mountStats\(box, j\.data, t, lang/);
 });

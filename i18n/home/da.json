@@ -119,9 +119,7 @@
       "no": "Nej",
       "answered": "Besvaret",
       "shareYes": "Andel ja",
-      "shareOfActive": "Andel af aktive enheder",
       "approx": "ca. {{value}}",
-      "basisStore": "Skøn: ja-svar delt med de aktive enheder, butikkerne oplyser ({{devices}}).",
       "byPlatform": "Pr. platform",
       "stores": "App Store og Google Play",
       "countries": "Pr. land",
@@ -139,13 +137,9 @@
       "reasons": {
         "not_fetched_yet": "Ikke hentet endnu",
         "no_data_yet": "Butikken har ikke leveret tal endnu",
-        "not_on_ios": "Findes ikke på iOS",
-        "not_on_android": "Findes ikke på Android",
         "apple_analytics_not_requested": "Apple Analytics er ikke bestilt",
         "apple_analytics_pending": "Bestilt hos Apple, ikke leveret endnu",
         "apple_analytics_unknown": "Kunne ikke spørge Apple",
-        "ios_active_devices_not_available": "Kun Android (Apple oplyser ikke aktive enheder)",
-        "no_active_devices": "Ingen tal for aktive enheder fra butikkerne endnu",
         "never_fetched": "Aldrig hentet",
         "not_configured": "Ikke sat op",
         "bad_key": "Nøglen blev afvist",
@@ -179,7 +173,6 @@
       "rate": "1 {{from}} = {{rate}} {{to}} · kurs fra {{date}}",
       "rateStale": "gammel kurs",
       "rateMissing": "Valutakurs mangler – beløb i {{currency}} kan ikke vises.",
-      "usage": "Brugsstatistik",
       "noDataYet": "Ingen data endnu",
       "storeNames": {
         "ios": "App Store (iOS)",
@@ -190,7 +183,22 @@
         "apple_analytics": "Apple Analytics",
         "google_play": "Google Play",
         "revenuecat": "RevenueCat"
-      }
+      },
+      "periods": {
+        "today": "I dag",
+        "week": "Denne uge",
+        "month": "Denne måned",
+        "year": "Året til dato",
+        "last12": "Seneste 12 måneder",
+        "all": "Alt"
+      },
+      "coversUsage": "Gælder {{from}} – {{to}}, uanset valgt periode.",
+      "coversActive": "Dag, uge og måned frem til {{date}}, uanset valgt periode.",
+      "coversAllData": "Gælder alle dage med data, {{from}} – {{to}}, uanset valgt periode.",
+      "snapshot": "{{what}}: status {{date}}, uanset valgt periode.",
+      "showMore": "Vis {{n}} mere",
+      "shownOf": "Viser {{shown}} af {{total}}",
+      "noDataInPeriod": "Ingen data i den valgte periode"
     },
     "approval": "Til godkendelse",
     "approvalHint": "Åbner appens egen godkendelseskø i en ny fane (eget login).",
