@@ -1,5 +1,7 @@
 # The fixed preview address (Vercel branch alias of `preview`) always shows the latest main: every push to main
-# moves the branch `preview` to the same commit, and Vercel builds it as a Preview deployment (Preview env vars).
+# resets the branch `preview` to that commit plus one small commit writing the main commit id to
+# .github/preview-of-main.txt (Vercel builds a branch only for a commit with a change it has not built before).
+# The site's content is the same as main; Vercel builds it as a Preview deployment (Preview env vars).
 # Linux, a few seconds per push, one run at a time.
 name: preview-follows-main
 on:
@@ -15,6 +17,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - run: git push --force origin HEAD:refs/heads/preview
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B preview
+          echo "$GITHUB_SHA" > .github/preview-of-main.txt
+          git add .github/preview-of-main.txt
+          git commit -m "preview: viser main ${GITHUB_SHA::7}"
+          git push --force origin preview
