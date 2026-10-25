@@ -105,6 +105,7 @@ a:focus-visible, summary:focus-visible, button:focus-visible, input:focus-visibl
 .admin-form { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
 .admin-form input { font: inherit; width: 100%; min-height: 48px; padding: 10px 14px; border-radius: 12px; border: 1px solid var(--muted); background: var(--surface); color: var(--text); }
 .admin-form button { margin-top: 6px; }
+.admin-form .link-btn { margin-top: 0; font: inherit; font-size: 0.9375rem; min-height: 44px; min-width: 44px; padding: 8px 0; border: 0; background: transparent; color: var(--accent-text); text-decoration: underline; text-underline-offset: 0.18em; cursor: pointer; }
 #message { color: var(--muted); min-height: 1.5em; }
 
 /* /admin: one card per app, and the app page */

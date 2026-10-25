@@ -14,5 +14,8 @@
   },
   "devDependencies": {
     "app-core": "file:vendor/app-core-0.55.0.tgz"
+  },
+  "dependencies": {
+    "bcryptjs": "3.0.3"
   }
 }

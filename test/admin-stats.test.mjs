@@ -8,13 +8,14 @@ import { test } from 'node:test';
 import { CORE_LANGUAGES } from 'app-core';
 
 import { handle } from '../api/admin.js';
+import { SESSION_COOKIE, sessionValue } from '../lib/admin-auth.js';
 import { consentIn, MISSING, mountStats, PAGE, periodBar, periodRange, PERIODS, renderStats, statsView } from '../assets/admin-stats.js';
 import { summary } from '../lib/stats.js';
 
 const read = (f) => fs.readFileSync(new URL(`../${f}`, import.meta.url), 'utf8');
 const NAMES = JSON.parse(read('data/plantravel-event-names.json')).names;
 const SECRET = 'pt-secret-key-123456';
-const ENV = { ADMIN_EMAILS: 'owner@example.com', SUPABASE_URL: 'https://x.supabase.co', SUPABASE_ANON_KEY: 'anon', PLANTRAVEL_API_URL: 'https://api.plantravel.example/', PLANTRAVEL_STATS_KEY: SECRET };
+const ENV = { ADMIN_EMAILS: 'owner@example.com', ADMIN_PASSWORD_HASH: '$2b$04$test.hash.only.for.signing.cookies..', ADMIN_SESSION_SECRET: 'test-session-secret', SUPABASE_URL: 'https://x.supabase.co', SUPABASE_ANON_KEY: 'anon', PLANTRAVEL_API_URL: 'https://api.plantravel.example/', PLANTRAVEL_STATS_KEY: SECRET };
 
 // PlanTravel's format (docs/stats-summary.md in the PlanTravel repo), shortened.
 const sum = (o) => Object.values(o).reduce((a, b) => a + b, 0);
@@ -64,8 +65,10 @@ function fakeFetch(reply = () => new Response(JSON.stringify(SAMPLE), { status: 
   return { calls, fetcher, toPlanTravel: () => calls.filter((c) => c.url.startsWith('https://api.plantravel.example')) };
 }
 
-const stats = (body, token, env = ENV, fetcher) =>
-  handle(new Request('https://h/api/admin', { method: 'POST', headers: token ? { authorization: `Bearer ${token}` } : {}, body: JSON.stringify({ action: 'stats', app: 'plantravel', ...body }) }), env, fetcher);
+/** The session cookie the server sets after sign-in: «good» = the allowed owner, «other» = an address not on the list. */
+const session = (who, env = ENV) => (who ? { cookie: `${SESSION_COOKIE}=${sessionValue(who === 'good' ? 'owner@example.com' : 'other@example.com', env)}` } : {});
+const stats = (body, who, env = ENV, fetcher) =>
+  handle(new Request('https://h/api/admin', { method: 'POST', headers: session(who, env), body: JSON.stringify({ action: 'stats', app: 'plantravel', ...body }) }), env, fetcher);
 
 test('statistics without sign-in → 401, another address → 403, and PlanTravel is never asked', async () => {
   const f = fakeFetch();
@@ -230,7 +233,7 @@ const SALDO_ENV = { ...ENV, SALDO_STATS_URL: 'https://saldo.supabase.example/fun
 const saldoFetch = (rates = () => new Response(JSON.stringify(RATES), { status: 200 })) =>
   fakeFetch((url) => (String(url).includes('/exchange-rates') ? rates(url) : new Response(JSON.stringify(SALDO), { status: 200 })));
 const saldoStats = (env, fetcher) =>
-  handle(new Request('https://h/api/admin', { method: 'POST', headers: { authorization: 'Bearer good' }, body: JSON.stringify({ action: 'stats', app: 'saldo-pocket' }) }), env, fetcher);
+  handle(new Request('https://h/api/admin', { method: 'POST', headers: session('good', env), body: JSON.stringify({ action: 'stats', app: 'saldo-pocket' }) }), env, fetcher);
 
 test('Saldo: stats-summary with its own key from the server, the revenue also in NOK «ca.» from Saldo’s exchange-rate service', async () => {
   const f = saldoFetch();

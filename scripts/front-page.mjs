@@ -191,9 +191,9 @@ export function approvalButton(app, t, esc) {
 }
 
 /**
- * /admin and /admin/<app>: sign in with e-mail + a one-time code (Supabase, the Saldo project), only for the addresses in
- * the server's allowlist (Vercel environment ADMIN_EMAILS, checked in api/admin.js – never in the page). Everyone else is
- * refused before any code is sent. After sign-in, /admin shows one card per app in the app list (data/apps.json, every
+ * /admin and /admin/<app>: sign in with e-mail + password (a real form, so the browser's password manager works; the
+ * e-mail code only behind «Forgot password?»), only for the addresses in the server's allowlist (Vercel environment
+ * ADMIN_EMAILS, checked in api/admin.js – never in the page). The server keeps the sign-in in an HttpOnly cookie for 30 days. After sign-in, /admin shows one card per app in the app list (data/apps.json, every
  * app with a «home» part – a new app there = a new card and page), and /admin/<app> the statistics for that app, fetched
  * from /api/admin (action «stats»; «No data yet» until the app has a source). The page is in the visitor's language (the
  * saved choice, ?lang=, or the browser's), with every language's texts from i18n/home (admin.*).
@@ -229,16 +229,27 @@ export function adminPage({ homes, company, esc, fallback, apps, app = null, eve
   </header>
   <main id="content" class="wrap admin${app ? ' admin-wide' : ''}">
     <h1 data-t="title">${esc(t.title)}</h1>
+    <form id="password-form" class="admin-form" method="post" action="/admin" hidden>
+      <label for="login-email" data-t="email">${esc(t.email)}</label>
+      <input id="login-email" name="username" type="email" autocomplete="username" autocapitalize="none" spellcheck="false" required>
+      <label for="password" data-t="password">${esc(t.password)}</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" required>
+      <button class="btn primary" type="submit" data-t="verify">${esc(t.verify)}</button>
+      <button class="link-btn" type="button" id="forgot" data-t="forgotPassword">${esc(t.forgotPassword)}</button>
+    </form>
     <form id="email-form" class="admin-form" hidden>
+      <p data-t="codeHint">${esc(t.codeHint)}</p>
       <label for="email" data-t="email">${esc(t.email)}</label>
       <input id="email" name="email" type="email" autocomplete="email" required>
       <button class="btn primary" type="submit" data-t="sendCode">${esc(t.sendCode)}</button>
+      <button class="link-btn" type="button" data-back="password" data-t="usePassword">${esc(t.usePassword)}</button>
     </form>
     <form id="code-form" class="admin-form" hidden>
       <p id="sent"></p>
       <label for="code" data-t="code">${esc(t.code)}</label>
       <input id="code" name="code" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6,10}" required>
       <button class="btn primary" type="submit" data-t="verify">${esc(t.verify)}</button>
+      <button class="link-btn" type="button" data-back="password" data-t="usePassword">${esc(t.usePassword)}</button>
     </form>
     <section id="inside" class="admin-inside" hidden>
       <p class="muted admin-who" id="who"></p>
@@ -263,19 +274,22 @@ export function adminPage({ homes, company, esc, fallback, apps, app = null, eve
   var $ = function (id) { return document.getElementById(id); };
   var say = function (key, detail) { $('message').textContent = key ? t[key] + (detail ? ' (' + detail + ')' : '') : ''; };
   // The server's error code → its text; anything else says what failed (HTTP status and the server's code).
-  var KEYS = { refused: 'refused', rate_limited: 'tooMany', not_configured: 'notConfigured', wrong_code: 'wrongCode', stats_not_configured: 'statsNotConfigured', source_refused: 'sourceRefused', source: 'sourceFailed', source_timeout: 'sourceFailed' };
+  var KEYS = { refused: 'refused', wrong_login: 'wrongLogin', locked: 'locked', rate_limited: 'tooMany', not_configured: 'notConfigured', wrong_code: 'wrongCode', stats_not_configured: 'statsNotConfigured', source_refused: 'sourceRefused', source: 'sourceFailed', source_timeout: 'sourceFailed' };
   var failText = function (j) {
     if (KEYS[j.error]) return [KEYS[j.error], j.missing ? j.missing.join(', ') : j.code || ''];
     if (!j.status) return ['offline', ''];
     return ['failed', ['HTTP ' + j.status, j.code].filter(Boolean).join(' · ')];
   };
   var fail = function (j) { var f = failText(j); say(f[0], f[1]); };
-  var call = function (body, token) {
-    return fetch('/api/admin', { method: 'POST', headers: Object.assign({ 'content-type': 'application/json' }, token ? { authorization: 'Bearer ' + token } : {}), body: JSON.stringify(body) })
+  // The session is an HttpOnly cookie the server sets (30 days); the page never sees it, fetch sends it along.
+  var call = function (body) {
+    return fetch('/api/admin', { method: 'POST', credentials: 'same-origin', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { j.status = r.status; return j; }); });
   };
-  var KEY = 'admin.session';
-  var signedOut = function () { $('email-form').hidden = false; $('code-form').hidden = true; $('inside').hidden = true; };
+  // The token kept by the page before the password sign-in (25.10) is not used any more.
+  try { sessionStorage.removeItem('admin.session'); } catch (e) {}
+  var form = function (id) { ['password-form', 'email-form', 'code-form'].forEach(function (f) { $(f).hidden = f !== id; }); };
+  var signedOut = function () { form('password-form'); $('inside').hidden = true; };
   // The app page: the statistics from the server (data null = no source yet → «No data yet»; otherwise aggregate numbers,
   // laid out by /assets/admin-stats.js with textContent only, with the period choice at the top). Loading, error (with «Try again»)
   // and the test-traffic switch (the chosen period is kept when it fetches again).
@@ -287,7 +301,7 @@ export function adminPage({ homes, company, esc, fallback, apps, app = null, eve
     box.appendChild(p);
     return p;
   };
-  var loadStats = function (token) {
+  var loadStats = function () {
     var box = $('stats');
     if (!box) return;
     var toggle = $('include-test');
@@ -301,11 +315,11 @@ export function adminPage({ homes, company, esc, fallback, apps, app = null, eve
       again.type = 'button';
       again.className = 'btn ghost';
       again.textContent = t.retry;
-      again.addEventListener('click', function () { say(''); loadStats(token); });
+      again.addEventListener('click', function () { say(''); loadStats(); });
       p.appendChild(document.createElement('br'));
       p.appendChild(again);
     };
-    call({ action: 'stats', app: box.getAttribute('data-app'), includeTest: !!(toggle && toggle.checked) }, token).then(function (j) {
+    call({ action: 'stats', app: box.getAttribute('data-app'), includeTest: !!(toggle && toggle.checked) }).then(function (j) {
       if (j.status !== 200) return failed(j);
       if (!j.data) { box.removeAttribute('aria-busy'); return line(box, t.noData); }
       return import('/assets/admin-stats.js').then(function (m) {
@@ -316,8 +330,7 @@ export function adminPage({ homes, company, esc, fallback, apps, app = null, eve
   };
   // Back online after a failed load: try again by itself.
   window.addEventListener('online', function () {
-    var tk; try { tk = sessionStorage.getItem(KEY); } catch (e) {}
-    if (tk && $('stats') && $('stats').querySelector('.admin-card button')) { say(''); loadStats(tk); }
+    if (!$('inside').hidden && $('stats') && $('stats').querySelector('.admin-card button')) { say(''); loadStats(); }
   });
   if ($('approval-open')) $('approval-open').addEventListener('click', function () {
     var open = $('approval-empty').hidden;
@@ -325,43 +338,58 @@ export function adminPage({ homes, company, esc, fallback, apps, app = null, eve
     $('approval-open').setAttribute('aria-expanded', String(open));
   });
   if ($('include-test')) $('include-test').addEventListener('change', function () {
-    var tk; try { tk = sessionStorage.getItem(KEY); } catch (e) {}
-    if (tk) loadStats(tk);
+    if (!$('inside').hidden) loadStats();
   });
-  var show = function (email, token) {
-    $('email-form').hidden = true; $('code-form').hidden = true; $('inside').hidden = false; $('who').textContent = email; say('');
-    loadStats(token);
+  var show = function (email) {
+    form(''); $('inside').hidden = false; $('who').textContent = email; say('');
+    loadStats();
   };
-  var check = function (token) {
+  var check = function () {
     say('checking');
-    return call({ action: 'me' }, token).then(function (j) {
-      if (j.status === 200) return show(j.email, token);
-      try { sessionStorage.removeItem(KEY); } catch (e) {}
+    return call({ action: 'me' }).then(function (j) {
+      if (j.status === 200) return show(j.email);
       signedOut();
       if (j.status === 401) say(''); else fail(j);
     }, function () { signedOut(); say('offline'); });
   };
-  var token; try { token = sessionStorage.getItem(KEY); } catch (e) {}
-  if (token) check(token); else signedOut();
+  check();
+  // E-mail + password: a real form, so the browser's password manager offers to save and fill it.
+  $('password-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    call({ action: 'login', email: $('login-email').value.trim(), password: $('password').value }).then(function (j) {
+      if (j.status === 200) { $('password').value = ''; return check(); }
+      $('password').value = '';
+      $('password').focus();
+      fail(j);
+    }, function () { say('offline'); });
+  });
+  // «Forgot password?»: the e-mail code, the fallback.
+  $('forgot').addEventListener('click', function () {
+    $('email').value = $('login-email').value.trim();
+    form('email-form'); say(''); $('email').focus();
+  });
+  document.querySelectorAll('[data-back="password"]').forEach(function (b) {
+    b.addEventListener('click', function () { form('password-form'); say(''); $('login-email').focus(); });
+  });
   var email = '';
   $('email-form').addEventListener('submit', function (e) {
     e.preventDefault();
     email = $('email').value.trim();
     call({ action: 'code', email: email }).then(function (j) {
-      if (j.status === 200) { $('email-form').hidden = true; $('code-form').hidden = false; $('sent').textContent = t.sent.replace('%email%', email); $('code').focus(); say(''); }
+      if (j.status === 200) { form('code-form'); $('sent').textContent = t.sent.replace('%email%', email); $('code').focus(); say(''); }
       else fail(j);
     }, function () { say('offline'); });
   });
   $('code-form').addEventListener('submit', function (e) {
     e.preventDefault();
     call({ action: 'verify', email: email, code: $('code').value.trim() }).then(function (j) {
-      if (j.status === 200 && j.accessToken) { try { sessionStorage.setItem(KEY, j.accessToken); } catch (e) {} return check(j.accessToken); }
+      if (j.status === 200) return check();
       fail(j);
     }, function () { say('offline'); });
   });
   $('sign-out').addEventListener('click', function () {
-    try { sessionStorage.removeItem(KEY); } catch (e) {}
-    location.href = '/admin';
+    var away = function () { location.href = '/admin'; };
+    call({ action: 'logout' }).then(away, away);
   });
 })();
   </script>
