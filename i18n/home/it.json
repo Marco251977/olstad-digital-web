@@ -207,8 +207,59 @@
       "noDataInPeriod": "Nessun dato nel periodo scelto"
     },
     "approval": "Da approvare",
-    "approvalHint": "Apre la coda di approvazione dell’app in una nuova scheda (con accesso separato).",
     "approvalEmpty": "Niente in attesa di approvazione.",
-    "offline": "Nessuna connessione Internet. La pagina riprova quando torni online."
+    "offline": "Nessuna connessione Internet. La pagina riprova quando torni online.",
+    "queueNotConfigured": "La coda di approvazione non è collegata sul server.",
+    "queueSourceRefused": "Il server dell’app ha rifiutato la chiave della coda di approvazione.",
+    "queueSourceFailed": "Impossibile raggiungere la coda di approvazione sul server dell’app.",
+    "queue": {
+      "intro": "Tutto ciò che attende revisione. Ciò che viene approvato o rifiutato scompare subito da qui. Un’immagine approvata viene mostrata solo quando qualcuno guarda il luogo.",
+      "loading": "Caricamento della coda …",
+      "actionFailed": "L’azione non è riuscita.",
+      "done": {
+        "approve": "Approvato.",
+        "reject": "Rifiutato.",
+        "refetch": "È stata recuperata una nuova immagine."
+      },
+      "types": {
+        "destination_images": "Immagini delle destinazioni"
+      },
+      "photo": "Foto: {{name}}",
+      "unknownPhotographer": "Fotografo sconosciuto",
+      "seeOnUnsplash": "Vedi l’immagine su Unsplash",
+      "approve": "Approva",
+      "reject": "Rifiuta",
+      "refetch": "Recupera un’altra immagine",
+      "replaceWarning": "Questo luogo ha già un’immagine approvata. Se ne approvi una di queste, sostituisce la vecchia.",
+      "sources": {
+        "inspire_app": "Ispirami · app",
+        "inspire_web": "Ispirami · web",
+        "plan_app": "Piano di viaggio · app",
+        "plan_web": "Piano di viaggio · web"
+      },
+      "sourceUnknown": "Origine sconosciuta",
+      "channelUnknown": "canale sconosciuto",
+      "noSources": "Origine e canale sconosciuti (in coda prima del 7 ottobre o recuperato a mano)",
+      "dropsTitle": "Fermati prima della coda (14 giorni)",
+      "noDrops": "Negli ultimi 14 giorni non è stato fermato nulla.",
+      "drops": {
+        "duplicate": "Duplicato (il luogo è in coda o ha immagini da approvare)",
+        "already_approved": "Ha già un’immagine approvata",
+        "test": "Test (preview, dev, dispositivo di test o admin)",
+        "bot": "Bot",
+        "missing_channel": "Canale mancante (app o web non aggiornati)",
+        "unknown_place": "Luogo sconosciuto",
+        "ambiguous": "Luogo ambiguo (stesso nome in più paesi)",
+        "daily_limit": "Limite giornaliero raggiunto",
+        "insert_failed": "Salvataggio non riuscito"
+      },
+      "altTitle": "Cambia immagine approvata",
+      "altHint": "Luoghi con più immagini approvate con nomi diversi. Una è in uso, le altre si possono scegliere.",
+      "useThis": "Usa questa",
+      "inUse": "In uso",
+      "storedAs": "Salvata come «{{name}}»",
+      "noAlternatives": "Nessun luogo ha immagini approvate alternative.",
+      "schemaNotReady": "La modifica al database per le immagini non è ancora stata eseguita. Fino ad allora la coda non accetta nuovi luoghi."
+    }
   }
 }

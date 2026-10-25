@@ -13,12 +13,18 @@
 // data/apps.json): data null until the app has a source (home.stats.source), else the aggregate numbers fetched on the server
 // (lib/stats.js – the source's key never leaves the server; includeTest true = with test traffic, default off). 'me' and
 // 'stats' need the session cookie (no cookie = 401 signed_out).
+// «Til godkjenning» (lib/approval.js), also only with the session cookie: { action: 'queue', app } = the app's approval
+// queue (data null when the app has no queue source, home.approval.source) · { action: 'queueCount', app } = { total } ·
+// { action: 'queueAction', app, request: { type, id, action: 'approve' | 'reject' | 'refetch', city, country, placeId } } = passed on to
+// the app's server, which runs its own queue logic. Errors: queue_not_configured (503), queue_source_refused /
+// queue_source (502), queue_source_timeout (504), bad_request (400) for an unknown type/action/id.
 // Every failure is an error code the page turns into a text: refused (403), wrong_login (401), locked / rate_limited (429),
 // not_configured (503, with the missing setting names), wrong_code / signed_out (401), server (502, with Supabase's status and
 // code); for the statistics also stats_not_configured (503), source_refused / source (502) and source_timeout (504).
 
 import appList from '../data/apps.json' with { type: 'json' };
 import { clearFailures, clearSessionCookie, locked, passwordMatches, recordFailure, sessionCookie, sessionEmail } from '../lib/admin-auth.js';
+import { actionRequest, fetchQueue, fetchQueueCount, queueAction } from '../lib/approval.js';
 import { fetchStats } from '../lib/stats.js';
 
 /** The apps /admin shows: every app in the app list with a «home» part (the same list as the front page). */
@@ -113,7 +119,7 @@ async function answer(request, env, fetcher) {
     // The same 30-day session cookie as the password.
     return json(200, { email }, [sessionCookie(email, env), clearFailures(request, email, env)]);
   }
-  if (body.action === 'me' || body.action === 'stats') {
+  if (['me', 'stats', 'queue', 'queueCount', 'queueAction'].includes(body.action)) {
     const email = sessionEmail(request, env);
     if (!email) return json(401, { error: 'signed_out' }, [clearSessionCookie()]);
     // Taken off the list = out, also with a cookie that is still valid.
@@ -121,6 +127,24 @@ async function answer(request, env, fetcher) {
     if (body.action === 'me') return json(200, { email });
     if (!ADMIN_APPS.includes(body.app)) return json(404, { error: 'unknown_app' });
     const home = appList.apps.find((a) => a.home?.id === body.app).home;
+    if (body.action !== 'stats') {
+      const source = home.approval?.source;
+      // No queue for this app (yet) – nothing is waiting.
+      if (!source) return body.action === 'queueAction' ? json(404, { error: 'no_queue' }) : json(200, { app: body.app, data: null, total: 0 });
+      if (body.action === 'queueCount') {
+        const c = await fetchQueueCount(source, env, fetcher);
+        return json(c.status, c.status === 200 ? { app: body.app, ...c.body } : c.body);
+      }
+      if (body.action === 'queue') {
+        const q = await fetchQueue(source, env, fetcher);
+        return json(q.status, q.status === 200 ? { app: body.app, data: q.body } : q.body);
+      }
+      const request = actionRequest(body.request);
+      if (!request) return json(400, { error: 'bad_request' });
+      console.log(`admin queue: ${body.app} ${request.type} ${request.action}`);
+      const a = await queueAction(source, request, env, fetcher);
+      return json(a.status, a.body);
+    }
     // No statistics source connected (yet) – «No data yet».
     if (!home.stats?.source) return json(200, { app: body.app, data: null });
     const s = await fetchStats(home.stats.source, { includeTest: body.includeTest === true }, env, fetcher);

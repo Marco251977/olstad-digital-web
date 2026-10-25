@@ -207,8 +207,59 @@
       "noDataInPeriod": "Seçilen dönemde veri yok"
     },
     "approval": "Onay bekleyenler",
-    "approvalHint": "Uygulamanın kendi onay kuyruğunu yeni bir sekmede açar (ayrı giriş).",
     "approvalEmpty": "Onay bekleyen bir şey yok.",
-    "offline": "İnternet bağlantısı yok. Tekrar çevrimiçi olduğunda sayfa yeniden dener."
+    "offline": "İnternet bağlantısı yok. Tekrar çevrimiçi olduğunda sayfa yeniden dener.",
+    "queueNotConfigured": "Onay kuyruğu sunucuda bağlı değil.",
+    "queueSourceRefused": "Uygulamanın sunucusu onay kuyruğu anahtarını reddetti.",
+    "queueSourceFailed": "Uygulamanın sunucusundaki onay kuyruğuna ulaşılamadı.",
+    "queue": {
+      "intro": "İncelenmeyi bekleyen her şey. Onaylanan ve reddedilenler buradan hemen kaybolur. Onaylanan bir görsel ancak biri o yere baktığında gösterilir.",
+      "loading": "Kuyruk yükleniyor …",
+      "actionFailed": "İşlem başarısız oldu.",
+      "done": {
+        "approve": "Onaylandı.",
+        "reject": "Reddedildi.",
+        "refetch": "Yeni bir görsel alındı."
+      },
+      "types": {
+        "destination_images": "Destinasyon görselleri"
+      },
+      "photo": "Fotoğraf: {{name}}",
+      "unknownPhotographer": "Bilinmeyen fotoğrafçı",
+      "seeOnUnsplash": "Görseli Unsplash’te gör",
+      "approve": "Onayla",
+      "reject": "Reddet",
+      "refetch": "Yeni görsel al",
+      "replaceWarning": "Bu yerin zaten onaylanmış bir görseli var. Bunlardan birini onaylarsan eskisinin yerini alır.",
+      "sources": {
+        "inspire_app": "Bana ilham ver · uygulama",
+        "inspire_web": "Bana ilham ver · web",
+        "plan_app": "Seyahat planı · uygulama",
+        "plan_web": "Seyahat planı · web"
+      },
+      "sourceUnknown": "Kaynak bilinmiyor",
+      "channelUnknown": "kanal bilinmiyor",
+      "noSources": "Kaynak ve kanal bilinmiyor (7 Ekim’den önce kuyruğa alındı veya elle alındı)",
+      "dropsTitle": "Kuyruktan önce durdurulanlar (14 gün)",
+      "noDrops": "Son 14 günde hiçbir şey durdurulmadı.",
+      "drops": {
+        "duplicate": "Yinelenen (yer kuyrukta veya onay bekleyen görselleri var)",
+        "already_approved": "Zaten onaylanmış bir görseli var",
+        "test": "Test (preview, dev, test cihazı veya yönetici)",
+        "bot": "Bot",
+        "missing_channel": "Kanal eksik (uygulama veya web güncellenmemiş)",
+        "unknown_place": "Bilinmeyen yer",
+        "ambiguous": "Belirsiz yer (birden fazla ülkede aynı ad)",
+        "daily_limit": "Günlük sınıra ulaşıldı",
+        "insert_failed": "Kaydetme başarısız"
+      },
+      "altTitle": "Onaylı görseli değiştir",
+      "altHint": "Farklı adlar altında birden fazla onaylı görseli olan yerler. Biri kullanımda, diğerleri seçilebilir.",
+      "useThis": "Bunu kullan",
+      "inUse": "Kullanımda",
+      "storedAs": "“{{name}}” olarak kaydedildi",
+      "noAlternatives": "Hiçbir yerin alternatif onaylı görseli yok.",
+      "schemaNotReady": "Görseller için veritabanı değişikliği henüz çalıştırılmadı. O zamana kadar kuyruk yeni yer almaz."
+    }
   }
 }

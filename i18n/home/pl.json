@@ -207,8 +207,59 @@
       "noDataInPeriod": "Brak danych w wybranym okresie"
     },
     "approval": "Do zatwierdzenia",
-    "approvalHint": "Otwiera własną kolejkę zatwierdzania aplikacji w nowej karcie (osobne logowanie).",
     "approvalEmpty": "Nic nie czeka na zatwierdzenie.",
-    "offline": "Brak połączenia z internetem. Strona spróbuje ponownie, gdy wrócisz do sieci."
+    "offline": "Brak połączenia z internetem. Strona spróbuje ponownie, gdy wrócisz do sieci.",
+    "queueNotConfigured": "Kolejka zatwierdzania nie jest połączona na serwerze.",
+    "queueSourceRefused": "Serwer aplikacji odrzucił klucz kolejki zatwierdzania.",
+    "queueSourceFailed": "Nie udało się połączyć z kolejką zatwierdzania na serwerze aplikacji.",
+    "queue": {
+      "intro": "Wszystko, co czeka na sprawdzenie. Zatwierdzone i odrzucone znikają stąd od razu. Zatwierdzone zdjęcie pojawia się dopiero, gdy ktoś ogląda dane miejsce.",
+      "loading": "Wczytywanie kolejki …",
+      "actionFailed": "Działanie nie powiodło się.",
+      "done": {
+        "approve": "Zatwierdzono.",
+        "reject": "Odrzucono.",
+        "refetch": "Pobrano nowe zdjęcie."
+      },
+      "types": {
+        "destination_images": "Zdjęcia miejsc docelowych"
+      },
+      "photo": "Zdjęcie: {{name}}",
+      "unknownPhotographer": "Nieznany fotograf",
+      "seeOnUnsplash": "Zobacz zdjęcie w Unsplash",
+      "approve": "Zatwierdź",
+      "reject": "Odrzuć",
+      "refetch": "Pobierz nowe zdjęcie",
+      "replaceWarning": "To miejsce ma już zatwierdzone zdjęcie. Zatwierdzenie jednego z tych zastąpi stare.",
+      "sources": {
+        "inspire_app": "Zainspiruj mnie · aplikacja",
+        "inspire_web": "Zainspiruj mnie · web",
+        "plan_app": "Plan podróży · aplikacja",
+        "plan_web": "Plan podróży · web"
+      },
+      "sourceUnknown": "Nieznane źródło",
+      "channelUnknown": "nieznany kanał",
+      "noSources": "Źródło i kanał nieznane (w kolejce przed 7 października lub pobrane ręcznie)",
+      "dropsTitle": "Zatrzymane przed kolejką (14 dni)",
+      "noDrops": "W ciągu ostatnich 14 dni nic nie zatrzymano.",
+      "drops": {
+        "duplicate": "Duplikat (miejsce jest w kolejce lub ma zdjęcia do zatwierdzenia)",
+        "already_approved": "Ma już zatwierdzone zdjęcie",
+        "test": "Test (preview, dev, urządzenie testowe lub admin)",
+        "bot": "Bot",
+        "missing_channel": "Brak kanału (aplikacja lub web bez aktualizacji)",
+        "unknown_place": "Nieznane miejsce",
+        "ambiguous": "Niejednoznaczne miejsce (ta sama nazwa w kilku krajach)",
+        "daily_limit": "Osiągnięto dzienny limit",
+        "insert_failed": "Zapis nie powiódł się"
+      },
+      "altTitle": "Zmień zatwierdzone zdjęcie",
+      "altHint": "Miejsca z kilkoma zatwierdzonymi zdjęciami pod różnymi nazwami. Jedno jest używane, pozostałe można wybrać.",
+      "useThis": "Użyj tego",
+      "inUse": "W użyciu",
+      "storedAs": "Zapisane jako „{{name}}”",
+      "noAlternatives": "Żadne miejsce nie ma alternatywnych zatwierdzonych zdjęć.",
+      "schemaNotReady": "Zmiana bazy danych dla zdjęć nie została jeszcze wykonana. Do tego czasu kolejka nie przyjmuje nowych miejsc."
+    }
   }
 }

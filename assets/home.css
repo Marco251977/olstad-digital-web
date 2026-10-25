@@ -178,3 +178,37 @@ a:focus-visible, summary:focus-visible, button:focus-visible, input:focus-visibl
 .stats-more-btn:hover { background: var(--bar); }
 .stats-more-btn:focus-visible, .stats-table th:focus-visible, .stats-row dt:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .admin-inside > *, .admin-stats > *, .stats-sections > *, .stats-section, .stats-part, .stats-series { min-width: 0; }
+
+/* /admin/<app>: «Til godkjenning» – the badge on the button and the queue (assets/admin-queue.js) */
+.admin-badge { display: inline-flex; align-items: center; justify-content: center; min-inline-size: 1.6em; padding: 0 6px; border-radius: 999px; background: var(--on-accent); color: var(--accent-text); font-size: 0.8125rem; font-variant-numeric: tabular-nums; }
+.admin-badge[hidden] { display: none; }
+.admin-queue { display: grid; gap: 12px; align-self: stretch; }
+.admin-queue[hidden] { display: none; }
+.admin-queue > p { margin: 0; }
+.admin-queue .btn { min-height: 44px; }
+.btn.danger { background: var(--danger); color: var(--on-danger); }
+.btn.primary:hover, .btn.danger:hover { opacity: 0.9; }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.queue-hint { margin: 0; font-size: 0.9375rem; }
+.queue-done { margin: 0; font-weight: 600; }
+.queue-section { display: grid; gap: 12px; }
+.queue-section h3 { margin: 0; display: flex; align-items: center; gap: 8px; font-size: 1.125rem; }
+.queue-count { display: inline-flex; min-inline-size: 1.8em; justify-content: center; padding: 0 8px; border-radius: 999px; background: var(--accent); color: var(--on-accent); font-size: 0.8125rem; font-variant-numeric: tabular-nums; }
+.queue-group, .queue-panel { display: grid; gap: 10px; }
+.queue-place { margin: 0; font-size: 1rem; overflow-wrap: anywhere; }
+.queue-country { font-weight: 400; }
+.queue-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; }
+.queue-chip { display: inline-block; padding: 2px 10px; border-radius: 999px; background: var(--bar); color: var(--text); font-size: 0.8125rem; }
+.queue-warn { margin: 0; padding: 8px 12px; border-radius: 12px; background: var(--warn-bg); color: var(--warn-text); font-size: 0.9375rem; }
+.queue-candidates { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); margin: 0; padding: 0; list-style: none; }
+.queue-candidate { display: flex; flex-direction: column; gap: 8px; min-width: 0; padding: 10px; border: 1px solid var(--line); border-radius: 16px; background: var(--bg); }
+.queue-img { display: block; inline-size: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 10px; background: var(--bar); }
+.queue-img-missing { display: flex; align-items: center; justify-content: center; color: var(--muted); }
+.queue-meta { margin: 0; font-size: 0.875rem; color: var(--muted); overflow-wrap: anywhere; }
+.queue-meta a { color: var(--accent-text); display: inline-block; min-height: 24px; }
+.queue-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; }
+.queue-actions .btn { flex: 1 1 auto; padding-inline: 12px; font-size: 0.875rem; }
+.queue-current { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; color: var(--text); }
+.queue-error { margin: 0; color: var(--text); font-size: 0.875rem; font-weight: 600; }
+.queue-panel h4 { margin: 0; font-size: 1.0625rem; }
+.queue-panel h5 { margin: 4px 0 0; font-size: 1rem; }

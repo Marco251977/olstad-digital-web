@@ -207,8 +207,59 @@
       "noDataInPeriod": "Ingen data i valgt periode"
     },
     "approval": "Til godkjenning",
-    "approvalHint": "Åpner appens egen godkjenningskø i en ny fane (egen innlogging).",
     "approvalEmpty": "Ingenting venter på godkjenning.",
-    "offline": "Ingen internettforbindelse. Siden prøver igjen når du er på nett."
+    "offline": "Ingen internettforbindelse. Siden prøver igjen når du er på nett.",
+    "queueNotConfigured": "Godkjenningskøen er ikke koblet til på serveren.",
+    "queueSourceRefused": "Appens server avviste nøkkelen for godkjenningskøen.",
+    "queueSourceFailed": "Fikk ikke kontakt med godkjenningskøen på appens server.",
+    "queue": {
+      "intro": "Alt som venter på gjennomgang. Godkjent og avvist forsvinner herfra med en gang. Et godkjent bilde vises først når noen ser på stedet.",
+      "loading": "Henter køen …",
+      "actionFailed": "Handlingen feilet.",
+      "done": {
+        "approve": "Godkjent.",
+        "reject": "Avvist.",
+        "refetch": "Nytt bilde er hentet."
+      },
+      "types": {
+        "destination_images": "Reisemålbilder"
+      },
+      "photo": "Foto: {{name}}",
+      "unknownPhotographer": "Ukjent fotograf",
+      "seeOnUnsplash": "Se bildet på Unsplash",
+      "approve": "Godkjenn",
+      "reject": "Avvis",
+      "refetch": "Hent nytt bilde",
+      "replaceWarning": "Stedet har allerede et godkjent bilde. Godkjenner du ett av disse, erstatter det det gamle.",
+      "sources": {
+        "inspire_app": "Inspirer meg · app",
+        "inspire_web": "Inspirer meg · web",
+        "plan_app": "Reiseplan · app",
+        "plan_web": "Reiseplan · web"
+      },
+      "sourceUnknown": "Kilde ukjent",
+      "channelUnknown": "kanal ukjent",
+      "noSources": "Kilde og kanal ukjent (lagt i køen før 7. oktober eller hentet for hånd)",
+      "dropsTitle": "Stoppet før køen (14 dager)",
+      "noDrops": "Ingen stoppet de siste 14 dagene.",
+      "drops": {
+        "duplicate": "Duplikat (stedet er i køen eller har bilder til godkjenning)",
+        "already_approved": "Har allerede godkjent bilde",
+        "test": "Test (preview, dev, testenhet eller admin)",
+        "bot": "Robot",
+        "missing_channel": "Mangler kanal (app eller web uten oppdatering)",
+        "unknown_place": "Ukjent sted",
+        "ambiguous": "Flertydig sted (samme navn i flere land)",
+        "daily_limit": "Dagsgrensen er nådd",
+        "insert_failed": "Lagring feilet"
+      },
+      "altTitle": "Bytt godkjent bilde",
+      "altHint": "Steder som har flere godkjente bilder under ulike navn. Ett er i bruk, de andre kan velges.",
+      "useThis": "Bruk dette",
+      "inUse": "I bruk",
+      "storedAs": "Lagret som «{{name}}»",
+      "noAlternatives": "Ingen steder har alternative godkjente bilder.",
+      "schemaNotReady": "Databaseendringen for bildene er ikke kjørt ennå. Køen tar ikke imot nye steder før den er kjørt."
+    }
   }
 }

@@ -207,8 +207,59 @@
       "noDataInPeriod": "選択した期間のデータはありません"
     },
     "approval": "承認待ち",
-    "approvalHint": "アプリ独自の承認キューを新しいタブで開きます（別途ログイン）。",
     "approvalEmpty": "承認待ちのものはありません。",
-    "offline": "インターネットに接続されていません。オンラインに戻るとページが再試行します。"
+    "offline": "インターネットに接続されていません。オンラインに戻るとページが再試行します。",
+    "queueNotConfigured": "承認キューがサーバーに接続されていません。",
+    "queueSourceRefused": "アプリのサーバーが承認キューのキーを拒否しました。",
+    "queueSourceFailed": "アプリのサーバーの承認キューに接続できませんでした。",
+    "queue": {
+      "intro": "確認待ちのすべての項目です。承認または却下したものはすぐにここから消えます。承認した画像は、誰かがその場所を見たときに初めて表示されます。",
+      "loading": "キューを読み込み中…",
+      "actionFailed": "操作に失敗しました。",
+      "done": {
+        "approve": "承認しました。",
+        "reject": "却下しました。",
+        "refetch": "新しい画像を取得しました。"
+      },
+      "types": {
+        "destination_images": "旅行先の画像"
+      },
+      "photo": "写真：{{name}}",
+      "unknownPhotographer": "撮影者不明",
+      "seeOnUnsplash": "Unsplashで画像を見る",
+      "approve": "承認",
+      "reject": "却下",
+      "refetch": "新しい画像を取得",
+      "replaceWarning": "この場所にはすでに承認済みの画像があります。これらのいずれかを承認すると、古い画像と置き換わります。",
+      "sources": {
+        "inspire_app": "インスピレーション · アプリ",
+        "inspire_web": "インスピレーション · ウェブ",
+        "plan_app": "旅行プラン · アプリ",
+        "plan_web": "旅行プラン · ウェブ"
+      },
+      "sourceUnknown": "ソース不明",
+      "channelUnknown": "チャネル不明",
+      "noSources": "ソースとチャネルは不明（10月7日より前にキューに追加、または手動で取得）",
+      "dropsTitle": "キューの前で停止（14日間）",
+      "noDrops": "過去14日間に停止したものはありません。",
+      "drops": {
+        "duplicate": "重複（場所がキューにあるか、承認待ちの画像がある）",
+        "already_approved": "承認済みの画像がすでにある",
+        "test": "テスト（preview、dev、テスト端末、または管理者）",
+        "bot": "ボット",
+        "missing_channel": "チャネルなし（アプリまたはウェブが未更新）",
+        "unknown_place": "不明な場所",
+        "ambiguous": "あいまいな場所（複数の国に同じ名前）",
+        "daily_limit": "1日の上限に達しました",
+        "insert_failed": "保存に失敗しました"
+      },
+      "altTitle": "承認済み画像を切り替え",
+      "altHint": "異なる名前で複数の承認済み画像がある場所です。1枚が使用中で、ほかを選べます。",
+      "useThis": "これを使う",
+      "inUse": "使用中",
+      "storedAs": "「{{name}}」として保存",
+      "noAlternatives": "別の承認済み画像がある場所はありません。",
+      "schemaNotReady": "画像用のデータベース変更がまだ実行されていません。実行されるまで、キューは新しい場所を受け付けません。"
+    }
   }
 }

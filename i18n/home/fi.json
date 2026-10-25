@@ -207,8 +207,59 @@
       "noDataInPeriod": "Ei tietoja valitulta jaksolta"
     },
     "approval": "Odottaa hyväksyntää",
-    "approvalHint": "Avaa sovelluksen oman hyväksyntäjonon uudessa välilehdessä (oma kirjautuminen).",
     "approvalEmpty": "Mikään ei odota hyväksyntää.",
-    "offline": "Ei internetyhteyttä. Sivu yrittää uudelleen, kun olet taas verkossa."
+    "offline": "Ei internetyhteyttä. Sivu yrittää uudelleen, kun olet taas verkossa.",
+    "queueNotConfigured": "Hyväksyntäjonoa ei ole yhdistetty palvelimella.",
+    "queueSourceRefused": "Sovelluksen palvelin hylkäsi hyväksyntäjonon avaimen.",
+    "queueSourceFailed": "Sovelluksen palvelimen hyväksyntäjonoon ei saatu yhteyttä.",
+    "queue": {
+      "intro": "Kaikki tarkistusta odottava. Hyväksytyt ja hylätyt katoavat täältä heti. Hyväksytty kuva näytetään vasta, kun joku katsoo paikkaa.",
+      "loading": "Haetaan jonoa …",
+      "actionFailed": "Toiminto epäonnistui.",
+      "done": {
+        "approve": "Hyväksytty.",
+        "reject": "Hylätty.",
+        "refetch": "Uusi kuva on haettu."
+      },
+      "types": {
+        "destination_images": "Matkakohteiden kuvat"
+      },
+      "photo": "Kuva: {{name}}",
+      "unknownPhotographer": "Tuntematon kuvaaja",
+      "seeOnUnsplash": "Katso kuva Unsplashissa",
+      "approve": "Hyväksy",
+      "reject": "Hylkää",
+      "refetch": "Hae uusi kuva",
+      "replaceWarning": "Paikalla on jo hyväksytty kuva. Jos hyväksyt jonkin näistä, se korvaa vanhan.",
+      "sources": {
+        "inspire_app": "Inspiroi minua · sovellus",
+        "inspire_web": "Inspiroi minua · verkko",
+        "plan_app": "Matkasuunnitelma · sovellus",
+        "plan_web": "Matkasuunnitelma · verkko"
+      },
+      "sourceUnknown": "Tuntematon lähde",
+      "channelUnknown": "tuntematon kanava",
+      "noSources": "Lähde ja kanava tuntemattomia (jonossa ennen 7. lokakuuta tai haettu käsin)",
+      "dropsTitle": "Pysäytetty ennen jonoa (14 päivää)",
+      "noDrops": "Mitään ei pysäytetty viimeisten 14 päivän aikana.",
+      "drops": {
+        "duplicate": "Kaksoiskappale (paikka on jonossa tai sillä on kuvia hyväksyttävänä)",
+        "already_approved": "Hyväksytty kuva on jo olemassa",
+        "test": "Testi (preview, dev, testilaite tai ylläpitäjä)",
+        "bot": "Botti",
+        "missing_channel": "Kanava puuttuu (sovellusta tai verkkoa ei päivitetty)",
+        "unknown_place": "Tuntematon paikka",
+        "ambiguous": "Monitulkintainen paikka (sama nimi useassa maassa)",
+        "daily_limit": "Päiväraja täynnä",
+        "insert_failed": "Tallennus epäonnistui"
+      },
+      "altTitle": "Vaihda hyväksytty kuva",
+      "altHint": "Paikat, joilla on useita hyväksyttyjä kuvia eri nimillä. Yksi on käytössä, muut voi valita.",
+      "useThis": "Käytä tätä",
+      "inUse": "Käytössä",
+      "storedAs": "Tallennettu nimellä ”{{name}}”",
+      "noAlternatives": "Millään paikalla ei ole vaihtoehtoisia hyväksyttyjä kuvia.",
+      "schemaNotReady": "Kuvien tietokantamuutosta ei ole vielä ajettu. Jono ei ota vastaan uusia paikkoja ennen sitä."
+    }
   }
 }

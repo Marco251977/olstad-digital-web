@@ -207,8 +207,59 @@
       "noDataInPeriod": "Inga data under vald period"
     },
     "approval": "Väntar på godkännande",
-    "approvalHint": "Öppnar appens egen godkännandekö i en ny flik (egen inloggning).",
     "approvalEmpty": "Inget väntar på godkännande.",
-    "offline": "Ingen internetanslutning. Sidan försöker igen när du är online."
+    "offline": "Ingen internetanslutning. Sidan försöker igen när du är online.",
+    "queueNotConfigured": "Godkännandekön är inte ansluten på servern.",
+    "queueSourceRefused": "Appens server avvisade nyckeln för godkännandekön.",
+    "queueSourceFailed": "Kunde inte nå godkännandekön på appens server.",
+    "queue": {
+      "intro": "Allt som väntar på granskning. Godkänt och avvisat försvinner härifrån direkt. En godkänd bild visas först när någon tittar på platsen.",
+      "loading": "Hämtar kön …",
+      "actionFailed": "Åtgärden misslyckades.",
+      "done": {
+        "approve": "Godkänd.",
+        "reject": "Avvisad.",
+        "refetch": "En ny bild har hämtats."
+      },
+      "types": {
+        "destination_images": "Resmålsbilder"
+      },
+      "photo": "Foto: {{name}}",
+      "unknownPhotographer": "Okänd fotograf",
+      "seeOnUnsplash": "Se bilden på Unsplash",
+      "approve": "Godkänn",
+      "reject": "Avvisa",
+      "refetch": "Hämta ny bild",
+      "replaceWarning": "Platsen har redan en godkänd bild. Godkänner du en av dessa ersätter den den gamla.",
+      "sources": {
+        "inspire_app": "Inspirera mig · app",
+        "inspire_web": "Inspirera mig · webb",
+        "plan_app": "Reseplan · app",
+        "plan_web": "Reseplan · webb"
+      },
+      "sourceUnknown": "Okänd källa",
+      "channelUnknown": "okänd kanal",
+      "noSources": "Källa och kanal okända (köad före 7 oktober eller hämtad manuellt)",
+      "dropsTitle": "Stoppade före kön (14 dagar)",
+      "noDrops": "Inget stoppades de senaste 14 dagarna.",
+      "drops": {
+        "duplicate": "Dubblett (platsen är köad eller har bilder som väntar)",
+        "already_approved": "Har redan en godkänd bild",
+        "test": "Test (preview, dev, testenhet eller admin)",
+        "bot": "Robot",
+        "missing_channel": "Kanal saknas (app eller webb inte uppdaterad)",
+        "unknown_place": "Okänd plats",
+        "ambiguous": "Tvetydig plats (samma namn i flera länder)",
+        "daily_limit": "Dagsgränsen är nådd",
+        "insert_failed": "Sparandet misslyckades"
+      },
+      "altTitle": "Byt godkänd bild",
+      "altHint": "Platser med flera godkända bilder under olika namn. En används, de andra kan väljas.",
+      "useThis": "Använd denna",
+      "inUse": "Används",
+      "storedAs": "Sparad som ”{{name}}”",
+      "noAlternatives": "Inga platser har alternativa godkända bilder.",
+      "schemaNotReady": "Databasändringen för bilderna har inte körts ännu. Kön tar inte emot nya platser förrän den har körts."
+    }
   }
 }

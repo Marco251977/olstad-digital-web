@@ -207,8 +207,59 @@
       "noDataInPeriod": "Aucune donnée sur la période choisie"
     },
     "approval": "À valider",
-    "approvalHint": "Ouvre la file de validation de l’app dans un nouvel onglet (connexion séparée).",
     "approvalEmpty": "Rien n’attend de validation.",
-    "offline": "Pas de connexion Internet. La page réessaie dès que vous êtes de nouveau en ligne."
+    "offline": "Pas de connexion Internet. La page réessaie dès que vous êtes de nouveau en ligne.",
+    "queueNotConfigured": "La file d’approbation n’est pas connectée sur le serveur.",
+    "queueSourceRefused": "Le serveur de l’app a refusé la clé de la file d’approbation.",
+    "queueSourceFailed": "Impossible de joindre la file d’approbation sur le serveur de l’app.",
+    "queue": {
+      "intro": "Tout ce qui attend une vérification. Ce qui est approuvé ou refusé disparaît d’ici aussitôt. Une image approuvée n’est montrée que lorsque quelqu’un consulte le lieu.",
+      "loading": "Chargement de la file …",
+      "actionFailed": "L’action a échoué.",
+      "done": {
+        "approve": "Approuvé.",
+        "reject": "Refusé.",
+        "refetch": "Une nouvelle image a été récupérée."
+      },
+      "types": {
+        "destination_images": "Images de destinations"
+      },
+      "photo": "Photo : {{name}}",
+      "unknownPhotographer": "Photographe inconnu",
+      "seeOnUnsplash": "Voir l’image sur Unsplash",
+      "approve": "Approuver",
+      "reject": "Refuser",
+      "refetch": "Récupérer une autre image",
+      "replaceWarning": "Ce lieu a déjà une image approuvée. En approuver une de celles-ci remplace l’ancienne.",
+      "sources": {
+        "inspire_app": "Inspire-moi · app",
+        "inspire_web": "Inspire-moi · web",
+        "plan_app": "Plan de voyage · app",
+        "plan_web": "Plan de voyage · web"
+      },
+      "sourceUnknown": "Source inconnue",
+      "channelUnknown": "canal inconnu",
+      "noSources": "Source et canal inconnus (mis en file avant le 7 octobre ou récupéré à la main)",
+      "dropsTitle": "Arrêtés avant la file (14 jours)",
+      "noDrops": "Rien n’a été arrêté ces 14 derniers jours.",
+      "drops": {
+        "duplicate": "Doublon (le lieu est en file ou a des images à approuver)",
+        "already_approved": "A déjà une image approuvée",
+        "test": "Test (preview, dev, appareil de test ou admin)",
+        "bot": "Robot",
+        "missing_channel": "Canal manquant (app ou web non mis à jour)",
+        "unknown_place": "Lieu inconnu",
+        "ambiguous": "Lieu ambigu (même nom dans plusieurs pays)",
+        "daily_limit": "Limite quotidienne atteinte",
+        "insert_failed": "Échec de l’enregistrement"
+      },
+      "altTitle": "Changer l’image approuvée",
+      "altHint": "Lieux ayant plusieurs images approuvées sous des noms différents. L’une est utilisée, les autres peuvent être choisies.",
+      "useThis": "Utiliser celle-ci",
+      "inUse": "Utilisée",
+      "storedAs": "Enregistrée sous « {{name}} »",
+      "noAlternatives": "Aucun lieu n’a d’autres images approuvées.",
+      "schemaNotReady": "La modification de la base de données pour les images n’a pas encore été exécutée. La file n’accepte pas de nouveaux lieux avant cela."
+    }
   }
 }
