@@ -6,10 +6,14 @@ import { test } from 'node:test';
 import { CORE_LANGUAGES, languageChoiceOrder } from 'app-core';
 
 import { allowed, handle } from '../api/admin.js';
+import { SESSION_COOKIE, sessionValue } from '../lib/admin-auth.js';
 
 const read = (f) => fs.readFileSync(new URL(`../${f}`, import.meta.url), 'utf8');
 const { apps } = JSON.parse(read('data/apps.json'));
 const LANGS = CORE_LANGUAGES.map((l) => l.code);
+// The sign-in settings (a hash that only signs cookies here – the password itself is never in the tests).
+const AUTH = { ADMIN_EMAILS: 'owner@example.com', ADMIN_PASSWORD_HASH: '$2b$04$test.hash.only.for.signing.cookies..', ADMIN_SESSION_SECRET: 'test-session-secret' };
+const cookieFor = (email, env) => ({ cookie: `${SESSION_COOKIE}=${sessionValue(email, env)}` });
 
 test('a front page per language, in the right direction, with the hero, both apps and the three principles', () => {
   for (const l of CORE_LANGUAGES) {
@@ -45,7 +49,7 @@ test('no prices, no limits, no left/right in the styles, colours only as tokens'
 });
 
 test('/admin: the allowlist is checked on the server before any code is sent', async () => {
-  const env = { ADMIN_EMAILS: 'owner@example.com', SUPABASE_URL: 'https://x.supabase.co', SUPABASE_ANON_KEY: 'k' };
+  const env = { ...AUTH, SUPABASE_URL: 'https://x.supabase.co', SUPABASE_ANON_KEY: 'k' };
   const calls = [];
   const fetcher = async (url, init) => {
     calls.push(url);
@@ -60,9 +64,12 @@ test('/admin: the allowlist is checked on the server before any code is sent', a
   assert.equal((await post({ action: 'code', email: ' OWNER@example.com ' })).status, 200);
   assert.equal((await post({ action: 'verify', email: 'someone@example.com', code: '12345678' })).status, 403);
   assert.equal((await post({ action: 'verify', email: 'owner@example.com', code: '12' })).status, 401);
-  assert.equal((await post({ action: 'verify', email: 'owner@example.com', code: '12345678' })).status, 200);
-  assert.equal((await post({ action: 'me' }, { authorization: 'Bearer good' })).status, 200);
-  assert.equal((await post({ action: 'me' }, { authorization: 'Bearer other' })).status, 403);
+  const verified = await post({ action: 'verify', email: 'owner@example.com', code: '12345678' });
+  assert.equal(verified.status, 200);
+  assert.match(verified.headers.get('set-cookie'), /__Host-od_admin=v1\./, 'the code sets the same 30-day cookie as the password');
+  assert.equal((await post({ action: 'me' }, cookieFor('Owner@Example.com', env))).status, 200);
+  assert.equal((await post({ action: 'me' }, cookieFor('other@example.com', env))).status, 403);
+  assert.equal((await post({ action: 'me' }, { authorization: 'Bearer good' })).status, 401, 'a bearer token is not a session');
   assert.equal((await post({ action: 'me' })).status, 401);
   assert.equal((await handle(new Request('https://h', { method: 'POST', body: '{}' }), {}, fetcher)).status, 503, 'no allowlist = nobody');
   assert.equal(allowed('', env), false);
@@ -81,7 +88,7 @@ test('the sentence about an app is its own store short description (data/app-tex
 });
 
 test('/admin: every failure is a code the page has a text for – too many attempts, not set up, server error with details', async () => {
-  const env = { ADMIN_EMAILS: 'owner@example.com', SUPABASE_URL: 'https://x.supabase.co', SUPABASE_ANON_KEY: 'k' };
+  const env = { ...AUTH, SUPABASE_URL: 'https://x.supabase.co', SUPABASE_ANON_KEY: 'k' };
   const post = (body, fetcher, e = env) => handle(new Request('https://h/api/admin', { method: 'POST', body: JSON.stringify(body) }), e, fetcher);
   const reply = (status, body) => async () => new Response(JSON.stringify(body), { status });
   let r = await post({ action: 'code', email: 'owner@example.com' }, reply(429, { error_code: 'over_email_send_rate_limit' }));
@@ -90,10 +97,12 @@ test('/admin: every failure is a code the page has a text for – too many attem
   assert.deepEqual([r.status, await r.json()], [502, { error: 'server', status: 500, code: 'unexpected_failure' }]);
   r = await post({ action: 'code', email: 'owner@example.com' }, async () => { throw new Error('network'); });
   assert.deepEqual([r.status, (await r.json()).code], [502, 'exception']);
-  r = await post({ action: 'code', email: 'owner@example.com' }, reply(200, {}), { ADMIN_EMAILS: 'owner@example.com' });
+  r = await post({ action: 'code', email: 'owner@example.com' }, reply(200, {}), AUTH);
   assert.deepEqual([r.status, (await r.json()).missing], [503, ['SUPABASE_URL', 'SUPABASE_ANON_KEY']]);
+  r = await post({ action: 'login', email: 'owner@example.com', password: 'x' }, reply(200, {}), { ADMIN_EMAILS: 'owner@example.com' });
+  assert.deepEqual([r.status, (await r.json()).missing], [503, ['ADMIN_PASSWORD_HASH', 'ADMIN_SESSION_SECRET']], 'the password does not need Supabase');
   const page = read('admin.html');
-  for (const k of ['tooMany', 'notConfigured', 'refused', 'wrongCode']) assert.match(page, new RegExp(`"${k}":`), k);
+  for (const k of ['tooMany', 'notConfigured', 'refused', 'wrongCode', 'wrongLogin', 'locked']) assert.match(page, new RegExp(`"${k}":`), k);
   assert.match(page, /rate_limited: 'tooMany', not_configured: 'notConfigured'/);
 });
 
@@ -107,11 +116,12 @@ test('/admin: one card per app in the app list, a page per app, stats only for s
     assert.match(page, /href="\/admin"/);
   }
   assert.equal((overview.match(/class="admin-card admin-app-link"/g) ?? []).length, ids.length);
-  const env = { ADMIN_EMAILS: 'owner@example.com', SUPABASE_URL: 'https://x.supabase.co', SUPABASE_ANON_KEY: 'k' };
-  const fetcher = async (url, init) => new Response(JSON.stringify({ email: init.headers.authorization === 'Bearer good' ? 'owner@example.com' : 'other@example.com' }), { status: 200 });
-  const stats = (app, token) => handle(new Request('https://h/api/admin', { method: 'POST', headers: token ? { authorization: `Bearer ${token}` } : {}, body: JSON.stringify({ action: 'stats', app }) }), env, fetcher);
+  const env = { ...AUTH, SUPABASE_URL: 'https://x.supabase.co', SUPABASE_ANON_KEY: 'k' };
+  const fetcher = async () => new Response('{}', { status: 500 });
+  const stats = (app, token) => handle(new Request('https://h/api/admin', { method: 'POST', headers: token ? cookieFor(token === 'good' ? 'owner@example.com' : 'other@example.com', env) : {}, body: JSON.stringify({ action: 'stats', app }) }), env, fetcher);
   let r = await stats('saldo-pocket', 'good');
-  assert.deepEqual([r.status, await r.json()], [200, { app: 'saldo-pocket', data: null }]);
+  // Saldo has a source (stats-summary) but no settings here: the page is told which names are missing.
+  assert.deepEqual([r.status, await r.json()], [503, { error: 'stats_not_configured', missing: ['SALDO_STATS_URL', 'SALDO_STATS_KEY'] }]);
   assert.equal((await stats('not-an-app', 'good')).status, 404);
   assert.equal((await stats('saldo-pocket', 'other')).status, 403);
   assert.equal((await stats('saldo-pocket')).status, 401);

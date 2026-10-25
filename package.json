@@ -6,11 +6,16 @@
   "scripts": {
     "build:pages": "node scripts/build-pages.mjs",
     "check:i18n": "node scripts/check-i18n.mjs",
-    "check": "npm run check:i18n && npm run check:contrast && node scripts/build-pages.mjs --check && npm test",
+    "check": "npm run check:i18n && npm run check:contrast && npm run check:plantravel && node scripts/build-pages.mjs --check && npm test",
+    "check:plantravel": "node scripts/sync-plantravel.mjs --check",
+    "sync:plantravel": "node scripts/sync-plantravel.mjs",
     "check:contrast": "node scripts/check-contrast.mjs",
     "test": "node --test test/*.test.mjs"
   },
   "devDependencies": {
     "app-core": "file:vendor/app-core-0.55.0.tgz"
+  },
+  "dependencies": {
+    "bcryptjs": "3.0.3"
   }
 }

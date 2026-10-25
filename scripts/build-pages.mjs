@@ -396,7 +396,9 @@ for (const lang of LANGS) files.set(`${lang}/index.html`, frontPage({ lang, dir:
 files.set('index.html', fallbackPage(''));
 // /admin: one card per app in the app list; /admin/<app>: that app's statistics (a new app in data/apps.json = a new card and page).
 files.set('admin.html', adminPage({ homes: homeTexts, company, esc, fallback: FALLBACK_LANGUAGE, apps }));
-for (const app of apps.filter((x) => x.home)) files.set(`admin/${app.home.id}.html`, adminPage({ homes: homeTexts, company, esc, fallback: FALLBACK_LANGUAGE, apps, app }));
+// An app's own names for its usage events (copied from the app's repo by its sync script – scripts/sync-plantravel.mjs).
+const eventNamesOf = (app) => (app.home.stats?.eventNames ? read(app.home.stats.eventNames).names : null);
+for (const app of apps.filter((x) => x.home)) files.set(`admin/${app.home.id}.html`, adminPage({ homes: homeTexts, company, esc, fallback: FALLBACK_LANGUAGE, apps, app, eventNames: eventNamesOf(app) }));
 files.set('assets/home-tokens.css', tokensCss(theme));
 files.set('middleware.js', middleware(['/', ...unprefixed]));
 
