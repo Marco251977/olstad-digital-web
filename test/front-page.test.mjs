@@ -111,7 +111,8 @@ test('/admin: one card per app in the app list, a page per app, stats only for s
   const fetcher = async (url, init) => new Response(JSON.stringify({ email: init.headers.authorization === 'Bearer good' ? 'owner@example.com' : 'other@example.com' }), { status: 200 });
   const stats = (app, token) => handle(new Request('https://h/api/admin', { method: 'POST', headers: token ? { authorization: `Bearer ${token}` } : {}, body: JSON.stringify({ action: 'stats', app }) }), env, fetcher);
   let r = await stats('saldo-pocket', 'good');
-  assert.deepEqual([r.status, await r.json()], [200, { app: 'saldo-pocket', data: null }]);
+  // Saldo has a source (stats-summary) but no settings here: the page is told which names are missing.
+  assert.deepEqual([r.status, await r.json()], [503, { error: 'stats_not_configured', missing: ['SALDO_STATS_URL', 'SALDO_STATS_KEY'] }]);
   assert.equal((await stats('not-an-app', 'good')).status, 404);
   assert.equal((await stats('saldo-pocket', 'other')).status, 403);
   assert.equal((await stats('saldo-pocket')).status, 401);

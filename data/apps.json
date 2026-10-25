@@ -46,7 +46,11 @@
           "support",
           "delete-account"
         ],
-        "published": false
+        "published": false,
+        "stats": {
+          "source": "saldo"
+        },
+        "approval": null
       }
     },
     {
@@ -76,14 +80,16 @@
         "website": "https://plantravelapp.no",
         "stats": {
           "source": "plantravel",
-          "legacyUntil": "2026-10-24",
           "eventNames": "data/plantravel-event-names.json"
         },
         "links": [
           "privacy",
           "support"
         ],
-        "published": true
+        "published": true,
+        "approval": {
+          "url": "https://plantravelapp.com/admin/approval-queue"
+        }
       }
     }
   ]

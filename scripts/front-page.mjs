@@ -170,6 +170,27 @@ export function frontPage({ lang, dir, apps, company, home: h, common, esc, fill
 }
 
 /**
+ * «Til godkjenning» – the same button at the top of every app's admin page (Marco's rule: everything that waits for his
+ * approval is collected there). data/apps.json home.approval.url = the app's own approval queue, opened unchanged in a new
+ * tab with its own sign-in (PlanTravel: plantravelapp.com/admin/approval-queue on PlanTravel's server, the queue behind the
+ * old admin). No queue (home.approval null) = the button shows «Nothing is waiting for approval».
+ */
+export function approvalButton(app, t, esc) {
+  const url = app.home.approval?.url;
+  const label = `<span data-t="approval">${esc(t.approval)}</span>`;
+  if (url) {
+    return `<div class="admin-approval">
+        <a class="btn primary" href="${esc(url)}" target="_blank" rel="noopener">${label}</a>
+        <p class="muted stats-note" data-t="approvalHint">${esc(t.approvalHint)}</p>
+      </div>`;
+  }
+  return `<div class="admin-approval">
+        <button class="btn primary" type="button" id="approval-open" aria-expanded="false" aria-controls="approval-empty">${label}</button>
+        <p class="admin-card muted" id="approval-empty" data-t="approvalEmpty" hidden>${esc(t.approvalEmpty)}</p>
+      </div>`;
+}
+
+/**
  * /admin and /admin/<app>: sign in with e-mail + a one-time code (Supabase, the Saldo project), only for the addresses in
  * the server's allowlist (Vercel environment ADMIN_EMAILS, checked in api/admin.js – never in the page). Everyone else is
  * refused before any code is sent. After sign-in, /admin shows one card per app in the app list (data/apps.json, every
@@ -190,6 +211,7 @@ export function adminPage({ homes, company, esc, fallback, apps, app = null, eve
   const status = (a) => (a.home.stats ? 'seeStats' : 'noData');
   const inside = app
     ? `<a class="back" href="/admin">${back}<span data-t="allApps">${esc(t.allApps)}</span></a>
+      ${approvalButton(app, t, esc)}
       <div class="admin-app-head">${icon(app)}<h2>${esc(app.name)}</h2></div>
       ${app.home.stats?.source ? `<label class="admin-toggle"><input type="checkbox" id="include-test" role="switch"><span data-t="includeTest">${esc(t.includeTest)}</span></label>` : ''}
       <div id="stats" class="admin-stats" data-app="${esc(app.home.id)}" aria-live="polite"><p class="admin-card muted" data-t="checking">${esc(t.checking)}</p></div>`
@@ -205,7 +227,7 @@ export function adminPage({ homes, company, esc, fallback, apps, app = null, eve
       ${logo(fallback, company, esc, esc(company.name))}
     </div>
   </header>
-  <main id="content" class="wrap admin">
+  <main id="content" class="wrap admin${app ? ' admin-wide' : ''}">
     <h1 data-t="title">${esc(t.title)}</h1>
     <form id="email-form" class="admin-form" hidden>
       <label for="email" data-t="email">${esc(t.email)}</label>
@@ -244,7 +266,7 @@ export function adminPage({ homes, company, esc, fallback, apps, app = null, eve
   var KEYS = { refused: 'refused', rate_limited: 'tooMany', not_configured: 'notConfigured', wrong_code: 'wrongCode', stats_not_configured: 'statsNotConfigured', source_refused: 'sourceRefused', source: 'sourceFailed', source_timeout: 'sourceFailed' };
   var failText = function (j) {
     if (KEYS[j.error]) return [KEYS[j.error], j.missing ? j.missing.join(', ') : j.code || ''];
-    if (!j.status) return ['failed', 'offline'];
+    if (!j.status) return ['offline', ''];
     return ['failed', ['HTTP ' + j.status, j.code].filter(Boolean).join(' · ')];
   };
   var fail = function (j) { var f = failText(j); say(f[0], f[1]); };
@@ -286,11 +308,21 @@ export function adminPage({ homes, company, esc, fallback, apps, app = null, eve
       if (j.status !== 200) return failed(j);
       if (!j.data) { box.removeAttribute('aria-busy'); return line(box, t.noData); }
       return import('/assets/admin-stats.js').then(function (m) {
-        m.renderStats(box, m.statsView(j.data, t, lang, j.legacyUntil, typeof NAMES === 'object' ? NAMES[lang] || {} : {}));
+        m.renderStats(box, m.statsView(j.data, t, lang, typeof NAMES === 'object' ? NAMES[lang] || {} : {}), t);
         box.removeAttribute('aria-busy');
       });
-    }).catch(function () { failed({ error: 'offline', status: 0, code: 'offline' }); });
+    }).catch(function () { failed({ error: 'offline', status: 0 }); });
   };
+  // Back online after a failed load: try again by itself.
+  window.addEventListener('online', function () {
+    var tk; try { tk = sessionStorage.getItem(KEY); } catch (e) {}
+    if (tk && $('stats') && $('stats').querySelector('.admin-card button')) { say(''); loadStats(tk); }
+  });
+  if ($('approval-open')) $('approval-open').addEventListener('click', function () {
+    var open = $('approval-empty').hidden;
+    $('approval-empty').hidden = !open;
+    $('approval-open').setAttribute('aria-expanded', String(open));
+  });
   if ($('include-test')) $('include-test').addEventListener('change', function () {
     var tk; try { tk = sessionStorage.getItem(KEY); } catch (e) {}
     if (tk) loadStats(tk);
@@ -306,7 +338,7 @@ export function adminPage({ homes, company, esc, fallback, apps, app = null, eve
       try { sessionStorage.removeItem(KEY); } catch (e) {}
       signedOut();
       if (j.status === 401) say(''); else fail(j);
-    }, function () { signedOut(); say('failed', 'offline'); });
+    }, function () { signedOut(); say('offline'); });
   };
   var token; try { token = sessionStorage.getItem(KEY); } catch (e) {}
   if (token) check(token); else signedOut();
@@ -317,14 +349,14 @@ export function adminPage({ homes, company, esc, fallback, apps, app = null, eve
     call({ action: 'code', email: email }).then(function (j) {
       if (j.status === 200) { $('email-form').hidden = true; $('code-form').hidden = false; $('sent').textContent = t.sent.replace('%email%', email); $('code').focus(); say(''); }
       else fail(j);
-    }, function () { say('failed', 'offline'); });
+    }, function () { say('offline'); });
   });
   $('code-form').addEventListener('submit', function (e) {
     e.preventDefault();
     call({ action: 'verify', email: email, code: $('code').value.trim() }).then(function (j) {
       if (j.status === 200 && j.accessToken) { try { sessionStorage.setItem(KEY, j.accessToken); } catch (e) {} return check(j.accessToken); }
       fail(j);
-    }, function () { say('failed', 'offline'); });
+    }, function () { say('offline'); });
   });
   $('sign-out').addEventListener('click', function () {
     try { sessionStorage.removeItem(KEY); } catch (e) {}

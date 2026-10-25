@@ -1,6 +1,6 @@
 {
   "generatedFrom": "shared/usage-texts.ts + shared/usage-events.ts (scripts/generate-shared.js)",
-  "sourceSha256": "748eba1d9ed4efbeaaeaad576d82a26bd4b8b57eaec676a622e1695707fefdb2",
+  "sourceSha256": "4f7558e6d6df046383ea42d60d29690a79986b5bf8076dd9468079e388af9383",
   "names": {
     "nb": {
       "first_open": "Første åpning",
@@ -24,7 +24,8 @@
       "provider_click:flight": "Fly",
       "provider_click:hotel": "Hotell",
       "provider_click:car": "Leiebil",
-      "provider_click:attraction": "Opplevelser"
+      "provider_click:attraction": "Opplevelser",
+      "provider_click:esim": "Mobildata (eSIM)"
     },
     "en": {
       "first_open": "First open",
@@ -48,7 +49,8 @@
       "provider_click:flight": "Flights",
       "provider_click:hotel": "Hotels",
       "provider_click:car": "Car rental",
-      "provider_click:attraction": "Experiences"
+      "provider_click:attraction": "Experiences",
+      "provider_click:esim": "Mobile data (eSIM)"
     },
     "de": {
       "first_open": "Erster Start",
@@ -72,7 +74,8 @@
       "provider_click:flight": "Flüge",
       "provider_click:hotel": "Hotels",
       "provider_click:car": "Mietwagen",
-      "provider_click:attraction": "Erlebnisse"
+      "provider_click:attraction": "Erlebnisse",
+      "provider_click:esim": "Mobile Daten (eSIM)"
     },
     "fr": {
       "first_open": "Première ouverture",
@@ -96,7 +99,8 @@
       "provider_click:flight": "Vols",
       "provider_click:hotel": "Hôtels",
       "provider_click:car": "Location de voiture",
-      "provider_click:attraction": "Expériences"
+      "provider_click:attraction": "Expériences",
+      "provider_click:esim": "Données mobiles (eSIM)"
     },
     "es": {
       "first_open": "Primera apertura",
@@ -120,7 +124,8 @@
       "provider_click:flight": "Vuelos",
       "provider_click:hotel": "Hoteles",
       "provider_click:car": "Alquiler de coches",
-      "provider_click:attraction": "Experiencias"
+      "provider_click:attraction": "Experiencias",
+      "provider_click:esim": "Datos móviles (eSIM)"
     },
     "zh-Hans": {
       "first_open": "首次打开",
@@ -144,7 +149,8 @@
       "provider_click:flight": "机票",
       "provider_click:hotel": "酒店",
       "provider_click:car": "租车",
-      "provider_click:attraction": "体验"
+      "provider_click:attraction": "体验",
+      "provider_click:esim": "移动数据 (eSIM)"
     },
     "ja": {
       "first_open": "初回起動",
@@ -168,7 +174,8 @@
       "provider_click:flight": "航空券",
       "provider_click:hotel": "ホテル",
       "provider_click:car": "レンタカー",
-      "provider_click:attraction": "体験"
+      "provider_click:attraction": "体験",
+      "provider_click:esim": "モバイルデータ (eSIM)"
     },
     "ko": {
       "first_open": "첫 실행",
@@ -192,7 +199,8 @@
       "provider_click:flight": "항공편",
       "provider_click:hotel": "호텔",
       "provider_click:car": "렌터카",
-      "provider_click:attraction": "체험"
+      "provider_click:attraction": "체험",
+      "provider_click:esim": "모바일 데이터 (eSIM)"
     },
     "it": {
       "first_open": "Prima apertura",
@@ -216,7 +224,8 @@
       "provider_click:flight": "Voli",
       "provider_click:hotel": "Hotel",
       "provider_click:car": "Noleggio auto",
-      "provider_click:attraction": "Esperienze"
+      "provider_click:attraction": "Esperienze",
+      "provider_click:esim": "Dati mobili (eSIM)"
     },
     "pt-BR": {
       "first_open": "Primeira abertura",
@@ -240,7 +249,8 @@
       "provider_click:flight": "Voos",
       "provider_click:hotel": "Hotéis",
       "provider_click:car": "Aluguel de carros",
-      "provider_click:attraction": "Experiências"
+      "provider_click:attraction": "Experiências",
+      "provider_click:esim": "Dados móveis (eSIM)"
     },
     "nl": {
       "first_open": "Eerste keer geopend",
@@ -264,7 +274,8 @@
       "provider_click:flight": "Vluchten",
       "provider_click:hotel": "Hotels",
       "provider_click:car": "Huurauto",
-      "provider_click:attraction": "Ervaringen"
+      "provider_click:attraction": "Ervaringen",
+      "provider_click:esim": "Mobiele data (eSIM)"
     },
     "sv": {
       "first_open": "Första öppning",
@@ -288,7 +299,8 @@
       "provider_click:flight": "Flyg",
       "provider_click:hotel": "Hotell",
       "provider_click:car": "Hyrbil",
-      "provider_click:attraction": "Upplevelser"
+      "provider_click:attraction": "Upplevelser",
+      "provider_click:esim": "Mobildata (eSIM)"
     },
     "pl": {
       "first_open": "Pierwsze otwarcie",
@@ -312,7 +324,8 @@
       "provider_click:flight": "Loty",
       "provider_click:hotel": "Hotele",
       "provider_click:car": "Wynajem samochodów",
-      "provider_click:attraction": "Atrakcje"
+      "provider_click:attraction": "Atrakcje",
+      "provider_click:esim": "Dane mobilne (eSIM)"
     },
     "fi": {
       "first_open": "Ensimmäinen avaus",
@@ -336,7 +349,8 @@
       "provider_click:flight": "Lennot",
       "provider_click:hotel": "Hotellit",
       "provider_click:car": "Vuokra-auto",
-      "provider_click:attraction": "Elämykset"
+      "provider_click:attraction": "Elämykset",
+      "provider_click:esim": "Mobiilidata (eSIM)"
     },
     "da": {
       "first_open": "Første åbning",
@@ -360,7 +374,8 @@
       "provider_click:flight": "Fly",
       "provider_click:hotel": "Hoteller",
       "provider_click:car": "Lejebil",
-      "provider_click:attraction": "Oplevelser"
+      "provider_click:attraction": "Oplevelser",
+      "provider_click:esim": "Mobildata (eSIM)"
     },
     "ar": {
       "first_open": "الفتح الأول",
@@ -384,7 +399,8 @@
       "provider_click:flight": "رحلات طيران",
       "provider_click:hotel": "فنادق",
       "provider_click:car": "تأجير سيارات",
-      "provider_click:attraction": "تجارب"
+      "provider_click:attraction": "تجارب",
+      "provider_click:esim": "بيانات الجوال (eSIM)"
     },
     "hi": {
       "first_open": "पहली बार खोला",
@@ -408,7 +424,8 @@
       "provider_click:flight": "फ़्लाइट",
       "provider_click:hotel": "होटल",
       "provider_click:car": "कार किराया",
-      "provider_click:attraction": "अनुभव"
+      "provider_click:attraction": "अनुभव",
+      "provider_click:esim": "मोबाइल डेटा (eSIM)"
     },
     "tr": {
       "first_open": "İlk açılış",
@@ -432,7 +449,8 @@
       "provider_click:flight": "Uçuşlar",
       "provider_click:hotel": "Oteller",
       "provider_click:car": "Araç kiralama",
-      "provider_click:attraction": "Deneyimler"
+      "provider_click:attraction": "Deneyimler",
+      "provider_click:esim": "Mobil veri (eSIM)"
     }
   }
 }

@@ -3,7 +3,8 @@
 // the server before a code is sent, before a code is checked and on every request after sign-in. Everyone else gets
 // 403, and no code is sent to them. Without ADMIN_EMAILS nobody gets in.
 // Environment (Vercel): ADMIN_EMAILS, SUPABASE_URL, SUPABASE_ANON_KEY (the project's public key – the apps ship it),
-// and per statistics source PLANTRAVEL_API_URL, PLANTRAVEL_STATS_KEY (secret; see lib/stats.js). Names in .env.example.
+// and per statistics source PLANTRAVEL_API_URL + PLANTRAVEL_STATS_KEY, SALDO_STATS_URL + SALDO_STATS_KEY (secret; see
+// lib/stats.js). Names in .env.example.
 // Actions (POST JSON): { action: 'code', email } · { action: 'verify', email, code } · { action: 'me' } + Bearer token ·
 // { action: 'stats', app, includeTest } + Bearer token = that app's statistics (only apps in data/apps.json): data null until
 // the app has a source (home.stats.source), else the aggregate numbers fetched on the server (lib/stats.js – the source's
@@ -98,7 +99,7 @@ async function answer(request, env, fetcher) {
     // No statistics source connected (yet) – «No data yet».
     if (!home.stats?.source) return json(200, { app: body.app, data: null });
     const s = await fetchStats(home.stats.source, { includeTest: body.includeTest === true }, env, fetcher);
-    return json(s.status, s.status === 200 ? { app: body.app, legacyUntil: home.stats.legacyUntil ?? null, ...s.body } : s.body);
+    return json(s.status, s.status === 200 ? { app: body.app, ...s.body } : s.body);
   }
   return json(400, { error: 'bad_request' });
 }
