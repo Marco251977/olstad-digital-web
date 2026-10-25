@@ -8,7 +8,11 @@
     "on-accent": "#FFFFFF",
     "line": "#E2E0D8",
     "bar": "#EDECE7",
-    "accent-text": "#3762D6"
+    "accent-text": "#3762D6",
+    "danger": "#B3261E",
+    "on-danger": "#FFFFFF",
+    "warn-bg": "#FFF4D6",
+    "warn-text": "#5C4300"
   },
   "dark": {
     "bg": "#121417",
@@ -19,7 +23,11 @@
     "on-accent": "#121417",
     "line": "#2C3037",
     "bar": "#1A1D21",
-    "accent-text": "#7FA0F5"
+    "accent-text": "#7FA0F5",
+    "danger": "#F2B8B5",
+    "on-danger": "#121417",
+    "warn-bg": "#3A2F10",
+    "warn-text": "#F5D98B"
   },
   "pairs": [
     [
@@ -69,6 +77,18 @@
     [
       "bg",
       "text"
+    ],
+    [
+      "on-danger",
+      "danger"
+    ],
+    [
+      "warn-text",
+      "warn-bg"
+    ],
+    [
+      "accent-text",
+      "on-accent"
     ]
   ]
 }

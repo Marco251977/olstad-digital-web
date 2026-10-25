@@ -207,8 +207,59 @@
       "noDataInPeriod": "Geen gegevens in de gekozen periode"
     },
     "approval": "Ter goedkeuring",
-    "approvalHint": "Opent de eigen goedkeuringswachtrij van de app in een nieuw tabblad (eigen inlog).",
     "approvalEmpty": "Er wacht niets op goedkeuring.",
-    "offline": "Geen internetverbinding. De pagina probeert het opnieuw zodra je weer online bent."
+    "offline": "Geen internetverbinding. De pagina probeert het opnieuw zodra je weer online bent.",
+    "queueNotConfigured": "De goedkeuringswachtrij is niet gekoppeld op de server.",
+    "queueSourceRefused": "De server van de app weigerde de sleutel van de goedkeuringswachtrij.",
+    "queueSourceFailed": "De goedkeuringswachtrij op de server van de app was niet bereikbaar.",
+    "queue": {
+      "intro": "Alles wat op beoordeling wacht. Goedgekeurde en afgewezen items verdwijnen hier meteen. Een goedgekeurde foto wordt pas getoond als iemand de plek bekijkt.",
+      "loading": "Wachtrij laden …",
+      "actionFailed": "De actie is mislukt.",
+      "done": {
+        "approve": "Goedgekeurd.",
+        "reject": "Afgewezen.",
+        "refetch": "Er is een nieuwe foto opgehaald."
+      },
+      "types": {
+        "destination_images": "Bestemmingsfoto’s"
+      },
+      "photo": "Foto: {{name}}",
+      "unknownPhotographer": "Onbekende fotograaf",
+      "seeOnUnsplash": "Bekijk de foto op Unsplash",
+      "approve": "Goedkeuren",
+      "reject": "Afwijzen",
+      "refetch": "Nieuwe foto ophalen",
+      "replaceWarning": "Deze plek heeft al een goedgekeurde foto. Keur je er een van deze goed, dan vervangt die de oude.",
+      "sources": {
+        "inspire_app": "Inspireer me · app",
+        "inspire_web": "Inspireer me · web",
+        "plan_app": "Reisplan · app",
+        "plan_web": "Reisplan · web"
+      },
+      "sourceUnknown": "Onbekende bron",
+      "channelUnknown": "onbekend kanaal",
+      "noSources": "Bron en kanaal onbekend (in de wachtrij vóór 7 oktober of met de hand opgehaald)",
+      "dropsTitle": "Gestopt vóór de wachtrij (14 dagen)",
+      "noDrops": "De afgelopen 14 dagen is niets gestopt.",
+      "drops": {
+        "duplicate": "Duplicaat (de plek staat in de wachtrij of heeft foto’s ter goedkeuring)",
+        "already_approved": "Heeft al een goedgekeurde foto",
+        "test": "Test (preview, dev, testtoestel of admin)",
+        "bot": "Bot",
+        "missing_channel": "Kanaal ontbreekt (app of web niet bijgewerkt)",
+        "unknown_place": "Onbekende plek",
+        "ambiguous": "Dubbelzinnige plek (zelfde naam in meerdere landen)",
+        "daily_limit": "Daglimiet bereikt",
+        "insert_failed": "Opslaan mislukt"
+      },
+      "altTitle": "Goedgekeurde foto wisselen",
+      "altHint": "Plekken met meerdere goedgekeurde foto’s onder verschillende namen. Eén is in gebruik, de andere kunnen worden gekozen.",
+      "useThis": "Deze gebruiken",
+      "inUse": "In gebruik",
+      "storedAs": "Opgeslagen als ‘{{name}}’",
+      "noAlternatives": "Geen enkele plek heeft alternatieve goedgekeurde foto’s.",
+      "schemaNotReady": "De databasewijziging voor de foto’s is nog niet uitgevoerd. Tot dan neemt de wachtrij geen nieuwe plekken aan."
+    }
   }
 }

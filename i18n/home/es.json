@@ -207,8 +207,59 @@
       "noDataInPeriod": "No hay datos en el periodo elegido"
     },
     "approval": "Pendiente de aprobación",
-    "approvalHint": "Abre la cola de aprobación propia de la app en una pestaña nueva (con su propio inicio de sesión).",
     "approvalEmpty": "No hay nada pendiente de aprobación.",
-    "offline": "Sin conexión a Internet. La página lo vuelve a intentar cuando vuelvas a estar en línea."
+    "offline": "Sin conexión a Internet. La página lo vuelve a intentar cuando vuelvas a estar en línea.",
+    "queueNotConfigured": "La cola de aprobación no está conectada en el servidor.",
+    "queueSourceRefused": "El servidor de la app rechazó la clave de la cola de aprobación.",
+    "queueSourceFailed": "No se pudo contactar con la cola de aprobación en el servidor de la app.",
+    "queue": {
+      "intro": "Todo lo que espera revisión. Lo aprobado y lo rechazado desaparece de aquí al instante. Una imagen aprobada solo se muestra cuando alguien mira el lugar.",
+      "loading": "Cargando la cola …",
+      "actionFailed": "La acción falló.",
+      "done": {
+        "approve": "Aprobado.",
+        "reject": "Rechazado.",
+        "refetch": "Se ha obtenido una imagen nueva."
+      },
+      "types": {
+        "destination_images": "Imágenes de destinos"
+      },
+      "photo": "Foto: {{name}}",
+      "unknownPhotographer": "Fotógrafo desconocido",
+      "seeOnUnsplash": "Ver la imagen en Unsplash",
+      "approve": "Aprobar",
+      "reject": "Rechazar",
+      "refetch": "Obtener otra imagen",
+      "replaceWarning": "Este lugar ya tiene una imagen aprobada. Si apruebas una de estas, sustituye a la anterior.",
+      "sources": {
+        "inspire_app": "Inspírame · app",
+        "inspire_web": "Inspírame · web",
+        "plan_app": "Plan de viaje · app",
+        "plan_web": "Plan de viaje · web"
+      },
+      "sourceUnknown": "Origen desconocido",
+      "channelUnknown": "canal desconocido",
+      "noSources": "Origen y canal desconocidos (en cola antes del 7 de octubre u obtenido a mano)",
+      "dropsTitle": "Detenidos antes de la cola (14 días)",
+      "noDrops": "No se detuvo nada en los últimos 14 días.",
+      "drops": {
+        "duplicate": "Duplicado (el lugar está en cola o tiene imágenes pendientes)",
+        "already_approved": "Ya tiene una imagen aprobada",
+        "test": "Prueba (preview, dev, dispositivo de prueba o admin)",
+        "bot": "Bot",
+        "missing_channel": "Falta el canal (app o web sin actualizar)",
+        "unknown_place": "Lugar desconocido",
+        "ambiguous": "Lugar ambiguo (mismo nombre en varios países)",
+        "daily_limit": "Límite diario alcanzado",
+        "insert_failed": "Error al guardar"
+      },
+      "altTitle": "Cambiar imagen aprobada",
+      "altHint": "Lugares con varias imágenes aprobadas con nombres distintos. Una está en uso; las demás se pueden elegir.",
+      "useThis": "Usar esta",
+      "inUse": "En uso",
+      "storedAs": "Guardada como «{{name}}»",
+      "noAlternatives": "Ningún lugar tiene imágenes aprobadas alternativas.",
+      "schemaNotReady": "El cambio de base de datos para las imágenes aún no se ha ejecutado. La cola no acepta lugares nuevos hasta entonces."
+    }
   }
 }

@@ -207,8 +207,59 @@
       "noDataInPeriod": "Keine Daten im gewählten Zeitraum"
     },
     "approval": "Zur Freigabe",
-    "approvalHint": "Öffnet die eigene Freigabeliste der App in einem neuen Tab (eigene Anmeldung).",
     "approvalEmpty": "Nichts wartet auf Freigabe.",
-    "offline": "Keine Internetverbindung. Die Seite versucht es erneut, sobald du wieder online bist."
+    "offline": "Keine Internetverbindung. Die Seite versucht es erneut, sobald du wieder online bist.",
+    "queueNotConfigured": "Die Freigabewarteschlange ist auf dem Server nicht verbunden.",
+    "queueSourceRefused": "Der Server der App hat den Schlüssel der Freigabewarteschlange abgelehnt.",
+    "queueSourceFailed": "Die Freigabewarteschlange auf dem Server der App war nicht erreichbar.",
+    "queue": {
+      "intro": "Alles, was auf Prüfung wartet. Freigegebenes und Abgelehntes verschwindet sofort von hier. Ein freigegebenes Bild wird erst gezeigt, wenn jemand den Ort ansieht.",
+      "loading": "Warteschlange wird geladen …",
+      "actionFailed": "Die Aktion ist fehlgeschlagen.",
+      "done": {
+        "approve": "Freigegeben.",
+        "reject": "Abgelehnt.",
+        "refetch": "Ein neues Bild wurde geholt."
+      },
+      "types": {
+        "destination_images": "Reisezielbilder"
+      },
+      "photo": "Foto: {{name}}",
+      "unknownPhotographer": "Unbekannter Fotograf",
+      "seeOnUnsplash": "Bild auf Unsplash ansehen",
+      "approve": "Freigeben",
+      "reject": "Ablehnen",
+      "refetch": "Neues Bild holen",
+      "replaceWarning": "Dieser Ort hat bereits ein freigegebenes Bild. Wenn du eines dieser freigibst, ersetzt es das alte.",
+      "sources": {
+        "inspire_app": "Inspiriere mich · App",
+        "inspire_web": "Inspiriere mich · Web",
+        "plan_app": "Reiseplan · App",
+        "plan_web": "Reiseplan · Web"
+      },
+      "sourceUnknown": "Quelle unbekannt",
+      "channelUnknown": "Kanal unbekannt",
+      "noSources": "Quelle und Kanal unbekannt (vor dem 7. Oktober eingereiht oder von Hand geholt)",
+      "dropsTitle": "Vor der Warteschlange gestoppt (14 Tage)",
+      "noDrops": "In den letzten 14 Tagen wurde nichts gestoppt.",
+      "drops": {
+        "duplicate": "Duplikat (der Ort ist eingereiht oder hat Bilder zur Freigabe)",
+        "already_approved": "Hat bereits ein freigegebenes Bild",
+        "test": "Test (Preview, Dev, Testgerät oder Admin)",
+        "bot": "Bot",
+        "missing_channel": "Kanal fehlt (App oder Web nicht aktualisiert)",
+        "unknown_place": "Unbekannter Ort",
+        "ambiguous": "Mehrdeutiger Ort (gleicher Name in mehreren Ländern)",
+        "daily_limit": "Tageslimit erreicht",
+        "insert_failed": "Speichern fehlgeschlagen"
+      },
+      "altTitle": "Freigegebenes Bild wechseln",
+      "altHint": "Orte mit mehreren freigegebenen Bildern unter verschiedenen Namen. Eines ist in Gebrauch, die anderen können gewählt werden.",
+      "useThis": "Dieses verwenden",
+      "inUse": "In Gebrauch",
+      "storedAs": "Gespeichert als „{{name}}“",
+      "noAlternatives": "Kein Ort hat alternative freigegebene Bilder.",
+      "schemaNotReady": "Die Datenbankänderung für die Bilder ist noch nicht gelaufen. Bis dahin nimmt die Warteschlange keine neuen Orte an."
+    }
   }
 }

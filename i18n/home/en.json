@@ -207,8 +207,59 @@
       "noDataInPeriod": "No data in the chosen period"
     },
     "approval": "Awaiting approval",
-    "approvalHint": "Opens the app's own approval queue in a new tab (its own sign-in).",
     "approvalEmpty": "Nothing is waiting for approval.",
-    "offline": "No internet connection. The page tries again when you are back online."
+    "offline": "No internet connection. The page tries again when you are back online.",
+    "queueNotConfigured": "The approval queue is not connected on the server.",
+    "queueSourceRefused": "The app’s server refused the approval queue key.",
+    "queueSourceFailed": "Could not reach the approval queue on the app’s server.",
+    "queue": {
+      "intro": "Everything waiting for review. Approved and rejected items disappear from here at once. An approved picture is only shown when someone looks at the place.",
+      "loading": "Loading the queue …",
+      "actionFailed": "The action failed.",
+      "done": {
+        "approve": "Approved.",
+        "reject": "Rejected.",
+        "refetch": "A new picture has been fetched."
+      },
+      "types": {
+        "destination_images": "Destination pictures"
+      },
+      "photo": "Photo: {{name}}",
+      "unknownPhotographer": "Unknown photographer",
+      "seeOnUnsplash": "See the picture on Unsplash",
+      "approve": "Approve",
+      "reject": "Reject",
+      "refetch": "Fetch a new picture",
+      "replaceWarning": "This place already has an approved picture. Approving one of these replaces the old one.",
+      "sources": {
+        "inspire_app": "Inspire me · app",
+        "inspire_web": "Inspire me · web",
+        "plan_app": "Trip plan · app",
+        "plan_web": "Trip plan · web"
+      },
+      "sourceUnknown": "Unknown source",
+      "channelUnknown": "unknown channel",
+      "noSources": "Source and channel unknown (queued before 7 October or fetched by hand)",
+      "dropsTitle": "Stopped before the queue (14 days)",
+      "noDrops": "Nothing was stopped in the last 14 days.",
+      "drops": {
+        "duplicate": "Duplicate (the place is queued or has pictures awaiting approval)",
+        "already_approved": "Already has an approved picture",
+        "test": "Test (preview, dev, test device or admin)",
+        "bot": "Bot",
+        "missing_channel": "Missing channel (app or web not updated)",
+        "unknown_place": "Unknown place",
+        "ambiguous": "Ambiguous place (same name in several countries)",
+        "daily_limit": "Daily limit reached",
+        "insert_failed": "Saving failed"
+      },
+      "altTitle": "Switch approved picture",
+      "altHint": "Places with several approved pictures under different names. One is in use; the others can be chosen.",
+      "useThis": "Use this",
+      "inUse": "In use",
+      "storedAs": "Stored as “{{name}}”",
+      "noAlternatives": "No places have alternative approved pictures.",
+      "schemaNotReady": "The database change for the pictures has not run yet. The queue takes no new places until it has."
+    }
   }
 }

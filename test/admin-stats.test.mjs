@@ -324,16 +324,18 @@ test('only aggregate numbers pass: no arrays, no free text, no e-mail address, s
   assert.equal(summary(SALDO, 'saldo').secret, undefined, 'unknown top-level fields are dropped');
 });
 
-test('«Til godkjenning» at the top of every app page: PlanTravel opens its own queue unchanged, Saldo has none', () => {
+test('«Til godkjenning» at the top of every app page: the same button and queue for every app, behind the same sign-in', () => {
   const pt = read('admin/plantravel.html');
   const saldo = read('admin/saldo-pocket.html');
-  for (const page of [pt, saldo]) assert.ok(page.indexOf('data-t="approval"') < page.indexOf('admin-app-head'), 'the button comes before the app heading');
-  assert.match(pt, /<a class="btn primary" href="https:\/\/plantravelapp\.com\/admin\/approval-queue" target="_blank" rel="noopener"><span data-t="approval">/);
-  assert.match(saldo, /id="approval-open"/);
-  assert.match(saldo, /data-t="approvalEmpty" hidden/);
+  for (const page of [pt, saldo]) {
+    assert.ok(page.indexOf('data-t="approval"') < page.indexOf('admin-app-head'), 'the button comes before the app heading');
+    assert.match(page, /<button class="btn primary" type="button" id="approval-open" aria-expanded="false" aria-controls="approval-panel">/);
+    assert.match(page, /id="approval-panel" class="admin-queue" data-app="[a-z-]+" aria-live="polite" hidden/);
+    assert.doesNotMatch(page, /plantravelapp\.com\/admin/, 'never the old admin');
+  }
   for (const l of CORE_LANGUAGES) {
     const a = JSON.parse(read(`i18n/home/${l.code}.json`)).admin;
-    for (const k of ['approval', 'approvalHint', 'approvalEmpty', 'offline']) assert.ok(a[k], `${l.code} ${k}`);
+    for (const k of ['approval', 'approvalEmpty', 'offline', 'queueNotConfigured', 'queueSourceRefused', 'queueSourceFailed']) assert.ok(a[k], `${l.code} ${k}`);
     for (const k of ['store_counts_include_own_devices', 'includes_own_purchases']) assert.ok(a.stats.notes[k], `${l.code} ${k}`);
   }
   assert.equal(JSON.parse(read('i18n/home/nb.json')).admin.approval, 'Til godkjenning');

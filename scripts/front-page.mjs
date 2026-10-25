@@ -171,22 +171,14 @@ export function frontPage({ lang, dir, apps, company, home: h, common, esc, fill
 
 /**
  * «Til godkjenning» – the same button at the top of every app's admin page (Marco's rule: everything that waits for his
- * approval is collected there). data/apps.json home.approval.url = the app's own approval queue, opened unchanged in a new
- * tab with its own sign-in (PlanTravel: plantravelapp.com/admin/approval-queue on PlanTravel's server, the queue behind the
- * old admin). No queue (home.approval null) = the button shows «Nothing is waiting for approval».
+ * approval is collected there, behind the same sign-in as the statistics). The button shows how many items wait (a badge)
+ * and opens the queue in place (assets/admin-queue.js, fetched through /api/admin → lib/approval.js). An app without a queue
+ * source (data/apps.json home.approval null) gets the same button and «Nothing is waiting for approval».
  */
 export function approvalButton(app, t, esc) {
-  const url = app.home.approval?.url;
-  const label = `<span data-t="approval">${esc(t.approval)}</span>`;
-  if (url) {
-    return `<div class="admin-approval">
-        <a class="btn primary" href="${esc(url)}" target="_blank" rel="noopener">${label}</a>
-        <p class="muted stats-note" data-t="approvalHint">${esc(t.approvalHint)}</p>
-      </div>`;
-  }
   return `<div class="admin-approval">
-        <button class="btn primary" type="button" id="approval-open" aria-expanded="false" aria-controls="approval-empty">${label}</button>
-        <p class="admin-card muted" id="approval-empty" data-t="approvalEmpty" hidden>${esc(t.approvalEmpty)}</p>
+        <button class="btn primary" type="button" id="approval-open" aria-expanded="false" aria-controls="approval-panel"><span data-t="approval">${esc(t.approval)}</span><span class="admin-badge" id="approval-count" hidden></span></button>
+        <div id="approval-panel" class="admin-queue" data-app="${esc(app.home.id)}" aria-live="polite" hidden></div>
       </div>`;
 }
 
@@ -274,7 +266,7 @@ export function adminPage({ homes, company, esc, fallback, apps, app = null, eve
   var $ = function (id) { return document.getElementById(id); };
   var say = function (key, detail) { $('message').textContent = key ? t[key] + (detail ? ' (' + detail + ')' : '') : ''; };
   // The server's error code → its text; anything else says what failed (HTTP status and the server's code).
-  var KEYS = { refused: 'refused', wrong_login: 'wrongLogin', locked: 'locked', rate_limited: 'tooMany', not_configured: 'notConfigured', wrong_code: 'wrongCode', stats_not_configured: 'statsNotConfigured', source_refused: 'sourceRefused', source: 'sourceFailed', source_timeout: 'sourceFailed' };
+  var KEYS = { refused: 'refused', wrong_login: 'wrongLogin', locked: 'locked', rate_limited: 'tooMany', not_configured: 'notConfigured', wrong_code: 'wrongCode', stats_not_configured: 'statsNotConfigured', source_refused: 'sourceRefused', source: 'sourceFailed', source_timeout: 'sourceFailed', queue_not_configured: 'queueNotConfigured', queue_source_refused: 'queueSourceRefused', queue_source: 'queueSourceFailed', queue_source_timeout: 'queueSourceFailed' };
   var failText = function (j) {
     if (KEYS[j.error]) return [KEYS[j.error], j.missing ? j.missing.join(', ') : j.code || ''];
     if (!j.status) return ['offline', ''];
@@ -332,10 +324,76 @@ export function adminPage({ homes, company, esc, fallback, apps, app = null, eve
   window.addEventListener('online', function () {
     if (!$('inside').hidden && $('stats') && $('stats').querySelector('.admin-card button')) { say(''); loadStats(); }
   });
+  // «Til godkjenning»: the badge (how many wait) after sign-in, the queue in place when the button is pressed. Every action
+  // goes to the server and the queue is fetched again after it, so what is shown is always the server's state.
+  var setCount = function (n) {
+    var b = $('approval-count');
+    if (!b) return;
+    b.hidden = !(n > 0);
+    b.textContent = n > 0 ? new Intl.NumberFormat(lang).format(n) : '';
+  };
+  var countQueue = function () {
+    if (!$('approval-panel')) return;
+    call({ action: 'queueCount', app: $('approval-panel').getAttribute('data-app') }).then(function (j) { if (j.status === 200) setCount(j.total); }, function () {});
+  };
+  var loadQueue = function (notice) {
+    var box = $('approval-panel');
+    line(box, t.queue.loading);
+    box.setAttribute('aria-busy', 'true');
+    var failed = function (j) {
+      box.removeAttribute('aria-busy');
+      var f = failText(j);
+      var p = line(box, t[f[0]] + (f[1] ? ' (' + f[1] + ')' : ''));
+      var again = document.createElement('button');
+      again.type = 'button';
+      again.className = 'btn ghost';
+      again.textContent = t.retry;
+      again.addEventListener('click', function () { loadQueue(); });
+      p.appendChild(document.createElement('br'));
+      p.appendChild(again);
+    };
+    call({ action: 'queue', app: box.getAttribute('data-app') }).then(function (j) {
+      if (j.status !== 200) return failed(j);
+      return import('/assets/admin-queue.js').then(function (m) {
+        var model = m.renderQueue(box, j.data, t, lang, act);
+        setCount(model.total);
+        if (notice) {
+          var n = document.createElement('p');
+          n.className = 'queue-done';
+          n.setAttribute('role', 'status');
+          n.textContent = notice;
+          box.insertBefore(n, box.firstChild);
+        }
+        box.removeAttribute('aria-busy');
+      });
+    }).catch(function () { failed({ error: 'offline', status: 0 }); });
+  };
+  var act = function (request, item) {
+    var buttons = item.querySelectorAll('button');
+    buttons.forEach(function (b) { b.disabled = true; });
+    item.setAttribute('aria-busy', 'true');
+    var old = item.querySelector('.queue-error');
+    if (old) old.remove();
+    var undo = function (j) {
+      buttons.forEach(function (b) { b.disabled = false; });
+      item.removeAttribute('aria-busy');
+      var f = failText(j);
+      var p = document.createElement('p');
+      p.className = 'queue-error';
+      p.setAttribute('role', 'alert');
+      p.textContent = t.queue.actionFailed + ' ' + t[f[0]] + (f[1] ? ' (' + f[1] + ')' : '');
+      item.appendChild(p);
+    };
+    call({ action: 'queueAction', app: $('approval-panel').getAttribute('data-app'), request: request }).then(function (j) {
+      if (j.status !== 200) return undo(j);
+      loadQueue(t.queue.done[request.action]);
+    }, function () { undo({ error: 'offline', status: 0 }); });
+  };
   if ($('approval-open')) $('approval-open').addEventListener('click', function () {
-    var open = $('approval-empty').hidden;
-    $('approval-empty').hidden = !open;
+    var open = $('approval-panel').hidden;
+    $('approval-panel').hidden = !open;
     $('approval-open').setAttribute('aria-expanded', String(open));
+    if (open) loadQueue();
   });
   if ($('include-test')) $('include-test').addEventListener('change', function () {
     if (!$('inside').hidden) loadStats();
@@ -343,6 +401,7 @@ export function adminPage({ homes, company, esc, fallback, apps, app = null, eve
   var show = function (email) {
     form(''); $('inside').hidden = false; $('who').textContent = email; say('');
     loadStats();
+    countQueue();
   };
   var check = function () {
     say('checking');

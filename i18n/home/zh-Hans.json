@@ -207,8 +207,59 @@
       "noDataInPeriod": "所选时间段内没有数据"
     },
     "approval": "待审批",
-    "approvalHint": "在新标签页中打开该应用自己的审批队列（需单独登录）。",
     "approvalEmpty": "没有待审批的内容。",
-    "offline": "没有网络连接。恢复联网后页面会自动重试。"
+    "offline": "没有网络连接。恢复联网后页面会自动重试。",
+    "queueNotConfigured": "服务器上未连接审批队列。",
+    "queueSourceRefused": "应用服务器拒绝了审批队列的密钥。",
+    "queueSourceFailed": "无法连接应用服务器上的审批队列。",
+    "queue": {
+      "intro": "所有等待审核的内容。已批准和已拒绝的项目会立即从这里消失。已批准的图片只有在有人查看该地点时才会显示。",
+      "loading": "正在加载队列…",
+      "actionFailed": "操作失败。",
+      "done": {
+        "approve": "已批准。",
+        "reject": "已拒绝。",
+        "refetch": "已获取新图片。"
+      },
+      "types": {
+        "destination_images": "目的地图片"
+      },
+      "photo": "摄影：{{name}}",
+      "unknownPhotographer": "未知摄影师",
+      "seeOnUnsplash": "在 Unsplash 上查看图片",
+      "approve": "批准",
+      "reject": "拒绝",
+      "refetch": "获取新图片",
+      "replaceWarning": "该地点已有一张已批准的图片。批准其中一张将替换旧图片。",
+      "sources": {
+        "inspire_app": "给我灵感 · 应用",
+        "inspire_web": "给我灵感 · 网页",
+        "plan_app": "旅行计划 · 应用",
+        "plan_web": "旅行计划 · 网页"
+      },
+      "sourceUnknown": "来源未知",
+      "channelUnknown": "渠道未知",
+      "noSources": "来源和渠道未知（10 月 7 日前加入队列或手动获取）",
+      "dropsTitle": "在进入队列前被拦截（14 天）",
+      "noDrops": "过去 14 天没有拦截任何内容。",
+      "drops": {
+        "duplicate": "重复（该地点已在队列中或有待批准的图片）",
+        "already_approved": "已有批准的图片",
+        "test": "测试（preview、dev、测试设备或管理员）",
+        "bot": "机器人",
+        "missing_channel": "缺少渠道（应用或网页未更新）",
+        "unknown_place": "未知地点",
+        "ambiguous": "地点不明确（多个国家有同名地点）",
+        "daily_limit": "已达到每日上限",
+        "insert_failed": "保存失败"
+      },
+      "altTitle": "更换已批准的图片",
+      "altHint": "以不同名称拥有多张已批准图片的地点。其中一张正在使用，其他可以选择。",
+      "useThis": "使用这张",
+      "inUse": "使用中",
+      "storedAs": "保存为“{{name}}”",
+      "noAlternatives": "没有地点有其他已批准的图片。",
+      "schemaNotReady": "图片的数据库变更尚未执行。在此之前，队列不接受新地点。"
+    }
   }
 }

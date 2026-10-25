@@ -207,8 +207,59 @@
       "noDataInPeriod": "Sem dados no período escolhido"
     },
     "approval": "Aguardando aprovação",
-    "approvalHint": "Abre a fila de aprovação do próprio app em uma nova aba (com login próprio).",
     "approvalEmpty": "Nada aguardando aprovação.",
-    "offline": "Sem conexão com a internet. A página tenta de novo quando você voltar a ficar on-line."
+    "offline": "Sem conexão com a internet. A página tenta de novo quando você voltar a ficar on-line.",
+    "queueNotConfigured": "A fila de aprovação não está conectada no servidor.",
+    "queueSourceRefused": "O servidor do app recusou a chave da fila de aprovação.",
+    "queueSourceFailed": "Não foi possível acessar a fila de aprovação no servidor do app.",
+    "queue": {
+      "intro": "Tudo o que aguarda revisão. O que for aprovado ou recusado some daqui na hora. Uma imagem aprovada só aparece quando alguém olha o lugar.",
+      "loading": "Carregando a fila …",
+      "actionFailed": "A ação falhou.",
+      "done": {
+        "approve": "Aprovado.",
+        "reject": "Recusado.",
+        "refetch": "Uma nova imagem foi buscada."
+      },
+      "types": {
+        "destination_images": "Imagens de destinos"
+      },
+      "photo": "Foto: {{name}}",
+      "unknownPhotographer": "Fotógrafo desconhecido",
+      "seeOnUnsplash": "Ver a imagem no Unsplash",
+      "approve": "Aprovar",
+      "reject": "Recusar",
+      "refetch": "Buscar outra imagem",
+      "replaceWarning": "Este lugar já tem uma imagem aprovada. Se você aprovar uma destas, ela substitui a antiga.",
+      "sources": {
+        "inspire_app": "Inspire-me · app",
+        "inspire_web": "Inspire-me · web",
+        "plan_app": "Plano de viagem · app",
+        "plan_web": "Plano de viagem · web"
+      },
+      "sourceUnknown": "Origem desconhecida",
+      "channelUnknown": "canal desconhecido",
+      "noSources": "Origem e canal desconhecidos (na fila antes de 7 de outubro ou buscado manualmente)",
+      "dropsTitle": "Barrados antes da fila (14 dias)",
+      "noDrops": "Nada foi barrado nos últimos 14 dias.",
+      "drops": {
+        "duplicate": "Duplicado (o lugar está na fila ou tem imagens aguardando)",
+        "already_approved": "Já tem uma imagem aprovada",
+        "test": "Teste (preview, dev, aparelho de teste ou admin)",
+        "bot": "Robô",
+        "missing_channel": "Canal ausente (app ou web não atualizado)",
+        "unknown_place": "Lugar desconhecido",
+        "ambiguous": "Lugar ambíguo (mesmo nome em vários países)",
+        "daily_limit": "Limite diário atingido",
+        "insert_failed": "Falha ao salvar"
+      },
+      "altTitle": "Trocar imagem aprovada",
+      "altHint": "Lugares com várias imagens aprovadas com nomes diferentes. Uma está em uso; as outras podem ser escolhidas.",
+      "useThis": "Usar esta",
+      "inUse": "Em uso",
+      "storedAs": "Salva como “{{name}}”",
+      "noAlternatives": "Nenhum lugar tem imagens aprovadas alternativas.",
+      "schemaNotReady": "A alteração do banco de dados para as imagens ainda não foi executada. A fila não aceita novos lugares até lá."
+    }
   }
 }
