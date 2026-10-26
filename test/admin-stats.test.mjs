@@ -9,7 +9,7 @@ import { CORE_LANGUAGES } from 'app-core';
 
 import { handle } from '../api/admin.js';
 import { SESSION_COOKIE, sessionValue } from '../lib/admin-auth.js';
-import { consentIn, MISSING, mountStats, PAGE, periodBar, periodRange, PERIODS, renderStats, statsView } from '../assets/admin-stats.js';
+import { channelsSection, consentIn, MISSING, mountStats, PAGE, periodBar, periodRange, PERIODS, renderStats, statsView } from '../assets/admin-stats.js';
 import { summary } from '../lib/stats.js';
 
 const read = (f) => fs.readFileSync(new URL(`../${f}`, import.meta.url), 'utf8');
@@ -168,8 +168,9 @@ test('missing (null) values say «No data yet» – never 0; a real 0 stays 0', 
 test('PlanTravel: every block of /stats/summary has a section, laid out in the page language', () => {
   const t = textsFor('nb');
   const view = statsView(summary(SAMPLE), t, 'nb', NAMES.nb);
-  assert.deepEqual(view.map((s) => s.id), ['active', 'db', 'providerClicks', 'consent', 'stores', 'retention', 'onboarding', 'events', 'platforms', 'versions', 'languages']);
+  assert.deepEqual(view.map((s) => s.id), ['active', 'db', 'providerClicks', 'consent', 'stores', 'retention', 'onboarding', 'events', 'channels', 'platforms', 'versions', 'languages']);
   const by = byId(view);
+  assert.equal(by.channels.empty, NONE, '(26.10) no channels block from the server yet = «No data yet», never 0');
   assert.deepEqual(by.active.tiles.map((x) => x.value), ['12', '48', '130']);
   assert.deepEqual(by.db.tiles.map((x) => x.value), ['3', '5', '96']);
   assert.deepEqual(by.db.series.views.week.map((r) => [r.label, ...r.cells]), [['Uke 44 2026', '1', '2'], ['Uke 43 2026', '2', '3']]);
@@ -502,4 +503,41 @@ test('the period buttons: real buttons in a labelled group, the chosen one aria-
   page.choose('all');
   assert.equal(buttons[5].attrs['aria-pressed'], 'true');
   assert.match(read('scripts/front-page.mjs'), /m\.mountStats\(box, j\.data, t, lang/);
+});
+
+test('(26.10) Channel under «Features in use»: events per channel follow the period, installations cover the usage period, the test toggle is explained', () => {
+  const channels = { from: '2026-10-25', installs: { production: 5, preview: 2, unknown: 1 }, byDay: { '2026-10-25': { preview: 60 }, '2026-10-26': { production: 7, unknown: 2 }, '2026-10-27': { production: 3, preview: 4 } } };
+  const t = textsFor('nb');
+  const data = summary({ ...SAMPLE, channels, includesTest: true });
+  assert.deepEqual(data.channels, channels, 'lib/stats.js keeps the block (numbers under short names only)');
+  const view = statsView(data, t, 'nb', NAMES.nb);
+  const ids = view.map((s) => s.id);
+  assert.equal(ids.indexOf('channels'), ids.indexOf('events') + 1, 'right under «Funksjoner i bruk»');
+  const ch = byId(view).channels;
+  assert.equal(ch.title, 'Kanal');
+  assert.deepEqual(ch.groups[0].rows.map((r) => [r.label, r.value]), [['Preview', '64'], ['Production', '10'], ['Ukjent kanal', '2']], '«all»: every day');
+  assert.deepEqual(ch.groups[1].rows.map((r) => [r.label, r.value]), [['Production', '5'], ['Preview', '2'], ['Ukjent kanal', '1']]);
+  assert.ok(ch.groups[1].notes[0].startsWith('Gjelder'), 'installations say which days they cover');
+  assert.deepEqual(ch.notes, [t.stats.channelsWithTest]);
+  // A period: only its days (today = 2026-10-27).
+  const today = byId(statsView(data, t, 'nb', NAMES.nb, { period: 'today', today: '2026-10-27' })).channels;
+  assert.deepEqual(today.groups[0].rows.map((r) => [r.label, r.value]), [['Preview', '4'], ['Production', '3']]);
+  // Without test traffic the server sends only production; the card says why and names the switch.
+  const off = byId(statsView(summary({ ...SAMPLE, channels: { from: '2026-10-25', installs: { production: 5 }, byDay: { '2026-10-26': { production: 7 } } } }), t, 'nb', NAMES.nb)).channels;
+  assert.deepEqual(off.groups[0].rows.map((r) => r.label), ['Production']);
+  assert.ok(off.notes[0].includes(`«${t.includeTest}»`) && off.notes[0].includes('bare production'), off.notes[0]);
+  // A day without events in the period: «No data in the chosen period».
+  const week = byId(statsView(summary({ ...SAMPLE, channels: { from: '2026-10-25', installs: {}, byDay: { '2026-10-01': { production: 1 } } } }), t, 'nb', NAMES.nb, { period: 'today', today: '2026-10-27' })).channels;
+  assert.equal(week.groups[0].empty, t.stats.noDataInPeriod);
+  // Nothing personal passes the server filter: no e-mail as a channel, no text values.
+  assert.doesNotMatch(JSON.stringify(summary({ ...SAMPLE, channels: { installs: { 'a@b.c': 1, production: 'x' }, byDay: { '2026-10-26': { 'a@b.c': 2 } } } }).channels), /@|"x"/);
+  // Every language: texts and placeholders filled, the channel names and both notes there.
+  for (const l of CORE_LANGUAGES) {
+    const tl = textsFor(l.code);
+    const c = channelsSection(data, tl.stats, { number: String, date: String }, { from: null, to: '2026-10-27' }, tl);
+    assert.ok(!/%\w+%|undefined|\[object/.test(JSON.stringify(c)), `${l.code}: filled`);
+    for (const k of ['production', 'preview', 'development', 'dev', 'unknown']) assert.ok(tl.stats.channelNames[k], `${l.code} ${k}`);
+    const offNote = channelsSection({ ...data, includesTest: false }, tl.stats, { number: String, date: String }, { from: null, to: '2026-10-27' }, tl).notes[0];
+    assert.ok(offNote.includes(tl.includeTest), `${l.code}: the note names the switch`);
+  }
 });

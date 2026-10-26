@@ -103,6 +103,18 @@
       },
       "versions": "Wersja aplikacji",
       "languages": "Język",
+      "channels": "Kanał",
+      "channelsWithoutTest": "Preview, dev i nieznany kanał to ruch testowy. Teraz widać tylko production – włącz „{{toggle}}”, aby je zobaczyć.",
+      "channelsWithTest": "Ruch testowy jest uwzględniony: preview, dev i nieznany kanał są pokazane razem z production.",
+      "channelEvents": "Zdarzenia w wybranym okresie",
+      "channelInstalls": "Aktywne instalacje",
+      "channelNames": {
+        "production": "Production",
+        "preview": "Preview",
+        "development": "Development",
+        "dev": "Dev (lokalny)",
+        "unknown": "Nieznany kanał"
+      },
       "noDataLegend": "– = brak danych",
       "total": "Łącznie",
       "since": "Od {{date}}",

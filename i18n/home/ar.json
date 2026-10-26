@@ -103,6 +103,18 @@
       },
       "versions": "إصدار التطبيق",
       "languages": "اللغة",
+      "channels": "القناة",
+      "channelsWithoutTest": "Preview وdev والقناة غير المعروفة هي حركة اختبار. تُعرض الآن production فقط – فعّل «{{toggle}}» لرؤيتها.",
+      "channelsWithTest": "حركة الاختبار مضمّنة: تُعرض preview وdev والقناة غير المعروفة مع production.",
+      "channelEvents": "الأحداث في الفترة المختارة",
+      "channelInstalls": "عمليات التثبيت النشطة",
+      "channelNames": {
+        "production": "Production",
+        "preview": "Preview",
+        "development": "Development",
+        "dev": "Dev (محلي)",
+        "unknown": "قناة غير معروفة"
+      },
       "noDataLegend": "– = لا توجد بيانات بعد",
       "total": "الإجمالي",
       "since": "منذ {{date}}",

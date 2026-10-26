@@ -364,6 +364,34 @@ function providerSection(d, s, f, names, range) {
     seriesEmpty: periodEmpty(types.some((t) => firstKey(pc.byType[t]?.byDay)), view, range, s),
   };
 }
+/**
+ * (26.10) Channel (PlanTravel `channels`): the events per channel for the chosen period (summed from the server's days,
+ * so it follows the period), and the active installations per channel over the server's usage period (like Platform; it
+ * cannot follow the period). Preview, development, dev and «unknown» (the app sent no channel) are test traffic, so with
+ * «Include test traffic» off only production is there – the card says so.
+ */
+export function channelsSection(d, s, f, range, t = {}) {
+  const c = d.channels;
+  const testNote = fillText(d.includesTest === true ? s.channelsWithTest : s.channelsWithoutTest, { toggle: t.includeTest ?? '' });
+  if (!isObject(c)) return { id: 'channels', title: s.channels, notes: [testNote], empty: s.noDataYet };
+  const name = (k) => s.channelNames?.[k] ?? k;
+  const allDays = isObject(c.byDay) ? c.byDay : {};
+  const days = filterDays(allDays, range) ?? {};
+  const events = {};
+  for (const row of Object.values(days)) for (const [k, v] of entries(row)) if (isNumber(v)) events[k] = (events[k] ?? 0) + v;
+  const hadDays = Boolean(firstKey(allDays));
+  return {
+    id: 'channels',
+    title: s.channels,
+    note: startNote(c.from, range, s, f),
+    notes: [testNote],
+    groups: [
+      { title: s.channelEvents, rows: mapRows(events, name, f), empty: hadDays && range.from ? s.noDataInPeriod : s.noDataYet },
+      { title: s.channelInstalls, rows: mapRows(c.installs, name, f), empty: s.noDataYet, notes: [usageNote(d, s, f)] },
+    ],
+  };
+}
+
 /** The server's 0 stays 0 for any period; any other total without days cannot follow a period. */
 const count0 = (v) => (v === 0 ? 0 : null);
 
@@ -542,6 +570,7 @@ export function statsView(data, t, lang, eventNames = {}, options = {}) {
     ['retention', () => rowsSection('retention', s.retention, entries(d.retention).map(([k, v]) => ({ label: retentionLabel(k, s), value: isNumber(v) ? f.share(v) : s.noDataYet })), s, usage)],
     ['onboarding', () => rowsSection('onboarding', s.onboarding, entries(d.onboarding).map(([k, v]) => ({ label: s.onboardingSteps?.[k] ?? k, value: valueOf(v, f, s) })), s, usage)],
     ['events', () => rowsSection('events', s.events, mapRows(d.events, (k) => names[k] ?? k, f), s, usage)],
+    ['channels', () => channelsSection(d, s, f, range, t)],
     ['platforms', () => rowsSection('platforms', s.platforms, mapRows(d.platforms, (k) => s.platformNames?.[k] ?? k, f), s, usage)],
     ['versions', () => rowsSection('versions', s.versions, mapRows(d.versions, (k) => k, f), s, usage)],
     ['languages', () => rowsSection('languages', s.languages, mapRows(d.languages, f.language, f), s, usage)],

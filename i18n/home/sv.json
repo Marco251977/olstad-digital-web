@@ -103,6 +103,18 @@
       },
       "versions": "Appversion",
       "languages": "Språk",
+      "channels": "Kanal",
+      "channelsWithoutTest": "Preview, dev och okänd kanal är testtrafik. Nu visas bara production – slå på ”{{toggle}}” för att se dem.",
+      "channelsWithTest": "Testtrafik ingår: preview, dev och okänd kanal visas tillsammans med production.",
+      "channelEvents": "Händelser i vald period",
+      "channelInstalls": "Aktiva installationer",
+      "channelNames": {
+        "production": "Production",
+        "preview": "Preview",
+        "development": "Development",
+        "dev": "Dev (lokal)",
+        "unknown": "Okänd kanal"
+      },
       "noDataLegend": "– = ingen data än",
       "total": "Totalt",
       "since": "Från {{date}}",
