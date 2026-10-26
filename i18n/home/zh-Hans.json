@@ -103,6 +103,18 @@
       },
       "versions": "应用版本",
       "languages": "语言",
+      "channels": "渠道",
+      "channelsWithoutTest": "Preview、dev 和未知渠道属于测试流量。目前只显示 production——打开“{{toggle}}”即可查看。",
+      "channelsWithTest": "已包含测试流量：preview、dev 和未知渠道与 production 一起显示。",
+      "channelEvents": "所选期间的事件",
+      "channelInstalls": "活跃安装",
+      "channelNames": {
+        "production": "Production",
+        "preview": "Preview",
+        "development": "Development",
+        "dev": "Dev（本地）",
+        "unknown": "未知渠道"
+      },
       "noDataLegend": "– = 暂无数据",
       "total": "总计",
       "since": "自 {{date}} 起",

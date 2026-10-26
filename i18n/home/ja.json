@@ -103,6 +103,18 @@
       },
       "versions": "アプリのバージョン",
       "languages": "言語",
+      "channels": "チャネル",
+      "channelsWithoutTest": "Preview、dev、不明なチャネルはテストトラフィックです。現在は production のみ表示しています。表示するには「{{toggle}}」をオンにしてください。",
+      "channelsWithTest": "テストトラフィックを含みます：preview、dev、不明なチャネルを production と一緒に表示しています。",
+      "channelEvents": "選択した期間のイベント",
+      "channelInstalls": "アクティブなインストール",
+      "channelNames": {
+        "production": "Production",
+        "preview": "Preview",
+        "development": "Development",
+        "dev": "Dev（ローカル）",
+        "unknown": "不明なチャネル"
+      },
       "noDataLegend": "– = まだデータなし",
       "total": "合計",
       "since": "{{date}}から",

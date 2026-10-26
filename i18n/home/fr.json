@@ -103,6 +103,18 @@
       },
       "versions": "Version de l’appli",
       "languages": "Langue",
+      "channels": "Canal",
+      "channelsWithoutTest": "Preview, dev et canal inconnu sont du trafic de test. Seul production est affiché – activez « {{toggle}} » pour les voir.",
+      "channelsWithTest": "Le trafic de test est inclus : preview, dev et canal inconnu sont affichés avec production.",
+      "channelEvents": "Événements sur la période choisie",
+      "channelInstalls": "Installations actives",
+      "channelNames": {
+        "production": "Production",
+        "preview": "Preview",
+        "development": "Development",
+        "dev": "Dev (local)",
+        "unknown": "Canal inconnu"
+      },
       "noDataLegend": "– = pas encore de données",
       "total": "Total",
       "since": "Depuis le {{date}}",

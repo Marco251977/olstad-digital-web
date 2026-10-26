@@ -103,6 +103,18 @@
       },
       "versions": "Sovellusversio",
       "languages": "Kieli",
+      "channels": "Kanava",
+      "channelsWithoutTest": "Preview, dev ja tuntematon kanava ovat testiliikennettä. Nyt näytetään vain production – ota käyttöön ”{{toggle}}” nähdäksesi ne.",
+      "channelsWithTest": "Testiliikenne on mukana: preview, dev ja tuntematon kanava näytetään productionin kanssa.",
+      "channelEvents": "Tapahtumat valitulla jaksolla",
+      "channelInstalls": "Aktiiviset asennukset",
+      "channelNames": {
+        "production": "Production",
+        "preview": "Preview",
+        "development": "Development",
+        "dev": "Dev (paikallinen)",
+        "unknown": "Tuntematon kanava"
+      },
       "noDataLegend": "– = ei vielä tietoja",
       "total": "Yhteensä",
       "since": "Alkaen {{date}}",

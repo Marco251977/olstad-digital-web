@@ -103,6 +103,18 @@
       },
       "versions": "Uygulama sürümü",
       "languages": "Dil",
+      "channels": "Kanal",
+      "channelsWithoutTest": "Preview, dev ve bilinmeyen kanal test trafiğidir. Şu anda yalnızca production gösteriliyor; görmek için “{{toggle}}” seçeneğini açın.",
+      "channelsWithTest": "Test trafiği dahil: preview, dev ve bilinmeyen kanal production ile birlikte gösteriliyor.",
+      "channelEvents": "Seçilen dönemdeki olaylar",
+      "channelInstalls": "Etkin kurulumlar",
+      "channelNames": {
+        "production": "Production",
+        "preview": "Preview",
+        "development": "Development",
+        "dev": "Dev (yerel)",
+        "unknown": "Bilinmeyen kanal"
+      },
       "noDataLegend": "– = henüz veri yok",
       "total": "Toplam",
       "since": "{{date}} itibarıyla",

@@ -103,6 +103,18 @@
       },
       "versions": "App-versie",
       "languages": "Taal",
+      "channels": "Kanaal",
+      "channelsWithoutTest": "Preview, dev en onbekend kanaal zijn testverkeer. Nu wordt alleen production getoond – zet ‘{{toggle}}’ aan om ze te zien.",
+      "channelsWithTest": "Testverkeer is inbegrepen: preview, dev en onbekend kanaal worden samen met production getoond.",
+      "channelEvents": "Gebeurtenissen in de gekozen periode",
+      "channelInstalls": "Actieve installaties",
+      "channelNames": {
+        "production": "Production",
+        "preview": "Preview",
+        "development": "Development",
+        "dev": "Dev (lokaal)",
+        "unknown": "Onbekend kanaal"
+      },
       "noDataLegend": "– = nog geen gegevens",
       "total": "Totaal",
       "since": "Vanaf {{date}}",

@@ -103,6 +103,18 @@
       },
       "versions": "Appversion",
       "languages": "Sprog",
+      "channels": "Kanal",
+      "channelsWithoutTest": "Preview, dev og ukendt kanal er testtrafik. Nu vises kun production – slå «{{toggle}}» til for at se dem.",
+      "channelsWithTest": "Testtrafik er med: preview, dev og ukendt kanal vises sammen med production.",
+      "channelEvents": "Hændelser i den valgte periode",
+      "channelInstalls": "Aktive installationer",
+      "channelNames": {
+        "production": "Production",
+        "preview": "Preview",
+        "development": "Development",
+        "dev": "Dev (lokal)",
+        "unknown": "Ukendt kanal"
+      },
       "noDataLegend": "– = ingen data endnu",
       "total": "I alt",
       "since": "Fra {{date}}",
