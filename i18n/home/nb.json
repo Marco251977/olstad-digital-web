@@ -79,6 +79,7 @@
       "withTest": "Testtrafikk er med.",
       "withoutTest": "Testtrafikk er ikke med.",
       "active": "Aktive brukere",
+      "activeWeb": "Aktive på nettsiden",
       "day": "Per dag",
       "week": "Per uke",
       "month": "Per måned",

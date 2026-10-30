@@ -79,6 +79,7 @@
       "withTest": "Testiliikenne on mukana.",
       "withoutTest": "Testiliikenne ei ole mukana.",
       "active": "Aktiiviset käyttäjät",
+      "activeWeb": "Aktiiviset verkkosivustolla",
       "day": "Päivässä",
       "week": "Viikossa",
       "month": "Kuukaudessa",

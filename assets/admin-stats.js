@@ -306,6 +306,17 @@ function activeSection(d, s, f) {
   };
 }
 
+/** (30.10) The website's own active browsers (PlanTravel `activeWeb`); `active` above counts the app only. */
+function activeWebSection(d, s, f) {
+  const a = isObject(d.activeWeb) ? d.activeWeb : {};
+  return {
+    id: 'activeWeb',
+    title: s.activeWeb,
+    note: d.period?.to ? fillText(s.coversActive, { date: f.date(d.period.to) }) : null,
+    tiles: [['day', s.day], ['week', s.week], ['month', s.month]].map(([k, label]) => ({ label, value: valueOf(a[k], f, s) })),
+  };
+}
+
 function dbSection(d, s, f, range) {
   const db = d.db;
   if (!isObject(db)) return { id: 'db', title: s.db, empty: s.noDataYet };
@@ -586,6 +597,7 @@ export function statsView(data, t, lang, eventNames = {}, options = {}) {
   const usage = usageNote(d, s, f);
   const builders = [
     ['active', () => activeSection(d, s, f)],
+    ['activeWeb', () => activeWebSection(d, s, f)],
     ['db', () => dbSection(d, s, f, range)],
     ['providerClicks', () => providerSection(d, s, f, names, range)],
     ['consent', () => consentSection(d, s, f, range)],
@@ -599,7 +611,8 @@ export function statsView(data, t, lang, eventNames = {}, options = {}) {
     ['versions', () => rowsSection('versions', s.versions, mapRows(d.versions, (k) => k, f), s, usage)],
     ['languages', () => rowsSection('languages', s.languages, mapRows(d.languages, f.language, f), s, usage)],
   ];
-  return builders.filter(([k]) => k in d).map(([, build]) => build());
+  // (30.10) activeWeb only when the server sends it (an older server: the page as before).
+  return builders.filter(([k]) => k in d && (k !== 'activeWeb' || isObject(d.activeWeb))).map(([, build]) => build());
 }
 
 // ---- Rendering (textContent only) ----

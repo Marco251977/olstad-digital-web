@@ -79,6 +79,7 @@
       "withTest": "已包含测试流量。",
       "withoutTest": "未包含测试流量。",
       "active": "活跃用户",
+      "activeWeb": "网站活跃用户",
       "day": "每日",
       "week": "每周",
       "month": "每月",

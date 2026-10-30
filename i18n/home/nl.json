@@ -79,6 +79,7 @@
       "withTest": "Testverkeer is meegenomen.",
       "withoutTest": "Testverkeer is niet meegenomen.",
       "active": "Actieve gebruikers",
+      "activeWeb": "Actief op de website",
       "day": "Per dag",
       "week": "Per week",
       "month": "Per maand",

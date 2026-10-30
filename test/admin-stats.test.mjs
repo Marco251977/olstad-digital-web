@@ -366,6 +366,19 @@ test('(30.10) supplier clicks: names from the server list, per source (app / web
   }
 });
 
+test('(30.10) «Aktive på nettsiden» is its own number; an older server shows the page as before', () => {
+  const t = textsFor('nb');
+  const ids = (sum) => statsView(sum, t, 'nb', NAMES.nb, { today: '2026-10-27' }).map((x) => x.id);
+  const withWeb = summary({ ...SAMPLE, activeWeb: { day: 3, week: 10, month: 25 } });
+  const v = byId(statsView(withWeb, t, 'nb', NAMES.nb, { today: '2026-10-27' }));
+  assert.strictEqual(v.activeWeb.title, t.stats.activeWeb);
+  assert.deepStrictEqual(v.activeWeb.tiles.map((x) => x.value), ['3', '10', '25']);
+  assert.deepStrictEqual(v.active.tiles.map((x) => x.value), byId(statsView(summary(SAMPLE), t, 'nb', NAMES.nb, { today: '2026-10-27' })).active.tiles.map((x) => x.value), 'the app number is unchanged');
+  assert.ok(!ids(summary(SAMPLE)).includes('activeWeb'), 'older server: no section');
+  assert.ok(ids(withWeb).indexOf('activeWeb') === ids(withWeb).indexOf('active') + 1, 'right after Aktive brukere');
+  for (const lang of ['nb', 'en', 'ar', 'zh-Hans']) assert.ok(textsFor(lang).stats.activeWeb, lang);
+});
+
 test('the view is written with textContent only – a server value is never read as HTML', () => {
   const made = [];
   class El {

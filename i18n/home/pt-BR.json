@@ -79,6 +79,7 @@
       "withTest": "O tráfego de teste está incluído.",
       "withoutTest": "O tráfego de teste não está incluído.",
       "active": "Usuários ativos",
+      "activeWeb": "Ativos no site",
       "day": "Por dia",
       "week": "Por semana",
       "month": "Por mês",

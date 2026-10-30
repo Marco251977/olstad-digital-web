@@ -79,6 +79,7 @@
       "withTest": "Testtrafik ingår.",
       "withoutTest": "Testtrafik ingår inte.",
       "active": "Aktiva användare",
+      "activeWeb": "Aktiva på webbplatsen",
       "day": "Per dag",
       "week": "Per vecka",
       "month": "Per månad",

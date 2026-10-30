@@ -79,6 +79,7 @@
       "withTest": "테스트 트래픽이 포함돼요.",
       "withoutTest": "테스트 트래픽이 포함되지 않아요.",
       "active": "활성 사용자",
+      "activeWeb": "웹사이트 활성 사용자",
       "day": "일간",
       "week": "주간",
       "month": "월간",
