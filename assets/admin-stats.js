@@ -351,14 +351,29 @@ function providerSection(d, s, f, names, range) {
     : null;
   // «All» = the server's total; a period = the sum of the types in it (no types at all = 0 clicks, as the server says).
   const clicks = range.from ? (types.length ? sumOf(totals(byType)) : count0(pc.total)) : pc.total;
+  // (30.10) The test clicks as their own number, always (also with «Include test traffic» off and when Total is 0), so
+  // it is clear that counting works. Only totals since the start (the server sends no days for them). An older server
+  // without `test` = nothing new is shown.
+  const test = isObject(pc.test) && isNumber(pc.test.total) ? pc.test : null;
+  const testList = (map, label) => mapRows(map, label, f).map((r) => `${r.label} ${r.value}`).join(' · ');
+  const testNotes = test
+    ? [
+        fillText(d.includesTest === true ? s.testClicksIncluded : s.testClicksExcluded, { date: f.date(pc.from) }),
+        test.total > 0 && testList(test.byProvider, (k) => k) ? fillText(s.testClicksByProvider, { list: testList(test.byProvider, (k) => k) }) : null,
+        test.total > 0 && testList(test.byType, typeName) ? fillText(s.testClicksByType, { list: testList(test.byType, typeName) }) : null,
+      ]
+    : undefined;
+  // Real clicks missing but test clicks there: the groups say so instead of «No data yet».
+  const groupEmpty = test && test.total > 0 ? s.onlyTestClicks : s.noDataYet;
   return {
     id: 'providerClicks',
     title: s.providerClicks,
     note: startNote(pc.from, range, s, f),
-    tiles: [{ label: s.total, value: valueOf(clicks, f, s) }],
+    tiles: [{ label: s.total, value: valueOf(clicks, f, s) }, ...(test ? [{ label: s.testTraffic, value: f.number(test.total) }] : [])],
+    notes: testNotes,
     groups: [
-      { title: s.byProvider, rows: mapRows(totals(byProvider), (k) => k, f), empty: s.noDataYet },
-      { title: s.byType, rows: mapRows(totals(byType), typeName, f), empty: s.noDataYet },
+      { title: s.byProvider, rows: mapRows(totals(byProvider), (k) => k, f), empty: groupEmpty },
+      { title: s.byType, rows: mapRows(totals(byType), typeName, f), empty: groupEmpty },
     ],
     series: view,
     seriesEmpty: periodEmpty(types.some((t) => firstKey(pc.byType[t]?.byDay)), view, range, s),

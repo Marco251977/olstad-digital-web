@@ -290,6 +290,45 @@ test('Saldo: no exchange rate = said so, never 0 – the EUR numbers are still s
   }
 });
 
+test('(30.10) supplier clicks: the test clicks are always shown as their own number; an older answer shows nothing new', () => {
+  const t = textsFor('nb');
+  const st = t.stats;
+  const fill = (x, v) => x.replace(/%(\w+)%/g, (_, k) => v[k]);
+  const ZERO = { from: '2026-10-25', total: 0, byProvider: {}, byType: {} };
+  const test = { total: 4, byProvider: { kiwi: 3, stay22: 1 }, byType: { flight: 3, hotel: 1 } };
+  const view = (pc, includesTest = false, period) => byId(statsView(summary({ ...SAMPLE, providerClicks: pc, includesTest }), t, 'nb', NAMES.nb, { period, today: '2026-10-27' })).providerClicks;
+  // 0 real + 4 test (Marco 30.10): Total 0, Test traffic 4, the lists name the test clicks, «only test traffic» instead of «No data yet».
+  const only = view({ ...ZERO, test });
+  assert.deepEqual(only.tiles.map((x) => [x.label, x.value]), [[st.total, '0'], [st.testTraffic, '4']]);
+  const escape = (x) => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const shape = (text) => new RegExp(`^${text.split('%date%').map(escape).join('.+')}$`);
+  assert.match(only.notes[0], shape(st.testClicksExcluded), 'the date of the start, and «not in Total»');
+  assert.equal(only.notes[1], fill(st.testClicksByProvider, { list: 'kiwi 3 · stay22 1' }));
+  assert.equal(only.notes[2], fill(st.testClicksByType, { list: `${NAMES.nb['provider_click:flight']} 3 · ${NAMES.nb['provider_click:hotel']} 1` }));
+  assert.deepEqual(only.groups.map((g) => [g.rows.length, g.empty]), [[0, st.onlyTestClicks], [0, st.onlyTestClicks]]);
+  assert.ok(!JSON.stringify(only).includes(NONE), '«No data yet» never hides the test clicks');
+  // Real + test: both numbers; with «Include test traffic» on the note says they are in Total.
+  const both = view({ ...SAMPLE.providerClicks, test }, true);
+  assert.deepEqual(both.tiles.map((x) => x.value), ['6', '4']);
+  assert.match(both.notes[0], shape(st.testClicksIncluded));
+  assert.equal(both.groups[0].rows.length, 3);
+  // A chosen period: the test number is all since the start (said in the note), Total follows the period.
+  assert.equal(view({ ...SAMPLE.providerClicks, test }, false, 'today').tiles[1].value, '4');
+  // 0 test clicks: the 0 is shown, no lists, groups say «No data yet» as before.
+  const none = view({ ...ZERO, test: { total: 0, byProvider: {}, byType: {} } });
+  assert.deepEqual(none.tiles.map((x) => x.value), ['0', '0']);
+  assert.deepEqual(none.notes.filter(Boolean).length, 1);
+  assert.equal(none.groups[0].empty, NONE);
+  // An older server without `test`: exactly as before (one tile, no notes, «No data yet»).
+  const old = view(ZERO);
+  assert.deepEqual(old.tiles.map((x) => x.value), ['0']);
+  assert.equal(old.notes, undefined);
+  assert.equal(old.groups[0].empty, NONE);
+  assert.deepEqual(view(SAMPLE.providerClicks).tiles.length, 1);
+  // The website's server keeps the block as it is (numbers under known names only).
+  assert.deepEqual(summary({ providerClicks: { ...ZERO, test: { ...test, byProvider: { kiwi: 3, 'a@b.c': 2, bad: 'x' } } } }).providerClicks.test, { ...test, byProvider: { kiwi: 3 } });
+});
+
 test('the view is written with textContent only – a server value is never read as HTML', () => {
   const made = [];
   class El {
