@@ -329,6 +329,43 @@ test('(30.10) supplier clicks: the test clicks are always shown as their own num
   assert.deepEqual(summary({ providerClicks: { ...ZERO, test: { ...test, byProvider: { kiwi: 3, 'a@b.c': 2, bad: 'x' } } } }).providerClicks.test, { ...test, byProvider: { kiwi: 3 } });
 });
 
+test('(30.10) supplier clicks: names from the server list, per source (app / web); an older answer shows ids and no source', () => {
+  const t = textsFor('nb');
+  const st = t.stats;
+  const day = { firstDate: '2026-10-25', total: 0, byDay: {}, byWeek: {}, byMonth: {} };
+  const series = (n) => ({ ...day, total: n, byDay: { '2026-10-26': n } });
+  const pc = {
+    from: '2026-10-25', total: 5,
+    byProvider: { hotelscom: series(2), discovercars: series(1), mystery: series(2) },
+    byType: { hotel: series(2), car: series(1), flight: series(2) },
+    bySource: { app: series(3), web: series(2) },
+    names: { hotelscom: 'Hotels.com', discovercars: 'DiscoverCars' },
+    test: { total: 3, byProvider: { hotelscom: 3 }, byType: { hotel: 3 }, bySource: { web: 3 } },
+  };
+  const view = (p) => byId(statsView(summary({ ...SAMPLE, providerClicks: p }), t, 'nb', NAMES.nb, { today: '2026-10-27' })).providerClicks;
+  const v = view(pc);
+  const labels = v.groups[0].rows.map((r) => r.label).sort();
+  assert.deepStrictEqual(labels, ['DiscoverCars', 'Hotels.com', 'mystery'], 'name from the list, unknown id = the id');
+  const src = v.groups.find((g) => g.title === st.bySource);
+  assert.ok(src, 'the per-source group');
+  assert.deepStrictEqual(src.rows.map((r) => [r.label, r.value]).sort(), [[st.clickSourceNames.app, '3'], [st.clickSourceNames.web, '2']].sort());
+  assert.ok(v.notes.includes(st.testClicksByProvider.replace('%list%', 'Hotels.com 3')), 'the test list uses the name');
+  assert.ok(v.notes.some((n) => n && n.includes(`${st.clickSourceNames.web} 3`)), 'test clicks per source');
+  // An older server: no names, no bySource = the ids, two groups, exactly as before.
+  const old = view({ ...pc, names: undefined, bySource: undefined, test: { total: 3, byProvider: { hotelscom: 3 }, byType: { hotel: 3 } } });
+  assert.deepStrictEqual(old.groups.length, 2);
+  assert.deepStrictEqual(old.groups[0].rows.map((r) => r.label).sort(), ['discovercars', 'hotelscom', 'mystery']);
+  // The website's server keeps only short brand names, never a sentence, HTML or an e-mail.
+  const kept = summary({ providerClicks: { ...pc, names: { kiwi: 'Kiwi.com', a: '<b>x</b>', b: 'x@y.no', c: 'A very long sentence that is clearly not a brand name at all' } } }).providerClicks.names;
+  assert.deepStrictEqual(kept, { kiwi: 'Kiwi.com' });
+  // Every language has the new texts.
+  for (const lang of ['nb', 'en', 'ar', 'zh-Hans']) {
+    const s = textsFor(lang).stats;
+    assert.ok(s.bySource && s.clickSourceNames.app && s.clickSourceNames.web && s.testClicksBySource.includes('%list%'), lang);
+    assert.notStrictEqual(s.sourceNames.revenuecat, undefined, 'the store sources keep their own names');
+  }
+});
+
 test('the view is written with textContent only – a server value is never read as HTML', () => {
   const made = [];
   class El {

@@ -338,9 +338,16 @@ function providerSection(d, s, f, names, range) {
   const pc = d.providerClicks;
   if (!isObject(pc)) return { id: 'providerClicks', title: s.providerClicks, empty: s.noDataYet };
   const typeName = (k) => names[`provider_click:${k}`] ?? k;
+  // (30.10) The supplier's name from the server (providerClicks.names = the app's one list, constants/suppliers.ts);
+  // an id without a name (or an older server without `names`) is shown as the id itself.
+  const providerName = (k) => (isObject(pc.names) && typeof pc.names[k] === 'string' && pc.names[k] ? pc.names[k] : k);
+  const sourceName = (k) => s.clickSourceNames?.[k] ?? k;
   const inRange = (map) => Object.fromEntries(entries(map).map(([k, b]) => [k, blockIn(b, range)]));
   const byType = inRange(pc.byType);
   const byProvider = inRange(pc.byProvider);
+  // (30.10) Per source (app / website): only when the server sends it (an older server or the function not migrated =
+  // no group, never 0).
+  const bySource = isObject(pc.bySource) ? inRange(pc.bySource) : null;
   const totals = (map) => Object.fromEntries(entries(map).map(([k, v]) => [k, v?.total]));
   const types = Object.keys(byType).sort();
   // The total per day/week/month = the sum of the types (every click has exactly one type).
@@ -359,8 +366,9 @@ function providerSection(d, s, f, names, range) {
   const testNotes = test
     ? [
         fillText(d.includesTest === true ? s.testClicksIncluded : s.testClicksExcluded, { date: f.date(pc.from) }),
-        test.total > 0 && testList(test.byProvider, (k) => k) ? fillText(s.testClicksByProvider, { list: testList(test.byProvider, (k) => k) }) : null,
+        test.total > 0 && testList(test.byProvider, providerName) ? fillText(s.testClicksByProvider, { list: testList(test.byProvider, providerName) }) : null,
         test.total > 0 && testList(test.byType, typeName) ? fillText(s.testClicksByType, { list: testList(test.byType, typeName) }) : null,
+        test.total > 0 && isObject(test.bySource) && testList(test.bySource, sourceName) ? fillText(s.testClicksBySource, { list: testList(test.bySource, sourceName) }) : null,
       ]
     : undefined;
   // Real clicks missing but test clicks there: the groups say so instead of «No data yet».
@@ -372,8 +380,9 @@ function providerSection(d, s, f, names, range) {
     tiles: [{ label: s.total, value: valueOf(clicks, f, s) }, ...(test ? [{ label: s.testTraffic, value: f.number(test.total) }] : [])],
     notes: testNotes,
     groups: [
-      { title: s.byProvider, rows: mapRows(totals(byProvider), (k) => k, f), empty: groupEmpty },
+      { title: s.byProvider, rows: mapRows(totals(byProvider), providerName, f), empty: groupEmpty },
       { title: s.byType, rows: mapRows(totals(byType), typeName, f), empty: groupEmpty },
+      ...(bySource ? [{ title: s.bySource, rows: mapRows(totals(bySource), sourceName, f), empty: groupEmpty }] : []),
     ],
     series: view,
     seriesEmpty: periodEmpty(types.some((t) => firstKey(pc.byType[t]?.byDay)), view, range, s),
