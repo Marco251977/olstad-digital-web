@@ -1,6 +1,6 @@
 {
   "generatedFrom": "shared/usage-texts.ts + shared/usage-events.ts (scripts/generate-shared.js)",
-  "sourceSha256": "4f7558e6d6df046383ea42d60d29690a79986b5bf8076dd9468079e388af9383",
+  "sourceSha256": "aa3f236f349ddbf5717e2d8cc3be89d2edca9831e42824e7efad678d8844128a",
   "names": {
     "nb": {
       "first_open": "Første åpning",
