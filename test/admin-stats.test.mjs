@@ -358,6 +358,10 @@ test('(30.10) supplier clicks: names from the server list, per source (app / web
   // The website's server keeps only short brand names, never a sentence, HTML or an e-mail.
   const kept = summary({ providerClicks: { ...pc, names: { kiwi: 'Kiwi.com', a: '<b>x</b>', b: 'x@y.no', c: 'A very long sentence that is clearly not a brand name at all' } } }).providerClicks.names;
   assert.deepStrictEqual(kept, { kiwi: 'Kiwi.com' });
+  // (31.10) A brand name with «/» (kayak = «KAYAK / Momondo», the server's statsName) is kept and shown as it is.
+  const withSlash = summary({ providerClicks: { ...pc, names: { kayak: 'KAYAK / Momondo' }, byProvider: { kayak: series(2) } } });
+  assert.deepStrictEqual(withSlash.providerClicks.names, { kayak: 'KAYAK / Momondo' });
+  assert.deepStrictEqual(view(withSlash.providerClicks).groups[0].rows.map((r) => r.label), ['KAYAK / Momondo']);
   // Every language has the new texts.
   for (const lang of ['nb', 'en', 'ar', 'zh-Hans']) {
     const s = textsFor(lang).stats;
