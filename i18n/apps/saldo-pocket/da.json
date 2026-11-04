@@ -101,11 +101,12 @@
           "En kode af din RevenueCat-kunde, lavet med en hemmelig nøgle, og butikkens købs-ID.",
           "Butik, produkt og plan (måned eller år).",
           "Datoen beskeden gjaldt, hvornår den blev vist og lukket (med telefonens tidszone), og om du trykkede på «Administrer abonnement».",
-          "Kanal (i appen, notifikation på telefonen eller e-mail), sprog, pris og valuta, og hvilken version af teksten du fik (med en kode af teksten).",
+          "Kanal (i appen, notifikation planlagt på telefonen, push-notifikation eller e-mail), sprog, pris og valuta, og hvilken version af teksten du fik (med en kode af teksten).",
           "For e-mail: hvornår den blev sendt, og besked-ID’et fra Resend."
         ],
         "after": [
           "Loggen indeholder aldrig dit navn, din e-mailadresse eller dit konto-ID. For at kunne sende e-mailen gemmer vi konto-ID’et og datoen for næste besked for sig; det slettes, når du sletter kontoen.",
+          "Er du logget ind og har tilladt notifikationer for appen på telefonen, kan varslet også komme som push-notifikation. Så gemmer vi telefonens push-token – den adresse, Apple eller Google bruger til at levere notifikationer til netop denne telefon – sammen med dit konto-ID, kun for at sende dette varsel. Varslet sendes gennem Expo (USA), som leverer det videre til Apple Push Notification service (iPhone) eller Google Firebase Cloud Messaging (Android). Det indeholder kun teksten om abonnementet, intet fra dit budget. Tokenet slettes, når du logger ud, sletter kontoen eller slår notifikationer fra (appen fjerner det da), og når Apple eller Google oplyser, at det ikke længere gælder. Du kan slå notifikationer for appen fra i telefonens indstillinger.",
           "Loggen gemmes i 3 år efter abonnementets sidste aktive dag, også hvis du sletter kontoen, men så uden noget, der forbinder den med dig. Grundlaget er vores legitime interesse (artikel 6, stk. 1, litra f) i at kunne dokumentere, at vi har givet de oplysninger, loven kræver."
         ]
       },
@@ -132,9 +133,9 @@
           "Resend (USA): e-mails med loginkoder og -links.",
           "RevenueCat (USA): Pro-status og køb.",
           "Sentry (EU, Tyskland): nedbrudsrapporter, uden IP-adresse.",
-          "Expo (USA): opdateringer af appen.",
+          "Expo (USA): opdateringer af appen og formidling af push-notifikationen om abonnementet.",
           "Vercel (USA): vores websted, også den side, login-linket åbner.",
-          "Apple, Google og Meta: App Store, Google Play, login med dem, når du vælger det, og telefonens sikkerhedskopi.",
+          "Apple, Google og Meta: App Store, Google Play, login med dem, når du vælger det, telefonens sikkerhedskopi og levering af push-notifikationer (Apple Push Notification service og Google Firebase Cloud Messaging).",
           "Valutakurser: vores server henter kurser fra Frankfurter og ExchangeRate-API. Der sendes ingen data om dig dertil."
         ],
         "after": [
@@ -159,6 +160,7 @@
           "Optælling af AI-læsninger (envejskode, dato og antal): {{aiCountDays}} dage.",
           "Optælling af gratis AI-scanninger (hashet enheds-id, måned og antal): {{scanCountMonths}} måneder.",
           "Log over login-e-mails (uden adresse): {{emailLogDays}} dage.",
+          "Push-token til varslet om abonnementet: indtil du logger ud, sletter kontoen eller slår notifikationer fra.",
           "Nedbrudsrapporter: højst {{crashMaxDays}} dage.",
           "Login-e-mails hos Resend: {{resendDays}} dage ({{linkResend}}). Supabases egne logs og sikkerhedskopier: højst {{supabaseLogDays}} dage ({{linkSupabase}}). RevenueCat ({{linkRevenueCat}}), Expo ({{linkExpo}}) og Vercel ({{linkVercel}}): efter deres vilkår, som ikke angiver en fast periode.",
           "Sikkerhedskopi på telefonen: hos Apple eller Google, efter deres vilkår, indtil du sletter den."

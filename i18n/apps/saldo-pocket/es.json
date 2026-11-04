@@ -101,11 +101,12 @@
           "Un código de tu cliente de RevenueCat, creado con una clave secreta, y el ID de compra de la tienda.",
           "Tienda, producto y plan (mensual o anual).",
           "La fecha a la que correspondía el aviso, cuándo se mostró y se cerró (con la zona horaria del teléfono) y si tocaste «Gestionar suscripción».",
-          "Canal (en la app, notificación en el teléfono o correo electrónico), idioma, precio y moneda, y qué versión del texto recibiste (con un código del texto).",
+          "Canal (en la app, notificación programada en el teléfono, notificación push o correo electrónico), idioma, precio y moneda, y qué versión del texto recibiste (con un código del texto).",
           "Para el correo electrónico: cuándo se envió y el ID del mensaje de Resend."
         ],
         "after": [
           "El registro nunca contiene tu nombre, tu dirección de correo electrónico ni el ID de tu cuenta. Para poder enviar el correo, guardamos aparte el ID de la cuenta y la fecha del próximo aviso; se eliminan cuando eliminas tu cuenta.",
+          "Si has iniciado sesión y has permitido las notificaciones de la app en tu teléfono, el aviso también puede llegar como notificación push. En ese caso guardamos el token push del teléfono –la dirección que Apple o Google usan para entregar notificaciones a ese teléfono concreto– junto con el ID de tu cuenta, solo para enviar este aviso. El aviso se envía a través de Expo (EE. UU.), que lo entrega a Apple Push Notification service (iPhone) o a Google Firebase Cloud Messaging (Android). Solo contiene el texto sobre la suscripción, nada de tu presupuesto. El token se elimina cuando cierras sesión, eliminas tu cuenta o desactivas las notificaciones (la app lo elimina entonces), y cuando Apple o Google indican que ya no es válido. Puedes desactivar las notificaciones de la app en los ajustes del teléfono.",
           "El registro se guarda durante 3 años después del último día activo de la suscripción, también si eliminas tu cuenta, pero entonces sin nada que lo vincule contigo. La base es nuestro interés legítimo (artículo 6.1.f) del RGPD) en poder demostrar que hemos dado la información que exige la ley."
         ]
       },
@@ -132,9 +133,9 @@
           "Resend (EE. UU.): correos con códigos y enlaces de inicio de sesión.",
           "RevenueCat (EE. UU.): estado de Pro y compras.",
           "Sentry (UE, Alemania): informes de errores, sin dirección IP.",
-          "Expo (EE. UU.): actualizaciones de la app.",
+          "Expo (EE. UU.): actualizaciones de la app y entrega de la notificación push sobre la suscripción.",
           "Vercel (EE. UU.): nuestra web, incluida la página que abre el enlace de inicio de sesión.",
-          "Apple, Google y Meta: la App Store, Google Play, el inicio de sesión con ellos si lo eliges y la copia de seguridad del teléfono.",
+          "Apple, Google y Meta: la App Store, Google Play, el inicio de sesión con ellos si lo eliges, la copia de seguridad del teléfono y la entrega de notificaciones push (Apple Push Notification service y Google Firebase Cloud Messaging).",
           "Tipos de cambio: nuestro servidor obtiene los tipos de Frankfurter y ExchangeRate-API. No se les envía ningún dato sobre ti."
         ],
         "after": [
@@ -159,6 +160,7 @@
           "Recuento de lecturas con IA (código de un solo sentido, fecha y número): {{aiCountDays}} días.",
           "Recuento de escaneos gratuitos con IA (hash del ID del dispositivo, mes y número): {{scanCountMonths}} meses.",
           "Registro de correos de inicio de sesión (sin dirección): {{emailLogDays}} días.",
+          "Token push para el aviso de la suscripción: hasta que cierres sesión, elimines tu cuenta o desactives las notificaciones.",
           "Informes de errores: {{crashMaxDays}} días como máximo.",
           "Correos de inicio de sesión en Resend: {{resendDays}} días ({{linkResend}}). Registros y copias de seguridad propios de Supabase: {{supabaseLogDays}} días como máximo ({{linkSupabase}}). RevenueCat ({{linkRevenueCat}}), Expo ({{linkExpo}}) y Vercel ({{linkVercel}}): según sus condiciones, que no indican un plazo fijo.",
           "Copia de seguridad del teléfono: en Apple o Google, según sus condiciones, hasta que la elimines."

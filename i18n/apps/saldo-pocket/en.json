@@ -101,11 +101,12 @@
           "A code of your RevenueCat customer, made with a secret key, and the store’s purchase ID.",
           "Store, product and plan (month or year).",
           "The date the notice was for, when it was shown and closed (with the phone’s time zone), and whether you tapped «Manage subscription».",
-          "Channel (in the app, a notification on the phone or e-mail), language, price and currency, and which version of the text you got (with a code of the text).",
+          "Channel (in the app, a notification scheduled on the phone, a push notification or e-mail), language, price and currency, and which version of the text you got (with a code of the text).",
           "For e-mail: when it was sent, and the message ID from Resend."
         ],
         "after": [
           "The log never contains your name, your e-mail address or your account ID. To send the e-mail, we store the account ID and the date of the next notice separately; they are deleted when you delete your account.",
+          "If you are signed in and have allowed notifications for the app on your phone, the notice can also come as a push notification. We then store the phone's push token – the address Apple or Google uses to deliver notifications to this particular phone – together with your account ID, only to send this notice. The notice is sent through Expo (USA), which passes it on to Apple Push Notification service (iPhone) or Google Firebase Cloud Messaging (Android). It contains only the text about the subscription, nothing from your budget. The token is deleted when you sign out, delete your account or turn off notifications (the app then removes it), and when Apple or Google says it is no longer valid. You can turn off notifications for the app in your phone's settings.",
           "The log is kept for 3 years after the subscription’s last active day, also if you delete your account, but then without anything that links it to you. The basis is our legitimate interest (Article 6(1)(f)) in being able to document that we have given the information the law requires."
         ]
       },
@@ -132,9 +133,9 @@
           "Resend (USA): e-mails with sign-in codes and links.",
           "RevenueCat (USA): Pro status and purchases.",
           "Sentry (EU, Germany): crash reports, without IP address.",
-          "Expo (USA): app updates.",
+          "Expo (USA): app updates, and passing on the push notification about the subscription.",
           "Vercel (USA): our website, including the page the sign-in link opens.",
-          "Apple, Google and Meta: the App Store, Google Play, signing in with them when you choose to, and the phone's backup.",
+          "Apple, Google and Meta: the App Store, Google Play, signing in with them when you choose to, the phone's backup, and delivery of push notifications (Apple Push Notification service and Google Firebase Cloud Messaging).",
           "Exchange rates: our server fetches rates from Frankfurter and ExchangeRate-API. No data about you is sent there."
         ],
         "after": [
@@ -159,6 +160,7 @@
           "Count of AI readings (one-way code, date and number): {{aiCountDays}} days.",
           "Count of free AI scans (hashed device ID, month and number): {{scanCountMonths}} months.",
           "Log of sign-in e-mails (without the address): {{emailLogDays}} days.",
+          "Push token for the subscription notice: until you sign out, delete your account or turn off notifications.",
           "Crash reports: at most {{crashMaxDays}} days.",
           "Sign-in e-mails at Resend: {{resendDays}} days ({{linkResend}}). Supabase's own logs and backups: at most {{supabaseLogDays}} days ({{linkSupabase}}). RevenueCat ({{linkRevenueCat}}), Expo ({{linkExpo}}) and Vercel ({{linkVercel}}): under their terms, which give no fixed period.",
           "Backup on your phone: with Apple or Google, under their terms, until you delete it."

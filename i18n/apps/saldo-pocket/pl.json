@@ -101,11 +101,12 @@
           "Kod Twojego klienta RevenueCat, utworzony tajnym kluczem, oraz identyfikator zakupu ze sklepu.",
           "Sklep, produkt i plan (miesięczny lub roczny).",
           "Datę, której dotyczyło powiadomienie, kiedy zostało wyświetlone i zamknięte (ze strefą czasową telefonu) oraz czy dotknięto «Zarządzaj subskrypcją».",
-          "Kanał (w aplikacji, powiadomienie na telefonie lub e-mail), język, cenę i walutę oraz to, którą wersję tekstu otrzymałeś (z kodem tekstu).",
+          "Kanał (w aplikacji, powiadomienie zaplanowane na telefonie, powiadomienie push lub e-mail), język, cenę i walutę oraz to, którą wersję tekstu otrzymałeś (z kodem tekstu).",
           "Dla e-maili: kiedy został wysłany i identyfikator wiadomości z Resend."
         ],
         "after": [
           "Rejestr nigdy nie zawiera Twojego imienia i nazwiska, adresu e-mail ani identyfikatora konta. Aby móc wysłać e-mail, osobno przechowujemy identyfikator konta i datę następnego powiadomienia; są usuwane, gdy usuniesz konto.",
+          "Jeśli jesteś zalogowany i zezwoliłeś na powiadomienia aplikacji w telefonie, informacja może też przyjść jako powiadomienie push. Wtedy przechowujemy token push telefonu – adres, którego Apple lub Google używa do dostarczania powiadomień właśnie na ten telefon – razem z identyfikatorem Twojego konta, wyłącznie w celu wysłania tej informacji. Informacja jest wysyłana przez Expo (USA), które przekazuje ją do Apple Push Notification service (iPhone) lub Google Firebase Cloud Messaging (Android). Zawiera tylko tekst o subskrypcji, nic z Twojego budżetu. Token jest usuwany, gdy się wylogujesz, usuniesz konto lub wyłączysz powiadomienia (aplikacja wtedy go usuwa), a także gdy Apple lub Google poinformuje, że przestał być ważny. Powiadomienia aplikacji możesz wyłączyć w ustawieniach telefonu.",
           "Rejestr przechowujemy przez 3 lata od ostatniego aktywnego dnia subskrypcji, także jeśli usuniesz konto, ale wtedy bez niczego, co łączyłoby go z Tobą. Podstawą jest nasz prawnie uzasadniony interes (art. 6 ust. 1 lit. f RODO) w możliwości wykazania, że przekazaliśmy informacje wymagane przez prawo."
         ]
       },
@@ -132,9 +133,9 @@
           "Resend (USA): e-maile z kodami i linkami do logowania.",
           "RevenueCat (USA): status Pro i zakupy.",
           "Sentry (UE, Niemcy): raporty o awariach, bez adresu IP.",
-          "Expo (USA): aktualizacje aplikacji.",
+          "Expo (USA): aktualizacje aplikacji oraz przekazywanie powiadomienia push o subskrypcji.",
           "Vercel (USA): nasza strona internetowa, w tym strona otwierana przez link do logowania.",
-          "Apple, Google i Meta: App Store, Google Play, logowanie przez nie, jeśli je wybierzesz, oraz kopia zapasowa telefonu.",
+          "Apple, Google i Meta: App Store, Google Play, logowanie przez nie, jeśli je wybierzesz, kopia zapasowa telefonu oraz dostarczanie powiadomień push (Apple Push Notification service i Google Firebase Cloud Messaging).",
           "Kursy walut: nasz serwer pobiera kursy z Frankfurter i ExchangeRate-API. Żadne dane o Tobie nie są tam wysyłane."
         ],
         "after": [
@@ -159,6 +160,7 @@
           "Licznik odczytów przez AI (kod jednokierunkowy, data i liczba): {{aiCountDays}} dni.",
           "Licznik darmowych skanów AI (zahaszowany identyfikator urządzenia, miesiąc i liczba): {{scanCountMonths}} miesięcy.",
           "Dziennik e-maili logowania (bez adresu): {{emailLogDays}} dni.",
+          "Token push dla informacji o subskrypcji: do czasu wylogowania, usunięcia konta lub wyłączenia powiadomień.",
           "Raporty o awariach: najwyżej {{crashMaxDays}} dni.",
           "E-maile logowania w Resend: {{resendDays}} dni ({{linkResend}}). Własne logi i kopie zapasowe Supabase: najwyżej {{supabaseLogDays}} dni ({{linkSupabase}}). RevenueCat ({{linkRevenueCat}}), Expo ({{linkExpo}}) i Vercel ({{linkVercel}}): zgodnie z ich warunkami, które nie podają stałego okresu.",
           "Kopia zapasowa na telefonie: u Apple lub Google, zgodnie z ich warunkami, dopóki jej nie usuniesz."

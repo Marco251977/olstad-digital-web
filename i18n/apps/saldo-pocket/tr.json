@@ -101,11 +101,12 @@
           "RevenueCat müşterinden gizli bir anahtarla oluşturulan bir kod ve mağazanın satın alma kimliği.",
           "Mağaza, ürün ve plan (aylık veya yıllık).",
           "Bildirimin ait olduğu tarih, ne zaman gösterildiği ve kapatıldığı (telefonun saat dilimiyle) ve «Aboneliği yönet»e dokunup dokunmadığın.",
-          "Kanal (uygulamada, telefonda bildirim veya e-posta), dil, fiyat ve para birimi ve metnin hangi sürümünü aldığın (metnin bir koduyla).",
+          "Kanal (uygulamada, telefonda planlanmış bildirim, anlık bildirim veya e-posta), dil, fiyat ve para birimi ve metnin hangi sürümünü aldığın (metnin bir koduyla).",
           "E-posta için: ne zaman gönderildiği ve Resend’den gelen mesaj kimliği."
         ],
         "after": [
           "Kayıt hiçbir zaman adını, e-posta adresini veya hesap kimliğini içermez. E-postayı gönderebilmek için hesap kimliğini ve bir sonraki bildirimin tarihini ayrı saklarız; hesabını sildiğinde bunlar silinir.",
+          "Giriş yaptıysan ve telefonda uygulamanın bildirimlerine izin verdiysen, bu bilgilendirme anlık (push) bildirim olarak da gelebilir. Bu durumda telefonun push token’ını – Apple’ın veya Google’ın bildirimleri tam olarak bu telefona ulaştırmak için kullandığı adresi – hesap kimliğinle birlikte, yalnızca bu bilgilendirmeyi göndermek için saklarız. Bilgilendirme Expo (ABD) üzerinden gönderilir; Expo onu Apple Push Notification service’e (iPhone) veya Google Firebase Cloud Messaging’e (Android) iletir. Yalnızca abonelikle ilgili metni içerir, bütçenden hiçbir şey içermez. Token; çıkış yaptığında, hesabını sildiğinde veya bildirimleri kapattığında (uygulama o zaman onu kaldırır) ve Apple ya da Google artık geçerli olmadığını bildirdiğinde silinir. Uygulamanın bildirimlerini telefonun ayarlarından kapatabilirsin.",
           "Kayıt, aboneliğin son aktif gününden sonra 3 yıl saklanır; hesabını silsen de saklanır, ancak o zaman seninle bağlantısını kuran hiçbir şey olmadan. Dayanak, yasanın gerektirdiği bilgiyi verdiğimizi kanıtlayabilme konusundaki meşru menfaatimizdir (madde 6(1)(f))."
         ]
       },
@@ -132,9 +133,9 @@
           "Resend (ABD): giriş kodu ve bağlantısı içeren e-postalar.",
           "RevenueCat (ABD): Pro durumu ve satın alımlar.",
           "Sentry (AB, Almanya): IP adresi içermeyen çökme raporları.",
-          "Expo (ABD): uygulama güncellemeleri.",
+          "Expo (ABD): uygulama güncellemeleri ve abonelikle ilgili anlık bildirimin iletilmesi.",
           "Vercel (ABD): giriş bağlantısının açtığı sayfa da dahil olmak üzere web sitemiz.",
-          "Apple, Google ve Meta: App Store, Google Play, seçtiğinde onlarla giriş ve telefonun yedeği.",
+          "Apple, Google ve Meta: App Store, Google Play, seçtiğinde onlarla giriş, telefonun yedeği ve anlık bildirimlerin iletilmesi (Apple Push Notification service ve Google Firebase Cloud Messaging).",
           "Döviz kurları: sunucumuz kurları Frankfurter ve ExchangeRate-API’den alır. Oraya seninle ilgili hiçbir veri gönderilmez."
         ],
         "after": [
@@ -159,6 +160,7 @@
           "Yapay zekâ okuma sayısı (tek yönlü kod, tarih ve sayı): {{aiCountDays}} gün.",
           "Ücretsiz yapay zekâ tarama sayısı (karma cihaz kimliği, ay ve sayı): {{scanCountMonths}} ay.",
           "Giriş e-postaları kaydı (adres olmadan): {{emailLogDays}} gün.",
+          "Abonelik bilgilendirmesi için push token: çıkış yapana, hesabını silene veya bildirimleri kapatana kadar.",
           "Çökme raporları: en fazla {{crashMaxDays}} gün.",
           "Resend’deki giriş e-postaları: {{resendDays}} gün ({{linkResend}}). Supabase’in kendi kayıtları ve yedekleri: en fazla {{supabaseLogDays}} gün ({{linkSupabase}}). RevenueCat ({{linkRevenueCat}}), Expo ({{linkExpo}}) ve Vercel ({{linkVercel}}): sabit bir süre belirtmeyen kendi koşullarına göre.",
           "Telefondaki yedek: Apple’da veya Google’da, onların koşullarına göre, sen silene kadar."

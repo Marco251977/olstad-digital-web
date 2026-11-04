@@ -101,11 +101,12 @@
           "Um código do seu cliente no RevenueCat, gerado com uma chave secreta, e o ID da compra na loja.",
           "Loja, produto e plano (mensal ou anual).",
           "A data a que o aviso se referia, quando ele foi mostrado e fechado (com o fuso horário do celular) e se você tocou em «Gerenciar assinatura».",
-          "Canal (no app, notificação no celular ou e-mail), idioma, preço e moeda, e qual versão do texto você recebeu (com um código do texto).",
+          "Canal (no app, notificação agendada no celular, notificação push ou e-mail), idioma, preço e moeda, e qual versão do texto você recebeu (com um código do texto).",
           "Para o e-mail: quando ele foi enviado e o ID da mensagem no Resend."
         ],
         "after": [
           "O registro nunca contém seu nome, seu e-mail ou o ID da sua conta. Para poder enviar o e-mail, guardamos à parte o ID da conta e a data do próximo aviso; eles são excluídos quando você exclui a conta.",
+          "Se você entrou na sua conta e permitiu notificações do app no celular, o aviso também pode chegar como notificação push. Nesse caso guardamos o token de push do celular – o endereço que a Apple ou o Google usam para entregar notificações a esse celular específico – junto com o ID da sua conta, só para enviar este aviso. O aviso é enviado pela Expo (EUA), que o repassa ao Apple Push Notification service (iPhone) ou ao Google Firebase Cloud Messaging (Android). Ele contém só o texto sobre a assinatura, nada do seu orçamento. O token é apagado quando você sai da conta, exclui a conta ou desativa as notificações (o app o remove nesse momento), e quando a Apple ou o Google informam que ele não é mais válido. Você pode desativar as notificações do app nos ajustes do celular.",
           "O registro é guardado por 3 anos após o último dia ativo da assinatura, também se você excluir a conta, mas então sem nada que o ligue a você. A base é o nosso legítimo interesse (artigo 6(1)(f)) em poder comprovar que demos as informações exigidas por lei."
         ]
       },
@@ -132,9 +133,9 @@
           "Resend (EUA): e-mails com códigos e links de login.",
           "RevenueCat (EUA): status do Pro e compras.",
           "Sentry (UE, Alemanha): relatórios de falhas, sem endereço IP.",
-          "Expo (EUA): atualizações do app.",
+          "Expo (EUA): atualizações do app e repasse da notificação push sobre a assinatura.",
           "Vercel (EUA): nosso site, incluindo a página que o link de login abre.",
-          "Apple, Google e Meta: App Store, Google Play, login com eles quando você escolhe e o backup do celular.",
+          "Apple, Google e Meta: App Store, Google Play, login com eles quando você escolhe, o backup do celular e a entrega de notificações push (Apple Push Notification service e Google Firebase Cloud Messaging).",
           "Câmbio: nosso servidor busca as cotações no Frankfurter e na ExchangeRate-API. Nenhum dado sobre você é enviado para lá."
         ],
         "after": [
@@ -159,6 +160,7 @@
           "Contagem de leituras por IA (código irreversível, data e número): {{aiCountDays}} dias.",
           "Contagem de escaneamentos gratuitos com IA (ID de dispositivo com hash, mês e número): {{scanCountMonths}} meses.",
           "Registro dos e-mails de login (sem endereço): {{emailLogDays}} dias.",
+          "Token de push para o aviso da assinatura: até você sair da conta, excluir a conta ou desativar as notificações.",
           "Relatórios de falhas: no máximo {{crashMaxDays}} dias.",
           "E-mails de login no Resend: {{resendDays}} dias ({{linkResend}}). Registros e backups da própria Supabase: no máximo {{supabaseLogDays}} dias ({{linkSupabase}}). RevenueCat ({{linkRevenueCat}}), Expo ({{linkExpo}}) e Vercel ({{linkVercel}}): conforme os termos deles, que não informam um prazo fixo.",
           "Backup no celular: na Apple ou no Google, conforme os termos deles, até você apagá-lo."

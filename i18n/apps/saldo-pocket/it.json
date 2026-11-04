@@ -101,11 +101,12 @@
           "Un codice del tuo cliente RevenueCat, creato con una chiave segreta, e l’ID di acquisto dello store.",
           "Store, prodotto e piano (mensile o annuale).",
           "La data a cui si riferiva l’avviso, quando è stato mostrato e chiuso (con il fuso orario del telefono) e se hai toccato «Gestisci abbonamento».",
-          "Canale (nell’app, notifica sul telefono o e-mail), lingua, prezzo e valuta, e quale versione del testo hai ricevuto (con un codice del testo).",
+          "Canale (nell’app, notifica programmata sul telefono, notifica push o e-mail), lingua, prezzo e valuta, e quale versione del testo hai ricevuto (con un codice del testo).",
           "Per l’e-mail: quando è stata inviata e l’ID del messaggio di Resend."
         ],
         "after": [
           "Il registro non contiene mai il tuo nome, il tuo indirizzo e-mail né l’ID del tuo account. Per poter inviare l’e-mail conserviamo a parte l’ID dell’account e la data del prossimo avviso; vengono eliminati quando elimini l’account.",
+          "Se hai effettuato l’accesso e hai consentito le notifiche dell’app sul telefono, l’avviso può arrivare anche come notifica push. In quel caso salviamo il token push del telefono – l’indirizzo che Apple o Google usano per recapitare le notifiche proprio a quel telefono – insieme all’ID del tuo account, solo per inviare questo avviso. L’avviso viene inviato tramite Expo (USA), che lo inoltra ad Apple Push Notification service (iPhone) o a Google Firebase Cloud Messaging (Android). Contiene solo il testo sull’abbonamento, niente del tuo budget. Il token viene eliminato quando esci dall’account, elimini l’account o disattivi le notifiche (in quel caso l’app lo rimuove), e quando Apple o Google indicano che non è più valido. Puoi disattivare le notifiche dell’app nelle impostazioni del telefono.",
           "Il registro viene conservato per 3 anni dopo l’ultimo giorno attivo dell’abbonamento, anche se elimini l’account, ma allora senza nulla che lo colleghi a te. La base è il nostro legittimo interesse (art. 6, par. 1, lett. f) GDPR) a poter dimostrare di aver fornito le informazioni richieste dalla legge."
         ]
       },
@@ -132,9 +133,9 @@
           "Resend (USA): e-mail con codici e link di accesso.",
           "RevenueCat (USA): stato Pro e acquisti.",
           "Sentry (UE, Germania): rapporti sugli arresti anomali, senza indirizzo IP.",
-          "Expo (USA): aggiornamenti dell’app.",
+          "Expo (USA): aggiornamenti dell’app e inoltro della notifica push sull’abbonamento.",
           "Vercel (USA): il nostro sito web, inclusa la pagina aperta dal link di accesso.",
-          "Apple, Google e Meta: App Store, Google Play, l’accesso con loro se lo scegli, e il backup del telefono.",
+          "Apple, Google e Meta: App Store, Google Play, l’accesso con loro se lo scegli, il backup del telefono e il recapito delle notifiche push (Apple Push Notification service e Google Firebase Cloud Messaging).",
           "Tassi di cambio: il nostro server ottiene i tassi da Frankfurter ed ExchangeRate-API. A loro non viene inviato alcun dato su di te."
         ],
         "after": [
@@ -159,6 +160,7 @@
           "Conteggio delle letture con IA (codice a senso unico, data e numero): {{aiCountDays}} giorni.",
           "Conteggio delle scansioni gratuite con IA (ID dispositivo con hash, mese e numero): {{scanCountMonths}} mesi.",
           "Registro delle e-mail di accesso (senza indirizzo): {{emailLogDays}} giorni.",
+          "Token push per l’avviso sull’abbonamento: finché non esci dall’account, elimini l’account o disattivi le notifiche.",
           "Rapporti sugli arresti anomali: al massimo {{crashMaxDays}} giorni.",
           "E-mail di accesso presso Resend: {{resendDays}} giorni ({{linkResend}}). Log e backup propri di Supabase: al massimo {{supabaseLogDays}} giorni ({{linkSupabase}}). RevenueCat ({{linkRevenueCat}}), Expo ({{linkExpo}}) e Vercel ({{linkVercel}}): secondo i loro termini, che non indicano un periodo fisso.",
           "Backup del telefono: presso Apple o Google, secondo i loro termini, finché non lo elimini."

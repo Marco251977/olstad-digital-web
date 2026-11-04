@@ -101,11 +101,12 @@
           "Einen Code deines RevenueCat-Kunden, erstellt mit einem geheimen Schlüssel, und die Kauf-ID des Stores.",
           "Store, Produkt und Plan (Monat oder Jahr).",
           "Das Datum, für das der Hinweis galt, wann er angezeigt und geschlossen wurde (mit der Zeitzone des Handys) und ob du auf „Abo verwalten“ getippt hast.",
-          "Kanal (in der App, Mitteilung auf dem Handy oder E-Mail), Sprache, Preis und Währung sowie die Version des Textes, die du bekommen hast (mit einem Code des Textes).",
+          "Kanal (in der App, auf dem Handy geplante Mitteilung, Push-Mitteilung oder E-Mail), Sprache, Preis und Währung sowie die Version des Textes, die du bekommen hast (mit einem Code des Textes).",
           "Bei E-Mails: wann sie gesendet wurde, und die Nachrichten-ID von Resend."
         ],
         "after": [
           "Das Protokoll enthält nie deinen Namen, deine E-Mail-Adresse oder deine Konto-ID. Um die E-Mail senden zu können, speichern wir die Konto-ID und das Datum des nächsten Hinweises getrennt; beides wird gelöscht, wenn du dein Konto löschst.",
+          "Bist du angemeldet und hast Mitteilungen für die App auf dem Handy erlaubt, kann der Hinweis auch als Push-Mitteilung kommen. Dann speichern wir das Push-Token des Handys – die Adresse, über die Apple oder Google Mitteilungen an genau dieses Handy zustellt – zusammen mit deiner Konto-ID, nur um diesen Hinweis zu senden. Der Hinweis wird über Expo (USA) gesendet, das ihn an den Apple Push Notification Service (iPhone) oder Google Firebase Cloud Messaging (Android) weitergibt. Er enthält nur den Text zum Abo, nichts aus deinem Budget. Das Token wird gelöscht, wenn du dich abmeldest, dein Konto löschst oder Mitteilungen ausschaltest (die App entfernt es dann), und wenn Apple oder Google meldet, dass es nicht mehr gilt. Mitteilungen für die App kannst du in den Einstellungen des Handys ausschalten.",
           "Das Protokoll wird 3 Jahre nach dem letzten aktiven Tag des Abos aufbewahrt, auch wenn du dein Konto löschst, dann aber ohne etwas, das es mit dir verbindet. Rechtsgrundlage ist unser berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO), nachweisen zu können, dass wir die gesetzlich vorgeschriebenen Informationen gegeben haben."
         ]
       },
@@ -132,9 +133,9 @@
           "Resend (USA): E-Mails mit Anmeldecodes und -links.",
           "RevenueCat (USA): Pro-Status und Käufe.",
           "Sentry (EU, Deutschland): Absturzberichte, ohne IP-Adresse.",
-          "Expo (USA): App-Updates.",
+          "Expo (USA): App-Updates und Weitergabe der Push-Mitteilung zum Abo.",
           "Vercel (USA): unsere Website, auch die Seite, die der Anmeldelink öffnet.",
-          "Apple, Google und Meta: App Store, Google Play, die Anmeldung mit ihnen, wenn du sie wählst, und die Datensicherung des Telefons.",
+          "Apple, Google und Meta: App Store, Google Play, die Anmeldung mit ihnen, wenn du sie wählst, die Datensicherung des Telefons und die Zustellung von Push-Mitteilungen (Apple Push Notification Service und Google Firebase Cloud Messaging).",
           "Wechselkurse: Unser Server ruft Kurse von Frankfurter und ExchangeRate-API ab. Dabei werden keine Daten über dich gesendet."
         ],
         "after": [
@@ -159,6 +160,7 @@
           "Zählung der KI-Lesevorgänge (Einwegcode, Datum und Anzahl): {{aiCountDays}} Tage.",
           "Zählung kostenloser KI-Scans (gehashte Geräte-ID, Monat und Anzahl): {{scanCountMonths}} Monate.",
           "Protokoll der Anmelde-E-Mails (ohne Adresse): {{emailLogDays}} Tage.",
+          "Push-Token für den Hinweis zum Abo: bis du dich abmeldest, dein Konto löschst oder Mitteilungen ausschaltest.",
           "Absturzberichte: höchstens {{crashMaxDays}} Tage.",
           "Anmelde-E-Mails bei Resend: {{resendDays}} Tage ({{linkResend}}). Eigene Protokolle und Sicherungen von Supabase: höchstens {{supabaseLogDays}} Tage ({{linkSupabase}}). RevenueCat ({{linkRevenueCat}}), Expo ({{linkExpo}}) und Vercel ({{linkVercel}}): nach deren Bedingungen, die keine feste Frist nennen.",
           "Datensicherung auf dem Telefon: bei Apple oder Google, nach deren Bedingungen, bis du sie löschst."

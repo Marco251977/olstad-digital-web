@@ -101,11 +101,12 @@
           "用密钥生成的你的 RevenueCat 客户代码，以及商店的购买 ID。",
           "商店、产品和方案（按月或按年）。",
           "通知所对应的日期、通知显示和关闭的时间（附手机的时区），以及你是否点按了“管理订阅”。",
-          "渠道（应用内、手机通知或电子邮件）、语言、价格和币种，以及你收到的文本版本（附文本的代码）。",
+          "渠道（应用内、手机上预约的通知、推送通知或电子邮件）、语言、价格和币种，以及你收到的文本版本（附文本的代码）。",
           "电子邮件：发送时间以及 Resend 的邮件 ID。"
         ],
         "after": [
           "记录中绝不包含你的姓名、电子邮件地址或账户 ID。为了能发送电子邮件，我们会单独保存账户 ID 和下一次通知的日期；你删除账户时它们会被删除。",
+          "如果你已登录并在手机上允许了应用的通知，这条通知也可能以推送通知的形式送达。此时我们会保存手机的推送令牌（Apple 或 Google 用来把通知送到这台手机的地址），并与你的账户 ID 关联，仅用于发送这条通知。通知通过 Expo（美国）发送，再由 Expo 转交给 Apple Push Notification service（iPhone）或 Google Firebase Cloud Messaging（Android）。通知只包含有关订阅的文字，不包含你的预算内容。在你退出登录、删除账户或关闭通知时（届时应用会将其删除），以及 Apple 或 Google 告知令牌已失效时，令牌会被删除。你可以在手机设置中关闭应用的通知。",
           "记录在订阅最后一个有效日之后保存 3 年；即使你删除账户也会保留，但届时不再包含任何能将其与你关联的信息。依据是我们能够证明已提供法律所要求信息的正当利益（第 6 条第 1 款 (f) 项）。"
         ]
       },
@@ -132,9 +133,9 @@
           "Resend（美国）：包含登录验证码和链接的电子邮件。",
           "RevenueCat（美国）：Pro 状态和购买。",
           "Sentry（欧盟，德国）：崩溃报告，不含 IP 地址。",
-          "Expo（美国）：应用更新。",
+          "Expo（美国）：应用更新，以及转发有关订阅的推送通知。",
           "Vercel（美国）：我们的网站，包括登录链接打开的页面。",
-          "Apple、Google 和 Meta：App Store、Google Play、你选择时通过它们登录，以及手机备份。",
+          "Apple、Google 和 Meta：App Store、Google Play、你选择时通过它们登录、手机备份，以及推送通知的投递（Apple Push Notification service 和 Google Firebase Cloud Messaging）。",
           "汇率：我们的服务器从 Frankfurter 和 ExchangeRate-API 获取汇率。不会向它们发送任何关于你的数据。"
         ],
         "after": [
@@ -159,6 +160,7 @@
           "AI 读取计数（单向代码、日期和次数）：{{aiCountDays}} 天。",
           "免费 AI 扫描计数（哈希设备 ID、月份和次数）：{{scanCountMonths}} 个月。",
           "登录邮件日志（不含地址）：{{emailLogDays}} 天。",
+          "用于订阅通知的推送令牌：保存到你退出登录、删除账户或关闭通知为止。",
           "崩溃报告：最多 {{crashMaxDays}} 天。",
           "Resend 上的登录邮件：{{resendDays}} 天（{{linkResend}}）。Supabase 自身的日志和备份：最多 {{supabaseLogDays}} 天（{{linkSupabase}}）。RevenueCat（{{linkRevenueCat}}）、Expo（{{linkExpo}}）和 Vercel（{{linkVercel}}）：按其条款，条款中未规定固定期限。",
           "手机备份：保存在 Apple 或 Google，按其条款，直到你删除为止。"

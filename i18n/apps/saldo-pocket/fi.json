@@ -101,11 +101,12 @@
           "RevenueCat-asiakkaastasi salaisella avaimella tehdyn koodin ja kaupan ostotunnisteen.",
           "Kaupan, tuotteen ja tilausjakson (kuukausi tai vuosi).",
           "Päivän, jota ilmoitus koski, milloin se näytettiin ja suljettiin (puhelimen aikavyöhykkeen kanssa), ja napautitko «Hallitse tilausta».",
-          "Kanavan (sovelluksessa, ilmoitus puhelimessa tai sähköposti), kielen, hinnan ja valuutan sekä sen, minkä version tekstistä sait (tekstistä tehdyn koodin kanssa).",
+          "Kanavan (sovelluksessa, puhelimeen ajastettu ilmoitus, push-ilmoitus tai sähköposti), kielen, hinnan ja valuutan sekä sen, minkä version tekstistä sait (tekstistä tehdyn koodin kanssa).",
           "Sähköpostista: milloin se lähetettiin, ja Resendin viestitunnisteen."
         ],
         "after": [
           "Loki ei koskaan sisällä nimeäsi, sähköpostiosoitettasi eikä tilisi tunnistetta. Jotta sähköposti voidaan lähettää, tallennamme tilin tunnisteen ja seuraavan ilmoituksen päivän erikseen; ne poistetaan, kun poistat tilisi.",
+          "Jos olet kirjautunut sisään ja sallinut sovelluksen ilmoitukset puhelimessa, muistutus voi tulla myös push-ilmoituksena. Silloin tallennamme puhelimen push-tunnisteen – osoitteen, jolla Apple tai Google toimittaa ilmoitukset juuri tähän puhelimeen – tilisi tunnisteen kanssa, vain tämän muistutuksen lähettämistä varten. Muistutus lähetetään Expon (USA) kautta, joka välittää sen Apple Push Notification serviceen (iPhone) tai Google Firebase Cloud Messagingiin (Android). Se sisältää vain tilausta koskevan tekstin, ei mitään budjetistasi. Tunniste poistetaan, kun kirjaudut ulos, poistat tilin tai poistat ilmoitukset käytöstä (sovellus poistaa sen silloin), ja kun Apple tai Google ilmoittaa, ettei se ole enää voimassa. Voit poistaa sovelluksen ilmoitukset käytöstä puhelimen asetuksista.",
           "Lokia säilytetään 3 vuotta tilauksen viimeisen voimassaolopäivän jälkeen, myös jos poistat tilisi, mutta silloin ilman mitään, mikä yhdistäisi sen sinuun. Perusteena on oikeutettu etumme (6 artiklan 1 kohdan f alakohta) voida osoittaa, että olemme antaneet lain edellyttämät tiedot."
         ]
       },
@@ -132,9 +133,9 @@
           "Resend (USA): sähköpostit, joissa on kirjautumiskoodeja ja -linkkejä.",
           "RevenueCat (USA): Pro-tila ja ostot.",
           "Sentry (EU, Saksa): kaatumisraportit ilman IP-osoitetta.",
-          "Expo (USA): sovelluspäivitykset.",
+          "Expo (USA): sovelluspäivitykset sekä tilausta koskevan push-ilmoituksen välittäminen.",
           "Vercel (USA): verkkosivustomme, myös sivu, jonka kirjautumislinkki avaa.",
-          "Apple, Google ja Meta: App Store, Google Play, kirjautuminen niillä, kun valitset sen, sekä puhelimen varmuuskopio.",
+          "Apple, Google ja Meta: App Store, Google Play, kirjautuminen niillä, kun valitset sen, puhelimen varmuuskopio sekä push-ilmoitusten toimittaminen (Apple Push Notification service ja Google Firebase Cloud Messaging).",
           "Valuuttakurssit: palvelimemme hakee kurssit Frankfurterista ja ExchangeRate-API:sta. Sinusta ei lähetetä sinne mitään tietoja."
         ],
         "after": [
@@ -159,6 +160,7 @@
           "Tekoälylukemisten laskenta (yksisuuntainen koodi, päivämäärä ja määrä): {{aiCountDays}} päivää.",
           "Ilmaisten tekoälyskannausten laskuri (tiivistetty laitetunniste, kuukausi ja määrä): {{scanCountMonths}} kuukautta.",
           "Kirjautumissähköpostien loki (ilman osoitetta): {{emailLogDays}} päivää.",
+          "Tilausmuistutuksen push-tunniste: kunnes kirjaudut ulos, poistat tilin tai poistat ilmoitukset käytöstä.",
           "Kaatumisraportit: enintään {{crashMaxDays}} päivää.",
           "Kirjautumissähköpostit Resendillä: {{resendDays}} päivää ({{linkResend}}). Supabasen omat lokit ja varmuuskopiot: enintään {{supabaseLogDays}} päivää ({{linkSupabase}}). RevenueCat ({{linkRevenueCat}}), Expo ({{linkExpo}}) ja Vercel ({{linkVercel}}): niiden ehtojen mukaisesti, joissa ei mainita kiinteää aikaa.",
           "Varmuuskopio puhelimessa: Applella tai Googlella niiden ehtojen mukaisesti, kunnes poistat sen."
