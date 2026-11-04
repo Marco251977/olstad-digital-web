@@ -93,6 +93,23 @@
         ]
       },
       {
+        "heading": "Besked om at Pro-abonnementet løber",
+        "body": [
+          "Har du et Pro-abonnement, der fornyes hver måned eller hvert år, viser appen mindst hver sjette måned et besked om, at abonnementet løber, hvad det koster, og hvordan du opsiger det. Er du logget ind, får du det også på e-mail. Norsk lov kræver beskeden (digitalytelsesloven § 33), og vi logger hver besked for at kunne dokumentere, at den blev givet. Loggen indeholder:"
+        ],
+        "list": [
+          "En kode af din RevenueCat-kunde, lavet med en hemmelig nøgle, og butikkens købs-ID.",
+          "Butik, produkt og plan (måned eller år).",
+          "Datoen beskeden gjaldt, hvornår den blev vist og lukket (med telefonens tidszone), og om du trykkede på «Administrer abonnement».",
+          "Kanal (i appen, notifikation på telefonen eller e-mail), sprog, pris og valuta, og hvilken version af teksten du fik (med en kode af teksten).",
+          "For e-mail: hvornår den blev sendt, og besked-ID’et fra Resend."
+        ],
+        "after": [
+          "Loggen indeholder aldrig dit navn, din e-mailadresse eller dit konto-ID. For at kunne sende e-mailen gemmer vi konto-ID’et og datoen for næste besked for sig; det slettes, når du sletter kontoen.",
+          "Loggen gemmes i 3 år efter abonnementets sidste aktive dag, også hvis du sletter kontoen, men så uden noget, der forbinder den med dig. Grundlaget er vores legitime interesse (artikel 6, stk. 1, litra f) i at kunne dokumentere, at vi har givet de oplysninger, loven kræver."
+        ]
+      },
+      {
         "heading": "Valgfri konto og synkronisering (Pro)",
         "body": [
           "Du kan logge ind med Apple, Google, Facebook (Meta) eller e-mail. Login håndteres af Supabase på servere i {{region}}. Vi gemmer så din e-mailadresse, et konto-ID, dit navn, hvis udbyderen deler det, appens sprog og, i testversioner, et testflag. Med Apple kan du skjule din e-mailadresse; så ser vi kun Apples videresendelsesadresse.",

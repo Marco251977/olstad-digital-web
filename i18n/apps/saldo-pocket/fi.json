@@ -93,6 +93,23 @@
         ]
       },
       {
+        "heading": "Ilmoitus siitä, että Pro-tilaus on voimassa",
+        "body": [
+          "Jos sinulla on Pro-tilaus, joka uusiutuu joka kuukausi tai joka vuosi, sovellus näyttää vähintään kuuden kuukauden välein ilmoituksen siitä, että tilaus on voimassa, mitä se maksaa ja miten sen voi peruuttaa. Jos olet kirjautunut, saat sen myös sähköpostiin. Norjan laki edellyttää ilmoitusta (digitalytelsesloven 33 §), ja kirjaamme jokaisen ilmoituksen lokiin voidaksemme osoittaa, että se annettiin. Loki sisältää:"
+        ],
+        "list": [
+          "RevenueCat-asiakkaastasi salaisella avaimella tehdyn koodin ja kaupan ostotunnisteen.",
+          "Kaupan, tuotteen ja tilausjakson (kuukausi tai vuosi).",
+          "Päivän, jota ilmoitus koski, milloin se näytettiin ja suljettiin (puhelimen aikavyöhykkeen kanssa), ja napautitko «Hallitse tilausta».",
+          "Kanavan (sovelluksessa, ilmoitus puhelimessa tai sähköposti), kielen, hinnan ja valuutan sekä sen, minkä version tekstistä sait (tekstistä tehdyn koodin kanssa).",
+          "Sähköpostista: milloin se lähetettiin, ja Resendin viestitunnisteen."
+        ],
+        "after": [
+          "Loki ei koskaan sisällä nimeäsi, sähköpostiosoitettasi eikä tilisi tunnistetta. Jotta sähköposti voidaan lähettää, tallennamme tilin tunnisteen ja seuraavan ilmoituksen päivän erikseen; ne poistetaan, kun poistat tilisi.",
+          "Lokia säilytetään 3 vuotta tilauksen viimeisen voimassaolopäivän jälkeen, myös jos poistat tilisi, mutta silloin ilman mitään, mikä yhdistäisi sen sinuun. Perusteena on oikeutettu etumme (6 artiklan 1 kohdan f alakohta) voida osoittaa, että olemme antaneet lain edellyttämät tiedot."
+        ]
+      },
+      {
         "heading": "Vapaaehtoinen tili ja synkronointi (Pro)",
         "body": [
           "Voit kirjautua Applella, Googlella, Facebookilla (Meta) tai sähköpostilla. Kirjautumisen hoitaa Supabase palvelimilla, joiden sijaintimaa on {{region}}. Tallennamme silloin sähköpostiosoitteesi, tilitunnisteen, nimesi jos palvelu jakaa sen, sovelluksen kielen ja testiversioissa testimerkinnän. Applella voit piilottaa sähköpostiosoitteesi; näemme silloin vain Applen välitysosoitteen.",

@@ -93,6 +93,23 @@
         ]
       },
       {
+        "heading": "Melding dat je Pro-abonnement loopt",
+        "body": [
+          "Heb je een Pro-abonnement dat elke maand of elk jaar wordt verlengd, dan toont de app minstens elke zes maanden een melding dat het abonnement loopt, wat het kost en hoe je het opzegt. Ben je ingelogd, dan krijg je die ook per e-mail. De Noorse wet verplicht deze melding (digitalytelsesloven, § 33), en we leggen elke melding vast om te kunnen aantonen dat die is gegeven. Het logboek bevat:"
+        ],
+        "list": [
+          "Een code van je RevenueCat-klant, gemaakt met een geheime sleutel, en de aankoop-ID van de winkel.",
+          "Winkel, product en abonnementsvorm (maand of jaar).",
+          "De datum waarvoor de melding gold, wanneer die werd getoond en gesloten (met de tijdzone van de telefoon), en of je op «Abonnement beheren» tikte.",
+          "Kanaal (in de app, melding op de telefoon of e-mail), taal, prijs en valuta, en welke versie van de tekst je kreeg (met een code van de tekst).",
+          "Bij e-mail: wanneer die is verstuurd, en de bericht-ID van Resend."
+        ],
+        "after": [
+          "Het logboek bevat nooit je naam, je e-mailadres of je account-ID. Om de e-mail te kunnen versturen, bewaren we de account-ID en de datum van de volgende melding apart; die worden verwijderd als je je account verwijdert.",
+          "Het logboek wordt 3 jaar na de laatste actieve dag van het abonnement bewaard, ook als je je account verwijdert, maar dan zonder iets wat het aan jou koppelt. De grondslag is ons gerechtvaardigd belang (artikel 6, lid 1, onder f AVG) om te kunnen aantonen dat we de informatie hebben gegeven die de wet vereist."
+        ]
+      },
+      {
         "heading": "Optioneel account en synchronisatie (Pro)",
         "body": [
           "Je kunt inloggen met Apple, Google, Facebook (Meta) of e-mail. Het inloggen verloopt via Supabase op servers in {{region}}. We bewaren dan je e-mailadres, een account-ID, je naam als de aanbieder die deelt, de taal van de app en, in testversies, een testmarkering. Met Apple kun je je e-mailadres verbergen; dan zien we alleen het doorstuuradres van Apple.",

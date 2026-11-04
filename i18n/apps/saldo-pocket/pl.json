@@ -93,6 +93,23 @@
         ]
       },
       {
+        "heading": "Powiadomienie, że subskrypcja Pro jest aktywna",
+        "body": [
+          "Jeśli masz subskrypcję Pro odnawianą co miesiąc lub co rok, aplikacja co najmniej raz na sześć miesięcy pokazuje powiadomienie, że subskrypcja jest aktywna, ile kosztuje i jak ją anulować. Jeśli jesteś zalogowany, dostajesz je także e-mailem. Wymaga tego prawo norweskie (digitalytelsesloven, § 33), a każde powiadomienie zapisujemy, aby móc wykazać, że zostało przekazane. Rejestr zawiera:"
+        ],
+        "list": [
+          "Kod Twojego klienta RevenueCat, utworzony tajnym kluczem, oraz identyfikator zakupu ze sklepu.",
+          "Sklep, produkt i plan (miesięczny lub roczny).",
+          "Datę, której dotyczyło powiadomienie, kiedy zostało wyświetlone i zamknięte (ze strefą czasową telefonu) oraz czy dotknięto «Zarządzaj subskrypcją».",
+          "Kanał (w aplikacji, powiadomienie na telefonie lub e-mail), język, cenę i walutę oraz to, którą wersję tekstu otrzymałeś (z kodem tekstu).",
+          "Dla e-maili: kiedy został wysłany i identyfikator wiadomości z Resend."
+        ],
+        "after": [
+          "Rejestr nigdy nie zawiera Twojego imienia i nazwiska, adresu e-mail ani identyfikatora konta. Aby móc wysłać e-mail, osobno przechowujemy identyfikator konta i datę następnego powiadomienia; są usuwane, gdy usuniesz konto.",
+          "Rejestr przechowujemy przez 3 lata od ostatniego aktywnego dnia subskrypcji, także jeśli usuniesz konto, ale wtedy bez niczego, co łączyłoby go z Tobą. Podstawą jest nasz prawnie uzasadniony interes (art. 6 ust. 1 lit. f RODO) w możliwości wykazania, że przekazaliśmy informacje wymagane przez prawo."
+        ]
+      },
+      {
         "heading": "Opcjonalne konto i synchronizacja (Pro)",
         "body": [
           "Możesz zalogować się przez Apple, Google, Facebook (Meta) lub e-mail. Logowaniem zajmuje się Supabase na serwerach w kraju: {{region}}. Zapisujemy wtedy Twój adres e-mail, ID konta, imię i nazwisko, jeśli dostawca je udostępnia, język aplikacji oraz w wersjach testowych znacznik testu. Z Apple możesz ukryć adres e-mail; widzimy wtedy tylko adres przekazujący Apple.",

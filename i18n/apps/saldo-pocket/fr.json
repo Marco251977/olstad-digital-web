@@ -93,6 +93,23 @@
         ]
       },
       {
+        "heading": "Avis indiquant que votre abonnement Pro est en cours",
+        "body": [
+          "Si vous avez un abonnement Pro qui se renouvelle chaque mois ou chaque année, l’app affiche au moins tous les six mois un avis indiquant que l’abonnement est en cours, ce qu’il coûte et comment le résilier. Si vous êtes connecté, vous le recevez aussi par e-mail. Le droit norvégien impose cet avis (digitalytelsesloven, article 33), et nous enregistrons chaque avis afin de pouvoir prouver qu’il a été donné. Le journal contient :"
+        ],
+        "list": [
+          "Un code de votre client RevenueCat, créé avec une clé secrète, et l’identifiant d’achat de la boutique.",
+          "La boutique, le produit et la formule (mois ou année).",
+          "La date à laquelle l’avis se rapportait, quand il a été affiché et fermé (avec le fuseau horaire du téléphone), et si vous avez touché « Gérer l’abonnement ».",
+          "Le canal (dans l’app, notification sur le téléphone ou e-mail), la langue, le prix et la devise, et la version du texte que vous avez reçue (avec un code du texte).",
+          "Pour les e-mails : quand il a été envoyé, et l’identifiant du message chez Resend."
+        ],
+        "after": [
+          "Le journal ne contient jamais votre nom, votre adresse e-mail ni l’identifiant de votre compte. Pour pouvoir envoyer l’e-mail, nous conservons séparément l’identifiant du compte et la date du prochain avis ; ils sont supprimés lorsque vous supprimez votre compte.",
+          "Le journal est conservé 3 ans après le dernier jour actif de l’abonnement, même si vous supprimez votre compte, mais alors sans rien qui le relie à vous. La base est notre intérêt légitime (article 6, paragraphe 1, point f) du RGPD) à pouvoir prouver que nous avons donné les informations exigées par la loi."
+        ]
+      },
+      {
         "heading": "Compte facultatif et synchronisation (Pro)",
         "body": [
           "Vous pouvez vous connecter avec Apple, Google, Facebook (Meta) ou un e-mail. La connexion est gérée par Supabase sur des serveurs en {{region}}. Nous enregistrons alors votre adresse e-mail, un identifiant de compte, votre nom si le fournisseur le partage, la langue de l’application et, dans les versions de test, un indicateur de test. Avec Apple, vous pouvez masquer votre adresse e-mail ; nous ne voyons alors que l’adresse de relais d’Apple.",

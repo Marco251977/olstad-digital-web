@@ -10,6 +10,9 @@
         "support"
       ],
       "lastUpdated": "2026-10-22",
+      "pageUpdated": {
+        "privacy": "2026-11-04"
+      },
       "supabase": {
         "country": "IE",
         "region": "eu-west-1"
@@ -54,7 +57,10 @@
         "stats": {
           "source": "saldo"
         },
-        "approval": null
+        "approval": null,
+        "notices": {
+          "source": "saldo"
+        }
       }
     },
     {

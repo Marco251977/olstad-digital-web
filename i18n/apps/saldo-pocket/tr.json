@@ -93,6 +93,23 @@
         ]
       },
       {
+        "heading": "Pro aboneliğinin devam ettiğine dair bildirim",
+        "body": [
+          "Her ay veya her yıl yenilenen bir Pro aboneliğin varsa, uygulama en az altı ayda bir aboneliğin devam ettiğini, ne kadar tuttuğunu ve nasıl iptal edeceğini söyleyen bir bildirim gösterir. Giriş yaptıysan bunu e-postayla da alırsın. Bu bildirim Norveç yasasıyla zorunludur (digitalytelsesloven, § 33) ve verildiğini kanıtlayabilmek için her bildirimi kayda alırız. Kayıt şunları içerir:"
+        ],
+        "list": [
+          "RevenueCat müşterinden gizli bir anahtarla oluşturulan bir kod ve mağazanın satın alma kimliği.",
+          "Mağaza, ürün ve plan (aylık veya yıllık).",
+          "Bildirimin ait olduğu tarih, ne zaman gösterildiği ve kapatıldığı (telefonun saat dilimiyle) ve «Aboneliği yönet»e dokunup dokunmadığın.",
+          "Kanal (uygulamada, telefonda bildirim veya e-posta), dil, fiyat ve para birimi ve metnin hangi sürümünü aldığın (metnin bir koduyla).",
+          "E-posta için: ne zaman gönderildiği ve Resend’den gelen mesaj kimliği."
+        ],
+        "after": [
+          "Kayıt hiçbir zaman adını, e-posta adresini veya hesap kimliğini içermez. E-postayı gönderebilmek için hesap kimliğini ve bir sonraki bildirimin tarihini ayrı saklarız; hesabını sildiğinde bunlar silinir.",
+          "Kayıt, aboneliğin son aktif gününden sonra 3 yıl saklanır; hesabını silsen de saklanır, ancak o zaman seninle bağlantısını kuran hiçbir şey olmadan. Dayanak, yasanın gerektirdiği bilgiyi verdiğimizi kanıtlayabilme konusundaki meşru menfaatimizdir (madde 6(1)(f))."
+        ]
+      },
+      {
         "heading": "İsteğe bağlı hesap ve eşitleme (Pro)",
         "body": [
           "Apple, Google, Facebook (Meta) veya e-posta ile giriş yapabilirsin. Giriş, {{region}} konumundaki sunucularda Supabase tarafından yönetilir. Bu durumda e-posta adresini, bir hesap kimliğini, sağlayıcı paylaşırsa adını, uygulama dilini ve test sürümlerinde bir test işaretini saklarız. Apple ile e-posta adresini gizleyebilirsin; o zaman yalnızca Apple’ın yönlendirme adresini görürüz.",

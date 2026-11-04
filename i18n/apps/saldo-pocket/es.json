@@ -93,6 +93,23 @@
         ]
       },
       {
+        "heading": "Aviso de que tu suscripción Pro sigue activa",
+        "body": [
+          "Si tienes una suscripción Pro que se renueva cada mes o cada año, la app muestra al menos cada seis meses un aviso de que la suscripción sigue activa, cuánto cuesta y cómo cancelarla. Si has iniciado sesión, también lo recibes por correo electrónico. La ley noruega exige el aviso (digitalytelsesloven, artículo 33), y registramos cada aviso para poder demostrar que se dio. El registro contiene:"
+        ],
+        "list": [
+          "Un código de tu cliente de RevenueCat, creado con una clave secreta, y el ID de compra de la tienda.",
+          "Tienda, producto y plan (mensual o anual).",
+          "La fecha a la que correspondía el aviso, cuándo se mostró y se cerró (con la zona horaria del teléfono) y si tocaste «Gestionar suscripción».",
+          "Canal (en la app, notificación en el teléfono o correo electrónico), idioma, precio y moneda, y qué versión del texto recibiste (con un código del texto).",
+          "Para el correo electrónico: cuándo se envió y el ID del mensaje de Resend."
+        ],
+        "after": [
+          "El registro nunca contiene tu nombre, tu dirección de correo electrónico ni el ID de tu cuenta. Para poder enviar el correo, guardamos aparte el ID de la cuenta y la fecha del próximo aviso; se eliminan cuando eliminas tu cuenta.",
+          "El registro se guarda durante 3 años después del último día activo de la suscripción, también si eliminas tu cuenta, pero entonces sin nada que lo vincule contigo. La base es nuestro interés legítimo (artículo 6.1.f) del RGPD) en poder demostrar que hemos dado la información que exige la ley."
+        ]
+      },
+      {
         "heading": "Cuenta opcional y sincronización (Pro)",
         "body": [
           "Puedes iniciar sesión con Apple, Google, Facebook (Meta) o correo. El inicio de sesión lo gestiona Supabase en servidores en {{region}}. Guardamos tu dirección de correo, un ID de cuenta, tu nombre si el proveedor lo comparte, el idioma de la app y, en versiones de prueba, una marca de prueba. Con Apple puedes ocultar tu correo; entonces solo vemos la dirección de reenvío de Apple.",

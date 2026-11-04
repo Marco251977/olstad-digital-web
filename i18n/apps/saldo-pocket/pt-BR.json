@@ -93,6 +93,23 @@
         ]
       },
       {
+        "heading": "Aviso de que sua assinatura Pro está ativa",
+        "body": [
+          "Se você tem uma assinatura Pro que é renovada todo mês ou todo ano, o app mostra pelo menos a cada seis meses um aviso de que a assinatura está ativa, quanto ela custa e como cancelá-la. Se você estiver conectado, também recebe o aviso por e-mail. A lei norueguesa exige esse aviso (digitalytelsesloven, § 33), e registramos cada aviso para poder comprovar que ele foi dado. O registro contém:"
+        ],
+        "list": [
+          "Um código do seu cliente no RevenueCat, gerado com uma chave secreta, e o ID da compra na loja.",
+          "Loja, produto e plano (mensal ou anual).",
+          "A data a que o aviso se referia, quando ele foi mostrado e fechado (com o fuso horário do celular) e se você tocou em «Gerenciar assinatura».",
+          "Canal (no app, notificação no celular ou e-mail), idioma, preço e moeda, e qual versão do texto você recebeu (com um código do texto).",
+          "Para o e-mail: quando ele foi enviado e o ID da mensagem no Resend."
+        ],
+        "after": [
+          "O registro nunca contém seu nome, seu e-mail ou o ID da sua conta. Para poder enviar o e-mail, guardamos à parte o ID da conta e a data do próximo aviso; eles são excluídos quando você exclui a conta.",
+          "O registro é guardado por 3 anos após o último dia ativo da assinatura, também se você excluir a conta, mas então sem nada que o ligue a você. A base é o nosso legítimo interesse (artigo 6(1)(f)) em poder comprovar que demos as informações exigidas por lei."
+        ]
+      },
+      {
         "heading": "Conta opcional e sincronização (Pro)",
         "body": [
           "Você pode entrar com Apple, Google, Facebook (Meta) ou e-mail. O login é feito pelo Supabase em servidores na {{region}}. Guardamos então seu e-mail, um ID de conta, seu nome se o provedor o compartilhar, o idioma do app e, em versões de teste, uma marca de teste. Com a Apple você pode ocultar seu e-mail; aí vemos só o endereço de encaminhamento da Apple.",

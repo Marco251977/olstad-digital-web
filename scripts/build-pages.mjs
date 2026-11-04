@@ -178,7 +178,8 @@ function appPage(app, page, lang) {
     body = [
       ...head,
       `<p class="lede">${fill(content.intro, vars)}</p>`,
-      `<p class="updated">${fill(c.lastUpdated, { date: esc(formatDate(app.lastUpdated, lang)) })}</p>`,
+      // A page changed on its own (data/apps.json pageUpdated) has its own date; the others the app's lastUpdated.
+      `<p class="updated">${fill(c.lastUpdated, { date: esc(formatDate(app.pageUpdated?.[page] ?? app.lastUpdated, lang)) })}</p>`,
       nav,
       ...content.sections.map((s) => sectionHtml(s, lang, vars)),
     ];

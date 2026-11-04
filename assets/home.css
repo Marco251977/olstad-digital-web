@@ -212,3 +212,12 @@ a:focus-visible, summary:focus-visible, button:focus-visible, input:focus-visibl
 .queue-error { margin: 0; color: var(--text); font-size: 0.875rem; font-weight: 600; }
 .queue-panel h4 { margin: 0; font-size: 1.0625rem; }
 .queue-panel h5 { margin: 4px 0 0; font-size: 1rem; }
+/* «Abonnementsvarsel» on /admin/<app>: the search on a purchase ID and the log rows (assets/admin-notices.js). */
+.admin-notices-search { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+.admin-notices-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.admin-notices-row input { font: inherit; flex: 1 1 14em; min-width: 0; min-height: 48px; padding: 10px 14px; border-radius: 12px; border: 1px solid var(--muted); background: var(--surface); color: var(--text); }
+.admin-notices-row .btn { min-height: 48px; }
+.admin-notices-results { display: grid; gap: 12px; margin-top: 8px; }
+.admin-notices-results > * { margin: 0; min-width: 0; }
+.admin-notices-item h5 { margin: 8px 0 4px; font-size: 1rem; }
+.admin-notices .stats-row dd { overflow-wrap: anywhere; }

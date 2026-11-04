@@ -18,6 +18,10 @@
 // { action: 'queueAction', app, request: { type, id, action: 'approve' | 'reject' | 'refetch', city, country, placeId } } = passed on to
 // the app's server, which runs its own queue logic. Errors: queue_not_configured (503), queue_source_refused /
 // queue_source (502), queue_source_timeout (504), bad_request (400) for an unknown type/action/id.
+// «Abonnementsvarsel» (lib/notices.js, read only, also only with the session cookie): { action: 'notices', app, view:
+// 'months' | 'purchase', purchase, includeTest } = the app's proof log of the subscription notice (data null when the app
+// has no source, home.notices.source). Errors: notices_not_configured (503), notices_missing (503: the function or the
+// table does not exist yet), source_refused / source (502), source_timeout (504), bad_request (400).
 // Every failure is an error code the page turns into a text: refused (403), wrong_login (401), locked / rate_limited (429),
 // not_configured (503, with the missing setting names), wrong_code / signed_out (401), server (502, with Supabase's status and
 // code); for the statistics also stats_not_configured (503), source_refused / source (502) and source_timeout (504).
@@ -25,6 +29,7 @@
 import appList from '../data/apps.json' with { type: 'json' };
 import { clearFailures, clearSessionCookie, locked, passwordMatches, recordFailure, sessionCookie, sessionEmail } from '../lib/admin-auth.js';
 import { actionRequest, fetchQueue, fetchQueueCount, queueAction } from '../lib/approval.js';
+import { fetchNotices } from '../lib/notices.js';
 import { fetchStats } from '../lib/stats.js';
 
 /** The apps /admin shows: every app in the app list with a «home» part (the same list as the front page). */
@@ -119,7 +124,7 @@ async function answer(request, env, fetcher) {
     // The same 30-day session cookie as the password.
     return json(200, { email }, [sessionCookie(email, env), clearFailures(request, email, env)]);
   }
-  if (['me', 'stats', 'queue', 'queueCount', 'queueAction'].includes(body.action)) {
+  if (['me', 'stats', 'queue', 'queueCount', 'queueAction', 'notices'].includes(body.action)) {
     const email = sessionEmail(request, env);
     if (!email) return json(401, { error: 'signed_out' }, [clearSessionCookie()]);
     // Taken off the list = out, also with a cookie that is still valid.
@@ -127,6 +132,13 @@ async function answer(request, env, fetcher) {
     if (body.action === 'me') return json(200, { email });
     if (!ADMIN_APPS.includes(body.app)) return json(404, { error: 'unknown_app' });
     const home = appList.apps.find((a) => a.home?.id === body.app).home;
+    if (body.action === 'notices') {
+      // No notice log for this app – nothing to show.
+      if (!home.notices?.source) return json(200, { app: body.app, data: null });
+      const view = body.view === 'months' ? 'months' : 'purchase';
+      const n = await fetchNotices(home.notices.source, { view, purchase: body.purchase, includeTest: body.includeTest === true }, env, fetcher);
+      return json(n.status, n.status === 200 ? { app: body.app, data: n.body } : n.body);
+    }
     if (body.action !== 'stats') {
       const source = home.approval?.source;
       // No queue for this app (yet) – nothing is waiting.

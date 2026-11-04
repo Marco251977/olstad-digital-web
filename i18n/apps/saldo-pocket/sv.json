@@ -93,6 +93,23 @@
         ]
       },
       {
+        "heading": "Meddelande om att Pro-prenumerationen löper",
+        "body": [
+          "Har du en Pro-prenumeration som förnyas varje månad eller varje år visar appen minst var sjätte månad ett meddelande om att prenumerationen löper, vad den kostar och hur du säger upp den. Är du inloggad får du det också via e-post. Norsk lag kräver meddelandet (digitalytelsesloven § 33), och vi loggar varje meddelande för att kunna visa att det gavs. Loggen innehåller:"
+        ],
+        "list": [
+          "En kod av din RevenueCat-kund, skapad med en hemlig nyckel, och butikens köp-ID.",
+          "Butik, produkt och plan (månad eller år).",
+          "Datumet meddelandet gällde, när det visades och stängdes (med telefonens tidszon), och om du tryckte på «Hantera prenumeration».",
+          "Kanal (i appen, notis på telefonen eller e-post), språk, pris och valuta, och vilken version av texten du fick (med en kod av texten).",
+          "För e-post: när den skickades, och meddelande-ID:t från Resend."
+        ],
+        "after": [
+          "Loggen innehåller aldrig ditt namn, din e-postadress eller ditt konto-ID. För att kunna skicka e-posten sparar vi konto-ID:t och datumet för nästa meddelande separat; det raderas när du raderar kontot.",
+          "Loggen sparas i 3 år efter prenumerationens sista aktiva dag, även om du raderar kontot, men då utan något som kopplar den till dig. Grunden är vårt berättigade intresse (artikel 6.1 f) av att kunna visa att vi har gett den information som lagen kräver."
+        ]
+      },
+      {
         "heading": "Valfritt konto och synk (Pro)",
         "body": [
           "Du kan logga in med Apple, Google, Facebook (Meta) eller e-post. Inloggningen hanteras av Supabase på servrar i {{region}}. Vi sparar då din e-postadress, ett konto-ID, ditt namn om leverantören delar det, appens språk och, i testversioner, en testflagga. Med Apple kan du dölja din e-postadress; då ser vi bara Apples vidarebefordringsadress.",

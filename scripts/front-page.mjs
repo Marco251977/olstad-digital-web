@@ -206,7 +206,8 @@ export function adminPage({ homes, company, esc, fallback, apps, app = null, eve
       ${approvalButton(app, t, esc)}
       <div class="admin-app-head">${icon(app)}<h2>${esc(app.name)}</h2></div>
       ${app.home.stats?.source ? `<label class="admin-toggle"><input type="checkbox" id="include-test" role="switch"><span data-t="includeTest">${esc(t.includeTest)}</span></label>` : ''}
-      <div id="stats" class="admin-stats" data-app="${esc(app.home.id)}" aria-live="polite"><p class="admin-card muted" data-t="checking">${esc(t.checking)}</p></div>`
+      <div id="stats" class="admin-stats" data-app="${esc(app.home.id)}" aria-live="polite"><p class="admin-card muted" data-t="checking">${esc(t.checking)}</p></div>
+      ${app.home.notices?.source ? `<div id="notices" class="admin-stats admin-notices" data-app="${esc(app.home.id)}"></div>` : ''}`
     : `<h2 data-t="apps">${esc(t.apps)}</h2>
       <ul class="admin-apps">${apps
         .filter((a) => a.home)
@@ -398,10 +399,23 @@ export function adminPage({ homes, company, esc, fallback, apps, app = null, eve
   if ($('include-test')) $('include-test').addEventListener('change', function () {
     if (!$('inside').hidden) loadStats();
   });
+  // «Abonnementsvarsel» (an app with home.notices): the proof log, read only, laid out by /assets/admin-notices.js
+  // (search on a purchase ID, counts per month, its own test-traffic switch). A failure stays inside the section.
+  var notices = null;
+  var loadNotices = function () {
+    var box = $('notices');
+    if (!box) return;
+    if (notices) return notices.reload();
+    line(box, t.loading);
+    import('/assets/admin-notices.js').then(function (m) {
+      notices = m.mountNotices(box, t, lang, call, failText);
+    }).catch(function () { line(box, t.notices.failed); });
+  };
   var show = function (email) {
     form(''); $('inside').hidden = false; $('who').textContent = email; say('');
     loadStats();
     countQueue();
+    loadNotices();
   };
   var check = function () {
     say('checking');
