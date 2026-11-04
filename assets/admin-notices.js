@@ -8,6 +8,8 @@
 // not exist yet (Saldo has not published it), a clear message instead of a crash. Texts: t.notices from
 // i18n/home/<lang>.json (admin.notices), placeholders as %name%. Dates, money and numbers via Intl in the page's language.
 
+import { ISO_CURRENCY_DIGITS } from './currency-digits.js';
+
 export const MISSING = '–';
 const isNumber = (v) => typeof v === 'number' && Number.isFinite(v);
 const fill = (template, vars) => String(template ?? '').replace(/%(\w+)%/g, (m, k) => (k in vars ? vars[k] : m));
@@ -16,10 +18,44 @@ export const PURCHASE_ID = /^[A-Za-z0-9._:-]{1,128}$/;
 /** Store names are brands (not translated); an unknown code is shown as it is. */
 const STORES = { app_store: 'App Store', appStore: 'App Store', APP_STORE: 'App Store', play_store: 'Google Play', playStore: 'Google Play', PLAY_STORE: 'Google Play' };
 
-/** Digits after the decimal point for a currency (the store's price is in its smallest unit). */
-export function currencyDigits(currency) {
-  try { return new Intl.NumberFormat('en', { style: 'currency', currency }).resolvedOptions().maximumFractionDigits; } catch (e) { return 2; }
+/**
+ * Minor-unit digits for a currency (NOK 2, JPY 0, IQD/KWD/BHD 3): ISO 4217, the ONE table the apps and Saldo's server use
+ * (assets/currency-digits.js, generated from app-core). Saldo stores price_minor in these units. Same rule as app-core
+ * minorDigits: only a code that is not in ISO 4217 asks Intl, else 2. Never Intl alone (Intl gives IQD 0 = 10 times too high).
+ */
+export function minorDigits(currency) {
+  const iso = ISO_CURRENCY_DIGITS[currency];
+  if (iso !== undefined) return iso;
+  try { return new Intl.NumberFormat('en', { style: 'currency', currency }).resolvedOptions().maximumFractionDigits ?? 2; } catch (e) { return 2; }
 }
+
+/** The decimals a price is SHOWN with: CLDR's (Intl), never more than ISO's – app-core displayDigits (IQD 0, KWD 3, NOK 2). */
+export function displayDigits(currency) {
+  const iso = minorDigits(currency);
+  try {
+    const shown = new Intl.NumberFormat('en', { style: 'currency', currency }).resolvedOptions().maximumFractionDigits;
+    return typeof shown === 'number' && shown >= 0 && shown <= iso ? shown : iso;
+  } catch (e) { return iso; }
+}
+
+/**
+ * A price as the app shows it (app-core formatMoney): a whole amount without decimals («49 kr», «NOK 49»), else the
+ * currency's display decimals («49,50 kr»), via Intl in the page's language.
+ */
+export function formatPrice(minor, currency, lang) {
+  const value = minor / 10 ** minorDigits(currency);
+  const digits = Number.isInteger(value) ? 0 : displayDigits(currency);
+  let text;
+  try {
+    text = new Intl.NumberFormat(lang, { style: 'currency', currency, minimumFractionDigits: digits, maximumFractionDigits: digits }).format(value + 0);
+  } catch (e) {
+    text = `${new Intl.NumberFormat(lang, { minimumFractionDigits: digits, maximumFractionDigits: digits }).format(value)} ${currency}`;
+  }
+  // As app-core: in a right-to-left language the amount is one left-to-right unit (LRI … PDI), without Intl's marks.
+  return RTL_LANGUAGES.has(String(lang).split(/[-_]/)[0].toLowerCase()) ? `\u2066${text.replace(/[\u200e\u200f\u061c]/g, '')}\u2069` : text;
+}
+/** Right-to-left languages (app-core isRtlLocale's list). */
+const RTL_LANGUAGES = new Set(['ar', 'arc', 'ckb', 'dv', 'fa', 'he', 'iw', 'ks', 'ku', 'ps', 'sd', 'ug', 'ur', 'yi']);
 
 export function formatters(lang) {
   const number = new Intl.NumberFormat(lang);
@@ -42,11 +78,7 @@ export function formatters(lang) {
     date: (v) => (toDate(v) ? date.format(toDate(v)) : MISSING),
     month: (key) => (toDate(`${key}-01`) ? month.format(toDate(`${key}-01`)) : key),
     moment,
-    money: (minor, currency) => {
-      if (!isNumber(minor) || !currency) return MISSING;
-      const value = minor / 10 ** currencyDigits(currency);
-      try { return new Intl.NumberFormat(lang, { style: 'currency', currency }).format(value); } catch (e) { return `${number.format(value)} ${currency}`; }
-    },
+    money: (minor, currency) => (isNumber(minor) && currency ? formatPrice(minor, currency, lang) : MISSING),
   };
 }
 

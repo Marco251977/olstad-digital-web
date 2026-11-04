@@ -5,10 +5,12 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { test } from 'node:test';
 
-import { CORE_LANGUAGES } from 'app-core';
+import { CORE_LANGUAGES, formatMoney, ISO_CURRENCY_DIGITS as CORE_DIGITS } from 'app-core';
 
 import { handle } from '../api/admin.js';
-import { errorText, MISSING, noticeRows, noticesMonths } from '../assets/admin-notices.js';
+import { errorText, formatPrice, minorDigits, MISSING, noticeRows, noticesMonths } from '../assets/admin-notices.js';
+import { ISO_CURRENCY_DIGITS } from '../assets/currency-digits.js';
+import { currencyDigitsModule } from '../scripts/sync-currency-digits.mjs';
 import { SESSION_COOKIE, sessionValue } from '../lib/admin-auth.js';
 import { fetchNotices, noticeRow } from '../lib/notices.js';
 
@@ -113,4 +115,49 @@ test('every language has the texts; the browser script never sees a key or a URL
   assert.doesNotMatch(read('assets/admin-notices.js'), /innerHTML|insertAdjacentHTML|outerHTML|document\.write/);
   assert.match(read('admin/saldo-pocket.html'), /id="notices"/);
   assert.doesNotMatch(read('admin/plantravel.html'), /id="notices"/);
+});
+
+// The price as the app shows it (04.11): minor units by ISO 4217 from ONE table (app-core, the same as Saldo's server),
+// a whole amount without decimals, else the currency's display decimals. Before: «49,00 kr», and IQD 10 times too high.
+const PRICES = [
+  // [price_minor, currency, nb, en]
+  [4900, 'NOK', '49 kr', 'NOK 49'],
+  [39900, 'NOK', '399 kr', 'NOK 399'],
+  [4950, 'NOK', '49,50 kr', 'NOK 49.50'],
+  [500, 'EUR', '5 €', '€5'],
+  [499, 'EUR', '4,99 €', '€4.99'],
+  [500, 'USD', '5 USD', '$5'],
+  [3499, 'USD', '34,99 USD', '$34.99'],
+  [500, 'JPY', '500 JPY', '¥500'],
+  [49000, 'IQD', '49 IQD', 'IQD 49'],
+  [49500, 'IQD', '50 IQD', 'IQD 50'],
+  [1000, 'KWD', '1 KWD', 'KWD 1'],
+  [1250, 'KWD', '1,250 KWD', 'KWD 1.250'],
+  [2000, 'BHD', '2 BHD', 'BHD 2'],
+  [1255, 'BHD', '1,255 BHD', 'BHD 1.255'],
+];
+const plain = (s) => s.replace(/[  ]/g, ' ');
+
+test('admin price: the same as the app (whole = no decimals), minor units from ISO 4217 (JPY 0, IQD/KWD/BHD 3)', () => {
+  for (const [minor, currency, nb, en] of PRICES) {
+    assert.equal(plain(formatPrice(minor, currency, 'nb')), nb, `${minor} ${currency} nb`);
+    assert.equal(plain(formatPrice(minor, currency, 'en')), en, `${minor} ${currency} en`);
+  }
+  assert.deepEqual(['NOK', 'EUR', 'USD', 'JPY', 'IQD', 'KWD', 'BHD'].map(minorDigits), [2, 2, 2, 0, 3, 3, 3]);
+  const row = noticeRows([{ ...ROW, price_minor: 4900, currency: 'NOK' }], textsFor('nb'), 'nb')[0];
+  assert.equal(plain(row.lines.find((l) => l.label === textsFor('nb').notices.price).value), '49 kr');
+});
+
+test('admin price: exactly app-core formatMoney in all 18 languages', () => {
+  for (const { code: lang } of CORE_LANGUAGES) {
+    for (const [minor, currency] of PRICES) {
+      assert.equal(formatPrice(minor, currency, lang), formatMoney(minor, currency, lang), `${lang} ${minor} ${currency}`);
+    }
+  }
+});
+
+test('admin price: the digits table is app-core’s, generated, never typed in', () => {
+  assert.deepEqual({ ...ISO_CURRENCY_DIGITS }, { ...CORE_DIGITS });
+  assert.equal(read('assets/currency-digits.js').replace(/\r\n/g, '\n'), currencyDigitsModule(CORE_DIGITS));
+  assert.doesNotMatch(read('assets/admin-notices.js'), /currencyDigits\(/);
 });
