@@ -29,6 +29,14 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/assets/fonts/inter.css">
   <link rel="stylesheet" href="/assets/pages.css">
+  <link rel="stylesheet" href="/assets/store-badges.css">
+  <script>
+  (function () {
+    var ua = navigator.userAgent || '';
+    var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    document.documentElement.setAttribute('data-os', ios ? 'ios' : /Android/.test(ua) ? 'android' : 'other');
+  })();
+  </script>
 </head>
 <body>
   <a class="skip" href="#content">Zum Inhalt springen</a>
@@ -50,6 +58,7 @@
     <p class="app-name">Saldo Pocket</p>
     <h1>Support</h1>
     <p class="lede">Fragen, Probleme oder Ideen? Schreib uns, wir antworten so schnell wie möglich.</p>
+    <div class="store-badges"><a class="store-badge app-store" href="https://apps.apple.com/app/id6821035069" rel="noopener" aria-label="Saldo Pocket im App Store"><picture><source srcset="/assets/badges/app-store-white-de.svg" media="(prefers-color-scheme: dark)"><img src="/assets/badges/app-store-black-de.svg" alt="" width="144" height="48" loading="lazy" decoding="async"></picture></a><a class="store-badge google-play" href="https://play.google.com/store/apps/details?id=com.saldopocket.app&amp;hl=de-DE" rel="noopener" aria-label="Saldo Pocket im Google Play"><img src="/assets/badges/google-play-de.png" alt="" width="162" height="48" loading="lazy" decoding="async"></a></div>
     <ul class="page-nav"><li><a href="/de/saldo-pocket/privacy">Datenschutzerklärung</a></li><li><a href="/de/saldo-pocket/terms">Nutzungsbedingungen</a></li><li><a href="/de/saldo-pocket/delete-account">Konto und Daten löschen</a></li><li><a href="/de/saldo-pocket/support" aria-current="page">Support</a></li></ul>
     <section class="card"><h2>Kontakt</h2><p>E-Mail <a href="mailto:kontakt@nordicdigitalapp.no" class="ltr">kontakt@nordicdigitalapp.no</a>. Nenn uns bitte dein Telefonmodell und die App-Version (unten im Tab „Ich“).</p></section>
     <section class="faq"><h2>Häufige Fragen</h2>

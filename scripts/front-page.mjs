@@ -4,23 +4,14 @@
 // - texts: i18n/home/<lang>.json (+ i18n/common for the shared words),
 // - colours: data/theme.json (light and dark tokens; scripts/check-contrast.mjs checks the pairs),
 // - languages: app-core (the same 18 as the apps, in the apps' order: languageChoiceOrder).
-import { CORE_LANGUAGES, PLATFORM_LANGUAGE_CODES, languageChoiceOrder } from 'app-core';
+import { CORE_LANGUAGES, languageChoiceOrder } from 'app-core';
+
+import { STORE_BADGES_HEAD, storeBadges } from './store-badges.mjs';
 
 export const LANGUAGE_COOKIE = 'lang';
 
 const GLOBE = '<svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18Zm-9 9h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z"/></svg>';
-const APPLE = '<svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.5-1-2.5-3.9ZM14 5.4c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.6 2.8-1.4Z"/></svg>';
-const PLAY = '<svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4.2 2.6c-.3.3-.4.7-.4 1.2v16.4c0 .5.1.9.4 1.2l9.3-9.4-9.3-9.4Zm10.4 10.5 2.6 2.6-11.1 6.3c-.4.2-.8.2-1.1.1l9.6-9Zm0-2.2L5 1.9c.3-.1.7-.1 1.1.1l11.1 6.3-2.6 2.6Zm3.9-1.8 3 1.7c.9.5.9 1.8 0 2.3l-3 1.7-2.8-2.8 2.8-2.9Z"/></svg>';
 const ARROW = '<svg class="icon dir" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M9 7h8v8"/></svg>';
-
-/** The store links: App Store (Apple picks the visitor's storefront), Google Play in the page's language. */
-function storeLinks(stores, lang) {
-  const hl = PLATFORM_LANGUAGE_CODES[lang]?.googlePlay ?? lang;
-  return {
-    appStore: stores.appStore ? `https://apps.apple.com/app/id${stores.appStore}` : null,
-    googlePlay: stores.googlePlay ? `https://play.google.com/store/apps/details?id=${encodeURIComponent(stores.googlePlay)}&hl=${encodeURIComponent(hl)}` : null,
-  };
-}
 
 /** The app's own pages: on this site (slug) or on the app's own website (external, {lang} filled in). */
 function pageHref(app, page, lang) {
@@ -90,13 +81,10 @@ function footer({ lang, company, esc, fill, common, home, year }) {
 function appCard(app, { lang, esc, fill, h, about }) {
   const a = app.home;
   const name = esc(app.name);
-  const stores = storeLinks(a.stores, lang);
   const meta = [fill(h.categories[a.category]), ...a.platforms.map(esc)].join('<span class="dot" aria-hidden="true">·</span>');
   const buttons = [];
-  if (a.published) {
-    if (stores.appStore) buttons.push(`<a class="btn store" href="${esc(stores.appStore)}" rel="noopener" aria-label="${fill(h.store.label, { app: name, store: 'App Store' })}">${APPLE}<span>App Store</span></a>`);
-    if (stores.googlePlay) buttons.push(`<a class="btn store" href="${esc(stores.googlePlay)}" rel="noopener" aria-label="${fill(h.store.label, { app: name, store: 'Google Play' })}">${PLAY}<span>Google Play</span></a>`);
-  }
+  // The official store badges (scripts/store-badges.mjs, the same component as the app's support page).
+  if (a.published) buttons.push(storeBadges({ stores: a.stores, appName: app.name, lang, label: h.store.label, esc, fill }));
   if (a.website) buttons.push(`<a class="btn ghost" href="${esc(a.website)}" rel="noopener">${esc(new URL(a.website).host.replace(/^www\./, ''))}${ARROW}</a>`);
   const soon = a.published ? '' : `<p class="soon">${fill(h.store.comingSoon)}</p>`;
   const linkLabel = { privacy: h.links.privacy, support: h.links.support, 'delete-account': h.links.deleteData };
@@ -126,14 +114,15 @@ function appCard(app, { lang, esc, fill, h, about }) {
 }
 
 export function frontPage({ lang, dir, apps, company, home: h, common, esc, fill, origin, langs, year, storeTexts }) {
-  const shown = apps.filter((a) => a.home).sort((x, y) => Number(y.home.published) - Number(x.home.published));
+  // Published apps first, then by home.order (the order on the front page; /admin keeps the list's order).
+  const shown = apps.filter((a) => a.home).sort((x, y) => Number(y.home.published) - Number(x.home.published) || (x.home.order ?? 0) - (y.home.order ?? 0));
   const alternates = [...langs.map((l) => `<link rel="alternate" hreflang="${l}" href="${origin}/${l}">`), `<link rel="alternate" hreflang="x-default" href="${origin}/">`].join('\n  ');
   // The sentence about each app: the app's own store short description (data/app-texts.json, written by the app's
   // sync script – ONE source with the store listing), else i18n/home about.<id> for an app without one in its code.
   const about = (id) => (storeTexts?.[id]?.about?.[lang] ? esc(storeTexts[id].about[lang]) : fill(h.about[id]));
   const ctx = { lang, esc, fill, h, common, about };
   const principle = (k) => `<li><h3>${fill(h.principles[k].title)}</h3><p>${fill(h.principles[k].body)}</p></li>`;
-  return `${head({ lang, dir, title: fill(h.title), description: fill(h.hero.body), canonical: `${origin}/${lang}`, alternates, esc })}
+  return `${head({ lang, dir, title: fill(h.title), description: fill(h.hero.body), canonical: `${origin}/${lang}`, alternates, esc, extra: STORE_BADGES_HEAD })}
 <body>
   <a class="skip" href="#content">${fill(common.skipToContent)}</a>
   <header class="top">

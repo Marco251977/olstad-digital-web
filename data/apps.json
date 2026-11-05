@@ -32,6 +32,7 @@
       },
       "home": {
         "id": "saldo-pocket",
+        "order": 2,
         "icon": "/apps/saldo-pocket/icon.png",
         "image": "/apps/saldo-pocket/home.webp",
         "category": "finance",
@@ -53,7 +54,7 @@
           "support",
           "delete-account"
         ],
-        "published": false,
+        "published": true,
         "stats": {
           "source": "saldo"
         },
@@ -72,6 +73,7 @@
       },
       "home": {
         "id": "plantravel",
+        "order": 1,
         "icon": "/apps/plantravel/icon.png",
         "image": "/apps/plantravel/home.webp",
         "category": "travel",

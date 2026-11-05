@@ -29,6 +29,14 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/assets/fonts/inter.css">
   <link rel="stylesheet" href="/assets/pages.css">
+  <link rel="stylesheet" href="/assets/store-badges.css">
+  <script>
+  (function () {
+    var ua = navigator.userAgent || '';
+    var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    document.documentElement.setAttribute('data-os', ios ? 'ios' : /Android/.test(ua) ? 'android' : 'other');
+  })();
+  </script>
 </head>
 <body>
   <a class="skip" href="#content">Vai al contenuto</a>
@@ -50,6 +58,7 @@
     <p class="app-name">Saldo Pocket</p>
     <h1>Assistenza</h1>
     <p class="lede">Domande, problemi o idee? Scrivici e ti risponderemo il prima possibile.</p>
+    <div class="store-badges"><a class="store-badge app-store" href="https://apps.apple.com/app/id6821035069" rel="noopener" aria-label="Saldo Pocket su App Store"><picture><source srcset="/assets/badges/app-store-white-it.svg" media="(prefers-color-scheme: dark)"><img src="/assets/badges/app-store-black-it.svg" alt="" width="144" height="48" loading="lazy" decoding="async"></picture></a><a class="store-badge google-play" href="https://play.google.com/store/apps/details?id=com.saldopocket.app&amp;hl=it-IT" rel="noopener" aria-label="Saldo Pocket su Google Play"><img src="/assets/badges/google-play-it.png" alt="" width="162" height="48" loading="lazy" decoding="async"></a></div>
     <ul class="page-nav"><li><a href="/it/saldo-pocket/privacy">Informativa sulla privacy</a></li><li><a href="/it/saldo-pocket/terms">Condizioni d’uso</a></li><li><a href="/it/saldo-pocket/delete-account">Elimina account e dati</a></li><li><a href="/it/saldo-pocket/support" aria-current="page">Assistenza</a></li></ul>
     <section class="card"><h2>Contatti</h2><p>E-mail <a href="mailto:kontakt@nordicdigitalapp.no" class="ltr">kontakt@nordicdigitalapp.no</a>. Indicaci il modello del telefono e la versione dell’app (in fondo alla scheda «Io»).</p></section>
     <section class="faq"><h2>Domande frequenti</h2>
