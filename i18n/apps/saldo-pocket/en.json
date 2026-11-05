@@ -42,6 +42,12 @@
         ]
       },
       {
+        "heading": "Register purchases automatically (iPhone only, Pro, off by default)",
+        "body": [
+          "When you switch the feature on and set up the automation in Shortcuts, your iPhone gives the app the amount, the currency, the shop and the card’s name after each Apple Pay purchase. This is read and stored only on the phone and is not sent to us or anyone else. The card’s name is only used to choose the right account. If you sync between your devices, the entries go along like other entries. If you switch the feature off, or Pro ends, nothing more is collected. “Delete all data” also deletes purchases that are waiting."
+        ]
+      },
+      {
         "heading": "Backup on your phone",
         "body": [
           "If backup is turned on, the phone includes the app's data in it: on Android in the backup on your Google account, on iPhone in iCloud. Your budget then comes back on a new phone. Apple and Google store the backup under their own terms, and you turn it on and off in the phone's settings.",

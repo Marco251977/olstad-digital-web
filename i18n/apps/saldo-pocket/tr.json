@@ -42,6 +42,12 @@
         ]
       },
       {
+        "heading": "Alışverişleri otomatik kaydet (yalnızca iPhone, Pro, varsayılan olarak kapalı)",
+        "body": [
+          "Özelliği açıp Kestirmeler’de otomasyonu kurduğunda iPhone, Apple Pay ile yapılan her alışverişten sonra uygulamaya tutarı, para birimini, mağazayı ve kartın adını verir. Bu bilgiler yalnızca telefonda okunur ve saklanır; bize ya da başkasına gönderilmez. Kartın adı yalnızca doğru hesabı seçmek için kullanılır. Cihazların arasında senkronizasyon kullanıyorsan işlemler diğerleri gibi aktarılır. Özelliği kapatırsan ya da Pro sona ererse artık hiçbir şey toplanmaz. “Tüm verileri sil” bekleyen alışverişleri de siler."
+        ]
+      },
+      {
         "heading": "Telefondaki yedekleme",
         "body": [
           "Yedekleme açıksa telefon uygulamanın verilerini yedeğe dahil eder: Android’de Google hesabındaki yedeğe, iPhone’da iCloud’a. Böylece bütçen yeni bir telefona geri gelir. Yedeği Apple ve Google kendi koşullarına göre saklar; yedeklemeyi telefonun ayarlarından açıp kapatırsın.",
