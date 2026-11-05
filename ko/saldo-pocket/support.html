@@ -29,6 +29,14 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/assets/fonts/inter.css">
   <link rel="stylesheet" href="/assets/pages.css">
+  <link rel="stylesheet" href="/assets/store-badges.css">
+  <script>
+  (function () {
+    var ua = navigator.userAgent || '';
+    var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    document.documentElement.setAttribute('data-os', ios ? 'ios' : /Android/.test(ua) ? 'android' : 'other');
+  })();
+  </script>
 </head>
 <body>
   <a class="skip" href="#content">본문으로 이동</a>
@@ -50,6 +58,7 @@
     <p class="app-name">Saldo Pocket</p>
     <h1>지원</h1>
     <p class="lede">질문, 문제, 아이디어가 있으신가요? 저희에게 보내 주시면 최대한 빨리 답변드립니다.</p>
+    <div class="store-badges"><a class="store-badge app-store" href="https://apps.apple.com/app/id6821035069" rel="noopener" aria-label="App Store의 Saldo Pocket"><picture><source srcset="/assets/badges/app-store-white-ko.svg" media="(prefers-color-scheme: dark)"><img src="/assets/badges/app-store-black-ko.svg" alt="" width="144" height="48" loading="lazy" decoding="async"></picture></a><a class="store-badge google-play" href="https://play.google.com/store/apps/details?id=com.saldopocket.app&amp;hl=ko-KR" rel="noopener" aria-label="Google Play의 Saldo Pocket"><img src="/assets/badges/google-play-ko.png" alt="" width="162" height="48" loading="lazy" decoding="async"></a></div>
     <ul class="page-nav"><li><a href="/ko/saldo-pocket/privacy">개인정보 처리방침</a></li><li><a href="/ko/saldo-pocket/terms">이용약관</a></li><li><a href="/ko/saldo-pocket/delete-account">계정 및 데이터 삭제</a></li><li><a href="/ko/saldo-pocket/support" aria-current="page">지원</a></li></ul>
     <section class="card"><h2>문의</h2><p>이메일 <a href="mailto:kontakt@nordicdigitalapp.no" class="ltr">kontakt@nordicdigitalapp.no</a>. 휴대전화 모델과 앱 버전(내 정보 탭 맨 아래)을 알려 주세요.</p></section>
     <section class="faq"><h2>자주 묻는 질문</h2>

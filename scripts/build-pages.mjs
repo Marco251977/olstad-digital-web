@@ -16,6 +16,7 @@ import { fileURLToPath } from 'node:url';
 import { CORE_LANGUAGES, FALLBACK_LANGUAGE } from 'app-core';
 
 import { adminPage, frontPage, LANGUAGE_COOKIE, tokensCss } from './front-page.mjs';
+import { STORE_BADGES_HEAD, storeBadges } from './store-badges.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = (file) => JSON.parse(fs.readFileSync(path.join(root, file), 'utf8'));
@@ -76,7 +77,7 @@ const dirOf = (lang) => (CORE_LANGUAGES.find((l) => l.code === lang)?.rtl ? 'rtl
 
 // --- layout ---
 
-function layout({ lang, title, description, pagePath, body }) {
+function layout({ lang, title, description, pagePath, body, extraHead = '' }) {
   const c = common[lang];
   const vars = companyVars(lang);
   const url = (l) => `${ORIGIN}/${l}${pagePath}`;
@@ -98,7 +99,7 @@ function layout({ lang, title, description, pagePath, body }) {
   <link rel="alternate" hreflang="x-default" href="${ORIGIN}${pagePath}">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/assets/fonts/inter.css">
-  <link rel="stylesheet" href="/assets/pages.css">
+  <link rel="stylesheet" href="/assets/pages.css">${extraHead}
 </head>
 <body>
   <a class="skip" href="#content">${fill(c.skipToContent)}</a>
@@ -164,6 +165,8 @@ function appPage(app, page, lang) {
     supabaseRegion: region ? ` (${esc(region)})` : '',
   };
   const pageTitle = fill(c.pages[page]);
+  // Store badges only on the support page (the legal pages stay as they are), and only for an app that is in the stores.
+  const inStores = page === 'support' && !!app.home?.published && !!app.home?.stores;
   const nav = `<ul class="page-nav">${app.pages
     .map((p) => `<li><a href="/${lang}/${app.slug}/${p}"${p === page ? ' aria-current="page"' : ''}>${fill(c.pages[p])}</a></li>`)
     .join('')}</ul>`;
@@ -187,6 +190,8 @@ function appPage(app, page, lang) {
     body = [
       ...head,
       `<p class="lede">${fill(a.support.intro, vars)}</p>`,
+      // The app in the stores: the same badges as the front page (scripts/store-badges.mjs), once the app is published.
+      ...(inStores ? [storeBadges({ stores: app.home.stores, appName: app.name, lang, label: homeTexts[lang].store.label, esc, fill })] : []),
       nav,
       `<section class="card"><h2>${fill(a.support.contactHeading)}</h2><p>${fill(a.support.contactBody, vars)}</p></section>`,
       `<section class="faq"><h2>${fill(a.support.faqHeading)}</h2>`,
@@ -203,6 +208,7 @@ function appPage(app, page, lang) {
     description: fill(a.description),
     pagePath: `/${app.slug}/${page}`,
     body: body.map((l) => `    ${l}`).join('\n'),
+    extraHead: inStores ? STORE_BADGES_HEAD : '',
   });
 }
 

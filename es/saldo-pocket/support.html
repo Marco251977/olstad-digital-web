@@ -29,6 +29,14 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/assets/fonts/inter.css">
   <link rel="stylesheet" href="/assets/pages.css">
+  <link rel="stylesheet" href="/assets/store-badges.css">
+  <script>
+  (function () {
+    var ua = navigator.userAgent || '';
+    var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    document.documentElement.setAttribute('data-os', ios ? 'ios' : /Android/.test(ua) ? 'android' : 'other');
+  })();
+  </script>
 </head>
 <body>
   <a class="skip" href="#content">Ir al contenido</a>
@@ -50,6 +58,7 @@
     <p class="app-name">Saldo Pocket</p>
     <h1>Soporte</h1>
     <p class="lede">¿Preguntas, problemas o ideas? Escríbenos y te responderemos lo antes posible.</p>
+    <div class="store-badges"><a class="store-badge app-store" href="https://apps.apple.com/app/id6821035069" rel="noopener" aria-label="Saldo Pocket en App Store"><picture><source srcset="/assets/badges/app-store-white-es.svg" media="(prefers-color-scheme: dark)"><img src="/assets/badges/app-store-black-es.svg" alt="" width="144" height="48" loading="lazy" decoding="async"></picture></a><a class="store-badge google-play" href="https://play.google.com/store/apps/details?id=com.saldopocket.app&amp;hl=es-ES" rel="noopener" aria-label="Saldo Pocket en Google Play"><img src="/assets/badges/google-play-es.png" alt="" width="162" height="48" loading="lazy" decoding="async"></a></div>
     <ul class="page-nav"><li><a href="/es/saldo-pocket/privacy">Política de privacidad</a></li><li><a href="/es/saldo-pocket/terms">Condiciones de uso</a></li><li><a href="/es/saldo-pocket/delete-account">Eliminar cuenta y datos</a></li><li><a href="/es/saldo-pocket/support" aria-current="page">Soporte</a></li></ul>
     <section class="card"><h2>Contacto</h2><p>Correo <a href="mailto:kontakt@nordicdigitalapp.no" class="ltr">kontakt@nordicdigitalapp.no</a>. Indícanos el modelo de tu teléfono y la versión de la app (al final de la pestaña «Yo»).</p></section>
     <section class="faq"><h2>Preguntas frecuentes</h2>

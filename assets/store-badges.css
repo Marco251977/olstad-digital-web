@@ -1,0 +1,8 @@
+/* The official store badges (scripts/store-badges.mjs): the same height, a clear space of a quarter of the height around
+   each (Apple's and Google's rules), at least 44 px to tap, layout with start/end only. The badges keep their own colours. */
+.store-badges { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-block: 12px; }
+.store-badge { display: inline-flex; align-items: center; min-height: 48px; min-width: 44px; border-radius: 9px; }
+.store-badge img { display: block; height: 48px; width: auto; }
+.store-badge:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+/* On an Android phone Google Play first; on an iPhone (and elsewhere) the App Store first. Both are always shown. */
+[data-os='android'] .store-badge.google-play { order: -1; }

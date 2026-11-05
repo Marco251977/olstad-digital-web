@@ -29,6 +29,14 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/assets/fonts/inter.css">
   <link rel="stylesheet" href="/assets/pages.css">
+  <link rel="stylesheet" href="/assets/store-badges.css">
+  <script>
+  (function () {
+    var ua = navigator.userAgent || '';
+    var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    document.documentElement.setAttribute('data-os', ios ? 'ios' : /Android/.test(ua) ? 'android' : 'other');
+  })();
+  </script>
 </head>
 <body>
   <a class="skip" href="#content">本文へ移動</a>
@@ -50,6 +58,7 @@
     <p class="app-name">Saldo Pocket</p>
     <h1>サポート</h1>
     <p class="lede">ご質問、問題、アイデアはありますか？ご連絡いただければ、できるだけ早くお返事します。</p>
+    <div class="store-badges"><a class="store-badge app-store" href="https://apps.apple.com/app/id6821035069" rel="noopener" aria-label="App Store の Saldo Pocket"><picture><source srcset="/assets/badges/app-store-white-ja.svg" media="(prefers-color-scheme: dark)"><img src="/assets/badges/app-store-black-ja.svg" alt="" width="144" height="48" loading="lazy" decoding="async"></picture></a><a class="store-badge google-play" href="https://play.google.com/store/apps/details?id=com.saldopocket.app&amp;hl=ja-JP" rel="noopener" aria-label="Google Play の Saldo Pocket"><img src="/assets/badges/google-play-ja.png" alt="" width="162" height="48" loading="lazy" decoding="async"></a></div>
     <ul class="page-nav"><li><a href="/ja/saldo-pocket/privacy">プライバシーポリシー</a></li><li><a href="/ja/saldo-pocket/terms">利用規約</a></li><li><a href="/ja/saldo-pocket/delete-account">アカウントとデータの削除</a></li><li><a href="/ja/saldo-pocket/support" aria-current="page">サポート</a></li></ul>
     <section class="card"><h2>お問い合わせ</h2><p>メール：<a href="mailto:kontakt@nordicdigitalapp.no" class="ltr">kontakt@nordicdigitalapp.no</a>。お使いの端末のモデルとアプリのバージョン（「マイページ」タブの一番下）をお知らせください。</p></section>
     <section class="faq"><h2>よくある質問</h2>

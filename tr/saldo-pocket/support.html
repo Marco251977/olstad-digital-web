@@ -29,6 +29,14 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/assets/fonts/inter.css">
   <link rel="stylesheet" href="/assets/pages.css">
+  <link rel="stylesheet" href="/assets/store-badges.css">
+  <script>
+  (function () {
+    var ua = navigator.userAgent || '';
+    var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    document.documentElement.setAttribute('data-os', ios ? 'ios' : /Android/.test(ua) ? 'android' : 'other');
+  })();
+  </script>
 </head>
 <body>
   <a class="skip" href="#content">İçeriğe geç</a>
@@ -50,6 +58,7 @@
     <p class="app-name">Saldo Pocket</p>
     <h1>Destek</h1>
     <p class="lede">Soruların, sorunların veya fikirlerin mi var? Bize yaz, en kısa sürede yanıt verelim.</p>
+    <div class="store-badges"><a class="store-badge app-store" href="https://apps.apple.com/app/id6821035069" rel="noopener" aria-label="App Store üzerinde Saldo Pocket"><picture><source srcset="/assets/badges/app-store-white-tr.svg" media="(prefers-color-scheme: dark)"><img src="/assets/badges/app-store-black-tr.svg" alt="" width="144" height="48" loading="lazy" decoding="async"></picture></a><a class="store-badge google-play" href="https://play.google.com/store/apps/details?id=com.saldopocket.app&amp;hl=tr-TR" rel="noopener" aria-label="Google Play üzerinde Saldo Pocket"><img src="/assets/badges/google-play-tr.png" alt="" width="162" height="48" loading="lazy" decoding="async"></a></div>
     <ul class="page-nav"><li><a href="/tr/saldo-pocket/privacy">Gizlilik politikası</a></li><li><a href="/tr/saldo-pocket/terms">Kullanım koşulları</a></li><li><a href="/tr/saldo-pocket/delete-account">Hesabı ve verileri sil</a></li><li><a href="/tr/saldo-pocket/support" aria-current="page">Destek</a></li></ul>
     <section class="card"><h2>İletişim</h2><p>E-posta <a href="mailto:kontakt@nordicdigitalapp.no" class="ltr">kontakt@nordicdigitalapp.no</a>. Lütfen telefon modelini ve uygulama sürümünü (Ben sekmesinin en altında) belirt.</p></section>
     <section class="faq"><h2>Sık sorulan sorular</h2>

@@ -31,6 +31,14 @@
   <link rel="stylesheet" href="/assets/fonts/hanken-grotesk.css">
   <link rel="stylesheet" href="/assets/home-tokens.css">
   <link rel="stylesheet" href="/assets/home.css">
+  <link rel="stylesheet" href="/assets/store-badges.css">
+  <script>
+  (function () {
+    var ua = navigator.userAgent || '';
+    var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    document.documentElement.setAttribute('data-os', ios ? 'ios' : /Android/.test(ua) ? 'android' : 'other');
+  })();
+  </script>
 </head>
 <body>
   <a class="skip" href="#content">İçeriğe geç</a>
@@ -68,7 +76,7 @@
             </div>
           </div>
           <p class="about">Uçuş, otel, kiralık araç ve etkinlik bul – ve tüm seyahati tek bir yerde planla.</p>
-          <div class="buttons"><a class="btn store" href="https://apps.apple.com/app/id6796367244" rel="noopener" aria-label="App Store üzerinde PlanTravel"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.5-1-2.5-3.9ZM14 5.4c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.6 2.8-1.4Z"/></svg><span>App Store</span></a><a class="btn store" href="https://play.google.com/store/apps/details?id=com.olstaddigital.plantravel&amp;hl=tr-TR" rel="noopener" aria-label="Google Play üzerinde PlanTravel"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4.2 2.6c-.3.3-.4.7-.4 1.2v16.4c0 .5.1.9.4 1.2l9.3-9.4-9.3-9.4Zm10.4 10.5 2.6 2.6-11.1 6.3c-.4.2-.8.2-1.1.1l9.6-9Zm0-2.2L5 1.9c.3-.1.7-.1 1.1.1l11.1 6.3-2.6 2.6Zm3.9-1.8 3 1.7c.9.5.9 1.8 0 2.3l-3 1.7-2.8-2.8 2.8-2.9Z"/></svg><span>Google Play</span></a><a class="btn ghost" href="https://plantravelapp.no" rel="noopener">plantravelapp.no<svg class="icon dir" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+          <div class="buttons"><div class="store-badges"><a class="store-badge app-store" href="https://apps.apple.com/app/id6796367244" rel="noopener" aria-label="App Store üzerinde PlanTravel"><picture><source srcset="/assets/badges/app-store-white-tr.svg" media="(prefers-color-scheme: dark)"><img src="/assets/badges/app-store-black-tr.svg" alt="" width="144" height="48" loading="lazy" decoding="async"></picture></a><a class="store-badge google-play" href="https://play.google.com/store/apps/details?id=com.olstaddigital.plantravel&amp;hl=tr-TR" rel="noopener" aria-label="Google Play üzerinde PlanTravel"><img src="/assets/badges/google-play-tr.png" alt="" width="162" height="48" loading="lazy" decoding="async"></a></div><a class="btn ghost" href="https://plantravelapp.no" rel="noopener">plantravelapp.no<svg class="icon dir" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M9 7h8v8"/></svg></a></div>
           
           <ul class="app-links" aria-label="PlanTravel"><li><a href="https://plantravelapp.com/tr/privacy" rel="noopener">Gizlilik</a></li><li><a href="https://plantravelapp.com/tr/support" rel="noopener">Destek</a></li></ul>
         </div>
@@ -86,8 +94,8 @@
             </div>
           </div>
           <p class="about">Bugün ne kadar harcayabileceğini ve ayın nasıl biteceğini gör – maaştan maaşa.</p>
+          <div class="buttons"><div class="store-badges"><a class="store-badge app-store" href="https://apps.apple.com/app/id6821035069" rel="noopener" aria-label="App Store üzerinde Saldo Pocket"><picture><source srcset="/assets/badges/app-store-white-tr.svg" media="(prefers-color-scheme: dark)"><img src="/assets/badges/app-store-black-tr.svg" alt="" width="144" height="48" loading="lazy" decoding="async"></picture></a><a class="store-badge google-play" href="https://play.google.com/store/apps/details?id=com.saldopocket.app&amp;hl=tr-TR" rel="noopener" aria-label="Google Play üzerinde Saldo Pocket"><img src="/assets/badges/google-play-tr.png" alt="" width="162" height="48" loading="lazy" decoding="async"></a></div></div>
           
-          <p class="soon">Yakında App Store ve Google Play’de</p>
           <ul class="app-links" aria-label="Saldo Pocket"><li><a href="/tr/saldo-pocket/privacy">Gizlilik</a></li><li><a href="/tr/saldo-pocket/support">Destek</a></li><li><a href="/tr/saldo-pocket/delete-account">Verileri sil</a></li></ul>
         </div>
       </article>

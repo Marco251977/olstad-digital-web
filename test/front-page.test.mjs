@@ -29,10 +29,13 @@ test('a front page per language, in the right direction, with the hero, both app
   }
 });
 
-test('store buttons only for published apps; the language menu has the 18 in the apps’ order', () => {
+test('store badges for published apps (Saldo Pocket 1.0.9 is in both stores); the language menu has the 18 in the apps’ order', () => {
   const html = read('nb/index.html');
   const saldo = html.slice(html.indexOf('id="app-saldo-pocket"') - 200, html.indexOf('</article>', html.indexOf('id="app-saldo-pocket"')));
-  assert.doesNotMatch(saldo, /apps\.apple\.com|play\.google\.com/);
+  assert.match(saldo, /href="https:\/\/apps\.apple\.com\/app\/id6821035069"/);
+  assert.match(saldo, /href="https:\/\/play\.google\.com\/store\/apps\/details\?id=com\.saldopocket\.app&amp;hl=no-NO"/);
+  assert.doesNotMatch(saldo, /class="soon"/);
+  assert.ok(html.indexOf('id="app-plantravel"') < html.indexOf('id="app-saldo-pocket"'), 'PlanTravel stays first on the front page');
   assert.match(saldo, /\/nb\/saldo-pocket\/delete-account/);
   assert.match(html, /apps\.apple\.com\/app\/id6796367244/);
   assert.match(html, /details\?id=com\.olstaddigital\.plantravel&amp;hl=no-NO/);
@@ -126,4 +129,29 @@ test('/admin: one card per app in the app list, a page per app, stats only for s
   assert.equal((await stats('saldo-pocket', 'other')).status, 403);
   assert.equal((await stats('saldo-pocket')).status, 401);
   for (const l of LANGS) for (const k of ['apps', 'noData', 'allApps', 'seeStats']) assert.ok(JSON.parse(read(`i18n/home/${l}.json`)).admin[k], `${l} ${k}`);
+});
+
+test('the store badges: one component, the stores’ own artwork per language (English where the store has none), both always shown', async () => {
+  const { STORE_BADGES, badgeFiles, storeLinks } = await import('../scripts/store-badges.mjs');
+  for (const lang of LANGS) {
+    for (const store of Object.keys(STORE_BADGES)) {
+      const files = badgeFiles(store, lang);
+      for (const f of [files.light, files.dark].filter(Boolean)) assert.ok(fs.existsSync(new URL(`..${f}`, import.meta.url)), `${lang} ${f}`);
+    }
+    // The App Store link never has a country (Apple opens the visitor's own store); Google Play follows the page's language.
+    assert.doesNotMatch(storeLinks({ appStore: '1' }, lang).appStore, /apple\.com\/[a-z]{2}\//);
+    const h = JSON.parse(read(`i18n/home/${lang}.json`));
+    for (const page of [`${lang}/index.html`, `${lang}/saldo-pocket/support.html`]) {
+      const html = read(page);
+      const box = html.slice(html.indexOf('<div class="store-badges">', html.indexOf('6821035069') - 400));
+      assert.ok(html.includes('/assets/store-badges.css'), page);
+      for (const store of ['App Store', 'Google Play']) assert.ok(box.includes(`aria-label="${h.store.label.replace('{{app}}', 'Saldo Pocket').replace('{{store}}', store).replace(/&/g, '&amp;')}"`), `${page} ${store}`);
+      assert.match(box, /prefers-color-scheme: dark/, page);
+    }
+  }
+  assert.equal(badgeFiles('appStore', 'hi').light, '/assets/badges/app-store-black-en.svg', 'Apple has no Hindi badge');
+  for (const page of ['privacy', 'terms', 'delete-account']) assert.doesNotMatch(read(`nb/saldo-pocket/${page}.html`), /store-badge/, page);
+  const css = read('assets/store-badges.css');
+  assert.doesNotMatch(css, /\b(left|right)\s*:|margin-(left|right)|padding-(left|right)/);
+  assert.match(css, /min-height: 48px/);
 });
