@@ -44,7 +44,7 @@
       {
         "heading": "Registrar compras automáticamente (solo iPhone, Pro, desactivado por defecto)",
         "body": [
-          "Cuando activas la función y configuras la automatización en Atajos, tu iPhone le da a la app el importe, la moneda, el comercio y el nombre de la tarjeta después de cada compra con Apple Pay. Estos datos se leen y guardan solo en el teléfono y no se envían ni a nosotros ni a terceros. El nombre de la tarjeta solo se usa para elegir la cuenta correcta. Si sincronizas entre tus dispositivos, los movimientos se sincronizan como los demás. Si desactivas la función o termina Pro, no se recoge nada más. «Borrar todos los datos» también borra las compras en espera."
+          "Cuando activas la función y configuras la automatización en Atajos, tu iPhone le da a la app el importe, la moneda, el comercio y el nombre de la tarjeta después de cada compra con Apple Pay. Estos datos se leen y guardan solo en el teléfono y no se envían ni a nosotros ni a terceros. El nombre de la tarjeta solo se usa para elegir la cuenta correcta. Si sincronizas entre tus dispositivos, los movimientos se sincronizan como los demás. Si desactivas la función o termina Pro, no se recoge nada más. «{{menuDelete}}» también borra las compras en espera."
         ]
       },
       {

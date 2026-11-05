@@ -44,7 +44,7 @@
       {
         "heading": "Kirjaa ostot automaattisesti (vain iPhone, Pro, oletuksena pois)",
         "body": [
-          "Kun otat toiminnon käyttöön ja määrität automaation Pikakomennoissa, iPhone antaa sovellukselle summan, valuutan, kaupan ja kortin nimen jokaisen Apple Pay -oston jälkeen. Tiedot luetaan ja tallennetaan vain puhelimeen, eikä niitä lähetetä meille tai muille. Kortin nimeä käytetään vain oikean tilin valintaan. Jos synkronoit laitteidesi välillä, tapahtumat kulkevat mukana kuten muutkin. Jos poistat toiminnon käytöstä tai Pro päättyy, mitään ei enää kerätä. ”Poista kaikki tiedot” poistaa myös odottavat ostot."
+          "Kun otat toiminnon käyttöön ja määrität automaation Pikakomennoissa, iPhone antaa sovellukselle summan, valuutan, kaupan ja kortin nimen jokaisen Apple Pay -oston jälkeen. Tiedot luetaan ja tallennetaan vain puhelimessa, eikä niitä lähetetä meille tai muille. Kortin nimeä käytetään vain oikean tilin valintaan. Jos synkronoit laitteidesi välillä, nämä tapahtumat synkronoidaan kuten muutkin tapahtumat. Jos poistat toiminnon käytöstä tai Pro päättyy, mitään ei enää kerätä. ”{{menuDelete}}” poistaa myös odottavat ostot."
         ]
       },
       {

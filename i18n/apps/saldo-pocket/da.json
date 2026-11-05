@@ -44,7 +44,7 @@
       {
         "heading": "Registrér køb automatisk (kun iPhone, Pro, slået fra som standard)",
         "body": [
-          "Når du slår funktionen til og konfigurerer automatiseringen i Genveje, giver iPhone appen beløbet, valutaen, butikken og kortets navn efter hvert køb med Apple Pay. Det læses og gemmes kun på telefonen og sendes ikke til os eller andre. Kortets navn bruges kun til at vælge den rigtige konto. Synkroniserer du mellem dine enheder, følger posterne med som andre poster. Slår du funktionen fra, eller udløber Pro, indsamles der ikke mere. ”Slet alle data” sletter også køb, der venter."
+          "Når du slår funktionen til og konfigurerer automatiseringen i Genveje, giver iPhone appen beløbet, valutaen, butikken og kortets navn efter hvert køb med Apple Pay. Det læses og gemmes kun på telefonen og sendes ikke til os eller andre. Kortets navn bruges kun til at vælge den rigtige konto. Synkroniserer du mellem dine enheder, følger posterne med som andre poster. Slår du funktionen fra, eller udløber Pro, indsamles der ikke mere. ”{{menuDelete}}” sletter også køb, der venter."
         ]
       },
       {

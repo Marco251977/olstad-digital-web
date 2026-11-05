@@ -44,7 +44,7 @@
       {
         "heading": "Rejestruj zakupy automatycznie (tylko iPhone, Pro, domyślnie wyłączone)",
         "body": [
-          "Gdy włączysz funkcję i skonfigurujesz automatyzację w aplikacji Skróty, iPhone po każdym zakupie przez Apple Pay przekazuje aplikacji kwotę, walutę, sklep i nazwę karty. Dane są odczytywane i zapisywane tylko na telefonie i nie są wysyłane ani do nas, ani do innych. Nazwa karty służy wyłącznie do wybrania właściwego konta. Jeśli synchronizujesz urządzenia, transakcje przechodzą jak inne. Gdy wyłączysz funkcję lub Pro się skończy, nic więcej nie jest zbierane. „Usuń wszystkie dane” usuwa też zakupy oczekujące."
+          "Gdy włączysz funkcję i skonfigurujesz automatyzację w aplikacji Skróty, iPhone po każdym zakupie przez Apple Pay przekazuje aplikacji kwotę, walutę, sklep i nazwę karty. Dane są odczytywane i zapisywane tylko na telefonie i nie są wysyłane ani do nas, ani do innych. Nazwa karty służy wyłącznie do wybrania właściwego konta. Jeśli synchronizujesz urządzenia, te operacje są synchronizowane tak jak pozostałe. Gdy wyłączysz funkcję lub Pro się skończy, nic więcej nie jest zbierane. „{{menuDelete}}” usuwa też zakupy oczekujące."
         ]
       },
       {
