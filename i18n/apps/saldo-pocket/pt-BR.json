@@ -101,7 +101,7 @@
       {
         "heading": "Aviso de que sua assinatura Pro está ativa",
         "body": [
-          "Se você tem uma assinatura Pro que é renovada todo mês ou todo ano, o app mostra pelo menos a cada seis meses um aviso de que a assinatura está ativa, quanto ela custa e como cancelá-la. Se você estiver conectado, também recebe o aviso por e-mail. A lei norueguesa exige esse aviso (digitalytelsesloven, § 33), e registramos cada aviso para poder comprovar que ele foi dado. O registro contém:"
+          "Se você tem uma assinatura Pro que é renovada todo mês ou todo ano, o app mostra pelo menos a cada seis meses um aviso de que a assinatura está ativa, quanto ela custa e como cancelá-la. Se você estiver conectado, também recebe o aviso por e-mail. Para usuários na Noruega, a lei norueguesa exige esse aviso (digitalytelsesloven, § 33), e registramos cada aviso para poder comprovar que ele foi dado. O registro contém:"
         ],
         "list": [
           "Um código do seu cliente no RevenueCat, gerado com uma chave secreta, e o ID da compra na loja.",
@@ -114,7 +114,7 @@
           "O registro nunca contém seu nome, seu e-mail ou o ID da sua conta. Para poder enviar o e-mail, guardamos à parte o ID da conta e a data do próximo aviso; eles são excluídos quando você exclui a conta.",
           "Se você entrou na sua conta e permitiu notificações do app no celular, o aviso também pode chegar como notificação push. Nesse caso guardamos o token de push do celular – o endereço que a Apple ou o Google usam para entregar notificações a esse celular específico – junto com o ID da sua conta, só para enviar este aviso. O aviso é enviado pela Expo (EUA), que o repassa ao Apple Push Notification service (iPhone) ou ao Google Firebase Cloud Messaging (Android). Ele contém só o texto sobre a assinatura, nada do seu orçamento. O token é apagado quando você sai da conta, exclui a conta ou desativa as notificações (o app o remove nesse momento), e quando a Apple ou o Google informam que ele não é mais válido. Você pode desativar as notificações do app nos ajustes do celular.",
           "Enviamos o aviso a todos com assinatura Pro. Para usuários na Noruega, ele é obrigatório pela digitalytelsesloven, § 33 (obrigação legal, artigo 6(1)(c)). Para os demais, enviamos porque ajuda você a acompanhar sua assinatura (legítimo interesse, artigo 6(1)(f)). A mesma base vale para guardar o token de push. Você escolhe nos ajustes do celular se o app pode enviar notificações push. Sem push, você recebe o aviso no app, e por e-mail se estiver conectado.",
-          "O registro é guardado por 3 anos após o último dia ativo da assinatura, também se você excluir a conta, mas então sem nada que o ligue a você. A base é o nosso legítimo interesse (artigo 6(1)(f)) em poder comprovar que demos as informações exigidas por lei."
+          "O registro é guardado por 3 anos após o último dia ativo da assinatura, também se você excluir a conta, mas então sem nada que o ligue a você. A base é o nosso legítimo interesse (artigo 6(1)(f)) em poder comprovar que o aviso foi dado (para usuários na Noruega, a lei exige isso)."
         ]
       },
       {

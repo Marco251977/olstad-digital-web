@@ -101,7 +101,7 @@
       {
         "heading": "Meddelande om att Pro-prenumerationen löper",
         "body": [
-          "Har du en Pro-prenumeration som förnyas varje månad eller varje år visar appen minst var sjätte månad ett meddelande om att prenumerationen löper, vad den kostar och hur du säger upp den. Är du inloggad får du det också via e-post. Norsk lag kräver meddelandet (digitalytelsesloven § 33), och vi loggar varje meddelande för att kunna visa att det gavs. Loggen innehåller:"
+          "Har du en Pro-prenumeration som förnyas varje månad eller varje år visar appen minst var sjätte månad ett meddelande om att prenumerationen löper, vad den kostar och hur du säger upp den. Är du inloggad får du det också via e-post. För användare i Norge kräver norsk lag meddelandet (digitalytelsesloven § 33), och vi loggar varje meddelande för att kunna visa att det gavs. Loggen innehåller:"
         ],
         "list": [
           "En kod av din RevenueCat-kund, skapad med en hemlig nyckel, och butikens köp-ID.",
@@ -114,7 +114,7 @@
           "Loggen innehåller aldrig ditt namn, din e-postadress eller ditt konto-ID. För att kunna skicka e-posten sparar vi konto-ID:t och datumet för nästa meddelande separat; det raderas när du raderar kontot.",
           "Är du inloggad och har tillåtit notiser för appen på telefonen kan meddelandet också komma som push-notis. Då sparar vi telefonens push-token – adressen som Apple eller Google använder för att leverera notiser till just den här telefonen – tillsammans med ditt konto-ID, bara för att skicka det här meddelandet. Meddelandet skickas via Expo (USA), som lämnar det vidare till Apple Push Notification service (iPhone) eller Google Firebase Cloud Messaging (Android). Det innehåller bara texten om prenumerationen, inget från din budget. Token raderas när du loggar ut, raderar kontot eller stänger av notiser (appen tar då bort den), och när Apple eller Google meddelar att den inte längre gäller. Du kan stänga av notiser för appen i telefonens inställningar.",
           "Vi skickar meddelandet till alla med Pro-prenumeration. För användare i Norge krävs det enligt digitalytelsesloven § 33 (rättslig förpliktelse, artikel 6.1 c). För andra skickar vi det eftersom det hjälper dig att ha koll på prenumerationen (berättigat intresse, artikel 6.1 f). Samma grund gäller för att spara push-token. Om appen får skicka push-notiser väljer du själv i telefonens inställningar. Utan push får du meddelandet i appen, och via e-post om du är inloggad.",
-          "Loggen sparas i 3 år efter prenumerationens sista aktiva dag, även om du raderar kontot, men då utan något som kopplar den till dig. Grunden är vårt berättigade intresse (artikel 6.1 f) av att kunna visa att vi har gett den information som lagen kräver."
+          "Loggen sparas i 3 år efter prenumerationens sista aktiva dag, även om du raderar kontot, men då utan något som kopplar den till dig. Grunden är vårt berättigade intresse (artikel 6.1 f) av att kunna visa att meddelandet gavs (för användare i Norge kräver lagen det)."
         ]
       },
       {
