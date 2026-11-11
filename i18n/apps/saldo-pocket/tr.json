@@ -101,7 +101,7 @@
       {
         "heading": "Pro aboneliğinin devam ettiğine dair bildirim",
         "body": [
-          "Her ay veya her yıl yenilenen bir Pro aboneliğin varsa, uygulama en az altı ayda bir aboneliğin devam ettiğini, ne kadar tuttuğunu ve nasıl iptal edeceğini söyleyen bir bildirim gösterir. Giriş yaptıysan bunu e-postayla da alırsın. Bu bildirim Norveç yasasıyla zorunludur (digitalytelsesloven, § 33) ve verildiğini kanıtlayabilmek için her bildirimi kayda alırız. Kayıt şunları içerir:"
+          "Her ay veya her yıl yenilenen bir Pro aboneliğin varsa, uygulama en az altı ayda bir aboneliğin devam ettiğini, ne kadar tuttuğunu ve nasıl iptal edeceğini söyleyen bir bildirim gösterir. Giriş yaptıysan bunu e-postayla da alırsın. Norveç’teki kullanıcılar için bu bildirim Norveç yasasıyla zorunludur (digitalytelsesloven, § 33) ve verildiğini kanıtlayabilmek için her bildirimi kayda alırız. Kayıt şunları içerir:"
         ],
         "list": [
           "RevenueCat müşterinden gizli bir anahtarla oluşturulan bir kod ve mağazanın satın alma kimliği.",
@@ -114,7 +114,7 @@
           "Kayıt hiçbir zaman adını, e-posta adresini veya hesap kimliğini içermez. E-postayı gönderebilmek için hesap kimliğini ve bir sonraki bildirimin tarihini ayrı saklarız; hesabını sildiğinde bunlar silinir.",
           "Giriş yaptıysan ve telefonda uygulamanın bildirimlerine izin verdiysen, bu bilgilendirme anlık (push) bildirim olarak da gelebilir. Bu durumda telefonun push token’ını – Apple’ın veya Google’ın bildirimleri tam olarak bu telefona ulaştırmak için kullandığı adresi – hesap kimliğinle birlikte, yalnızca bu bilgilendirmeyi göndermek için saklarız. Bilgilendirme Expo (ABD) üzerinden gönderilir; Expo onu Apple Push Notification service’e (iPhone) veya Google Firebase Cloud Messaging’e (Android) iletir. Yalnızca abonelikle ilgili metni içerir, bütçenden hiçbir şey içermez. Token; çıkış yaptığında, hesabını sildiğinde veya bildirimleri kapattığında (uygulama o zaman onu kaldırır) ve Apple ya da Google artık geçerli olmadığını bildirdiğinde silinir. Uygulamanın bildirimlerini telefonun ayarlarından kapatabilirsin.",
           "Bilgilendirmeyi Pro aboneliği olan herkese göndeririz. Norveç’teki kullanıcılar için bu, digitalytelsesloven § 33 uyarınca zorunludur (yasal yükümlülük, madde 6(1)(c)). Diğer kullanıcılara, aboneliğini takip etmene yardımcı olduğu için göndeririz (meşru menfaat, madde 6(1)(f)). Push token’ı saklamak için de aynı dayanak geçerlidir. Uygulamanın anlık bildirim gönderip gönderemeyeceğini telefonun ayarlarından sen seçersin. Anlık bildirim olmadan bilgilendirmeyi uygulamada, giriş yaptıysan e-postayla da alırsın.",
-          "Kayıt, aboneliğin son aktif gününden sonra 3 yıl saklanır; hesabını silsen de saklanır, ancak o zaman seninle bağlantısını kuran hiçbir şey olmadan. Dayanak, yasanın gerektirdiği bilgiyi verdiğimizi kanıtlayabilme konusundaki meşru menfaatimizdir (madde 6(1)(f))."
+          "Kayıt, aboneliğin son aktif gününden sonra 3 yıl saklanır; hesabını silsen de saklanır, ancak o zaman seninle bağlantısını kuran hiçbir şey olmadan. Dayanak, bildirimin verildiğini kanıtlayabilme konusundaki meşru menfaatimizdir (madde 6(1)(f)). Norveç’teki kullanıcılar için yasa bunu gerektirir."
         ]
       },
       {
