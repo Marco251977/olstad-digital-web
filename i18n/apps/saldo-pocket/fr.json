@@ -42,6 +42,12 @@
         ]
       },
       {
+        "heading": "Enregistrer les achats automatiquement (iPhone uniquement, Pro, désactivé par défaut)",
+        "body": [
+          "Lorsque vous activez la fonction et configurez l’automatisation dans Raccourcis, votre iPhone transmet à l’app le montant, la devise, le commerce et le nom de la carte après chaque achat Apple Pay. Ces données sont lues et enregistrées uniquement sur le téléphone et ne sont envoyées ni à nous ni à des tiers. Le nom de la carte sert uniquement à choisir le bon compte. Si vous synchronisez entre vos appareils, les opérations suivent comme les autres. Si vous désactivez la fonction ou si Pro prend fin, plus rien n’est collecté. « {{menuDelete}} » supprime aussi les achats en attente."
+        ]
+      },
+      {
         "heading": "Sauvegarde sur votre téléphone",
         "body": [
           "Si la sauvegarde est activée, le téléphone y inclut les données de l’app : sur Android dans la sauvegarde de votre compte Google, sur iPhone dans iCloud. Votre budget revient alors sur un nouveau téléphone. Ce sont Apple et Google qui stockent la sauvegarde, selon leurs propres conditions, et vous l’activez ou la désactivez dans les réglages du téléphone.",

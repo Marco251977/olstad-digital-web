@@ -42,6 +42,12 @@
         ]
       },
       {
+        "heading": "Aankopen automatisch registreren (alleen iPhone, Pro, standaard uit)",
+        "body": [
+          "Als je de functie aanzet en de automatisering in Opdrachten instelt, geeft je iPhone de app na elke aankoop met Apple Pay het bedrag, de valuta, de winkel en de naam van de kaart. Dit wordt alleen op de telefoon gelezen en opgeslagen en niet naar ons of anderen gestuurd. De naam van de kaart wordt alleen gebruikt om de juiste rekening te kiezen. Synchroniseer je tussen je apparaten, dan gaan de transacties mee zoals de andere. Zet je de functie uit of eindigt Pro, dan wordt er niets meer verzameld. ‘{{menuDelete}}’ verwijdert ook aankopen die wachten."
+        ]
+      },
+      {
         "heading": "Back-up op je telefoon",
         "body": [
           "Staat de back-up aan, dan neemt de telefoon de gegevens van de app daarin op: op Android in de back-up in je Google-account, op iPhone in iCloud. Je budget komt dan terug op een nieuwe telefoon. Apple en Google bewaren de back-up volgens hun eigen voorwaarden, en je zet hem aan en uit in de instellingen van de telefoon.",

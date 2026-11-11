@@ -42,6 +42,12 @@
         ]
       },
       {
+        "heading": "Kirjaa ostot automaattisesti (vain iPhone, Pro, oletuksena pois)",
+        "body": [
+          "Kun otat toiminnon käyttöön ja määrität automaation Pikakomennoissa, iPhone antaa sovellukselle summan, valuutan, kaupan ja kortin nimen jokaisen Apple Pay -oston jälkeen. Tiedot luetaan ja tallennetaan vain puhelimessa, eikä niitä lähetetä meille tai muille. Kortin nimeä käytetään vain oikean tilin valintaan. Jos synkronoit laitteidesi välillä, nämä tapahtumat synkronoidaan kuten muutkin tapahtumat. Jos poistat toiminnon käytöstä tai Pro päättyy, mitään ei enää kerätä. ”{{menuDelete}}” poistaa myös odottavat ostot."
+        ]
+      },
+      {
         "heading": "Varmuuskopio puhelimessa",
         "body": [
           "Jos varmuuskopiointi on päällä, puhelin ottaa sovelluksen tiedot mukaan varmuuskopioon: Androidissa Google-tilisi varmuuskopioon, iPhonessa iCloudiin. Silloin budjettisi palautuu uuteen puhelimeen. Varmuuskopion tallentavat Apple ja Google omien ehtojensa mukaisesti, ja voit ottaa sen käyttöön tai poistaa sen käytöstä puhelimen asetuksista.",

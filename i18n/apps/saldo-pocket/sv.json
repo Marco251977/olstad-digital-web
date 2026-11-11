@@ -42,6 +42,12 @@
         ]
       },
       {
+        "heading": "Registrera köp automatiskt (endast iPhone, Pro, av som standard)",
+        "body": [
+          "När du slår på funktionen och ställer in automatiseringen i Genvägar ger iPhone appen beloppet, valutan, butiken och kortets namn efter varje köp med Apple Pay. Det läses och sparas bara på telefonen och skickas inte till oss eller någon annan. Kortets namn används bara för att välja rätt konto. Om du synkar mellan dina enheter följer posterna med som andra poster. Stänger du av funktionen, eller Pro tar slut, samlas inget mer in. ”{{menuDelete}}” raderar också köp som väntar."
+        ]
+      },
+      {
         "heading": "Säkerhetskopia på telefonen",
         "body": [
           "Har du slagit på säkerhetskopiering tar telefonen med appens data i den: på Android i säkerhetskopian på ditt Google-konto, på iPhone i iCloud. Då kommer budgeten tillbaka på en ny telefon. Det är Apple och Google som sparar säkerhetskopian, enligt sina villkor, och du slår på och av den i telefonens inställningar.",

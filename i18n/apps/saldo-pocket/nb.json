@@ -42,6 +42,12 @@
         ]
       },
       {
+        "heading": "Registrer kjøp automatisk (kun iPhone, Pro, av som standard)",
+        "body": [
+          "Når du slår på funksjonen og setter opp automasjonen i Snarveier, gir iPhone appen beløpet, valutaen, butikken og navnet på kortet etter hvert kjøp med Apple Pay. Det leses og lagres bare på telefonen og sendes ikke til oss eller andre. Kortnavnet brukes bare til å velge riktig konto. Har du synk mellom dine enheter, følger postene med som andre poster. Slår du funksjonen av, eller Pro slutter, samles ingenting mer. «{{menuDelete}}» sletter også kjøp som venter."
+        ]
+      },
+      {
         "heading": "Sikkerhetskopi på telefonen",
         "body": [
           "Har du slått på sikkerhetskopi, tar telefonen med appens data i den: på Android i sikkerhetskopien på Google-kontoen din, på iPhone i iCloud. Da kommer budsjettet tilbake på en ny telefon. Det er Apple og Google som lagrer sikkerhetskopien, etter sine vilkår, og du slår den av og på i telefonens innstillinger.",
