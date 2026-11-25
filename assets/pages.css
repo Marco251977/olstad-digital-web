@@ -208,6 +208,17 @@ footer.site nav a { display: inline-flex; align-items: center; min-height: 44px;
 
 [dir='rtl'] .ltr { direction: ltr; unicode-bidi: isolate; }
 
+/* A detail not filled in yet («[ORGANISASJONSNUMMER]» in data/apps.json): marked, so it is never missed. */
+.placeholder {
+  padding: 0 0.3rem;
+  border-radius: 0.25rem;
+  background: var(--planned-soft);
+  color: var(--planned);
+  font-weight: 700;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
 /* A link that looks like a button (e.g. «Open Saldo Pocket» on the sign-in callback page). */
 .button {
   display: inline-block;

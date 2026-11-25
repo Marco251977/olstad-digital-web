@@ -1,0 +1,98 @@
+{
+  "description": "Prywatność i pomoc – Road to Nordkapp, gra samochodowa, w której jedziesz z Oslo na Nordkapp drogą E6.",
+  "privacy": {
+    "intro": "Grę Road to Nordkapp stworzyła firma {{publisher}} (nr rej. {{publisherOrgNumber}}, {{publisherAddress}}, {{country}}). Jesteśmy administratorem opisanych tu danych.",
+    "sections": [
+      {
+        "heading": "W skrócie",
+        "body": [
+          "W grze nie ma kont, reklam, śledzenia ani analityki. Jedyne informacje wysyłane z gry to te, które są potrzebne do potwierdzenia zakupu {{fullRoadtrip}}."
+        ]
+      },
+      {
+        "heading": "Przechowywane na Twoim urządzeniu",
+        "body": [
+          "Ustawienia, postępy, gwiazdki, monety oraz informacja, czy kupiłeś {{fullRoadtrip}}, są przechowywane wyłącznie na Twoim urządzeniu. Nie mamy do nich dostępu. Zostają usunięte, gdy odinstalujesz grę (albo pozostają we własnej kopii zapasowej urządzenia, jeśli z niej korzystasz)."
+        ]
+      },
+      {
+        "heading": "Zakup w grze",
+        "body": [
+          "{{fullRoadtrip}} kupujesz w sklepie, z którego pobrałeś grę. Płatność obsługuje sklep, a my nigdy nie widzimy Twoich danych płatniczych.",
+          "Do potwierdzania i przywracania zakupu używamy usługi RevenueCat (RevenueCat, Inc., USA), która przetwarza te informacje w naszym imieniu. RevenueCat otrzymuje:"
+        ],
+        "list": [
+          "losowy, anonimowy identyfikator utworzony przez grę,",
+          "historię zakupów powiązaną z tym identyfikatorem: jaki produkt, kiedy, kraj i walutę oraz potwierdzenie zakupu ze sklepu,",
+          "informacje techniczne potrzebne do udzielenia odpowiedzi, na przykład wersję aplikacji i adres IP zapytania."
+        ],
+        "after": [
+          "Anonimowy identyfikator nie jest powiązany z Twoim imieniem i nazwiskiem, adresem e-mail ani kontem w sklepie.",
+          "Informacje są wykorzystywane, aby zapewnić Ci dostęp do tego, co kupiłeś, oraz do zbiorczych statystyk sprzedaży. Podstawą prawną jest umowa zakupu, którą zawieramy z Tobą (art. 6 ust. 1 lit. b RODO).",
+          "Przekazywanie danych do USA odbywa się na podstawie standardowych klauzul umownych UE lub równoważnej podstawy stosowanej przez RevenueCat."
+        ]
+      },
+      {
+        "heading": "Jak długo przechowujemy dane",
+        "body": [
+          "Historia zakupów jest przechowywana tak długo, jak jest to potrzebne do przywrócenia Twojego zakupu, i tak długo, jak wymagają tego przepisy o rachunkowości."
+        ]
+      },
+      {
+        "heading": "Twoje prawa",
+        "body": [
+          "Możesz poprosić o dostęp do danych, ich sprostowanie lub usunięcie, a także złożyć skargę do norweskiego organu ochrony danych (datatilsynet.no) lub do organu ochrony danych w miejscu zamieszkania.",
+          "Ponieważ gra nie ma kont, do odnalezienia Twojego zakupu możemy potrzebować potwierdzenia zakupu ze sklepu (numeru zamówienia). Napisz na adres {{publisherEmail}}."
+        ]
+      },
+      {
+        "heading": "Dzieci",
+        "body": [
+          "Gra nie zbiera informacji o tym, kim jesteś, niezależnie od Twojego wieku."
+        ]
+      },
+      {
+        "heading": "Zmiany",
+        "body": [
+          "Jeśli ta polityka prywatności się zmieni, data na górze strony zostanie zaktualizowana."
+        ]
+      }
+    ]
+  },
+  "support": {
+    "intro": "Masz pytania o Road to Nordkapp lub zakup {{fullRoadtrip}}? Oto odpowiedzi na najczęstsze z nich i informacja, jak się z nami skontaktować.",
+    "contactHeading": "Kontakt",
+    "contactBody": "Napisz na adres {{publisherEmail}}. Jeśli chodzi o zakup, podaj swój identyfikator użytkownika ({{settings}} → {{about}}) i numer zamówienia z potwierdzenia zakupu ze sklepu. Napisz też, jakiego telefonu lub tabletu używasz.",
+    "faqHeading": "Najczęstsze pytania",
+    "faq": [
+      {
+        "q": "Jak przywrócić zakup?",
+        "a": "Upewnij się, że jesteś zalogowany w sklepie na to samo konto, którego użyłeś do zakupu {{fullRoadtrip}}. Otwórz grę i przejdź do: {{settings}} → {{journey}} → {{restore}}. Ten przycisk znajdziesz też na karcie {{fullRoadtrip}} na ekranie {{route}}. Po odnalezieniu zakupu etapy 5–11 są znowu odblokowane."
+      },
+      {
+        "q": "Gra nie może znaleźć mojego zakupu. Co mam zrobić?",
+        "a": "Sprawdź, czy urządzenie ma połączenie z internetem i czy jesteś zalogowany w sklepie na to samo konto, którego użyłeś do zakupu. Jeśli to nie pomoże, napisz na adres {{publisherEmail}}, podając swój identyfikator użytkownika i numer zamówienia z potwierdzenia zakupu, a pomożemy Ci."
+      },
+      {
+        "q": "Gdzie znajdę swój identyfikator użytkownika?",
+        "a": "Przejdź do: {{settings}} → {{about}}. Wyświetla się tam Twój {{userId}}, a przycisk „{{copyUserId}}” kopiuje identyfikator, więc możesz wkleić go do e-maila. Identyfikator jest losowy i tworzy go gra. Nie jest powiązany z Twoim imieniem i nazwiskiem, adresem e-mail ani kontem w sklepie."
+      },
+      {
+        "q": "Mam nowy telefon lub zainstalowałem grę ponownie",
+        "a": "Zakup jest przypisany do Twojego konta w sklepie: użyj przycisku {{restore}}, jak opisano powyżej. Postępy i ustawienia są przechowywane tylko na urządzeniu i nie możemy ich przenieść. Mogą wrócić wyłącznie z własnej kopii zapasowej urządzenia. Nowa instalacja otrzymuje nowy identyfikator użytkownika."
+      },
+      {
+        "q": "Co zawiera {{fullRoadtrip}}?",
+        "a": "{{purchaseDesc}} Etapy 1–4, z Oslo do Trondheimu, są bezpłatne."
+      },
+      {
+        "q": "Jak otrzymać zwrot pieniędzy?",
+        "a": "Płacisz w sklepie, z którego pobrałeś grę, i to sklep obsługuje zwroty. Skontaktuj się ze sklepem. Nie widzimy płatności i nie możemy jej zmienić."
+      },
+      {
+        "q": "Jak usunąć moje dane?",
+        "a": "To, co jest na Twoim urządzeniu, zostaje usunięte, gdy odinstalujesz grę. Jeśli chcesz, abyśmy usunęli też historię zakupów przechowywaną przez RevenueCat, napisz na adres {{publisherEmail}}, podając swój identyfikator użytkownika lub numer zamówienia z potwierdzenia zakupu. Więcej przeczytasz w polityce prywatności."
+      }
+    ]
+  }
+}

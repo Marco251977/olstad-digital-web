@@ -65,6 +65,25 @@
       }
     },
     {
+      "slug": "road-to-nordkapp",
+      "name": "Road to Nordkapp",
+      "pages": [
+        "privacy",
+        "support"
+      ],
+      "lastUpdated": "2026-11-25",
+      "pageUpdated": {
+        "support": "2026-11-25"
+      },
+      "publisher": {
+        "name": "Nordic Digital Apps AS",
+        "orgNumber": "[ORGANISASJONSNUMMER]",
+        "address": "[ADRESSE]",
+        "email": "[KONTAKT-E-POST]"
+      },
+      "labels": "data/road-to-nordkapp-labels.json"
+    },
+    {
       "name": "PlanTravel",
       "external": {
         "privacy": "https://plantravelapp.com/{lang}/privacy",

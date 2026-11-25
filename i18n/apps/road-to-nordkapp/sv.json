@@ -1,0 +1,98 @@
+{
+  "description": "Integritet och hjälp för Road to Nordkapp, bilspelet från Oslo till Nordkapp längs E6.",
+  "privacy": {
+    "intro": "Road to Nordkapp utvecklas av {{publisher}} (org.nr {{publisherOrgNumber}}, {{publisherAddress}}, {{country}}). Vi är personuppgiftsansvariga för de uppgifter som beskrivs här.",
+    "sections": [
+      {
+        "heading": "Kort sagt",
+        "body": [
+          "Spelet har inget konto, ingen reklam, ingen spårning och ingen analys. Det enda som skickas från spelet är det som behövs för att bekräfta köpet av {{fullRoadtrip}}."
+        ]
+      },
+      {
+        "heading": "Det som sparas på din enhet",
+        "body": [
+          "Inställningar, framsteg, stjärnor, mynt och om du har köpt {{fullRoadtrip}} sparas bara på din enhet. Vi har ingen åtkomst till dem. De raderas när du avinstallerar spelet (en kopia kan finnas kvar i enhetens egen säkerhetskopia, om du använder en)."
+        ]
+      },
+      {
+        "heading": "Köp i spelet",
+        "body": [
+          "{{fullRoadtrip}} köps via butiken som du laddade ner spelet från. Betalningen hanteras av butiken, och vi ser aldrig dina betalningsuppgifter.",
+          "För att bekräfta och återställa köpet använder vi RevenueCat (RevenueCat, Inc., USA), som behandlar uppgifterna för vår räkning. RevenueCat får:"
+        ],
+        "list": [
+          "ett slumpmässigt, anonymt ID som spelet skapar,",
+          "köphistoriken kopplad till det ID:t: vilken produkt, när, land och valuta samt kvittot från butiken,",
+          "teknisk information som behövs för att kunna svara, till exempel appversion och IP-adressen för förfrågan."
+        ],
+        "after": [
+          "Det anonyma ID:t är inte kopplat till ditt namn, din e-post eller ditt konto i butiken.",
+          "Uppgifterna används för att ge dig tillgång till det du har köpt och för sammanställd försäljningsstatistik. Den rättsliga grunden är vårt avtal med dig om köpet (dataskyddsförordningen artikel 6.1 b).",
+          "Överföringar till USA sker med stöd av EU:s standardavtalsklausuler eller en motsvarande grund som RevenueCat använder."
+        ]
+      },
+      {
+        "heading": "Hur länge",
+        "body": [
+          "Köphistoriken sparas så länge den behövs för att ditt köp ska kunna återställas och så länge bokföringsreglerna kräver."
+        ]
+      },
+      {
+        "heading": "Dina rättigheter",
+        "body": [
+          "Du kan begära tillgång, rättelse eller radering, och du kan klaga hos den norska dataskyddsmyndigheten (datatilsynet.no) eller hos dataskyddsmyndigheten där du bor.",
+          "Eftersom spelet inte har något konto kan vi behöva kvittot från butiken (ordernumret) för att hitta ditt köp. Skriv till {{publisherEmail}}."
+        ]
+      },
+      {
+        "heading": "Barn",
+        "body": [
+          "Spelet samlar inte in uppgifter om vem du är, oavsett ålder."
+        ]
+      },
+      {
+        "heading": "Ändringar",
+        "body": [
+          "Om den här integritetspolicyn ändras uppdateras datumet högst upp."
+        ]
+      }
+    ]
+  },
+  "support": {
+    "intro": "Frågor om Road to Nordkapp eller om köpet av {{fullRoadtrip}}? Här finns svar på de vanligaste frågorna och information om hur du kontaktar oss.",
+    "contactHeading": "Kontakt",
+    "contactBody": "Skriv till {{publisherEmail}}. Gäller det köpet, ange ditt användar-ID ({{settings}} → {{about}}) och ordernumret på kvittot från butiken. Skriv också vilken telefon eller surfplatta du använder.",
+    "faqHeading": "Vanliga frågor",
+    "faq": [
+      {
+        "q": "Hur återställer jag mitt köp?",
+        "a": "Se till att du är inloggad i butiken med samma konto som du köpte {{fullRoadtrip}} med. Öppna spelet och gå till {{settings}} → {{journey}} → {{restore}}. Knappen finns också på {{fullRoadtrip}}-kortet i {{route}}. När köpet har hittats är etapp 5–11 öppna igen."
+      },
+      {
+        "q": "Spelet hittar inte mitt köp. Vad gör jag?",
+        "a": "Kontrollera att enheten är ansluten till internet och att du är inloggad i butiken med samma konto som du köpte med. Hjälper inte det, skriv till {{publisherEmail}} med ditt användar-ID och ordernumret på kvittot, så hjälper vi dig."
+      },
+      {
+        "q": "Var hittar jag mitt användar-ID?",
+        "a": "Gå till {{settings}} → {{about}}. Där visas ditt {{userId}}, och knappen ”{{copyUserId}}” kopierar det så att du kan klistra in det i mejlet. ID:t är slumpmässigt och skapas av spelet. Det är inte kopplat till ditt namn, din e-post eller ditt konto i butiken."
+      },
+      {
+        "q": "Jag har fått en ny telefon eller installerat om spelet",
+        "a": "Köpet följer ditt konto i butiken: använd {{restore}} som beskrivs ovan. Framsteg och inställningar sparas bara på enheten, och vi kan inte flytta dem. De kan bara komma tillbaka från enhetens egen säkerhetskopia. En ny installation får ett nytt användar-ID."
+      },
+      {
+        "q": "Vad får jag med {{fullRoadtrip}}?",
+        "a": "{{purchaseDesc}} Etapp 1–4, från Oslo till Trondheim, är gratis."
+      },
+      {
+        "q": "Hur får jag pengarna tillbaka?",
+        "a": "Du betalar via butiken som du laddade ner spelet från, och det är butiken som hanterar återbetalningar. Kontakta butiken. Vi kan inte se eller ändra betalningen."
+      },
+      {
+        "q": "Hur raderar jag mina uppgifter?",
+        "a": "Det som finns på enheten raderas när du avinstallerar spelet. Vill du att vi också ska radera köphistoriken hos RevenueCat, skriv till {{publisherEmail}} med ditt användar-ID eller ordernumret på kvittot. Läs mer i integritetspolicyn."
+      }
+    ]
+  }
+}

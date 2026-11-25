@@ -1,0 +1,98 @@
+{
+  "description": "Road to Nordkapp için gizlilik ve yardım: Oslo'dan Nordkapp'a E6 boyunca giden araba oyunu.",
+  "privacy": {
+    "intro": "Road to Nordkapp, {{publisher}} (sicil no. {{publisherOrgNumber}}, {{publisherAddress}}, {{country}}) tarafından geliştirilmiştir. Burada anlatılan bilgilerin veri sorumlusu biziz.",
+    "sections": [
+      {
+        "heading": "Kısaca",
+        "body": [
+          "Oyunda hesap, reklam, izleme ve analiz yoktur. Oyundan gönderilen tek bilgi, {{fullRoadtrip}} satın alımını doğrulamak için gereken bilgidir."
+        ]
+      },
+      {
+        "heading": "Cihazında saklananlar",
+        "body": [
+          "Ayarlar, ilerleme, yıldızlar, jetonlar ve {{fullRoadtrip}} satın alımını yapıp yapmadığın bilgisi yalnızca cihazında saklanır. Bunlara erişimimiz yoktur. Oyunu kaldırdığında silinirler (kullanıyorsan cihazının kendi yedeğinde kalırlar)."
+        ]
+      },
+      {
+        "heading": "Oyun içi satın alma",
+        "body": [
+          "{{fullRoadtrip}}, oyunu indirdiğin mağazadan satın alınır. Ödemeyi mağaza işler ve ödeme bilgilerini hiçbir zaman görmeyiz.",
+          "Satın alımı doğrulamak ve geri yüklemek için, bilgileri bizim adımıza işleyen RevenueCat'i (RevenueCat, Inc., ABD) kullanırız. RevenueCat şunları alır:"
+        ],
+        "list": [
+          "oyunun oluşturduğu rastgele, anonim bir kimlik,",
+          "bu kimliğe bağlı satın alma geçmişi: hangi ürün, ne zaman, ülke ve para birimi ile mağaza makbuzu,",
+          "yanıt vermek için gereken teknik bilgiler, örneğin uygulama sürümü ve isteğin IP adresi."
+        ],
+        "after": [
+          "Anonim kimlik adınla, e-postanla veya mağazadaki hesabınla bağlantılı değildir.",
+          "Bilgiler, satın aldığın içeriğe erişmeni sağlamak ve toplu satış istatistikleri için kullanılır. Hukuki dayanak, satın alma için seninle yaptığımız sözleşmedir (GDPR madde 6(1)(b)).",
+          "ABD'ye yapılan aktarımlarda AB standart sözleşme maddeleri veya RevenueCat'in kullandığı eşdeğer bir dayanak esas alınır."
+        ]
+      },
+      {
+        "heading": "Ne kadar süre saklanır",
+        "body": [
+          "Satın alma geçmişi, satın alımını geri yükleyebilmen için gerektiği sürece ve muhasebe kurallarının gerektirdiği süre boyunca saklanır."
+        ]
+      },
+      {
+        "heading": "Hakların",
+        "body": [
+          "Bilgilerine erişmeyi, bunların düzeltilmesini veya silinmesini isteyebilir; Norveç Veri Koruma Kurumu'na (datatilsynet.no) ya da yaşadığın yerdeki veri koruma kurumuna şikâyette bulunabilirsin.",
+          "Oyunda hesap olmadığından, satın alımını bulmak için mağaza makbuzuna (sipariş numarasına) ihtiyacımız olabilir. {{publisherEmail}} adresine yaz."
+        ]
+      },
+      {
+        "heading": "Çocuklar",
+        "body": [
+          "Oyun, yaşın ne olursa olsun kim olduğuna dair bilgi toplamaz."
+        ]
+      },
+      {
+        "heading": "Değişiklikler",
+        "body": [
+          "Bu politika değişirse en üstteki tarih güncellenir."
+        ]
+      }
+    ]
+  },
+  "support": {
+    "intro": "Road to Nordkapp ya da {{fullRoadtrip}} satın alımıyla ilgili soruların mı var? En sık sorulan soruların yanıtları ve bize nasıl ulaşabileceğin burada.",
+    "contactHeading": "İletişim",
+    "contactBody": "{{publisherEmail}} adresine yaz. Konu satın alımla ilgiliyse kullanıcı kimliğini ({{settings}} → {{about}}) ve mağaza makbuzundaki sipariş numarasını ekle. Hangi telefonu veya tableti kullandığını da yaz.",
+    "faqHeading": "Sık sorulan sorular",
+    "faq": [
+      {
+        "q": "Satın alımımı nasıl geri yüklerim?",
+        "a": "Mağazada, {{fullRoadtrip}} satın alımını yaptığın hesapla oturum açtığından emin ol. Oyunu aç ve şuraya git: {{settings}} → {{journey}} → {{restore}}. Bu düğme {{route}} ekranındaki {{fullRoadtrip}} kartında da bulunur. Satın alım bulunduğunda 5–11. etaplar yeniden açılır."
+      },
+      {
+        "q": "Oyun satın alımımı bulamıyor. Ne yapmalıyım?",
+        "a": "Cihazının internete bağlı olduğunu ve mağazada satın alırken kullandığın hesapla oturum açtığını kontrol et. Bu işe yaramazsa kullanıcı kimliğin ve makbuzdaki sipariş numarasıyla birlikte {{publisherEmail}} adresine yaz, sana yardımcı olalım."
+      },
+      {
+        "q": "Kullanıcı kimliğimi nerede bulurum?",
+        "a": "Şuraya git: {{settings}} → {{about}}. {{userId}} orada gösterilir ve “{{copyUserId}}” düğmesi onu kopyalar; böylece e-postana yapıştırabilirsin. Kimlik rastgeledir ve oyun tarafından oluşturulur. Adınla, e-postanla veya mağazadaki hesabınla bağlantılı değildir."
+      },
+      {
+        "q": "Yeni bir telefonum var ya da oyunu yeniden yükledim",
+        "a": "Satın alım, mağazadaki hesabına bağlıdır: yukarıda anlatıldığı gibi {{restore}} seçeneğini kullan. İlerleme ve ayarlar yalnızca cihazda saklanır ve bunları taşıyamayız. Yalnızca cihazının kendi yedeğinden geri gelebilirler. Yeni kurulumda yeni bir kullanıcı kimliği oluşturulur."
+      },
+      {
+        "q": "{{fullRoadtrip}} neler içeriyor?",
+        "a": "{{purchaseDesc}} Oslo'dan Trondheim'a kadar olan 1–4. etaplar ücretsizdir."
+      },
+      {
+        "q": "Paramı nasıl geri alırım?",
+        "a": "Ödemeyi oyunu indirdiğin mağaza üzerinden yaparsın ve iadeleri mağaza yönetir. Lütfen mağazayla iletişime geç. Ödemeyi göremeyiz ve değiştiremeyiz."
+      },
+      {
+        "q": "Verilerimi nasıl silerim?",
+        "a": "Cihazındaki veriler, oyunu kaldırdığında silinir. RevenueCat'te tutulan satın alma geçmişini de silmemizi istiyorsan kullanıcı kimliğin veya makbuzdaki sipariş numarasıyla birlikte {{publisherEmail}} adresine yaz. Ayrıntılar için gizlilik politikasını oku."
+      }
+    ]
+  }
+}

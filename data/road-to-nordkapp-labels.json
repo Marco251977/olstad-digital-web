@@ -1,0 +1,203 @@
+{
+  "generatedBy": "olstad-digital-web scripts/sync-road-to-nordkapp.mjs from road-to-nordkapp i18n/*.po",
+  "labels": {
+    "en": {
+      "settings": "Settings",
+      "about": "About the game",
+      "userId": "User ID",
+      "copyUserId": "Copy user ID",
+      "journey": "Journey",
+      "restore": "Restore purchases",
+      "route": "Route",
+      "fullRoadtrip": "Full Roadtrip",
+      "purchaseDesc": "Stages 5–11, from Trondheim to Nordkapp. One purchase, no subscription and no ads."
+    },
+    "es": {
+      "settings": "Ajustes",
+      "about": "Acerca del juego",
+      "userId": "ID de usuario",
+      "copyUserId": "Copiar ID de usuario",
+      "journey": "Viaje",
+      "restore": "Restaurar compras",
+      "route": "Ruta",
+      "fullRoadtrip": "Full Roadtrip",
+      "purchaseDesc": "Etapas 5–11, de Trondheim a Nordkapp. Un solo pago, sin suscripción ni anuncios."
+    },
+    "pt-BR": {
+      "settings": "Configurações",
+      "about": "Sobre o jogo",
+      "userId": "ID de usuário",
+      "copyUserId": "Copiar ID de usuário",
+      "journey": "Viagem",
+      "restore": "Restaurar compras",
+      "route": "Rota",
+      "fullRoadtrip": "Full Roadtrip",
+      "purchaseDesc": "Etapas 5–11, de Trondheim até Nordkapp. Uma compra única, sem assinatura e sem anúncios."
+    },
+    "fr": {
+      "settings": "Réglages",
+      "about": "À propos du jeu",
+      "userId": "Identifiant utilisateur",
+      "copyUserId": "Copier l'identifiant",
+      "journey": "Voyage",
+      "restore": "Restaurer les achats",
+      "route": "Itinéraire",
+      "fullRoadtrip": "Full Roadtrip",
+      "purchaseDesc": "Étapes 5 à 11, de Trondheim à Nordkapp. Un seul achat, sans abonnement ni publicité."
+    },
+    "de": {
+      "settings": "Einstellungen",
+      "about": "Über das Spiel",
+      "userId": "Benutzer-ID",
+      "copyUserId": "Benutzer-ID kopieren",
+      "journey": "Reise",
+      "restore": "Käufe wiederherstellen",
+      "route": "Route",
+      "fullRoadtrip": "Full Roadtrip",
+      "purchaseDesc": "Etappe 5–11, von Trondheim zum Nordkapp. Ein einmaliger Kauf, ohne Abo und ohne Werbung."
+    },
+    "it": {
+      "settings": "Impostazioni",
+      "about": "Informazioni sul gioco",
+      "userId": "ID utente",
+      "copyUserId": "Copia ID utente",
+      "journey": "Viaggio",
+      "restore": "Ripristina acquisti",
+      "route": "Percorso",
+      "fullRoadtrip": "Full Roadtrip",
+      "purchaseDesc": "Tappe 5–11, da Trondheim a Nordkapp. Un solo acquisto, senza abbonamento e senza pubblicità."
+    },
+    "ja": {
+      "settings": "設定",
+      "about": "このゲームについて",
+      "userId": "ユーザーID",
+      "copyUserId": "ユーザーIDをコピー",
+      "journey": "旅",
+      "restore": "購入を復元",
+      "route": "ルート",
+      "fullRoadtrip": "Full Roadtrip",
+      "purchaseDesc": "ステージ5〜11、TrondheimからNordkappまで。一度の購入で、サブスクリプションも広告もありません。"
+    },
+    "ko": {
+      "settings": "설정",
+      "about": "게임 정보",
+      "userId": "사용자 ID",
+      "copyUserId": "사용자 ID 복사",
+      "journey": "여행",
+      "restore": "구매 복원",
+      "route": "경로",
+      "fullRoadtrip": "Full Roadtrip",
+      "purchaseDesc": "스테이지 5–11, Trondheim에서 Nordkapp까지. 한 번 구매로 끝, 구독도 광고도 없습니다."
+    },
+    "zh-Hans": {
+      "settings": "设置",
+      "about": "关于游戏",
+      "userId": "用户 ID",
+      "copyUserId": "复制用户 ID",
+      "journey": "旅程",
+      "restore": "恢复购买",
+      "route": "路线",
+      "fullRoadtrip": "Full Roadtrip",
+      "purchaseDesc": "第5–11赛段，从 Trondheim 到 Nordkapp。一次购买，无订阅，无广告。"
+    },
+    "nb": {
+      "settings": "Innstillinger",
+      "about": "Om spillet",
+      "userId": "Bruker-ID",
+      "copyUserId": "Kopier bruker-ID",
+      "journey": "Reisen",
+      "restore": "Gjenopprett kjøp",
+      "route": "Ruten",
+      "fullRoadtrip": "Full Roadtrip",
+      "purchaseDesc": "Etappe 5–11, fra Trondheim til Nordkapp. Ett kjøp, uten abonnement og uten reklame."
+    },
+    "nl": {
+      "settings": "Instellingen",
+      "about": "Over het spel",
+      "userId": "Gebruikers-ID",
+      "copyUserId": "Gebruikers-ID kopiëren",
+      "journey": "Reis",
+      "restore": "Aankopen herstellen",
+      "route": "Route",
+      "fullRoadtrip": "Full Roadtrip",
+      "purchaseDesc": "Etappes 5–11, van Trondheim naar Nordkapp. Eén aankoop, geen abonnement en geen advertenties."
+    },
+    "sv": {
+      "settings": "Inställningar",
+      "about": "Om spelet",
+      "userId": "Användar-ID",
+      "copyUserId": "Kopiera användar-ID",
+      "journey": "Resan",
+      "restore": "Återställ köp",
+      "route": "Rutten",
+      "fullRoadtrip": "Full Roadtrip",
+      "purchaseDesc": "Etapp 5–11, från Trondheim till Nordkapp. Ett köp, utan prenumeration och utan reklam."
+    },
+    "pl": {
+      "settings": "Ustawienia",
+      "about": "O grze",
+      "userId": "Identyfikator użytkownika",
+      "copyUserId": "Kopiuj identyfikator",
+      "journey": "Podróż",
+      "restore": "Przywróć zakupy",
+      "route": "Trasa",
+      "fullRoadtrip": "Full Roadtrip",
+      "purchaseDesc": "Etapy 5–11, z Trondheim na Nordkapp. Jeden zakup, bez subskrypcji i bez reklam."
+    },
+    "fi": {
+      "settings": "Asetukset",
+      "about": "Tietoja pelistä",
+      "userId": "Käyttäjä-ID",
+      "copyUserId": "Kopioi käyttäjä-ID",
+      "journey": "Matka",
+      "restore": "Palauta ostokset",
+      "route": "Reitti",
+      "fullRoadtrip": "Full Roadtrip",
+      "purchaseDesc": "Etapit 5–11 Trondheimista Nordkappiin. Kertaostos, ei tilausta eikä mainoksia."
+    },
+    "da": {
+      "settings": "Indstillinger",
+      "about": "Om spillet",
+      "userId": "Bruger-id",
+      "copyUserId": "Kopiér bruger-id",
+      "journey": "Rejsen",
+      "restore": "Gendan køb",
+      "route": "Ruten",
+      "fullRoadtrip": "Full Roadtrip",
+      "purchaseDesc": "Etape 5–11, fra Trondheim til Nordkapp. Ét køb, uden abonnement og uden reklamer."
+    },
+    "ar": {
+      "settings": "الإعدادات",
+      "about": "حول اللعبة",
+      "userId": "معرّف المستخدم",
+      "copyUserId": "نسخ معرّف المستخدم",
+      "journey": "الرحلة",
+      "restore": "استعادة المشتريات",
+      "route": "المسار",
+      "fullRoadtrip": "Full Roadtrip",
+      "purchaseDesc": "المراحل 5–11، من Trondheim إلى Nordkapp. شراء واحد، بلا اشتراك وبلا إعلانات."
+    },
+    "hi": {
+      "settings": "सेटिंग्स",
+      "about": "गेम के बारे में",
+      "userId": "यूज़र आईडी",
+      "copyUserId": "यूज़र आईडी कॉपी करें",
+      "journey": "यात्रा",
+      "restore": "ख़रीदारी बहाल करें",
+      "route": "रूट",
+      "fullRoadtrip": "Full Roadtrip",
+      "purchaseDesc": "स्टेज 5–11, Trondheim से Nordkapp तक। एक ही ख़रीदारी, न सदस्यता और न विज्ञापन।"
+    },
+    "tr": {
+      "settings": "Ayarlar",
+      "about": "Oyun hakkında",
+      "userId": "Kullanıcı kimliği",
+      "copyUserId": "Kullanıcı kimliğini kopyala",
+      "journey": "Yolculuk",
+      "restore": "Satın alımları geri yükle",
+      "route": "Rota",
+      "fullRoadtrip": "Full Roadtrip",
+      "purchaseDesc": "Etap 5–11, Trondheim'dan Nordkapp'a. Tek seferlik satın alma; abonelik ve reklam yok."
+    }
+  }
+}

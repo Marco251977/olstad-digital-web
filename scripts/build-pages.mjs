@@ -3,7 +3,8 @@
 // One source for each thing:
 // - company details: data/company.json (the front page, every footer and every legal page read it),
 // - the front page: scripts/front-page.mjs with the apps' `home` part, i18n/home/<lang>.json and data/theme.json,
-// - apps: data/apps.json (an app without a website of its own = a slug and its language files),
+// - apps: data/apps.json (an app without a website of its own = a slug and its language files; `publisher` when another
+//   company than data/company.json makes the app, `labels` for the app's own menu names, e.g. Road to Nordkapp),
 // - texts: i18n/common/<lang>.json (the shared template) and i18n/apps/<slug>/<lang>.json,
 // - languages: app-core (the same 18 as the apps, with their own names and right-to-left).
 // The pages are static files committed to the repo; Vercel only serves them.
@@ -57,6 +58,26 @@ function companyVars(lang) {
     address: [...(company.address ?? []), country].map(esc).join(', '),
   };
 }
+
+/** «[ORGANISASJONSNUMMER]»: a detail Marco fills in himself (data/apps.json) – shown marked, never guessed or linked. */
+const isPlaceholder = (v) => /^\[[^\]]+\]$/.test(String(v));
+const detail = (v) => (isPlaceholder(v) ? `<span class="placeholder">${esc(v)}</span>` : `<span class="ltr">${esc(v)}</span>`);
+
+/** The company that makes the app (data/apps.json `publisher`), as {{publisher}}, {{publisherOrgNumber}} … */
+function publisherVars(app) {
+  const p = app.publisher;
+  if (!p) return {};
+  return {
+    publisher: esc(p.name),
+    publisherOrgNumber: detail(p.orgNumber),
+    publisherAddress: detail(p.address),
+    publisherEmail: isPlaceholder(p.email) ? detail(p.email) : `<a href="mailto:${esc(p.email)}" class="ltr">${esc(p.email)}</a>`,
+  };
+}
+
+/** The app's own words for its menus and buttons (data/apps.json `labels`, copied from the app by its sync script). */
+const labelFiles = Object.fromEntries(apps.filter((a) => a.labels).map((a) => [a.slug, read(a.labels).labels]));
+const labelVars = (slug, lang) => Object.fromEntries(Object.entries(labelFiles[slug]?.[lang] ?? {}).map(([k, v]) => [k, esc(v)]));
 
 /** Prompt 129: an app's privacy facts as placeholders – numbers in the page's language, the providers' terms as links. */
 function factVars(slug, lang) {
@@ -159,7 +180,9 @@ function appPage(app, page, lang) {
   const vars = {
     ...companyVars(lang),
     ...factVars(app.slug, lang),
-    server: region ? fill(a.serverRegion, { region: esc(region) }) : fill(a.server),
+    ...publisherVars(app),
+    ...labelVars(app.slug, lang),
+    server: region ? fill(a.serverRegion, { region: esc(region) }) : a.server ? fill(a.server) : '',
     // The data centre's country alone (privacy: where sign-in and sync are stored).
     region: region ? esc(region) : '',
     supabaseRegion: region ? ` (${esc(region)})` : '',
@@ -175,14 +198,15 @@ function appPage(app, page, lang) {
     `<h1>${pageTitle}</h1>`,
   ];
   let body;
+  // A page changed on its own (data/apps.json pageUpdated) has its own date; the others the app's lastUpdated.
+  const updated = `<p class="updated">${fill(c.lastUpdated, { date: esc(formatDate(app.pageUpdated?.[page] ?? app.lastUpdated, lang)) })}</p>`;
   if (page === 'privacy' || page === 'terms' || page === 'delete-account') {
     // Terms of use: the same layout as the privacy policy (intro, last updated, sections).
     const content = page === 'privacy' ? a.privacy : page === 'terms' ? a.terms : a.deleteAccount;
     body = [
       ...head,
       `<p class="lede">${fill(content.intro, vars)}</p>`,
-      // A page changed on its own (data/apps.json pageUpdated) has its own date; the others the app's lastUpdated.
-      `<p class="updated">${fill(c.lastUpdated, { date: esc(formatDate(app.pageUpdated?.[page] ?? app.lastUpdated, lang)) })}</p>`,
+      updated,
       nav,
       ...content.sections.map((s) => sectionHtml(s, lang, vars)),
     ];
@@ -192,12 +216,14 @@ function appPage(app, page, lang) {
       `<p class="lede">${fill(a.support.intro, vars)}</p>`,
       // The app in the stores: the same badges as the front page (scripts/store-badges.mjs), once the app is published.
       ...(inStores ? [storeBadges({ stores: app.home.stores, appName: app.name, lang, label: homeTexts[lang].store.label, esc, fill })] : []),
+      // The support page has a date when it has its own (data/apps.json pageUpdated.support).
+      ...(app.pageUpdated?.support ? [updated] : []),
       nav,
       `<section class="card"><h2>${fill(a.support.contactHeading)}</h2><p>${fill(a.support.contactBody, vars)}</p></section>`,
       `<section class="faq"><h2>${fill(a.support.faqHeading)}</h2>`,
       // Round 40c: no Free/Pro comparison on the site (limits, prices, trial and what Pro has live only in the app, so
       // the pages never need updating when the app changes) – one line pointing to Pro in the app.
-      `<p>${fill(a.support.proNote, vars)}</p>`,
+      ...(a.support.proNote ? [`<p>${fill(a.support.proNote, vars)}</p>`] : []),
       ...a.support.faq.map((f) => `<details><summary>${fill(f.q, vars)}</summary><p>${fill(f.a, vars)}</p></details>`),
       '</section>',
     ];
@@ -292,7 +318,7 @@ function overviewPage(lang) {
   const o = c.overview;
   const vars = companyVars(lang);
   const items = apps.map((app) => {
-    const href = (page) => (app.slug ? `/${lang}/${app.slug}/${page}` : app.external[page]?.replace('{lang}', lang) ?? null);
+    const href = (page) => (app.slug ? (app.pages.includes(page) ? `/${lang}/${app.slug}/${page}` : null) : app.external[page]?.replace('{lang}', lang) ?? null);
     const external = !app.slug;
     const links = [
       ['privacy', o.privacy],
@@ -414,7 +440,7 @@ files.set('middleware.js', middleware(['/', ...unprefixed]));
 // recipient of the app's data named on every language (the app's own list, data/privacy-facts.json).
 for (const app of apps.filter((a) => a.slug)) {
   const shape = (v) => (Array.isArray(v) ? v.map(shape) : v && typeof v === 'object' ? Object.fromEntries(Object.entries(v).map(([k, x]) => [k, shape(x)])) : typeof v === 'string' ? [...new Set(v.match(/\{\{\w+\}\}/g) ?? [])].sort().join(' ') : v);
-  for (const key of ['privacy', 'deleteAccount']) {
+  for (const key of ['privacy', 'deleteAccount', 'support'].filter((k) => appTexts[app.slug].nb[k])) {
     const source = JSON.stringify(shape(appTexts[app.slug].nb[key]));
     for (const lang of LANGS) if (JSON.stringify(shape(appTexts[app.slug][lang][key])) !== source) throw new Error(`${app.slug} ${lang} ${key}: sections, items or placeholders differ from nb`);
   }
