@@ -39,18 +39,20 @@ test('no store or platform named on any language (the pages are linked from both
   }
 });
 
-test('org. no. and address from data/company.json (the same as Saldo Pocket and the footer), the game’s own e-mail, nothing left to fill in', () => {
+test('org. no. and address from data/company.json (the same as Saldo Pocket and the footer), the same e-mail as the rest of the site, nothing left to fill in', () => {
   const company = JSON.parse(read('data/company.json'));
   assert.equal(app.publisher, `Nordic Digital Apps AS (${company.name})`);
   for (const l of CORE_LANGUAGES) {
     const privacy = read(`${l.code}/road-to-nordkapp/privacy.html`);
     const support = read(`${l.code}/road-to-nordkapp/support.html`);
     assert.ok(privacy.includes(company.orgNumber) && privacy.includes(company.address[0]), `${l.code} privacy: org. no. and address`);
-    // Marco 25.11: the game's own contact address, a link on both pages and in the footer (Saldo Pocket keeps data/company.json's).
-    assert.equal(app.email, 'kontakt@nordicdigitalapp.com');
+    // Marco 25.11: one address on the whole site – data/company.json's, a link on both pages (Saldo Pocket, front page and footer the same).
+    assert.equal(company.email, 'kontakt@nordicdigitalapp.no');
+    assert.equal(app.email, undefined);
     for (const html of [privacy, support]) {
-      assert.ok(html.includes(`<a href="mailto:${app.email}" class="ltr">${app.email}</a>`), `${l.code}: e-mail link`);
-      assert.ok(!html.includes(company.email), `${l.code}: no other address`);
+      assert.ok(html.includes(`<a href="mailto:${company.email}" class="ltr">${company.email}</a>`), `${l.code}: e-mail link`);
+      assert.ok(html.includes(`<a href="mailto:${company.email}">`), `${l.code}: footer contact`);
+      assert.doesNotMatch(html, /nordicdigitalapp\.com(?!\/)/, `${l.code}: no other address`);
     }
     assert.doesNotMatch(privacy + support, /\[[A-ZÆØÅ-]+\]/u, `${l.code}: a placeholder left`);
   }

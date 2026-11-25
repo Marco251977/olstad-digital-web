@@ -83,7 +83,7 @@ const dirOf = (lang) => (CORE_LANGUAGES.find((l) => l.code === lang)?.rtl ? 'rtl
 
 // --- layout ---
 
-function layout({ lang, title, description, pagePath, body, extraHead = '', email = company.email }) {
+function layout({ lang, title, description, pagePath, body, extraHead = '' }) {
   const c = common[lang];
   const vars = companyVars(lang);
   const url = (l) => `${ORIGIN}/${l}${pagePath}`;
@@ -132,7 +132,7 @@ ${body}
       <p>${fill(c.footer.orgNumber, { value: vars.orgNumber })}</p>
       <nav aria-label="${fill(c.footer.privacy)}">
         <a href="/${lang}/privacy">${fill(c.footer.privacy)}</a>
-        <a href="mailto:${esc(email)}">${fill(c.footer.contact)}</a>
+        <a href="mailto:${esc(company.email)}">${fill(c.footer.contact)}</a>
       </nav>
     </div>
   </footer>
@@ -166,10 +166,8 @@ function appPage(app, page, lang) {
     ...companyVars(lang),
     ...factVars(app.slug, lang),
     // The company that makes the app, when it is named otherwise than data/company.json (data/apps.json `publisher`);
-    // org. no., address and e-mail always from data/company.json.
+    // org. no., address and e-mail always from data/company.json – one address on the whole site.
     publisher: esc(app.publisher ?? company.name),
-    // An app with its own contact address (data/apps.json `email`) uses it in the text and in the footer; else data/company.json.
-    ...(app.email ? { email: `<a href="mailto:${esc(app.email)}" class="ltr">${esc(app.email)}</a>` } : {}),
     ...labelVars(app.slug, lang),
     server: region ? fill(a.serverRegion, { region: esc(region) }) : a.server ? fill(a.server) : '',
     // The data centre's country alone (privacy: where sign-in and sync are stored).
@@ -224,7 +222,6 @@ function appPage(app, page, lang) {
     pagePath: `/${app.slug}/${page}`,
     body: body.map((l) => `    ${l}`).join('\n'),
     extraHead: inStores ? STORE_BADGES_HEAD : '',
-    email: app.email ?? company.email,
   });
 }
 
