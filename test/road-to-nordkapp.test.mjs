@@ -63,7 +63,7 @@ test('the game’s menu names come from the game, never written out', () => {
     // Each text on its own (the JSON's own quote marks would look like a quoted name).
     const text = strings(JSON.parse(read(`i18n/apps/road-to-nordkapp/${l.code}.json`))).join('\n');
     for (const m of text.matchAll(/(.{0,16})[→←](.{0,16})/gu)) assert.match(`${m[1]}→${m[2]}`, /\}\}\W{0,3}→\W{0,3}\{\{/u, `${l.code}: written-out menu path «${m[0]}»`);
-    for (const key of ['settings', 'about', 'copyUserId', 'restore']) {
+    for (const key of ['settings', 'about', 'restore']) {
       const found = ['«', '“', '„', '「', '"', '‘'].some((q) => text.includes(`${q}${labels[l.code][key]}`));
       assert.ok(!found, `${l.code}: «${labels[l.code][key]}» written out – use {{${key}}}`);
     }

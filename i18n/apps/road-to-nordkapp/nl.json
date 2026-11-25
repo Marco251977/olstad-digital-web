@@ -24,10 +24,10 @@
         "list": [
           "een willekeurige ID die het spel zelf aanmaakt (die begint met rtn_) en die voor de aankoop naar RevenueCat wordt gestuurd,",
           "de aankoopgeschiedenis die aan die ID is gekoppeld: welk product, wanneer, land en valuta, en het aankoopbewijs van de store,",
-          "technische gegevens, bijvoorbeeld de appversie en het IP-adres van het verzoek, die RevenueCat gebruikt om land en valuta te bepalen en de aankoop te verwerken."
+          "technische gegevens, bijvoorbeeld de appversie en je IP-adres, die worden gebruikt om het verzoek te verwerken."
         ],
         "after": [
-          "De ID is niet gekoppeld aan je naam, je e-mailadres of een account.",
+          "De ID is willekeurig. Hij bevat niet je naam of je e-mailadres, en we kunnen er niet uit afleiden wie je bent.",
           "De gegevens worden gebruikt om je toegang te geven tot wat je hebt gekocht en voor geaggregeerde verkoopstatistieken. De grondslag is onze overeenkomst met jou over de aankoop (artikel 6, lid 1, onder b AVG).",
           "Doorgifte naar de VS gebeurt op basis van de standaardcontractbepalingen van de EU of een gelijkwaardige grondslag die RevenueCat gebruikt."
         ]
@@ -67,7 +67,7 @@
     "faq": [
       {
         "q": "Hoe herstel ik mijn aankoop?",
-        "a": "Zorg dat je in de store bent ingelogd met hetzelfde account waarmee je {{fullRoadtrip}} hebt gekocht. Open het spel en ga naar {{settings}} → {{journey}} → {{restore}}. De knop staat ook op de {{fullRoadtrip}}-kaart in {{route}}. Zodra de aankoop is gevonden, zijn etappes 5–11 weer ontgrendeld."
+        "a": "Zorg dat je in de store bent ingelogd met hetzelfde account waarmee je {{fullRoadtrip}} hebt gekocht. Ga naar het startscherm (niet het pauzemenu tijdens het rijden) en open {{settings}} → {{journey}} → {{restore}}. De knop staat ook op de {{fullRoadtrip}}-kaart in {{route}}. Zodra de aankoop is gevonden, zijn etappes 5–11 weer ontgrendeld."
       },
       {
         "q": "Het spel vindt mijn aankoop niet. Wat moet ik doen?",
@@ -75,11 +75,11 @@
       },
       {
         "q": "Waar vind ik mijn gebruikers-ID?",
-        "a": "Ga naar {{settings}} → {{about}}. Daar staat je {{userId}}, en met de knop ‘{{copyUserId}}’ kopieer je hem om in je e-mail te plakken. De ID is willekeurig en wordt door het spel aangemaakt. Hij is niet gekoppeld aan je naam, je e-mailadres of je account bij de store."
+        "a": "Ga naar {{settings}} → {{about}}. Daar staat je {{userId}}. Tik op het kopieersymbool naast de ID, of op de ID zelf, om hem te kopiëren, en plak hem in je e-mail. De ID is willekeurig. Hij bevat niet je naam of je e-mailadres, en we kunnen er niet uit afleiden wie je bent."
       },
       {
         "q": "Ik heb een nieuwe telefoon of heb het spel opnieuw geïnstalleerd",
-        "a": "De aankoop hoort bij je account in de store: gebruik {{restore}} zoals hierboven beschreven. Voortgang en instellingen worden alleen op het apparaat opgeslagen, en wij kunnen ze niet overzetten. Ze kunnen alleen terugkomen uit de eigen back-up van je apparaat. Een nieuwe installatie krijgt een nieuwe gebruikers-ID."
+        "a": "De aankoop hoort bij je account in de store: gebruik {{restore}} zoals hierboven beschreven. Voortgang en instellingen worden alleen op het apparaat opgeslagen, en wij kunnen ze niet overzetten. Ze kunnen alleen terugkomen uit de eigen back-up van je apparaat. Een nieuwe installatie krijgt meestal een nieuwe gebruikers-ID, tenzij het spel wordt teruggezet vanuit een back-up van het apparaat."
       },
       {
         "q": "Wat krijg ik met {{fullRoadtrip}}?",

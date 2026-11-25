@@ -24,10 +24,10 @@
         "list": [
           "un ID aleatorio que crea el propio juego (empieza por rtn_), que se envía a RevenueCat para la compra,",
           "el historial de compras vinculado a ese ID: qué producto, cuándo, país y moneda, y el recibo de la tienda,",
-          "información técnica, por ejemplo, la versión de la app y la dirección IP de la solicitud, que RevenueCat usa para determinar el país y la moneda y para procesar la compra."
+          "información técnica, por ejemplo, la versión de la app y tu dirección IP, que se usa para procesar la solicitud."
         ],
         "after": [
-          "El ID no está vinculado a tu nombre, a tu correo electrónico ni a ninguna cuenta.",
+          "El ID es aleatorio. No contiene tu nombre ni tu correo electrónico, y con él no podemos saber quién eres.",
           "Los datos se usan para darte acceso a lo que has comprado y para elaborar estadísticas de ventas agregadas. La base jurídica es nuestro contrato contigo por la compra (artículo 6.1.b) del RGPD).",
           "Las transferencias a EE. UU. se basan en las cláusulas contractuales tipo de la UE o en una base equivalente que utiliza RevenueCat."
         ]
@@ -67,7 +67,7 @@
     "faq": [
       {
         "q": "¿Cómo restauro mi compra?",
-        "a": "Asegúrate de haber iniciado sesión en la tienda con la misma cuenta con la que compraste {{fullRoadtrip}}. Abre el juego y ve a {{settings}} → {{journey}} → {{restore}}. El botón también está en la tarjeta de {{fullRoadtrip}}, en la pantalla {{route}}. En cuanto se encuentre la compra, las etapas 5–11 vuelven a estar abiertas."
+        "a": "Asegúrate de haber iniciado sesión en la tienda con la misma cuenta con la que compraste {{fullRoadtrip}}. Ve a la pantalla de inicio (no al menú de pausa mientras conduces) y abre {{settings}} → {{journey}} → {{restore}}. El botón también está en la tarjeta de {{fullRoadtrip}}, en la pantalla {{route}}. En cuanto se encuentre la compra, las etapas 5–11 vuelven a estar abiertas."
       },
       {
         "q": "El juego no encuentra mi compra. ¿Qué hago?",
@@ -75,11 +75,11 @@
       },
       {
         "q": "¿Dónde encuentro mi ID de usuario?",
-        "a": "Ve a {{settings}} → {{about}}. Ahí aparece tu {{userId}}, y el botón «{{copyUserId}}» lo copia para que puedas pegarlo en tu correo. El ID es aleatorio y lo crea el juego. No está vinculado a tu nombre, a tu correo electrónico ni a tu cuenta de la tienda."
+        "a": "Ve a {{settings}} → {{about}}. Ahí aparece tu {{userId}}. Para copiarlo, toca el símbolo de copiar que hay junto al ID, o el propio ID, y pégalo en tu correo. El ID es aleatorio. No contiene tu nombre ni tu correo electrónico, y con él no podemos saber quién eres."
       },
       {
         "q": "Tengo un teléfono nuevo o he reinstalado el juego",
-        "a": "La compra va ligada a tu cuenta de la tienda: usa {{restore}} como se explica arriba. El progreso y los ajustes se guardan solo en el dispositivo, y no podemos trasladarlos. Solo pueden recuperarse desde la copia de seguridad de tu propio dispositivo. Una instalación nueva recibe un ID de usuario nuevo."
+        "a": "La compra va ligada a tu cuenta de la tienda: usa {{restore}} como se explica arriba. El progreso y los ajustes se guardan solo en el dispositivo, y no podemos trasladarlos. Solo pueden recuperarse desde la copia de seguridad de tu propio dispositivo. Una instalación nueva suele recibir un ID de usuario nuevo, salvo que el juego se restaure desde una copia de seguridad del dispositivo."
       },
       {
         "q": "¿Qué incluye {{fullRoadtrip}}?",

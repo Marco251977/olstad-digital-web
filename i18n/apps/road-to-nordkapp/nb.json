@@ -24,10 +24,10 @@
         "list": [
           "en tilfeldig ID som spillet lager selv (den begynner med rtn_), og som sendes til RevenueCat for kjøpet,",
           "kjøpshistorikken knyttet til ID-en: hvilket produkt, når, land og valuta, og kvitteringen fra butikken,",
-          "teknisk informasjon, for eksempel appversjonen og IP-adressen ved forespørselen, som RevenueCat bruker til å fastslå land og valuta og til å behandle kjøpet."
+          "teknisk informasjon, for eksempel appversjonen og IP-adressen din, som brukes til å behandle forespørselen."
         ],
         "after": [
-          "ID-en er ikke knyttet til navnet ditt, e-posten din eller noen konto.",
+          "ID-en er tilfeldig. Den inneholder ikke navnet eller e-posten din, og vi kan ikke se hvem du er ut fra den.",
           "Opplysningene brukes til å gi deg tilgang til det du har kjøpt, og til samlet statistikk over salget. Grunnlaget er avtalen med deg om kjøpet (personvernforordningen art. 6 nr. 1 bokstav b).",
           "Overføring til USA skjer med EUs standardavtaler eller tilsvarende grunnlag som RevenueCat har."
         ]
@@ -67,7 +67,7 @@
     "faq": [
       {
         "q": "Hvordan gjenoppretter jeg kjøpet?",
-        "a": "Vær logget inn i butikken med samme konto som da du kjøpte {{fullRoadtrip}}. Åpne spillet og gå til {{settings}} → {{journey}} → {{restore}}. Knappen står også i {{fullRoadtrip}}-kortet i {{route}}. Når kjøpet er funnet, er etappe 5–11 åpne igjen."
+        "a": "Vær logget inn i butikken med samme konto som da du kjøpte {{fullRoadtrip}}. Gå til startskjermen (ikke pausemenyen under kjøring) og åpne {{settings}} → {{journey}} → {{restore}}. Knappen står også i {{fullRoadtrip}}-kortet i {{route}}. Når kjøpet er funnet, er etappe 5–11 åpne igjen."
       },
       {
         "q": "Spillet finner ikke kjøpet mitt. Hva gjør jeg?",
@@ -75,11 +75,11 @@
       },
       {
         "q": "Hvor finner jeg bruker-ID-en min?",
-        "a": "Gå til {{settings}} → {{about}}. Der står {{userId}}, og knappen «{{copyUserId}}» kopierer den, så du kan lime den inn i e-posten. ID-en er tilfeldig og lages av spillet. Den er ikke knyttet til navnet ditt, e-posten din eller kontoen din i butikken."
+        "a": "Gå til {{settings}} → {{about}}. Der står {{userId}}. Trykk på kopier-symbolet ved siden av ID-en, eller på selve ID-en, for å kopiere den, og lim den inn i e-posten. ID-en er tilfeldig. Den inneholder ikke navnet eller e-posten din, og vi kan ikke se hvem du er ut fra den."
       },
       {
         "q": "Jeg har fått ny telefon eller installert spillet på nytt",
-        "a": "Kjøpet følger kontoen din i butikken: bruk {{restore}} som beskrevet over. Fremdrift og innstillinger lagres bare på enheten, og vi kan ikke flytte dem. De kan bare komme tilbake fra enhetens egen sikkerhetskopi. En ny installasjon får en ny bruker-ID."
+        "a": "Kjøpet følger kontoen din i butikken: bruk {{restore}} som beskrevet over. Fremdrift og innstillinger lagres bare på enheten, og vi kan ikke flytte dem. De kan bare komme tilbake fra enhetens egen sikkerhetskopi. En ny installasjon får vanligvis en ny bruker-ID, med mindre spillet hentes tilbake fra en sikkerhetskopi av enheten."
       },
       {
         "q": "Hva får jeg med {{fullRoadtrip}}?",

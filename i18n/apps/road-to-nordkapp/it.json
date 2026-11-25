@@ -24,10 +24,10 @@
         "list": [
           "un ID casuale creato dal gioco stesso (inizia con rtn_), inviato a RevenueCat per l’acquisto,",
           "la cronologia acquisti collegata a quell’ID: quale prodotto, quando, paese e valuta, e la ricevuta dello store,",
-          "informazioni tecniche, ad esempio la versione dell’app e l’indirizzo IP della richiesta, che RevenueCat usa per determinare paese e valuta e per elaborare l’acquisto."
+          "informazioni tecniche, ad esempio la versione dell’app e il tuo indirizzo IP, usate per elaborare la richiesta."
         ],
         "after": [
-          "L’ID non è collegato né al tuo nome, né alla tua e-mail, né ad alcun account.",
+          "L’ID è casuale. Non contiene il tuo nome né la tua e-mail, e da esso non possiamo sapere chi sei.",
           "I dati sono usati per darti accesso a ciò che hai acquistato e per statistiche di vendita aggregate. La base giuridica è il nostro contratto con te per l’acquisto (art. 6, par. 1, lett. b) GDPR).",
           "I trasferimenti verso gli Stati Uniti si basano sulle clausole contrattuali tipo dell’UE o su una base equivalente utilizzata da RevenueCat."
         ]
@@ -67,7 +67,7 @@
     "faq": [
       {
         "q": "Come ripristino il mio acquisto?",
-        "a": "Assicurati di aver effettuato l’accesso allo store con lo stesso account che hai usato per acquistare {{fullRoadtrip}}. Apri il gioco e vai su {{settings}} → {{journey}} → {{restore}}. Il pulsante si trova anche sulla scheda {{fullRoadtrip}}, nella schermata {{route}}. Una volta trovato l’acquisto, le tappe 5–11 tornano disponibili."
+        "a": "Assicurati di aver effettuato l’accesso allo store con lo stesso account che hai usato per acquistare {{fullRoadtrip}}. Vai alla schermata iniziale (non al menu di pausa durante la guida) e apri {{settings}} → {{journey}} → {{restore}}. Il pulsante si trova anche sulla scheda {{fullRoadtrip}}, nella schermata {{route}}. Una volta trovato l’acquisto, le tappe 5–11 tornano disponibili."
       },
       {
         "q": "Il gioco non trova il mio acquisto. Cosa faccio?",
@@ -75,11 +75,11 @@
       },
       {
         "q": "Dove trovo il mio ID utente?",
-        "a": "Vai su {{settings}} → {{about}}. Lì trovi il tuo {{userId}}, e il pulsante «{{copyUserId}}» lo copia, così puoi incollarlo nella tua e-mail. L’ID è casuale e viene creato dal gioco. Non è collegato né al tuo nome, né alla tua e-mail, né al tuo account dello store."
+        "a": "Vai su {{settings}} → {{about}}. Lì trovi il tuo {{userId}}. Per copiarlo, tocca il simbolo di copia accanto all’ID, o l’ID stesso, e incollalo nella tua e-mail. L’ID è casuale. Non contiene il tuo nome né la tua e-mail, e da esso non possiamo sapere chi sei."
       },
       {
         "q": "Ho un telefono nuovo o ho reinstallato il gioco",
-        "a": "L’acquisto è legato al tuo account dello store: usa {{restore}} come descritto sopra. Progressi e impostazioni sono salvati solo sul dispositivo e non possiamo trasferirli. Possono tornare solo dal backup del tuo dispositivo. Una nuova installazione riceve un nuovo ID utente."
+        "a": "L’acquisto è legato al tuo account dello store: usa {{restore}} come descritto sopra. Progressi e impostazioni sono salvati solo sul dispositivo e non possiamo trasferirli. Possono tornare solo dal backup del tuo dispositivo. Una nuova installazione di solito riceve un nuovo ID utente, a meno che il gioco non venga ripristinato da un backup del dispositivo."
       },
       {
         "q": "Cosa ottengo con {{fullRoadtrip}}?",

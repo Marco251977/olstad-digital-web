@@ -24,10 +24,10 @@
         "list": [
           "ett slumpmässigt ID som spelet skapar själv (det börjar med rtn_) och som skickas till RevenueCat för köpet,",
           "köphistoriken kopplad till det ID:t: vilken produkt, när, land och valuta samt kvittot från butiken,",
-          "teknisk information, till exempel appversion och IP-adressen för förfrågan, som RevenueCat använder för att avgöra land och valuta och för att genomföra köpet."
+          "teknisk information, till exempel appversion och din IP-adress, som används för att behandla förfrågan."
         ],
         "after": [
-          "ID:t är inte kopplat till ditt namn, din e-post eller något konto.",
+          "ID:t är slumpmässigt. Det innehåller inte ditt namn eller din e-post, och vi kan inte se vem du är utifrån det.",
           "Uppgifterna används för att ge dig tillgång till det du har köpt och för sammanställd försäljningsstatistik. Den rättsliga grunden är vårt avtal med dig om köpet (dataskyddsförordningen artikel 6.1 b).",
           "Överföringar till USA sker med stöd av EU:s standardavtalsklausuler eller en motsvarande grund som RevenueCat använder."
         ]
@@ -67,7 +67,7 @@
     "faq": [
       {
         "q": "Hur återställer jag mitt köp?",
-        "a": "Se till att du är inloggad i butiken med samma konto som du köpte {{fullRoadtrip}} med. Öppna spelet och gå till {{settings}} → {{journey}} → {{restore}}. Knappen finns också på {{fullRoadtrip}}-kortet i {{route}}. När köpet har hittats är etapp 5–11 öppna igen."
+        "a": "Se till att du är inloggad i butiken med samma konto som du köpte {{fullRoadtrip}} med. Gå till startskärmen (inte pausmenyn under körning) och öppna {{settings}} → {{journey}} → {{restore}}. Knappen finns också på {{fullRoadtrip}}-kortet i {{route}}. När köpet har hittats är etapp 5–11 öppna igen."
       },
       {
         "q": "Spelet hittar inte mitt köp. Vad gör jag?",
@@ -75,11 +75,11 @@
       },
       {
         "q": "Var hittar jag mitt användar-ID?",
-        "a": "Gå till {{settings}} → {{about}}. Där visas ditt {{userId}}, och knappen ”{{copyUserId}}” kopierar det så att du kan klistra in det i mejlet. ID:t är slumpmässigt och skapas av spelet. Det är inte kopplat till ditt namn, din e-post eller ditt konto i butiken."
+        "a": "Gå till {{settings}} → {{about}}. Där visas ditt {{userId}}. Tryck på kopieringssymbolen bredvid ID:t, eller på själva ID:t, för att kopiera det och klistra sedan in det i mejlet. ID:t är slumpmässigt. Det innehåller inte ditt namn eller din e-post, och vi kan inte se vem du är utifrån det."
       },
       {
         "q": "Jag har fått en ny telefon eller installerat om spelet",
-        "a": "Köpet följer ditt konto i butiken: använd {{restore}} som beskrivs ovan. Framsteg och inställningar sparas bara på enheten, och vi kan inte flytta dem. De kan bara komma tillbaka från enhetens egen säkerhetskopia. En ny installation får ett nytt användar-ID."
+        "a": "Köpet följer ditt konto i butiken: använd {{restore}} som beskrivs ovan. Framsteg och inställningar sparas bara på enheten, och vi kan inte flytta dem. De kan bara komma tillbaka från enhetens egen säkerhetskopia. En ny installation får oftast ett nytt användar-ID, om inte spelet återställs från en säkerhetskopia av enheten."
       },
       {
         "q": "Vad får jag med {{fullRoadtrip}}?",

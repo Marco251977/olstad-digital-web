@@ -24,10 +24,10 @@
         "list": [
           "un identifiant aléatoire que le jeu crée lui-même (il commence par rtn_), envoyé à RevenueCat pour l’achat,",
           "l’historique d’achats associé à cet identifiant : quel produit, quand, pays et devise, ainsi que le reçu de la boutique,",
-          "des informations techniques, par exemple la version de l’app et l’adresse IP de la requête, que RevenueCat utilise pour déterminer le pays et la devise et pour traiter l’achat."
+          "des informations techniques, par exemple la version de l’app et votre adresse IP, qui servent à traiter la requête."
         ],
         "after": [
-          "L’identifiant n’est lié ni à votre nom, ni à votre e-mail, ni à aucun compte.",
+          "L’identifiant est aléatoire. Il ne contient ni votre nom ni votre e-mail, et il ne nous permet pas de savoir qui vous êtes.",
           "Les informations servent à vous donner accès à ce que vous avez acheté et à établir des statistiques de ventes agrégées. La base légale est notre contrat avec vous pour l’achat (article 6, paragraphe 1, point b) du RGPD).",
           "Les transferts vers les États-Unis reposent sur les clauses contractuelles types de l’UE ou sur une base équivalente utilisée par RevenueCat."
         ]
@@ -67,7 +67,7 @@
     "faq": [
       {
         "q": "Comment restaurer mon achat ?",
-        "a": "Assurez-vous d’être connecté à la boutique avec le même compte que celui utilisé pour acheter {{fullRoadtrip}}. Ouvrez le jeu et allez dans {{settings}} → {{journey}} → {{restore}}. Le bouton se trouve aussi sur la carte {{fullRoadtrip}}, dans l’écran {{route}}. Une fois l’achat retrouvé, les étapes 5 à 11 sont de nouveau ouvertes."
+        "a": "Assurez-vous d’être connecté à la boutique avec le même compte que celui utilisé pour acheter {{fullRoadtrip}}. Allez sur l’écran d’accueil (pas dans le menu pause pendant la conduite) et ouvrez {{settings}} → {{journey}} → {{restore}}. Le bouton se trouve aussi sur la carte {{fullRoadtrip}}, dans l’écran {{route}}. Une fois l’achat retrouvé, les étapes 5 à 11 sont de nouveau ouvertes."
       },
       {
         "q": "Le jeu ne trouve pas mon achat. Que faire ?",
@@ -75,11 +75,11 @@
       },
       {
         "q": "Où trouver mon identifiant utilisateur ?",
-        "a": "Allez dans {{settings}} → {{about}}. Votre {{userId}} y est affiché, et le bouton « {{copyUserId}} » le copie pour que vous puissiez le coller dans votre e-mail. L’identifiant est aléatoire et créé par le jeu. Il n’est lié ni à votre nom, ni à votre e-mail, ni à votre compte auprès de la boutique."
+        "a": "Allez dans {{settings}} → {{about}}. Votre {{userId}} y est affiché. Pour le copier, touchez l’icône de copie à côté de l’identifiant, ou l’identifiant lui-même, puis collez-le dans votre e-mail. L’identifiant est aléatoire. Il ne contient ni votre nom ni votre e-mail, et il ne nous permet pas de savoir qui vous êtes."
       },
       {
         "q": "J’ai un nouveau téléphone ou j’ai réinstallé le jeu",
-        "a": "L’achat est lié à votre compte auprès de la boutique : utilisez {{restore}} comme indiqué ci-dessus. La progression et les réglages sont stockés uniquement sur l’appareil, et nous ne pouvons pas les transférer. Ils ne peuvent être récupérés que depuis la sauvegarde de votre appareil. Une nouvelle installation reçoit un nouvel identifiant utilisateur."
+        "a": "L’achat est lié à votre compte auprès de la boutique : utilisez {{restore}} comme indiqué ci-dessus. La progression et les réglages sont stockés uniquement sur l’appareil, et nous ne pouvons pas les transférer. Ils ne peuvent être récupérés que depuis la sauvegarde de votre appareil. Une nouvelle installation reçoit généralement un nouvel identifiant utilisateur, sauf si le jeu est restauré à partir d’une sauvegarde de l’appareil."
       },
       {
         "q": "Que comprend {{fullRoadtrip}} ?",

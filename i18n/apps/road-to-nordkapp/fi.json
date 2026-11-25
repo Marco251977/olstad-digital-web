@@ -24,10 +24,10 @@
         "list": [
           "satunnaisen tunnisteen, jonka peli luo itse (se alkaa merkeillä rtn_) ja joka lähetetään RevenueCatille ostosta varten,",
           "tunnisteeseen liitetyn ostohistorian: mikä tuote, milloin, maa ja valuutta sekä sovelluskaupan kuitti,",
-          "tekniset tiedot, esimerkiksi sovelluksen version ja pyynnön IP-osoitteen, joiden avulla RevenueCat määrittää maan ja valuutan ja käsittelee ostoksen."
+          "tekniset tiedot, esimerkiksi sovelluksen version ja IP-osoitteesi, joita käytetään pyynnön käsittelyyn."
         ],
         "after": [
-          "Tunnistetta ei ole yhdistetty nimeesi, sähköpostiisi eikä mihinkään tiliin.",
+          "Tunniste on satunnainen. Siinä ei ole nimeäsi eikä sähköpostiosoitettasi, emmekä näe siitä, kuka olet.",
           "Tietoja käytetään siihen, että saat käyttöösi sen, minkä olet ostanut, sekä koottuihin myyntitilastoihin. Käsittelyn oikeusperuste on ostoa koskeva sopimuksemme kanssasi (tietosuoja-asetuksen 6 artiklan 1 kohdan b alakohta).",
           "Tietojen siirto Yhdysvaltoihin perustuu EU:n vakiosopimuslausekkeisiin tai vastaavaan perusteeseen, jota RevenueCat käyttää."
         ]
@@ -67,7 +67,7 @@
     "faq": [
       {
         "q": "Miten palautan ostokseni?",
-        "a": "Varmista, että olet kirjautunut sovelluskauppaan samalla tilillä, jolla teit {{fullRoadtrip}}-ostoksen. Avaa peli ja siirry kohtaan {{settings}} → {{journey}} → {{restore}}. Painike on myös {{fullRoadtrip}}-kortissa kohdassa {{route}}. Kun ostos löytyy, etapit 5–11 ovat taas auki."
+        "a": "Varmista, että olet kirjautunut sovelluskauppaan samalla tilillä, jolla teit {{fullRoadtrip}}-ostoksen. Siirry aloitusnäyttöön (ei ajon aikana avattavaan taukovalikkoon) ja avaa {{settings}} → {{journey}} → {{restore}}. Painike on myös {{fullRoadtrip}}-kortissa kohdassa {{route}}. Kun ostos löytyy, etapit 5–11 ovat taas auki."
       },
       {
         "q": "Peli ei löydä ostostani. Mitä teen?",
@@ -75,11 +75,11 @@
       },
       {
         "q": "Mistä löydän käyttäjä-ID:ni?",
-        "a": "Siirry kohtaan {{settings}} → {{about}}. Siellä näkyy {{userId}}, ja painike ”{{copyUserId}}” kopioi sen, jotta voit liittää sen sähköpostiisi. Tunniste on satunnainen, ja peli luo sen. Sitä ei ole yhdistetty nimeesi, sähköpostiisi eikä sovelluskaupan tiliisi."
+        "a": "Siirry kohtaan {{settings}} → {{about}}. Siellä näkyy {{userId}}. Kopioi se napauttamalla tunnisteen vieressä olevaa kopiointikuvaketta tai itse tunnistetta, ja liitä se sähköpostiisi. Tunniste on satunnainen. Siinä ei ole nimeäsi eikä sähköpostiosoitettasi, emmekä näe siitä, kuka olet."
       },
       {
         "q": "Minulla on uusi puhelin tai asensin pelin uudelleen",
-        "a": "Ostos seuraa sovelluskaupan tiliäsi: käytä toimintoa {{restore}} yllä kuvatulla tavalla. Edistyminen ja asetukset tallennetaan vain laitteelle, emmekä voi siirtää niitä. Ne voivat palata vain laitteesi omasta varmuuskopiosta. Uusi asennus saa uuden käyttäjä-ID:n."
+        "a": "Ostos seuraa sovelluskaupan tiliäsi: käytä toimintoa {{restore}} yllä kuvatulla tavalla. Edistyminen ja asetukset tallennetaan vain laitteelle, emmekä voi siirtää niitä. Ne voivat palata vain laitteesi omasta varmuuskopiosta. Uusi asennus saa yleensä uuden käyttäjä-ID:n, ellei peliä palauteta laitteen varmuuskopiosta."
       },
       {
         "q": "Mitä {{fullRoadtrip}} sisältää?",

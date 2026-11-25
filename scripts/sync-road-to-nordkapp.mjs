@@ -23,7 +23,6 @@ const KEYS = {
   settings: 'SETTINGS',
   about: 'ABOUT',
   userId: 'USER_ID',
-  copyUserId: 'USER_ID_COPY',
   journey: 'GROUP_JOURNEY',
   restore: 'PURCHASE_RESTORE',
   route: 'MENU_ROUTE',

@@ -24,10 +24,10 @@
         "list": [
           "losowy identyfikator, który gra tworzy sama (zaczyna się od rtn_), wysyłany do RevenueCat w związku z zakupem,",
           "historię zakupów powiązaną z tym identyfikatorem: jaki produkt, kiedy, kraj i walutę oraz potwierdzenie zakupu ze sklepu,",
-          "informacje techniczne, na przykład wersję aplikacji i adres IP zapytania, których RevenueCat używa do ustalenia kraju i waluty oraz do obsługi zakupu."
+          "informacje techniczne, na przykład wersję aplikacji i Twój adres IP, które są wykorzystywane do obsługi zapytania."
         ],
         "after": [
-          "Identyfikator nie jest powiązany z Twoim imieniem i nazwiskiem, adresem e-mail ani z żadnym kontem.",
+          "Identyfikator jest losowy. Nie zawiera Twojego imienia i nazwiska ani adresu e-mail i nie możemy na jego podstawie ustalić, kim jesteś.",
           "Informacje są wykorzystywane, aby zapewnić Ci dostęp do tego, co kupiłeś, oraz do zbiorczych statystyk sprzedaży. Podstawą prawną jest umowa zakupu, którą zawieramy z Tobą (art. 6 ust. 1 lit. b RODO).",
           "Przekazywanie danych do USA odbywa się na podstawie standardowych klauzul umownych UE lub równoważnej podstawy stosowanej przez RevenueCat."
         ]
@@ -67,7 +67,7 @@
     "faq": [
       {
         "q": "Jak przywrócić zakup?",
-        "a": "Upewnij się, że jesteś zalogowany w sklepie na to samo konto, którego użyłeś do zakupu {{fullRoadtrip}}. Otwórz grę i przejdź do: {{settings}} → {{journey}} → {{restore}}. Ten przycisk znajdziesz też na karcie {{fullRoadtrip}} na ekranie {{route}}. Po odnalezieniu zakupu etapy 5–11 są znowu odblokowane."
+        "a": "Upewnij się, że jesteś zalogowany w sklepie na to samo konto, którego użyłeś do zakupu {{fullRoadtrip}}. Przejdź do ekranu startowego (nie do menu pauzy w trakcie jazdy) i otwórz: {{settings}} → {{journey}} → {{restore}}. Ten przycisk znajdziesz też na karcie {{fullRoadtrip}} na ekranie {{route}}. Po odnalezieniu zakupu etapy 5–11 są znowu odblokowane."
       },
       {
         "q": "Gra nie może znaleźć mojego zakupu. Co mam zrobić?",
@@ -75,11 +75,11 @@
       },
       {
         "q": "Gdzie znajdę swój identyfikator użytkownika?",
-        "a": "Przejdź do: {{settings}} → {{about}}. Wyświetla się tam Twój {{userId}}, a przycisk „{{copyUserId}}” kopiuje identyfikator, więc możesz wkleić go do e-maila. Identyfikator jest losowy i tworzy go gra. Nie jest powiązany z Twoim imieniem i nazwiskiem, adresem e-mail ani kontem w sklepie."
+        "a": "Przejdź do: {{settings}} → {{about}}. Wyświetla się tam Twój {{userId}}. Aby go skopiować, dotknij ikony kopiowania obok identyfikatora lub samego identyfikatora, a potem wklej go do e-maila. Identyfikator jest losowy. Nie zawiera Twojego imienia i nazwiska ani adresu e-mail i nie możemy na jego podstawie ustalić, kim jesteś."
       },
       {
         "q": "Mam nowy telefon lub zainstalowałem grę ponownie",
-        "a": "Zakup jest przypisany do Twojego konta w sklepie: użyj przycisku {{restore}}, jak opisano powyżej. Postępy i ustawienia są przechowywane tylko na urządzeniu i nie możemy ich przenieść. Mogą wrócić wyłącznie z własnej kopii zapasowej urządzenia. Nowa instalacja otrzymuje nowy identyfikator użytkownika."
+        "a": "Zakup jest przypisany do Twojego konta w sklepie: użyj przycisku {{restore}}, jak opisano powyżej. Postępy i ustawienia są przechowywane tylko na urządzeniu i nie możemy ich przenieść. Mogą wrócić wyłącznie z własnej kopii zapasowej urządzenia. Nowa instalacja zwykle otrzymuje nowy identyfikator użytkownika, chyba że gra zostanie przywrócona z kopii zapasowej urządzenia."
       },
       {
         "q": "Co zawiera {{fullRoadtrip}}?",

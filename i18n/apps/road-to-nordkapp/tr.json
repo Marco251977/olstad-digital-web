@@ -24,10 +24,10 @@
         "list": [
           "oyunun kendisinin oluşturduğu ve satın alma için RevenueCat'e gönderilen rastgele bir kimlik (rtn_ ile başlar),",
           "bu kimliğe bağlı satın alma geçmişi: hangi ürün, ne zaman, ülke ve para birimi ile mağaza makbuzu,",
-          "RevenueCat'in ülkeyi ve para birimini belirlemek ve satın alımı işlemek için kullandığı teknik bilgiler, örneğin uygulama sürümü ve isteğin IP adresi."
+          "teknik bilgiler, örneğin uygulama sürümü ve IP adresin; bunlar isteği işlemek için kullanılır."
         ],
         "after": [
-          "Kimlik adınla, e-postanla veya herhangi bir hesapla bağlantılı değildir.",
+          "Kimlik rastgeledir. Adını veya e-postanı içermez ve ondan kim olduğunu göremeyiz.",
           "Bilgiler, satın aldığın içeriğe erişmeni sağlamak ve toplu satış istatistikleri için kullanılır. Hukuki dayanak, satın alma için seninle yaptığımız sözleşmedir (GDPR madde 6(1)(b)).",
           "ABD'ye yapılan aktarımlarda AB standart sözleşme maddeleri veya RevenueCat'in kullandığı eşdeğer bir dayanak esas alınır."
         ]
@@ -67,7 +67,7 @@
     "faq": [
       {
         "q": "Satın alımımı nasıl geri yüklerim?",
-        "a": "Mağazada, {{fullRoadtrip}} satın alımını yaptığın hesapla oturum açtığından emin ol. Oyunu aç ve şuraya git: {{settings}} → {{journey}} → {{restore}}. Bu düğme {{route}} ekranındaki {{fullRoadtrip}} kartında da bulunur. Satın alım bulunduğunda 5–11. etaplar yeniden açılır."
+        "a": "Mağazada, {{fullRoadtrip}} satın alımını yaptığın hesapla oturum açtığından emin ol. Başlangıç ekranına git (sürüş sırasındaki duraklatma menüsüne değil) ve şunu aç: {{settings}} → {{journey}} → {{restore}}. Bu düğme {{route}} ekranındaki {{fullRoadtrip}} kartında da bulunur. Satın alım bulunduğunda 5–11. etaplar yeniden açılır."
       },
       {
         "q": "Oyun satın alımımı bulamıyor. Ne yapmalıyım?",
@@ -75,11 +75,11 @@
       },
       {
         "q": "Kullanıcı kimliğimi nerede bulurum?",
-        "a": "Şuraya git: {{settings}} → {{about}}. {{userId}} orada gösterilir ve “{{copyUserId}}” düğmesi onu kopyalar; böylece e-postana yapıştırabilirsin. Kimlik rastgeledir ve oyun tarafından oluşturulur. Adınla, e-postanla veya mağazadaki hesabınla bağlantılı değildir."
+        "a": "Şuraya git: {{settings}} → {{about}}. {{userId}} orada gösterilir. Kopyalamak için kimliğin yanındaki kopyalama simgesine ya da kimliğin kendisine dokun, sonra e-postana yapıştır. Kimlik rastgeledir. Adını veya e-postanı içermez ve ondan kim olduğunu göremeyiz."
       },
       {
         "q": "Yeni bir telefonum var ya da oyunu yeniden yükledim",
-        "a": "Satın alım, mağazadaki hesabına bağlıdır: yukarıda anlatıldığı gibi {{restore}} seçeneğini kullan. İlerleme ve ayarlar yalnızca cihazda saklanır ve bunları taşıyamayız. Yalnızca cihazının kendi yedeğinden geri gelebilirler. Yeni kurulumda yeni bir kullanıcı kimliği oluşturulur."
+        "a": "Satın alım, mağazadaki hesabına bağlıdır: yukarıda anlatıldığı gibi {{restore}} seçeneğini kullan. İlerleme ve ayarlar yalnızca cihazda saklanır ve bunları taşıyamayız. Yalnızca cihazının kendi yedeğinden geri gelebilirler. Oyun cihazın bir yedeğinden geri yüklenmediği sürece yeni kurulumda genellikle yeni bir kullanıcı kimliği oluşturulur."
       },
       {
         "q": "{{fullRoadtrip}} neler içeriyor?",
