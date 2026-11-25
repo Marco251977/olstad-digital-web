@@ -1,18 +1,18 @@
 {
   "description": "Datenschutz und Hilfe für Road to Nordkapp, das Autospiel von Oslo zum Nordkapp entlang der E6.",
   "privacy": {
-    "intro": "Road to Nordkapp wird von {{publisher}} entwickelt (Org.-Nr. {{publisherOrgNumber}}, {{publisherAddress}}, {{country}}). Wir sind der Verantwortliche für die hier beschriebenen Daten.",
+    "intro": "Road to Nordkapp wird von {{publisher}} entwickelt, Org.-Nr. {{orgNumber}}, {{address}}. Wir sind der Verantwortliche für die hier beschriebenen Daten.",
     "sections": [
       {
         "heading": "Kurz gesagt",
         "body": [
-          "Das Spiel hat kein Konto, keine Werbung, kein Tracking und keine Analyse. Das Einzige, was das Spiel sendet, ist das, was nötig ist, um den Kauf von {{fullRoadtrip}} zu bestätigen."
+          "Das Spiel hat kein Konto, keine Werbung, kein Tracking und keine Analyse deines Spielverhaltens. Das Einzige, was das Spiel sendet, ist das, was für den Kauf von {{fullRoadtrip}} nötig ist, und die Kaufdaten werden außerdem für Verkaufsstatistiken in RevenueCat genutzt."
         ]
       },
       {
         "heading": "Auf deinem Gerät gespeichert",
         "body": [
-          "Einstellungen, Fortschritt, Sterne, Münzen und ob du {{fullRoadtrip}} gekauft hast, werden nur auf deinem Gerät gespeichert. Wir haben keinen Zugriff darauf. Diese Daten werden gelöscht, wenn du das Spiel deinstallierst (eine Kopie kann im eigenen Backup deines Geräts erhalten bleiben, falls du eins nutzt)."
+          "Einstellungen, Fortschritt, Kontrollpunkte, Sterne, Punkte und Bestzeiten sowie ob du {{fullRoadtrip}} gekauft hast, werden nur auf deinem Gerät gespeichert. Wir haben keinen Zugriff darauf. Diese Daten werden gelöscht, wenn du das Spiel deinstallierst (eine Kopie kann im eigenen Backup deines Geräts erhalten bleiben, falls du eins nutzt)."
         ]
       },
       {
@@ -22,12 +22,12 @@
           "Um den Kauf zu bestätigen und wiederherzustellen, nutzen wir RevenueCat (RevenueCat, Inc., USA). RevenueCat verarbeitet die Daten in unserem Auftrag und erhält:"
         ],
         "list": [
-          "eine zufällige, anonyme ID, die das Spiel erstellt,",
+          "eine zufällige ID, die das Spiel selbst erstellt (sie beginnt mit rtn_) und die für den Kauf an RevenueCat gesendet wird,",
           "den Kaufverlauf zu dieser ID: welches Produkt, wann, Land und Währung sowie den Kaufbeleg des Stores,",
-          "technische Angaben, die für eine Antwort nötig sind, zum Beispiel die App-Version und die IP-Adresse der Anfrage."
+          "technische Angaben, zum Beispiel die App-Version und die IP-Adresse der Anfrage, mit denen RevenueCat Land und Währung bestimmt und den Kauf abwickelt."
         ],
         "after": [
-          "Die anonyme ID ist nicht mit deinem Namen, deiner E-Mail-Adresse oder deinem Konto beim Store verknüpft.",
+          "Die ID ist nicht mit deinem Namen, deiner E-Mail-Adresse oder einem Konto verknüpft.",
           "Die Daten werden genutzt, um dir Zugang zu dem zu geben, was du gekauft hast, und für zusammengefasste Verkaufsstatistiken. Rechtsgrundlage ist unser Vertrag mit dir über den Kauf (Art. 6 Abs. 1 lit. b DSGVO).",
           "Übermittlungen in die USA stützen sich auf die EU-Standardvertragsklauseln oder eine gleichwertige Grundlage, die RevenueCat nutzt."
         ]
@@ -42,7 +42,7 @@
         "heading": "Deine Rechte",
         "body": [
           "Du kannst Auskunft, Berichtigung oder Löschung verlangen und dich bei der norwegischen Datenschutzbehörde (datatilsynet.no) oder bei der Datenschutzbehörde an deinem Wohnort beschweren.",
-          "Da das Spiel kein Konto hat, brauchen wir eventuell deinen Kaufbeleg aus dem Store (die Bestellnummer), um deinen Kauf zu finden. Schreib an {{publisherEmail}}."
+          "Da das Spiel kein Konto hat, brauchen wir eventuell deinen Kaufbeleg aus dem Store (die Bestellnummer), um deinen Kauf zu finden. Schreib an {{email}}."
         ]
       },
       {
@@ -62,7 +62,7 @@
   "support": {
     "intro": "Fragen zu Road to Nordkapp oder zum Kauf von {{fullRoadtrip}}? Hier findest du Antworten auf die häufigsten Fragen und erfährst, wie du uns erreichst.",
     "contactHeading": "Kontakt",
-    "contactBody": "Schreib an {{publisherEmail}}. Wenn es um den Kauf geht, gib deine Benutzer-ID ({{settings}} → {{about}}) und die Bestellnummer aus dem Kaufbeleg des Stores an. Schreib uns bitte auch, welches Smartphone oder Tablet du nutzt.",
+    "contactBody": "Schreib an {{email}}. Wenn es um den Kauf geht, gib deine Benutzer-ID ({{settings}} → {{about}}) und die Bestellnummer aus dem Kaufbeleg des Stores an. Schreib uns bitte auch, welches Smartphone oder Tablet du nutzt.",
     "faqHeading": "Häufige Fragen",
     "faq": [
       {
@@ -71,7 +71,7 @@
       },
       {
         "q": "Das Spiel findet meinen Kauf nicht. Was kann ich tun?",
-        "a": "Prüfe, ob dein Gerät online ist und ob du im Store mit demselben Konto angemeldet bist, mit dem du gekauft hast. Wenn das nicht hilft, schreib an {{publisherEmail}} und gib deine Benutzer-ID und die Bestellnummer aus dem Kaufbeleg an – dann helfen wir dir."
+        "a": "Prüfe, ob dein Gerät online ist und ob du im Store mit demselben Konto angemeldet bist, mit dem du gekauft hast. Wenn das nicht hilft, schreib an {{email}} und gib deine Benutzer-ID und die Bestellnummer aus dem Kaufbeleg an – dann helfen wir dir."
       },
       {
         "q": "Wo finde ich meine Benutzer-ID?",
@@ -91,7 +91,7 @@
       },
       {
         "q": "Wie lösche ich meine Daten?",
-        "a": "Was auf deinem Gerät gespeichert ist, wird gelöscht, wenn du das Spiel deinstallierst. Wenn wir auch den Kaufverlauf bei RevenueCat löschen sollen, schreib an {{publisherEmail}} und gib deine Benutzer-ID oder die Bestellnummer aus dem Kaufbeleg an. Mehr dazu in der Datenschutzerklärung."
+        "a": "Was auf deinem Gerät gespeichert ist, wird gelöscht, wenn du das Spiel deinstallierst. Wenn wir auch den Kaufverlauf bei RevenueCat löschen sollen, schreib an {{email}} und gib deine Benutzer-ID oder die Bestellnummer aus dem Kaufbeleg an. Mehr dazu in der Datenschutzerklärung."
       }
     ]
   }

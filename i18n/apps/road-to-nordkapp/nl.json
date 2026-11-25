@@ -1,18 +1,18 @@
 {
   "description": "Privacy en hulp voor Road to Nordkapp, het rijspel van Oslo naar Nordkapp langs de E6.",
   "privacy": {
-    "intro": "Road to Nordkapp is gemaakt door {{publisher}} (org.nr. {{publisherOrgNumber}}, {{publisherAddress}}, {{country}}). Wij zijn de verwerkingsverantwoordelijke voor de gegevens die hier worden beschreven.",
+    "intro": "Road to Nordkapp is gemaakt door {{publisher}}, org.nr. {{orgNumber}}, {{address}}. Wij zijn de verwerkingsverantwoordelijke voor de gegevens die hier worden beschreven.",
     "sections": [
       {
         "heading": "In het kort",
         "body": [
-          "Het spel heeft geen account, geen advertenties, geen tracking en geen analyse. Het enige wat het spel verstuurt, is wat nodig is om de aankoop van {{fullRoadtrip}} te bevestigen."
+          "Het spel heeft geen account, geen advertenties, geen tracking en geen analyse van hoe je speelt. Het enige wat het spel verstuurt, is wat nodig is voor de aankoop van {{fullRoadtrip}}, en de aankoopgegevens worden ook gebruikt voor verkoopstatistieken in RevenueCat."
         ]
       },
       {
         "heading": "Opgeslagen op je apparaat",
         "body": [
-          "Instellingen, voortgang, sterren, munten en of je {{fullRoadtrip}} hebt gekocht, worden alleen op je apparaat opgeslagen. Wij hebben daar geen toegang toe. Deze gegevens worden gewist als je het spel verwijdert (een kopie kan bewaard blijven in de eigen back-up van je apparaat, als je die gebruikt)."
+          "Instellingen, voortgang, controlepunten, sterren, punten en beste tijden, en of je {{fullRoadtrip}} hebt gekocht, worden alleen op je apparaat opgeslagen. Wij hebben daar geen toegang toe. Deze gegevens worden gewist als je het spel verwijdert (een kopie kan bewaard blijven in de eigen back-up van je apparaat, als je die gebruikt)."
         ]
       },
       {
@@ -22,12 +22,12 @@
           "Om de aankoop te bevestigen en te herstellen, gebruiken we RevenueCat (RevenueCat, Inc., VS), dat de gegevens namens ons verwerkt. RevenueCat ontvangt:"
         ],
         "list": [
-          "een willekeurige, anonieme ID die het spel aanmaakt,",
+          "een willekeurige ID die het spel zelf aanmaakt (die begint met rtn_) en die voor de aankoop naar RevenueCat wordt gestuurd,",
           "de aankoopgeschiedenis die aan die ID is gekoppeld: welk product, wanneer, land en valuta, en het aankoopbewijs van de store,",
-          "technische gegevens die nodig zijn om te kunnen antwoorden, bijvoorbeeld de appversie en het IP-adres van het verzoek."
+          "technische gegevens, bijvoorbeeld de appversie en het IP-adres van het verzoek, die RevenueCat gebruikt om land en valuta te bepalen en de aankoop te verwerken."
         ],
         "after": [
-          "De anonieme ID is niet gekoppeld aan je naam, je e-mailadres of je account bij de store.",
+          "De ID is niet gekoppeld aan je naam, je e-mailadres of een account.",
           "De gegevens worden gebruikt om je toegang te geven tot wat je hebt gekocht en voor geaggregeerde verkoopstatistieken. De grondslag is onze overeenkomst met jou over de aankoop (artikel 6, lid 1, onder b AVG).",
           "Doorgifte naar de VS gebeurt op basis van de standaardcontractbepalingen van de EU of een gelijkwaardige grondslag die RevenueCat gebruikt."
         ]
@@ -42,7 +42,7 @@
         "heading": "Je rechten",
         "body": [
           "Je kunt vragen om inzage, correctie of verwijdering, en je kunt een klacht indienen bij de Noorse toezichthouder voor gegevensbescherming (datatilsynet.no) of bij de toezichthouder voor gegevensbescherming in het land waar je woont.",
-          "Omdat het spel geen account heeft, hebben we misschien het aankoopbewijs van de store (het bestelnummer) nodig om je aankoop te vinden. Schrijf naar {{publisherEmail}}."
+          "Omdat het spel geen account heeft, hebben we misschien het aankoopbewijs van de store (het bestelnummer) nodig om je aankoop te vinden. Schrijf naar {{email}}."
         ]
       },
       {
@@ -62,7 +62,7 @@
   "support": {
     "intro": "Vragen over Road to Nordkapp of over de aankoop van {{fullRoadtrip}}? Hier vind je antwoorden op de meest gestelde vragen en lees je hoe je contact met ons opneemt.",
     "contactHeading": "Contact",
-    "contactBody": "Schrijf naar {{publisherEmail}}. Gaat het om de aankoop, vermeld dan je gebruikers-ID ({{settings}} → {{about}}) en het bestelnummer op het aankoopbewijs van de store. Laat ons ook weten welke telefoon of tablet je gebruikt.",
+    "contactBody": "Schrijf naar {{email}}. Gaat het om de aankoop, vermeld dan je gebruikers-ID ({{settings}} → {{about}}) en het bestelnummer op het aankoopbewijs van de store. Laat ons ook weten welke telefoon of tablet je gebruikt.",
     "faqHeading": "Veelgestelde vragen",
     "faq": [
       {
@@ -71,7 +71,7 @@
       },
       {
         "q": "Het spel vindt mijn aankoop niet. Wat moet ik doen?",
-        "a": "Controleer of je apparaat online is en of je in de store bent ingelogd met hetzelfde account waarmee je hebt gekocht. Helpt dat niet, schrijf dan naar {{publisherEmail}} met je gebruikers-ID en het bestelnummer op het aankoopbewijs, dan helpen we je verder."
+        "a": "Controleer of je apparaat online is en of je in de store bent ingelogd met hetzelfde account waarmee je hebt gekocht. Helpt dat niet, schrijf dan naar {{email}} met je gebruikers-ID en het bestelnummer op het aankoopbewijs, dan helpen we je verder."
       },
       {
         "q": "Waar vind ik mijn gebruikers-ID?",
@@ -91,7 +91,7 @@
       },
       {
         "q": "Hoe verwijder ik mijn gegevens?",
-        "a": "Wat op je apparaat staat, wordt gewist als je het spel verwijdert. Wil je dat wij ook de aankoopgeschiedenis bij RevenueCat verwijderen, schrijf dan naar {{publisherEmail}} met je gebruikers-ID of het bestelnummer op het aankoopbewijs. Lees meer in de privacyverklaring."
+        "a": "Wat op je apparaat staat, wordt gewist als je het spel verwijdert. Wil je dat wij ook de aankoopgeschiedenis bij RevenueCat verwijderen, schrijf dan naar {{email}} met je gebruikers-ID of het bestelnummer op het aankoopbewijs. Lees meer in de privacyverklaring."
       }
     ]
   }

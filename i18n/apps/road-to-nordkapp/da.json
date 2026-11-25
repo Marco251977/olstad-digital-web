@@ -1,18 +1,18 @@
 {
   "description": "Privatliv og hjælp til Road to Nordkapp, bilspillet fra Oslo til Nordkapp langs E6.",
   "privacy": {
-    "intro": "Road to Nordkapp er lavet af {{publisher}} (org.nr. {{publisherOrgNumber}}, {{publisherAddress}}, {{country}}). Vi er dataansvarlige for de oplysninger, der beskrives her.",
+    "intro": "Road to Nordkapp er lavet af {{publisher}}, org.nr. {{orgNumber}}, {{address}}. Vi er dataansvarlige for de oplysninger, der beskrives her.",
     "sections": [
       {
         "heading": "Kort fortalt",
         "body": [
-          "Spillet har ingen konto, ingen reklamer, ingen sporing og ingen analyse. Det eneste, der sendes fra spillet, er det, der skal til for at bekræfte købet af {{fullRoadtrip}}."
+          "Spillet har ingen konto, ingen reklamer, ingen sporing og ingen analyse af, hvordan du spiller. Det eneste, der sendes fra spillet, er det, der skal til for købet af {{fullRoadtrip}}, og købsoplysningerne bruges også til salgsstatistik i RevenueCat."
         ]
       },
       {
         "heading": "Det, der gemmes på din enhed",
         "body": [
-          "Indstillinger, fremskridt, stjerner, mønter og om du har købt {{fullRoadtrip}}, gemmes kun på din enhed. Vi har ikke adgang til dem. De slettes, når du afinstallerer spillet (en kopi kan ligge i enhedens egen sikkerhedskopi, hvis du bruger en)."
+          "Indstillinger, fremskridt, kontrolposter, stjerner, point og bedste tider samt om du har købt {{fullRoadtrip}}, gemmes kun på din enhed. Vi har ikke adgang til dem. De slettes, når du afinstallerer spillet (en kopi kan ligge i enhedens egen sikkerhedskopi, hvis du bruger en)."
         ]
       },
       {
@@ -22,12 +22,12 @@
           "For at bekræfte og gendanne købet bruger vi RevenueCat (RevenueCat, Inc., USA), som behandler oplysningerne på vores vegne. RevenueCat modtager:"
         ],
         "list": [
-          "et tilfældigt, anonymt id, som spillet opretter,",
+          "et tilfældigt id, som spillet selv opretter (det starter med rtn_), og som sendes til RevenueCat i forbindelse med købet,",
           "købshistorikken knyttet til det id: hvilket produkt, hvornår, land og valuta samt kvitteringen fra butikken,",
-          "tekniske oplysninger, der er nødvendige for at kunne svare, for eksempel appversionen og IP-adressen for forespørgslen."
+          "tekniske oplysninger, for eksempel appversionen og IP-adressen for forespørgslen, som RevenueCat bruger til at fastslå land og valuta og til at gennemføre købet."
         ],
         "after": [
-          "Det anonyme id er ikke knyttet til dit navn, din e-mail eller din konto i butikken.",
+          "Id'et er ikke knyttet til dit navn, din e-mail eller nogen konto.",
           "Oplysningerne bruges til at give dig adgang til det, du har købt, og til samlet salgsstatistik. Retsgrundlaget er vores aftale med dig om købet (databeskyttelsesforordningen artikel 6, stk. 1, litra b).",
           "Overførsler til USA sker på grundlag af EU's standardkontraktbestemmelser eller et tilsvarende grundlag, som RevenueCat anvender."
         ]
@@ -42,7 +42,7 @@
         "heading": "Dine rettigheder",
         "body": [
           "Du kan bede om indsigt, berigtigelse eller sletning, og du kan klage til det norske Datatilsynet (datatilsynet.no) eller til databeskyttelsesmyndigheden i det land, hvor du bor.",
-          "Da spillet ikke har nogen konto, kan vi få brug for kvitteringen fra butikken (ordrenummeret) for at finde dit køb. Skriv til {{publisherEmail}}."
+          "Da spillet ikke har nogen konto, kan vi få brug for kvitteringen fra butikken (ordrenummeret) for at finde dit køb. Skriv til {{email}}."
         ]
       },
       {
@@ -62,7 +62,7 @@
   "support": {
     "intro": "Spørgsmål om Road to Nordkapp eller købet af {{fullRoadtrip}}? Her er svar på de mest almindelige spørgsmål, og sådan kontakter du os.",
     "contactHeading": "Kontakt",
-    "contactBody": "Skriv til {{publisherEmail}}. Handler det om købet, så send dit bruger-id ({{settings}} → {{about}}) og ordrenummeret fra butikkens kvittering med. Skriv også, hvilken telefon eller tablet du bruger.",
+    "contactBody": "Skriv til {{email}}. Handler det om købet, så send dit bruger-id ({{settings}} → {{about}}) og ordrenummeret fra butikkens kvittering med. Skriv også, hvilken telefon eller tablet du bruger.",
     "faqHeading": "Ofte stillede spørgsmål",
     "faq": [
       {
@@ -71,7 +71,7 @@
       },
       {
         "q": "Spillet kan ikke finde mit køb. Hvad gør jeg?",
-        "a": "Tjek, at din enhed er online, og at du er logget ind i butikken med den samme konto, som du købte med. Hjælper det ikke, så skriv til {{publisherEmail}} med dit bruger-id og ordrenummeret fra kvitteringen, så hjælper vi dig."
+        "a": "Tjek, at din enhed er online, og at du er logget ind i butikken med den samme konto, som du købte med. Hjælper det ikke, så skriv til {{email}} med dit bruger-id og ordrenummeret fra kvitteringen, så hjælper vi dig."
       },
       {
         "q": "Hvor finder jeg mit bruger-id?",
@@ -91,7 +91,7 @@
       },
       {
         "q": "Hvordan sletter jeg mine data?",
-        "a": "Det, der ligger på din enhed, slettes, når du afinstallerer spillet. Vil du have, at vi også sletter købshistorikken hos RevenueCat, så skriv til {{publisherEmail}} med dit bruger-id eller ordrenummeret fra kvitteringen. Læs mere i privatlivspolitikken."
+        "a": "Det, der ligger på din enhed, slettes, når du afinstallerer spillet. Vil du have, at vi også sletter købshistorikken hos RevenueCat, så skriv til {{email}} med dit bruger-id eller ordrenummeret fra kvitteringen. Læs mere i privatlivspolitikken."
       }
     ]
   }

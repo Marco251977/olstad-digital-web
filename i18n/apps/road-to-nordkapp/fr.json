@@ -1,18 +1,18 @@
 {
   "description": "Confidentialité et aide pour Road to Nordkapp, le jeu de conduite d’Oslo à Nordkapp par l’E6.",
   "privacy": {
-    "intro": "Road to Nordkapp est conçu par {{publisher}} (n° d’immatriculation {{publisherOrgNumber}}, {{publisherAddress}}, {{country}}). Nous sommes responsables du traitement des informations décrites ici.",
+    "intro": "Road to Nordkapp est conçu par {{publisher}}, n° d’immatriculation {{orgNumber}}, {{address}}. Nous sommes responsables du traitement des informations décrites ici.",
     "sections": [
       {
         "heading": "En bref",
         "body": [
-          "Le jeu n’a ni compte, ni publicité, ni suivi, ni outil d’analyse. Les seules informations envoyées par le jeu sont celles nécessaires pour confirmer l’achat de {{fullRoadtrip}}."
+          "Le jeu n’a ni compte, ni publicité, ni suivi, ni analyse de votre façon de jouer. Les seules informations envoyées par le jeu sont celles nécessaires à l’achat de {{fullRoadtrip}}, et les données d’achat servent aussi à des statistiques de ventes dans RevenueCat."
         ]
       },
       {
         "heading": "Ce qui est stocké sur votre appareil",
         "body": [
-          "Les réglages, la progression, les étoiles, les pièces et le fait que vous ayez acheté ou non {{fullRoadtrip}} sont stockés uniquement sur votre appareil. Nous n’y avons pas accès. Ces données sont supprimées lorsque vous désinstallez le jeu (ou conservées dans la sauvegarde de votre appareil, si vous en utilisez une)."
+          "Les réglages, la progression, les points de contrôle, les étoiles, les points et les meilleurs temps, ainsi que le fait que vous ayez acheté ou non {{fullRoadtrip}}, sont stockés uniquement sur votre appareil. Nous n’y avons pas accès. Ces données sont supprimées lorsque vous désinstallez le jeu (ou conservées dans la sauvegarde de votre appareil, si vous en utilisez une)."
         ]
       },
       {
@@ -22,12 +22,12 @@
           "Pour confirmer et restaurer l’achat, nous utilisons RevenueCat (RevenueCat, Inc., États-Unis), qui traite les informations pour notre compte. RevenueCat reçoit :"
         ],
         "list": [
-          "un identifiant aléatoire et anonyme créé par le jeu,",
+          "un identifiant aléatoire que le jeu crée lui-même (il commence par rtn_), envoyé à RevenueCat pour l’achat,",
           "l’historique d’achats associé à cet identifiant : quel produit, quand, pays et devise, ainsi que le reçu de la boutique,",
-          "les informations techniques nécessaires pour répondre, par exemple la version de l’app et l’adresse IP de la requête."
+          "des informations techniques, par exemple la version de l’app et l’adresse IP de la requête, que RevenueCat utilise pour déterminer le pays et la devise et pour traiter l’achat."
         ],
         "after": [
-          "L’identifiant anonyme n’est lié ni à votre nom, ni à votre e-mail, ni à votre compte auprès de la boutique.",
+          "L’identifiant n’est lié ni à votre nom, ni à votre e-mail, ni à aucun compte.",
           "Les informations servent à vous donner accès à ce que vous avez acheté et à établir des statistiques de ventes agrégées. La base légale est notre contrat avec vous pour l’achat (article 6, paragraphe 1, point b) du RGPD).",
           "Les transferts vers les États-Unis reposent sur les clauses contractuelles types de l’UE ou sur une base équivalente utilisée par RevenueCat."
         ]
@@ -42,7 +42,7 @@
         "heading": "Vos droits",
         "body": [
           "Vous pouvez demander l’accès à vos informations, leur rectification ou leur effacement, et vous pouvez adresser une réclamation à l’autorité norvégienne de protection des données (datatilsynet.no) ou à l’autorité de protection des données de votre lieu de résidence.",
-          "Comme le jeu n’a pas de compte, nous pouvons avoir besoin du reçu de la boutique (le numéro de commande) pour retrouver votre achat. Écrivez à {{publisherEmail}}."
+          "Comme le jeu n’a pas de compte, nous pouvons avoir besoin du reçu de la boutique (le numéro de commande) pour retrouver votre achat. Écrivez à {{email}}."
         ]
       },
       {
@@ -62,7 +62,7 @@
   "support": {
     "intro": "Des questions sur Road to Nordkapp ou sur l’achat de {{fullRoadtrip}} ? Voici les réponses aux questions les plus fréquentes, et comment nous contacter.",
     "contactHeading": "Contact",
-    "contactBody": "Écrivez à {{publisherEmail}}. Si cela concerne l’achat, indiquez votre identifiant utilisateur ({{settings}} → {{about}}) et le numéro de commande figurant sur le reçu de la boutique. Précisez aussi quel téléphone ou quelle tablette vous utilisez.",
+    "contactBody": "Écrivez à {{email}}. Si cela concerne l’achat, indiquez votre identifiant utilisateur ({{settings}} → {{about}}) et le numéro de commande figurant sur le reçu de la boutique. Précisez aussi quel téléphone ou quelle tablette vous utilisez.",
     "faqHeading": "Questions fréquentes",
     "faq": [
       {
@@ -71,7 +71,7 @@
       },
       {
         "q": "Le jeu ne trouve pas mon achat. Que faire ?",
-        "a": "Vérifiez que votre appareil est connecté à Internet et que vous êtes connecté à la boutique avec le même compte que celui utilisé pour l’achat. Si cela ne suffit pas, écrivez à {{publisherEmail}} en indiquant votre identifiant utilisateur et le numéro de commande figurant sur le reçu, et nous vous aiderons."
+        "a": "Vérifiez que votre appareil est connecté à Internet et que vous êtes connecté à la boutique avec le même compte que celui utilisé pour l’achat. Si cela ne suffit pas, écrivez à {{email}} en indiquant votre identifiant utilisateur et le numéro de commande figurant sur le reçu, et nous vous aiderons."
       },
       {
         "q": "Où trouver mon identifiant utilisateur ?",
@@ -91,7 +91,7 @@
       },
       {
         "q": "Comment supprimer mes données ?",
-        "a": "Ce qui se trouve sur votre appareil est supprimé lorsque vous désinstallez le jeu. Si vous souhaitez aussi que nous supprimions l’historique d’achats conservé par RevenueCat, écrivez à {{publisherEmail}} en indiquant votre identifiant utilisateur ou le numéro de commande figurant sur le reçu. Pour en savoir plus, consultez la politique de confidentialité."
+        "a": "Ce qui se trouve sur votre appareil est supprimé lorsque vous désinstallez le jeu. Si vous souhaitez aussi que nous supprimions l’historique d’achats conservé par RevenueCat, écrivez à {{email}} en indiquant votre identifiant utilisateur ou le numéro de commande figurant sur le reçu. Pour en savoir plus, consultez la politique de confidentialité."
       }
     ]
   }

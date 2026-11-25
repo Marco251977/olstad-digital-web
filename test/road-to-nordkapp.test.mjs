@@ -1,6 +1,6 @@
 // Road to Nordkapp (Marco 25.11): a privacy policy and a support page on every language, at the same addresses as the
 // other apps (/<lang>/road-to-nordkapp/privacy and /support), neutral about the stores (the pages are linked from both),
-// with the game's own menu names (data/road-to-nordkapp-labels.json) and Marco's details marked until he fills them in.
+// with the game's own menu names (data/road-to-nordkapp-labels.json) and the company details from data/company.json.
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { test } from 'node:test';
@@ -39,14 +39,20 @@ test('no store or platform named on any language (the pages are linked from both
   }
 });
 
-test('Marco’s details are marked placeholders, never guessed or linked', () => {
-  for (const key of ['orgNumber', 'address', 'email']) assert.match(app.publisher[key], /^\[[^\]]+\]$/);
+test('org. no. and address from data/company.json (the same as Saldo Pocket and the footer), the game’s own e-mail, nothing left to fill in', () => {
+  const company = JSON.parse(read('data/company.json'));
+  assert.equal(app.publisher, `Nordic Digital Apps AS (${company.name})`);
   for (const l of CORE_LANGUAGES) {
     const privacy = read(`${l.code}/road-to-nordkapp/privacy.html`);
     const support = read(`${l.code}/road-to-nordkapp/support.html`);
-    for (const p of ['[ORGANISASJONSNUMMER]', '[ADRESSE]', '[KONTAKT-E-POST]']) assert.ok(privacy.includes(`<span class="placeholder">${p}</span>`), `${l.code} privacy ${p}`);
-    assert.ok(support.includes('<span class="placeholder">[KONTAKT-E-POST]</span>'), `${l.code} support e-mail`);
-    assert.doesNotMatch(privacy + support, /mailto:\[/, l.code);
+    assert.ok(privacy.includes(company.orgNumber) && privacy.includes(company.address[0]), `${l.code} privacy: org. no. and address`);
+    // Marco 25.11: the game's own contact address, a link on both pages and in the footer (Saldo Pocket keeps data/company.json's).
+    assert.equal(app.email, 'kontakt@nordicdigitalapp.com');
+    for (const html of [privacy, support]) {
+      assert.ok(html.includes(`<a href="mailto:${app.email}" class="ltr">${app.email}</a>`), `${l.code}: e-mail link`);
+      assert.ok(!html.includes(company.email), `${l.code}: no other address`);
+    }
+    assert.doesNotMatch(privacy + support, /\[[A-ZÆØÅ-]+\]/u, `${l.code}: a placeholder left`);
   }
 });
 

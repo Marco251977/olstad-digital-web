@@ -3,8 +3,8 @@
 // One source for each thing:
 // - company details: data/company.json (the front page, every footer and every legal page read it),
 // - the front page: scripts/front-page.mjs with the apps' `home` part, i18n/home/<lang>.json and data/theme.json,
-// - apps: data/apps.json (an app without a website of its own = a slug and its language files; `publisher` when another
-//   company than data/company.json makes the app, `labels` for the app's own menu names, e.g. Road to Nordkapp),
+// - apps: data/apps.json (an app without a website of its own = a slug and its language files; `publisher` for the name the
+//   app's pages give the company, `labels` for the app's own menu names, e.g. Road to Nordkapp),
 // - texts: i18n/common/<lang>.json (the shared template) and i18n/apps/<slug>/<lang>.json,
 // - languages: app-core (the same 18 as the apps, with their own names and right-to-left).
 // The pages are static files committed to the repo; Vercel only serves them.
@@ -54,24 +54,9 @@ function companyVars(lang) {
     orgNumber: `<span class="ltr">${esc(company.orgNumber)}</span>`,
     email: `<a href="mailto:${esc(company.email)}" class="ltr">${esc(company.email)}</a>`,
     country: esc(country),
-    // The business address from the Register of Business Enterprises (data/company.json), then the country.
-    address: [...(company.address ?? []), country].map(esc).join(', '),
-  };
-}
-
-/** «[ORGANISASJONSNUMMER]»: a detail Marco fills in himself (data/apps.json) – shown marked, never guessed or linked. */
-const isPlaceholder = (v) => /^\[[^\]]+\]$/.test(String(v));
-const detail = (v) => (isPlaceholder(v) ? `<span class="placeholder">${esc(v)}</span>` : `<span class="ltr">${esc(v)}</span>`);
-
-/** The company that makes the app (data/apps.json `publisher`), as {{publisher}}, {{publisherOrgNumber}} … */
-function publisherVars(app) {
-  const p = app.publisher;
-  if (!p) return {};
-  return {
-    publisher: esc(p.name),
-    publisherOrgNumber: detail(p.orgNumber),
-    publisherAddress: detail(p.address),
-    publisherEmail: isPlaceholder(p.email) ? detail(p.email) : `<a href="mailto:${esc(p.email)}" class="ltr">${esc(p.email)}</a>`,
+    // The business address from the Register of Business Enterprises (data/company.json), then the country. The street
+    // and postcode keep their own order in right-to-left text (Arabic), like the org. no.
+    address: [`<span class="ltr">${(company.address ?? []).map(esc).join(', ')}</span>`, esc(country)].join(', '),
   };
 }
 
@@ -98,7 +83,7 @@ const dirOf = (lang) => (CORE_LANGUAGES.find((l) => l.code === lang)?.rtl ? 'rtl
 
 // --- layout ---
 
-function layout({ lang, title, description, pagePath, body, extraHead = '' }) {
+function layout({ lang, title, description, pagePath, body, extraHead = '', email = company.email }) {
   const c = common[lang];
   const vars = companyVars(lang);
   const url = (l) => `${ORIGIN}/${l}${pagePath}`;
@@ -147,7 +132,7 @@ ${body}
       <p>${fill(c.footer.orgNumber, { value: vars.orgNumber })}</p>
       <nav aria-label="${fill(c.footer.privacy)}">
         <a href="/${lang}/privacy">${fill(c.footer.privacy)}</a>
-        <a href="mailto:${esc(company.email)}">${fill(c.footer.contact)}</a>
+        <a href="mailto:${esc(email)}">${fill(c.footer.contact)}</a>
       </nav>
     </div>
   </footer>
@@ -180,7 +165,11 @@ function appPage(app, page, lang) {
   const vars = {
     ...companyVars(lang),
     ...factVars(app.slug, lang),
-    ...publisherVars(app),
+    // The company that makes the app, when it is named otherwise than data/company.json (data/apps.json `publisher`);
+    // org. no., address and e-mail always from data/company.json.
+    publisher: esc(app.publisher ?? company.name),
+    // An app with its own contact address (data/apps.json `email`) uses it in the text and in the footer; else data/company.json.
+    ...(app.email ? { email: `<a href="mailto:${esc(app.email)}" class="ltr">${esc(app.email)}</a>` } : {}),
     ...labelVars(app.slug, lang),
     server: region ? fill(a.serverRegion, { region: esc(region) }) : a.server ? fill(a.server) : '',
     // The data centre's country alone (privacy: where sign-in and sync are stored).
@@ -235,6 +224,7 @@ function appPage(app, page, lang) {
     pagePath: `/${app.slug}/${page}`,
     body: body.map((l) => `    ${l}`).join('\n'),
     extraHead: inStores ? STORE_BADGES_HEAD : '',
+    email: app.email ?? company.email,
   });
 }
 

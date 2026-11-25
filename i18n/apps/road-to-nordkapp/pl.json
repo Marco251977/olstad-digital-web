@@ -1,18 +1,18 @@
 {
   "description": "Prywatność i pomoc – Road to Nordkapp, gra samochodowa, w której jedziesz z Oslo na Nordkapp drogą E6.",
   "privacy": {
-    "intro": "Grę Road to Nordkapp stworzyła firma {{publisher}} (nr rej. {{publisherOrgNumber}}, {{publisherAddress}}, {{country}}). Jesteśmy administratorem opisanych tu danych.",
+    "intro": "Grę Road to Nordkapp stworzyła firma {{publisher}}, nr rej. {{orgNumber}}, {{address}}. Jesteśmy administratorem opisanych tu danych.",
     "sections": [
       {
         "heading": "W skrócie",
         "body": [
-          "W grze nie ma kont, reklam, śledzenia ani analityki. Jedyne informacje wysyłane z gry to te, które są potrzebne do potwierdzenia zakupu {{fullRoadtrip}}."
+          "W grze nie ma kont, reklam, śledzenia ani analityki tego, jak grasz. Z gry wysyłane są wyłącznie informacje potrzebne do zakupu {{fullRoadtrip}}, a dane zakupu są też wykorzystywane do statystyk sprzedaży w RevenueCat."
         ]
       },
       {
         "heading": "Przechowywane na Twoim urządzeniu",
         "body": [
-          "Ustawienia, postępy, gwiazdki, monety oraz informacja, czy kupiłeś {{fullRoadtrip}}, są przechowywane wyłącznie na Twoim urządzeniu. Nie mamy do nich dostępu. Zostają usunięte, gdy odinstalujesz grę (albo pozostają we własnej kopii zapasowej urządzenia, jeśli z niej korzystasz)."
+          "Ustawienia, postępy, punkty kontrolne, gwiazdki, punkty i najlepsze czasy oraz informacja, czy kupiłeś {{fullRoadtrip}}, są przechowywane wyłącznie na Twoim urządzeniu. Nie mamy do nich dostępu. Zostają usunięte, gdy odinstalujesz grę (albo pozostają we własnej kopii zapasowej urządzenia, jeśli z niej korzystasz)."
         ]
       },
       {
@@ -22,12 +22,12 @@
           "Do potwierdzania i przywracania zakupu używamy usługi RevenueCat (RevenueCat, Inc., USA), która przetwarza te informacje w naszym imieniu. RevenueCat otrzymuje:"
         ],
         "list": [
-          "losowy, anonimowy identyfikator utworzony przez grę,",
+          "losowy identyfikator, który gra tworzy sama (zaczyna się od rtn_), wysyłany do RevenueCat w związku z zakupem,",
           "historię zakupów powiązaną z tym identyfikatorem: jaki produkt, kiedy, kraj i walutę oraz potwierdzenie zakupu ze sklepu,",
-          "informacje techniczne potrzebne do udzielenia odpowiedzi, na przykład wersję aplikacji i adres IP zapytania."
+          "informacje techniczne, na przykład wersję aplikacji i adres IP zapytania, których RevenueCat używa do ustalenia kraju i waluty oraz do obsługi zakupu."
         ],
         "after": [
-          "Anonimowy identyfikator nie jest powiązany z Twoim imieniem i nazwiskiem, adresem e-mail ani kontem w sklepie.",
+          "Identyfikator nie jest powiązany z Twoim imieniem i nazwiskiem, adresem e-mail ani z żadnym kontem.",
           "Informacje są wykorzystywane, aby zapewnić Ci dostęp do tego, co kupiłeś, oraz do zbiorczych statystyk sprzedaży. Podstawą prawną jest umowa zakupu, którą zawieramy z Tobą (art. 6 ust. 1 lit. b RODO).",
           "Przekazywanie danych do USA odbywa się na podstawie standardowych klauzul umownych UE lub równoważnej podstawy stosowanej przez RevenueCat."
         ]
@@ -42,7 +42,7 @@
         "heading": "Twoje prawa",
         "body": [
           "Możesz poprosić o dostęp do danych, ich sprostowanie lub usunięcie, a także złożyć skargę do norweskiego organu ochrony danych (datatilsynet.no) lub do organu ochrony danych w miejscu zamieszkania.",
-          "Ponieważ gra nie ma kont, do odnalezienia Twojego zakupu możemy potrzebować potwierdzenia zakupu ze sklepu (numeru zamówienia). Napisz na adres {{publisherEmail}}."
+          "Ponieważ gra nie ma kont, do odnalezienia Twojego zakupu możemy potrzebować potwierdzenia zakupu ze sklepu (numeru zamówienia). Napisz na adres {{email}}."
         ]
       },
       {
@@ -62,7 +62,7 @@
   "support": {
     "intro": "Masz pytania o Road to Nordkapp lub zakup {{fullRoadtrip}}? Oto odpowiedzi na najczęstsze z nich i informacja, jak się z nami skontaktować.",
     "contactHeading": "Kontakt",
-    "contactBody": "Napisz na adres {{publisherEmail}}. Jeśli chodzi o zakup, podaj swój identyfikator użytkownika ({{settings}} → {{about}}) i numer zamówienia z potwierdzenia zakupu ze sklepu. Napisz też, jakiego telefonu lub tabletu używasz.",
+    "contactBody": "Napisz na adres {{email}}. Jeśli chodzi o zakup, podaj swój identyfikator użytkownika ({{settings}} → {{about}}) i numer zamówienia z potwierdzenia zakupu ze sklepu. Napisz też, jakiego telefonu lub tabletu używasz.",
     "faqHeading": "Najczęstsze pytania",
     "faq": [
       {
@@ -71,7 +71,7 @@
       },
       {
         "q": "Gra nie może znaleźć mojego zakupu. Co mam zrobić?",
-        "a": "Sprawdź, czy urządzenie ma połączenie z internetem i czy jesteś zalogowany w sklepie na to samo konto, którego użyłeś do zakupu. Jeśli to nie pomoże, napisz na adres {{publisherEmail}}, podając swój identyfikator użytkownika i numer zamówienia z potwierdzenia zakupu, a pomożemy Ci."
+        "a": "Sprawdź, czy urządzenie ma połączenie z internetem i czy jesteś zalogowany w sklepie na to samo konto, którego użyłeś do zakupu. Jeśli to nie pomoże, napisz na adres {{email}}, podając swój identyfikator użytkownika i numer zamówienia z potwierdzenia zakupu, a pomożemy Ci."
       },
       {
         "q": "Gdzie znajdę swój identyfikator użytkownika?",
@@ -91,7 +91,7 @@
       },
       {
         "q": "Jak usunąć moje dane?",
-        "a": "To, co jest na Twoim urządzeniu, zostaje usunięte, gdy odinstalujesz grę. Jeśli chcesz, abyśmy usunęli też historię zakupów przechowywaną przez RevenueCat, napisz na adres {{publisherEmail}}, podając swój identyfikator użytkownika lub numer zamówienia z potwierdzenia zakupu. Więcej przeczytasz w polityce prywatności."
+        "a": "To, co jest na Twoim urządzeniu, zostaje usunięte, gdy odinstalujesz grę. Jeśli chcesz, abyśmy usunęli też historię zakupów przechowywaną przez RevenueCat, napisz na adres {{email}}, podając swój identyfikator użytkownika lub numer zamówienia z potwierdzenia zakupu. Więcej przeczytasz w polityce prywatności."
       }
     ]
   }

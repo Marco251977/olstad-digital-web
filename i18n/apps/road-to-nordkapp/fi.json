@@ -1,18 +1,18 @@
 {
   "description": "Road to Nordkapp -pelin tietosuoja ja tuki. Ajopeli Oslosta Nordkappiin E6-tietä pitkin.",
   "privacy": {
-    "intro": "Road to Nordkapp -pelin on tehnyt {{publisher}} (organisaationumero {{publisherOrgNumber}}, {{publisherAddress}}, {{country}}). Olemme tässä kuvattujen tietojen rekisterinpitäjä.",
+    "intro": "Road to Nordkapp -pelin on tehnyt {{publisher}}, organisaationumero {{orgNumber}}, {{address}}. Olemme tässä kuvattujen tietojen rekisterinpitäjä.",
     "sections": [
       {
         "heading": "Lyhyesti",
         "body": [
-          "Pelissä ei ole tiliä, mainoksia, seurantaa eikä analytiikkaa. Pelistä lähetetään vain ne tiedot, jotka tarvitaan {{fullRoadtrip}}-ostoksen vahvistamiseen."
+          "Pelissä ei ole tiliä, mainoksia, seurantaa eikä pelaamisesi analytiikkaa. Pelistä lähetetään vain ne tiedot, jotka tarvitaan {{fullRoadtrip}}-ostokseen, ja ostotietoja käytetään myös myyntitilastoihin RevenueCatissa."
         ]
       },
       {
         "heading": "Laitteellesi tallennettavat tiedot",
         "body": [
-          "Asetukset, edistyminen, tähdet, kolikot ja tieto siitä, onko {{fullRoadtrip}} ostettu, tallennetaan vain laitteellesi. Meillä ei ole pääsyä niihin. Ne poistuvat, kun poistat pelin (tai säilyvät laitteesi omassa varmuuskopiossa, jos käytät sellaista)."
+          "Asetukset, edistyminen, tarkistuspisteet, tähdet, pisteet ja parhaat ajat sekä tieto siitä, onko {{fullRoadtrip}} ostettu, tallennetaan vain laitteellesi. Meillä ei ole pääsyä niihin. Ne poistuvat, kun poistat pelin (tai säilyvät laitteesi omassa varmuuskopiossa, jos käytät sellaista)."
         ]
       },
       {
@@ -22,12 +22,12 @@
           "Ostoksen vahvistamiseen ja palauttamiseen käytämme RevenueCat-palvelua (RevenueCat, Inc., USA), joka käsittelee tietoja puolestamme. RevenueCat saa:"
         ],
         "list": [
-          "pelin luoman satunnaisen, nimettömän tunnisteen,",
+          "satunnaisen tunnisteen, jonka peli luo itse (se alkaa merkeillä rtn_) ja joka lähetetään RevenueCatille ostosta varten,",
           "tunnisteeseen liitetyn ostohistorian: mikä tuote, milloin, maa ja valuutta sekä sovelluskaupan kuitti,",
-          "vastaamiseen tarvittavat tekniset tiedot, esimerkiksi sovelluksen version ja pyynnön IP-osoitteen."
+          "tekniset tiedot, esimerkiksi sovelluksen version ja pyynnön IP-osoitteen, joiden avulla RevenueCat määrittää maan ja valuutan ja käsittelee ostoksen."
         ],
         "after": [
-          "Nimetöntä tunnistetta ei ole yhdistetty nimeesi, sähköpostiisi eikä sovelluskaupan tiliisi.",
+          "Tunnistetta ei ole yhdistetty nimeesi, sähköpostiisi eikä mihinkään tiliin.",
           "Tietoja käytetään siihen, että saat käyttöösi sen, minkä olet ostanut, sekä koottuihin myyntitilastoihin. Käsittelyn oikeusperuste on ostoa koskeva sopimuksemme kanssasi (tietosuoja-asetuksen 6 artiklan 1 kohdan b alakohta).",
           "Tietojen siirto Yhdysvaltoihin perustuu EU:n vakiosopimuslausekkeisiin tai vastaavaan perusteeseen, jota RevenueCat käyttää."
         ]
@@ -42,7 +42,7 @@
         "heading": "Oikeutesi",
         "body": [
           "Voit pyytää pääsyä tietoihisi sekä niiden oikaisemista tai poistamista, ja voit tehdä valituksen Norjan tietosuojaviranomaiselle (datatilsynet.no) tai asuinmaasi tietosuojaviranomaiselle.",
-          "Koska pelissä ei ole tiliä, saatamme tarvita sovelluskaupan kuitin (tilausnumeron) löytääksemme ostoksesi. Kirjoita osoitteeseen {{publisherEmail}}."
+          "Koska pelissä ei ole tiliä, saatamme tarvita sovelluskaupan kuitin (tilausnumeron) löytääksemme ostoksesi. Kirjoita osoitteeseen {{email}}."
         ]
       },
       {
@@ -62,7 +62,7 @@
   "support": {
     "intro": "Onko sinulla kysyttävää Road to Nordkapp -pelistä tai {{fullRoadtrip}}-ostoksesta? Tässä ovat vastaukset yleisimpiin kysymyksiin ja ohjeet yhteydenottoon.",
     "contactHeading": "Ota yhteyttä",
-    "contactBody": "Kirjoita osoitteeseen {{publisherEmail}}. Jos asia koskee ostosta, kerro käyttäjä-ID:si ({{settings}} → {{about}}) ja sovelluskaupan kuitin tilausnumero. Kerro myös, mitä puhelinta tai tablettia käytät.",
+    "contactBody": "Kirjoita osoitteeseen {{email}}. Jos asia koskee ostosta, kerro käyttäjä-ID:si ({{settings}} → {{about}}) ja sovelluskaupan kuitin tilausnumero. Kerro myös, mitä puhelinta tai tablettia käytät.",
     "faqHeading": "Usein kysyttyä",
     "faq": [
       {
@@ -71,7 +71,7 @@
       },
       {
         "q": "Peli ei löydä ostostani. Mitä teen?",
-        "a": "Tarkista, että laitteesi on yhteydessä verkkoon ja että olet kirjautunut sovelluskauppaan samalla tilillä, jolla teit ostoksen. Jos se ei auta, kirjoita osoitteeseen {{publisherEmail}} ja kerro käyttäjä-ID:si ja kuitin tilausnumero, niin autamme sinua."
+        "a": "Tarkista, että laitteesi on yhteydessä verkkoon ja että olet kirjautunut sovelluskauppaan samalla tilillä, jolla teit ostoksen. Jos se ei auta, kirjoita osoitteeseen {{email}} ja kerro käyttäjä-ID:si ja kuitin tilausnumero, niin autamme sinua."
       },
       {
         "q": "Mistä löydän käyttäjä-ID:ni?",
@@ -91,7 +91,7 @@
       },
       {
         "q": "Miten poistan tietoni?",
-        "a": "Laitteellasi olevat tiedot poistuvat, kun poistat pelin. Jos haluat, että poistamme myös RevenueCatin säilyttämän ostohistorian, kirjoita osoitteeseen {{publisherEmail}} ja kerro käyttäjä-ID:si tai kuitin tilausnumero. Lue lisää tietosuojaselosteesta."
+        "a": "Laitteellasi olevat tiedot poistuvat, kun poistat pelin. Jos haluat, että poistamme myös RevenueCatin säilyttämän ostohistorian, kirjoita osoitteeseen {{email}} ja kerro käyttäjä-ID:si tai kuitin tilausnumero. Lue lisää tietosuojaselosteesta."
       }
     ]
   }

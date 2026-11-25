@@ -1,15 +1,19 @@
 {
   "description": "Personvern og hjelp for Road to Nordkapp, bilspillet fra Oslo til Nordkapp langs E6.",
   "privacy": {
-    "intro": "Road to Nordkapp er laget av {{publisher}} (org.nr. {{publisherOrgNumber}}, {{publisherAddress}}, {{country}}). Vi er behandlingsansvarlig for opplysningene som beskrives her.",
+    "intro": "Road to Nordkapp er laget av {{publisher}}, org.nr. {{orgNumber}}, {{address}}. Vi er behandlingsansvarlig for opplysningene som beskrives her.",
     "sections": [
       {
         "heading": "Kort fortalt",
-        "body": ["Spillet har ingen konto, ingen reklame, ingen sporing og ingen analyse. Det eneste som sendes fra spillet, er det som trengs for å bekrefte kjøpet av {{fullRoadtrip}}."]
+        "body": [
+          "Spillet har ingen konto, ingen reklame, ingen sporing og ingen analyse av hvordan du spiller. Det eneste som sendes fra spillet, er det som trengs for kjøpet av {{fullRoadtrip}}, og kjøpsdataene brukes også til salgsstatistikk i RevenueCat."
+        ]
       },
       {
         "heading": "Det som lagres på enheten din",
-        "body": ["Innstillinger, fremdrift, stjerner, mynter og om du har kjøpt {{fullRoadtrip}}, lagres bare på enheten din. Vi har ikke tilgang til det. Det slettes når du avinstallerer spillet (en kopi kan finnes i enhetens egen sikkerhetskopi, hvis du bruker den)."]
+        "body": [
+          "Innstillinger, fremdrift, sjekkpunkt, stjerner, poeng og beste tider og om du har kjøpt {{fullRoadtrip}}, lagres bare på enheten din. Vi har ikke tilgang til det. Det slettes når du avinstallerer spillet (eller beholdes i enhetens egen sikkerhetskopi, hvis du bruker den)."
+        ]
       },
       {
         "heading": "Kjøp i spillet",
@@ -18,41 +22,47 @@
           "For å bekrefte og gjenopprette kjøpet bruker vi tjenesten RevenueCat (RevenueCat, Inc., USA), som behandler opplysningene på våre vegne. RevenueCat får:"
         ],
         "list": [
-          "en tilfeldig, anonym ID som spillet lager,",
+          "en tilfeldig ID som spillet lager selv (den begynner med rtn_), og som sendes til RevenueCat for kjøpet,",
           "kjøpshistorikken knyttet til ID-en: hvilket produkt, når, land og valuta, og kvitteringen fra butikken,",
-          "teknisk informasjon som trengs for å svare, for eksempel appversjon og IP-adressen ved forespørselen."
+          "teknisk informasjon, for eksempel appversjonen og IP-adressen ved forespørselen, som RevenueCat bruker til å fastslå land og valuta og til å behandle kjøpet."
         ],
         "after": [
-          "Den anonyme ID-en er ikke knyttet til navnet ditt, e-posten din eller kontoen din i butikken.",
+          "ID-en er ikke knyttet til navnet ditt, e-posten din eller noen konto.",
           "Opplysningene brukes til å gi deg tilgang til det du har kjøpt, og til samlet statistikk over salget. Grunnlaget er avtalen med deg om kjøpet (personvernforordningen art. 6 nr. 1 bokstav b).",
           "Overføring til USA skjer med EUs standardavtaler eller tilsvarende grunnlag som RevenueCat har."
         ]
       },
       {
         "heading": "Hvor lenge",
-        "body": ["Kjøpshistorikken oppbevares så lenge den trengs for at kjøpet ditt skal kunne gjenopprettes, og så lenge regnskapsreglene krever."]
+        "body": [
+          "Kjøpshistorikken oppbevares så lenge den trengs for at kjøpet ditt skal kunne gjenopprettes, og så lenge regnskapsreglene krever."
+        ]
       },
       {
         "heading": "Dine rettigheter",
         "body": [
-          "Du kan be om innsyn, retting eller sletting, og du kan klage til Datatilsynet (datatilsynet.no).",
-          "Fordi spillet ikke har konto, kan vi trenge kvitteringen fra butikken (ordrenummeret) for å finne kjøpet ditt. Skriv til {{publisherEmail}}."
+          "Du kan be om innsyn, retting eller sletting, og du kan klage til Datatilsynet (datatilsynet.no) eller til tilsynsmyndigheten der du bor.",
+          "Fordi spillet ikke har konto, kan vi trenge kvitteringen fra butikken (ordrenummeret) for å finne kjøpet ditt. Skriv til {{email}}."
         ]
       },
       {
         "heading": "Barn",
-        "body": ["Spillet samler ikke inn opplysninger om hvem du er, uansett alder."]
+        "body": [
+          "Spillet samler ikke inn opplysninger om hvem du er, uansett alder."
+        ]
       },
       {
         "heading": "Endringer",
-        "body": ["Endres erklæringen, oppdateres datoen øverst."]
+        "body": [
+          "Endres erklæringen, oppdateres datoen øverst."
+        ]
       }
     ]
   },
   "support": {
     "intro": "Spørsmål om Road to Nordkapp eller kjøpet av {{fullRoadtrip}}? Her er svar på det vanligste, og slik kontakter du oss.",
     "contactHeading": "Kontakt",
-    "contactBody": "Skriv til {{publisherEmail}}. Gjelder det kjøpet, ta med bruker-ID-en din ({{settings}} → {{about}}) og ordrenummeret fra kvitteringen fra butikken. Skriv også hvilken telefon eller hvilket nettbrett du bruker.",
+    "contactBody": "Skriv til {{email}}. Gjelder det kjøpet, ta med bruker-ID-en din ({{settings}} → {{about}}) og ordrenummeret fra kvitteringen fra butikken. Skriv også hvilken telefon eller hvilket nettbrett du bruker.",
     "faqHeading": "Vanlige spørsmål",
     "faq": [
       {
@@ -61,7 +71,7 @@
       },
       {
         "q": "Spillet finner ikke kjøpet mitt. Hva gjør jeg?",
-        "a": "Sjekk at enheten er koblet til nettet, og at du er logget inn i butikken med samme konto som da du kjøpte. Hjelper ikke det, skriv til {{publisherEmail}} med bruker-ID-en din og ordrenummeret fra kvitteringen, så hjelper vi deg."
+        "a": "Sjekk at enheten er koblet til nettet, og at du er logget inn i butikken med samme konto som da du kjøpte. Hjelper ikke det, skriv til {{email}} med bruker-ID-en din og ordrenummeret fra kvitteringen, så hjelper vi deg."
       },
       {
         "q": "Hvor finner jeg bruker-ID-en min?",
@@ -81,7 +91,7 @@
       },
       {
         "q": "Hvordan sletter jeg dataene mine?",
-        "a": "Det som ligger på enheten, slettes når du avinstallerer spillet. Vil du at vi også skal slette kjøpshistorikken hos RevenueCat, skriv til {{publisherEmail}} med bruker-ID-en din eller ordrenummeret fra kvitteringen. Les mer i personvernerklæringen."
+        "a": "Det som ligger på enheten, slettes når du avinstallerer spillet. Vil du at vi også skal slette kjøpshistorikken hos RevenueCat, skriv til {{email}} med bruker-ID-en din eller ordrenummeret fra kvitteringen. Les mer i personvernerklæringen."
       }
     ]
   }

@@ -1,15 +1,19 @@
 {
   "description": "Privacy and help for Road to Nordkapp, the driving game from Oslo to Nordkapp along the E6.",
   "privacy": {
-    "intro": "Road to Nordkapp is made by {{publisher}} (org. no. {{publisherOrgNumber}}, {{publisherAddress}}, {{country}}). We are the controller of the information described here.",
+    "intro": "Road to Nordkapp is made by {{publisher}}, org. no. {{orgNumber}}, {{address}}. We are the controller of the information described here.",
     "sections": [
       {
         "heading": "In short",
-        "body": ["The game has no account, no ads, no tracking and no analytics. The only information sent from the game is what is needed to confirm the purchase of {{fullRoadtrip}}."]
+        "body": [
+          "The game has no account, no ads, no tracking and no analytics of how you play. The only information sent from the game is what is needed for the purchase of {{fullRoadtrip}}, and the purchase data is also used for sales statistics in RevenueCat."
+        ]
       },
       {
         "heading": "Stored on your device",
-        "body": ["Settings, progress, stars, coins and whether you have bought {{fullRoadtrip}} are stored only on your device. We have no access to them. They are deleted when you uninstall the game (or kept in your device's own backup, if you use one)."]
+        "body": [
+          "Settings, progress, checkpoints, stars, points and best times, and whether you have bought {{fullRoadtrip}} are stored only on your device. We have no access to them. They are deleted when you uninstall the game (or kept in your device's own backup, if you use one)."
+        ]
       },
       {
         "heading": "In-game purchase",
@@ -18,41 +22,47 @@
           "To confirm and restore the purchase we use RevenueCat (RevenueCat, Inc., USA), which processes the information on our behalf. RevenueCat receives:"
         ],
         "list": [
-          "a random, anonymous ID created by the game,",
+          "a random ID that the game creates itself (it starts with rtn_), sent to RevenueCat for the purchase,",
           "the purchase history linked to that ID: which product, when, country and currency, and the store receipt,",
-          "technical information needed to respond, for example the app version and the IP address of the request."
+          "technical information, for example the app version and the IP address of the request, which RevenueCat uses to determine country and currency and to process the purchase."
         ],
         "after": [
-          "The anonymous ID is not linked to your name, your email or your account with the store.",
+          "The ID is not linked to your name, your email or any account.",
           "The information is used to give you access to what you bought and for aggregated sales statistics. The legal basis is our contract with you for the purchase (GDPR Art. 6(1)(b)).",
           "Transfers to the USA rely on the EU Standard Contractual Clauses or an equivalent basis used by RevenueCat."
         ]
       },
       {
         "heading": "How long",
-        "body": ["Purchase history is kept as long as needed to restore your purchase and as long as accounting rules require."]
+        "body": [
+          "Purchase history is kept as long as needed to restore your purchase and as long as accounting rules require."
+        ]
       },
       {
         "heading": "Your rights",
         "body": [
           "You can ask for access, correction or deletion, and you can complain to the Norwegian Data Protection Authority (datatilsynet.no) or the data protection authority where you live.",
-          "Because the game has no account, we may need your store receipt (the order number) to find your purchase. Write to {{publisherEmail}}."
+          "Because the game has no account, we may need your store receipt (the order number) to find your purchase. Write to {{email}}."
         ]
       },
       {
         "heading": "Children",
-        "body": ["The game does not collect information about who you are, whatever your age."]
+        "body": [
+          "The game does not collect information about who you are, whatever your age."
+        ]
       },
       {
         "heading": "Changes",
-        "body": ["If this policy changes, the date at the top is updated."]
+        "body": [
+          "If this policy changes, the date at the top is updated."
+        ]
       }
     ]
   },
   "support": {
     "intro": "Questions about Road to Nordkapp or buying {{fullRoadtrip}}? Here are answers to the most common ones, and how to contact us.",
     "contactHeading": "Contact",
-    "contactBody": "Write to {{publisherEmail}}. If it is about the purchase, include your user ID ({{settings}} → {{about}}) and the order number from the store's receipt. Please also tell us which phone or tablet you use.",
+    "contactBody": "Write to {{email}}. If it is about the purchase, include your user ID ({{settings}} → {{about}}) and the order number from the store's receipt. Please also tell us which phone or tablet you use.",
     "faqHeading": "Frequently asked questions",
     "faq": [
       {
@@ -61,7 +71,7 @@
       },
       {
         "q": "The game cannot find my purchase. What do I do?",
-        "a": "Check that your device is online and that you are signed in to the store with the same account you used to buy. If that does not help, write to {{publisherEmail}} with your user ID and the order number from the receipt, and we will help you."
+        "a": "Check that your device is online and that you are signed in to the store with the same account you used to buy. If that does not help, write to {{email}} with your user ID and the order number from the receipt, and we will help you."
       },
       {
         "q": "Where do I find my user ID?",
@@ -81,7 +91,7 @@
       },
       {
         "q": "How do I delete my data?",
-        "a": "What is on your device is deleted when you uninstall the game. If you also want us to delete the purchase history held by RevenueCat, write to {{publisherEmail}} with your user ID or the order number from the receipt. Read more in the privacy policy."
+        "a": "What is on your device is deleted when you uninstall the game. If you also want us to delete the purchase history held by RevenueCat, write to {{email}} with your user ID or the order number from the receipt. Read more in the privacy policy."
       }
     ]
   }

@@ -1,18 +1,18 @@
 {
   "description": "Road to Nordkapp için gizlilik ve yardım: Oslo'dan Nordkapp'a E6 boyunca giden araba oyunu.",
   "privacy": {
-    "intro": "Road to Nordkapp, {{publisher}} (sicil no. {{publisherOrgNumber}}, {{publisherAddress}}, {{country}}) tarafından geliştirilmiştir. Burada anlatılan bilgilerin veri sorumlusu biziz.",
+    "intro": "Road to Nordkapp, {{publisher}} tarafından geliştirilmiştir. Sicil no. {{orgNumber}}, adres: {{address}}. Burada anlatılan bilgilerin veri sorumlusu biziz.",
     "sections": [
       {
         "heading": "Kısaca",
         "body": [
-          "Oyunda hesap, reklam, izleme ve analiz yoktur. Oyundan gönderilen tek bilgi, {{fullRoadtrip}} satın alımını doğrulamak için gereken bilgidir."
+          "Oyunda hesap, reklam, izleme ve nasıl oynadığına dair analiz yoktur. Oyundan yalnızca {{fullRoadtrip}} satın alımı için gereken bilgiler gönderilir; satın alma verileri RevenueCat'te satış istatistikleri için de kullanılır."
         ]
       },
       {
         "heading": "Cihazında saklananlar",
         "body": [
-          "Ayarlar, ilerleme, yıldızlar, jetonlar ve {{fullRoadtrip}} satın alımını yapıp yapmadığın bilgisi yalnızca cihazında saklanır. Bunlara erişimimiz yoktur. Oyunu kaldırdığında silinirler (kullanıyorsan cihazının kendi yedeğinde kalırlar)."
+          "Ayarlar, ilerleme, kontrol noktaları, yıldızlar, puanlar ve en iyi süreler ile {{fullRoadtrip}} satın alımını yapıp yapmadığın bilgisi yalnızca cihazında saklanır. Bunlara erişimimiz yoktur. Oyunu kaldırdığında silinirler (kullanıyorsan cihazının kendi yedeğinde kalırlar)."
         ]
       },
       {
@@ -22,12 +22,12 @@
           "Satın alımı doğrulamak ve geri yüklemek için, bilgileri bizim adımıza işleyen RevenueCat'i (RevenueCat, Inc., ABD) kullanırız. RevenueCat şunları alır:"
         ],
         "list": [
-          "oyunun oluşturduğu rastgele, anonim bir kimlik,",
+          "oyunun kendisinin oluşturduğu ve satın alma için RevenueCat'e gönderilen rastgele bir kimlik (rtn_ ile başlar),",
           "bu kimliğe bağlı satın alma geçmişi: hangi ürün, ne zaman, ülke ve para birimi ile mağaza makbuzu,",
-          "yanıt vermek için gereken teknik bilgiler, örneğin uygulama sürümü ve isteğin IP adresi."
+          "RevenueCat'in ülkeyi ve para birimini belirlemek ve satın alımı işlemek için kullandığı teknik bilgiler, örneğin uygulama sürümü ve isteğin IP adresi."
         ],
         "after": [
-          "Anonim kimlik adınla, e-postanla veya mağazadaki hesabınla bağlantılı değildir.",
+          "Kimlik adınla, e-postanla veya herhangi bir hesapla bağlantılı değildir.",
           "Bilgiler, satın aldığın içeriğe erişmeni sağlamak ve toplu satış istatistikleri için kullanılır. Hukuki dayanak, satın alma için seninle yaptığımız sözleşmedir (GDPR madde 6(1)(b)).",
           "ABD'ye yapılan aktarımlarda AB standart sözleşme maddeleri veya RevenueCat'in kullandığı eşdeğer bir dayanak esas alınır."
         ]
@@ -42,7 +42,7 @@
         "heading": "Hakların",
         "body": [
           "Bilgilerine erişmeyi, bunların düzeltilmesini veya silinmesini isteyebilir; Norveç Veri Koruma Kurumu'na (datatilsynet.no) ya da yaşadığın yerdeki veri koruma kurumuna şikâyette bulunabilirsin.",
-          "Oyunda hesap olmadığından, satın alımını bulmak için mağaza makbuzuna (sipariş numarasına) ihtiyacımız olabilir. {{publisherEmail}} adresine yaz."
+          "Oyunda hesap olmadığından, satın alımını bulmak için mağaza makbuzuna (sipariş numarasına) ihtiyacımız olabilir. {{email}} adresine yaz."
         ]
       },
       {
@@ -62,7 +62,7 @@
   "support": {
     "intro": "Road to Nordkapp ya da {{fullRoadtrip}} satın alımıyla ilgili soruların mı var? En sık sorulan soruların yanıtları ve bize nasıl ulaşabileceğin burada.",
     "contactHeading": "İletişim",
-    "contactBody": "{{publisherEmail}} adresine yaz. Konu satın alımla ilgiliyse kullanıcı kimliğini ({{settings}} → {{about}}) ve mağaza makbuzundaki sipariş numarasını ekle. Hangi telefonu veya tableti kullandığını da yaz.",
+    "contactBody": "{{email}} adresine yaz. Konu satın alımla ilgiliyse kullanıcı kimliğini ({{settings}} → {{about}}) ve mağaza makbuzundaki sipariş numarasını ekle. Hangi telefonu veya tableti kullandığını da yaz.",
     "faqHeading": "Sık sorulan sorular",
     "faq": [
       {
@@ -71,7 +71,7 @@
       },
       {
         "q": "Oyun satın alımımı bulamıyor. Ne yapmalıyım?",
-        "a": "Cihazının internete bağlı olduğunu ve mağazada satın alırken kullandığın hesapla oturum açtığını kontrol et. Bu işe yaramazsa kullanıcı kimliğin ve makbuzdaki sipariş numarasıyla birlikte {{publisherEmail}} adresine yaz, sana yardımcı olalım."
+        "a": "Cihazının internete bağlı olduğunu ve mağazada satın alırken kullandığın hesapla oturum açtığını kontrol et. Bu işe yaramazsa kullanıcı kimliğin ve makbuzdaki sipariş numarasıyla birlikte {{email}} adresine yaz, sana yardımcı olalım."
       },
       {
         "q": "Kullanıcı kimliğimi nerede bulurum?",
@@ -91,7 +91,7 @@
       },
       {
         "q": "Verilerimi nasıl silerim?",
-        "a": "Cihazındaki veriler, oyunu kaldırdığında silinir. RevenueCat'te tutulan satın alma geçmişini de silmemizi istiyorsan kullanıcı kimliğin veya makbuzdaki sipariş numarasıyla birlikte {{publisherEmail}} adresine yaz. Ayrıntılar için gizlilik politikasını oku."
+        "a": "Cihazındaki veriler, oyunu kaldırdığında silinir. RevenueCat'te tutulan satın alma geçmişini de silmemizi istiyorsan kullanıcı kimliğin veya makbuzdaki sipariş numarasıyla birlikte {{email}} adresine yaz. Ayrıntılar için gizlilik politikasını oku."
       }
     ]
   }
