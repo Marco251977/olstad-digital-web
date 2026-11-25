@@ -1,0 +1,98 @@
+{
+  "description": "Privacy and help for Road to Nordkapp, the driving game from Oslo to Nordkapp along the E6.",
+  "privacy": {
+    "intro": "Road to Nordkapp is made by {{publisher}}, org. no. {{orgNumber}}, {{address}}. We are the controller of the information described here.",
+    "sections": [
+      {
+        "heading": "In short",
+        "body": [
+          "The game has no account, no ads, no tracking and no analytics of how you play. The only information sent from the game is what is needed for the purchase of {{fullRoadtrip}}, and the purchase data is also used for sales statistics in RevenueCat."
+        ]
+      },
+      {
+        "heading": "Stored on your device",
+        "body": [
+          "Settings, progress, checkpoints, stars, points and best times, and whether you have bought {{fullRoadtrip}} are stored only on your device. We have no access to them. They are deleted when you uninstall the game (or kept in your device's own backup, if you use one)."
+        ]
+      },
+      {
+        "heading": "In-game purchase",
+        "body": [
+          "{{fullRoadtrip}} is bought through the store you downloaded the game from. Payment is handled by the store, and we never see your payment details.",
+          "To confirm and restore the purchase we use RevenueCat (RevenueCat, Inc., USA), which processes the information on our behalf. RevenueCat receives:"
+        ],
+        "list": [
+          "a random ID that the game creates itself (it starts with rtn_), sent to RevenueCat for the purchase,",
+          "the purchase history linked to that ID: which product, when, country and currency, and the store receipt,",
+          "technical information, for example the app version and your IP address, which is used to process the request."
+        ],
+        "after": [
+          "The ID is random. It does not contain your name or your email, and we cannot see who you are from it.",
+          "The information is used to give you access to what you bought and for aggregated sales statistics. The legal basis is our contract with you for the purchase (GDPR Art. 6(1)(b)).",
+          "Transfers to the USA rely on the EU Standard Contractual Clauses or an equivalent basis used by RevenueCat."
+        ]
+      },
+      {
+        "heading": "How long",
+        "body": [
+          "Purchase history is kept as long as needed to restore your purchase and as long as accounting rules require."
+        ]
+      },
+      {
+        "heading": "Your rights",
+        "body": [
+          "You can ask for access, correction or deletion, and you can complain to the Norwegian Data Protection Authority (datatilsynet.no) or the data protection authority where you live.",
+          "Because the game has no account, we may need your store receipt (the order number) to find your purchase. Write to {{email}}."
+        ]
+      },
+      {
+        "heading": "Children",
+        "body": [
+          "The game does not collect information about who you are, whatever your age."
+        ]
+      },
+      {
+        "heading": "Changes",
+        "body": [
+          "If this policy changes, the date at the top is updated."
+        ]
+      }
+    ]
+  },
+  "support": {
+    "intro": "Questions about Road to Nordkapp or buying {{fullRoadtrip}}? Here are answers to the most common ones, and how to contact us.",
+    "contactHeading": "Contact",
+    "contactBody": "Write to {{email}}. If it is about the purchase, include your user ID ({{settings}} → {{about}}) and the order number from the store's receipt. Please also tell us which phone or tablet you use.",
+    "faqHeading": "Frequently asked questions",
+    "faq": [
+      {
+        "q": "How do I restore my purchase?",
+        "a": "Make sure you are signed in to the store with the same account you used to buy {{fullRoadtrip}}. Go to the start screen (not the pause menu while driving) and open {{settings}} → {{journey}} → {{restore}}. The button is also on the {{fullRoadtrip}} card in {{route}}. Once the purchase is found, stages 5–11 are open again."
+      },
+      {
+        "q": "The game cannot find my purchase. What do I do?",
+        "a": "Check that your device is online and that you are signed in to the store with the same account you used to buy. If that does not help, write to {{email}} with your user ID and the order number from the receipt, and we will help you."
+      },
+      {
+        "q": "Where do I find my user ID?",
+        "a": "Go to {{settings}} → {{about}}. Your {{userId}} is shown there. To copy it, tap the copy symbol next to the ID, or the ID itself, and paste it into your email. The ID is random. It does not contain your name or your email, and we cannot see who you are from it."
+      },
+      {
+        "q": "I have a new phone or have reinstalled the game",
+        "a": "The purchase follows your account with the store: use {{restore}} as described above. Progress and settings are stored only on the device, and we cannot move them. They can only come back from your device's own backup. A new installation usually gets a new user ID, unless the game is restored from a backup of the device."
+      },
+      {
+        "q": "What do I get with {{fullRoadtrip}}?",
+        "a": "{{purchaseDesc}} Stages 1–4, from Oslo to Trondheim, are free."
+      },
+      {
+        "q": "How do I get a refund?",
+        "a": "You pay through the store you downloaded the game from, and the store handles refunds. Please contact the store. We cannot see or change the payment."
+      },
+      {
+        "q": "How do I delete my data?",
+        "a": "What is on your device is deleted when you uninstall the game. If you also want us to delete the purchase history held by RevenueCat, write to {{email}} with your user ID or the order number from the receipt. Read more in the privacy policy."
+      }
+    ]
+  }
+}

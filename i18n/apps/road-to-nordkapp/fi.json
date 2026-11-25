@@ -1,0 +1,98 @@
+{
+  "description": "Road to Nordkapp -pelin tietosuoja ja tuki. Ajopeli Oslosta Nordkappiin E6-tietä pitkin.",
+  "privacy": {
+    "intro": "Road to Nordkapp -pelin on tehnyt {{publisher}}, organisaationumero {{orgNumber}}, {{address}}. Olemme tässä kuvattujen tietojen rekisterinpitäjä.",
+    "sections": [
+      {
+        "heading": "Lyhyesti",
+        "body": [
+          "Pelissä ei ole tiliä, mainoksia, seurantaa eikä pelaamisesi analytiikkaa. Pelistä lähetetään vain ne tiedot, jotka tarvitaan {{fullRoadtrip}}-ostokseen, ja ostotietoja käytetään myös myyntitilastoihin RevenueCatissa."
+        ]
+      },
+      {
+        "heading": "Laitteellesi tallennettavat tiedot",
+        "body": [
+          "Asetukset, edistyminen, tarkistuspisteet, tähdet, pisteet ja parhaat ajat sekä tieto siitä, onko {{fullRoadtrip}} ostettu, tallennetaan vain laitteellesi. Meillä ei ole pääsyä niihin. Ne poistuvat, kun poistat pelin (tai säilyvät laitteesi omassa varmuuskopiossa, jos käytät sellaista)."
+        ]
+      },
+      {
+        "heading": "Pelinsisäinen ostos",
+        "body": [
+          "{{fullRoadtrip}} ostetaan siitä sovelluskaupasta, josta latasit pelin. Maksun käsittelee sovelluskauppa, emmekä koskaan näe maksutietojasi.",
+          "Ostoksen vahvistamiseen ja palauttamiseen käytämme RevenueCat-palvelua (RevenueCat, Inc., USA), joka käsittelee tietoja puolestamme. RevenueCat saa:"
+        ],
+        "list": [
+          "satunnaisen tunnisteen, jonka peli luo itse (se alkaa merkeillä rtn_) ja joka lähetetään RevenueCatille ostosta varten,",
+          "tunnisteeseen liitetyn ostohistorian: mikä tuote, milloin, maa ja valuutta sekä sovelluskaupan kuitti,",
+          "tekniset tiedot, esimerkiksi sovelluksen version ja IP-osoitteesi, joita käytetään pyynnön käsittelyyn."
+        ],
+        "after": [
+          "Tunniste on satunnainen. Siinä ei ole nimeäsi eikä sähköpostiosoitettasi, emmekä näe siitä, kuka olet.",
+          "Tietoja käytetään siihen, että saat käyttöösi sen, minkä olet ostanut, sekä koottuihin myyntitilastoihin. Käsittelyn oikeusperuste on ostoa koskeva sopimuksemme kanssasi (tietosuoja-asetuksen 6 artiklan 1 kohdan b alakohta).",
+          "Tietojen siirto Yhdysvaltoihin perustuu EU:n vakiosopimuslausekkeisiin tai vastaavaan perusteeseen, jota RevenueCat käyttää."
+        ]
+      },
+      {
+        "heading": "Säilytysaika",
+        "body": [
+          "Ostohistoriaa säilytetään niin kauan kuin sitä tarvitaan ostoksesi palauttamiseen ja niin kauan kuin kirjanpitosäännökset edellyttävät."
+        ]
+      },
+      {
+        "heading": "Oikeutesi",
+        "body": [
+          "Voit pyytää pääsyä tietoihisi sekä niiden oikaisemista tai poistamista, ja voit tehdä valituksen Norjan tietosuojaviranomaiselle (datatilsynet.no) tai asuinmaasi tietosuojaviranomaiselle.",
+          "Koska pelissä ei ole tiliä, saatamme tarvita sovelluskaupan kuitin (tilausnumeron) löytääksemme ostoksesi. Kirjoita osoitteeseen {{email}}."
+        ]
+      },
+      {
+        "heading": "Lapset",
+        "body": [
+          "Peli ei kerää tietoja siitä, kuka olet, iästäsi riippumatta."
+        ]
+      },
+      {
+        "heading": "Muutokset",
+        "body": [
+          "Jos tämä tietosuojaseloste muuttuu, ylhäällä oleva päivämäärä päivitetään."
+        ]
+      }
+    ]
+  },
+  "support": {
+    "intro": "Onko sinulla kysyttävää Road to Nordkapp -pelistä tai {{fullRoadtrip}}-ostoksesta? Tässä ovat vastaukset yleisimpiin kysymyksiin ja ohjeet yhteydenottoon.",
+    "contactHeading": "Ota yhteyttä",
+    "contactBody": "Kirjoita osoitteeseen {{email}}. Jos asia koskee ostosta, kerro käyttäjä-ID:si ({{settings}} → {{about}}) ja sovelluskaupan kuitin tilausnumero. Kerro myös, mitä puhelinta tai tablettia käytät.",
+    "faqHeading": "Usein kysyttyä",
+    "faq": [
+      {
+        "q": "Miten palautan ostokseni?",
+        "a": "Varmista, että olet kirjautunut sovelluskauppaan samalla tilillä, jolla teit {{fullRoadtrip}}-ostoksen. Siirry aloitusnäyttöön (ei ajon aikana avattavaan taukovalikkoon) ja avaa {{settings}} → {{journey}} → {{restore}}. Painike on myös {{fullRoadtrip}}-kortissa kohdassa {{route}}. Kun ostos löytyy, etapit 5–11 ovat taas auki."
+      },
+      {
+        "q": "Peli ei löydä ostostani. Mitä teen?",
+        "a": "Tarkista, että laitteesi on yhteydessä verkkoon ja että olet kirjautunut sovelluskauppaan samalla tilillä, jolla teit ostoksen. Jos se ei auta, kirjoita osoitteeseen {{email}} ja kerro käyttäjä-ID:si ja kuitin tilausnumero, niin autamme sinua."
+      },
+      {
+        "q": "Mistä löydän käyttäjä-ID:ni?",
+        "a": "Siirry kohtaan {{settings}} → {{about}}. Siellä näkyy {{userId}}. Kopioi se napauttamalla tunnisteen vieressä olevaa kopiointikuvaketta tai itse tunnistetta, ja liitä se sähköpostiisi. Tunniste on satunnainen. Siinä ei ole nimeäsi eikä sähköpostiosoitettasi, emmekä näe siitä, kuka olet."
+      },
+      {
+        "q": "Minulla on uusi puhelin tai asensin pelin uudelleen",
+        "a": "Ostos seuraa sovelluskaupan tiliäsi: käytä toimintoa {{restore}} yllä kuvatulla tavalla. Edistyminen ja asetukset tallennetaan vain laitteelle, emmekä voi siirtää niitä. Ne voivat palata vain laitteesi omasta varmuuskopiosta. Uusi asennus saa yleensä uuden käyttäjä-ID:n, ellei peliä palauteta laitteen varmuuskopiosta."
+      },
+      {
+        "q": "Mitä {{fullRoadtrip}} sisältää?",
+        "a": "{{purchaseDesc}} Etapit 1–4 Oslosta Trondheimiin ovat ilmaisia."
+      },
+      {
+        "q": "Miten saan rahani takaisin?",
+        "a": "Maksat siinä sovelluskaupassa, josta latasit pelin, ja sovelluskauppa hoitaa rahanpalautukset. Ota yhteyttä sovelluskauppaan. Emme näe maksua emmekä voi muuttaa sitä."
+      },
+      {
+        "q": "Miten poistan tietoni?",
+        "a": "Laitteellasi olevat tiedot poistuvat, kun poistat pelin. Jos haluat, että poistamme myös RevenueCatin säilyttämän ostohistorian, kirjoita osoitteeseen {{email}} ja kerro käyttäjä-ID:si tai kuitin tilausnumero. Lue lisää tietosuojaselosteesta."
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "description": "Privacidad y ayuda de Road to Nordkapp, el juego de conducción de Oslo a Nordkapp por la E6.",
+  "privacy": {
+    "intro": "Road to Nordkapp ha sido creado por {{publisher}}, n.º de registro {{orgNumber}}, {{address}}. Somos los responsables del tratamiento de los datos que se describen aquí.",
+    "sections": [
+      {
+        "heading": "En resumen",
+        "body": [
+          "El juego no tiene cuentas, ni anuncios, ni seguimiento, ni analíticas de cómo juegas. Lo único que envía el juego es lo necesario para la compra de {{fullRoadtrip}}, y los datos de la compra también se usan para estadísticas de ventas en RevenueCat."
+        ]
+      },
+      {
+        "heading": "Lo que se guarda en tu dispositivo",
+        "body": [
+          "Los ajustes, el progreso, los puntos de control, las estrellas, los puntos y los mejores tiempos, y si has comprado {{fullRoadtrip}}, se guardan solo en tu dispositivo. No tenemos acceso a ellos. Se borran al desinstalar el juego (o se conservan en la copia de seguridad de tu propio dispositivo, si la usas)."
+        ]
+      },
+      {
+        "heading": "Compra dentro del juego",
+        "body": [
+          "{{fullRoadtrip}} se compra en la tienda desde la que descargaste el juego. El pago lo gestiona la tienda, y nunca vemos tus datos de pago.",
+          "Para confirmar y restaurar la compra usamos RevenueCat (RevenueCat, Inc., EE. UU.), que trata los datos en nuestro nombre. RevenueCat recibe:"
+        ],
+        "list": [
+          "un ID aleatorio que crea el propio juego (empieza por rtn_), que se envía a RevenueCat para la compra,",
+          "el historial de compras vinculado a ese ID: qué producto, cuándo, país y moneda, y el recibo de la tienda,",
+          "información técnica, por ejemplo, la versión de la app y tu dirección IP, que se usa para procesar la solicitud."
+        ],
+        "after": [
+          "El ID es aleatorio. No contiene tu nombre ni tu correo electrónico, y con él no podemos saber quién eres.",
+          "Los datos se usan para darte acceso a lo que has comprado y para elaborar estadísticas de ventas agregadas. La base jurídica es nuestro contrato contigo por la compra (artículo 6.1.b) del RGPD).",
+          "Las transferencias a EE. UU. se basan en las cláusulas contractuales tipo de la UE o en una base equivalente que utiliza RevenueCat."
+        ]
+      },
+      {
+        "heading": "Cuánto tiempo",
+        "body": [
+          "El historial de compras se conserva mientras sea necesario para poder restaurar tu compra y durante el tiempo que exijan las normas contables."
+        ]
+      },
+      {
+        "heading": "Tus derechos",
+        "body": [
+          "Puedes solicitar el acceso, la rectificación o la supresión, y puedes presentar una reclamación ante la autoridad noruega de protección de datos (datatilsynet.no) o ante la autoridad de protección de datos del lugar donde vives.",
+          "Como el juego no tiene cuentas, puede que necesitemos el recibo de la tienda (el número de pedido) para encontrar tu compra. Escribe a {{email}}."
+        ]
+      },
+      {
+        "heading": "Menores",
+        "body": [
+          "El juego no recoge información sobre quién eres, tengas la edad que tengas."
+        ]
+      },
+      {
+        "heading": "Cambios",
+        "body": [
+          "Si esta política cambia, se actualiza la fecha que aparece arriba."
+        ]
+      }
+    ]
+  },
+  "support": {
+    "intro": "¿Tienes preguntas sobre Road to Nordkapp o sobre la compra de {{fullRoadtrip}}? Aquí tienes las respuestas a las más habituales y cómo contactar con nosotros.",
+    "contactHeading": "Contacto",
+    "contactBody": "Escribe a {{email}}. Si es sobre la compra, incluye tu ID de usuario ({{settings}} → {{about}}) y el número de pedido que aparece en el recibo de la tienda. Dinos también qué teléfono o tableta usas.",
+    "faqHeading": "Preguntas frecuentes",
+    "faq": [
+      {
+        "q": "¿Cómo restauro mi compra?",
+        "a": "Asegúrate de haber iniciado sesión en la tienda con la misma cuenta con la que compraste {{fullRoadtrip}}. Ve a la pantalla de inicio (no al menú de pausa mientras conduces) y abre {{settings}} → {{journey}} → {{restore}}. El botón también está en la tarjeta de {{fullRoadtrip}}, en la pantalla {{route}}. En cuanto se encuentre la compra, las etapas 5–11 vuelven a estar abiertas."
+      },
+      {
+        "q": "El juego no encuentra mi compra. ¿Qué hago?",
+        "a": "Comprueba que tu dispositivo esté conectado a internet y que hayas iniciado sesión en la tienda con la misma cuenta con la que hiciste la compra. Si eso no funciona, escribe a {{email}} con tu ID de usuario y el número de pedido del recibo, y te ayudaremos."
+      },
+      {
+        "q": "¿Dónde encuentro mi ID de usuario?",
+        "a": "Ve a {{settings}} → {{about}}. Ahí aparece tu {{userId}}. Para copiarlo, toca el símbolo de copiar que hay junto al ID, o el propio ID, y pégalo en tu correo. El ID es aleatorio. No contiene tu nombre ni tu correo electrónico, y con él no podemos saber quién eres."
+      },
+      {
+        "q": "Tengo un teléfono nuevo o he reinstalado el juego",
+        "a": "La compra va ligada a tu cuenta de la tienda: usa {{restore}} como se explica arriba. El progreso y los ajustes se guardan solo en el dispositivo, y no podemos trasladarlos. Solo pueden recuperarse desde la copia de seguridad de tu propio dispositivo. Una instalación nueva suele recibir un ID de usuario nuevo, salvo que el juego se restaure desde una copia de seguridad del dispositivo."
+      },
+      {
+        "q": "¿Qué incluye {{fullRoadtrip}}?",
+        "a": "{{purchaseDesc}} Las etapas 1–4, de Oslo a Trondheim, son gratis."
+      },
+      {
+        "q": "¿Cómo consigo un reembolso?",
+        "a": "Pagas a través de la tienda desde la que descargaste el juego, y es la tienda la que gestiona los reembolsos. Ponte en contacto con la tienda. Nosotros no podemos ver ni modificar el pago."
+      },
+      {
+        "q": "¿Cómo borro mis datos?",
+        "a": "Lo que hay en tu dispositivo se borra al desinstalar el juego. Si también quieres que borremos el historial de compras que guarda RevenueCat, escribe a {{email}} con tu ID de usuario o el número de pedido del recibo. Más información en la política de privacidad."
+      }
+    ]
+  }
+}
